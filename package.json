@@ -1,0 +1,60 @@
+{
+  "name": "poko-website-builder",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "version": "0.0.1",
+  "description": "A low cost, high power website builder you trully own",
+  "homepage": "https://github.com/m4rrc0/poko-website-builder#readme",
+  "license": "",
+  "engines": {
+    "node": ">=22.0.0",
+    "npm": ">=10.0.0",
+    "bun": ">=1.2.8"
+  },
+  "scripts": {
+    "build": "bun run eleventy",
+    "dev": "bun run eleventy --serve",
+    "start": "bun run eleventy --serve",
+    "clean": "rm -rf dist",
+    "clean:modules": "rm -rf dist node_modules"
+  },
+  "keywords": [
+    "website-builder",
+    "cms",
+    "headless-cms",
+    "eleventy",
+    "11ty",
+    "svelte"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/m4rrc0/poko-website-builder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/m4rrc0/poko-website-builder/issues"
+  },
+  "author": {
+    "name": "Marc Coët",
+    "url": "https://www.m4rr.co/"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-img": "^6.0.3",
+    "@11ty/eleventy-navigation": "^1.0.4",
+    "@11ty/eleventy-plugin-directory-output": "^1.0.1",
+    "@11ty/eleventy-plugin-webc": "^0.11.2",
+    "@m4rrc0/eleventy-plugin-markdoc": "^0.1.6",
+    "@markdoc/markdoc": "^0.5.2",
+    "@sindresorhus/slugify": "^2.2.1",
+    "@types/bun": "latest",
+    "chalk": "^5.4.1",
+    "dayjs": "^1.11.13",
+    "dotenv": "^16.4.7",
+    "fast-glob": "^3.3.3",
+    "fast-sort": "^3.4.1",
+    "js-yaml": "^4.1.0",
+    "typescript": "^5.8.2"
+  }
+}

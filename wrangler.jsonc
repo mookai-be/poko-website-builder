@@ -1,0 +1,24 @@
+{
+  "name": "poko-website-builder",
+  "pages_build_output_dir": "./dist",
+  "compatibility_date": "2025-03-10",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "send_metrics": true,
+  "vars": {
+    // "BUN_VERSION": "1.2.8"
+  }
+  // "env": {
+  //   "staging": {
+  //     "vars": {
+  //       "API_HOST": "staging.example.com"
+  //     }
+  //   },
+  //   "production": {
+  //     "vars": {
+  //       "API_HOST": "production.example.com"
+  //     }
+  //   }
+  // }
+}
