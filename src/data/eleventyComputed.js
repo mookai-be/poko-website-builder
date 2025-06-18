@@ -58,11 +58,11 @@ export default {
         return `${permalink}.${data.page.outputFileExtension}`
     },
     eleventyNavigation: (data) => {
-        if (!data.eleventyNavigation?.add) {
+        if (!data.eleventyNavigation) {
             return false;
         }
         return {
-            key: data.page.fileSlug,
+            key: data.page.fileSlug, // TODO: Should we use localizationKey here?
             title: data.eleventyNavigation?.title || data.title,
             parent: data.eleventyNavigation?.parent,
             order: data.eleventyNavigation?.order,
@@ -82,6 +82,7 @@ export default {
             image: data.metadata?.image ?? '',
         }
     },
+    // Just to make them easier to find in the data object
     date: (data) => data.page?.date,
     url: (data) => data.page?.url,
 };

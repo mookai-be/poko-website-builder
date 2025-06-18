@@ -11,6 +11,7 @@ export { a } from '@m4rrc0/eleventy-plugin-markdoc/_src/tags/html-elements/index
 // Custom tags
 export { Partial } from './Partial.js';
 export { For } from './For.js';
+export { Image } from './Image.js';
 export { Link } from './Link.js';
 export { ReferencesManual } from './ReferencesManual.js';
 export { ReferencesAuto } from './ReferencesAuto.js';

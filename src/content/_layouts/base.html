@@ -1,39 +1,78 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{lang or 'en'}}" class="no-js">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content="{{ eleventy.generator }}" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="{{ eleventy.generator }}" />
 
-        <!-- prettier-ignore -->
-        <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+    <!-- prettier-ignore -->
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
 
-        <!-- Metadata -->
-        <title>{{ metadata.title }}</title>
-        {% if metadata.description %}
-            <meta name="description" content="{{ metadata.description }}">
+    <!-- Metadata -->
+    <title>{{ metadata.title }}</title>
+    {% if metadata.description %}
+    <meta name="description" content="{{ metadata.description }}" />
+    {% endif %} {% if metadata.image %}
+    <meta name="image" content="{{ metadata.image }}" />
+    {% endif %}
+
+    <!-- Alternate langs -->
+    <link rel="alternate" hreflang="{{lang}}" href="{{baseUrl}}{{page.url}}" />
+    {% for link in page.url | locale_links %}
+    <link
+      rel="alternate"
+      hreflang="{{link.lang}}"
+      href="{{baseUrl}}{{link.url}}"
+    />
+    {% endfor %}
+    <!-- TODO: Add when we can identify the default lang -->
+    <!-- <link rel="alternate" hreflang="x-default" href="{{page.url}}" /> -->
+
+    <!-- User HTML head injection -->
+    {{ globalSettings.htmlHead | safe }}
+
+    <!-- User CSS head injection -->
+    <style>
+      {{ globalSettings.cssHead | safe }}
+    </style>
+  </head>
+  <body>
+    {% set navPages = collections.all | filterCollection({ by: 'lang', value:
+    lang }) | eleventyNavigation %}
+    <!-- Navigation -->
+    {% if navPages | length %}
+    <header>
+      <nav>
+        <!-- Main pages navigation -->
+        {{ navPages | eleventyNavigationToHtml | safe }}
+
+        <!-- Language navigation -->
+        {% if page.url | locale_links | length %}
+        <ul id="lang-nav">
+          {% for link in page.url | locale_links %}
+          <li>
+            <a href="{{link.url}}" hreflang="{{link.lang}}"
+              ><abbr lang="{{link.lang}}" title="{{link.label}}"
+                >{{link.lang | upper}}</abbr
+              ></a
+            >
+          </li>
+          {% endfor %}
+          <li>
+            <a href="{{page.url}}" hreflang="{{page.lang}}" aria-current="page"
+              ><abbr lang="{{page.lang}}" title="{{page.label}}"
+                >{{page.lang | upper}}</abbr
+              ></a
+            >
+          </li>
+        </ul>
         {% endif %}
-        {% if metadata.image %}
-            <meta name="image" content="{{ metadata.image }}">
-        {% endif %}
+      </nav>
+    </header>
+    {% endif %}
+    <!-- End of navigation -->
 
-        <!-- User HTML head injection -->
-        {{ globalSettings.htmlHead | safe }}
-
-        <!-- User CSS head injection -->
-        <style>
-            {{ globalSettings.cssHead | safe }}
-        </style>
-    </head>
-    <body>
-        {% if collections.all | eleventyNavigation | length %}
-        <header>
-            <nav>
-                {{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
-            </nav>
-        </header>
-        {% endif %}
-
-        {{ content | safe }}
-    </body>
+    <!-- Content -->
+    {{ content | safe }}
+  </body>
 </html>

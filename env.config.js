@@ -64,8 +64,15 @@ export const REPO_NAME = processEnv.REPO_NAME || VERCEL_GIT_REPO_SLUG || NETLIFY
 export const REPO = processEnv.REPO || (REPO_OWNER && REPO_NAME && `${REPO_OWNER}/${REPO_NAME}`);
 
 // PROD URL
-export const PROD_URL = processEnv.PROD_URL || 'https://poko.m4rr.co';
-export const DISPLAY_URL = processEnv.DISPLAY_URL || 'https://poko.m4rr.co';
+export const BASE_URL = processEnv.BASE_URL.replace(/\/$/, '');
+export const PROD_URL = processEnv.PROD_URL;
+export const DISPLAY_URL = processEnv.DISPLAY_URL;
+
+// CMS
+export const CMS_AUTH_URL = processEnv.CMS_AUTH_URL;
+export const CMS_REPO = processEnv.CMS_REPO;
+export const CMS_BACKEND = processEnv.CMS_BACKEND || 'github';
+export const CMS_BRANCH = processEnv.CMS_BRANCH || 'main';
 
 // Fallback hosting service for local dev
 export const PREFERRED_HOSTING = processEnv.PREFERRED_HOSTING || 'node';

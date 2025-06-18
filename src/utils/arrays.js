@@ -24,7 +24,9 @@ export const filterCollection = (collection, filtersRaw) => {
               return itemIndexes.map(index => collection[index]);
             case 'tags':
               const tagsToMatch = toArrayOfStrings(value);
-              return collection.filter(item => item.data.tags.some(tag => tagsToMatch.includes(tag)));
+              return collection.filter(item => item.data.tags?.some(tag => tagsToMatch.includes(tag)));
+            case 'lang':
+              return collection.filter(item => item.data.lang === value);
             default:
               return collection;
           }

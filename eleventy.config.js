@@ -2,7 +2,7 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import directoryOutputPlugin from "@11ty/eleventy-plugin-directory-output";
-import { IdAttributePlugin } from "@11ty/eleventy";
+import { IdAttributePlugin, I18nPlugin } from "@11ty/eleventy";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import pluginWebc from "@11ty/eleventy-plugin-webc";
 import pluginMarkdoc from "@m4rrc0/eleventy-plugin-markdoc";
@@ -23,6 +23,7 @@ import {
   OUTPUT_DIR,
   FILES_OUTPUT_DIR,
   GLOBAL_PARTIALS_PREFIX,
+  BASE_URL,
   PROD_URL } from './env.config.js'
 import * as markdocTags from './src/config-markdoc/tags/index.js';
 import * as markdocNodes from './src/config-markdoc/nodes/index.js';
@@ -78,6 +79,9 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(IdAttributePlugin, {
 		selector: "h1,h2,h3,h4,h5,h6,.id-attr", // default: "h1,h2,h3,h4,h5,h6"
 	});
+	eleventyConfig.addPlugin(I18nPlugin, {
+    defaultLanguage: "en", // Required // TODO: from globalSettings
+  });
 	eleventyConfig.addPlugin(eleventyNavigationPlugin);
 	eleventyConfig.addPlugin(eleventyImageTransformPlugin, imageTransformOptions);
   eleventyConfig.addPlugin(yamlData);
@@ -88,23 +92,27 @@ export default async function (eleventyConfig) {
   //   components: "src/components/**/*.webc",
   //   useTransform: true,
   // });
-  // Populate Default Content
-  // Copy `src/img/` to `_site/subfolder/img`
+  // --------------------- Populate files and default content
+  // Populate Default Content: Copy `src/content-static/` to `dist`
 	eleventyConfig.addPassthroughCopy({ "src/content-static": "/" });
+  // Copy User's files: `src/content-static/` to `dist`
+	eleventyConfig.addPassthroughCopy({ [`${WORKING_DIR}/_files`]: "/" });
+	eleventyConfig.addPassthroughCopy({ [`${WORKING_DIR}/*.css`]: "/" });
   // Populate Default Content with virtual templates
   await eleventyConfig.addPlugin(populateInputDir, {
     // logLevel: 'debug',
     sources: ['src/content']
   });
-
-  // Copy files
+  // Copy files (Keystatic)
   // Retrieve public files from the _files directory
   // eleventyConfig.addPlugin(keystaticPassthroughFiles)
+
 
   // --------------------- Layouts
   eleventyConfig.addLayoutAlias("base", "base.html");
 
   // --------------------- Global Data
+  eleventyConfig.addGlobalData("baseUrl", BASE_URL);
   eleventyConfig.addGlobalData("prodUrl", PROD_URL);
   eleventyConfig.addGlobalData("layout", "base");
   // eleventyConfig.addGlobalData("globalSettings", globalSettings);
