@@ -1,5 +1,6 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import Nunjucks from "nunjucks";
 // -------- Plugins
 import directoryOutputPlugin from "@11ty/eleventy-plugin-directory-output";
 import { RenderPlugin, IdAttributePlugin, I18nPlugin } from "@11ty/eleventy";
@@ -81,10 +82,16 @@ export default async function (eleventyConfig) {
   eleventyConfig.addWatchTarget("./src/config-11ty/**/*", {
     resetConfig: true,
   });
-  eleventyConfig.addWatchTarget("./src/config-markdoc/**/*", {
-    resetConfig: true,
-  }); // NOTE: watching works but changes does not properly rerender...
   // eleventyConfig.setUseGitIgnore(false);
+
+  // --------------------- Custom Nunjucks setup
+  // TODO: Does this work as expected?
+  // NOTE: This is a workaround because virtual templates does not work for includes
+  let nunjucksEnvironment = new Nunjucks.Environment([
+    new Nunjucks.FileSystemLoader(`${WORKING_DIR}/${PARTIALS_DIR}`),
+    new Nunjucks.FileSystemLoader(`src/content/_partials`),
+  ]);
+  eleventyConfig.setLibrary("njk", nunjucksEnvironment);
 
   // --------------------- Plugins Markdown
   eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(markdownItAttrs));
@@ -169,7 +176,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addFilter("last", last);
   eleventyConfig.addFilter("randomFilter", randomFilter);
   // Images
-  eleventyConfig.addFilter("og", ogImageSrc);
+  eleventyConfig.addFilter("ogImage", ogImageSrc);
   // Email
   eleventyConfig.addFilter("emailLink", emailLink);
 
