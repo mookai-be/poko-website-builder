@@ -13,9 +13,9 @@
     "bun": ">=1.2.8"
   },
   "scripts": {
-    "build": "bun run eleventy",
-    "dev": "bun run eleventy --serve",
-    "start": "bun run eleventy --serve",
+    "build": "bun --bun run eleventy",
+    "dev": "bun --bun run eleventy --serve",
+    "start": "bun --bun run eleventy --serve",
     "clean": "rm -rf dist",
     "clean:modules": "rm -rf dist node_modules"
   },
@@ -50,6 +50,7 @@
     "@sindresorhus/slugify": "^2.2.1",
     "@tabler/icons": "^3.34.0",
     "@types/bun": "latest",
+    "bun": "^1.2.18",
     "chalk": "^5.4.1",
     "dayjs": "^1.11.13",
     "dotenv": "^16.4.7",

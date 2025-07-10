@@ -14,6 +14,7 @@ import populateInputDir from "./src/config-11ty/plugins/populateInputDir/index.j
 import yamlData from "./src/config-11ty/plugins/yamlData/index.js";
 import cmsConfig from "./src/config-11ty/plugins/cms-config/index.js";
 import autoCollections from "./src/config-11ty/plugins/auto-collections/index.js";
+import htmlClassesTransform from "./src/config-11ty/plugins/html-classes-transform/index.js";
 // import keystaticPassthroughFiles from './src/config-11ty/plugins/keystaticPassthroughFiles/index.js';
 // -------- Plugins Markdown
 import markdownItAttrs from "markdown-it-attrs";
@@ -132,6 +133,14 @@ export default async function (eleventyConfig) {
       },
     ],
   });
+  // TODO: import those classes from a data file
+  eleventyConfig.addPlugin(htmlClassesTransform, {
+    classes: {
+      // <selector>: "<class>",
+      // html: "imported-html-class",
+      // body: "imported-body-class",
+    },
+  });
 
   // --------------------- Populate files and default content
   // Populate Default Content: Copy `src/content-static/` to `dist`
@@ -176,7 +185,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addFilter("last", last);
   eleventyConfig.addFilter("randomFilter", randomFilter);
   // Images
-  eleventyConfig.addFilter("ogImage", ogImageSrc);
+  eleventyConfig.addAsyncFilter("ogImage", ogImageSrc);
   // Email
   eleventyConfig.addFilter("emailLink", emailLink);
 
