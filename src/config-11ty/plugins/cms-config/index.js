@@ -69,6 +69,125 @@ class CmsConfig {
     };
   }
   render(data) {
+    const dataCollection = {
+      // ...mostCommonMarkdownCollectionConfig,
+      // i18n: false,
+      icon: "table_edit",
+      name: "data",
+      label: "Data",
+      editor: { preview: false },
+      files: [
+        {
+          name: "globalSettings",
+          label: "Global Settings",
+          icon: "settings",
+          file: `${CONTENT_DIR}/_data/globalSettings.yaml`,
+          // format: "yaml",
+          fields: [
+            {
+              name: "siteName",
+              label: "Site Name",
+              widget: "string",
+            },
+            {
+              name: "logo",
+              label: "Logo",
+              widget: "image",
+            },
+            {
+              name: "htmlHead",
+              label: "HTML Head",
+              widget: "code",
+              required: false,
+              // TODO: default-language not working
+              default_language: "html",
+              output_code_only: true,
+              allow_language_selection: false,
+            },
+            {
+              name: "lang",
+              label: "Default Language",
+              widget: "string",
+            },
+            {
+              name: "collections",
+              label: "Active Collections",
+              widget: "select",
+              multiple: true,
+              // TODO: populate this from existing collection definitions
+              // TODO: more customization on collections
+              options: ["articles"],
+            },
+          ],
+        },
+        {
+          name: "metadata",
+          label: "Default Metadata",
+          icon: "page_info",
+          file: `${CONTENT_DIR}/_data/metadata.yaml`,
+          // format: "yaml",
+          fields: [
+            {
+              name: "image",
+              label: "Image",
+              widget: "image",
+            },
+          ],
+        },
+        {
+          name: "redirects",
+          label: "Global Redirects",
+          icon: "call_split",
+          file: `${CONTENT_DIR}/_files/_redirects`,
+          // format: "yaml",
+          fields: [
+            {
+              name: "body",
+              label: "Redirects",
+              widget: "code",
+              required: false,
+              output_code_only: true,
+              allow_language_selection: false,
+            },
+          ],
+        },
+        {
+          name: "headers",
+          label: "Headers",
+          icon: "contract",
+          file: `${CONTENT_DIR}/_files/_headers`,
+          // format: "yaml",
+          fields: [
+            {
+              name: "body",
+              label: "Headers",
+              widget: "code",
+              required: false,
+              output_code_only: true,
+              allow_language_selection: false,
+            },
+          ],
+        },
+        {
+          name: "dataFiles",
+          label: "Data Files",
+          icon: "code",
+          file: `${CONTENT_DIR}/_data/none.yaml`,
+          media_folder: `/${CONTENT_DIR}/_data`,
+          public_folder: "/_data",
+          fields: [],
+        },
+        {
+          name: "publicFiles",
+          label: "Public Files",
+          icon: "attach_file",
+          file: `${CONTENT_DIR}/_files/none.yaml`,
+          media_folder: `/${CONTENT_DIR}/_files`,
+          public_folder: "/_files",
+          fields: [],
+        },
+      ],
+    };
     const pageFields = [
       ...commonCollectionFields,
       // { name: 'collection', label: 'Collection', widget: 'object', types: [
@@ -173,6 +292,13 @@ class CmsConfig {
         required: true,
         i18n: true,
       },
+      // {
+      //   name: "currentSlug",
+      //   label: "Current slug",
+      //   widget: "compute",
+      //   value: "{{fields.name}}",
+      //   i18n: true,
+      // },
       // { name: "path", label: "Page URL path", widget: "string", required: true, pattern: ['^(?![\s\/\-]*$)(?!\/)[a-z0-9\/\-]*[a-z0-9\-]$', "URL must contain only letters, numbers, dashes, and forward slashes (not starting or ending with a slash or dash), and at least one letter or number"], hint: "URL-friendly slug or path (may contain '/' and '-'). NOTE: The homepage must be called 'index'"},
       {
         name: "body",
@@ -318,28 +444,62 @@ class CmsConfig {
       public_folder: "/_images",
       fields: articleFields,
     };
-    const filesCollection = {
-      ...mostCommonMarkdownCollectionConfig,
-      name: "files",
-      label: "Files",
-      label_singular: "File",
-      // description: "Articles of the website",
-      path: "files/{{slug}}",
-      media_folder: `/${CONTENT_DIR}/_files`,
-      public_folder: "/_files",
-      fields: [...commonCollectionFields],
-    };
-    const dataFilesCollection = {
-      ...mostCommonMarkdownCollectionConfig,
-      extension: "yaml",
-      name: "dataFiles",
-      label: "Data Files",
-      label_singular: "Data File",
-      path: "_data/{{slug}}",
-      media_folder: `/${CONTENT_DIR}/_data`,
-      public_folder: "/_data",
-      fields: [...commonCollectionFields],
-    };
+
+    // const rawFilesCollection = {
+    //   // ...mostCommonMarkdownCollectionConfig,
+    //   // i18n: false,
+    //   icon: "code",
+    //   name: "files",
+    //   label: "Files",
+    //   description: "Files of the website",
+
+    //   // label_singular: "Data",
+    //   // path: "_data/{{slug}}",
+    //   // media_folder: `/${CONTENT_DIR}/_data`,
+    //   // public_folder: "/_data",
+    //   // fields: [...commonCollectionFields],
+    //   files: [
+    //     {
+    //       name: "rawFiles",
+    //       label: "Raw Files",
+    //       file: `${CONTENT_DIR}/_files/none.yaml`,
+    //       media_folder: `/${CONTENT_DIR}/_files`,
+    //       public_folder: "/_files",
+    //       fields: [],
+    //     },
+    //     // {
+    //     //   name: "dataFiles",
+    //     //   label: "Data Files",
+    //     //   file: `${CONTENT_DIR}/_data/none.yaml`,
+    //     //   media_folder: `/${CONTENT_DIR}/_data`,
+    //     //   public_folder: "/_data",
+    //     //   fields: [],
+    //     // },
+    //   ],
+    // };
+    // const filesCollection = {
+    //   ...mostCommonMarkdownCollectionConfig,
+    //   name: "files",
+    //   label: "Files",
+    //   label_singular: "File",
+    //   // description: "Articles of the website",
+    //   path: "files/{{slug}}",
+    //   media_folder: `/${CONTENT_DIR}/_files`,
+    //   public_folder: "/_files",
+    //   fields: [...commonCollectionFields],
+    // };
+    // const dataFilesCollection = {
+    //   ...mostCommonMarkdownCollectionConfig,
+    //   create: false,
+    //   extension: "yaml",
+    //   name: "dataFiles",
+    //   label: "Data Files",
+    //   label_singular: "Data File",
+    //   path: "_data/{{slug}}",
+    //   media_folder: `/${CONTENT_DIR}/_data`,
+    //   public_folder: "/_data",
+    //   fields: [...commonCollectionFields],
+    // };
 
     const generalConfig = {
       backend: {
@@ -349,6 +509,19 @@ class CmsConfig {
         base_url: CMS_AUTH_URL,
         automatic_deployments: false,
       },
+      // TODO: configure data formating: https://github.com/sveltia/sveltia-cms?tab=readme-ov-file#controlling-data-output
+      // output: {
+      //   omit_empty_optional_fields: true,
+      //   encode_file_path: false, // true to URL-encode file paths for File/Image fields
+      //   json: {
+      //     indent_style: "space", // or tab
+      //     indent_size: 2,
+      //   },
+      //   yaml: {
+      //     quote: 'none', // or single or double
+      //     indent_size: 2
+      //   }
+      // },
       site_url: PROD_URL,
       display_url: DISPLAY_URL,
       // logo_url: "https://your-site.com/images/logo.svg",
@@ -379,12 +552,18 @@ class CmsConfig {
         structure: "multiple_folders",
         locales: ["it", "en", "fr"],
         default_locale: "it", // Defaults to the first locale in the list
+        save_all_locales: false, // default: true // Allows for disabling a localization
+        initial_locales: "default", // default: "all" // Allows for setting the initial locales
       },
       collections: [
+        dataCollection,
+        { divider: true },
         pagesCollection,
         articlesCollection,
-        filesCollection,
-        dataFilesCollection,
+        { divider: true },
+        // rawFilesCollection,
+        // filesCollection,
+        // dataFilesCollection,
         ...data.userConfig.collections,
       ],
       singletons: [...data.userConfig.singletons],
