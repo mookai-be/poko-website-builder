@@ -1,7 +1,21 @@
 import { USER_DIR, languages } from "../../env.config.js";
 
-const dirsToStrip = ["pages", USER_DIR];
-const stripRegex = new RegExp(`^\/*(${dirsToStrip.join("|")})\/*`);
+const dirsToStrip = [USER_DIR, "pages"];
+const langCodes = languages.map((lang) => lang.code);
+// const stripRegex = new RegExp(`^\/*(${dirsToStrip.join("|")})\/*`);
+
+function stripPathSegment(path, segmentToStrip, allowedPrefixes = []) {
+  // Create a regex that matches either:
+  // 1. The segment at the beginning of the path
+  // 2. The segment after an allowed prefix
+  const prefixPattern = allowedPrefixes.length
+    ? `(^|^(${allowedPrefixes.join("|")})\/)`
+    : "^";
+
+  const regex = new RegExp(`${prefixPattern}${segmentToStrip}\/?`, "i");
+
+  return path.replace(regex, "$1");
+}
 
 const languagePrefixesMap = languages
   .map((lang) => {
@@ -23,9 +37,13 @@ export default function mapInputPathToUrl(filePathStem) {
     .replace(/\/+$/, "") // remove trailing slash
     .replace(/\/index$/, ""); // remove trailing '/index'
 
-  const formatted = unWrapped.replace(stripRegex, ""); // remove leading unwanted dir names (like 'pages')
-  let unPrefixed = formatted;
+  // const formatted = unWrapped.replace(stripRegex, ""); // remove leading unwanted dir names (like 'pages')
+  let formatted = unWrapped;
+  for (const dir of dirsToStrip) {
+    formatted = stripPathSegment(formatted, dir, langCodes);
+  }
 
+  let unPrefixed = formatted;
   for (const [regex, prefix] of languagePrefixesMap) {
     if (regex.test(unPrefixed)) {
       unPrefixed = unPrefixed.replace(regex, prefix);
@@ -38,6 +56,5 @@ export default function mapInputPathToUrl(filePathStem) {
   url.pathname = url.href;
   url.permalink = url.href + "index";
 
-  //   console.log({ formatted, languagePrefixesMap, unPrefixed, url });
   return url;
 }
