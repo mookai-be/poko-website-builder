@@ -16,6 +16,31 @@
     />
     <script>
       CMS.registerEditorComponent({
+        id: "partial",
+        label: "Partial",
+        icon: "brick",
+        fields: [
+          // TODO: Make relation widget work
+          {
+            name: "partialSlug",
+            label: "Select Partial",
+            widget: "relation",
+            collection: "partials",
+          },
+        ],
+        // Match example: {% include "book-btn.md" %}
+        pattern: /^{% include "(.*?)\.md" %}$/ms,
+        fromBlock: function (match) {
+          return { partialSlug: match[1] };
+        },
+        toBlock: function (data) {
+          return `{% include "${data.partialSlug}.md" %}`;
+        },
+        toPreview: function (data) {
+          return `TEST`;
+        },
+      });
+      CMS.registerEditorComponent({
         // Internal id of the component
         id: "collapsible-note",
         // Visible label
