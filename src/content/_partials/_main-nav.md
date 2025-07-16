@@ -10,23 +10,17 @@ lang }) | eleventyNavigation %}
 
     <!-- Language navigation -->
     {% if page.url | locale_links | length %}
-    <ul id="lang-nav">
-        {% for link in page.url | locale_links %}
+    <ul role="list" id="lang-nav">
+        {% for link in page.url | locale_links("all") %}
         <li>
-        <a href="{{link.url}}" hreflang="{{link.lang}}"
+        <a
+            href="{{link.url}}"
+            hreflang="{{link.lang}}"
+            aria-current="{{ 'page' if link.lang === page.lang else 'false' }}"
             ><abbr lang="{{link.lang}}" title="{{link.label}}"
-            >{{link.lang | upper}}</abbr
-            ></a
-        >
+            >{{link.lang | upper}}</abbr></a>
         </li>
         {% endfor %}
-        <li>
-        <a href="{{page.url}}" hreflang="{{page.lang}}" aria-current="page"
-            ><abbr lang="{{page.lang}}" title="{{page.label}}"
-            >{{page.lang | upper}}</abbr
-            ></a
-        >
-        </li>
     </ul>
     {% endif %}
     </nav>

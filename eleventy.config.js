@@ -20,6 +20,7 @@ import htmlClassesTransform from "./src/config-11ty/plugins/html-classes-transfo
 import markdownItAttrs from "markdown-it-attrs";
 // -------- Env Variables
 import {
+  IS_LIVE_DEPLOY,
   WORKING_DIR,
   WORKING_DIR_ABSOLUTE,
   CONTENT_DIR,
@@ -30,6 +31,7 @@ import {
   GLOBAL_PARTIALS_PREFIX,
   BASE_URL,
   PROD_URL,
+  languages,
 } from "./env.config.js";
 // import * as markdocTags from "./src/config-markdoc/tags/index.js";
 // import * as markdocNodes from "./src/config-markdoc/nodes/index.js";
@@ -43,6 +45,8 @@ import {
   dateToSlug,
   toLocaleString,
   slugifyPath,
+  locale_url,
+  locale_links,
   filterCollection,
   join,
   first,
@@ -55,6 +59,31 @@ import {
 
 // TODOS:
 // - Look at persisting images in cache between builds: https://github.com/11ty/eleventy-img/issues/285
+
+const defaultLanguage = languages.find((lang) => lang.isWebsiteDefault);
+const defaultLangCode = defaultLanguage?.code || "en";
+
+const statusesToUnrender = IS_LIVE_DEPLOY
+  ? ["inactive", "preview"]
+  : ["inactive"];
+const unrenderedLanguages = languages
+  .filter((lang) => statusesToUnrender.includes(lang.status))
+  .map((lang) => lang.code);
+
+function shouldNotRender(data) {
+  if (data.page.filePathStem.startsWith("/_")) {
+    return true;
+  }
+  for (const lang of unrenderedLanguages) {
+    if (data.page.filePathStem.startsWith(`/${lang}`)) {
+      return true;
+    }
+  }
+  if (data.status && statusesToUnrender.includes(data.status)) {
+    return true;
+  }
+  return false;
+}
 
 /**
  * @typedef { import("@11ty/eleventy").UserConfig } UserConfig
@@ -94,6 +123,13 @@ export default async function (eleventyConfig) {
   ]);
   eleventyConfig.setLibrary("njk", nunjucksEnvironment);
 
+  // --------------------- Preprocessors
+  eleventyConfig.addPreprocessor("Publication Status", "*", (data, content) => {
+    if (shouldNotRender(data)) {
+      return false;
+    }
+  });
+
   // --------------------- Plugins Markdown
   eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(markdownItAttrs));
 
@@ -104,7 +140,15 @@ export default async function (eleventyConfig) {
     selector: "h1,h2,h3,h4,h5,h6,.id-attr", // default: "h1,h2,h3,h4,h5,h6"
   });
   eleventyConfig.addPlugin(I18nPlugin, {
-    defaultLanguage: "en", // Required // TODO: from globalSettings
+    defaultLanguage: defaultLangCode, // Required
+    // Rename the default universal filter names
+    filters: {
+      // transform a URL with the current page’s locale code
+      url: "locale_url_original",
+
+      // find the other localized content for a specific input file
+      links: "locale_links_original",
+    },
   });
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, imageTransformOptions);
@@ -165,6 +209,9 @@ export default async function (eleventyConfig) {
   eleventyConfig.addGlobalData("prodUrl", PROD_URL);
   eleventyConfig.addGlobalData("layout", "base");
   // eleventyConfig.addGlobalData("globalSettings", globalSettings);
+  eleventyConfig.addGlobalData("languages", languages);
+  eleventyConfig.addGlobalData("defaultLanguage", defaultLanguage);
+  eleventyConfig.addGlobalData("defaultLangCode", defaultLangCode);
   // Computed Data
   eleventyConfig.addGlobalData("eleventyComputed", eleventyComputed);
 
@@ -173,6 +220,9 @@ export default async function (eleventyConfig) {
   eleventyConfig.addFilter("slugifyPath", (input) =>
     slugifyPath(input, eleventyConfig)
   );
+  // I18n
+  eleventyConfig.addFilter("locale_url", locale_url);
+  eleventyConfig.addFilter("locale_links", locale_links);
   // Date
   eleventyConfig.addFilter("toIsoString", toISOString);
   eleventyConfig.addFilter("formatDate", formatDate);

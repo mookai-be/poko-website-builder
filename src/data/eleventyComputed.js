@@ -1,18 +1,64 @@
-import { USER_DIR } from "../../env.config.js";
+import { USER_DIR, languages } from "../../env.config.js";
 // Was usefull when parents were declared in references
 // import temp from './temp.js';
 import mapInputPathToUrl from "../utils/mapInputPathToUrl.js";
 
-// const autoTagNameDico = {
-//     pages: 'page',
-//     articles: 'article',
-//     people: 'person',
-//     organizations: 'organization'
-// }
+const defaultLang = languages.find((lang) => lang.isWebsiteDefault)?.code;
 
 export default {
   // ...temp,
-  lang: (data) => data.lang || data.globalSettings?.lang || "en",
+  language: (data) => {
+    const filePathStem = data.page.filePathStem;
+    const language = languages.find((lang) =>
+      lang.defaultPrefixRegex.test(filePathStem)
+    );
+
+    return language;
+  },
+  lang: (data) => {
+    // TODO: We should be able to rely on data.languages computed above but it seems unreliable...
+    const filePathStem = data.page.filePathStem;
+    const language = languages.find((lang) =>
+      lang.defaultPrefixRegex.test(filePathStem)
+    );
+
+    return language?.code || data.lang || defaultLang;
+  },
+  templateTranslations: (data) => {
+    const { translationKey, localizationKey } = data;
+    const allTemplates = data.collections.all;
+    const templates = allTemplates
+      .filter((template) => {
+        return (
+          (template.data.translationKey &&
+            template.data.translationKey === translationKey) ||
+          (template.data.localizationKey &&
+            template.data.localizationKey === localizationKey)
+        );
+      })
+      .map((template) => {
+        return {
+          fileSlug: template.page.fileSlug,
+          filePathStem: template.page.filePathStem,
+          translationKey: template.data.translationKey,
+          localizationKey: template.data.localizationKey,
+          lang: template.data.lang,
+          url: template.page.url,
+          name: template.data.name,
+          title: template.data.title,
+          isCurrent: template.data.lang === data.lang,
+          isDefault: template.data.lang === defaultLang,
+        };
+      });
+
+    const orderedTemplates = languages
+      .map((lang) => {
+        return templates.find((template) => template.lang === lang.code);
+      })
+      .filter(Boolean);
+
+    return orderedTemplates;
+  },
   h1Content: (data) => {
     const { rawInput } = data.page;
 
@@ -30,7 +76,6 @@ export default {
   },
   title: (data) => data.title || data.name || data.h1Content,
   permalink: (data) => {
-    // console.log({tags: data.tags})
     if (typeof data.permalink === "boolean" && !data.permalink) {
       return false;
     }
@@ -39,17 +84,8 @@ export default {
       return data.permalink;
     }
 
-    // const filePathStem = data.page.filePathStem
-    //     .replace(/^\/pages/, '')
-    //     .replace(new RegExp(`^\/${USER_DIR}`), '')
-    //     .replace(/\/index$/, '') + '/index'
-
     const url = mapInputPathToUrl(data.page.filePathStem);
     const permalink = url.permalink;
-
-    if (permalink.startsWith("/_")) {
-      return false;
-    }
 
     // TODO: understand why permalinks fail when I reference this
     // const parentsPath = (data.parentSlugs || []).join('/');

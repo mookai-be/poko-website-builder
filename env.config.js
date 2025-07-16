@@ -1,6 +1,9 @@
 import assert from "node:assert";
 import "dotenv/config";
 import { resolve, join } from "path";
+import fs from "node:fs";
+import yaml from "js-yaml";
+import { transformLanguage } from "./src/utils/languages.js";
 
 const processEnv = typeof process !== "undefined" ? process.env : {};
 
@@ -8,6 +11,8 @@ console.log({ processEnv });
 
 // GENERAL
 export const NODE_ENV = processEnv.NODE_ENV || "production";
+// TODO: Better way to identify live deploy
+export const IS_LIVE_DEPLOY = NODE_ENV;
 export const ELEVENTY_RUN_MODE = processEnv.ELEVENTY_RUN_MODE;
 
 // DIRECTORIES
@@ -109,6 +114,13 @@ export const PREFERRED_HOSTING = processEnv.PREFERRED_HOSTING || "node";
 
 assert(CMS_AUTH_URL, "[env] CMS_AUTH_URL is required");
 assert(BASE_URL, "[env] BASE_URL is required");
+
+// User Config from CMS
+// Read file in ${WORKING_DIR_ABSOLUTE}/_data/globalSettings.yaml
+const globalSettingsPath = `${WORKING_DIR_ABSOLUTE}/_data/globalSettings.yaml`;
+const globalSettingsYaml = fs.readFileSync(globalSettingsPath, "utf-8");
+export const globalSettings = yaml.load(globalSettingsYaml);
+export const languages = globalSettings.languages.map(transformLanguage);
 
 export default {
   NETLIFY_BUILD,

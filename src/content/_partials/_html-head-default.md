@@ -12,17 +12,13 @@
 {% include "_metadata.md" ignore missing %}
 
 {# Alternate langs #}
+{% for link in templateTranslations %}
 
-<link rel="alternate" hreflang="{{lang}}" href="{{baseUrl}}{{page.url}}" />
-{% for link in page.url | locale_links %}
-<link
-    rel="alternate"
-    hreflang="{{link.lang}}"
-    href="{{baseUrl}}{{link.url}}"
-/>
+<link rel="alternate" hreflang="{{link.lang}}" href="{{baseUrl}}{{link.url}}" />
 {% endfor %}
-{# TODO: Add when we can identify the default lang #}
-{# <link rel="alternate" hreflang="x-default" href="{{page.url}}" /> #}
+{% if defaultLanguage %}
+<link rel="alternate" hreflang="x-default" href="{{baseUrl}}{{defaultLanguage.url}}" />
+{% endif %}
 
 {# Favicons #} {# TODO: Generate favicons, manifest, etc #}
 

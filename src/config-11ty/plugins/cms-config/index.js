@@ -1,6 +1,7 @@
 // NOTE: I I need to work on a Sveltia fork: https://github.com/sveltia/sveltia-cms/issues/180#issuecomment-2256112119
 import {
   NODE_ENV,
+  IS_LIVE_DEPLOY,
   WORKING_DIR_ABSOLUTE,
   CONTENT_DIR,
   PROD_URL,
@@ -9,9 +10,16 @@ import {
   CMS_REPO,
   CMS_BACKEND,
   CMS_BRANCH,
+  globalSettings,
+  languages,
 } from "../../../../env.config.js";
 
 const isDev = NODE_ENV === "development";
+
+const default_locale = languages.find((lang) => lang.isCmsDefault)?.code;
+const locales = languages
+  .filter((lang) => /^published|preview/.test(lang.status))
+  .map((lang) => lang.code);
 
 const commonCollectionFields = [
   {
@@ -66,6 +74,7 @@ class CmsConfig {
     return {
       layout: false,
       permalink: "/admin/config.json",
+      lang: "en",
     };
   }
   render(data) {
@@ -76,6 +85,7 @@ class CmsConfig {
       name: "data",
       label: "Data",
       editor: { preview: false },
+      i18n: true,
       files: [
         {
           name: "globalSettings",
@@ -105,9 +115,72 @@ class CmsConfig {
               allow_language_selection: false,
             },
             {
-              name: "lang",
-              label: "Default Language",
-              widget: "string",
+              name: "languages",
+              label: "Languages",
+              description: "❗️ Re-build your site to see your changes here",
+              widget: "list",
+              required: true,
+              collapsed: true,
+              summary:
+                "{{status | capitalize}}: {{code | upper}} - {{name}} -- Default for: {{isCmsDefault | ternary('CMS', '')}} {{isWebsiteDefault | ternary('Website', '')}}",
+              fields: [
+                {
+                  name: "code",
+                  label: "Language Code",
+                  widget: "string",
+                  required: true,
+                },
+                {
+                  name: "name",
+                  label: "Language Name",
+                  widget: "string",
+                  required: true,
+                },
+                {
+                  name: "customUrlPrefix",
+                  label: "Custom URL Prefix",
+                  widget: "object",
+                  collapsed: false,
+                  required: false,
+                  // summary: "Position: {{fields.order}} | Nav Title: {{fields.title}}",
+                  fields: [
+                    {
+                      name: "prefix",
+                      label: "URL Prefix",
+                      widget: "string",
+                      required: false,
+                    },
+                  ],
+                },
+                {
+                  name: "status",
+                  label: "Status",
+                  widget: "select",
+                  default: "published",
+                  required: true,
+                  options: [
+                    { value: "published", label: "Published" },
+                    { value: "preview", label: "Preview" },
+                    { value: "inactive", label: "Inactive" },
+                  ],
+                },
+                {
+                  name: "isCmsDefault",
+                  label: "Is CMS Default",
+                  description: "Defaults to the first language of the list",
+                  widget: "boolean",
+                  required: true,
+                  default: false,
+                },
+                {
+                  name: "isWebsiteDefault",
+                  label: "Is Website Default",
+                  description: "Defaults to the first language of the list",
+                  widget: "boolean",
+                  required: true,
+                  default: false,
+                },
+              ],
             },
             {
               name: "collections",
@@ -118,6 +191,42 @@ class CmsConfig {
               // TODO: more customization on collections
               options: ["articles"],
             },
+          ],
+        },
+        {
+          name: "languageData",
+          label: "Language Data",
+          icon: "translate",
+          file: `${CONTENT_DIR}/{{locale}}/{{locale}}.yaml`,
+          // format: "yaml",
+          i18n: true,
+          fields: [
+            {
+              name: "dico",
+              label: "Dico",
+              widget: "keyvalue",
+              i18n: true,
+              required: false,
+            },
+            {
+              name: "data",
+              label: "Data",
+              widget: "keyvalue",
+              i18n: true,
+              required: false,
+            },
+            // {
+            //   name: "defaultLanguage",
+            //   label: "Default Language",
+            //   widget: "string",
+            // },
+            // {
+            //   name: "languages",
+            //   label: "Languages",
+            //   widget: "select",
+            //   multiple: true,
+            //   options: ["it", "en", "fr"],
+            // },
           ],
         },
         {
@@ -188,8 +297,50 @@ class CmsConfig {
         },
       ],
     };
+    const partialsFields = [
+      {
+        name: "body",
+        label: "Content",
+        widget: "markdown",
+        required: false,
+
+        // widget: "code",
+        // required: false,
+        // output_code_only: true,
+        // allow_language_selection: false,
+      },
+    ];
+    const partialsCollection = {
+      name: "partials",
+      label: "Partials",
+      label_singular: "Partial",
+      path: "{{slug}}",
+      icon: "brick",
+      folder: `${CONTENT_DIR}/_partials`,
+      extension: "md",
+      format: "yaml-frontmatter",
+      create: true,
+      identifier_field: "name",
+      // MEDIAS
+      media_folder: `/${CONTENT_DIR}/_images`,
+      public_folder: "/_images",
+      sortable_fields: {
+        fields: ["slug"],
+        default: {
+          field: "slug",
+          direction: "ascending",
+        },
+      },
+      fields: partialsFields,
+    };
     const pageFields = [
       ...commonCollectionFields,
+      // {
+      //   name: "partial",
+      //   label: "Partial",
+      //   widget: "relation",
+      //   collection: "partials",
+      // },
       // { name: 'collection', label: 'Collection', widget: 'object', types: [
       //   { name: 'pages', label: 'Pages', widget: 'object', fields: [
       //     { name: 'pages', label: 'Pages', widget: 'relation', collection: 'pages' },
@@ -387,6 +538,8 @@ class CmsConfig {
       label: "Pages",
       label_singular: "Page",
       path: "pages/{{slug}}",
+      // TODO: check if it works
+      slug: "{{name | localize}}", // This allows the slug to be localized
       summary:
         "{{name}} {{eleventyNavigation.add | ternary(' (nav ', '')}}{{eleventyNavigation.order}}{{eleventyNavigation.add | ternary(')', '')}}",
       sortable_fields: {
@@ -549,14 +702,22 @@ class CmsConfig {
       // I18N
       locale: "en", // Locale for the CMS admin ("en" or "jp" while in beta)
       i18n: {
+        // TODO: We can localize entry slugs: https://github.com/sveltia/sveltia-cms?tab=readme-ov-file#localizing-entry-slugs
+        // TODO: Is it compatible with 11ty?
         structure: "multiple_folders",
-        locales: ["it", "en", "fr"],
-        default_locale: "it", // Defaults to the first locale in the list
+        locales,
+        default_locale, // Defaults to the first locale in the list
         save_all_locales: false, // default: true // Allows for disabling a localization
         initial_locales: "default", // default: "all" // Allows for setting the initial locales
       },
+      slug: {
+        encoding: "ascii",
+        clean_accents: true, // Transliterate accented characters to their closest ASCII equivalent
+      },
       collections: [
         dataCollection,
+        { divider: true },
+        partialsCollection,
         { divider: true },
         pagesCollection,
         articlesCollection,
