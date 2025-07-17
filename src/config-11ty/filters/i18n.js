@@ -1,5 +1,8 @@
 // remove any lang prefix if present and leading/trailing slashes
 function stripUrl(input, langPrefixRegex) {
+  if (typeof input !== "string") {
+    return input;
+  }
   return input
     .replace(langPrefixRegex, "")
     .replace(/^\/+/, "")
