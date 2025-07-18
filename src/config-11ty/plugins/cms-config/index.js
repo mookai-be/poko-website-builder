@@ -678,6 +678,8 @@ class CmsConfig {
       site_url: PROD_URL,
       display_url: DISPLAY_URL,
       // logo_url: "https://your-site.com/images/logo.svg",
+      logo_url:
+        "https://raw.githubusercontent.com/m4rrc0/poko-website-builder/850a4d03fdb994f59bd502363939585bb0ad8f5c/_temp-content/_images/POKO-logo-RVB-01.jpg",
       // MEDIAS
       media_folder: `/${CONTENT_DIR}/_images`,
       public_folder: "/_images",

@@ -20,7 +20,6 @@
         label: "Partial",
         icon: "brick",
         fields: [
-          // TODO: Make relation widget work
           {
             name: "partialSlug",
             label: "Select Partial",
@@ -41,135 +40,389 @@
         },
       });
       CMS.registerEditorComponent({
-        // Internal id of the component
-        id: "collapsible-note",
-        // Visible label
-        label: "Collapsible Note",
-        // Fields the user need to fill out when adding an instance of the component
+        id: "eleventyImage",
+        label: "Image ++",
+        icon: "image",
         fields: [
           {
-            name: "summary",
-            label: "Summary",
-            widget: "string",
+            name: "src",
+            label: "Image",
+            widget: "image",
+            required: true,
           },
           {
-            name: "contents",
-            label: "Contents",
-            widget: "markdown",
+            name: "alt",
+            label: "Alt Text",
+            widget: "string",
+            required: false,
+          },
+          {
+            name: "title",
+            label: "Title",
+            widget: "string",
+            required: false,
+          },
+          {
+            name: "loading",
+            label: "Loading",
+            widget: "select",
+            options: [
+              { value: "", label: "Default" },
+              { value: "lazy", label: "Lazy" },
+              { value: "eager", label: "Eager" },
+            ],
+            required: false,
+          },
+          {
+            name: "internalLink",
+            label: "Internal Link",
+            widget: "relation",
+            collection: "pages",
+            required: false,
+          },
+          {
+            name: "wrapperTag",
+            label: "Wrapper Tag",
+            widget: "string",
+            required: false,
+          },
+          {
+            name: "imgAttrs",
+            label: "Other Image Attributes",
+            widget: "string",
+            required: false,
+          },
+          {
+            name: "wrapperAttrs",
+            label: "Wrapper Attributes",
+            widget: "string",
+            required: false,
+          },
+          {
+            name: "aAttrs",
+            label: "Link Attributes",
+            widget: "string",
+            required: false,
           },
         ],
-        // Regex pattern used to search for instances of this block in the markdown document.
-        // Patterns are run in a multiline environment (against the entire markdown document),
-        // and so generally should make use of the multiline flag (`m`). If you need to capture
-        // newlines in your capturing groups, you can either use something like
-        // `([\S\s]*)`, or you can additionally enable the "dot all" flag (`s`),
-        // which will cause `(.*)` to match newlines as well.
-        //
-        // Additionally, it's recommended that you use non-greedy capturing groups (e.g.
-        // `(.*?)` vs `(.*)`), especially if matching against newline characters.
-        pattern: /^<details><summary>(.*?)<\/summary>(.*?)<\/details>$/ms,
-        // Given a RegExp Match object
-        // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value),
-        // return an object with one property for each field defined in `fields`.
-        //
-        // This is used to populate the custom widget in the markdown editor in the CMS.
-        fromBlock: function (match) {
-          return {
-            summary: match[1],
-            contents: match[2],
-          };
-        },
-        // Given an object with one property for each field defined in `fields`,
-        // return the string you wish to be inserted into your markdown.
-        //
-        // This is used to serialize the data from the custom widget to the
-        // markdown document
-        toBlock: function (data) {
-          return `<details><summary>${data.summary}</summary>${data.contents}</details>`;
-        },
-        // Preview output for this component. Can either be a string or a React component
-        // (component gives better render performance)
-        toPreview: function (data) {
-          console.log("TO SUMMARY PREVIEW: ", { data });
-          return `
-        <details>
-          <summary>${data.summary}</summary>
-        
-          ${data.contents}
-        
-        </details>
-        `;
-        },
-      });
-
-      CMS.registerEditorComponent({
-        id: "test",
-        label: "Test",
-        fields: [{ name: "content", label: "Content", widget: "markdown" }],
-        pattern: /^{% test %}\s*([\S\s]*?)\s*{% \/test %}$/ms,
-        fromBlock: function (match) {
-          return {
-            content: match[1],
-          };
-        },
-        toBlock: function (data) {
-          return `{% test %}${data.content}{% /test %}`;
-        },
-        toPreview: function (data) {
-          return `TEST`;
-        },
-      });
-
-      CMS.registerEditorComponent({
-        id: "Image",
-        label: "Image",
-        fields: [{ name: "src", label: "Image", widget: "image" }],
+        // pattern:
+        //   /^{% image src="(.*?)" alt="(.*?)" title="(.*?)" loading="(.*?)" decoding="(.*?)" sizes="(.*?)" %}$/ms,
+        // pattern:
+        //   /^<img src="(.*?)" alt="(.*?)" title="(.*?)" loading="(.*?)" decoding="(.*?)" \/>$/ms,
         pattern:
-          /^{% Image src="([\S\s]*?)" alt="([\S\s]*?)" eleventy="([\S\s]*?)" %}\s*([\S\s]*?)\s*{% \/Image %}$/ms,
-        // pattern: /^{% Image %}\s*([\S\s]*?)\s*{% \/Image %}$/ms,
+          /^(?:<(\w+)\s*([^>]*?)>\s*)?(?:<a\s+([^>]*?)>\s*)?<img\s+([^>]*?)\s*\/>(?:\s*<\/a>)?(?:\s*<\/(\1)>)?$/ms,
+        // Group explanation:
+        // match[0]: Full match
+        // match[1]: Wrapper tag name (if any)
+        // match[2]: Wrapper tag attributes (if any)
+        // match[3]: Anchor tag attributes (if any)
+        // match[4]: Image tag attributes (always this group)
+        // match[5]: Closing wrapper tag reference (should match match[1])
         fromBlock: function (match) {
-          console.log({ match });
+          // Check if the wrapper tag is actually the a tag
+          // If match[1] is 'a' and there's no match[3], then it's a link without a wrapper
+          let wrapperTag = "";
+          let rawWrapperAttrs = "";
+          let rawAAttrs = "";
+
+          if (match[1] === "a" && !match[3]) {
+            // This is actually an <a> tag being mistakenly identified as wrapper
+            rawAAttrs = match[2] || "";
+          } else {
+            // Normal case: separate wrapper and a tag
+            wrapperTag = match[1] || "";
+            rawWrapperAttrs = match[2] || "";
+            rawAAttrs = match[3] || "";
+          }
+
+          // Process wrapper attributes
+          let wrapperAttrs = "";
+          if (rawWrapperAttrs) {
+            // Remove class, id, and other standard attributes if needed in the future
+            wrapperAttrs = rawWrapperAttrs.trim();
+          }
+
+          // Extract internal link from href if present
+          let internalLink = "";
+          let aAttrs = "";
+          if (rawAAttrs) {
+            const href = rawAAttrs.match(/href="(.*?)"/)?.[1] || "";
+            if (href) {
+              const linkMatch = href.match(
+                /\{\{'([^']+)'\s*\|\s*locale_url\}\}/
+              );
+              internalLink = linkMatch ? linkMatch[1] : "";
+            }
+
+            // Extract other link attributes by removing href
+            aAttrs = rawAAttrs.replace(/href="[^"]*"\s*/, "").trim();
+          }
+
+          // Image attributes are always in match[4] per our regex pattern
+          const imgAttrsContent = match[4];
+          const src = imgAttrsContent?.match(/src="(.*?)"/)?.[1];
+          const alt = imgAttrsContent?.match(/alt="(.*?)"/)?.[1];
+          const title = imgAttrsContent?.match(/title="(.*?)"/)?.[1];
+          const loading = imgAttrsContent?.match(/loading="(.*?)"/)?.[1];
+
+          // Extract custom attributes by removing the ones we've already processed
+          let rawImgAttrs = imgAttrsContent || "";
+          const standardAttrs = ["src", "alt", "title", "loading"];
+          standardAttrs.forEach((attr) => {
+            if (rawImgAttrs) {
+              rawImgAttrs = rawImgAttrs.replace(
+                new RegExp(`${attr}="[^"]*"\s*`),
+                ""
+              );
+            }
+          });
+          // Cleanup any extra spaces
+          rawImgAttrs = rawImgAttrs.trim();
+
           return {
-            src: match[1],
-            alt: match[2],
-            eleventy: match[3],
+            wrapperTag,
+            wrapperAttrs,
+            internalLink,
+            aAttrs,
+            src,
+            alt,
+            title,
+            imgAttrs: rawImgAttrs,
+            loading,
           };
         },
-        toBlock: function (data) {
-          return `{% Image src="${data.src}" alt="Una Scelta" eleventy={widths:"300", "pictureattr:style": "display:block;width:300px;margin-inline: auto"} /%}`;
+        toBlock: function ({
+          wrapperTag,
+          wrapperAttrs,
+          internalLink,
+          aAttrs,
+          imgAttrs,
+          ...dataRaw
+        }) {
+          // Filter out wrapper-specific and special properties from img attributes
+          const data = Object.fromEntries(
+            Object.entries(dataRaw).filter(
+              ([key]) =>
+                !["wrapperTag", "internalLink", "imgAttrs"].includes(key)
+            )
+          );
+
+          // Build standard img attributes
+          const standardAttrs = Object.entries(data)
+            .map(([key, value]) =>
+              key === "alt" || value ? `${key}="${value || ""}"` : ``
+            )
+            .filter(Boolean);
+
+          // Combine standard attributes with custom raw attributes if provided
+          let allAttrs = standardAttrs;
+          if (imgAttrs && typeof imgAttrs === "string" && imgAttrs.trim()) {
+            allAttrs = [...standardAttrs, imgAttrs.trim()];
+          }
+
+          // Join all attributes with spaces
+          const attrs = allAttrs.join(" ");
+
+          // Create img tag
+          let result = `<img ${attrs} />`;
+
+          // Add link if internal link is provided
+          if (internalLink) {
+            const linkAttributes = aAttrs ? ` ${aAttrs.trim()}` : "";
+            result = `<a href="{{'${internalLink}' | locale_url}}"${linkAttributes}>${result}</a>`;
+          }
+
+          // Add wrapper if provided (and it's not 'a' which would be redundant with the link)
+          if (wrapperTag && wrapperTag !== "a") {
+            const wrapperAttributes = wrapperAttrs
+              ? ` ${wrapperAttrs.trim()}`
+              : "";
+            result = `<${wrapperTag}${wrapperAttributes}>${result}</${wrapperTag}>`;
+          }
+
+          return result;
         },
-        toPreview: function (data) {
-          return `<img src="${data.src}" />`;
+        toPreview: function ({
+          wrapperTag,
+          wrapperAttrs,
+          internalLink,
+          aAttrs,
+          imgAttrs,
+          ...dataRaw
+        }) {
+          // Filter out wrapper-specific and special properties
+          const data = Object.fromEntries(
+            Object.entries(dataRaw).filter(
+              ([key]) =>
+                !["wrapperTag", "internalLink", "imgAttrs"].includes(key)
+            )
+          );
+
+          // Build standard img attributes
+          const standardAttrs = Object.entries(data)
+            .map(([key, value]) =>
+              key === "alt" || value ? `${key}="${value || ""}"` : ``
+            )
+            .filter(Boolean);
+
+          // Combine standard attributes with custom raw attributes if provided
+          let allAttrs = standardAttrs;
+          if (imgAttrs && typeof imgAttrs === "string" && imgAttrs.trim()) {
+            allAttrs = [...standardAttrs, imgAttrs.trim()];
+          }
+
+          // Join all attributes with spaces
+          const attrs = allAttrs.join(" ");
+
+          // Create img tag
+          let result = `<img ${attrs} />`;
+
+          // Add link if internal link is provided
+          if (internalLink) {
+            result = `<a href="#">${result}</a>`;
+          }
+
+          // Add wrapper if provided (and it's not 'a' which would be redundant with the link)
+          if (wrapperTag && wrapperTag !== "a") {
+            const wrapperAttributes = wrapperAttrs
+              ? ` ${wrapperAttrs.trim()}`
+              : "";
+            result = `<${wrapperTag}${wrapperAttributes}>${result}</${wrapperTag}>`;
+          }
+
+          return result;
         },
       });
 
-      CMS.registerEditorComponent({
-        id: "callout",
-        label: "Callout",
-        fields: [{ name: "content", label: "Content", widget: "markdown" }],
-        pattern: /^\{\% callout \%\}\s*([\S\s]*?)\s*\{\% \/callout \%\}$/m,
-        fromBlock: function (match) {
-          console.log({ match });
-          return {
-            content: match[1],
-          };
-        },
-        toBlock: function (data) {
-          console.log({ data });
-          return `
-{% callout %}
-${data.content}
-{% /callout %}
-`;
-        },
-        toPreview: function (data) {
-          return `
-        <div style="border: 1px solid currentColor; padding: 10px;">
-          ${data.content}
-        </div>
-        `;
-        },
-      });
+      //   // Internal id of the component
+      //   id: "collapsible-note",
+      //   // Visible label
+      //   label: "Collapsible Note",
+      //   // Fields the user need to fill out when adding an instance of the component
+      //   fields: [
+      //     {
+      //       name: "summary",
+      //       label: "Summary",
+      //       widget: "string",
+      //     },
+      //     {
+      //       name: "contents",
+      //       label: "Contents",
+      //       widget: "markdown",
+      //     },
+      //   ],
+      //   // Regex pattern used to search for instances of this block in the markdown document.
+      //   // Patterns are run in a multiline environment (against the entire markdown document),
+      //   // and so generally should make use of the multiline flag (`m`). If you need to capture
+      //   // newlines in your capturing groups, you can either use something like
+      //   // `([\S\s]*)`, or you can additionally enable the "dot all" flag (`s`),
+      //   // which will cause `(.*)` to match newlines as well.
+      //   //
+      //   // Additionally, it's recommended that you use non-greedy capturing groups (e.g.
+      //   // `(.*?)` vs `(.*)`), especially if matching against newline characters.
+      //   pattern: /^<details><summary>(.*?)<\/summary>(.*?)<\/details>$/ms,
+      //   // Given a RegExp Match object
+      //   // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value),
+      //   // return an object with one property for each field defined in `fields`.
+      //   //
+      //   // This is used to populate the custom widget in the markdown editor in the CMS.
+      //   fromBlock: function (match) {
+      //     return {
+      //       summary: match[1],
+      //       contents: match[2],
+      //     };
+      //   },
+      //   // Given an object with one property for each field defined in `fields`,
+      //   // return the string you wish to be inserted into your markdown.
+      //   //
+      //   // This is used to serialize the data from the custom widget to the
+      //   // markdown document
+      //   toBlock: function (data) {
+      //     return `<details><summary>${data.summary}</summary>${data.contents}</details>`;
+      //   },
+      //   // Preview output for this component. Can either be a string or a React component
+      //   // (component gives better render performance)
+      //   toPreview: function (data) {
+      //     console.log("TO SUMMARY PREVIEW: ", { data });
+      //     return `
+      //   <details>
+      //     <summary>${data.summary}</summary>
+
+      //     ${data.contents}
+
+      //   </details>
+      //   `;
+      //   },
+      // });
+
+      // CMS.registerEditorComponent({
+      //   id: "test",
+      //   label: "Test",
+      //   fields: [{ name: "content", label: "Content", widget: "markdown" }],
+      //   pattern: /^{% test %}\s*([\S\s]*?)\s*{% \/test %}$/ms,
+      //   fromBlock: function (match) {
+      //     return {
+      //       content: match[1],
+      //     };
+      //   },
+      //   toBlock: function (data) {
+      //     return `{% test %}${data.content}{% /test %}`;
+      //   },
+      //   toPreview: function (data) {
+      //     return `TEST`;
+      //   },
+      // });
+
+      // CMS.registerEditorComponent({
+      //   id: "Image",
+      //   label: "Image",
+      //   fields: [{ name: "src", label: "Image", widget: "image" }],
+      //   pattern:
+      //     /^{% Image src="([\S\s]*?)" alt="([\S\s]*?)" eleventy="([\S\s]*?)" %}\s*([\S\s]*?)\s*{% \/Image %}$/ms,
+      //   // pattern: /^{% Image %}\s*([\S\s]*?)\s*{% \/Image %}$/ms,
+      //   fromBlock: function (match) {
+      //     console.log({ match });
+      //     return {
+      //       src: match[1],
+      //       alt: match[2],
+      //       eleventy: match[3],
+      //     };
+      //   },
+      //   toBlock: function (data) {
+      //     return `{% Image src="${data.src}" alt="Una Scelta" eleventy={widths:"300", "pictureattr:style": "display:block;width:300px;margin-inline: auto"} /%}`;
+      //   },
+      //   toPreview: function (data) {
+      //     return `<img src="${data.src}" />`;
+      //   },
+      // });
+
+      //       CMS.registerEditorComponent({
+      //         id: "callout",
+      //         label: "Callout",
+      //         fields: [{ name: "content", label: "Content", widget: "markdown" }],
+      //         pattern: /^\{\% callout \%\}\s*([\S\s]*?)\s*\{\% \/callout \%\}$/m,
+      //         fromBlock: function (match) {
+      //           console.log({ match });
+      //           return {
+      //             content: match[1],
+      //           };
+      //         },
+      //         toBlock: function (data) {
+      //           console.log({ data });
+      //           return `
+      // {% callout %}
+      // ${data.content}
+      // {% /callout %}
+      // `;
+      //         },
+      //         toPreview: function (data) {
+      //           return `
+      //         <div style="border: 1px solid currentColor; padding: 10px;">
+      //           ${data.content}
+      //         </div>
+      //         `;
+      //         },
+      //       });
     </script>
   </body>
 </html>

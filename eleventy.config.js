@@ -55,6 +55,7 @@ import {
   ogImageSrc,
   emailLink,
 } from "./src/config-11ty/filters/index.js";
+import { image, gallery } from "./src/config-11ty/shortcodes/index.js";
 // import { ogImageSelected } from "./src/config-11ty/shortcodes/index.js";
 
 // TODOS:
@@ -240,6 +241,8 @@ export default async function (eleventyConfig) {
   eleventyConfig.addFilter("emailLink", emailLink);
 
   // --------------------- Shortcodes
+  eleventyConfig.addShortcode("image", image);
+  eleventyConfig.addShortcode("gallery", gallery);
   // eleventyConfig.addPairedShortcode("calloutShortcode", calloutShortcode);
   // eleventyConfig.addShortcode("ogImageSelected", ogImageSelected);
   // eleventyConfig.addShortcode(

@@ -1,7 +1,15 @@
 export default async function (eleventyConfig, pluginOptions) {
   eleventyConfig.versionCheck(">=3.0.0-alpha.1");
 
-  const rewriter = new HTMLRewriter();
+  let rewriter = null;
+
+  try {
+    rewriter = new HTMLRewriter();
+  } catch (error) {
+    console.error("HTMLRewriter not available without Bun.");
+    console.error(error);
+    return;
+  }
 
   for (const [selector, className] of Object.entries(
     pluginOptions?.classes || {}

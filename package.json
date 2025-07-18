@@ -53,6 +53,7 @@
     "bun": "^1.2.18",
     "chalk": "^5.4.1",
     "dayjs": "^1.11.13",
+    "deepmerge": "^4.3.1",
     "dotenv": "^16.4.7",
     "eleventy-plugin-icons": "^4.5.3",
     "fast-glob": "^3.3.3",
