@@ -1,4 +1,4 @@
-import { IS_LIVE_DEPLOY } from "../../env.config.js";
+import { BUILD_LEVEL } from "../../env.config.js";
 
 export const transformLanguage = (lang, index, languages) => {
   const cmsDefault = inferCmsDefault(languages);
@@ -23,7 +23,8 @@ const inferCmsDefault = (languages) => {
   );
 };
 const inferWebsiteDefault = (languages) => {
-  const regex = IS_LIVE_DEPLOY ? /^published/ : /^published|preview/;
+  const regex =
+    BUILD_LEVEL === "production" ? /^published/ : /^published|preview/;
   return (
     languages
       .filter((lang) => regex.test(lang.status))

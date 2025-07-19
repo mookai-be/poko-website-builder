@@ -15,6 +15,13 @@
       rel="cms-config-url"
     />
     <script>
+      function multilineToInline(content) {
+        return content.replace(/\n/g, "{% n %}");
+      }
+      function inlineToMultiline(content) {
+        return content.replace(/\{% n %\}/g, "\n");
+      }
+
       CMS.registerEditorComponent({
         id: "partial",
         label: "Partial",
@@ -294,6 +301,50 @@
         },
       });
 
+      CMS.registerEditorComponent({
+        id: "test",
+        label: "Test",
+        fields: [{ name: "content", label: "Content", widget: "markdown" }],
+        pattern:
+          /^{%\s*wrapper\s*([^>]*?)\s*%}\s*([\S\s]*?)\s*{%\s*endwrapper\s*%}$/ms,
+        fromBlock: function (match) {
+          console.log({ match });
+          const propsRaw = match[1];
+          const inlineContent = match[2];
+          // Convert from inline to multiline for editing
+          const multilineContent = inlineToMultiline(inlineContent);
+          return {
+            content: multilineContent,
+          };
+        },
+        toBlock: function (data) {
+          // Convert from multiline to inline for storage
+          const inlineContent = multilineToInline(data.content);
+          return `{% wrapper %}${inlineContent}{% endwrapper %}`;
+        },
+        toPreview: function (data) {
+          return `TEST`;
+        },
+      });
+
+      // CMS.registerEditorComponent({
+      //   id: "test",
+      //   label: "Test",
+      //   fields: [{ name: "content", label: "Content", widget: "markdown" }],
+      //   pattern: /^{% test %}\s*([\S\s]*?)\s*{% \/test %}$/ms,
+      //   fromBlock: function (match) {
+      //     return {
+      //       content: match[1],
+      //     };
+      //   },
+      //   toBlock: function (data) {
+      //     return `{% test %}${data.content}{% /test %}`;
+      //   },
+      //   toPreview: function (data) {
+      //     return `TEST`;
+      //   },
+      // });
+
       //   // Internal id of the component
       //   id: "collapsible-note",
       //   // Visible label
@@ -352,24 +403,6 @@
 
       //   </details>
       //   `;
-      //   },
-      // });
-
-      // CMS.registerEditorComponent({
-      //   id: "test",
-      //   label: "Test",
-      //   fields: [{ name: "content", label: "Content", widget: "markdown" }],
-      //   pattern: /^{% test %}\s*([\S\s]*?)\s*{% \/test %}$/ms,
-      //   fromBlock: function (match) {
-      //     return {
-      //       content: match[1],
-      //     };
-      //   },
-      //   toBlock: function (data) {
-      //     return `{% test %}${data.content}{% /test %}`;
-      //   },
-      //   toPreview: function (data) {
-      //     return `TEST`;
       //   },
       // });
 

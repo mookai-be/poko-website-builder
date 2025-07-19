@@ -1,7 +1,7 @@
 // NOTE: I I need to work on a Sveltia fork: https://github.com/sveltia/sveltia-cms/issues/180#issuecomment-2256112119
 import {
   NODE_ENV,
-  IS_LIVE_DEPLOY,
+  BUILD_LEVEL,
   WORKING_DIR_ABSOLUTE,
   CONTENT_DIR,
   PROD_URL,
@@ -437,6 +437,22 @@ class CmsConfig {
       //   ]
       // },
       {
+        name: "status",
+        label: "Status",
+        widget: "select",
+        options: [
+          { value: "published", label: "Published" },
+          { value: "preview", label: "Preview" },
+          { value: "noindex", label: "Noindex" },
+          // TODO: later implement encrypted pages
+          // { value: 'private', label: 'Private' },
+          { value: "inactive", label: "Inactive" },
+        ],
+        default: "published",
+        required: true,
+        i18n: true,
+      },
+      {
         name: "name",
         label: "Page Name",
         widget: "string",
@@ -679,7 +695,7 @@ class CmsConfig {
       display_url: DISPLAY_URL,
       // logo_url: "https://your-site.com/images/logo.svg",
       logo_url:
-        "https://raw.githubusercontent.com/m4rrc0/poko-website-builder/850a4d03fdb994f59bd502363939585bb0ad8f5c/_temp-content/_images/POKO-logo-RVB-01.jpg",
+        "https://raw.githubusercontent.com/m4rrc0/poko-website-builder/3fbe32b2f8a00e5e2b1a8fff60d7772ace8e1820/assets/favicon-POKO-01.png",
       // MEDIAS
       media_folder: `/${CONTENT_DIR}/_images`,
       public_folder: "/_images",

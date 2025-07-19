@@ -1,6 +1,6 @@
 import assert from "node:assert";
 import "dotenv/config";
-import { resolve, join } from "path";
+import { resolve, join, relative } from "path";
 import fs from "node:fs";
 import yaml from "js-yaml";
 import { transformLanguage } from "./src/utils/languages.js";
@@ -11,8 +11,6 @@ console.log({ processEnv });
 
 // GENERAL
 export const NODE_ENV = processEnv.NODE_ENV || "production";
-// TODO: Better way to identify live deploy
-export const IS_LIVE_DEPLOY = NODE_ENV;
 export const ELEVENTY_RUN_MODE = processEnv.ELEVENTY_RUN_MODE;
 
 // DIRECTORIES
@@ -43,6 +41,11 @@ export const WORKING_DIR =
 export const WORKING_DIR_ABSOLUTE =
   processEnv.WORKING_DIR_ABSOLUTE ||
   (CONTENT_DIR && resolve(CONTENT_PATH_PREFIX, CONTENT_DIR));
+
+export const SRC_DIR_ABSOLUTE = resolve(__dirname, "src");
+export const SRC_DIR_FROM_WORKING_DIR = WORKING_DIR_ABSOLUTE
+  ? relative(WORKING_DIR_ABSOLUTE, SRC_DIR_ABSOLUTE)
+  : null;
 
 // POKO_THEME
 export const POKO_THEME = processEnv.POKO_THEME || "default";
@@ -88,6 +91,7 @@ export const REPO_NAME =
 export const REPO =
   processEnv.REPO || (REPO_OWNER && REPO_NAME && `${REPO_OWNER}/${REPO_NAME}`);
 
+export const PROD_BRANCH = processEnv.PROD_BRANCH || "main";
 // BRANCH inferrence
 // NOTE: Netlify uses BRANCH
 // TODO: Verify Vercel! My understanding is it is VERCEL_GIT_COMMIT_REF
@@ -103,6 +107,14 @@ export const BASE_URL = processEnv.BASE_URL?.replace(/\/$/, "");
 export const PROD_URL = processEnv.PROD_URL;
 export const DISPLAY_URL = processEnv.DISPLAY_URL;
 
+// TODO: Better way to identify live deploy
+// BUILD_LEVEL: all, active, preview, production
+export const BUILD_LEVEL =
+  processEnv.BUILD_LEVEL ||
+  (BRANCH === PROD_BRANCH && ELEVENTY_RUN_MODE === "build" && "production") ||
+  (BRANCH && PROD_BRANCH && ELEVENTY_RUN_MODE === "build" && "preview") ||
+  "production"; // Better safe than sorry
+
 // CMS
 export const CMS_AUTH_URL = processEnv.CMS_AUTH_URL;
 export const CMS_REPO = processEnv.CMS_REPO;
@@ -112,15 +124,23 @@ export const CMS_BRANCH = processEnv.CMS_BRANCH || BRANCH;
 // Fallback hosting service for local dev
 export const PREFERRED_HOSTING = processEnv.PREFERRED_HOSTING || "node";
 
+assert(BRANCH, "[env] BRANCH is required");
 assert(CMS_AUTH_URL, "[env] CMS_AUTH_URL is required");
 assert(BASE_URL, "[env] BASE_URL is required");
 
 // User Config from CMS
 // Read file in ${WORKING_DIR_ABSOLUTE}/_data/globalSettings.yaml
 const globalSettingsPath = `${WORKING_DIR_ABSOLUTE}/_data/globalSettings.yaml`;
-const globalSettingsYaml = fs.readFileSync(globalSettingsPath, "utf-8");
-export const globalSettings = yaml.load(globalSettingsYaml);
-export const languages = globalSettings.languages.map(transformLanguage);
+let globalSettings = {};
+try {
+  const globalSettingsYaml = fs.readFileSync(globalSettingsPath, "utf-8");
+  globalSettings = yaml.load(globalSettingsYaml);
+} catch (error) {
+  console.error("Error reading globalSettings.yaml:", error);
+}
+export { globalSettings };
+export const languages =
+  globalSettings?.languages?.map(transformLanguage) || [];
 
 export default {
   NETLIFY_BUILD,

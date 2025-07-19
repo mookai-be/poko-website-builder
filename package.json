@@ -13,9 +13,9 @@
     "bun": ">=1.2.8"
   },
   "scripts": {
-    "build": "bun --bun run eleventy",
-    "dev": "bun --bun run eleventy --serve",
-    "start": "bun --bun run eleventy --serve",
+    "build": "BRANCH=$(git symbolic-ref --short HEAD) bun --bun run eleventy",
+    "dev": "BRANCH=$(git symbolic-ref --short HEAD) bun --bun run eleventy --serve",
+    "start": "BRANCH=$(git symbolic-ref --short HEAD) bun --bun run eleventy --serve",
     "clean": "rm -rf dist",
     "clean:modules": "rm -rf dist node_modules"
   },
