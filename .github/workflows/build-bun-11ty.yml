@@ -4,6 +4,13 @@
 #
 name: Deploy 11ty site to Pages
 
+env:
+  BUILD_PATH: "." # default value when not using subfolders
+  # BUILD_PATH: subfolder
+  TEST_URL: ${{ github.event.repository.html_url }}
+  BASE_URL: ${{ vars.BASE_URL }}
+  GITHUB_CONTEXT: ${{ toJson(github) }}
+
 on:
   # Runs on pushes targeting the default branch
   push:
@@ -23,10 +30,6 @@ permissions:
 concurrency:
   group: "pages"
   cancel-in-progress: false
-
-env:
-  BUILD_PATH: "." # default value when not using subfolders
-  # BUILD_PATH: subfolder
 
 jobs:
   build:
