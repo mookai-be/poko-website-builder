@@ -18,13 +18,13 @@ export const transformLanguage = (lang, index, languages) => {
 const inferCmsDefault = (languages) => {
   return (
     languages
-      .filter((lang) => /^published|preview/.test(lang.status))
+      .filter((lang) => /^published|draft/.test(lang.status))
       .find((lang) => lang.isCmsDefault) || languages[0]
   );
 };
 const inferWebsiteDefault = (languages) => {
   const regex =
-    BUILD_LEVEL === "production" ? /^published/ : /^published|preview/;
+    BUILD_LEVEL === "production" ? /^published/ : /^published|draft/;
   return (
     languages
       .filter((lang) => regex.test(lang.status))

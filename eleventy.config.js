@@ -29,7 +29,6 @@ import {
   LAYOUTS_DIR,
   OUTPUT_DIR,
   FILES_OUTPUT_DIR,
-  GLOBAL_PARTIALS_PREFIX,
   BASE_URL,
   PROD_URL,
   languages,
@@ -71,7 +70,7 @@ const defaultLanguage = languages.find((lang) => lang.isWebsiteDefault);
 const defaultLangCode = defaultLanguage?.code || "en";
 
 const statusesToUnrender =
-  BUILD_LEVEL === "production" ? ["inactive", "preview"] : ["inactive"];
+  BUILD_LEVEL === "production" ? ["inactive", "draft"] : ["inactive"];
 const unrenderedLanguages = languages
   .filter((lang) => statusesToUnrender.includes(lang.status))
   .map((lang) => lang.code);
@@ -265,37 +264,4 @@ export default async function (eleventyConfig) {
   //     return element;
   //   }
   // );
-
-  // --------------------- Plugins Late
-  // const userMarkdocTags = await import(
-  //   `./${WORKING_DIR}/_config/tags/index.js`
-  // );
-  // const userMarkdocNodes = await import(
-  //   `./${WORKING_DIR}/_config/nodes/index.js`
-  // );
-
-  // await eleventyConfig.addPlugin(pluginMarkdoc, {
-  //   deferTags: ["ReferencesManual", "For"],
-  //   usePartials: [
-  //     {
-  //       cwd: "src/config-markdoc/partials",
-  //       patterns: ["**/*.mdoc"],
-  //       ...(GLOBAL_PARTIALS_PREFIX && { pathPrefix: GLOBAL_PARTIALS_PREFIX }),
-  //       // pathPrefix: "global", // Files will appear as "global/filename.mdoc"
-  //       // debug: true,
-  //     },
-  //     {
-  //       cwd: path.join(config.dir.input, config.dir.includes),
-  //       patterns: ["**/*.{mdoc,md,html,webc}"],
-  //       // pathPrefix: "partials", // Files will appear as "partials/filename.mdoc"
-  //       // debug: true,
-  //     },
-  //   ],
-  //   transform: {
-  //     tags: { ...markdocTags, ...userMarkdocTags },
-  //     // TODO: Try providing a custom img node for eleventy-img to avoid needing the transform?
-  //     nodes: { ...markdocNodes, ...userMarkdocNodes },
-  //   },
-  //   // debug: true,
-  // });
 }

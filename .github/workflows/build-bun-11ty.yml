@@ -7,10 +7,17 @@ name: Deploy 11ty site to Pages
 env:
   BUILD_PATH: "." # default value when not using subfolders
   # BUILD_PATH: subfolder
-  TEST_URL: ${{ github.event.repository.html_url }}
   BASE_URL: ${{ vars.BASE_URL }}
+  PROD_URL: ${{ vars.PROD_URL }}
   CONTENT_DIR: ${{ vars.CONTENT_DIR }}
-  VARS: ${{ toJson(vars) }}
+  CMS_AUTH_URL: ${{ vars.CMS_AUTH_URL }}
+  PROD_BRANCH: ${{ vars.PROD_BRANCH }}
+  CMS_REPO: ${{ vars.CMS_REPO }}
+  CMS_BACKEND: ${{ vars.CMS_BACKEND }}
+  CMS_BRANCH: ${{ vars.CMS_BRANCH }}
+  _VARS: ${{ toJson(vars) }}
+  # We can retrieve more info from the github context
+  REPO_URL: ${{ github.event.repository.html_url }}
 
 on:
   # Runs on pushes targeting the default branch

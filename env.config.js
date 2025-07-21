@@ -22,10 +22,6 @@ export const CACHE_DIR = processEnv.CACHE_DIR || "node_modules/.astro";
 export const FILES_OUTPUT_DIR = processEnv.FILES_OUTPUT_DIR || "assets/files";
 export const FILES_LIBRARY_OUTPUT_DIR =
   processEnv.FILES_LIBRARY_OUTPUT_DIR || `${FILES_OUTPUT_DIR}/library`;
-export const GLOBAL_PARTIALS_PREFIX =
-  typeof processEnv.GLOBAL_PARTIALS_PREFIX === "string"
-    ? processEnv.GLOBAL_PARTIALS_PREFIX
-    : "global";
 
 // CONTENT_PATH_PREFIX
 export const CONTENT_PATH_PREFIX = processEnv.CONTENT_PATH_PREFIX || "";
@@ -65,10 +61,10 @@ export const LOCAL_BUILD = Boolean(
   !NETLIFY_BUILD && !CLOUDFLARE_BUILD && !VERCEL_BUILD
 );
 
-// GITHUB REPO inferrence
+// GITHUB Pages REPO inferrence
 export const GITHUB_GIT_REPO_OWNER = processEnv.GITHUB_REPOSITORY_OWNER;
 export const GITHUB_GIT_REPO_NAME =
-  processEnv.GITHUB_REPOSITORY.split("/").pop();
+  processEnv.GITHUB_REPOSITORY?.split("/")?.pop();
 export const GITHUB_GIT_REPO = processEnv.GITHUB_REPOSITORY;
 
 // VERCEL REPO inferrence
@@ -102,7 +98,10 @@ export const REPO_NAME =
   VERCEL_GIT_REPO_SLUG ||
   NETLIFY_REPO_NAME;
 export const REPO =
-  processEnv.REPO || (REPO_OWNER && REPO_NAME && `${REPO_OWNER}/${REPO_NAME}`);
+  processEnv.REPO ||
+  GITHUB_GIT_REPO ||
+  REPOSITORY_URL ||
+  (REPO_OWNER && REPO_NAME && `${REPO_OWNER}/${REPO_NAME}`);
 
 export const PROD_BRANCH = processEnv.PROD_BRANCH || "main";
 // BRANCH inferrence
@@ -114,19 +113,12 @@ export const BRANCH =
   processEnv.VERCEL_GIT_COMMIT_REF ||
   processEnv.GIT_BRANCH;
 
-// PROD URL
-// TODO: This is prone to forgetting to define the base url
-// TODO: Could be public and defined in config
-export const BASE_URL = processEnv.BASE_URL?.replace(/\/$/, "");
-export const PROD_URL = processEnv.PROD_URL;
-export const DISPLAY_URL = processEnv.DISPLAY_URL;
-
 // TODO: Better way to identify live deploy
-// BUILD_LEVEL: all, active, preview, production
+// BUILD_LEVEL: all, active, draft, production
 export const BUILD_LEVEL =
   processEnv.BUILD_LEVEL ||
   (BRANCH === PROD_BRANCH && ELEVENTY_RUN_MODE === "build" && "production") ||
-  (BRANCH && PROD_BRANCH && ELEVENTY_RUN_MODE === "build" && "preview") ||
+  (BRANCH && PROD_BRANCH && ELEVENTY_RUN_MODE === "build" && "draft") ||
   "production"; // Better safe than sorry
 
 // CMS
@@ -156,6 +148,23 @@ try {
 export { globalSettings };
 export const languages =
   globalSettings?.languages?.map(transformLanguage) || [];
+
+// URLs
+// TODO: This is prone to forgetting to define the base url
+// TODO: Could be public and defined in config
+// PROD_URL is the full URL of the 'deployed' site
+export const PROD_URL = (
+  processEnv.PROD_URL || globalSettings?.productionUrl
+)?.replace(/\/+$/, "");
+// BASE_URL is the full URL of the 'being deployed' site
+// TODO: Try and find the best ways to infer BASE_URL so we can only define a CANONICAL_URL / PROD_URL
+// TODO: If we have a decent way to infer this, we can fall back to PROD_URL
+export const BASE_URL = processEnv.BASE_URL?.replace(/\/+$/, "");
+// DISPLAY_URL is for the CMS button to the deployed site (prefer current deploy against production)
+export const DISPLAY_URL =
+  processEnv.DISPLAY_URL?.replace(/\/+$/, "") || BASE_URL || PROD_URL;
+
+console.log({ PROD_URL, productionUrl: globalSettings?.productionUrl });
 
 export default {
   NETLIFY_BUILD,

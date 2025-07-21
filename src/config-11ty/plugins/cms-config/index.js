@@ -10,7 +10,6 @@ import {
   CMS_REPO,
   CMS_BACKEND,
   CMS_BRANCH,
-  globalSettings,
   languages,
 } from "../../../../env.config.js";
 
@@ -18,7 +17,7 @@ const isDev = NODE_ENV === "development";
 
 const default_locale = languages.find((lang) => lang.isCmsDefault)?.code;
 const locales = languages
-  .filter((lang) => /^published|preview/.test(lang.status))
+  .filter((lang) => /^published|draft/.test(lang.status))
   .map((lang) => lang.code);
 
 const commonCollectionFields = [
@@ -100,6 +99,13 @@ class CmsConfig {
               widget: "string",
             },
             {
+              name: "productionUrl",
+              label: "Production URL",
+              widget: "string",
+              pattern:
+                "^https?://(www.)?[-a-zA-Z0-9@:%._+~#=]{1,256}.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)$",
+            },
+            {
               name: "logo",
               label: "Logo",
               widget: "image",
@@ -161,7 +167,7 @@ class CmsConfig {
                   required: true,
                   options: [
                     { value: "published", label: "Published" },
-                    { value: "preview", label: "Preview" },
+                    { value: "draft", label: "Draft" },
                     { value: "inactive", label: "Inactive" },
                   ],
                 },
@@ -443,7 +449,7 @@ class CmsConfig {
         widget: "select",
         options: [
           { value: "published", label: "Published" },
-          { value: "preview", label: "Preview" },
+          { value: "draft", label: "Draft" },
           { value: "noindex", label: "Noindex" },
           // TODO: later implement encrypted pages
           // { value: 'private', label: 'Private' },
@@ -680,18 +686,18 @@ class CmsConfig {
         automatic_deployments: false,
       },
       // TODO: configure data formating: https://github.com/sveltia/sveltia-cms?tab=readme-ov-file#controlling-data-output
-      // output: {
-      //   omit_empty_optional_fields: true,
-      //   encode_file_path: false, // true to URL-encode file paths for File/Image fields
-      //   json: {
-      //     indent_style: "space", // or tab
-      //     indent_size: 2,
-      //   },
-      //   yaml: {
-      //     quote: 'none', // or single or double
-      //     indent_size: 2
-      //   }
-      // },
+      output: {
+        omit_empty_optional_fields: true,
+        encode_file_path: true, // true to URL-encode file paths for File/Image fields
+        json: {
+          indent_style: "space", // space or tab
+          indent_size: 2,
+        },
+        yaml: {
+          quote: "double", // none or single or double
+          indent_size: 2,
+        },
+      },
       site_url: PROD_URL,
       display_url: DISPLAY_URL,
       // logo_url: "https://your-site.com/images/logo.svg",
