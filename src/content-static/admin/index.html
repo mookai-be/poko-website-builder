@@ -9,11 +9,7 @@
   <body>
     <!-- Include the script that builds the page and powers Sveltia CMS -->
     <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
-    <link
-      href="/admin/config.json"
-      type="application/json"
-      rel="cms-config-url"
-    />
+    <link href="config.json" type="application/json" rel="cms-config-url" />
     <script>
       function multilineToInline(content) {
         return content.replace(/\n/g, "{% n %}");

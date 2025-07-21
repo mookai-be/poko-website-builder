@@ -116,6 +116,7 @@ export const BRANCH =
 
 // PROD URL
 // TODO: This is prone to forgetting to define the base url
+// TODO: Could be public and defined in config
 export const BASE_URL = processEnv.BASE_URL?.replace(/\/$/, "");
 export const PROD_URL = processEnv.PROD_URL;
 export const DISPLAY_URL = processEnv.DISPLAY_URL;
