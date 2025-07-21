@@ -14,6 +14,7 @@ import {
 } from "../../../../env.config.js";
 
 const isDev = NODE_ENV === "development";
+const mustSetup = !languages?.length;
 
 const default_locale = languages.find((lang) => lang.isCmsDefault)?.code;
 const locales = languages
@@ -102,8 +103,12 @@ class CmsConfig {
               name: "productionUrl",
               label: "Production URL",
               widget: "string",
-              pattern:
-                "^https?://(www.)?[-a-zA-Z0-9@:%._+~#=]{1,256}.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)$",
+              // TODO: add pattern validation
+              // prettier-ignore
+              // pattern: [
+              //   "^https?://[\\w\\-._~:/?#[\\]@!$&'()*+,;=%]+$",
+              //   "Must be a URL starting with http:// or https://",
+              // ],
             },
             {
               name: "logo",
@@ -200,108 +205,112 @@ class CmsConfig {
             },
           ],
         },
-        {
-          name: "languageData",
-          label: "Language Data",
-          icon: "translate",
-          file: `${CONTENT_DIR}/{{locale}}/{{locale}}.yaml`,
-          // format: "yaml",
-          i18n: true,
-          fields: [
-            {
-              name: "dico",
-              label: "Dico",
-              widget: "keyvalue",
-              i18n: true,
-              required: false,
-            },
-            {
-              name: "data",
-              label: "Data",
-              widget: "keyvalue",
-              i18n: true,
-              required: false,
-            },
-            // {
-            //   name: "defaultLanguage",
-            //   label: "Default Language",
-            //   widget: "string",
-            // },
-            // {
-            //   name: "languages",
-            //   label: "Languages",
-            //   widget: "select",
-            //   multiple: true,
-            //   options: ["it", "en", "fr"],
-            // },
-          ],
-        },
-        {
-          name: "metadata",
-          label: "Default Metadata",
-          icon: "page_info",
-          file: `${CONTENT_DIR}/_data/metadata.yaml`,
-          // format: "yaml",
-          fields: [
-            {
-              name: "image",
-              label: "Image",
-              widget: "image",
-            },
-          ],
-        },
-        {
-          name: "redirects",
-          label: "Global Redirects",
-          icon: "call_split",
-          file: `${CONTENT_DIR}/_files/_redirects`,
-          // format: "yaml",
-          fields: [
-            {
-              name: "body",
-              label: "Redirects",
-              widget: "code",
-              required: false,
-              output_code_only: true,
-              allow_language_selection: false,
-            },
-          ],
-        },
-        {
-          name: "headers",
-          label: "Headers",
-          icon: "contract",
-          file: `${CONTENT_DIR}/_files/_headers`,
-          // format: "yaml",
-          fields: [
-            {
-              name: "body",
-              label: "Headers",
-              widget: "code",
-              required: false,
-              output_code_only: true,
-              allow_language_selection: false,
-            },
-          ],
-        },
-        {
-          name: "dataFiles",
-          label: "Data Files",
-          icon: "code",
-          file: `${CONTENT_DIR}/_data/none.yaml`,
-          media_folder: `/${CONTENT_DIR}/_data`,
-          public_folder: "/_data",
-          fields: [],
-        },
-        {
-          name: "publicFiles",
-          label: "Public Files",
-          icon: "attach_file",
-          file: `${CONTENT_DIR}/_files/none.yaml`,
-          media_folder: `/${CONTENT_DIR}/_files`,
-          public_folder: "/_files",
-          fields: [],
-        },
+        ...(mustSetup
+          ? []
+          : [
+              {
+                name: "languageData",
+                label: "Language Data",
+                icon: "translate",
+                file: `${CONTENT_DIR}/{{locale}}/{{locale}}.yaml`,
+                // format: "yaml",
+                i18n: true,
+                fields: [
+                  {
+                    name: "dico",
+                    label: "Dico",
+                    widget: "keyvalue",
+                    i18n: true,
+                    required: false,
+                  },
+                  {
+                    name: "data",
+                    label: "Data",
+                    widget: "keyvalue",
+                    i18n: true,
+                    required: false,
+                  },
+                  // {
+                  //   name: "defaultLanguage",
+                  //   label: "Default Language",
+                  //   widget: "string",
+                  // },
+                  // {
+                  //   name: "languages",
+                  //   label: "Languages",
+                  //   widget: "select",
+                  //   multiple: true,
+                  //   options: ["it", "en", "fr"],
+                  // },
+                ],
+              },
+              {
+                name: "metadata",
+                label: "Default Metadata",
+                icon: "page_info",
+                file: `${CONTENT_DIR}/_data/metadata.yaml`,
+                // format: "yaml",
+                fields: [
+                  {
+                    name: "image",
+                    label: "Image",
+                    widget: "image",
+                  },
+                ],
+              },
+              {
+                name: "redirects",
+                label: "Global Redirects",
+                icon: "call_split",
+                file: `${CONTENT_DIR}/_files/_redirects`,
+                // format: "yaml",
+                fields: [
+                  {
+                    name: "body",
+                    label: "Redirects",
+                    widget: "code",
+                    required: false,
+                    output_code_only: true,
+                    allow_language_selection: false,
+                  },
+                ],
+              },
+              {
+                name: "headers",
+                label: "Headers",
+                icon: "contract",
+                file: `${CONTENT_DIR}/_files/_headers`,
+                // format: "yaml",
+                fields: [
+                  {
+                    name: "body",
+                    label: "Headers",
+                    widget: "code",
+                    required: false,
+                    output_code_only: true,
+                    allow_language_selection: false,
+                  },
+                ],
+              },
+              {
+                name: "dataFiles",
+                label: "Data Files",
+                icon: "code",
+                file: `${CONTENT_DIR}/_data/none.yaml`,
+                media_folder: `/${CONTENT_DIR}/_data`,
+                public_folder: "/_data",
+                fields: [],
+              },
+              {
+                name: "publicFiles",
+                label: "Public Files",
+                icon: "attach_file",
+                file: `${CONTENT_DIR}/_files/none.yaml`,
+                media_folder: `/${CONTENT_DIR}/_files`,
+                public_folder: "/_files",
+                fields: [],
+              },
+            ]),
       ],
     };
     const partialsFields = [
@@ -694,7 +703,7 @@ class CmsConfig {
           indent_size: 2,
         },
         yaml: {
-          quote: "double", // none or single or double
+          quote: "none", // none or single or double
           indent_size: 2,
         },
       },
@@ -741,18 +750,22 @@ class CmsConfig {
       },
       collections: [
         dataCollection,
-        { divider: true },
-        partialsCollection,
-        { divider: true },
-        pagesCollection,
-        articlesCollection,
-        { divider: true },
-        // rawFilesCollection,
-        // filesCollection,
-        // dataFilesCollection,
-        ...data.userConfig.collections,
+        ...(mustSetup
+          ? []
+          : [
+              { divider: true },
+              partialsCollection,
+              { divider: true },
+              pagesCollection,
+              articlesCollection,
+              { divider: true },
+              // rawFilesCollection,
+              // filesCollection,
+              // dataFilesCollection,
+              ...data.userConfig.collections,
+            ]),
       ],
-      singletons: [...data.userConfig.singletons],
+      singletons: [...(mustSetup ? [] : [...data.userConfig.singletons])],
     };
 
     return JSON.stringify(generalConfig, null, isDev ? 2 : 0);
