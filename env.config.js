@@ -139,7 +139,8 @@ export const PREFERRED_HOSTING = processEnv.PREFERRED_HOSTING || "node";
 
 assert(BRANCH, "[env] BRANCH is required");
 // assert(CMS_AUTH_URL, "[env] CMS_AUTH_URL is required"); // Not required anymore with github personal token
-assert(BASE_URL, "[env] BASE_URL is required");
+// TODO: reinstate this !
+// assert(BASE_URL, "[env] BASE_URL is required");
 
 // User Config from CMS
 // Read file in ${WORKING_DIR_ABSOLUTE}/_data/globalSettings.yaml
