@@ -131,7 +131,7 @@ export const BUILD_LEVEL =
 
 // CMS
 export const CMS_AUTH_URL = processEnv.CMS_AUTH_URL;
-export const CMS_REPO = processEnv.CMS_REPO;
+export const CMS_REPO = processEnv.CMS_REPO || REPO;
 export const CMS_BACKEND = processEnv.CMS_BACKEND || "github";
 export const CMS_BRANCH = processEnv.CMS_BRANCH || BRANCH;
 
