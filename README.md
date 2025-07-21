@@ -1,6 +1,6 @@
-# ✨ poko - An Empowering Free Website Builder ✨
+# poko - A Free Website Builder for the People
 
-> *Own your corner of the web, freely and beautifully*
+> _Own your corner of the web, freely and beautifully_
 
 poko is not just another website builder—it's your path to digital independence. Create stunning, high-performance websites with no recurring costs, technical headaches, or corporate gatekeepers.
 
@@ -17,11 +17,12 @@ In a world of bloated, subscription-based platforms, poko stands apart:
 
 ## 💡 Why poko?
 
-"*The web was meant to be open, accessible, and empowering. poko brings that vision back.*"
+"_The web was meant to be open, accessible, and empowering. poko brings that vision back._"
 
 While other platforms lock you into expensive subscriptions and proprietary systems, we wanted to offer a liberating alternative, that is approachable for anyone, both financially and technically.
 
 Our ultimate hope is that poko becomes:
+
 - Your main social profile
 - A network of shared knowledge
 - A display of your creativity
@@ -36,7 +37,6 @@ Ready to build your digital home? Join our growing community of independent web 
 - 📚 [Documentation](#) (coming soon!)
 - 👀 [See Examples](#) (coming soon!)
 - 🤝 [Contribute](#contributing) to this open source project
-
 
 ## Licensing
 
@@ -82,6 +82,14 @@ This step depends on the static hosting provider you choose but generally involv
 - Creating a new project connected to the forked repository you just created
 - Edit your environment variables and project configuration
 
+##### Github Pages
+
+This repo is configured to deploy to Github Pages.  
+All you have to do is activate Github Pages in your repo.
+
+1. Go to your repo `settings` > `Pages`
+2. In the `Source` section, choose `Github Actions`.
+
 #### Creating the Github App
 
 1. Go to https://github.com/settings/apps
@@ -96,7 +104,7 @@ The environment variables are set in the provider's dashboard.
 If you want to see the full list of possible environment variables, have a look at the `.env.template` file.  
 But the main variable you care about are the following:
 
-- [] Update variables when the project has been reworked 
+- [] Update variables when the project has been reworked
 
 ### A note about working locally
 
@@ -105,17 +113,16 @@ Advanced users might want to work on their project locally. It can have many adv
 Here are a few things you need to know when working locally.
 
 - [] ... Need to be updated
-- 
+-
 - You need a `.env` file. Copy the `.env.template` file and fill in the variables.
 
 ## Roadmap and Maybes
 
-- [ ] 
+- [ ]
 
 ## Ressources
 
-- [ ] 
-
+- [ ]
 
 ## 💸 Money talk: disclosure and commitment
 
@@ -135,7 +142,7 @@ We hope that, with time, we will find that perfect balance. In the meantime, her
 
 poko is an open source project that thrives on community involvement. We welcome contributions of all kinds, from all people!
 
-poko is a project that is supported by the mookaï ASBL, a non-profit organization. 
+poko is a project that is supported by the mookaï ASBL, a non-profit organization.
 
 ### Ways to Contribute
 
@@ -171,4 +178,3 @@ Join our growing community of independent web creators! Connect with us through:
 - [Discord](#) (coming soon)
 
 We value kindness, inclusivity, and constructive collaboration. Let's build a better web together!
-
