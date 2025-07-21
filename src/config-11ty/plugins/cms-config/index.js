@@ -103,6 +103,7 @@ class CmsConfig {
               name: "logo",
               label: "Logo",
               widget: "image",
+              required: false,
             },
             {
               name: "htmlHead",
