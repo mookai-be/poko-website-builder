@@ -9,7 +9,8 @@ env:
   # BUILD_PATH: subfolder
   TEST_URL: ${{ github.event.repository.html_url }}
   BASE_URL: ${{ vars.BASE_URL }}
-  GITHUB_CONTEXT: ${{ toJson(github) }}
+  CONTENT_DIR: ${{ vars.CONTENT_DIR }}
+  GITHUB_CONTEXT: ${{ github }}
 
 on:
   # Runs on pushes targeting the default branch
