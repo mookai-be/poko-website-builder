@@ -85,10 +85,17 @@ This step depends on the static hosting provider you choose but generally involv
 ##### Github Pages
 
 This repo is configured to deploy to Github Pages.  
-All you have to do is activate Github Pages in your repo.
+All you have to do is:
 
+1. activate Github Pages in your repo.
 1. Go to your repo `settings` > `Pages`
-2. In the `Source` section, choose `Github Actions`.
+1. In the `Source` section, choose `Github Actions`.
+1. Set the `BASE_URL` environment variable to your repo url.
+1. Go to your repo `settings` > `Secrets and variables` > `Actions`
+1. Click on the `Variables` tab
+1. Click on `New repository variable`
+1. Name it `BASE_URL`
+1. Set the value to your repo url.
 
 #### Creating the Github App
 

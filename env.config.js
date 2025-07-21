@@ -53,6 +53,7 @@ export const POKO_THEME = processEnv.POKO_THEME || "default";
 export const USER_DIR = processEnv.USER_DIR || `_user-content`;
 
 // Detect the current hosting provider used
+export const GITHUB_PAGES_BUILD = processEnv.GITHUB_PAGES === "true";
 export const NETLIFY_BUILD = Boolean(
   processEnv.NETLIFY || processEnv.NETLIFY_DEPLOYMENT_ID
 );
@@ -63,6 +64,12 @@ export const VERCEL_BUILD = Boolean(processEnv.VERCEL_DEPLOYMENT_ID);
 export const LOCAL_BUILD = Boolean(
   !NETLIFY_BUILD && !CLOUDFLARE_BUILD && !VERCEL_BUILD
 );
+
+// GITHUB REPO inferrence
+export const GITHUB_GIT_REPO_OWNER = processEnv.GITHUB_REPOSITORY_OWNER;
+export const GITHUB_GIT_REPO_NAME =
+  processEnv.GITHUB_REPOSITORY.split("/").pop();
+export const GITHUB_GIT_REPO = processEnv.GITHUB_REPOSITORY;
 
 // VERCEL REPO inferrence
 export const VERCEL_GIT_REPO_OWNER =
@@ -85,9 +92,15 @@ export const NETLIFY_REPO =
 
 // REPO inferrence
 export const REPO_OWNER =
-  processEnv.REPO_OWNER || VERCEL_GIT_REPO_OWNER || NETLIFY_REPO_OWNER;
+  processEnv.REPO_OWNER ||
+  GITHUB_GIT_REPO_OWNER ||
+  VERCEL_GIT_REPO_OWNER ||
+  NETLIFY_REPO_OWNER;
 export const REPO_NAME =
-  processEnv.REPO_NAME || VERCEL_GIT_REPO_SLUG || NETLIFY_REPO_NAME;
+  processEnv.REPO_NAME ||
+  GITHUB_GIT_REPO_NAME ||
+  VERCEL_GIT_REPO_SLUG ||
+  NETLIFY_REPO_NAME;
 export const REPO =
   processEnv.REPO || (REPO_OWNER && REPO_NAME && `${REPO_OWNER}/${REPO_NAME}`);
 
@@ -125,7 +138,7 @@ export const CMS_BRANCH = processEnv.CMS_BRANCH || BRANCH;
 export const PREFERRED_HOSTING = processEnv.PREFERRED_HOSTING || "node";
 
 assert(BRANCH, "[env] BRANCH is required");
-assert(CMS_AUTH_URL, "[env] CMS_AUTH_URL is required");
+// assert(CMS_AUTH_URL, "[env] CMS_AUTH_URL is required"); // Not required anymore with github personal token
 assert(BASE_URL, "[env] BASE_URL is required");
 
 // User Config from CMS
