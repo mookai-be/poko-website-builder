@@ -18,4 +18,31 @@ Racontez-nous!
 
 <img src="/_images/mooka%C3%AF-cover.webp" alt="" />
 
-Valeurs
+## Valeurs
+
+- No-bulshit
+- Qualité
+- Partage
+- Eco-conception
+- Good vibes
+- Impact positif
+
+## Services
+
+- Développement web
+- Graphisme
+- SEO
+- Copywriting
+- Digitalisation
+- Formations
+- Conférences
+
+Prenez rdv
+
+Demandez un devis
+
+C'est grauit et vous verrez, c'est cool de parler à un humain ;-)
+
+## Contact
+
+-formulaire de contact-
