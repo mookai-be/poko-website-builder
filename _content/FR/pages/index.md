@@ -7,7 +7,6 @@ localizationKey: f834a37bab2e
 status: published
 name: Associatif humain créatif engagé
 eleventyNavigation:
-  title: Accueil
   order: 1
 ---
 ## Associatif humain créatif engagé
