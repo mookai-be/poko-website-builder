@@ -5,7 +5,7 @@ createdAt: 2025-07-22T10:56:00.000Z
 uuid: 6c1682ad658a
 localizationKey: 9a91cbc61f1e
 status: published
-name: mookaïte
+name: Pourquoi 'mookaï'?
 ---
 # Pourquoi 'mookaï'?
 
