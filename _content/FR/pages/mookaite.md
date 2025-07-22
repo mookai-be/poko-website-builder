@@ -49,6 +49,6 @@ Débloquer les tensions, libérer les élans. La Mookaïte stimule la **créativ
 
 Dans un monde parfois trop bruyant, trop rapide, nous voulons être ce **refuge discret mais puissant**, comme la pierre qui protège en silence. Un espace de sécurité, de respect et de transformation.
 
-### mookaï, c’est plus qu’un nom: c’est une **fréquence**, une **philosophie**, un **ancrage**.
+### mookaï, c’est plus qu’un nom pour nous: c’est une **fréquence**, une **philosophie**, un **ancrage**.
 
 À travers ce nom, nous honorons la puissance douce du vivant, et nous vous invitons à cheminer avec nous, dans cette énergie d’écoute, d’élan, et de transformation.
