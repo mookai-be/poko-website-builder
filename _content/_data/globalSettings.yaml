@@ -1,0 +1,13 @@
+siteName: mookaï asbl
+productionUrl: https://www.mookai.be
+logo: /_images/mooka%C3%AF-logo-RVB-SANS-BORDS-38.webp
+languages:
+  - code: FR
+    name: Français
+    customUrlPrefix:
+      prefix: ''
+    status: published
+    isCmsDefault: false
+    isWebsiteDefault: false
+collections:
+  - articles
