@@ -16,7 +16,7 @@ Vous voulez **collaborer** avec une équipe **créative** et **engagée**?
 
 (bouton)Racontez-nous!
 
-<img src="/_images/mooka%C3%AF-cover.webp" alt="" />
+<img src="/_images/mooka%C3%AF-cover.webp" alt="cover-world-illustration" />
 
 ## Valeurs
 
@@ -71,3 +71,5 @@ Tess est plus qu’une graphiste. Elle est artiste avant tout. De la photographi
 ## Contact
 
 -formulaire de contact-
+
+{% include "_footer.md" %}
