@@ -85,6 +85,8 @@ améliorer son organisation personnelle ou l'organisation interne de ses équipe
 
 C'est gratuit et vous verrez, c'est cool de parler à un humain ;-)
 
+(quote in chantal font)`Your only job is to be more you`
+
 ## Équipe
 
 ### Marc
