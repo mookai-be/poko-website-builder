@@ -1,6 +1,7 @@
 siteName: mookaï asbl
 productionUrl: https://www.mookai.be
 logo: /_images/mooka%C3%AF-logo-RVB-SANS-BORDS-38.webp
+htmlHead: <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/m4rrc0/ctx-css@c/una-scelta/dist/index.css">
 languages:
   - code: FR
     name: Français
