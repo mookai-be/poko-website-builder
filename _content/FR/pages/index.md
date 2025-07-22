@@ -98,7 +98,7 @@ C'est gratuit et vous verrez, c'est cool de parler à un humain ;-)
 - Sites web
 - Formation/conférences
 
-Marc est curieux, intelligent et plein de ressources. Il est passionné par l’apprentissage et conscient du monde qui l’entoure. Il trouve toujours les bons mots réhaussés d’une touche personnelle pleine de créativité.
+Marc, dis [M4rrco](https://www.m4rr.co/fr/) sur la toile est curieux, intelligent et plein de ressources. Il est passionné par l’apprentissage et conscient du monde qui l’entoure. Il trouve toujours les bons mots réhaussés d’une touche personnelle pleine de créativité.
 
 ### Tess
 
@@ -109,7 +109,7 @@ Marc est curieux, intelligent et plein de ressources. Il est passionné par l’
 - Design & Mise en page
 - Formation/conférences
 
-Tess est plus qu’une graphiste. Elle est artiste avant tout. De la photographie à la peinture en passant par l’illustration. Elle expérimente tous les jours la transformation des formes et des couleurs en émotions
+[Tess](https://www.tess-h.be/) est plus qu’une graphiste. Elle est artiste avant tout. De la photographie à la peinture en passant par l’illustration. Elle expérimente tous les jours la transformation des formes et des couleurs en émotions.
 
 (bouton)Tu veux nous rejoindre?
 
