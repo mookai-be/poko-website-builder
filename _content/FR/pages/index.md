@@ -51,6 +51,7 @@ C'est gratuit et vous verrez, c'est cool de parler à un humain ;-)
 - Stratégie
 - Architecture d’information
 - Sites web
+- Formation/conférences
 
 Marc est curieux, intelligent et plein de ressources. Il est passionné par l’apprentissage et conscient du monde qui l’entoure. Il trouve toujours les bons mots réhaussés d’une touche personnelle pleine de créativité.
 
@@ -61,6 +62,7 @@ Marc est curieux, intelligent et plein de ressources. Il est passionné par l’
 - Identité visuelle
 - Travail artistique personnalisé
 - Design & Mise en page
+- Formation/conférences
 
 Tess est plus qu’une graphiste. Elle est artiste avant tout. De la photographie à la peinture en passant par l’illustration. Elle expérimente tous les jours la transformation des formes et des couleurs en émotions
 
