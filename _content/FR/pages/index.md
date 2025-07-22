@@ -66,6 +66,8 @@ Marc est curieux, intelligent et plein de ressources. Il est passionné par l’
 
 Tess est plus qu’une graphiste. Elle est artiste avant tout. De la photographie à la peinture en passant par l’illustration. Elle expérimente tous les jours la transformation des formes et des couleurs en émotions
 
+(bouton)Tu veux nous rejoindre?
+
 ## Contact
 
 -formulaire de contact-
