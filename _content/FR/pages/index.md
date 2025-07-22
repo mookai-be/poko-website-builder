@@ -33,12 +33,53 @@ Vous voulez **collaborer** avec une équipe **créative** et **engagée**?
 ## Services
 
 - Développement web
+    - On fait des sites web et applications en éco-conception pour diminuer l'impact écologique de vos outils digitaux. Ce qui est cool, c'est que ça a aussi un impact super positif sur les performances de votre site, l'expérience utilisateur, le référencement, … la totale!
+Et qui dit approche durable, dit aussi accessibilité.
+Notre solution favorite n'est pas WordPress. WordPress est gourmand en énergie et difficile à optimiser donc on préfère éviter.
+Mais ça veut dire qu'on a beaucoup de flexibilité pour implémenter la solution qui vous convient et si vous voulez du “clé en main”, poko est notre website builder écologique favori ! Normal, c'est nous qui le développons en mutualisant le travail entre tous les beaux projets que nous soutenons et qui nous soutiennent en retour.
 - Graphisme
+    - Le graphisme, c'est la partie de votre comm' qui saute aux yeux ! Autant faire en sorte que ça en jette, non?!
+Logo
+Identité graphique
+Maquette web
+Magazine
+Flyers
+Rapport annuel
+…
+On peut faire tout ça et on écoute vos besoins avant de se lancer.
+Notre but est de créer le chemin le plus direct possible entre vous et votre public avec les moyens à notre disposition.
 - SEO
+    - vos contenus
+les aspects techniques de votre site
+la mise en place d'outils d'analyse
+…
 - Copywriting
+    - La rédaction de contenu, c'est pas pour tout le monde. Et parfois, quand on baigne dans son domaine d'activité jusqu'au cou, on est pas le mieux placé pour en parler. Dans ce genre de cas, le mieux est de faire appel à un "traducteur" pour transformer votre jargon en phrases percutantes pour votre audience.
 - Digitalisation
+    - _“Tu as rangé où le PV de la dernière AG?”_
+_“C'est quelle version du document Excel que je dois ouvrir?”_
+_“C'est quand la prochaine réunion?”_
+Si vous vous reconnaissez, on peut vous aider. 😉
+Digitaliser ses processus = sérénité (si c'est bien fait, évidemment).
+Il y a plusieurs options pour avancer dans ce domaine:
+mise en place d'outils
+formations
+coaching
+immersion
+…
 - Formations
+    - On est passionnés.
+On est engagés.
+On cherche sans cesse à s'améliorer.
+On adore partager.
+Du coup, on propose des formations !
+Créer ou gérer son site web
+préparer des visuels pour les réseaux sociaux
+optimiser son référencement
+améliorer son organisation personnelle ou l'organisation interne de ses équipes
+…
 - Conférences
+    - Vous voulez qu'on vienne parler d'un sujet pointu qui nous passionne? Contactez-nous!
 
 (bouton)Prenez rdv
 (bouton)Demandez un devis
