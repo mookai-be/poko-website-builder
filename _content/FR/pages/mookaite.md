@@ -11,6 +11,8 @@ name: mookaïte
 
 ## La mookaïte
 
+<img src="/_images/Capture%20d%E2%80%99%C3%A9cran%202023-12-15%20%C3%A0%2013.36.33.webp" alt="" />
+
 La pierre précieuse Mookaïte, également connue sous le nom de Mookaïte Jasper, est réputée pour ses nombreux bienfaits
 
 ## Vitalité et énergie
