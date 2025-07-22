@@ -46,6 +46,8 @@ C'est gratuit et vous verrez, c'est cool de parler à un humain ;-)
 
 ### Marc
 
+<img src="/_images/IMG_7294.webp" alt="" />
+
 - Stratégie
 - Architecture d’information
 - Sites web
@@ -53,6 +55,8 @@ C'est gratuit et vous verrez, c'est cool de parler à un humain ;-)
 Marc est curieux, intelligent et plein de ressources. Il est passionné par l’apprentissage et conscient du monde qui l’entoure. Il trouve toujours les bons mots réhaussés d’une touche personnelle pleine de créativité.
 
 ### Tess
+
+<img src="/_images/IMG_7234.webp" alt="" />
 
 - Identité visuelle
 - Travail artistique personnalisé
