@@ -71,5 +71,3 @@ Tess est plus qu’une graphiste. Elle est artiste avant tout. De la photographi
 ## Contact
 
 -formulaire de contact-
-
-{% include "_footer.md" %}
