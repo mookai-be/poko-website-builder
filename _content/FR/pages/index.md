@@ -40,7 +40,25 @@ Vous voulez **collaborer** avec une équipe **créative** et **engagée**?
 (bouton)Prenez rdv
 (bouton)Demandez un devis
 
-C'est grauit et vous verrez, c'est cool de parler à un humain ;-)
+C'est gratuit et vous verrez, c'est cool de parler à un humain ;-)
+
+## Équipe
+
+### Marc
+
+- Stratégie
+- Architecture d’information
+- Sites web
+
+Marc est curieux, intelligent et plein de ressources. Il est passionné par l’apprentissage et conscient du monde qui l’entoure. Il trouve toujours les bons mots réhaussés d’une touche personnelle pleine de créativité.
+
+### Tess
+
+- Identité visuelle
+- Travail artistique personnalisé
+- Design & Mise en page
+
+Tess est plus qu’une graphiste. Elle est artiste avant tout. De la photographie à la peinture en passant par l’illustration. Elle expérimente tous les jours la transformation des formes et des couleurs en émotions
 
 ## Contact
 
