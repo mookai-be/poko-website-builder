@@ -14,7 +14,7 @@ name: Associatif humain créatif engagé
 Vous avez des **projets durables et concrets** pour **faire bouger le monde**?
 Vous voulez **collaborer** avec une équipe **créative** et **engagée**?
 
-Racontez-nous!
+(bouton)Racontez-nous!
 
 <img src="/_images/mooka%C3%AF-cover.webp" alt="" />
 
@@ -37,9 +37,8 @@ Racontez-nous!
 - Formations
 - Conférences
 
-Prenez rdv
-
-Demandez un devis
+(bouton)Prenez rdv
+(bouton)Demandez un devis
 
 C'est grauit et vous verrez, c'est cool de parler à un humain ;-)
 
