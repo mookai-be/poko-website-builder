@@ -124,10 +124,17 @@ export default async function (eleventyConfig) {
   // --------------------- Custom Nunjucks setup
   // TODO: Does this work as expected?
   // NOTE: This is a workaround because virtual templates does not work for includes
-  let nunjucksEnvironment = new Nunjucks.Environment([
-    new Nunjucks.FileSystemLoader(`${WORKING_DIR}/${PARTIALS_DIR}`),
-    new Nunjucks.FileSystemLoader(`src/content/_partials`),
-  ]);
+
+  console.log(eleventyConfig);
+  let nunjucksEnvironment = new Nunjucks.Environment(
+    [
+      new Nunjucks.FileSystemLoader(`${WORKING_DIR}/${PARTIALS_DIR}`),
+      new Nunjucks.FileSystemLoader(`src/content/_partials`),
+    ],
+    {
+      dev: true,
+    }
+  );
   eleventyConfig.setLibrary("njk", nunjucksEnvironment);
 
   // --------------------- Preprocessors
