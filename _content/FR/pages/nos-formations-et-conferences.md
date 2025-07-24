@@ -13,6 +13,8 @@ eleventyNavigation:
 
 ## Formation InDesign 1j
 
+<img src="/_images/Adobe_InDesign_CC_icon.svg.webp" alt="" />
+
 ### Le béaba d’InDesign pour être capable de créer ton propre projet (print ou digital)
 
 #### La matinée (9h30-13h): Pourquoi choisir InDesign?
@@ -38,6 +40,8 @@ eleventyNavigation:
 Prendre avec toi de quoi manger (facile et rapide)
 
 ## Conférence: Les bonnes pratiques du graphisme - Avoir l'œil
+
+<img src="/_images/confe__rence-avoir-l-oeil-4.webp" alt="" />
 
 Cet atelier/conférence te propose de passer en revue les bonnes pratiques à tenir à l’œil quand tu veux faire du graphisme ou les points d’attentions si tu veux sous traiter.
 
@@ -65,9 +69,9 @@ _Tu veux mon avis sur tes visuels? N’hésite pas à les apporter, on pourra le
 
 ## Un site web facile à petit prix
 
-## Un site web facile à petit prix, c’est possible?
+<img src="/_images/pexels-diva-plavalaguna-6937933.webp" alt="" />
 
-Faire un site, c’est à la fois beaucoup plus simple que tu ne le penses et assez compliqué si tu veux faire ça bien!
+Un site web facile à petit prix, c’est possible? Faire un site, c’est à la fois beaucoup plus simple que tu ne le penses et assez compliqué si tu veux faire ça bien!
 Beaucoup de plateformes te vendent un site “optimisé” dans un bel emballage marketing “clé en main”…
 
 - Mais qu’est ce que c’est un bon site exactement?
@@ -83,6 +87,8 @@ A la fin de la formation, tu devrais avoir pu identifier quel outil de création
 
 ## Organisation personnelle et gestion de l’information
 
+<img src="/_images/hygi%C3%A8ne-digitale.webp" alt="" />
+
 Tu galères pour t’organiser, retrouver tes infos importantes, communiquer avec tes collaborateurs ou coordonner tes projets?
 On ne va pas prétendre multiplier par 10 ta productivité mais en prenant un peu de recul sur ton organisation et en appliquant quelques bonnes pratiques, on peut au moins réduire un petit peu la charge mentale et fluidifier le travail, la collaboration et la communication.
 
@@ -90,6 +96,8 @@ La formation aborde quelques grands principes et est bourrée d’astuces et d�
 On travaillera également en workshop pour te laisser le temps de réfléchir à ton organisation actuelle et éventuellement poser les nouvelles bases d’un système plus fluide.
 
 ## Ma vie idéale: connexion et alignement à Soi
+
+<img src="/_images/ma-vie-ide_ale.webp" alt="" />
 
 **InnerFlow** est une collection de principes, de méthodes et d’outils, synthétisés en une pratique holistique visant à rechercher “l’Alignement de l’Être”. On t’invite à prendre les commandes de ta vie avec quelques astuces et surtout un changement d’état d’esprit en profondeur.
 Pour cette partie de l’atelier, nous nous concentrerons sur la connexion à soi et essayant de faire émerger l’Être que l’on aspire à devenir.
