@@ -110,3 +110,74 @@ Le tableau de visualisation (ou vision board), sera une représentation visuelle
 - Moment d’introspection guidé par Marc (de 10h à 13h)
 - Pause repas (de 13h à 14h)
 - Collage guidé par Tess (de 14h à 17h)
+
+## Atelier collage: Rêves & projets - Vision Board
+
+<img src="/_images/Atelier-collage.webp" alt="" />
+
+Le collage est un médium super pour aller à la rencontre de soi-même et pour apprendre à s’exprimer librement. Il comporte une dimension ludique et onirique où le lâcher-prise est un élément important.
+Il s’agit de l’école du regard qui se met en place de manière intuitive et par la pratique: construction d’une image, rapports entre les couleurs, jeux de perspectives, équilibre des proportions, ombres et lumières,…
+
+Ce moment pour toi va te permettre de découvrir (ou de pratiquer) le collage autour d’un thème donné.
+Des pistes sont proposées à partir du thème choisi, ensuite à toi d’expérimenter les diverses manières de faire cohabiter des images.
+
+Le tableau de visualisation (ou vision board), est une représentation visuelle (images, photos, mots, textes, citations,…) du futur auquel tu aspires. Il permet d’augmenter tes chances d’y parvenir, en envoyant régulièrement à ton cerveau l’idée que c’est là-bas que tu veux aller.
+
+La richesse de ce que tu produis et de ce que les autres participants produisent est très varié et ton imagination se met en marche guidé par les images et les divers papiers disponibles.
+Pendant ton temps de création, tu oublieras un peu ton quotidien.
+
+#### Lors de l’atelier
+
+L’objectif de cet atelier est de t’exprimer sans pré-requis ni connaissance artistique particulière. Augmenter ta concentration. Développer ton habileté manuelle et visuelle.
+Apprendre l’harmonie des couleurs, les proportions et l’équilibre des formes.
+
+On pioche dans les divers papiers et images à disposition, on découpe, on déchire, on peut apporter des éléments en plus (plume, tissus, végétaux,…), on peut ajouter de la peinture (acrylique, encres) ou des écritures, ou encore d’autres médiums (feutres, peinture, pastels,…), on agence ces éléments sélectionnés, on les colle à plat sur le format.
+
+- accepter l’inconnu
+- faire confiance à ce qui vient
+- se laisser surprendre
+- découvrir une autre façon de créer
+- se faire plaisir
+
+J’accompagne chaque participant dans la construction de son œuvre, les proportions, l’harmonie des couleurs, l’équilibre des masses, tout en laissant la place à la liberté d’expression de chacun.
+
+#### Durée
+
+± 3h
+
+#### Prix
+
+40€ (tout le matériel est fourni mais si des images ou autres te tiennent à cœur n’hésite pas à les amener)
+
+#### La créativité
+
+En créativité, il n’y a jamais de “raté”, juste des expériences. C’est génial pour en apprendre sur ta propre personnalité, créativité…
+
+En pleine conscience et à ton rythme, une activité créative peut beaucoup t’apporter. Elle te permet de:
+
+- déposer le trop plein émotionnel,
+- modifier tes schémas de pensée habituels,
+- te reconnecte à tes rêves, à ton enfant intérieur, et ta capacité d’émerveillement
+- te connecter à d’autres modes d’expression que le langage verbal,
+- mettre une distance entre toi et ce que tu vis,
+- envisager la vie d’une façon nouvelle,
+- retrouver ta capacité de résilience,
+- t’apprendre à être dans l’instant présent,
+- te permettre d’écouter ta petite voix intérieure,
+- découvrir comment accéder à une meilleure connaissance de toi-même,
+- t’accorder des moments de liberté, de folie, de lâcher-prise,
+- trouver des solutions pour faire face aux difficultés, aux obstacles dans ta vie,
+- améliorer votre santé (libérer du stress, vider ton mental, calmer tes angoisses, exprimer tes émotions) et ainsi connecter les 3 corps de ton être (mental, corporel, émotionnel).
+
+## Permanence graphique - en ligne
+
+<img src="/_images/permanance-graphique.webp" alt="" />
+
+- Tu travailles seul.e sur ta communication visuelle?
+- Tu voudrais faire voir tes projets par une graphiste professionnelle?
+- Tu as une question pour finaliser un fichier?
+- Tu es étudiant et tu as l’une ou l’autre question pour ton briefing?
+
+Je me connecte ici: [https://meet.google.com/pba-vwdm-xhr](https://meet.google.com/pba-vwdm-xhr) **pendant 1h**
+
+Tu peux venir me montrer tes projets pour avoir mon avis/feedback… **gratuitement**.
