@@ -11,4 +11,4 @@ eleventyNavigation:
 ---
 # Nos formations et conférences
 
-## {% include ".md" %}
+## {% include "_Formations.md" %}
