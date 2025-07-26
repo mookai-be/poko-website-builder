@@ -7,8 +7,16 @@
     <title>Admin Panel | poko</title>
   </head>
   <body>
-    <!-- Include the script that builds the page and powers Sveltia CMS -->
+    {% if env.CMS_IMPORT === "cdn" %}
     <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
+    {% else %}
+    <script>
+      import CMS from "{{ '/assets/js/sveltia-cms.js' | url }}";
+      CMS.init();
+    </script>
+    {% endif %}
+    <!-- Include the script that builds the page and powers Sveltia CMS -->
+
     <link href="config.json" type="application/json" rel="cms-config-url" />
     <script>
       function multilineToInline(content) {
@@ -20,7 +28,7 @@
 
       CMS.registerEditorComponent({
         id: "eleventyImage",
-        label: "Image ++",
+        label: "Image",
         icon: "image",
         fields: [
           {
