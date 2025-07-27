@@ -13,7 +13,7 @@ console.log({ processEnv });
 export const NODE_ENV = processEnv.NODE_ENV || "production";
 export const ELEVENTY_RUN_MODE = processEnv.ELEVENTY_RUN_MODE;
 // Can be "cdn", "npm", "<relative-path>"
-export const CMS_IMPORT = processEnv.CMS_IMPORT || "cdn";
+export const CMS_IMPORT = processEnv.CMS_IMPORT || "npm";
 
 // DIRECTORIES
 // Output directory

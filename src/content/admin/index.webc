@@ -24,7 +24,7 @@ layout: null
     ></script>
 
     <link href="config.json" type="application/json" rel="cms-config-url" />
-    <script webc:keep>
+    <script webc:raw>
       function multilineToInline(content) {
         return content.replace(/\n/g, "{% n %}");
       }
@@ -34,7 +34,7 @@ layout: null
 
       CMS.registerEditorComponent({
         id: "eleventyImage",
-        label: "Image",
+        label: "Image ++",
         icon: "image",
         fields: [
           {
@@ -307,14 +307,94 @@ layout: null
             widget: "relation",
             collection: "partials",
           },
+          // {
+          //   name: "data",
+          //   label: "Data",
+          //   widget: "keyvalue",
+          //   required: false,
+          // },
+          // {
+          //   name: "data",
+          //   label: "Data",
+          //   widget: "code",
+          //   required: false,
+          //   // TODO: default-language not working
+          //   default_language: "json",
+          //   output_code_only: true,
+          //   allow_language_selection: false,
+          // },
+          {
+            name: "templateEngineOverride",
+            label: "Markup language override",
+            widget: "select",
+            required: false,
+            // default: "njk,md",
+            options: [
+              { value: "", label: "Default" },
+              { value: "njk,md", label: "Markdown" },
+              { value: "njk", label: "Nunjucks (HTML)" },
+              { value: "webc", label: "WebC" },
+            ],
+          },
         ],
-        // Match example: {% include "book-btn.md" %}
-        pattern: /^{% include "(.*?)\.md" %}$/ms,
+        // Match example: {% include "book-btn.md" %} or {% partial "book-btn.md" %}
+        // pattern: /^{% (?:include|partial) "(.*?)\.md" %}$/ms,
+        pattern: /^{% (?:include|partial)\s+([^>]*?)\s*%}$/ms,
+
         fromBlock: function (match) {
-          return { partialSlug: match[1] };
+          // Parse the arguments from the captured string
+          const argsString = match[1];
+          const args = argsString.split(", ").map((arg) => arg.trim());
+
+          // Extract the slug (removing quotes and .md extension)
+          const slugWithQuotes = args[0];
+          const partialSlug = slugWithQuotes
+            .replace(/("|')/g, "")
+            .replace(/\.md$/, "");
+
+          // Extract data object if present (second argument)
+          let data;
+          if (args.length > 1) {
+            try {
+              data = JSON.parse(args[1]);
+            } catch (e) {
+              // If parsing fails, it might not be a valid JSON
+              console.log("Error parsing data JSON:", e);
+            }
+          }
+
+          // Extract template engine override if present (third argument)
+          let templateEngineOverride;
+          if (args.length > 2) {
+            templateEngineOverride = args[2].replace(/("|')/g, "");
+          }
+
+          return {
+            partialSlug,
+            data,
+            templateEngineOverride,
+          };
         },
         toBlock: function (data) {
-          return `{% include "${data.partialSlug}.md" %}`;
+          // TODO: data could be a keyval field
+          const dataString = data.data ? JSON.stringify(data.data) : "{}";
+          // const dataString = data.data ? data.data : "{}";
+
+          const args = [
+            `"${data.partialSlug}.md"`,
+            ...(data.data && dataString !== "{}"
+              ? [dataString]
+              : data.templateEngineOverride
+              ? ["{}"]
+              : []),
+            ...(data.templateEngineOverride
+              ? [`"${data.templateEngineOverride}"`]
+              : []),
+          ];
+
+          console.log({ data, dataString, args });
+
+          return `{% partial ${args.join(", ")} %}`;
         },
         toPreview: function (data) {
           return `TEST`;
@@ -358,120 +438,123 @@ layout: null
         },
       });
 
+      // TODO: decide if we want to keep this or use sections instead
       // <ul>{% for item in data %}<li>Item: {{item}}</li>{% endfor %}<ul>
-      CMS.registerEditorComponent({
-        id: "advancedList",
-        label: "Advanced List",
-        icon: "list",
-        fields: [
-          {
-            name: "wrapperTag",
-            label: "Wrapper Tag",
-            widget: "string",
-            default: "ul",
-          },
-          {
-            name: "wrapperAttrs",
-            label: "Wrapper Attributes",
-            widget: "string",
-            default: "role='list'",
-          },
-          {
-            name: "itemTag",
-            label: "Item Tag",
-            widget: "string",
-            default: "li",
-          },
-          {
-            name: "itemAttrs",
-            label: "Item Attributes",
-            widget: "string",
-            default: "role='listitem'",
-          },
-          { name: "data", label: "Data", widget: "string" },
-          { name: "content", label: "Content", widget: "markdown" },
-        ],
-        pattern:
-          /^(?:<([^>]+)>)?{% for item in (.*?)(?=\s*%}) %}(?:<([^>]+)>([\S\s]*?)<\/\w+>|([\S\s]*?)){% endfor %}(?:<\/\w+>)?$/ms,
-        fromBlock: function (match) {
-          // Group explanation for simplified pattern with optional tags:
-          // match[0]: Full match
-          // match[1]: Full wrapper tag with attributes (optional)
-          // match[2]: Data variable name
-          // match[3]: Full item tag with attributes (optional)
-          // match[4]: Item content if item tag exists
-          // match[5]: Item content if no item tag
+      // CMS.registerEditorComponent({
+      //   id: "advancedList",
+      //   label: "Advanced List",
+      //   icon: "list",
+      //   fields: [
+      //     {
+      //       name: "wrapperTag",
+      //       label: "Wrapper Tag",
+      //       widget: "string",
+      //       default: "ul",
+      //     },
+      //     {
+      //       name: "wrapperAttrs",
+      //       label: "Wrapper Attributes",
+      //       widget: "string",
+      //       default: "role='list'",
+      //     },
+      //     {
+      //       name: "itemTag",
+      //       label: "Item Tag",
+      //       widget: "string",
+      //       default: "li",
+      //     },
+      //     {
+      //       name: "itemAttrs",
+      //       label: "Item Attributes",
+      //       widget: "string",
+      //       default: "role='listitem'",
+      //     },
+      //     { name: "data", label: "Data", widget: "string" },
+      //     { name: "content", label: "Content", widget: "markdown" },
+      //   ],
+      //   pattern:
+      //     /^(?:<([^>]+)>)?{% for item in (.*?)(?=\s*%}) %}(?:<([^>]+)>([\S\s]*?)<\/\w+>|([\S\s]*?)){% endfor %}(?:<\/\w+>)?$/ms,
+      //   fromBlock: function (match) {
+      //     // Group explanation for simplified pattern with optional tags:
+      //     // match[0]: Full match
+      //     // match[1]: Full wrapper tag with attributes (optional)
+      //     // match[2]: Data variable name
+      //     // match[3]: Full item tag with attributes (optional)
+      //     // match[4]: Item content if item tag exists
+      //     // match[5]: Item content if no item tag
 
-          // Parse wrapper tag and attributes
-          let wrapperTag = "";
-          let wrapperAttrs = "";
-          if (match[1]) {
-            const wrapperMatch = match[1].match(/^(\w+)(?:\s+(.*))?$/);
-            if (wrapperMatch) {
-              wrapperTag = wrapperMatch[1] || "";
-              wrapperAttrs = wrapperMatch[2] || "";
-            }
-          }
+      //     // Parse wrapper tag and attributes
+      //     let wrapperTag = "";
+      //     let wrapperAttrs = "";
+      //     if (match[1]) {
+      //       const wrapperMatch = match[1].match(/^(\w+)(?:\s+(.*))?$/);
+      //       if (wrapperMatch) {
+      //         wrapperTag = wrapperMatch[1] || "";
+      //         wrapperAttrs = wrapperMatch[2] || "";
+      //       }
+      //     }
 
-          // Get data variable
-          const data = match[2] ? match[2].trim() : "";
+      //     // Get data variable
+      //     const data = match[2] ? match[2].trim() : "";
 
-          // Parse item tag and attributes
-          let itemTag = "";
-          let itemAttrs = "";
-          if (match[3]) {
-            const itemMatch = match[3].match(/^(\w+)(?:\s+(.*))?$/);
-            if (itemMatch) {
-              itemTag = itemMatch[1] || "";
-              itemAttrs = itemMatch[2] || "";
-            }
-          }
+      //     // Parse item tag and attributes
+      //     let itemTag = "";
+      //     let itemAttrs = "";
+      //     if (match[3]) {
+      //       const itemMatch = match[3].match(/^(\w+)(?:\s+(.*))?$/);
+      //       if (itemMatch) {
+      //         itemTag = itemMatch[1] || "";
+      //         itemAttrs = itemMatch[2] || "";
+      //       }
+      //     }
 
-          // Get content (with or without item tags)
-          const inlineContent = match[4] || match[5] || "";
+      //     // Get content (with or without item tags)
+      //     const inlineContent = match[4] || match[5] || "";
 
-          // Convert from inline to multiline for editing
-          const multilineContent = inlineToMultiline(inlineContent);
+      //     // Convert from inline to multiline for editing
+      //     const multilineContent = inlineToMultiline(inlineContent);
 
-          return {
-            wrapperTag,
-            wrapperAttrs,
-            data,
-            itemTag,
-            itemAttrs,
-            content: multilineContent,
-          };
-        },
-        toBlock: function (data) {
-          const content = data.content + "\n";
-          const wrapperTag = data.wrapperTag || "";
-          const wrapperAttrs = data.wrapperAttrs || "";
-          const itemTag = data.itemTag || "";
-          const itemAttrs = data.itemAttrs || "";
-          const dataVar = data.data || "";
+      //     return {
+      //       wrapperTag,
+      //       wrapperAttrs,
+      //       data,
+      //       itemTag,
+      //       itemAttrs,
+      //       content: multilineContent,
+      //     };
+      //   },
+      //   toBlock: function (data) {
+      //     const content = data.content + "\n";
+      //     const wrapperTag = data.wrapperTag || "";
+      //     const wrapperAttrs = data.wrapperAttrs || "";
+      //     const itemTag = data.itemTag || "";
+      //     const itemAttrs = data.itemAttrs || "";
+      //     const dataVar = data.data || "";
 
-          // Convert from multiline to inline for storage
-          const inlineContent = multilineToInline(content);
+      //     // Convert from multiline to inline for storage
+      //     const inlineContent = multilineToInline(content);
 
-          // Build wrapper attributes
-          const wrapperAttrStr = wrapperAttrs ? ` ${wrapperAttrs}` : "";
+      //     // Build wrapper attributes
+      //     const wrapperAttrStr = wrapperAttrs ? ` ${wrapperAttrs}` : "";
 
-          // Build item attributes
-          const itemAttrStr = itemAttrs ? ` ${itemAttrs}` : "";
+      //     // Build item attributes
+      //     const itemAttrStr = itemAttrs ? ` ${itemAttrs}` : "";
 
-          const wrapperStr = wrapperTag
-            ? `<${wrapperTag}${wrapperAttrStr}>`
-            : "";
-          const endWrapperStr = wrapperTag ? `</${wrapperTag}>` : "";
-          const itemStr = itemTag ? `<${itemTag}${itemAttrStr}>` : "";
-          const endItemStr = itemTag ? `</${itemTag}>` : "";
+      //     const wrapperStr = wrapperTag
+      //       ? `<${wrapperTag}${wrapperAttrStr}>`
+      //       : "";
+      //     const endWrapperStr = wrapperTag ? `</${wrapperTag}>` : "";
+      //     const itemStr = itemTag ? `<${itemTag}${itemAttrStr}>` : "";
+      //     const endItemStr = itemTag ? `</${itemTag}>` : "";
 
-          return `${wrapperStr}{% for item in ${dataVar} %}${itemStr}${inlineContent}${endItemStr}{% endfor %}${endWrapperStr}`;
-        },
-        toPreview: function (data) {
-          return `TEST`;
-        },
-      });
+      //     return `${wrapperStr}{% for item in ${dataVar} %}${itemStr}${inlineContent}${endItemStr}{% endfor %}${endWrapperStr}`;
+      //   },
+      //   toPreview: function (data) {
+      //     return `TEST`;
+      //   },
+      // });
+
+      // OLD TESTS
 
       // CMS.registerEditorComponent({
       //   id: "test",

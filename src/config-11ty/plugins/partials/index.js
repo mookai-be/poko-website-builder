@@ -1,6 +1,6 @@
 import path from "node:path";
 import fglob from "fast-glob";
-import deepmerge from "deepmerge";
+// import deepmerge from "deepmerge";
 
 export default async function (eleventyConfig, pluginOptions) {
   eleventyConfig.versionCheck(">=3.0.0-alpha.1");

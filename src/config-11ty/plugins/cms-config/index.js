@@ -388,8 +388,8 @@ class CmsConfig {
             required: false,
             fields: [
               {
-                name: "markdown",
-                label: "Markdown",
+                name: "value",
+                label: "Value",
                 widget: "markdown",
                 required: false,
               },

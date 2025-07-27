@@ -12,7 +12,6 @@ function stripUrl(input, langPrefixRegex) {
 }
 
 function lookupTemplateTranslations(inputOptional, templates) {
-  // console.log(this);
   const input = inputOptional || this.page.url;
   // Avoid going through all templates if we have the right data available in ctx
   if (input === this.ctx.translationKey || input === this.ctx.page.url) {

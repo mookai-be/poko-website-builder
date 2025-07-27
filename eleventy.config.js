@@ -60,7 +60,6 @@ import {
   emailLink,
 } from "./src/config-11ty/filters/index.js";
 import {
-  // partial as partialShortcode,
   newLine,
   image,
   gallery,
