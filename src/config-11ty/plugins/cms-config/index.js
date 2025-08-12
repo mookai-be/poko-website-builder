@@ -14,8 +14,6 @@ import {
   languages,
 } from "../../../../env.config.js";
 
-console.log({ selectedCollections });
-
 const isDev = NODE_ENV === "development";
 const mustSetup = !languages?.length;
 
@@ -616,6 +614,7 @@ class CmsConfig {
         name: "metadata",
         label: "Metadata",
         widget: "object",
+        required: false,
         collapsed: true,
         i18n: true,
         fields: [
@@ -650,6 +649,7 @@ class CmsConfig {
         name: "pagePreview",
         label: "Page Preview",
         widget: "object",
+        required: false,
         collapsed: true,
         i18n: true,
         fields: [
@@ -825,9 +825,9 @@ class CmsConfig {
     const optionalCollections = {
       articles: articlesCollection,
     };
-    const selectedOptionalCollections = (selectedCollections || []).map(
-      (collectionName) => optionalCollections[collectionName]
-    );
+    const selectedOptionalCollections = (selectedCollections || [])
+      .map((collectionName) => optionalCollections[collectionName])
+      .filter(Boolean);
 
     const generalConfig = {
       backend: {
