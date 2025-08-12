@@ -215,8 +215,12 @@ export default async function (eleventyConfig) {
   // Populate Default Content: Copy `src/content-static/` to `dist`
   eleventyConfig.addPassthroughCopy({ "src/content-static": "/" });
   // Copy User's files: `src/content-static/` to `dist`
-  eleventyConfig.addPassthroughCopy({ [`${WORKING_DIR}/_files`]: "/" });
-  eleventyConfig.addPassthroughCopy({ [`${WORKING_DIR}/*.css`]: "/" });
+  eleventyConfig.addPassthroughCopy({
+    [`${WORKING_DIR}/_files`]: "/assets/files/",
+  });
+  eleventyConfig.addPassthroughCopy({
+    [`${WORKING_DIR}/*.css`]: "/assets/styles/",
+  });
   // Copy Sveltia CMS if not using CDN
   if (CMS_IMPORT === "npm") {
     eleventyConfig.addPassthroughCopy({
