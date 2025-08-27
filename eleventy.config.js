@@ -332,7 +332,11 @@ export default async function (eleventyConfig) {
       },
       {
         name: "tabler",
-        path: "node_modules/@tabler/icons/icons",
+        path: "node_modules/@tabler/icons/icons/outline",
+      },
+      {
+        name: "tablerFilled",
+        path: "node_modules/@tabler/icons/icons/filled",
       },
     ],
   });

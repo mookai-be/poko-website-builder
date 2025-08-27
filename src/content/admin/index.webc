@@ -26,6 +26,7 @@ layout: null
     <link href="config.json" type="application/json" rel="cms-config-url" />
     <script webc:raw>
       function multilineToInline(content) {
+        return content
         return typeof content === 'string' ? content.replace(/\n/g, "{% n %}") : content;
       }
       function inlineToMultiline(content) {
@@ -514,13 +515,15 @@ layout: null
 
           // TODO: improve parsing here to make sure we output properly formatted attributes list
           // {% wrapper tag="div", class="any number of classes", id="any" %}
-          // Probable saparators: ` `, `,`, `, `
+          // Probable separators: ` `, `,`, `, `
           // But we need to avoid splitting spaces in between quotes (like in `class`)
           const tagAttrs = wrapperAttrs;
 
           return `{% wrapper tag="${wrapperTag}"${
             tagAttrs ? `, ${tagAttrs}` : ""
-          } %}${inlineContent}{% endwrapper %}`;
+          } %}
+${inlineContent}
+{% endwrapper %}`;
         },
         toPreview: function (data) {
           return `TEST`;

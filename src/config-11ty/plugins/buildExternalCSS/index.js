@@ -23,5 +23,8 @@ export default async function (eleventyConfig, pluginOptions) {
     // plugins: [cssTransformPlugin],
     minify: MINIFY,
     cssChunking: true,
+  }).catch((e) => {
+    console.error(e);
+    throw e;
   });
 }
