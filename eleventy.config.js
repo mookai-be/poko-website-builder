@@ -335,10 +335,17 @@ export default async function (eleventyConfig) {
         path: "node_modules/@tabler/icons/icons/outline",
       },
       {
+        name: "tablerOutline",
+        path: "node_modules/@tabler/icons/icons/outline",
+      },
+      {
         name: "tablerFilled",
         path: "node_modules/@tabler/icons/icons/filled",
       },
     ],
+    icon: {
+      class: (name, source) => `icon icon-${source} icon-${name}`,
+    },
   });
   await eleventyConfig.addPlugin(buildExternalCSS);
   // TODO: import those classes from a data file
