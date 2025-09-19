@@ -11,9 +11,10 @@ import {
 // import presetWind4 from '@unocss/preset-wind4'
 import layoutRules from "./rules/ctx-layouts.js";
 import utilitiesRules from "./rules/ctx-utilities.js";
+import atomsRules from "./rules/ctx-atoms.js";
 
 export default defineConfig({
-  rules: [...layoutRules, ...utilitiesRules],
+  rules: [...layoutRules, ...utilitiesRules, ...atomsRules],
   // shortcuts: [
   //   // ...
   // ],

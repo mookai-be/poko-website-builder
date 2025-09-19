@@ -66,6 +66,8 @@ import {
   randomFilter,
   ogImageSrc,
   emailLink,
+  htmlAttrs,
+  htmlImgAttrs,
 } from "./src/config-11ty/filters/index.js";
 import {
   newLine,
@@ -397,7 +399,10 @@ export default async function (eleventyConfig) {
       path.join(WORKING_DIR, PARTIALS_DIR),
       path.join("src/content/_partials"),
     ],
-    shortcodeAliases: ["partial", "section"],
+    shortcodeAliases: [
+      "partial",
+      // "section"
+    ],
   });
   // Copy files (Keystatic)
   // Retrieve public files from the _files directory
@@ -441,6 +446,9 @@ export default async function (eleventyConfig) {
   eleventyConfig.addAsyncFilter("ogImage", ogImageSrc);
   // Email
   eleventyConfig.addFilter("emailLink", emailLink);
+  // HTML helpers
+  eleventyConfig.addFilter("htmlAttrs", htmlAttrs);
+  eleventyConfig.addFilter("htmlImgAttrs", htmlImgAttrs);
 
   // --------------------- Shortcodes
   // eleventyConfig.addAsyncShortcode("partial", partialShortcode);
@@ -482,4 +490,51 @@ export default async function (eleventyConfig) {
   //     bundleHtmlContentFromSelector: "style",
   //   });
   // });
+
+  // Deferred Config
+  await eleventyConfig.addPlugin(async function (eleventyConf) {
+    eleventyConf.versionCheck(">=3.0.0-alpha.1");
+    // const { dir } = eleventyConf;
+
+    // const safeFilter = this.env.filters.safe;
+    const partialShortcodeFn = eleventyConfig.nunjucks.asyncShortcodes.partial;
+
+    await eleventyConf.addShortcode("section", async function (...args) {
+      // Old Section implementation mirroring Partial
+      if (args.length > 1) {
+        const partialFileName = args[0];
+        const data = args[1] || {};
+        console.warn(
+          `DEPRECATED: Section (calling "${partialFileName}") is using the old syntax.`
+        );
+
+        return await partialShortcodeFn
+          .call(this, partialFileName, data)
+          .catch((e) => {
+            console.error(e);
+            return "";
+          });
+      }
+      if (args.length !== 1 || typeof args[0] !== "object") {
+        console.error(
+          `Section shortcode called with invalid arguments: ${args}`
+        );
+        return "";
+      }
+
+      // {% section type="grid", props={}, blocks=[], advanced={} %}
+      const { type, props, blocks, advanced } = args?.[0] || {};
+      const { sectionSlug, props: advancedProps } = advanced || {};
+      let partialFileName =
+        (sectionSlug ? sectionSlug : `_sections/${type || "catch-error"}`) +
+        ".njk";
+
+      return await partialShortcodeFn
+        .call(this, partialFileName, { blocks, ...props, ...advancedProps })
+        .catch((e) => {
+          console.error(e);
+          return "<< SECTION ERROR >>";
+        });
+    });
+  });
 }

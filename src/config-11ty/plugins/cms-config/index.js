@@ -98,6 +98,7 @@ const dataListField = {
   required: false,
   collapsed: true,
   i18n: true,
+  allow_reorder: true,
   types: [
     {
       name: "text",
@@ -398,6 +399,7 @@ class CmsConfig {
           widget: "list",
           required: true,
           collapsed: true,
+          allow_reorder: true,
           summary:
             "{{status | capitalize}}: {{code | upper}} - {{name}} -- Default for: {{isCmsDefault | ternary('CMS', '')}} {{isWebsiteDefault | ternary('Website', '')}}",
           fields: [
@@ -1020,7 +1022,8 @@ class CmsConfig {
         repo: CMS_REPO,
         branch: CMS_BRANCH,
         base_url: CMS_AUTH_URL,
-        automatic_deployments: false,
+        automatic_deployments: false, // Deprecated but keeping it for a while until I'm sure everyone is upgraded
+        skip_ci: true,
       },
       // TODO: configure data formating: https://github.com/sveltia/sveltia-cms?tab=readme-ov-file#controlling-data-output
       output: {
@@ -1072,7 +1075,7 @@ class CmsConfig {
         structure: "multiple_folders",
         locales,
         default_locale, // Defaults to the first locale in the list
-        save_all_locales: false, // default: true // Allows for disabling a localization
+        save_all_locales: false, // DEPRECATED: Replaced entirely by initial_locales. default: true // Allows for disabling a localization
         initial_locales: "default", // default: "all" // Allows for setting the initial locales
       },
       slug: {

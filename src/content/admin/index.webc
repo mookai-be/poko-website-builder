@@ -81,7 +81,7 @@ layout: null
           hint: "Select 'Eager' for images that are visible in the initial viewport;",
         },
         {
-          name: "imgAttrs",
+          name: "rawAttrs",
           label: "Other Image Attributes",
           widget: "string",
           required: false,
@@ -536,17 +536,72 @@ ${inlineContent}
         icon: "brick",
         fields: [
           {
+            name: "type",
+            label: "Type",
+            widget: "object",
+            required: true,
+            hint: "Select a pre-defined section type or use one of your custom section layouts (selectable in 'Advanced' bellow)",
+            types: [
+              {
+                name: "grid",
+                label: "Grid",
+                widget: "object",
+                required: false,
+                fields: [
+                  {
+                    name: "columns",
+                    label: "Columns",
+                    widget: "number",
+                    required: false,
+                  },
+                ],
+              },
+              {
+                name: "switcher",
+                label: "Switcher",
+                widget: "object",
+                required: false,
+                fields: [
+                  {
+                    name: "widthWrap",
+                    label: "Width Wrap",
+                    widget: "string",
+                    hint: "",
+                    required: false,
+                  },
+                  {
+                    name: "gap",
+                    label: "Gap",
+                    widget: "string",
+                    hint: "",
+                    required: false,
+                  },
+                ],
+              },
+              {
+                name: "custom",
+                label: "Custom",
+                widget: "object",
+                required: false,
+                fields: [],
+              },
+            ],
+          },
+          {
             name: "blocks",
             label: "Blocks",
             widget: "list",
             required: false,
             i18n: true,
+            collapsed: true,
+            allow_reorder: true,
             types: [
               {
                 name: "image",
                 label: "Image",
                 widget: "object",
                 required: false,
+                summary: "{{src}}",
                 fields: imageFields,
               },
               {
@@ -554,6 +609,7 @@ ${inlineContent}
                 label: "Markdown",
                 widget: "object",
                 required: false,
+                summary: "{{value | truncate(50)}}",
                 fields: [
                   {
                     name: "value",
@@ -565,61 +621,91 @@ ${inlineContent}
             ],
           },
           {
-            name: "sectionSlug",
-            label: "Select Section Layout",
-            widget: "relation",
-            collection: "sectionLayouts",
-            required: true,
+            name: "advanced",
+            label: "Advanced",
+            widget: "object",
+            required: false,
+            fields: [
+              {
+                name: "sectionSlug",
+                label: "Overwrite Section Layout",
+                widget: "relation",
+                collection: "sectionLayouts",
+                required: false,
+              },
+              {
+                name: "props",
+                label: "Custom Properties",
+                widget: "keyvalue",
+                required: false,
+              }
+            ],
           },
         ],
         pattern: /^{% section\s+(.*?)\s*%}$/ms,
         fromBlock: function (match) {
           // Parse the arguments from the captured string
           const argumentsString = match[1];
-          // Currently have 2 arguments: 
-          // {% section "test-section.njk", {"blocks":[]} %}
-          const argSeparatorIndex = argumentsString.indexOf(", ");
-          const slugWithQuotes = argumentsString.slice(0, argSeparatorIndex);
-          const sectionSlug = slugWithQuotes
-            .replace(/("|')/g, "")
-            .replace(/\.njk$/, "");
+          // Currently in this form:
+          // {% section type="grid", props={}, blocks=[], advanced={} %}
+          const matchWrapperAndSeparator = `([\[{]*.*?[\]}]*)(, | \%})`
+          // Match each prop
+          const typeMatch = argumentsString.match(/type="(.*?)"/);
+          const propsMatch = argumentsString.match(/props=({*.*?}*)(, |$)/);
+          const blocksMatch = argumentsString.match(/blocks=(\[*.*?\]*)(, |$)/);
+          const advancedMatch = argumentsString.match(/advanced=({*.*?}*)(, |$)/);
+          // Use a non-greedy approach and handle both comma separator and end of string
+          // const propsMatch = argumentsString.match(/props=({[^}]*(?:}[^,\s%]*)*})(?:,\s*|\s*%}|$)/);          
+          // const blocksMatch = argumentsString.match(/blocks=(\[[^\]]*(?:\][^,\s%]*)*\])(?:,\s*|\s*%}|$)/);          
+          // const advancedMatch = argumentsString.match(/advanced=({[^}]*(?:}[^,\s%]*)*})(?:,\s*|\s*%}|$)/);
 
-          const dataString = argumentsString.slice(argSeparatorIndex + 2);
-          const data = JSON.parse(dataString);
-          let blocks = data?.blocks || [];
-          
-          blocks = blocks.map((block) => {
-            if (block.type === "markdown") {
-              return {
-                ...block,
-                value: inlineToMultiline(block.value),
-              }
-            }
-            return block;
-          });
+          const type = typeMatch?.[1] || "";
+          const propsString = propsMatch?.[1] || "{}";
+          const blocksString = blocksMatch?.[1] || "[]";
+          const advancedString = advancedMatch?.[1] || "{}";
+
+          const props = JSON.parse(propsString) || {};
+          const blocks = JSON.parse(blocksString) || [];
+          const advanced = JSON.parse(advancedString) || {};
+
+          // blocks = blocks.map((block) => {
+          //   if (block.type === "markdown") {
+          //     return {
+          //       ...block,
+          //       value: inlineToMultiline(block.value),
+          //     }
+          //   }
+          //   return block;
+          // });
 
           return {
-            sectionSlug,
-            blocks
+            type: {
+              type,
+              ...props,
+            },
+            blocks,
+            advanced
           };
         },
         toBlock: function (data) {
-          const sectionSlug = data.sectionSlug;
-          const sectionSlugWithQuotes = `"${sectionSlug}.njk"`;
+          const { type: typeField, blocks, advanced } = data;
+          const { type, ...props } = typeField || {};
 
-          const blocks = (data.blocks || []).map((block) => {
-            if (block.type === "markdown") {
-              return {
-                ...block,
-                value: multilineToInline(block.value),
-              }
-            }
-            return block;
-          });
+          // const blocks = (data.blocks || []).map((block) => {
+          //   if (block.type === "markdown") {
+          //     return {
+          //       ...block,
+          //       value: multilineToInline(block.value),
+          //     }
+          //   }
+          //   return block;
+          // });
 
-          const dataString = JSON.stringify({blocks});
-
-          return `{% section ${sectionSlugWithQuotes}, ${dataString} %}`;
+          const propsString = JSON.stringify(props);
+          const blocksString = JSON.stringify(blocks);
+          const advancedString = JSON.stringify(advanced);
+          
+          return `{% section type="${type}", props=${propsString}, blocks=${blocksString}, advanced=${advancedString} %}`;
         },
         toPreview: function (data) {
           return `TEST`;
