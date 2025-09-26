@@ -8,9 +8,7 @@
   "homepage": "https://github.com/m4rrc0/poko-website-builder#readme",
   "license": "",
   "engines": {
-    "node": ">=22.0.0",
-    "npm": ">=10.0.0",
-    "bun": ">=1.2.8"
+    "bun": ">=1.2.22"
   },
   "scripts": {
     "build": "BRANCH=$(git symbolic-ref --short HEAD) GIT_REMOTES=$(git remote -v) bun --bun run eleventy",

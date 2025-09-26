@@ -62,12 +62,22 @@ export const LOCAL_BUILD = Boolean(
   !NETLIFY_BUILD && !CLOUDFLARE_BUILD && !VERCEL_BUILD
 );
 
-// @github.com:m4rrc0/poko-website-builder.git
+// const GITHUB_REPO_INFERRED = processEnv.GIT_REMOTES?.split("\n")
+//   ?.find((remote) => remote.includes("github.com"))
+//   ?.split(":")
+//   ?.pop()
+//   ?.split(".")?.[0];
+
+// const remoteLocalGit =
+//   "origin\tgit@github.com:m4rrc0/poko-website-builder.git (fetch)\norigin\tgit@github.com:m4rrc0/poko-website-builder.git (push)";
+// const remoteCFpages =
+//   "origin\thttps://x-a_c_c_e_s_s-t_o_k_e_n:g_h_s_11111111111111111111111111111111111@github.com/autre-ecole/poko-website-builder (fetch)\norigin\thttps://x-a_c_c_e_s_s-t_o_k_e_n:g_h_s_11111111111111111111111111111111111@github.com/autre-ecole/poko-website-builder (push)";
+
 const GITHUB_REPO_INFERRED = processEnv.GIT_REMOTES?.split("\n")
   ?.find((remote) => remote.includes("github.com"))
-  ?.split(":")
+  ?.split(/@github.com(\/|:)/)
   ?.pop()
-  ?.split(".")?.[0];
+  ?.split(/\.git\s|\s/)?.[0];
 
 // GITHUB Pages REPO inferrence
 export const GITHUB_GIT_REPO_OWNER = processEnv.GITHUB_REPOSITORY_OWNER;
