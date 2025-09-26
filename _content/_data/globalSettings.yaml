@@ -9,3 +9,5 @@ languages:
     status: published
     isCmsDefault: true
     isWebsiteDefault: true
+collections:
+  - articles
