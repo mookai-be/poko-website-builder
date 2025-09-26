@@ -1,0 +1,11 @@
+siteName: poko
+productionUrl: poko.m4rr.co
+logo: /_images/poko-logo-rvb-02.webp
+languages:
+  - code: en
+    name: English
+    customUrlPrefix:
+      prefix: /
+    status: published
+    isCmsDefault: true
+    isWebsiteDefault: true
