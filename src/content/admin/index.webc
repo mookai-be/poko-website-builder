@@ -543,8 +543,8 @@ ${inlineContent}
             hint: "Select a pre-defined section type or use one of your custom section layouts (selectable in 'Advanced' bellow)",
             types: [
               {
-                name: "grid",
-                label: "Grid",
+                name: "grid-fluid",
+                label: "Fluid Grid",
                 widget: "object",
                 required: false,
                 fields: [
@@ -552,6 +552,14 @@ ${inlineContent}
                     name: "columns",
                     label: "Columns",
                     widget: "number",
+                    hint: "The number of columns on large screens [note: can be overwritten with a custom variable widthColumnMin defining a min column size in CSS units]",
+                    required: false,
+                  },
+                  {
+                    name: "gap",
+                    label: "Gap",
+                    widget: "string",
+                    hint: "The gap between blocks (e.g. 1em [default], var(--step-2) [fluid type scale], 0 [no gap])",
                     required: false,
                   },
                 ],
@@ -561,19 +569,20 @@ ${inlineContent}
                 label: "Switcher",
                 widget: "object",
                 required: false,
+                hint: "Switch between side by side and vertical display based on section width",
                 fields: [
                   {
                     name: "widthWrap",
                     label: "Width Wrap",
                     widget: "string",
-                    hint: "",
+                    hint: "Section width to switch from side by side to vertical display. (e.g. var(--width-prose) [default], 30rem, 800px, 0px [no wrap])",
                     required: false,
                   },
                   {
                     name: "gap",
                     label: "Gap",
                     widget: "string",
-                    hint: "",
+                    hint: "The gap between blocks (e.g. 1em [default], var(--step-2) [fluid type scale], 0 [no gap])",
                     required: false,
                   },
                 ],
@@ -634,8 +643,8 @@ ${inlineContent}
                 required: false,
               },
               {
-                name: "props",
-                label: "Custom Properties",
+                name: "vars",
+                label: "Custom Variables",
                 widget: "keyvalue",
                 required: false,
               }
@@ -647,24 +656,24 @@ ${inlineContent}
           // Parse the arguments from the captured string
           const argumentsString = match[1];
           // Currently in this form:
-          // {% section type="grid", props={}, blocks=[], advanced={} %}
+          // {% section type="grid", vars={}, blocks=[], advanced={ sectionSlug="", vars={}} %}
           const matchWrapperAndSeparator = `([\[{]*.*?[\]}]*)(, | \%})`
           // Match each prop
           const typeMatch = argumentsString.match(/type="(.*?)"/);
-          const propsMatch = argumentsString.match(/props=({*.*?}*)(, |$)/);
+          const varsMatch = argumentsString.match(/vars=({*.*?}*)(, |$)/);
           const blocksMatch = argumentsString.match(/blocks=(\[*.*?\]*)(, |$)/);
           const advancedMatch = argumentsString.match(/advanced=({*.*?}*)(, |$)/);
           // Use a non-greedy approach and handle both comma separator and end of string
-          // const propsMatch = argumentsString.match(/props=({[^}]*(?:}[^,\s%]*)*})(?:,\s*|\s*%}|$)/);          
+          // const varsMatch = argumentsString.match(/vars=({[^}]*(?:}[^,\s%]*)*})(?:,\s*|\s*%}|$)/);          
           // const blocksMatch = argumentsString.match(/blocks=(\[[^\]]*(?:\][^,\s%]*)*\])(?:,\s*|\s*%}|$)/);          
           // const advancedMatch = argumentsString.match(/advanced=({[^}]*(?:}[^,\s%]*)*})(?:,\s*|\s*%}|$)/);
 
           const type = typeMatch?.[1] || "";
-          const propsString = propsMatch?.[1] || "{}";
+          const varsString = varsMatch?.[1] || "{}";
           const blocksString = blocksMatch?.[1] || "[]";
           const advancedString = advancedMatch?.[1] || "{}";
 
-          const props = JSON.parse(propsString) || {};
+          const vars = JSON.parse(varsString) || {};
           const blocks = JSON.parse(blocksString) || [];
           const advanced = JSON.parse(advancedString) || {};
 
@@ -681,7 +690,7 @@ ${inlineContent}
           return {
             type: {
               type,
-              ...props,
+              ...vars,
             },
             blocks,
             advanced
@@ -689,7 +698,7 @@ ${inlineContent}
         },
         toBlock: function (data) {
           const { type: typeField, blocks, advanced } = data;
-          const { type, ...props } = typeField || {};
+          const { type, ...vars } = typeField || {};
 
           // const blocks = (data.blocks || []).map((block) => {
           //   if (block.type === "markdown") {
@@ -701,11 +710,11 @@ ${inlineContent}
           //   return block;
           // });
 
-          const propsString = JSON.stringify(props);
+          const varsString = JSON.stringify(vars);
           const blocksString = JSON.stringify(blocks);
           const advancedString = JSON.stringify(advanced);
           
-          return `{% section type="${type}", props=${propsString}, blocks=${blocksString}, advanced=${advancedString} %}`;
+          return `{% section type="${type}", vars=${varsString}, blocks=${blocksString}, advanced=${advancedString} %}`;
         },
         toPreview: function (data) {
           return `TEST`;

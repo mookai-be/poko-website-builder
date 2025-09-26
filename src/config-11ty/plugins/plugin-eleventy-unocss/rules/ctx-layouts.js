@@ -375,19 +375,22 @@ export default [
 
   // Grid-auto utility
   [
-    /^grid-auto$/,
+    /^grid-fluid$/,
     (match, { symbols }) => {
       return [
         {
-          [symbols.selector]: () => `:where(.grid-auto)`,
+          [symbols.selector]: () => `:where(.grid-fluid)`,
           "--gap-grid": "var(--gap, 1em)",
+          // NOTE: width - gap * (columns - 1) / (columns + 1)
+          "--width-column-min":
+            "calc(calc(var(--width-max) - var(--gap-grid) * calc(var(--columns) - 1)) / calc(var(--columns) + 1))",
           display: "grid",
           "grid-gap": "var(--gap-grid)",
           "grid-template-columns":
             "repeat(auto-fit, minmax(min(var(--width-column-min, 10rem), 100%), 1fr))",
         },
         {
-          [symbols.selector]: () => `:where(.grid-auto) > *`,
+          [symbols.selector]: () => `.grid-fluid > *`,
           "max-inline-size": "var(--width-column-max, none)",
         },
       ];

@@ -93,7 +93,8 @@ const imageFields = [
 ];
 const dataListField = {
   name: "dataList",
-  label: "Custom Data List (dataList)",
+  label: "Data List (dataList)",
+  hint: "Custom data items freely usable across the website",
   widget: "list",
   required: false,
   collapsed: true,
@@ -473,6 +474,20 @@ class CmsConfig {
         },
       ],
     };
+    const styleTokensSingleton = {
+      name: "styleTokens",
+      label: "Style Tokens",
+      icon: "settings",
+      file: `${CONTENT_DIR}/_data/styleTokens.yaml`,
+      // format: "yaml",
+      fields: [
+        {
+          name: "test",
+          label: "TEST",
+          widget: "string",
+        },
+      ],
+    };
 
     const dataCollection = {
       // ...mostCommonMarkdownCollectionConfig,
@@ -589,21 +604,10 @@ class CmsConfig {
         },
       ],
     };
-    const stylesFields = [
-      {
-        name: "body",
-        label: "Content",
-        widget: "code",
-        required: false,
-        output_code_only: true,
-        default_language: "css",
-        allow_language_selection: false,
-      },
-    ];
     const stylesCollection = {
       name: "styles",
-      label: "Styles",
-      label_singular: "Style",
+      label: "Stylesheets",
+      label_singular: "Stylesheet",
       path: "{{slug}}",
       icon: "brush",
       folder: `${CONTENT_DIR}/_styles`,
@@ -620,7 +624,17 @@ class CmsConfig {
           direction: "ascending",
         },
       },
-      fields: stylesFields,
+      fields: [
+        {
+          name: "body",
+          label: "Content",
+          widget: "code",
+          required: false,
+          output_code_only: true,
+          default_language: "css",
+          allow_language_selection: false,
+        },
+      ],
     };
     const pageLayoutsCollection = {
       name: "layouts",
@@ -1105,6 +1119,7 @@ class CmsConfig {
             ]),
       ],
       singletons: [
+        // ...(mustSetup ? [] : [styleTokensSingleton]),
         globalSettingsSingleton,
         { divider: Boolean(!mustSetup && data.userConfig.singletons?.length) },
         ...(mustSetup ? [] : [...data.userConfig.singletons]),

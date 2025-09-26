@@ -215,7 +215,7 @@ export default async function (eleventyConfig) {
         .use(markdownItContainer, "div", mRCTOptions("div"))
         .use(markdownItContainer, "block")
         .use(markdownItContainer, "flow")
-        .use(markdownItContainer, "grid-auto")
+        .use(markdownItContainer, "grid-fluid")
         .use(markdownItContainer, "cluster")
         .use(markdownItContainer, "switcher")
 
@@ -262,7 +262,7 @@ export default async function (eleventyConfig) {
         // })
         // .use(markdownItContainer, { name: "block" })
         // .use(markdownItContainer, { name: "flow" })
-        // .use(markdownItContainer, { name: "grid-auto" })
+        // .use(markdownItContainer, { name: "grid-fluid" })
         // .use(markdownItContainer, { name: "cluster" })
         // .use(markdownItContainer, { name: "switcher" })
 
@@ -522,15 +522,15 @@ export default async function (eleventyConfig) {
         return "";
       }
 
-      // {% section type="grid", props={}, blocks=[], advanced={} %}
-      const { type, props, blocks, advanced } = args?.[0] || {};
-      const { sectionSlug, props: advancedProps } = advanced || {};
+      // {% section type="grid", vars={}, blocks=[], advanced={ sectionSlug="", vars={}} %}
+      const { type, vars, blocks, advanced } = args?.[0] || {};
+      const { sectionSlug, vars: advancedVars } = advanced || {};
       let partialFileName =
         (sectionSlug ? sectionSlug : `_sections/${type || "catch-error"}`) +
         ".njk";
 
       return await partialShortcodeFn
-        .call(this, partialFileName, { blocks, ...props, ...advancedProps })
+        .call(this, partialFileName, { blocks, ...vars, ...advancedVars })
         .catch((e) => {
           console.error(e);
           return "<< SECTION ERROR >>";
