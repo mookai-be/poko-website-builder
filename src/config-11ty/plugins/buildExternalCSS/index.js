@@ -24,7 +24,7 @@ export default async function (eleventyConfig, pluginOptions) {
     };
   });
   const htmlExternalCssFiles = externalCssFiles
-    .map((file) => `<link rel="stylesheet" href="${file.out}">`)
+    .map((file) => `<link rel="stylesheet" href="/${file.out}">`)
     .join("\n");
 
   eleventyConfig.addGlobalData("htmlExternalCssFiles", htmlExternalCssFiles);
