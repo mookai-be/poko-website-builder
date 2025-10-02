@@ -13,6 +13,7 @@ import {
   collections as selectedCollections,
   languages,
 } from "../../../../env.config.js";
+import { nativeFontStacks } from "../../../utils/transformStyles.js";
 
 const isDev = NODE_ENV === "development";
 const mustSetup = !languages?.length;
@@ -347,6 +348,38 @@ const brandColorField = {
   value_field: "colors.*.name",
   required: false,
 };
+const nativeFontStackSelectField = {
+  widget: "select",
+  required: false,
+  options: Object.keys(nativeFontStacks).map((key) => ({
+    label: key,
+    value: key,
+  })),
+};
+const fontStackDefinitionField = (nativeDefault = "system-ui") => ({
+  widget: "object",
+  required: true,
+  fields: [
+    {
+      name: "native",
+      label: "Native Font Stack",
+      required: true,
+      ...nativeFontStackSelectField,
+      default: nativeDefault,
+      hint: "Native font stacks are drawn from https://modernfontstacks.com/ (Click for a preview)",
+    },
+    // TODO: Allow imported fonts
+    {
+      name: "custom",
+      label: "Custom Font Override",
+      widget: "relation",
+      collection: "stylesConfig",
+      file: "brand",
+      value_field: "customFontsImport.*.name",
+      required: false,
+    },
+  ],
+});
 
 const commonCollectionFields = [
   {
@@ -553,6 +586,33 @@ class CmsConfig {
           i18n: false,
           fields: [
             {
+              name: "baseFontStacks",
+              label: "Base Font Stacks",
+              label_singular: "Base Font Stack",
+              widget: "object",
+              required: true,
+              collapsed: false,
+              summary: "{{name}}: {{font}}",
+              hint: "Select your preferred font stack for every type of text. Prefer only native font stacks for performance reasons.",
+              fields: [
+                {
+                  name: "body",
+                  label: "Body Text Font",
+                  ...fontStackDefinitionField("system-ui"),
+                },
+                {
+                  name: "heading",
+                  label: "Heading Text Font",
+                  ...fontStackDefinitionField("system-ui"),
+                },
+                {
+                  name: "code",
+                  label: "Code Text Font",
+                  ...fontStackDefinitionField("monospace-code"),
+                },
+              ],
+            },
+            {
               name: "colors",
               label: "Colors",
               label_singular: "Color",
@@ -561,6 +621,7 @@ class CmsConfig {
               collapsed: true,
               allow_reorder: true,
               summary: "{{name}}: {{value}}",
+              hint: "Colors to be used across the website, in palettes or otherwise. ❗️Save the file for new colors to appear in the palette selection.",
               fields: [
                 {
                   name: "name",
@@ -684,6 +745,56 @@ class CmsConfig {
                     { name: "border__mark", label: "Mark Border Color", ...brandColorField }, // prettier-ignore
                     { name: "track-color", label: "Scrollbar Track Color", ...brandColorField }, // prettier-ignore
                     { name: "thumb-color", label: "Scrollbar Thumb Color", ...brandColorField }, // prettier-ignore
+                  ],
+                },
+              ],
+            },
+            {
+              name: "customFontsImport",
+              label: "Custom Fonts Import",
+              widget: "list",
+              required: false,
+              fields: [
+                {
+                  name: "name",
+                  label: "Font Internal Name",
+                  widget: "string",
+                  required: true,
+                },
+                {
+                  name: "source",
+                  label: "Source Service",
+                  widget: "object",
+                  required: true,
+                  types: [
+                    {
+                      name: "Fontsource",
+                      widget: "object",
+                      required: true,
+                      fields: [
+                        {
+                          name: "name",
+                          label: "Font Name",
+                          widget: "select",
+                          required: true,
+                          options: [
+                            { label: "DO NOT USE YET", value: "Arial" },
+                          ],
+                        },
+                        {
+                          name: "weight",
+                          label: "Font Weight",
+                          widget: "string",
+                          required: true,
+                        },
+                        {
+                          name: "style",
+                          label: "Font Style",
+                          widget: "string",
+                          required: true,
+                        },
+                      ],
+                    },
                   ],
                 },
               ],

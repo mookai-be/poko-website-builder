@@ -4,7 +4,11 @@ import { resolve, join, relative } from "path";
 import fs from "node:fs";
 import yaml from "js-yaml";
 import { transformLanguage } from "./src/utils/languages.js";
-import { transformPalette } from "./src/utils/transformStyles.js";
+import {
+  transformBaseFontStacks,
+  transformBrandColors,
+  transformPalette,
+} from "./src/utils/transformStyles.js";
 
 const processEnv = typeof process !== "undefined" ? process.env : {};
 
@@ -178,21 +182,27 @@ try {
   console.error("Error reading brandConfig.yaml:", error);
 }
 export { globalSettings, brandConfig };
+// More specific useful global settings
 export const collections = globalSettings?.collections || [];
 export const languages =
   globalSettings?.languages?.map(transformLanguage) || [];
+// More specific useful brand settings
+export const brandBaseFontStacks = transformBaseFontStacks(
+  brandConfig?.baseFontStacks || {}
+);
+export const brandBaseFontStacksStyles = Object.values(brandBaseFontStacks)
+  .map((fontStack) => fontStack.stylesString)
+  .join("");
 
-export const brandColors = Array.isArray(brandConfig?.colors)
-  ? brandConfig?.colors
-  : [];
+export const brandColors = transformBrandColors(brandConfig?.colors);
 export const brandColorsStyles = brandColors
-  .map((color) => `--${color.name}:${color.value};`)
+  .map((color) => color.stylesString)
   .join("");
 export const brandPalettes = (brandConfig?.palettes || []).map(
   transformPalette
 );
 
-export const brandRootStyles = `:root{${brandColorsStyles}${brandPalettes[0]?.stylesString}}`;
+export const brandRootStyles = `:root{${brandBaseFontStacksStyles}${brandColorsStyles}${brandPalettes[0]?.stylesString}}`;
 export const brandPalettesStyles = brandPalettes
   .map((palette) => `.palette-${palette.name}{${palette.stylesString}}`)
   .join("\n");
