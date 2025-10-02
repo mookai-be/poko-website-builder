@@ -11,10 +11,11 @@
 {% for link in templateTranslations %}
 
 <link rel="alternate" hreflang="{{link.lang}}" href="{{baseUrl}}{{link.url}}" />
-{% endfor %}
-{% if defaultLanguage %}
-<link rel="alternate" hreflang="x-default" href="{{baseUrl}}{{defaultLanguage.url}}" />
+{% if link.isDefault %}
+<link rel="alternate" hreflang="x-default" href="{{baseUrl}}{{link.url}}" />
 {% endif %}
+
+{% endfor %}
 
 {# Favicons #} {# TODO: Generate favicons, manifest, etc #}
 
