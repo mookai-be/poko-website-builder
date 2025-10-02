@@ -4,6 +4,7 @@ import { resolve, join, relative } from "path";
 import fs from "node:fs";
 import yaml from "js-yaml";
 import { transformLanguage } from "./src/utils/languages.js";
+import { transformPalette } from "./src/utils/transformStyles.js";
 
 const processEnv = typeof process !== "undefined" ? process.env : {};
 
@@ -161,17 +162,41 @@ assert(BRANCH, "[env] BRANCH is required");
 // User Config from CMS
 // Read file in ${WORKING_DIR_ABSOLUTE}/_data/globalSettings.yaml
 const globalSettingsPath = `${WORKING_DIR_ABSOLUTE}/_data/globalSettings.yaml`;
+const brandConfigPath = `${WORKING_DIR_ABSOLUTE}/_data/brand.yaml`;
 let globalSettings = {};
+let brandConfig = {};
 try {
   const globalSettingsYaml = fs.readFileSync(globalSettingsPath, "utf-8");
   globalSettings = yaml.load(globalSettingsYaml);
 } catch (error) {
   console.error("Error reading globalSettings.yaml:", error);
 }
-export { globalSettings };
+try {
+  const brandConfigYaml = fs.readFileSync(brandConfigPath, "utf-8");
+  brandConfig = yaml.load(brandConfigYaml);
+} catch (error) {
+  console.error("Error reading brandConfig.yaml:", error);
+}
+export { globalSettings, brandConfig };
 export const collections = globalSettings?.collections || [];
 export const languages =
   globalSettings?.languages?.map(transformLanguage) || [];
+
+export const brandColors = Array.isArray(brandConfig?.colors)
+  ? brandConfig?.colors
+  : [];
+export const brandColorsStyles = brandColors
+  .map((color) => `--${color.name}:${color.value};`)
+  .join("");
+export const brandPalettes = (brandConfig?.palettes || []).map(
+  transformPalette
+);
+
+export const brandRootStyles = `:root{${brandColorsStyles}${brandPalettes[0]?.stylesString}}`;
+export const brandPalettesStyles = brandPalettes
+  .map((palette) => `.palette-${palette.name}{${palette.stylesString}}`)
+  .join("\n");
+export const brandStyles = `${brandRootStyles}\n${brandPalettesStyles}`;
 
 // URLs
 // TODO: This is prone to forgetting to define the base url

@@ -28,6 +28,33 @@ const keyField = {
   widget: "string",
   required: true,
   hint: "Unique identifier for the data item",
+  i18n: "duplicate",
+};
+const tagsListField = {
+  name: "tagsList",
+  label: "Tags List (tagsList)",
+  widget: "list",
+  required: false,
+  collapsed: true,
+  i18n: true,
+  allow_reorder: true,
+  summary: "{{slug}}: {{name}}",
+  fields: [
+    {
+      name: "slug",
+      label: "Slug",
+      widget: "string",
+      required: true,
+      i18n: "duplicate",
+    },
+    {
+      name: "name",
+      label: "Name",
+      widget: "string",
+      required: true,
+      i18n: true,
+    },
+  ],
 };
 const varsField = {
   name: "vars",
@@ -42,6 +69,7 @@ const imageFields = [
     label: "Image",
     widget: "image",
     required: true,
+    i18n: true,
   },
   {
     name: "alt",
@@ -49,12 +77,14 @@ const imageFields = [
     widget: "string",
     required: false,
     hint: "~125 characters max; Be specific, concise, focused on the image purpose, avoid redundant phrases like 'image of…'",
+    i18n: true,
   },
   {
     name: "title",
     label: "Title",
     widget: "string",
     required: false,
+    i18n: true,
   },
   {
     name: "width",
@@ -63,6 +93,7 @@ const imageFields = [
     value_type: "int",
     required: false,
     hint: "In px; Leave empty for auto; Useful for image optimization when not full width.",
+    i18n: "duplicate",
   },
   {
     name: "aspectRatio",
@@ -71,6 +102,7 @@ const imageFields = [
     value_type: "float",
     hint: "Width / Height => square = 1; 16:9 = 1.78; 4:3 = 1.33; Extra wide = 4;",
     required: false,
+    i18n: "duplicate",
   },
   {
     name: "loading",
@@ -83,12 +115,14 @@ const imageFields = [
     ],
     required: false,
     hint: "Select 'Eager' for images that are visible in the initial viewport;",
+    i18n: "duplicate",
   },
   {
     name: "imgAttrs",
     label: "Other Image Attributes",
     widget: "string",
     required: false,
+    i18n: "duplicate",
   },
 ];
 const dataListField = {
@@ -98,7 +132,7 @@ const dataListField = {
   widget: "list",
   required: false,
   collapsed: true,
-  i18n: true,
+  i18n: "duplicate",
   allow_reorder: true,
   types: [
     {
@@ -113,6 +147,7 @@ const dataListField = {
           label: "Value",
           widget: "string",
           required: false,
+          i18n: true,
         },
       ],
     },
@@ -128,6 +163,7 @@ const dataListField = {
           label: "Value",
           widget: "markdown",
           required: false,
+          i18n: true,
         },
       ],
     },
@@ -288,6 +324,30 @@ const pagePreviewField = {
     },
   ],
 };
+const tagsField = {
+  name: "tags",
+  label: "Tags",
+  widget: "relation",
+  multiple: true,
+  // collection: "tags",
+  // search_fields: ["name"],
+  // value_field: "{{slug}}",
+  // display_fields: ["name"],
+  collection: "dataFiles",
+  file: "translatedData",
+  value_field: "tagsList.*.slug",
+  display_fields: ["tagsList.*.name"],
+  required: false,
+  i18n: "duplicate",
+};
+const brandColorField = {
+  widget: "relation",
+  collection: "stylesConfig",
+  file: "brand",
+  value_field: "colors.*.name",
+  required: false,
+};
+
 const commonCollectionFields = [
   {
     name: "lang",
@@ -474,68 +534,228 @@ class CmsConfig {
         },
       ],
     };
-    const styleTokensSingleton = {
-      name: "styleTokens",
-      label: "Style Tokens",
-      icon: "settings",
-      file: `${CONTENT_DIR}/_data/styleTokens.yaml`,
-      // format: "yaml",
+
+    const stylesConfigCollection = {
+      // ...mostCommonMarkdownCollectionConfig,
+      // i18n: false,
+      icon: "brush",
+      name: "stylesConfig",
+      label: "Styles Config",
+      editor: { preview: false },
+      i18n: false,
+      files: [
+        {
+          name: "brand",
+          label: "Brand",
+          icon: "brand_family",
+          file: `${CONTENT_DIR}/_data/brand.yaml`,
+          // format: "yaml",
+          i18n: false,
+          fields: [
+            {
+              name: "colors",
+              label: "Colors",
+              label_singular: "Color",
+              widget: "list",
+              required: false,
+              collapsed: true,
+              allow_reorder: true,
+              summary: "{{name}}: {{value}}",
+              fields: [
+                {
+                  name: "name",
+                  label: "Name",
+                  widget: "string",
+                  required: true,
+                },
+                {
+                  name: "value",
+                  label: "Color",
+                  widget: "color",
+                  required: true,
+                },
+              ],
+            },
+            {
+              name: "fonts",
+              label: "Fonts",
+              label_singular: "Font",
+              widget: "list",
+              required: false,
+              collapsed: true,
+              allow_reorder: true,
+              summary: "{{name}}: {{font}}",
+              fields: [
+                {
+                  name: "font",
+                  label: "Font",
+                  widget: "object",
+                  required: true,
+                  types: [
+                    {
+                      name: "native",
+                      label: "Native Font Stack",
+                      widget: "select",
+                      options: [
+                        { label: "System UI", value: "system-ui" },
+                        { label: "Cursive", value: "cursive" },
+                        { label: "Monospace", value: "monospace" },
+                        { label: "Sans", value: "sans" },
+                        { label: "Serif", value: "serif" },
+                      ],
+                    },
+                    {
+                      name: "custom",
+                      label: "Custom Font",
+                      widget: "select",
+                      // TODO: import fonts list from Fontsource or somewhere else (? Bunny, ... ?)
+                      options: [
+                        { label: "System UI", value: "system-ui" },
+                        // { label: "Cursive", value: "cursive" },
+                        // { label: "Monospace", value: "monospace" },
+                        // { label: "Sans", value: "sans" },
+                        // { label: "Serif", value: "serif" },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              name: "palettes",
+              label: "Color Palettes",
+              label_singular: "Color Palette",
+              widget: "list",
+              required: false,
+              collapsed: true,
+              allow_reorder: true,
+              summary:
+                "Palette '{{name}}'  [Text '{{text}}', Background '{{bg}}']",
+              hint: "The first palette is used as the default",
+              fields: [
+                {
+                  name: "name",
+                  label: "Palette Name",
+                  widget: "string",
+                  required: true,
+                },
+                // prettier-ignore
+                { name: "text", label: "Text Color", ...brandColorField, required: true }, // prettier-ignore
+                { name: "bg", label: "Background Color", ...brandColorField, required: true }, // prettier-ignore
+                { name: "border", label: "Border Color", ...brandColorField }, // prettier-ignore
+                { name: "outline", label: "Outline Color", ...brandColorField }, // prettier-ignore
+                { name: "text-decoration", label: "Text Decoration Color", ...brandColorField }, // prettier-ignore
+                { name: "text--marker", label: "Text Marker Color", ...brandColorField }, // prettier-ignore
+                { name: "text-emphasis", label: "Text Emphasis Color", ...brandColorField }, // prettier-ignore
+                { name: "text--selection", label: "Text Selection Color", ...brandColorField }, // prettier-ignore
+                { name: "bg--selection", label: "Background Selection Color", ...brandColorField }, // prettier-ignore
+                { name: "shadow", label: "Shadow Color", ...brandColorField }, // prettier-ignore
+                { name: "caret", label: "Caret Color", ...brandColorField }, // prettier-ignore
+                { name: "column-rule", label: "Column Rule Color", ...brandColorField }, // prettier-ignore
+                { name: "fill", label: "Fill Color", ...brandColorField }, // prettier-ignore
+                { name: "stroke", label: "Stroke Color", ...brandColorField }, // prettier-ignore
+                { name: "outline--focus", label: "Outline Focus Color", ...brandColorField }, // prettier-ignore
+                {
+                  name: "advanced",
+                  label: "Advanced",
+                  widget: "object",
+                  collapsed: "auto",
+                  required: false,
+                  fields: [
+                    { name: "text__a", label: "Link Text  Color", ...brandColorField }, // prettier-ignore
+                    { name: "bg__a", label: "Link Background Color", ...brandColorField }, // prettier-ignore
+                    { name: "text__a--hover", label: "Link Text Hover Color", ...brandColorField }, // prettier-ignore
+                    { name: "bg__a--hover", label: "Link Background Hover Color", ...brandColorField }, // prettier-ignore
+                    { name: "text__button", label: "Button Text Color", ...brandColorField }, // prettier-ignore
+                    { name: "bg__button", label: "Button Background Color", ...brandColorField }, // prettier-ignore
+                    { name: "text__button--hover", label: "Button Text Hover Color", ...brandColorField }, // prettier-ignore
+                    { name: "bg__button--hover", label: "Button Background Hover Color", ...brandColorField }, // prettier-ignore
+                    { name: "text__button--disabled", label: "Button Text Disabled Color", ...brandColorField }, // prettier-ignore
+                    { name: "bg__button--disabled", label: "Button Background Disabled Color", ...brandColorField }, // prettier-ignore
+                    { name: "text__button--disabled", label: "Button Text Disabled Color", ...brandColorField }, // prettier-ignore
+                    { name: "bg__button--disabled", label: "Button Background Disabled Color", ...brandColorField }, // prettier-ignore
+                    { name: "icon-fill", label: "Icon Fill Color", ...brandColorField }, // prettier-ignore
+                    { name: "icon-stroke", label: "Icon Stroke Color", ...brandColorField }, // prettier-ignore
+                    { name: "text__code", label: "Code Text Color", ...brandColorField }, // prettier-ignore
+                    { name: "bg__code", label: "Code Background Color", ...brandColorField }, // prettier-ignore
+                    { name: "border__code", label: "Code Border Color", ...brandColorField }, // prettier-ignore
+                    { name: "text__mark", label: "Mark Text Color", ...brandColorField }, // prettier-ignore
+                    { name: "bg__mark", label: "Mark Background Color", ...brandColorField }, // prettier-ignore
+                    { name: "border__mark", label: "Mark Border Color", ...brandColorField }, // prettier-ignore
+                    { name: "track-color", label: "Scrollbar Track Color", ...brandColorField }, // prettier-ignore
+                    { name: "thumb-color", label: "Scrollbar Thumb Color", ...brandColorField }, // prettier-ignore
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    };
+    const stylesheetsCollection = {
+      name: "stylesheets",
+      label: "Stylesheets",
+      label_singular: "Stylesheet",
+      path: "{{slug}}",
+      slug: "{{fields._slug}}",
+      icon: "css",
+      folder: `${CONTENT_DIR}/_styles`,
+      extension: "css",
+      format: "yaml-frontmatter",
+      create: true,
+      // MEDIAS
+      media_folder: `/${CONTENT_DIR}/_images`,
+      public_folder: "/_images",
+      sortable_fields: {
+        fields: ["slug"],
+        default: {
+          field: "slug",
+          direction: "ascending",
+        },
+      },
       fields: [
         {
-          name: "test",
-          label: "TEST",
-          widget: "string",
+          name: "body",
+          label: "Content",
+          widget: "code",
+          required: false,
+          output_code_only: true,
+          default_language: "css",
+          allow_language_selection: false,
         },
       ],
     };
 
-    const dataCollection = {
+    const dataFilesCollection = {
       // ...mostCommonMarkdownCollectionConfig,
       // i18n: false,
       icon: "table_edit",
-      name: "data",
-      label: "Data",
+      name: "dataFiles",
+      label: "Data Files",
       editor: { preview: false },
       i18n: true,
       files: [
         {
-          name: "languageData",
-          label: "Language Data",
+          name: "translatedData",
+          label: "Translated Data",
           icon: "translate",
           file: `${CONTENT_DIR}/{{locale}}/{{locale}}.yaml`,
           // format: "yaml",
           i18n: true,
-          fields: [
-            // {
-            //   name: "dico",
-            //   label: "Dico",
-            //   widget: "keyvalue",
-            //   i18n: true,
-            //   required: false,
-            // },
-            // {
-            //   name: "data",
-            //   label: "Data",
-            //   widget: "keyvalue",
-            //   i18n: true,
-            //   required: false,
-            // },
-            varsField,
-            dataListField,
-            // {
-            //   name: "defaultLanguage",
-            //   label: "Default Language",
-            //   widget: "string",
-            // },
-            // {
-            //   name: "languages",
-            //   label: "Languages",
-            //   widget: "select",
-            //   multiple: true,
-            //   options: ["it", "en", "fr"],
-            // },
-          ],
+          fields: [tagsListField, varsField, dataListField],
         },
+      ],
+    };
+
+    const advancedDataFilesCollection = {
+      // ...mostCommonMarkdownCollectionConfig,
+      // i18n: false,
+      icon: "hardware",
+      name: "advancedDataFiles",
+      label: "Advanced Data Files",
+      editor: { preview: false },
+      i18n: true,
+      files: [
         {
           name: "metadata",
           label: "Default Metadata",
@@ -604,43 +824,13 @@ class CmsConfig {
         },
       ],
     };
-    const stylesCollection = {
-      name: "styles",
-      label: "Stylesheets",
-      label_singular: "Stylesheet",
-      path: "{{slug}}",
-      icon: "brush",
-      folder: `${CONTENT_DIR}/_styles`,
-      extension: "css",
-      format: "yaml-frontmatter",
-      create: true,
-      // MEDIAS
-      media_folder: `/${CONTENT_DIR}/_images`,
-      public_folder: "/_images",
-      sortable_fields: {
-        fields: ["slug"],
-        default: {
-          field: "slug",
-          direction: "ascending",
-        },
-      },
-      fields: [
-        {
-          name: "body",
-          label: "Content",
-          widget: "code",
-          required: false,
-          output_code_only: true,
-          default_language: "css",
-          allow_language_selection: false,
-        },
-      ],
-    };
+
     const pageLayoutsCollection = {
       name: "layouts",
       label: "Page Layouts",
       label_singular: "Page Layout",
       path: "{{slug}}",
+      slug: "{{fields._slug}}",
       icon: "edit_document",
       folder: `${CONTENT_DIR}/_layouts`,
       extension: "njk",
@@ -674,6 +864,7 @@ class CmsConfig {
       label: "Section Layouts",
       label_singular: "Section Layout",
       path: "{{slug}}",
+      slug: "{{fields._slug}}",
       icon: "slide_library",
       folder: `${CONTENT_DIR}/_partials`,
       extension: "njk",
@@ -707,6 +898,7 @@ class CmsConfig {
       label: "Partials",
       label_singular: "Partial",
       path: "{{slug}}",
+      slug: "{{fields._slug}}",
       icon: "brick",
       folder: `${CONTENT_DIR}/_partials`,
       extension: "md",
@@ -849,6 +1041,7 @@ class CmsConfig {
       eleventyNavigationField,
       simpleMetadataField,
       pagePreviewField,
+      tagsField,
       varsField,
       dataListField,
     ];
@@ -862,6 +1055,7 @@ class CmsConfig {
       path: "pages/{{slug}}",
       // TODO: check if it works
       slug: "{{name | localize}}", // This allows the slug to be localized
+      // slug: "{{fields._slug | localize}}",
       summary:
         "{{name}} {{eleventyNavigation.order | ternary(' (nav ', '')}}{{eleventyNavigation.order}}{{eleventyNavigation.order | ternary(')', '')}}",
       sortable_fields: {
@@ -1107,9 +1301,11 @@ class CmsConfig {
               pageLayoutsCollection,
               sectionLayoutsCollection,
               { divider: true },
-              dataCollection,
-              stylesCollection,
-              // sectionsCollection,
+              stylesConfigCollection,
+              stylesheetsCollection,
+              { divider: true },
+              dataFilesCollection,
+              advancedDataFilesCollection,
               {
                 divider: Boolean(
                   !mustSetup && data.userConfig.collections?.length

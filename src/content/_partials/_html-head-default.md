@@ -20,17 +20,21 @@
 
 {# HTML head injection #}
 
-{% include "_html-head.md" ignore missing %}
+{% partial "_html-head.md" %}
 {{ globalSettings.htmlHead | safe }}
-{% getBundle "html", "head" %}
+{# {% getBundle "html", "head" %} #}
 
 {# Internal CSS: E-mail obfuscation + CSS head injection (from globalSettings) + bundle #}
 
 <style>
 a[href^="mailto:"] b {display: none;}
+{{ brandStyles | safe }}
 {{ globalSettings.cssHead | safe }}
 {% getBundle "css" %}
 </style>
+
+{{htmlExternalCssFiles | safe}}
+
 <link rel="stylesheet" href="{% getBundleFileUrl 'css', 'external' %}">
 
 {# JS: detection + bundle #}

@@ -47,6 +47,8 @@ import {
   BASE_URL,
   PROD_URL,
   languages,
+  brandConfig,
+  brandStyles,
 } from "./env.config.js";
 import eleventyComputed from "./src/data/eleventyComputed.js";
 
@@ -420,6 +422,8 @@ export default async function (eleventyConfig) {
   eleventyConfig.addGlobalData("languages", languages);
   eleventyConfig.addGlobalData("defaultLanguage", defaultLanguage);
   eleventyConfig.addGlobalData("defaultLangCode", defaultLangCode);
+  eleventyConfig.addGlobalData("brandConfig", brandConfig);
+  eleventyConfig.addGlobalData("brandStyles", brandStyles);
   // Computed Data
   eleventyConfig.addGlobalData("eleventyComputed", eleventyComputed);
 

@@ -7,18 +7,32 @@ export default async function (eleventyConfig, pluginOptions) {
   const { dir } = eleventyConfig;
   const { inputGlob = "_styles/*.css", outputDir = "assets/styles" } =
     pluginOptions || {};
+  const outdir = `${dir.output}/${outputDir}`;
 
   let entrypoints = await fglob(`${dir.input}/${inputGlob}`);
   // Remove entrypoint files that start with an underscore
   entrypoints = entrypoints.filter(
     (entrypoint) => !entrypoint.split("/").pop().startsWith("_")
   );
+  const externalCssFiles = entrypoints.map((entrypoint) => {
+    const filename = entrypoint.split("/").pop();
+    const localUrl = `${outputDir}/${filename}`;
+
+    return {
+      in: entrypoint,
+      out: localUrl,
+    };
+  });
+  const htmlExternalCssFiles = externalCssFiles
+    .map((file) => `<link rel="stylesheet" href="${file.out}">`)
+    .join("\n");
+
+  eleventyConfig.addGlobalData("htmlExternalCssFiles", htmlExternalCssFiles);
 
   if (Array.isArray(entrypoints) && typeof entrypoints[0] === "string") {
     await bunBuild({
       entrypoints,
-      // outdir: "./dist/assets/styles",
-      outdir: `${dir.output}/${outputDir}`,
+      outdir,
       // naming: '[name].css',
       // naming: "index.css",
       // plugins: [cssTransformPlugin],
