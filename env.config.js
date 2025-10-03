@@ -5,9 +5,13 @@ import fs from "node:fs";
 import yaml from "js-yaml";
 import { transformLanguage } from "./src/utils/languages.js";
 import {
-  transformBaseFontStacks,
+  mapStyleStringsToClassDef,
+  compileStyleContexts,
+  transformFontStacksContexts,
+  transformWidthsContext,
   transformBrandColors,
   transformPalette,
+  transformTypeScales,
 } from "./src/utils/transformStyles.js";
 
 const processEnv = typeof process !== "undefined" ? process.env : {};
@@ -186,27 +190,83 @@ export { globalSettings, brandConfig };
 export const collections = globalSettings?.collections || [];
 export const languages =
   globalSettings?.languages?.map(transformLanguage) || [];
-// More specific useful brand settings
-export const brandBaseFontStacks = transformBaseFontStacks(
-  brandConfig?.baseFontStacks || {}
-);
-export const brandBaseFontStacksStyles = Object.values(brandBaseFontStacks)
-  .map((fontStack) => fontStack.stylesString)
-  .join("");
 
+// ----------- Brand styles computations
+// Widths contexts
+export const brandWidthsContexts = (brandConfig?.widthsContexts || []).map(
+  transformWidthsContext
+);
+export const brandWidthsContextsStyles = mapStyleStringsToClassDef(
+  brandWidthsContexts,
+  ".widths-"
+);
+
+// Font stacks contexts
+export const brandFontStacksContexts = transformFontStacksContexts(
+  brandConfig?.fontStacksContexts
+);
+export const brandFontStacksContextsStyles = mapStyleStringsToClassDef(
+  brandFontStacksContexts,
+  ".font-stacks-"
+);
+
+// Type Scale
+export const brandTypeScales = transformTypeScales(brandConfig?.typeScales);
+export const brandTypeScalesStyles = mapStyleStringsToClassDef(
+  brandTypeScales,
+  ".type-scale-"
+);
+
+// Colors
 export const brandColors = transformBrandColors(brandConfig?.colors);
 export const brandColorsStyles = brandColors
   .map((color) => color.stylesString)
   .join("");
+
+// Palettes
 export const brandPalettes = (brandConfig?.palettes || []).map(
   transformPalette
 );
+export const brandPalettesStyles = mapStyleStringsToClassDef(
+  brandPalettes,
+  ".palette-"
+);
 
-export const brandRootStyles = `:root{${brandBaseFontStacksStyles}${brandColorsStyles}${brandPalettes[0]?.stylesString}}`;
-export const brandPalettesStyles = brandPalettes
-  .map((palette) => `.palette-${palette.name}{${palette.stylesString}}`)
-  .join("\n");
-export const brandStyles = `${brandRootStyles}\n${brandPalettesStyles}`;
+// Style Contexts
+export const brandStyleContexts = compileStyleContexts(
+  brandConfig?.styleContexts,
+  {
+    widthsContext: brandWidthsContexts,
+    fontStacksContext: brandFontStacksContexts,
+    typeScale: brandTypeScales,
+    palette: brandPalettes,
+  }
+);
+export const brandStyleContextsStyles = mapStyleStringsToClassDef(
+  brandStyleContexts,
+  ".ctx-",
+  0
+);
+
+// Styles to be injected
+export const brandRootStyles = [
+  ":root{",
+  brandWidthsContexts?.[0]?.stylesString || "",
+  brandFontStacksContexts?.[0]?.stylesString || "",
+  brandTypeScales?.[0]?.stylesString || "",
+  brandColorsStyles || "",
+  brandPalettes?.[0]?.stylesString || "",
+  "}",
+].join("");
+
+export const brandStyles = [
+  brandRootStyles || "",
+  brandStyleContextsStyles || "", // Comes before more precise styles
+  brandWidthsContextsStyles || "",
+  brandFontStacksContextsStyles || "",
+  brandTypeScalesStyles || "",
+  brandPalettesStyles || "",
+].join("\n");
 
 // URLs
 // TODO: This is prone to forgetting to define the base url

@@ -72,6 +72,7 @@
     "memoize": "^10.1.0",
     "simple-icons": "^15.5.0",
     "typescript": "^5.8.2",
-    "unocss": "^66.4.2"
+    "unocss": "^66.4.2",
+    "utopia-core": "^1.6.0"
   }
 }

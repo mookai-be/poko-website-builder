@@ -1,3 +1,5 @@
+import { calculateTypeScale } from "utopia-core";
+
 // prettier-ignore
 export const nativeFontStacks = {
   "system-ui": "system-ui, sans-serif",
@@ -17,13 +19,49 @@ export const nativeFontStacks = {
   "handwritten": "'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive",
 }
 
+export function mapStyleStringsToClassDef(arr, classPrefix, l = 1) {
+  return arr.length > l
+    ? arr
+        .map((item) => `${classPrefix}${item.name}{${item.stylesString}}`)
+        .join("\n")
+    : "";
+}
+
+function compileStyleContext(styleContext, contextMap) {
+  const stylesString = Object.entries(styleContext)
+    .map(([key, name]) => {
+      const mapEntry = contextMap[key];
+      if (!Array.isArray(mapEntry)) return "";
+      const str = mapEntry.find((entry) => entry.name === name)?.stylesString;
+      return str;
+    })
+    .join("");
+
+  return {
+    ...styleContext,
+    stylesString,
+  };
+}
+
+export function compileStyleContexts(styleContexts, contextMap) {
+  return (styleContexts || []).map((styleContext) =>
+    compileStyleContext(styleContext, contextMap)
+  );
+}
+
 export function transformBaseFontStack(name, stackDef) {
-  const { native, custom } = stackDef;
+  const { native, custom } = stackDef || {};
   // TODO: implement custom font here as well
   const stylesString =
-    native && nativeFontStacks[native]
-      ? `--font-stack-${name}:${nativeFontStacks[native]};`
+    custom || (native && nativeFontStacks[native])
+      ? [
+          `--font-stack-${name}:`,
+          custom ? `${custom}, ` : "",
+          native && nativeFontStacks[native] ? nativeFontStacks[native] : "",
+          ";",
+        ].join("")
       : "";
+
   return {
     name,
     native,
@@ -32,12 +70,37 @@ export function transformBaseFontStack(name, stackDef) {
   };
 }
 
-export function transformBaseFontStacks(baseFontStacks) {
-  const { body, heading, code } = baseFontStacks;
-  return {
+export function transformFontStacksContext(baseFontStacks) {
+  const { name, body, heading, code } = baseFontStacks || {};
+  const vars = {
     body: body && transformBaseFontStack("body", body),
     heading: heading && transformBaseFontStack("heading", heading),
     code: code && transformBaseFontStack("code", code),
+  };
+  const stylesString = Object.values(vars)
+    .map((value) => value.stylesString)
+    .join("");
+
+  return {
+    name,
+    vars,
+    stylesString,
+  };
+}
+
+export function transformFontStacksContexts(fontStacksContexts) {
+  return fontStacksContexts.map(transformFontStacksContext);
+}
+
+export function transformWidthsContext(widthsContext) {
+  const { name, ...vars } = widthsContext || {};
+  const stylesString = Object.entries(vars)
+    .map(([key, value]) => `--width-${key}:${value};`)
+    .join("");
+  return {
+    name,
+    vars,
+    stylesString,
   };
 }
 
@@ -52,7 +115,7 @@ export function transformBrandColors(colors) {
 }
 
 export function transformPalette(palette) {
-  const { name, advanced, ...baseVars } = palette;
+  const { name, advanced, ...baseVars } = palette || {};
   let unifiedPalette = {
     ...baseVars,
     ...advanced,
@@ -72,4 +135,36 @@ export function transformPalette(palette) {
     vars: unifiedPalette,
     stylesString,
   };
+}
+
+export function transformTypeScale(typeScaleDef) {
+  const vars = {
+    minWidth: typeScaleDef?.minWidth || 360,
+    maxWidth: typeScaleDef?.maxWidth || 1240,
+    minFontSize: typeScaleDef?.minFontSize || 16,
+    maxFontSize: typeScaleDef?.maxFontSize || 20,
+    minTypeScale: typeScaleDef?.minTypeScale || 1.2,
+    maxTypeScale: typeScaleDef?.maxTypeScale || 1.25,
+    positiveSteps: typeScaleDef?.advanced?.positiveSteps || 6,
+    negativeSteps: typeScaleDef?.advanced?.negativeSteps || 2,
+    relativeTo: typeScaleDef?.advanced?.relativeTo || "viewport-width",
+    labelStyle: typeScaleDef?.advanced?.labelStyle || "utopia",
+    prefix: typeScaleDef?.advanced?.prefix || "step",
+  };
+
+  const typeScale = calculateTypeScale(vars);
+  const stylesString = typeScale
+    .map(({ label, clamp }) => `--${vars.prefix}-${label}:${clamp};`)
+    .join("");
+
+  return {
+    name: typeScaleDef?.name,
+    vars,
+    typeScale,
+    stylesString,
+  };
+}
+
+export function transformTypeScales(typeScales) {
+  return typeScales.map(transformTypeScale);
 }

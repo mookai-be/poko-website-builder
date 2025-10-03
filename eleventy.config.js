@@ -1,4 +1,6 @@
 import path from "node:path";
+import fs from "node:fs";
+import yaml from "js-yaml";
 // import { fileURLToPath } from "node:url";
 // import Nunjucks from "nunjucks";
 import { transform as lightningTransform } from "lightningcss";
@@ -176,6 +178,41 @@ export default async function (eleventyConfig) {
   //   }
   // );
   // eleventyConfig.setLibrary("njk", nunjucksEnvironment);
+
+  // --------------------- Eleventy Events
+  eleventyConfig.on(
+    "eleventy.before",
+    async (/*{ directories, runMode, outputMode, dir, ...arg }*/) => {
+      // 1. Read data in '_content/_data/brand.yaml'
+      let brandConfig = {};
+      const brandConfigPath = `${WORKING_DIR_ABSOLUTE}/_data/brand.yaml`;
+      try {
+        const brandConfigYaml = fs.readFileSync(brandConfigPath, "utf-8");
+        brandConfig = yaml.load(brandConfigYaml);
+      } catch (error) {
+        console.error("Error reading brandConfig.yaml:", error);
+      }
+      // 2. If "copy ctx.css" toggle is true, copy the ctx.css file to '_content/styles' directory with the defined name
+      const ctxOutputFilename = brandConfig?.ctxCssImport?.filename;
+      const toggleCopyCtxCss = typeof ctxOutputFilename === "string";
+      const ctxOutputPath = `${WORKING_DIR_ABSOLUTE}/_styles/${
+        ctxOutputFilename || "ctx.css"
+      }`;
+      const ctxInputPath = `src/styles/ctx.css`;
+      if (toggleCopyCtxCss) {
+        fs.copyFileSync(ctxInputPath, ctxOutputPath);
+      } else {
+        // 3. If "copy ctx.css" toggle is false, delete the ctx.css file from '_content/styles' directory
+        try {
+          fs.unlinkSync(ctxOutputPath);
+        } catch (error) {
+          console.warn(
+            "Trying to delete ctx.css but it doesn't seem to exist. If you named the file differently, please remove it manually from the CMS or file system."
+          );
+        }
+      }
+    }
+  );
 
   // --------------------- Preprocessors
   eleventyConfig.addPreprocessor("Publication Status", "*", (data, content) => {

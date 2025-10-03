@@ -27,16 +27,16 @@
 
 {# Internal CSS: E-mail obfuscation + CSS head injection (from globalSettings) + bundle #}
 
+{{htmlExternalCssFiles | safe}}
+
+<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'external' %}">
+
 <style>
 a[href^="mailto:"] b {display: none;}
 {{ brandStyles | safe }}
 {{ globalSettings.cssHead | safe }}
 {% getBundle "css" %}
 </style>
-
-{{htmlExternalCssFiles | safe}}
-
-<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'external' %}">
 
 {# JS: detection + bundle #}
 
