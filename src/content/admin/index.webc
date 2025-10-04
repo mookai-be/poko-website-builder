@@ -32,6 +32,57 @@ layout: null
       function inlineToMultiline(content) {
         return typeof content === 'string' ? content.replace(/\{% n %\}/g, "\n") : content;
       }
+      // Helper function to extract property values with balanced brackets/braces
+      const extractProperty = (argumentsString, propName) => {
+        const startIndex = argumentsString.indexOf(propName + '=');
+        if (startIndex === -1) return null;
+        
+        const valueStart = startIndex + propName.length + 1;
+        const firstChar = argumentsString[valueStart];
+        
+        // Determine opening and closing delimiters
+        let openChar, closeChar;
+        if (firstChar === '[') {
+          openChar = '[';
+          closeChar = ']';
+        } else if (firstChar === '{') {
+          openChar = '{';
+          closeChar = '}';
+        } else {
+          return null;
+        }
+        
+        let depth = 0;
+        let inString = false;
+        let escape = false;
+        
+        for (let i = valueStart; i < argumentsString.length; i++) {
+          const char = argumentsString[i];
+          
+          if (escape) {
+            escape = false;
+            continue;
+          }
+          if (char === '\\') {
+            escape = true;
+            continue;
+          }
+          if (char === '"') {
+            inString = !inString;
+            continue;
+          }
+          if (!inString) {
+            if (char === openChar) depth++;
+            if (char === closeChar) {
+              depth--;
+              if (depth === 0) {
+                return argumentsString.substring(valueStart, i + 1);
+              }
+            }
+          }
+        }
+        return null;
+      };
       const imageFields = [
         {
           name: "src",
@@ -588,6 +639,34 @@ ${inlineContent}
                 ],
               },
               {
+                name: "cover",
+                label: "Cover",
+                widget: "object",
+                required: false,
+                fields: [
+                  {
+                    name: "minHeight",
+                    label: "Min Height",
+                    widget: "string",
+                    hint: "The minimum height of the cover (e.g. 100vh [default], 30rem, 800px)",
+                    required: false,
+                  },
+                  {
+                    name: "noPadding",
+                    label: "Remove Default Padding",
+                    widget: "boolean",
+                    required: false,
+                  },
+                  {
+                    name: "gap",
+                    label: "Gap",
+                    widget: "string",
+                    hint: "The gap between blocks (e.g. 1em [default], var(--step-2) [fluid type scale], 0 [no gap])",
+                    required: false,
+                  },
+                ],
+              },
+              {
                 name: "custom",
                 label: "Custom",
                 widget: "object",
@@ -657,35 +736,19 @@ ${inlineContent}
           const argumentsString = match[1];
           // Currently in this form:
           // {% section type="grid", vars={}, blocks=[], advanced={ sectionSlug="", vars={}} %}
-          const matchWrapperAndSeparator = `([\[{]*.*?[\]}]*)(, | \%})`
-          // Match each prop
+          
           const typeMatch = argumentsString.match(/type="(.*?)"/);
-          const varsMatch = argumentsString.match(/vars=({*.*?}*)(, |$)/);
-          const blocksMatch = argumentsString.match(/blocks=(\[*.*?\]*)(, |$)/);
-          const advancedMatch = argumentsString.match(/advanced=({*.*?}*)(, |$)/);
-          // Use a non-greedy approach and handle both comma separator and end of string
-          // const varsMatch = argumentsString.match(/vars=({[^}]*(?:}[^,\s%]*)*})(?:,\s*|\s*%}|$)/);          
-          // const blocksMatch = argumentsString.match(/blocks=(\[[^\]]*(?:\][^,\s%]*)*\])(?:,\s*|\s*%}|$)/);          
-          // const advancedMatch = argumentsString.match(/advanced=({[^}]*(?:}[^,\s%]*)*})(?:,\s*|\s*%}|$)/);
+          const varsString = extractProperty(argumentsString, 'vars') || "{}";
+          const blocksString = extractProperty(argumentsString, 'blocks') || "[]";
+          const advancedString = extractProperty(argumentsString, 'advanced') || "{}";
 
           const type = typeMatch?.[1] || "";
-          const varsString = varsMatch?.[1] || "{}";
-          const blocksString = blocksMatch?.[1] || "[]";
-          const advancedString = advancedMatch?.[1] || "{}";
+
+          console.log({ type, varsString, blocksString, advancedString })
 
           const vars = JSON.parse(varsString) || {};
           const blocks = JSON.parse(blocksString) || [];
           const advanced = JSON.parse(advancedString) || {};
-
-          // blocks = blocks.map((block) => {
-          //   if (block.type === "markdown") {
-          //     return {
-          //       ...block,
-          //       value: inlineToMultiline(block.value),
-          //     }
-          //   }
-          //   return block;
-          // });
 
           return {
             type: {
@@ -699,16 +762,6 @@ ${inlineContent}
         toBlock: function (data) {
           const { type: typeField, blocks, advanced } = data;
           const { type, ...vars } = typeField || {};
-
-          // const blocks = (data.blocks || []).map((block) => {
-          //   if (block.type === "markdown") {
-          //     return {
-          //       ...block,
-          //       value: multilineToInline(block.value),
-          //     }
-          //   }
-          //   return block;
-          // });
 
           const varsString = JSON.stringify(vars);
           const blocksString = JSON.stringify(blocks);
