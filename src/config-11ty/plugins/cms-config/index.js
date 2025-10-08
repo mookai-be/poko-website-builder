@@ -208,13 +208,28 @@ const generatePageField = {
   required: false,
   i18n: "duplicate",
 };
+const pageLayoutRelationField = {
+  name: "pageLayout",
+  label: "Page Layout",
+  widget: "relation",
+  collection: "layouts",
+  hint: "Select a layout for this page or leave empty to use the default layout",
+  required: false,
+  i18n: "duplicate",
+};
 const bodyMarkdownField = {
   name: "body",
   label: "Content",
   widget: "markdown",
   required: false,
   i18n: true,
-  editor_components: ["eleventyImage", "partial", "wrapper", "section"],
+  editor_components: [
+    "eleventyImage",
+    "partial",
+    "wrapper",
+    "section",
+    "links",
+  ],
 };
 const eleventyNavigationField = {
   name: "eleventyNavigation",
@@ -1184,6 +1199,7 @@ class CmsConfig {
       // ]},
       statusField,
       generatePageField,
+      pageLayoutRelationField,
       {
         name: "name",
         label: "Page Name",
@@ -1264,6 +1280,7 @@ class CmsConfig {
       ...commonCollectionFields,
       statusField,
       generatePageField,
+      pageLayoutRelationField,
       {
         name: "name",
         label: "Article Name",
@@ -1295,6 +1312,7 @@ class CmsConfig {
       ...commonCollectionFields,
       statusField,
       generatePageField,
+      pageLayoutRelationField,
       {
         name: "name",
         label: "Name",

@@ -23,6 +23,15 @@ layout: null
       src="/assets/js/sveltia-cms.js"
     ></script>
 
+    <template webc:type="render" webc:is="script" webc:keep>
+        export default function() {
+          const currentCollections = JSON.stringify(this.env.globalSettings.collections)
+          return `
+const currentCollections = JSON.parse('${currentCollections}')
+`;
+        }
+    </template>
+
     <link href="config.json" type="application/json" rel="cms-config-url" />
     <script webc:raw>
       function multilineToInline(content) {
@@ -591,6 +600,7 @@ ${inlineContent}
             label: "Type",
             widget: "object",
             required: true,
+            collapsed: true,
             hint: "Select a pre-defined section type or use one of your custom section layouts (selectable in 'Advanced' bellow)",
             types: [
               {
@@ -744,8 +754,6 @@ ${inlineContent}
 
           const type = typeMatch?.[1] || "";
 
-          console.log({ type, varsString, blocksString, advancedString })
-
           const vars = JSON.parse(varsString) || {};
           const blocks = JSON.parse(blocksString) || [];
           const advanced = JSON.parse(advancedString) || {};
@@ -768,6 +776,272 @@ ${inlineContent}
           const advancedString = JSON.stringify(advanced);
           
           return `{% section type="${type}", vars=${varsString}, blocks=${blocksString}, advanced=${advancedString} %}`;
+        },
+        toPreview: function (data) {
+          return `TEST`;
+        },
+      });
+
+      CMS.registerEditorComponent({
+        id: "links",
+        label: "Links",
+        icon: "link",
+        fields: [
+          {
+            name: "linksData",
+            label: "Links References",
+            label_singular: "Link Reference",
+            widget: "list",
+            required: true,
+            collapsed: true,
+            hint: "",
+            types: [
+              {
+                name: "collections",
+                label: "Collections",
+                widget: "object",
+                required: false,
+                collapsed: false,
+                summary: "{{collectionNames}}",
+                fields: [
+                  {
+                    name: "collectionNames",
+                    label: "Select whole collections",
+                    widget: "select",
+                    required: true,
+                    multiple: true,
+                    options: [
+                      { value: "all", label: "All Collections" },
+                      { value: "pages", label: "Pages" },
+                      ...(currentCollections || []).map((collection) => ({
+                        value: collection,
+                        label: collection
+                      }))
+                    ],
+                  },
+                ],
+              },
+              {
+                name: "tags",
+                label: "Tags",
+                widget: "object",
+                required: false,
+                collapsed: false,
+                summary: "{{collectionNames}}",
+                fields: [
+                  {
+                    name: "collectionNames",
+                    label: "Select Tags",
+                    widget: "relation",
+                    collection: "dataFiles",
+                    file: "translatedData",
+                    value_field: "tagsList.*.slug",
+                    display_fields: ["tagsList.*.name"],
+                    required: true,
+                    multiple: true,
+                  },
+                ],
+              },
+              {
+                name: "pages",
+                label: "Pages",
+                widget: "object",
+                required: false,
+                collapsed: false,
+                summary: "{{slugs}}",
+                fields: [
+                  {
+                    name: "slugs",
+                    label: "Select pages",
+                    widget: "relation",
+                    collection: "pages",
+                    required: true,
+                    multiple: true,
+                  },
+                ],
+              },
+              {
+                name: "articles",
+                label: "Articles",
+                widget: "object",
+                required: false,
+                collapsed: false,
+                summary: "{{slugs}}",
+                fields: [
+                  {
+                    name: "slugs",
+                    label: "Select articles",
+                    widget: "relation",
+                    collection: "articles",
+                    required: true,
+                    multiple: true,
+                  },
+                ],
+              },
+              {
+                name: "external",
+                label: "External link",
+                widget: "object",
+                required: false,
+                collapsed: true,
+                summary: "{{href}}",
+                fields: [
+                  {
+                    name: "href",
+                    label: "URL",
+                    widget: "string",
+                    required: true,
+                  },
+                  {
+                    name: "text",
+                    label: "Text",
+                    widget: "string",
+                    required: false,
+                    hint: "Display Text. Optional: Shows the URL if not defined"
+                  },
+                  {
+                    name: "target",
+                    label: "Target",
+                    widget: "select",
+                    required: false,
+                    options: [
+                      { value: "_blank", label: "_blank" },
+                      { value: "_self", label: "_self" },
+                      { value: "_parent", label: "_parent" },
+                      { value: "_top", label: "_top" },
+                    ],
+                  },
+                  {
+                    name: "rel",
+                    label: "Rel",
+                    widget: "select",
+                    required: false,
+                    multiple: true,
+                    default: ["noopener"],
+                    options: [
+                      { value: "noopener", label: "noopener" },
+                      { value: "noreferrer", label: "noreferrer" },
+                      { value: "nofollow", label: "nofollow" },
+                      { value: "alternate", label: "alternate" },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            name: "itemLayout",
+            label: "Item Layout",
+            widget: "object",
+            required: false,
+            collapsed: true,
+            types: [
+              {
+                name: "markdown",
+                label: "Markdown",
+                widget: "object",
+                required: false,
+                summary: "{{value | truncate(50)}}",
+                fields: [
+                  {
+                    name: "value",
+                    widget: "markdown",
+                    required: false,
+                  },
+                ],
+              },
+              {
+                name: "partial",
+                label: "Partial",
+                widget: "object",
+                summary: "{{slug}}",
+                fields: [
+                  {
+                    name: "slug",
+                    label: "Partial Slug",
+                    widget: "relation",
+                    collection: "partials",
+                    required: false,
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            name: "wrapperLayout",
+            label: "Wrapper Layout",
+            widget: "object",
+            required: false,
+            collapsed: true,
+            hint: "Warning: If using a Wrapper Layout AND an Item Layout, you will have to use your Item Layout manually in the Wrapper.",
+            types: [
+              {
+                name: "markdown",
+                label: "Markdown",
+                widget: "object",
+                required: false,
+                summary: "{{value | truncate(50)}}",
+                fields: [
+                  {
+                    name: "value",
+                    widget: "markdown",
+                    required: false,
+                  },
+                ],
+              },
+              {
+                name: "partial",
+                label: "Partial",
+                widget: "object",
+                summary: "{{slug}}",
+                fields: [
+                  {
+                    name: "slug",
+                    label: "Partial Slug",
+                    widget: "relation",
+                    collection: "partials",
+                    required: false,
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+        pattern: /^{% links\s+(.*?)\s*%}$/ms,
+        fromBlock: function (match) {
+          // Parse the arguments from the captured string
+          const argumentsString = match[1];
+          // Currently in this form:
+          // {% links linksData=[{"type":"pages","slugs":["test","index"]}] %}
+          
+          const linksDataString = extractProperty(argumentsString, 'linksData') || "[]";
+          const itemLayoutString = extractProperty(argumentsString, 'itemLayout') || "{}";
+          const wrapperLayoutString = extractProperty(argumentsString, 'wrapperLayout') || "{}";
+          const linksData = JSON.parse(linksDataString) || [];
+          const itemLayout = JSON.parse(itemLayoutString) || {};
+          const wrapperLayout = JSON.parse(wrapperLayoutString) || {};
+
+          console.log("From Block", { wrapperLayout })
+
+          return {
+            linksData,
+            itemLayout,
+            wrapperLayout,
+          };
+        },
+        toBlock: function (data) {
+          const { linksData, itemLayout, wrapperLayout } = data;
+          console.log("To Block", { wrapperLayout })
+          const linksDataString = JSON.stringify(linksData);
+          const itemLayoutString = JSON.stringify(itemLayout);
+          const wrapperLayoutString = JSON.stringify(wrapperLayout);
+          
+          return [
+            `{% links linksData=${linksDataString}`,
+            itemLayoutString ? `, itemLayout=${itemLayoutString}` : "",
+            wrapperLayoutString ? `, wrapperLayout=${wrapperLayoutString}` : "",
+            ` %}`
+          ].join("");
         },
         toPreview: function (data) {
           return `TEST`;

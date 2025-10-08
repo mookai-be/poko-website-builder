@@ -15,13 +15,14 @@ import pluginIcons from "eleventy-plugin-icons";
 import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
 import { imageTransformOptions } from "./src/config-11ty/plugins/imageTransform.js";
 import yamlData from "./src/config-11ty/plugins/yamlData/index.js";
-import cmsConfig from "./src/config-11ty/plugins/cms-config/index.js";
+import cmsConfigPlugin from "./src/config-11ty/plugins/cms-config/index.js";
 import autoCollections from "./src/config-11ty/plugins/auto-collections/index.js";
 import htmlClassesTransform from "./src/config-11ty/plugins/html-classes-transform/index.js";
 import populateInputDir from "./src/config-11ty/plugins/populateInputDir/index.js";
 import partialsPlugin from "./src/config-11ty/plugins/partials/index.js";
 import buildExternalCSS from "./src/config-11ty/plugins/buildExternalCSS/index.js";
 import pluginUnoCSS from "./src/config-11ty/plugins/plugin-eleventy-unocss/index.js";
+import renderLinksPlugin from "./src/config-11ty/plugins/renderLinks/index.js";
 // import keystaticPassthroughFiles from './src/config-11ty/plugins/keystaticPassthroughFiles/index.js';
 // -------- Plugins Markdown
 import markdownItContainer from "markdown-it-container";
@@ -244,6 +245,9 @@ export default async function (eleventyConfig) {
         //     return token.nesting === 1 ? `<${tag} ${attrsStr}>` : `</${tag}>`;
         //   },
         // })
+        // Use it like this:
+        // ::: section
+        // :::
         .use(markdownItContainer, "section", mRCTOptions("section"))
         .use(markdownItContainer, "aside", mRCTOptions("aside"))
         .use(markdownItContainer, "article", mRCTOptions("article"))
@@ -334,7 +338,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, imageTransformOptions);
   eleventyConfig.addPlugin(yamlData);
-  eleventyConfig.addPlugin(cmsConfig);
+  eleventyConfig.addPlugin(cmsConfigPlugin);
   eleventyConfig.addPlugin(autoCollections);
   // TODO: reinstate this if 11ty Transform proves to be stable
   eleventyConfig.addPlugin(pluginWebc, {
@@ -497,6 +501,7 @@ export default async function (eleventyConfig) {
   //   console.log(rest);
   //   return "SECTIONS";
   // });
+  // await eleventyConfig.addAsyncShortcode("links", links);
   eleventyConfig.addShortcode("n", newLine);
   await eleventyConfig.addNunjucksAsyncShortcode(
     "fetchFile",
@@ -533,6 +538,8 @@ export default async function (eleventyConfig) {
   // });
 
   // Deferred Config
+  await eleventyConfig.addPlugin(renderLinksPlugin);
+
   await eleventyConfig.addPlugin(async function (eleventyConf) {
     eleventyConf.versionCheck(">=3.0.0-alpha.1");
     // const { dir } = eleventyConf;

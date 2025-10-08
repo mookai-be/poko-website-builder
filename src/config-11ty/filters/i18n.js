@@ -1,27 +1,45 @@
 import { getNestedValue } from "../../utils/objects.js";
 
 // remove any lang prefix if present and leading/trailing slashes
-function stripUrl(input, langPrefixRegex) {
+function stripUrl(input, langPrefixRegex, collectionNamesRegex) {
   if (typeof input !== "string") {
     return input;
   }
   return input
     .replace(langPrefixRegex, "")
+    .replace(collectionNamesRegex, "")
     .replace(/^\/+/, "")
     .replace(/\/+$/, "");
 }
 
-function lookupTemplateTranslations(inputOptional, templates) {
+function lookupTemplateTranslations(
+  inputOptional,
+  templates,
+  collectionName = "all"
+) {
   const input = inputOptional || this.page.url;
   // Avoid going through all templates if we have the right data available in ctx
   if (input === this.ctx.translationKey || input === this.ctx.page.url) {
     return this.ctx.templateTranslations;
   }
 
+  // TODO: Make this more robust
+  // Removing lang prefix and collection name from input makes collision more probable
+
   const langPrefixes = this.ctx.languages.map((lang) => lang.prefix);
   const langPrefixRegex = new RegExp(`^\/*(${langPrefixes.join("|")})\/`);
-  const cleanedInput = stripUrl(input, langPrefixRegex);
-  const allTemplates = templates || this.ctx.collections.all || [];
+  const collectionNames = Object.keys(this.ctx.collections);
+  const collectionNamesRegex = new RegExp(
+    `^\/*(${collectionNames.join("|")})\/`
+  );
+  const cleanedInput = stripUrl(input, langPrefixRegex, collectionNamesRegex);
+
+  const allTemplates =
+    templates ||
+    this.ctx.collections?.[collectionName] ||
+    this.ctx.collections.all ||
+    [];
+
   // Find matching template in any language
   const template = allTemplates.find((templ) => {
     // Match translationKey first
@@ -29,10 +47,17 @@ function lookupTemplateTranslations(inputOptional, templates) {
       return true;
     }
     // Then match url
-    const cleanedTemplateUrl = stripUrl(templ.page.url, langPrefixRegex);
+    const cleanedTemplateUrl = stripUrl(
+      templ.page.url,
+      langPrefixRegex,
+      collectionNamesRegex
+    );
+
     if (cleanedTemplateUrl === cleanedInput) {
       return true;
     }
+
+    // TODO: Matching filePathStem after that might be more robust?
 
     return false;
   });
@@ -44,15 +69,29 @@ function lookupTemplateTranslations(inputOptional, templates) {
 
 // input can be a url (with or without lang prefix) or ideally a translationKey
 // lang is optional and overwrites the current page's lang
-export function locale_url(input, langOverride, propName = "url") {
+export function locale_url(
+  input,
+  langOverride,
+  propName = "url",
+  collectionName = "all"
+) {
   // const originalFilter = this.env.getFilter("locale_url_original");
   try {
     const lang = langOverride || this.page.lang;
-    const templateTranslations = lookupTemplateTranslations.call(this, input);
+    const templateTranslations = lookupTemplateTranslations.call(
+      this,
+      input,
+      undefined,
+      collectionName
+    );
 
     const translationMatch = templateTranslations?.find((translation) => {
       return translation.lang === lang;
     });
+
+    if (propName === "all") {
+      return translationMatch;
+    }
 
     const propMatch = getNestedValue(translationMatch, propName);
 

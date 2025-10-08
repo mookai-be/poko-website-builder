@@ -25,6 +25,9 @@ export default {
 
     return language?.code || data.lang || defaultLang;
   },
+  layout: (data) => {
+    return data?.pageLayout || data?.layout;
+  },
   templateTranslations: (data) => {
     const { translationKey, localizationKey } = data;
     const allTemplates = data.collections.all;
