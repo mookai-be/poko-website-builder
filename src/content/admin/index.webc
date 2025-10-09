@@ -34,13 +34,6 @@ const currentCollections = JSON.parse('${currentCollections}')
 
     <link href="config.json" type="application/json" rel="cms-config-url" />
     <script webc:raw>
-      function multilineToInline(content) {
-        return content
-        return typeof content === 'string' ? content.replace(/\n/g, "{% n %}") : content;
-      }
-      function inlineToMultiline(content) {
-        return typeof content === 'string' ? content.replace(/\{% n %\}/g, "\n") : content;
-      }
       // Helper function to extract property values with balanced brackets/braces
       const extractProperty = (argumentsString, propName) => {
         const startIndex = argumentsString.indexOf(propName + '=');
@@ -92,6 +85,40 @@ const currentCollections = JSON.parse('${currentCollections}')
         }
         return null;
       };
+
+      // Helper function to extract quoted string values
+      const extractQuotedString = (argumentsString, propName) => {
+        const startIndex = argumentsString.indexOf(propName + '=');
+        if (startIndex === -1) return null;
+        
+        const valueStart = startIndex + propName.length + 1;
+        const firstChar = argumentsString[valueStart];
+        
+        // Must start with a quote
+        if (firstChar !== '"') return null;
+        
+        let escape = false;
+        
+        // Start from the character after the opening quote
+        for (let i = valueStart + 1; i < argumentsString.length; i++) {
+          const char = argumentsString[i];
+          
+          if (escape) {
+            escape = false;
+            continue;
+          }
+          if (char === '\\') {
+            escape = true;
+            continue;
+          }
+          if (char === '"') {
+            // Found closing quote - return the content without quotes
+            return argumentsString.substring(valueStart + 1, i);
+          }
+        }
+        return null;
+      };
+
       const imageFields = [
         {
           name: "src",
@@ -149,9 +176,10 @@ const currentCollections = JSON.parse('${currentCollections}')
       ];
 
       CMS.registerEditorComponent({
-        id: "eleventyImage",
-        label: "Image ++",
+        id: "imageShortcode",
+        label: "Image",
         icon: "image",
+        summary: "{{alt}} {{src}}",
         fields: [
           {
             name: "src",
@@ -166,249 +194,121 @@ const currentCollections = JSON.parse('${currentCollections}')
             required: false,
           },
           {
-            name: "title",
-            label: "Title",
-            widget: "string",
+            name: "aspectRatio",
+            label: "Aspect Ratio",
+            widget: "number",
+            value_type: "float",
+            hint: "Width / Height => square = 1; 16:9 = 1.78; 4:3 = 1.33; Extra wide = 4;",
             required: false,
           },
           {
             name: "width",
-            label: "Width",
+            label: "Width (px)",
             widget: "number",
             value_type: "int",
             required: false,
+            hint: "Leave empty for auto; Useful for image optimization when not full width.",
           },
           {
-            name: "loading",
-            label: "Loading",
-            widget: "select",
-            options: [
-              { value: "", label: "Default" },
-              { value: "lazy", label: "Lazy" },
-              { value: "eager", label: "Eager" },
-            ],
+            name: "advanced",
+            label: "Advanced Attributes",
+            widget: "object",
             required: false,
-          },
-          {
-            name: "internalLink",
-            label: "Internal Link",
-            widget: "relation",
-            collection: "pages",
-            required: false,
-          },
-          {
-            name: "wrapperTag",
-            label: "Wrapper Tag",
-            widget: "string",
-            required: false,
-          },
-          {
-            name: "imgAttrs",
-            label: "Other Image Attributes",
-            widget: "string",
-            required: false,
-          },
-          {
-            name: "wrapperAttrs",
-            label: "Wrapper Attributes",
-            widget: "string",
-            required: false,
-          },
-          {
-            name: "aAttrs",
-            label: "Link Attributes",
-            widget: "string",
-            required: false,
+            collapsed: "auto",
+            fields: [
+              {
+                name: "title",
+                label: "Title",
+                widget: "string",
+                required: false,
+              },
+              {
+                name: "loading",
+                label: "Loading",
+                widget: "select",
+                options: [
+                  { value: "", label: "Default" },
+                  { value: "lazy", label: "Lazy" },
+                  { value: "eager", label: "Eager" },
+                ],
+                required: false,
+              },
+              {
+                name: "wrapper",
+                label: "Wrapper",
+                widget: "string",
+                required: false,
+                hint: "HTML tag to wrap the image in; Leave empty for none;",
+              },
+              // {
+              //   name: "imgAttrs",
+              //   label: "Other raw image attributes",
+              //   widget: "string",
+              //   required: false,
+              // },
+            ]
           },
         ],
-        // pattern:
-        //   /^{% image src="(.*?)" alt="(.*?)" title="(.*?)" loading="(.*?)" decoding="(.*?)" sizes="(.*?)" %}$/ms,
-        // pattern:
-        //   /^<img src="(.*?)" alt="(.*?)" title="(.*?)" loading="(.*?)" decoding="(.*?)" \/>$/ms,
-        pattern:
-          /^(?:<(\w+)\s*([^>]*?)>\s*)?(?:<a\s+([^>]*?)>\s*)?<img\s+([^>]*?)\s*\/>(?:\s*<\/a>)?(?:\s*<\/(\1)>)?$/ms,
-        // Group explanation:
-        // match[0]: Full match
-        // match[1]: Wrapper tag name (if any)
-        // match[2]: Wrapper tag attributes (if any)
-        // match[3]: Anchor tag attributes (if any)
-        // match[4]: Image tag attributes (always this group)
-        // match[5]: Closing wrapper tag reference (should match match[1])
+        pattern: /^{% image\s+(.*?)\s*%}$/ms,
         fromBlock: function (match) {
-          // Check if the wrapper tag is actually the a tag
-          // If match[1] is 'a' and there's no match[3], then it's a link without a wrapper
-          let wrapperTag = "";
-          let rawWrapperAttrs = "";
-          let rawAAttrs = "";
-
-          if (match[1] === "a" && !match[3]) {
-            // This is actually an <a> tag being mistakenly identified as wrapper
-            rawAAttrs = match[2] || "";
-          } else {
-            // Normal case: separate wrapper and a tag
-            wrapperTag = match[1] || "";
-            rawWrapperAttrs = match[2] || "";
-            rawAAttrs = match[3] || "";
-          }
-
-          // Process wrapper attributes
-          let wrapperAttrs = "";
-          if (rawWrapperAttrs) {
-            // Remove class, id, and other standard attributes if needed in the future
-            wrapperAttrs = rawWrapperAttrs.trim();
-          }
-
-          // Extract internal link from href if present
-          let internalLink = "";
-          let aAttrs = "";
-          if (rawAAttrs) {
-            const href = rawAAttrs.match(/href="(.*?)"/)?.[1] || "";
-            if (href) {
-              const linkMatch = href.match(
-                /\{\{'([^']+)'\s*\|\s*locale_url\}\}/
-              );
-              internalLink = linkMatch ? linkMatch[1] : "";
-            }
-
-            // Extract other link attributes by removing href
-            aAttrs = rawAAttrs.replace(/href="[^"]*"\s*/, "").trim();
-          }
-
-          // Image attributes are always in match[4] per our regex pattern
-          const imgAttrsContent = match[4];
-          const src = imgAttrsContent?.match(/src="(.*?)"/)?.[1];
-          const alt = imgAttrsContent?.match(/alt="(.*?)"/)?.[1];
-          const title = imgAttrsContent?.match(/title="(.*?)"/)?.[1];
-          const width = imgAttrsContent?.match(/width="(.*?)"/)?.[1];
-          const loading = imgAttrsContent?.match(/loading="(.*?)"/)?.[1];
-
-          // Extract custom attributes by removing the ones we've already processed
-          let rawImgAttrs = imgAttrsContent || "";
-          const standardAttrs = ["src", "alt", "title", "width", "loading"];
-          standardAttrs.forEach((attr) => {
-            if (rawImgAttrs) {
-              rawImgAttrs = rawImgAttrs.replace(
-                new RegExp(`${attr}="[^"]*"\s*`),
-                ""
-              );
-            }
-          });
-          // Cleanup any extra spaces
-          rawImgAttrs = rawImgAttrs.trim();
-
+          // Parse the arguments from the captured string
+          const argumentsString = match[1];
+          // Currently in this form:
+          // {% image src="path/to/image.jpg", alt="Description", width="800" %}
+          
+          const src = extractQuotedString(argumentsString, 'src') || "";
+          const alt = extractQuotedString(argumentsString, 'alt') || "";
+          const aspectRatio = extractQuotedString(argumentsString, 'aspectRatio') || "";
+          const width = extractQuotedString(argumentsString, 'width') || "";
+          const title = extractQuotedString(argumentsString, 'title') || "";
+          const loading = extractQuotedString(argumentsString, 'loading') || "";
+          const wrapper = extractQuotedString(argumentsString, 'wrapper') || "";
+          // const imgAttrs = extractQuotedString(argumentsString, 'imgAttrs') || "";
+          
           return {
-            wrapperTag,
-            wrapperAttrs,
-            internalLink,
-            aAttrs,
             src,
-            alt,
-            title,
-            width,
-            imgAttrs: rawImgAttrs,
-            loading,
+            ...(alt && { alt }),
+            ...(aspectRatio && { aspectRatio }),
+            ...(width && { width }),
+            advanced: {
+              ...(title && { title }),
+              ...(loading && { loading }),
+              ...(wrapper && { wrapper }),
+              // ...(imgAttrs && { imgAttrs }),
+            }
           };
         },
-        toBlock: function ({
-          wrapperTag,
-          wrapperAttrs,
-          internalLink,
-          aAttrs,
-          imgAttrs,
-          ...dataRaw
-        }) {
-          // Filter out wrapper-specific and special properties from img attributes
-          const data = Object.fromEntries(
-            Object.entries(dataRaw).filter(
-              ([key]) =>
-                !["wrapperTag", "internalLink", "imgAttrs"].includes(key)
-            )
-          );
+        toBlock: function (data) {
+          const {
+            src,
+            alt,
+            aspectRatio,
+            width,
+            advanced
+          } = data;
+          const {
+            title,
+            loading,
+            wrapper,
+            // imgAttrs,
+          } = advanced || {};
 
-          // Build standard img attributes
-          const standardAttrs = Object.entries(data)
-            .map(([key, value]) =>
-              key === "alt" || value ? `${key}="${value || ""}"` : ``
-            )
-            .filter(Boolean);
-
-          // Combine standard attributes with custom raw attributes if provided
-          let allAttrs = standardAttrs;
-          if (imgAttrs && typeof imgAttrs === "string" && imgAttrs.trim()) {
-            allAttrs = [...standardAttrs, imgAttrs.trim()];
+          const attrs = {
+            src,
+            ...(alt && { alt }),
+            ...(aspectRatio && { aspectRatio }),
+            ...(width && { width }),
+            ...(title && { title }),
+            ...(loading && { loading }),
+            ...(wrapper && { wrapper }),
+            // ...(imgAttrs && { imgAttrs }),
           }
+          const attrsStr = Object.entries(attrs).map(([key, value]) => `${key}="${value}"`).join(", ");
 
-          // Join all attributes with spaces
-          const attrs = allAttrs.join(" ");
-
-          // Create img tag
-          let result = `<img ${attrs} />`;
-
-          // Add link if internal link is provided
-          if (internalLink) {
-            const linkAttributes = aAttrs ? ` ${aAttrs.trim()}` : "";
-            result = `<a href="{{'${internalLink}' | locale_url}}"${linkAttributes}>${result}</a>`;
-          }
-
-          // Add wrapper if provided (and it's not 'a' which would be redundant with the link)
-          if (wrapperTag && wrapperTag !== "a") {
-            const wrapperAttributes = wrapperAttrs
-              ? ` ${wrapperAttrs.trim()}`
-              : "";
-            result = `<${wrapperTag}${wrapperAttributes}>${result}</${wrapperTag}>`;
-          }
-
-          return result;
+          return `{% image ${attrsStr} %}`;
         },
-        toPreview: function ({
-          wrapperTag,
-          wrapperAttrs,
-          internalLink,
-          aAttrs,
-          imgAttrs,
-          ...dataRaw
-        }) {
-          // Filter out wrapper-specific and special properties
-          const data = Object.fromEntries(
-            Object.entries(dataRaw).filter(
-              ([key]) =>
-                !["wrapperTag", "internalLink", "imgAttrs"].includes(key)
-            )
-          );
-
-          // Build standard img attributes
-          const standardAttrs = Object.entries(data)
-            .map(([key, value]) =>
-              key === "alt" || value ? `${key}="${value || ""}"` : ``
-            )
-            .filter(Boolean);
-
-          // Combine standard attributes with custom raw attributes if provided
-          let allAttrs = standardAttrs;
-          if (imgAttrs && typeof imgAttrs === "string" && imgAttrs.trim()) {
-            allAttrs = [...standardAttrs, imgAttrs.trim()];
-          }
-
-          // Join all attributes with spaces
-          const attrs = allAttrs.join(" ");
-
-          // Create img tag
-          let result = `<img ${attrs} />`;
-
-          // Add link if internal link is provided
-          if (internalLink) {
-            result = `<a href="#">${result}</a>`;
-          }
-
-          // Add wrapper if provided (and it's not 'a' which would be redundant with the link)
-          if (wrapperTag && wrapperTag !== "a") {
-            const wrapperAttributes = wrapperAttrs
-              ? ` ${wrapperAttrs.trim()}`
-              : "";
-            result = `<${wrapperTag}${wrapperAttributes}>${result}</${wrapperTag}>`;
-          }
-
-          return result;
+        toPreview: function () {
+          return `<img src="{{src}}" alt="{{alt}}" />`;
         },
       });
 
@@ -556,14 +456,16 @@ const currentCollections = JSON.parse('${currentCollections}')
         fromBlock: function (match) {
           // console.log({ match });
           const propsRaw = match[1];
-          const inlineContent = match[2];
+          // const inlineContent = match[2];
+          const content = match[2];
           const wrapperTag = propsRaw.match(/tag="(.*?)"(,\s*)?/)?.[1];
           const wrapperAttrs = propsRaw.replace(/tag="(.*?)"(,\s*)?/g, "");
 
           // Convert from inline to multiline for editing
-          const multilineContent = inlineToMultiline(inlineContent);
+          // const multilineContent = inlineToMultiline(inlineContent);
           return {
-            content: multilineContent,
+            //content: multilineContent,
+            content,
             wrapperTag,
             wrapperAttrs,
           };
@@ -571,7 +473,7 @@ const currentCollections = JSON.parse('${currentCollections}')
         toBlock: function (data) {
           const { content, wrapperTag = "div", wrapperAttrs = "" } = data;
           // Convert from multiline to inline for storage
-          const inlineContent = multilineToInline(content);
+          // const inlineContent = multilineToInline(content);
 
           // TODO: improve parsing here to make sure we output properly formatted attributes list
           // {% wrapper tag="div", class="any number of classes", id="any" %}
@@ -582,7 +484,7 @@ const currentCollections = JSON.parse('${currentCollections}')
           return `{% wrapper tag="${wrapperTag}"${
             tagAttrs ? `, ${tagAttrs}` : ""
           } %}
-${inlineContent}
+${content}
 {% endwrapper %}`;
         },
         toPreview: function (data) {
@@ -1047,6 +949,282 @@ ${inlineContent}
           return `TEST`;
         },
       });
+    </script>
+
+<!--- BACKUP
+    <script webc:raw>
+      function multilineToInline(content) {
+        return content
+        return typeof content === 'string' ? content.replace(/\n/g, "{% n %}") : content;
+      }
+      function inlineToMultiline(content) {
+        return typeof content === 'string' ? content.replace(/\{% n %\}/g, "\n") : content;
+      }
+
+      CMS.registerEditorComponent({
+        id: "eleventyImage",
+        label: "Image ++",
+        icon: "image",
+        fields: [
+          {
+            name: "src",
+            label: "Image",
+            widget: "image",
+            required: true,
+          },
+          {
+            name: "alt",
+            label: "Alt Text",
+            widget: "string",
+            required: false,
+          },
+          {
+            name: "title",
+            label: "Title",
+            widget: "string",
+            required: false,
+          },
+          {
+            name: "width",
+            label: "Width",
+            widget: "number",
+            value_type: "int",
+            required: false,
+          },
+          {
+            name: "loading",
+            label: "Loading",
+            widget: "select",
+            options: [
+              { value: "", label: "Default" },
+              { value: "lazy", label: "Lazy" },
+              { value: "eager", label: "Eager" },
+            ],
+            required: false,
+          },
+          {
+            name: "internalLink",
+            label: "Internal Link",
+            widget: "relation",
+            collection: "pages",
+            required: false,
+          },
+          {
+            name: "wrapperTag",
+            label: "Wrapper Tag",
+            widget: "string",
+            required: false,
+          },
+          {
+            name: "imgAttrs",
+            label: "Other Image Attributes",
+            widget: "string",
+            required: false,
+          },
+          {
+            name: "wrapperAttrs",
+            label: "Wrapper Attributes",
+            widget: "string",
+            required: false,
+          },
+          {
+            name: "aAttrs",
+            label: "Link Attributes",
+            widget: "string",
+            required: false,
+          },
+        ],
+        // pattern:
+        //   /^{% image src="(.*?)" alt="(.*?)" title="(.*?)" loading="(.*?)" decoding="(.*?)" sizes="(.*?)" %}$/ms,
+        // pattern:
+        //   /^<img src="(.*?)" alt="(.*?)" title="(.*?)" loading="(.*?)" decoding="(.*?)" \/>$/ms,
+        pattern:
+          /^(?:<(\w+)\s*([^>]*?)>\s*)?(?:<a\s+([^>]*?)>\s*)?<img\s+([^>]*?)\s*\/>(?:\s*<\/a>)?(?:\s*<\/(\1)>)?$/ms,
+        // Group explanation:
+        // match[0]: Full match
+        // match[1]: Wrapper tag name (if any)
+        // match[2]: Wrapper tag attributes (if any)
+        // match[3]: Anchor tag attributes (if any)
+        // match[4]: Image tag attributes (always this group)
+        // match[5]: Closing wrapper tag reference (should match match[1])
+        fromBlock: function (match) {
+          // Check if the wrapper tag is actually the a tag
+          // If match[1] is 'a' and there's no match[3], then it's a link without a wrapper
+          let wrapperTag = "";
+          let rawWrapperAttrs = "";
+          let rawAAttrs = "";
+
+          if (match[1] === "a" && !match[3]) {
+            // This is actually an <a> tag being mistakenly identified as wrapper
+            rawAAttrs = match[2] || "";
+          } else {
+            // Normal case: separate wrapper and a tag
+            wrapperTag = match[1] || "";
+            rawWrapperAttrs = match[2] || "";
+            rawAAttrs = match[3] || "";
+          }
+
+          // Process wrapper attributes
+          let wrapperAttrs = "";
+          if (rawWrapperAttrs) {
+            // Remove class, id, and other standard attributes if needed in the future
+            wrapperAttrs = rawWrapperAttrs.trim();
+          }
+
+          // Extract internal link from href if present
+          let internalLink = "";
+          let aAttrs = "";
+          if (rawAAttrs) {
+            const href = rawAAttrs.match(/href="(.*?)"/)?.[1] || "";
+            if (href) {
+              const linkMatch = href.match(
+                /\{\{'([^']+)'\s*\|\s*locale_url\}\}/
+              );
+              internalLink = linkMatch ? linkMatch[1] : "";
+            }
+
+            // Extract other link attributes by removing href
+            aAttrs = rawAAttrs.replace(/href="[^"]*"\s*/, "").trim();
+          }
+
+          // Image attributes are always in match[4] per our regex pattern
+          const imgAttrsContent = match[4];
+          const src = imgAttrsContent?.match(/src="(.*?)"/)?.[1];
+          const alt = imgAttrsContent?.match(/alt="(.*?)"/)?.[1];
+          const title = imgAttrsContent?.match(/title="(.*?)"/)?.[1];
+          const width = imgAttrsContent?.match(/width="(.*?)"/)?.[1];
+          const loading = imgAttrsContent?.match(/loading="(.*?)"/)?.[1];
+
+          // Extract custom attributes by removing the ones we've already processed
+          let rawImgAttrs = imgAttrsContent || "";
+          const standardAttrs = ["src", "alt", "title", "width", "loading"];
+          standardAttrs.forEach((attr) => {
+            if (rawImgAttrs) {
+              rawImgAttrs = rawImgAttrs.replace(
+                new RegExp(`${attr}="[^"]*"\s*`),
+                ""
+              );
+            }
+          });
+          // Cleanup any extra spaces
+          rawImgAttrs = rawImgAttrs.trim();
+
+          return {
+            wrapperTag,
+            wrapperAttrs,
+            internalLink,
+            aAttrs,
+            src,
+            alt,
+            title,
+            width,
+            imgAttrs: rawImgAttrs,
+            loading,
+          };
+        },
+        toBlock: function ({
+          wrapperTag,
+          wrapperAttrs,
+          internalLink,
+          aAttrs,
+          imgAttrs,
+          ...dataRaw
+        }) {
+          // Filter out wrapper-specific and special properties from img attributes
+          const data = Object.fromEntries(
+            Object.entries(dataRaw).filter(
+              ([key]) =>
+                !["wrapperTag", "internalLink", "imgAttrs"].includes(key)
+            )
+          );
+
+          // Build standard img attributes
+          const standardAttrs = Object.entries(data)
+            .map(([key, value]) =>
+              key === "alt" || value ? `${key}="${value || ""}"` : ``
+            )
+            .filter(Boolean);
+
+          // Combine standard attributes with custom raw attributes if provided
+          let allAttrs = standardAttrs;
+          if (imgAttrs && typeof imgAttrs === "string" && imgAttrs.trim()) {
+            allAttrs = [...standardAttrs, imgAttrs.trim()];
+          }
+
+          // Join all attributes with spaces
+          const attrs = allAttrs.join(" ");
+
+          // Create img tag
+          let result = `<img ${attrs} />`;
+
+          // Add link if internal link is provided
+          if (internalLink) {
+            const linkAttributes = aAttrs ? ` ${aAttrs.trim()}` : "";
+            result = `<a href="{{'${internalLink}' | locale_url}}"${linkAttributes}>${result}</a>`;
+          }
+
+          // Add wrapper if provided (and it's not 'a' which would be redundant with the link)
+          if (wrapperTag && wrapperTag !== "a") {
+            const wrapperAttributes = wrapperAttrs
+              ? ` ${wrapperAttrs.trim()}`
+              : "";
+            result = `<${wrapperTag}${wrapperAttributes}>${result}</${wrapperTag}>`;
+          }
+
+          return result;
+        },
+        toPreview: function ({
+          wrapperTag,
+          wrapperAttrs,
+          internalLink,
+          aAttrs,
+          imgAttrs,
+          ...dataRaw
+        }) {
+          // Filter out wrapper-specific and special properties
+          const data = Object.fromEntries(
+            Object.entries(dataRaw).filter(
+              ([key]) =>
+                !["wrapperTag", "internalLink", "imgAttrs"].includes(key)
+            )
+          );
+
+          // Build standard img attributes
+          const standardAttrs = Object.entries(data)
+            .map(([key, value]) =>
+              key === "alt" || value ? `${key}="${value || ""}"` : ``
+            )
+            .filter(Boolean);
+
+          // Combine standard attributes with custom raw attributes if provided
+          let allAttrs = standardAttrs;
+          if (imgAttrs && typeof imgAttrs === "string" && imgAttrs.trim()) {
+            allAttrs = [...standardAttrs, imgAttrs.trim()];
+          }
+
+          // Join all attributes with spaces
+          const attrs = allAttrs.join(" ");
+
+          // Create img tag
+          let result = `<img ${attrs} />`;
+
+          // Add link if internal link is provided
+          if (internalLink) {
+            result = `<a href="#">${result}</a>`;
+          }
+
+          // Add wrapper if provided (and it's not 'a' which would be redundant with the link)
+          if (wrapperTag && wrapperTag !== "a") {
+            const wrapperAttributes = wrapperAttrs
+              ? ` ${wrapperAttrs.trim()}`
+              : "";
+            result = `<${wrapperTag}${wrapperAttributes}>${result}</${wrapperTag}>`;
+          }
+
+          return result;
+        },
+      });
+
 
       // TODO: decide if we want to keep this or use sections instead
       // <ul>{% for item in data %}<li>Item: {{item}}</li>{% endfor %}<ul>
@@ -1296,5 +1474,6 @@ ${inlineContent}
       //         },
       //       });
     </script>
+--->
   </body>
 </html>

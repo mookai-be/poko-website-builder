@@ -224,7 +224,8 @@ const bodyMarkdownField = {
   required: false,
   i18n: true,
   editor_components: [
-    "eleventyImage",
+    // "eleventyImage",
+    "imageShortcode",
     "partial",
     "wrapper",
     "section",
