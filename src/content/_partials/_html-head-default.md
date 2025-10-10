@@ -32,8 +32,6 @@
 <link rel="stylesheet" href="{% getBundleFileUrl 'css', 'external' %}">
 
 <style>
-a[href^="mailto:"] b {display: none;}
-{{ brandStyles | safe }}
 {{ globalSettings.cssHead | safe }}
 {% getBundle "css" %}
 </style>

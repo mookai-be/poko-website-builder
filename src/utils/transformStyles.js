@@ -49,14 +49,17 @@ export function compileStyleContexts(styleContexts, contextMap) {
   );
 }
 
-export function transformBaseFontStack(name, stackDef) {
+export function transformBaseFontStack(name, stackDef, customFontsImport) {
   const { native, custom } = stackDef || {};
+  const customFontName = customFontsImport?.find((font) => font.name === custom)
+    ?.source?.name;
+  console.log({ customFontName, custom });
   // TODO: implement custom font here as well
   const stylesString =
     custom || (native && nativeFontStacks[native])
       ? [
           `--font-stack-${name}:`,
-          custom ? `${custom}, ` : "",
+          customFontName ? `${customFontName}, ` : "",
           native && nativeFontStacks[native] ? nativeFontStacks[native] : "",
           ";",
         ].join("")
@@ -70,12 +73,14 @@ export function transformBaseFontStack(name, stackDef) {
   };
 }
 
-export function transformFontStacksContext(baseFontStacks) {
+export function transformFontStacksContext(baseFontStacks, customFontsImport) {
+  console.log({ customFontsImport });
   const { name, body, heading, code } = baseFontStacks || {};
   const vars = {
-    body: body && transformBaseFontStack("body", body),
-    heading: heading && transformBaseFontStack("heading", heading),
-    code: code && transformBaseFontStack("code", code),
+    body: body && transformBaseFontStack("body", body, customFontsImport),
+    heading:
+      heading && transformBaseFontStack("heading", heading, customFontsImport),
+    code: code && transformBaseFontStack("code", code, customFontsImport),
   };
   const stylesString = Object.values(vars)
     .map((value) => value.stylesString)
@@ -88,8 +93,13 @@ export function transformFontStacksContext(baseFontStacks) {
   };
 }
 
-export function transformFontStacksContexts(fontStacksContexts) {
-  return fontStacksContexts.map(transformFontStacksContext);
+export function transformFontStacksContexts(
+  fontStacksContexts,
+  customFontsImport
+) {
+  return fontStacksContexts.map((fontStacksContext) =>
+    transformFontStacksContext(fontStacksContext, customFontsImport)
+  );
 }
 
 export function transformWidthsContext(widthsContext) {

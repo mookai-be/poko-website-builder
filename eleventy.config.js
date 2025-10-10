@@ -8,6 +8,7 @@ import { transform as lightningTransform } from "lightningcss";
 // -------- Plugins
 import directoryOutputPlugin from "@11ty/eleventy-plugin-directory-output";
 import { RenderPlugin, IdAttributePlugin, I18nPlugin } from "@11ty/eleventy";
+import Fetch from "@11ty/eleventy-fetch";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import pluginWebc from "@11ty/eleventy-plugin-webc";
 import pluginIcons from "eleventy-plugin-icons";
@@ -456,6 +457,15 @@ export default async function (eleventyConfig) {
 
   // --------------------- Global Data
   eleventyConfig.addGlobalData("env", { ...env });
+  eleventyConfig.addGlobalData("fontServices", async () => {
+    const fontsource = await Fetch("https://api.fontsource.org/v1/fonts", {
+      duration: "10d",
+      type: "json",
+    });
+    return {
+      fontsource: { fonts: fontsource },
+    };
+  });
   eleventyConfig.addGlobalData("baseUrl", BASE_URL);
   eleventyConfig.addGlobalData("prodUrl", PROD_URL);
   eleventyConfig.addGlobalData("layout", "base");

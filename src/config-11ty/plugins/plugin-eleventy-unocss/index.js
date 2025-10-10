@@ -2,6 +2,8 @@
 import { createGenerator } from "@unocss/core";
 import unoConfig from "./uno.config.js";
 
+// TODO: Minify CSS on prod
+
 export default async function (eleventyConfig, pluginOptions) {
   eleventyConfig.versionCheck(">=3.0.0-alpha.1");
 

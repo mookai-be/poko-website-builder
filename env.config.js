@@ -203,7 +203,8 @@ export const brandWidthsContextsStyles = mapStyleStringsToClassDef(
 
 // Font stacks contexts
 export const brandFontStacksContexts = transformFontStacksContexts(
-  brandConfig?.fontStacksContexts
+  brandConfig?.fontStacksContexts,
+  brandConfig?.customFontsImport
 );
 export const brandFontStacksContextsStyles = mapStyleStringsToClassDef(
   brandFontStacksContexts,
@@ -267,6 +268,10 @@ export const brandStyles = [
   brandTypeScalesStyles || "",
   brandPalettesStyles || "",
 ].join("\n");
+
+// TODO: Import ctx.css
+// Once ctx.css is a proper library, we can import layers individually from node_modules
+// Then chose if we want to inline styles in the head or import them as external styles
 
 // URLs
 // TODO: This is prone to forgetting to define the base url

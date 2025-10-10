@@ -461,6 +461,10 @@ class CmsConfig {
     };
   }
   render(data) {
+    const fontsourceFonts = (data.fontServices?.fontsource?.fonts || []).map(
+      ({ family: value }) => ({ value, label: value })
+    );
+
     const globalSettingsSingleton = {
       name: "globalSettings",
       label: "Global Settings",
@@ -673,7 +677,11 @@ class CmsConfig {
               label: "Custom Fonts Import",
               widget: "list",
               required: false,
+              collapsed: true,
+              summary:
+                "[{{name}}] - '{{source.name}}' ({{source.type}}): {{source.weights}} {{source.styles}} {{source.subsets}}",
               fields: [
+                // NOTE: Not sure I need this
                 {
                   name: "name",
                   label: "Font Internal Name",
@@ -685,33 +693,84 @@ class CmsConfig {
                   label: "Source Service",
                   widget: "object",
                   required: true,
+                  collapsed: false,
+                  summary:
+                    "'{{name}}' ({{type}}): {{weights}} {{styles}} {{subsets}}",
                   types: [
                     {
-                      name: "Fontsource",
+                      name: "fontsource",
+                      label: "Fontsource",
                       widget: "object",
                       required: true,
+                      collapsed: "auto",
                       fields: [
                         {
                           name: "name",
                           label: "Font Name",
                           widget: "select",
                           required: true,
+                          options: fontsourceFonts,
+                          hint: "Select a font from https://fontsource.org/; IMPORTANT NOTE: All fonts don't have all weights, styles, subsets available.",
+                        },
+                        {
+                          name: "weights",
+                          label: "Font Weights",
+                          widget: "select",
+                          multiple: true,
+                          required: true,
+                          dropdown_threshold: 10,
+                          hint: "Default to all selected",
+                          default: ["400"],
                           options: [
-                            { label: "DO NOT USE YET", value: "Arial" },
+                            "100",
+                            "200",
+                            "300",
+                            "400",
+                            "500",
+                            "600",
+                            "700",
+                            "800",
+                            "900",
                           ],
                         },
                         {
-                          name: "weight",
-                          label: "Font Weight",
-                          widget: "string",
+                          name: "styles",
+                          label: "Font Styles",
+                          widget: "select",
+                          multiple: true,
                           required: true,
+                          default: ["normal"],
+                          options: ["normal", "italic"],
                         },
                         {
-                          name: "style",
-                          label: "Font Style",
-                          widget: "string",
+                          name: "subsets",
+                          label: "Font Subsets",
+                          widget: "select",
+                          multiple: true,
                           required: true,
+                          default: ["latin"],
+                          dropdown_threshold: 10,
+                          options: [
+                            "latin",
+                            "cyrillic",
+                            "greek",
+                            "vietnamese",
+                            "latin-ext",
+                            "cyrillic-ext",
+                            "greek-ext",
+                            "vietnamese-ext",
+                            "math",
+                            "symbols",
+                          ],
                         },
+                        // TODO: HERE ! Subsets
+                        // widths: [62.5, 125],
+                        // variable: {
+                        //   wght: { default: '400', min: '100', max: '900', step: '100' },
+                        //   wdth: { default: '100', min: '50', max: '200', step: '10' },
+                        //   slnt: { default: '0', min: '-20', max: '20', step: '1' },
+                        // },
+                        // preferStatic: true, // Prefer static font files over variable
                       ],
                     },
                   ],
