@@ -15,7 +15,7 @@ metadata:
     src: /_images/poko-logo-rvb-02.webp
 vars: {}
 ---
-{% section type="cover", vars={"minHeight":"100dvh","noPadding":false,"gap":""}, blocks=[{"value":"# [poko]{style=color:var(--pink)} is a lightweight, eco-focused, powerful, hackable website builder for the people {.centered .h0}\n\n{{ \"get-started\" | link(undefined,\"html\") | safe }} {{ \"commitment\" | link(undefined,\"html\") | safe }} {.cluster}\n\n<a href=\"#why-poko\" class=\"scroll pile\"></a>","type":"markdown"}], advanced={} %}
+{% section type="cover", vars={"minHeight":"100svh","noPadding":false,"gap":""}, blocks=[{"value":"# [poko]{style=color:var(--pink)} is a lightweight, eco-focused, powerful, hackable website builder for the people {.centered .h0}\n\n{{ \"get-started\" | link(undefined,\"html\") | safe }} {{ \"commitment\" | link(undefined,\"html\") | safe }} {.cluster}\n\n<a href=\"#why-poko\" class=\"scroll pile\"></a>","type":"markdown"}], advanced={} %}
 
 ## Why poko?
 
