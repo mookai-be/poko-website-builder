@@ -4,6 +4,15 @@ import { resolve, join, relative } from "path";
 import fs from "node:fs";
 import yaml from "js-yaml";
 import { transformLanguage } from "./src/utils/languages.js";
+import {
+  mapStyleStringsToClassDef,
+  compileStyleContexts,
+  transformFontStacksContexts,
+  transformWidthsContext,
+  transformBrandColors,
+  transformPalette,
+  transformTypeScales,
+} from "./src/utils/transformStyles.js";
 
 const processEnv = typeof process !== "undefined" ? process.env : {};
 
@@ -161,17 +170,116 @@ assert(BRANCH, "[env] BRANCH is required");
 // User Config from CMS
 // Read file in ${WORKING_DIR_ABSOLUTE}/_data/globalSettings.yaml
 const globalSettingsPath = `${WORKING_DIR_ABSOLUTE}/_data/globalSettings.yaml`;
+const brandConfigPath = `${WORKING_DIR_ABSOLUTE}/_data/brand.yaml`;
 let globalSettings = {};
+let brandConfig = {};
 try {
   const globalSettingsYaml = fs.readFileSync(globalSettingsPath, "utf-8");
   globalSettings = yaml.load(globalSettingsYaml);
 } catch (error) {
   console.error("Error reading globalSettings.yaml:", error);
 }
-export { globalSettings };
+try {
+  const brandConfigYaml = fs.readFileSync(brandConfigPath, "utf-8");
+  brandConfig = yaml.load(brandConfigYaml);
+} catch (error) {
+  console.error("Error reading brandConfig.yaml:", error);
+  brandConfig = {
+    ctxCssImport: { filename: "_ctx.css" },
+    widthsContexts: [],
+    fontStacksContexts: [],
+    typeScales: [],
+    colors: [],
+    palettes: [],
+  };
+}
+export { globalSettings, brandConfig };
+// More specific useful global settings
 export const collections = globalSettings?.collections || [];
 export const languages =
   globalSettings?.languages?.map(transformLanguage) || [];
+
+// ----------- Brand styles computations
+// Widths contexts
+export const brandWidthsContexts = (brandConfig?.widthsContexts || []).map(
+  transformWidthsContext
+);
+export const brandWidthsContextsStyles = mapStyleStringsToClassDef(
+  brandWidthsContexts,
+  ".widths-"
+);
+
+// Font stacks contexts
+export const brandFontStacksContexts = transformFontStacksContexts(
+  brandConfig?.fontStacksContexts,
+  brandConfig?.customFontsImport
+);
+export const brandFontStacksContextsStyles = mapStyleStringsToClassDef(
+  brandFontStacksContexts,
+  ".font-stacks-"
+);
+
+// Type Scale
+export const brandTypeScales = transformTypeScales(brandConfig?.typeScales);
+export const brandTypeScalesStyles = mapStyleStringsToClassDef(
+  brandTypeScales,
+  ".type-scale-"
+);
+
+// Colors
+export const brandColors = transformBrandColors(brandConfig?.colors);
+export const brandColorsStyles = brandColors
+  .map((color) => color.stylesString)
+  .join("");
+
+// Palettes
+export const brandPalettes = (brandConfig?.palettes || []).map(
+  transformPalette
+);
+export const brandPalettesStyles = mapStyleStringsToClassDef(
+  brandPalettes,
+  ".palette-"
+);
+
+// Style Contexts
+export const brandStyleContexts = compileStyleContexts(
+  brandConfig?.styleContexts,
+  {
+    widthsContext: brandWidthsContexts,
+    fontStacksContext: brandFontStacksContexts,
+    typeScale: brandTypeScales,
+    palette: brandPalettes,
+  }
+);
+export const brandStyleContextsStyles = mapStyleStringsToClassDef(
+  brandStyleContexts,
+  ".ctx-",
+  0
+);
+
+// Styles to be injected
+export const brandRootStyles = [
+  ":root{",
+  brandWidthsContexts?.[0]?.stylesString || "",
+  brandFontStacksContexts?.[0]?.stylesString || "",
+  brandTypeScales?.[0]?.stylesString || "",
+  brandColorsStyles || "",
+  brandPalettes?.[0]?.stylesString || "",
+  "}",
+].join("");
+
+export const brandStyles = [
+  brandRootStyles || "",
+  brandStyleContextsStyles || "", // Comes before more precise styles
+  brandWidthsContextsStyles || "",
+  brandFontStacksContextsStyles || "",
+  brandTypeScalesStyles || "",
+  brandPalettesStyles || "",
+].join("\n");
+
+// TODO: Import ctx.css
+// Once ctx.css is a proper library, we can import layers individually from node_modules
+// Then chose if we want to inline styles in the head or import them as external styles
 
 // URLs
 // TODO: This is prone to forgetting to define the base url

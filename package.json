@@ -12,6 +12,7 @@
   },
   "scripts": {
     "build": "BRANCH=$(git symbolic-ref --short HEAD) GIT_REMOTES=$(git remote -v) bun --bun run eleventy",
+    "cf-build": "bun i && bun run build",
     "build:gh-pages": "BRANCH=$(git symbolic-ref --short HEAD) GIT_REMOTES=$(git remote -v) bun --bun run eleventy",
     "dev": "BRANCH=$(git symbolic-ref --short HEAD) GIT_REMOTES=$(git remote -v) bun --bun run eleventy --serve",
     "start": "BRANCH=$(git symbolic-ref --short HEAD) GIT_REMOTES=$(git remote -v) bun --bun run eleventy --serve",
@@ -38,7 +39,7 @@
     "url": "https://www.m4rr.co/"
   },
   "dependencies": {
-    "@sveltia/cms": "^0.91.9"
+    "@sveltia/cms": "0.110.2"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
@@ -72,6 +73,7 @@
     "memoize": "^10.1.0",
     "simple-icons": "^15.5.0",
     "typescript": "^5.8.2",
-    "unocss": "^66.4.2"
+    "unocss": "^66.4.2",
+    "utopia-core": "^1.6.0"
   }
 }

@@ -11,27 +11,30 @@
 {% for link in templateTranslations %}
 
 <link rel="alternate" hreflang="{{link.lang}}" href="{{baseUrl}}{{link.url}}" />
-{% endfor %}
-{% if defaultLanguage %}
-<link rel="alternate" hreflang="x-default" href="{{baseUrl}}{{defaultLanguage.url}}" />
+{% if link.isDefault %}
+<link rel="alternate" hreflang="x-default" href="{{baseUrl}}{{link.url}}" />
 {% endif %}
+
+{% endfor %}
 
 {# Favicons #} {# TODO: Generate favicons, manifest, etc #}
 
 {# HTML head injection #}
 
-{% include "_html-head.md" ignore missing %}
+{% partial "_html-head.md" %}
 {{ globalSettings.htmlHead | safe }}
-{% getBundle "html", "head" %}
+{# {% getBundle "html", "head" %} #}
 
 {# Internal CSS: E-mail obfuscation + CSS head injection (from globalSettings) + bundle #}
 
+{{htmlExternalCssFiles | safe}}
+
+<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'external' %}">
+
 <style>
-a[href^="mailto:"] b {display: none;}
 {{ globalSettings.cssHead | safe }}
 {% getBundle "css" %}
 </style>
-<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'external' %}">
 
 {# JS: detection + bundle #}
 

@@ -13,6 +13,7 @@ import {
   collections as selectedCollections,
   languages,
 } from "../../../../env.config.js";
+import { nativeFontStacks } from "../../../utils/transformStyles.js";
 
 const isDev = NODE_ENV === "development";
 const mustSetup = !languages?.length;
@@ -28,6 +29,33 @@ const keyField = {
   widget: "string",
   required: true,
   hint: "Unique identifier for the data item",
+  i18n: "duplicate",
+};
+const tagsListField = {
+  name: "tagsList",
+  label: "Tags List (tagsList)",
+  widget: "list",
+  required: false,
+  collapsed: true,
+  i18n: true,
+  allow_reorder: true,
+  summary: "{{slug}}: {{name}}",
+  fields: [
+    {
+      name: "slug",
+      label: "Slug",
+      widget: "string",
+      required: true,
+      i18n: "duplicate",
+    },
+    {
+      name: "name",
+      label: "Name",
+      widget: "string",
+      required: true,
+      i18n: true,
+    },
+  ],
 };
 const varsField = {
   name: "vars",
@@ -42,6 +70,7 @@ const imageFields = [
     label: "Image",
     widget: "image",
     required: true,
+    i18n: true,
   },
   {
     name: "alt",
@@ -49,12 +78,14 @@ const imageFields = [
     widget: "string",
     required: false,
     hint: "~125 characters max; Be specific, concise, focused on the image purpose, avoid redundant phrases like 'image of…'",
+    i18n: true,
   },
   {
     name: "title",
     label: "Title",
     widget: "string",
     required: false,
+    i18n: true,
   },
   {
     name: "width",
@@ -63,6 +94,7 @@ const imageFields = [
     value_type: "int",
     required: false,
     hint: "In px; Leave empty for auto; Useful for image optimization when not full width.",
+    i18n: "duplicate",
   },
   {
     name: "aspectRatio",
@@ -71,6 +103,7 @@ const imageFields = [
     value_type: "float",
     hint: "Width / Height => square = 1; 16:9 = 1.78; 4:3 = 1.33; Extra wide = 4;",
     required: false,
+    i18n: "duplicate",
   },
   {
     name: "loading",
@@ -83,12 +116,14 @@ const imageFields = [
     ],
     required: false,
     hint: "Select 'Eager' for images that are visible in the initial viewport;",
+    i18n: "duplicate",
   },
   {
     name: "imgAttrs",
     label: "Other Image Attributes",
     widget: "string",
     required: false,
+    i18n: "duplicate",
   },
 ];
 const dataListField = {
@@ -98,7 +133,7 @@ const dataListField = {
   widget: "list",
   required: false,
   collapsed: true,
-  i18n: true,
+  i18n: "duplicate",
   allow_reorder: true,
   types: [
     {
@@ -113,6 +148,7 @@ const dataListField = {
           label: "Value",
           widget: "string",
           required: false,
+          i18n: true,
         },
       ],
     },
@@ -128,6 +164,7 @@ const dataListField = {
           label: "Value",
           widget: "markdown",
           required: false,
+          i18n: true,
         },
       ],
     },
@@ -171,13 +208,29 @@ const generatePageField = {
   required: false,
   i18n: "duplicate",
 };
+const pageLayoutRelationField = {
+  name: "pageLayout",
+  label: "Page Layout",
+  widget: "relation",
+  collection: "layouts",
+  hint: "Select a layout for this page or leave empty to use the default layout",
+  required: false,
+  i18n: "duplicate",
+};
 const bodyMarkdownField = {
   name: "body",
   label: "Content",
   widget: "markdown",
   required: false,
   i18n: true,
-  editor_components: ["eleventyImage", "partial", "wrapper", "section"],
+  editor_components: [
+    // "eleventyImage",
+    "imageShortcode",
+    "partial",
+    "wrapper",
+    "section",
+    "links",
+  ],
 };
 const eleventyNavigationField = {
   name: "eleventyNavigation",
@@ -288,6 +341,69 @@ const pagePreviewField = {
     },
   ],
 };
+const tagsField = {
+  name: "tags",
+  label: "Tags",
+  widget: "relation",
+  multiple: true,
+  // collection: "tags",
+  // search_fields: ["name"],
+  // value_field: "{{slug}}",
+  // display_fields: ["name"],
+  collection: "dataFiles",
+  file: "translatedData",
+  value_field: "tagsList.*.slug",
+  display_fields: ["tagsList.*.name"],
+  required: false,
+  i18n: "duplicate",
+};
+const brandColorField = {
+  widget: "relation",
+  collection: "stylesConfig",
+  file: "brand",
+  value_field: "colors.*.name",
+  required: false,
+};
+const nativeFontStackSelectField = {
+  widget: "select",
+  required: false,
+  options: Object.keys(nativeFontStacks).map((key) => ({
+    label: key,
+    value: key,
+  })),
+};
+const fontStackDefinitionField = (nativeDefault = "system-ui") => ({
+  widget: "object",
+  required: true,
+  fields: [
+    {
+      name: "native",
+      label: "Native Font Stack",
+      required: true,
+      ...nativeFontStackSelectField,
+      default: nativeDefault,
+      hint: "Native font stacks are drawn from https://modernfontstacks.com/ (Click for a preview)",
+    },
+    // TODO: Allow imported fonts
+    {
+      name: "custom",
+      label: "Custom Font Override",
+      widget: "relation",
+      collection: "stylesConfig",
+      file: "brand",
+      value_field: "customFontsImport.*.name",
+      required: false,
+    },
+  ],
+});
+const styleContextRelationField = (valField) => ({
+  widget: "relation",
+  required: true,
+  collection: "stylesConfig",
+  file: "brand",
+  value_field: `${valField}.*.name`,
+});
+
 const commonCollectionFields = [
   {
     name: "lang",
@@ -345,6 +461,10 @@ class CmsConfig {
     };
   }
   render(data) {
+    const fontsourceFonts = (data.fontServices?.fontsource?.fonts || []).map(
+      ({ family: value }) => ({ value, label: value })
+    );
+
     const globalSettingsSingleton = {
       name: "globalSettings",
       label: "Global Settings",
@@ -474,68 +594,405 @@ class CmsConfig {
         },
       ],
     };
-    const styleTokensSingleton = {
-      name: "styleTokens",
-      label: "Style Tokens",
-      icon: "settings",
-      file: `${CONTENT_DIR}/_data/styleTokens.yaml`,
-      // format: "yaml",
+
+    const stylesConfigCollection = {
+      // ...mostCommonMarkdownCollectionConfig,
+      // i18n: false,
+      icon: "brush",
+      name: "stylesConfig",
+      label: "Styles Config",
+      editor: { preview: false },
+      i18n: false,
+      files: [
+        {
+          name: "brand",
+          label: "Brand",
+          icon: "brand_family",
+          file: `${CONTENT_DIR}/_data/brand.yaml`,
+          // format: "yaml",
+          i18n: false,
+          fields: [
+            {
+              name: "ctxCssImport",
+              label: "Auto ctx.css Import",
+              widget: "object",
+              required: false,
+              collapsed: true,
+              default: {
+                filename: "ctx.css",
+              },
+              fields: [
+                {
+                  name: "filename",
+                  label: "Output Filename",
+                  widget: "string",
+                  required: true,
+                  default: "ctx.css",
+                },
+              ],
+            },
+            {
+              name: "widthsContexts",
+              label: "Widths Contexts",
+              label_singular: "Widths Context",
+              widget: "list",
+              required: false,
+              collapsed: true,
+              allow_reorder: true,
+              summary:
+                "{{name}}:  [Max width '{{max}}', Prose width '{{prose}}']",
+              hint: "The first context is used as the default",
+              default: [{ name: "main", max: "80rem", prose: "50rem" }],
+              fields: [
+                { name: "name", label: "Name", widget: "string", required: true }, // prettier-ignore
+                { name: "max", label: "Max Width", widget: "string", required: true, default: '80rem' }, // prettier-ignore
+                { name: "prose", label: "Prose Width", widget: "string", required: true, default: '50rem' }, // prettier-ignore
+              ],
+            },
+            {
+              name: "fontStacksContexts",
+              label: "Font Stacks Contexts",
+              label_singular: "Font Stack Context",
+              widget: "list",
+              required: false,
+              collapsed: true,
+              allow_reorder: true,
+              summary: `
+              {{name}}:
+              BODY: {{body.custom}} {{body.native}} //
+              HEADINGS: {{heading.custom}} {{heading.native}} //
+              CODE: {{code.custom}} {{code.native}}`,
+              hint: "Select your preferred font stack for every type of text. Prefer only native font stacks for performance reasons. The first values are used as the defaults.",
+              // prettier-ignore
+              default: [{ name: "main", body: { native: "system-ui" }, heading: { native: "system-ui" }, code: { native: "monospace-code" }}],
+              fields: [
+                { name: "name", label: "Name", widget: "string", required: true }, // prettier-ignore
+                { name: "body", label: "Body Text Font", ...fontStackDefinitionField("system-ui") }, // prettier-ignore
+                { name: "heading", label: "Heading Text Font", ...fontStackDefinitionField("system-ui") }, // prettier-ignore
+                { name: "code", label: "Code Text Font", ...fontStackDefinitionField("monospace-code") }, // prettier-ignore
+              ],
+            },
+            {
+              name: "customFontsImport",
+              label: "Custom Fonts Import",
+              widget: "list",
+              required: false,
+              collapsed: true,
+              summary:
+                "[{{name}}] - '{{source.name}}' ({{source.type}}): {{source.weights}} {{source.styles}} {{source.subsets}}",
+              fields: [
+                // NOTE: Not sure I need this
+                {
+                  name: "name",
+                  label: "Font Internal Name",
+                  widget: "string",
+                  required: true,
+                },
+                {
+                  name: "source",
+                  label: "Source Service",
+                  widget: "object",
+                  required: true,
+                  collapsed: false,
+                  summary:
+                    "'{{name}}' ({{type}}): {{weights}} {{styles}} {{subsets}}",
+                  types: [
+                    {
+                      name: "fontsource",
+                      label: "Fontsource",
+                      widget: "object",
+                      required: true,
+                      collapsed: "auto",
+                      fields: [
+                        {
+                          name: "name",
+                          label: "Font Name",
+                          widget: "select",
+                          required: true,
+                          options: fontsourceFonts,
+                          hint: "Select a font from https://fontsource.org/; IMPORTANT NOTE: All fonts don't have all weights, styles, subsets available.",
+                        },
+                        {
+                          name: "weights",
+                          label: "Font Weights",
+                          widget: "select",
+                          multiple: true,
+                          required: true,
+                          dropdown_threshold: 10,
+                          hint: "Default to all selected",
+                          default: ["400"],
+                          options: [
+                            "100",
+                            "200",
+                            "300",
+                            "400",
+                            "500",
+                            "600",
+                            "700",
+                            "800",
+                            "900",
+                          ],
+                        },
+                        {
+                          name: "styles",
+                          label: "Font Styles",
+                          widget: "select",
+                          multiple: true,
+                          required: true,
+                          default: ["normal"],
+                          options: ["normal", "italic"],
+                        },
+                        {
+                          name: "subsets",
+                          label: "Font Subsets",
+                          widget: "select",
+                          multiple: true,
+                          required: true,
+                          default: ["latin"],
+                          dropdown_threshold: 10,
+                          options: [
+                            "latin",
+                            "cyrillic",
+                            "greek",
+                            "vietnamese",
+                            "latin-ext",
+                            "cyrillic-ext",
+                            "greek-ext",
+                            "vietnamese-ext",
+                            "math",
+                            "symbols",
+                          ],
+                        },
+                        // TODO: HERE ! Subsets
+                        // widths: [62.5, 125],
+                        // variable: {
+                        //   wght: { default: '400', min: '100', max: '900', step: '100' },
+                        //   wdth: { default: '100', min: '50', max: '200', step: '10' },
+                        //   slnt: { default: '0', min: '-20', max: '20', step: '1' },
+                        // },
+                        // preferStatic: true, // Prefer static font files over variable
+                      ],
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              name: "typeScales",
+              label: "Fluid Type Scales",
+              label_singular: "Fluid Type Scale",
+              widget: "list",
+              required: false,
+              collapsed: true,
+              allow_reorder: true,
+              summary:
+                "Type Scale '{{name}}'  [Font Size '{{minFontSize}} - {{maxFontSize}}', Type Scale '{{minTypeScale}} - {{maxTypeScale}}']",
+              hint: "Visualize at https://utopia.fyi/type/calculator/. The first type scale is used as the default", // prettier-ignore
+              default: [{ name: "main", minFontSize: 18, maxFontSize: 20, minTypeScale: 1.2, maxTypeScale: 1.25 }], // prettier-ignore
+              fields: [
+                { name: "name", label: "Type Scale Name", widget: "string", required: true }, // prettier-ignore
+                { name: "minFontSize", label: "Min Font Size (px)", widget: "number", value_type: "int", required: true, default: 18 }, // prettier-ignore
+                { name: "maxFontSize", label: "Max Font Size (px)", widget: "number", value_type: "int", required: true, default: 20 }, // prettier-ignore
+                { name: "minTypeScale", label: "Min Type Scale", widget: "number", value_type: "float", required: true, default: 1.2 }, // prettier-ignore
+                { name: "maxTypeScale", label: "Max Type Scale", widget: "number", value_type: "float", required: true, default: 1.25 }, // prettier-ignore
+                // prettier-ignore
+                { name: "advanced", label: "Advanced Options", widget: "object", required: false, collapsed: true, fields: [ // prettier-ignore
+                  { name: "minWidth", label: "Min Width (px)", widget: "number", value_type: "int", required: true, default: 360 }, // prettier-ignore
+                  { name: "maxWidth", label: "Max Width (px)", widget: "number", value_type: "int", required: true, default: 1240 }, // prettier-ignore
+                  { name: "positiveSteps", label: "Positive Steps", widget: "number", value_type: "int", required: true, default: 6 }, // prettier-ignore
+                  { name: "negativeSteps", label: "Negative Steps", widget: "number", value_type: "int", required: true, default: 2 }, // prettier-ignore
+                  { name: "prefix", label: "Prefix", widget: "string", required: true, default: 'step' }, // prettier-ignore
+                  { name: "relativeTo", label: "Relative To", widget: "select", required: true, default: 'viewport-width', options: ['viewport-width', 'container'] }, // prettier-ignore
+                ]},
+              ],
+            },
+            {
+              name: "colors",
+              label: "Colors",
+              label_singular: "Color",
+              widget: "list",
+              required: false,
+              collapsed: true,
+              allow_reorder: true,
+              summary: "{{name}}: {{value}}",
+              hint: "Colors to be used across the website, in palettes or otherwise. ❗️Save the file for new colors to appear in the palette selection.",
+              fields: [
+                {
+                  name: "name",
+                  label: "Name",
+                  widget: "string",
+                  required: true,
+                },
+                {
+                  name: "value",
+                  label: "Color",
+                  widget: "color",
+                  required: true,
+                },
+              ],
+            },
+            {
+              name: "palettes",
+              label: "Color Palettes",
+              label_singular: "Color Palette",
+              widget: "list",
+              required: false,
+              collapsed: true,
+              allow_reorder: true,
+              summary:
+                "Palette '{{name}}'  [Text '{{text}}', Background '{{bg}}']",
+              hint: "The first palette is used as the default",
+              fields: [
+                {
+                  name: "name",
+                  label: "Palette Name",
+                  widget: "string",
+                  required: true,
+                },
+                // prettier-ignore
+                { name: "text", label: "Text Color", ...brandColorField, required: true }, // prettier-ignore
+                { name: "bg", label: "Background Color", ...brandColorField, required: true }, // prettier-ignore
+                { name: "border", label: "Border Color", ...brandColorField }, // prettier-ignore
+                { name: "outline", label: "Outline Color", ...brandColorField }, // prettier-ignore
+                { name: "text-decoration", label: "Text Decoration Color", ...brandColorField }, // prettier-ignore
+                { name: "text--marker", label: "Text Marker Color", ...brandColorField }, // prettier-ignore
+                { name: "text-emphasis", label: "Text Emphasis Color", ...brandColorField }, // prettier-ignore
+                { name: "text--selection", label: "Text Selection Color", ...brandColorField }, // prettier-ignore
+                { name: "bg--selection", label: "Background Selection Color", ...brandColorField }, // prettier-ignore
+                { name: "shadow", label: "Shadow Color", ...brandColorField }, // prettier-ignore
+                { name: "caret", label: "Caret Color", ...brandColorField }, // prettier-ignore
+                { name: "column-rule", label: "Column Rule Color", ...brandColorField }, // prettier-ignore
+                { name: "fill", label: "Fill Color", ...brandColorField }, // prettier-ignore
+                { name: "stroke", label: "Stroke Color", ...brandColorField }, // prettier-ignore
+                { name: "outline--focus", label: "Outline Focus Color", ...brandColorField }, // prettier-ignore
+                {
+                  name: "advanced",
+                  label: "Advanced Options",
+                  widget: "object",
+                  collapsed: "auto",
+                  required: false,
+                  fields: [
+                    { name: "text__a", label: "Link Text  Color", ...brandColorField }, // prettier-ignore
+                    { name: "bg__a", label: "Link Background Color", ...brandColorField }, // prettier-ignore
+                    { name: "text__a--hover", label: "Link Text Hover Color", ...brandColorField }, // prettier-ignore
+                    { name: "bg__a--hover", label: "Link Background Hover Color", ...brandColorField }, // prettier-ignore
+                    { name: "text__button", label: "Button Text Color", ...brandColorField }, // prettier-ignore
+                    { name: "bg__button", label: "Button Background Color", ...brandColorField }, // prettier-ignore
+                    { name: "text__button--hover", label: "Button Text Hover Color", ...brandColorField }, // prettier-ignore
+                    { name: "bg__button--hover", label: "Button Background Hover Color", ...brandColorField }, // prettier-ignore
+                    { name: "text__button--disabled", label: "Button Text Disabled Color", ...brandColorField }, // prettier-ignore
+                    { name: "bg__button--disabled", label: "Button Background Disabled Color", ...brandColorField }, // prettier-ignore
+                    { name: "text__button--disabled", label: "Button Text Disabled Color", ...brandColorField }, // prettier-ignore
+                    { name: "bg__button--disabled", label: "Button Background Disabled Color", ...brandColorField }, // prettier-ignore
+                    { name: "icon-fill", label: "Icon Fill Color", ...brandColorField }, // prettier-ignore
+                    { name: "icon-stroke", label: "Icon Stroke Color", ...brandColorField }, // prettier-ignore
+                    { name: "text__code", label: "Code Text Color", ...brandColorField }, // prettier-ignore
+                    { name: "bg__code", label: "Code Background Color", ...brandColorField }, // prettier-ignore
+                    { name: "border__code", label: "Code Border Color", ...brandColorField }, // prettier-ignore
+                    { name: "text__mark", label: "Mark Text Color", ...brandColorField }, // prettier-ignore
+                    { name: "bg__mark", label: "Mark Background Color", ...brandColorField }, // prettier-ignore
+                    { name: "border__mark", label: "Mark Border Color", ...brandColorField }, // prettier-ignore
+                    { name: "track-color", label: "Scrollbar Track Color", ...brandColorField }, // prettier-ignore
+                    { name: "thumb-color", label: "Scrollbar Thumb Color", ...brandColorField }, // prettier-ignore
+                  ],
+                },
+              ],
+            },
+            {
+              name: "styleContexts",
+              label: "Style Contexts",
+              label_singular: "Style Context",
+              widget: "list",
+              required: false,
+              collapsed: true,
+              allow_reorder: true,
+              summary:
+                "{{name}}: {{widthsContext}} | {{fontStacksContext}} | {{typeScale}} | {{palette}}",
+              hint: "You can group styles in different contexts to be used across the website using a class name like '.ctx-[name]'.",
+              default: [{ name: "main", value: "ctx" }],
+              fields: [
+                {
+                  name: "name",
+                  label: "Name",
+                  widget: "string",
+                  required: true,
+                  hint: "Used to generate the class name associated with this context (e.g. '.ctx-main')",
+                },
+                // prettier-ignore
+                { label: "Widths Context", name: "widthsContext", ...styleContextRelationField("widthsContexts") }, // prettier-ignore
+                { label: "Font Stacks Context", name: "fontStacksContext", ...styleContextRelationField("fontStacksContexts") }, // prettier-ignore
+                { label: "Type Scale", name: "typeScale", ...styleContextRelationField("typeScales") }, // prettier-ignore
+                { label: "Palette", name: "palette", ...styleContextRelationField("palettes") }, // prettier-ignore
+              ],
+            },
+          ],
+        },
+      ],
+    };
+    const stylesheetsCollection = {
+      name: "stylesheets",
+      label: "Stylesheets",
+      label_singular: "Stylesheet",
+      path: "{{slug}}",
+      slug: "{{fields._slug}}",
+      icon: "css",
+      folder: `${CONTENT_DIR}/_styles`,
+      extension: "css",
+      format: "yaml-frontmatter",
+      create: true,
+      // MEDIAS
+      media_folder: `/${CONTENT_DIR}/_images`,
+      public_folder: "/_images",
+      sortable_fields: {
+        fields: ["slug"],
+        default: {
+          field: "slug",
+          direction: "ascending",
+        },
+      },
       fields: [
         {
-          name: "test",
-          label: "TEST",
-          widget: "string",
+          name: "body",
+          label: "Content",
+          widget: "code",
+          required: false,
+          output_code_only: true,
+          default_language: "css",
+          allow_language_selection: false,
         },
       ],
     };
 
-    const dataCollection = {
+    const dataFilesCollection = {
       // ...mostCommonMarkdownCollectionConfig,
       // i18n: false,
       icon: "table_edit",
-      name: "data",
-      label: "Data",
+      name: "dataFiles",
+      label: "Data Files",
       editor: { preview: false },
       i18n: true,
       files: [
         {
-          name: "languageData",
-          label: "Language Data",
+          name: "translatedData",
+          label: "Translated Data",
           icon: "translate",
           file: `${CONTENT_DIR}/{{locale}}/{{locale}}.yaml`,
           // format: "yaml",
           i18n: true,
-          fields: [
-            // {
-            //   name: "dico",
-            //   label: "Dico",
-            //   widget: "keyvalue",
-            //   i18n: true,
-            //   required: false,
-            // },
-            // {
-            //   name: "data",
-            //   label: "Data",
-            //   widget: "keyvalue",
-            //   i18n: true,
-            //   required: false,
-            // },
-            varsField,
-            dataListField,
-            // {
-            //   name: "defaultLanguage",
-            //   label: "Default Language",
-            //   widget: "string",
-            // },
-            // {
-            //   name: "languages",
-            //   label: "Languages",
-            //   widget: "select",
-            //   multiple: true,
-            //   options: ["it", "en", "fr"],
-            // },
-          ],
+          fields: [tagsListField, varsField, dataListField],
         },
+      ],
+    };
+
+    const advancedDataFilesCollection = {
+      // ...mostCommonMarkdownCollectionConfig,
+      // i18n: false,
+      icon: "hardware",
+      name: "advancedDataFiles",
+      label: "Advanced Data Files",
+      editor: { preview: false },
+      i18n: true,
+      files: [
         {
           name: "metadata",
           label: "Default Metadata",
@@ -604,43 +1061,13 @@ class CmsConfig {
         },
       ],
     };
-    const stylesCollection = {
-      name: "styles",
-      label: "Stylesheets",
-      label_singular: "Stylesheet",
-      path: "{{slug}}",
-      icon: "brush",
-      folder: `${CONTENT_DIR}/_styles`,
-      extension: "css",
-      format: "yaml-frontmatter",
-      create: true,
-      // MEDIAS
-      media_folder: `/${CONTENT_DIR}/_images`,
-      public_folder: "/_images",
-      sortable_fields: {
-        fields: ["slug"],
-        default: {
-          field: "slug",
-          direction: "ascending",
-        },
-      },
-      fields: [
-        {
-          name: "body",
-          label: "Content",
-          widget: "code",
-          required: false,
-          output_code_only: true,
-          default_language: "css",
-          allow_language_selection: false,
-        },
-      ],
-    };
+
     const pageLayoutsCollection = {
       name: "layouts",
       label: "Page Layouts",
       label_singular: "Page Layout",
       path: "{{slug}}",
+      slug: "{{fields._slug}}",
       icon: "edit_document",
       folder: `${CONTENT_DIR}/_layouts`,
       extension: "njk",
@@ -674,6 +1101,7 @@ class CmsConfig {
       label: "Section Layouts",
       label_singular: "Section Layout",
       path: "{{slug}}",
+      slug: "{{fields._slug}}",
       icon: "slide_library",
       folder: `${CONTENT_DIR}/_partials`,
       extension: "njk",
@@ -707,6 +1135,7 @@ class CmsConfig {
       label: "Partials",
       label_singular: "Partial",
       path: "{{slug}}",
+      slug: "{{fields._slug}}",
       icon: "brick",
       folder: `${CONTENT_DIR}/_partials`,
       extension: "md",
@@ -830,6 +1259,7 @@ class CmsConfig {
       // ]},
       statusField,
       generatePageField,
+      pageLayoutRelationField,
       {
         name: "name",
         label: "Page Name",
@@ -849,6 +1279,7 @@ class CmsConfig {
       eleventyNavigationField,
       simpleMetadataField,
       pagePreviewField,
+      tagsField,
       varsField,
       dataListField,
     ];
@@ -862,6 +1293,7 @@ class CmsConfig {
       path: "pages/{{slug}}",
       // TODO: check if it works
       slug: "{{name | localize}}", // This allows the slug to be localized
+      // slug: "{{fields._slug | localize}}",
       summary:
         "{{name}} {{eleventyNavigation.order | ternary(' (nav ', '')}}{{eleventyNavigation.order}}{{eleventyNavigation.order | ternary(')', '')}}",
       sortable_fields: {
@@ -908,6 +1340,7 @@ class CmsConfig {
       ...commonCollectionFields,
       statusField,
       generatePageField,
+      pageLayoutRelationField,
       {
         name: "name",
         label: "Article Name",
@@ -939,6 +1372,7 @@ class CmsConfig {
       ...commonCollectionFields,
       statusField,
       generatePageField,
+      pageLayoutRelationField,
       {
         name: "name",
         label: "Name",
@@ -1107,9 +1541,11 @@ class CmsConfig {
               pageLayoutsCollection,
               sectionLayoutsCollection,
               { divider: true },
-              dataCollection,
-              stylesCollection,
-              // sectionsCollection,
+              stylesConfigCollection,
+              stylesheetsCollection,
+              { divider: true },
+              dataFilesCollection,
+              advancedDataFilesCollection,
               {
                 divider: Boolean(
                   !mustSetup && data.userConfig.collections?.length

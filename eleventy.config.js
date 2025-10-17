@@ -1,4 +1,6 @@
 import path from "node:path";
+import fs from "node:fs";
+import yaml from "js-yaml";
 // import { fileURLToPath } from "node:url";
 // import Nunjucks from "nunjucks";
 import { transform as lightningTransform } from "lightningcss";
@@ -6,6 +8,7 @@ import { transform as lightningTransform } from "lightningcss";
 // -------- Plugins
 import directoryOutputPlugin from "@11ty/eleventy-plugin-directory-output";
 import { RenderPlugin, IdAttributePlugin, I18nPlugin } from "@11ty/eleventy";
+import Fetch from "@11ty/eleventy-fetch";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import pluginWebc from "@11ty/eleventy-plugin-webc";
 import pluginIcons from "eleventy-plugin-icons";
@@ -13,13 +16,14 @@ import pluginIcons from "eleventy-plugin-icons";
 import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
 import { imageTransformOptions } from "./src/config-11ty/plugins/imageTransform.js";
 import yamlData from "./src/config-11ty/plugins/yamlData/index.js";
-import cmsConfig from "./src/config-11ty/plugins/cms-config/index.js";
+import cmsConfigPlugin from "./src/config-11ty/plugins/cms-config/index.js";
 import autoCollections from "./src/config-11ty/plugins/auto-collections/index.js";
 import htmlClassesTransform from "./src/config-11ty/plugins/html-classes-transform/index.js";
 import populateInputDir from "./src/config-11ty/plugins/populateInputDir/index.js";
 import partialsPlugin from "./src/config-11ty/plugins/partials/index.js";
 import buildExternalCSS from "./src/config-11ty/plugins/buildExternalCSS/index.js";
 import pluginUnoCSS from "./src/config-11ty/plugins/plugin-eleventy-unocss/index.js";
+import renderLinksPlugin from "./src/config-11ty/plugins/renderLinks/index.js";
 // import keystaticPassthroughFiles from './src/config-11ty/plugins/keystaticPassthroughFiles/index.js';
 // -------- Plugins Markdown
 import markdownItContainer from "markdown-it-container";
@@ -47,6 +51,8 @@ import {
   BASE_URL,
   PROD_URL,
   languages,
+  brandConfig,
+  brandStyles,
 } from "./env.config.js";
 import eleventyComputed from "./src/data/eleventyComputed.js";
 
@@ -154,9 +160,16 @@ export const config = {
 export default async function (eleventyConfig) {
   // --------------------- Base Config
   eleventyConfig.setQuietMode(true);
+
+  // eleventyConfig.setWatchThrottleWaitTime(500); // in milliseconds
+
   eleventyConfig.addWatchTarget("./src/config-11ty/**/*", {
     resetConfig: true,
   });
+  // eleventyConfig.addWatchTarget("./src/**/*");
+  // eleventyConfig.addWatchTarget("./env.config.js", { resetConfig: true });
+  // eleventyConfig.addWatchTarget(`${WORKING_DIR}/**/*`, { resetConfig: true });
+  // eleventyConfig.watchIgnores.add(`${WORKING_DIR}/_styles/_ctx.css`);
   // eleventyConfig.setUseGitIgnore(false);
 
   // --------------------- Custom Nunjucks setup
@@ -174,6 +187,41 @@ export default async function (eleventyConfig) {
   //   }
   // );
   // eleventyConfig.setLibrary("njk", nunjucksEnvironment);
+
+  // --------------------- Eleventy Events
+  eleventyConfig.on(
+    "eleventy.before",
+    async (/*{ directories, runMode, outputMode, dir, ...arg }*/) => {
+      // 1. Read data in '_content/_data/brand.yaml'
+      let brandConfig = {};
+      const brandConfigPath = `${WORKING_DIR_ABSOLUTE}/_data/brand.yaml`;
+      try {
+        const brandConfigYaml = fs.readFileSync(brandConfigPath, "utf-8");
+        brandConfig = yaml.load(brandConfigYaml);
+      } catch (error) {
+        console.error("Error reading brandConfig.yaml:", error);
+      }
+      // 2. If "copy ctx.css" toggle is true, copy the ctx.css file to '_content/styles' directory with the defined name
+      const ctxOutputFilename = brandConfig?.ctxCssImport?.filename;
+      const toggleCopyCtxCss = typeof ctxOutputFilename === "string";
+      const ctxOutputPath = `${WORKING_DIR_ABSOLUTE}/_styles/${
+        ctxOutputFilename || "ctx.css"
+      }`;
+      const ctxInputPath = `src/styles/ctx.css`;
+      if (toggleCopyCtxCss) {
+        fs.copyFileSync(ctxInputPath, ctxOutputPath);
+      } else {
+        // 3. If "copy ctx.css" toggle is false, delete the ctx.css file from '_content/styles' directory
+        try {
+          fs.unlinkSync(ctxOutputPath);
+        } catch (error) {
+          console.warn(
+            "Trying to delete ctx.css but it doesn't seem to exist. If you named the file differently, please remove it manually from the CMS or file system."
+          );
+        }
+      }
+    }
+  );
 
   // --------------------- Preprocessors
   eleventyConfig.addPreprocessor("Publication Status", "*", (data, content) => {
@@ -205,6 +253,9 @@ export default async function (eleventyConfig) {
         //     return token.nesting === 1 ? `<${tag} ${attrsStr}>` : `</${tag}>`;
         //   },
         // })
+        // Use it like this:
+        // ::: section
+        // :::
         .use(markdownItContainer, "section", mRCTOptions("section"))
         .use(markdownItContainer, "aside", mRCTOptions("aside"))
         .use(markdownItContainer, "article", mRCTOptions("article"))
@@ -212,6 +263,8 @@ export default async function (eleventyConfig) {
         .use(markdownItContainer, "header", mRCTOptions("header"))
         .use(markdownItContainer, "nav", mRCTOptions("nav"))
         .use(markdownItContainer, "main", mRCTOptions("main"))
+        .use(markdownItContainer, "ul", mRCTOptions("ul"))
+        .use(markdownItContainer, "ol", mRCTOptions("ol"))
         .use(markdownItContainer, "div", mRCTOptions("div"))
         .use(markdownItContainer, "block")
         .use(markdownItContainer, "flow")
@@ -295,7 +348,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, imageTransformOptions);
   eleventyConfig.addPlugin(yamlData);
-  eleventyConfig.addPlugin(cmsConfig);
+  eleventyConfig.addPlugin(cmsConfigPlugin);
   eleventyConfig.addPlugin(autoCollections);
   // TODO: reinstate this if 11ty Transform proves to be stable
   eleventyConfig.addPlugin(pluginWebc, {
@@ -413,6 +466,15 @@ export default async function (eleventyConfig) {
 
   // --------------------- Global Data
   eleventyConfig.addGlobalData("env", { ...env });
+  eleventyConfig.addGlobalData("fontServices", async () => {
+    const fontsource = await Fetch("https://api.fontsource.org/v1/fonts", {
+      duration: "10d",
+      type: "json",
+    });
+    return {
+      fontsource: { fonts: fontsource },
+    };
+  });
   eleventyConfig.addGlobalData("baseUrl", BASE_URL);
   eleventyConfig.addGlobalData("prodUrl", PROD_URL);
   eleventyConfig.addGlobalData("layout", "base");
@@ -420,6 +482,8 @@ export default async function (eleventyConfig) {
   eleventyConfig.addGlobalData("languages", languages);
   eleventyConfig.addGlobalData("defaultLanguage", defaultLanguage);
   eleventyConfig.addGlobalData("defaultLangCode", defaultLangCode);
+  eleventyConfig.addGlobalData("brandConfig", brandConfig);
+  eleventyConfig.addGlobalData("brandStyles", brandStyles);
   // Computed Data
   eleventyConfig.addGlobalData("eleventyComputed", eleventyComputed);
 
@@ -430,6 +494,7 @@ export default async function (eleventyConfig) {
   );
   // I18n
   eleventyConfig.addFilter("locale_url", locale_url);
+  eleventyConfig.addFilter("link", locale_url); // Alias for locale_url
   eleventyConfig.addFilter("locale_links", locale_links);
   // Date
   eleventyConfig.addFilter("toIsoString", toISOString);
@@ -456,6 +521,7 @@ export default async function (eleventyConfig) {
   //   console.log(rest);
   //   return "SECTIONS";
   // });
+  // await eleventyConfig.addAsyncShortcode("links", links);
   eleventyConfig.addShortcode("n", newLine);
   await eleventyConfig.addNunjucksAsyncShortcode(
     "fetchFile",
@@ -492,6 +558,8 @@ export default async function (eleventyConfig) {
   // });
 
   // Deferred Config
+  await eleventyConfig.addPlugin(renderLinksPlugin);
+
   await eleventyConfig.addPlugin(async function (eleventyConf) {
     eleventyConf.versionCheck(">=3.0.0-alpha.1");
     // const { dir } = eleventyConf;
