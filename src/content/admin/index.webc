@@ -1,0 +1,1479 @@
+---
+layout: null
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Admin Panel | poko</title>
+  </head>
+  <body>
+    <script
+      webc:if="env.CMS_IMPORT === 'cdn'"
+      webc:keep
+      src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"
+    ></script>
+
+    <script
+      webc:if="env.CMS_IMPORT !== 'cdn'"
+      webc:keep
+      src="/assets/js/sveltia-cms.js"
+    ></script>
+
+    <template webc:type="render" webc:is="script" webc:keep>
+        export default function() {
+          const currentCollections = JSON.stringify(this.env.globalSettings.collections)
+          return `
+const currentCollections = JSON.parse('${currentCollections}')
+`;
+        }
+    </template>
+
+    <link href="config.json" type="application/json" rel="cms-config-url" />
+    <script webc:raw>
+      // Helper function to extract property values with balanced brackets/braces
+      const extractProperty = (argumentsString, propName) => {
+        const startIndex = argumentsString.indexOf(propName + '=');
+        if (startIndex === -1) return null;
+        
+        const valueStart = startIndex + propName.length + 1;
+        const firstChar = argumentsString[valueStart];
+        
+        // Determine opening and closing delimiters
+        let openChar, closeChar;
+        if (firstChar === '[') {
+          openChar = '[';
+          closeChar = ']';
+        } else if (firstChar === '{') {
+          openChar = '{';
+          closeChar = '}';
+        } else {
+          return null;
+        }
+        
+        let depth = 0;
+        let inString = false;
+        let escape = false;
+        
+        for (let i = valueStart; i < argumentsString.length; i++) {
+          const char = argumentsString[i];
+          
+          if (escape) {
+            escape = false;
+            continue;
+          }
+          if (char === '\\') {
+            escape = true;
+            continue;
+          }
+          if (char === '"') {
+            inString = !inString;
+            continue;
+          }
+          if (!inString) {
+            if (char === openChar) depth++;
+            if (char === closeChar) {
+              depth--;
+              if (depth === 0) {
+                return argumentsString.substring(valueStart, i + 1);
+              }
+            }
+          }
+        }
+        return null;
+      };
+
+      // Helper function to extract quoted string values
+      const extractQuotedString = (argumentsString, propName) => {
+        const startIndex = argumentsString.indexOf(propName + '=');
+        if (startIndex === -1) return null;
+        
+        const valueStart = startIndex + propName.length + 1;
+        const firstChar = argumentsString[valueStart];
+        
+        // Must start with a quote
+        if (firstChar !== '"') return null;
+        
+        let escape = false;
+        
+        // Start from the character after the opening quote
+        for (let i = valueStart + 1; i < argumentsString.length; i++) {
+          const char = argumentsString[i];
+          
+          if (escape) {
+            escape = false;
+            continue;
+          }
+          if (char === '\\') {
+            escape = true;
+            continue;
+          }
+          if (char === '"') {
+            // Found closing quote - return the content without quotes
+            return argumentsString.substring(valueStart + 1, i);
+          }
+        }
+        return null;
+      };
+
+      const imageFields = [
+        {
+          name: "src",
+          label: "Image",
+          widget: "image",
+          required: true,
+        },
+        {
+          name: "alt",
+          label: "Alt Text",
+          widget: "string",
+          required: false,
+          hint: "~125 characters max; Be specific, concise, focused on the image purpose, avoid redundant phrases like 'image of…'",
+        },
+        {
+          name: "title",
+          label: "Title",
+          widget: "string",
+          required: false,
+        },
+        {
+          name: "width",
+          label: "Width",
+          widget: "number",
+          value_type: "int",
+          required: false,
+          hint: "In px; Leave empty for auto; Useful for image optimization when not full width.",
+        },
+        {
+          name: "aspectRatio",
+          label: "Aspect Ratio",
+          widget: "number",
+          value_type: "float",
+          hint: "Width / Height => square = 1; 16:9 = 1.78; 4:3 = 1.33; Extra wide = 4;",
+          required: false,
+        },
+        {
+          name: "loading",
+          label: "Loading",
+          widget: "select",
+          options: [
+            { value: "", label: "Default" },
+            { value: "lazy", label: "Lazy" },
+            { value: "eager", label: "Eager" },
+          ],
+          required: false,
+          hint: "Select 'Eager' for images that are visible in the initial viewport;",
+        },
+        {
+          name: "rawAttrs",
+          label: "Other Image Attributes",
+          widget: "string",
+          required: false,
+        },
+      ];
+
+      CMS.registerEditorComponent({
+        id: "imageShortcode",
+        label: "Image",
+        icon: "image",
+        summary: "{{alt}} {{src}}",
+        fields: [
+          {
+            name: "src",
+            label: "Image",
+            widget: "image",
+            required: true,
+          },
+          {
+            name: "alt",
+            label: "Alt Text",
+            widget: "string",
+            required: false,
+          },
+          {
+            name: "aspectRatio",
+            label: "Aspect Ratio",
+            widget: "number",
+            value_type: "float",
+            hint: "Width / Height => square = 1; 16:9 = 1.78; 4:3 = 1.33; Extra wide = 4;",
+            required: false,
+          },
+          {
+            name: "width",
+            label: "Width (px)",
+            widget: "number",
+            value_type: "int",
+            required: false,
+            hint: "Leave empty for auto; Useful for image optimization when not full width.",
+          },
+          {
+            name: "advanced",
+            label: "Advanced Attributes",
+            widget: "object",
+            required: false,
+            collapsed: "auto",
+            fields: [
+              {
+                name: "title",
+                label: "Title",
+                widget: "string",
+                required: false,
+              },
+              {
+                name: "loading",
+                label: "Loading",
+                widget: "select",
+                options: [
+                  { value: "", label: "Default" },
+                  { value: "lazy", label: "Lazy" },
+                  { value: "eager", label: "Eager" },
+                ],
+                required: false,
+              },
+              {
+                name: "wrapper",
+                label: "Wrapper",
+                widget: "string",
+                required: false,
+                hint: "HTML tag to wrap the image in; Leave empty for none;",
+              },
+              // {
+              //   name: "imgAttrs",
+              //   label: "Other raw image attributes",
+              //   widget: "string",
+              //   required: false,
+              // },
+            ]
+          },
+        ],
+        pattern: /^{% image\s+(.*?)\s*%}$/ms,
+        fromBlock: function (match) {
+          // Parse the arguments from the captured string
+          const argumentsString = match[1];
+          // Currently in this form:
+          // {% image src="path/to/image.jpg", alt="Description", width="800" %}
+          
+          const src = extractQuotedString(argumentsString, 'src') || "";
+          const alt = extractQuotedString(argumentsString, 'alt') || "";
+          const aspectRatio = extractQuotedString(argumentsString, 'aspectRatio') || "";
+          const width = extractQuotedString(argumentsString, 'width') || "";
+          const title = extractQuotedString(argumentsString, 'title') || "";
+          const loading = extractQuotedString(argumentsString, 'loading') || "";
+          const wrapper = extractQuotedString(argumentsString, 'wrapper') || "";
+          // const imgAttrs = extractQuotedString(argumentsString, 'imgAttrs') || "";
+          
+          return {
+            src,
+            ...(alt && { alt }),
+            ...(aspectRatio && { aspectRatio }),
+            ...(width && { width }),
+            advanced: {
+              ...(title && { title }),
+              ...(loading && { loading }),
+              ...(wrapper && { wrapper }),
+              // ...(imgAttrs && { imgAttrs }),
+            }
+          };
+        },
+        toBlock: function (data) {
+          const {
+            src,
+            alt,
+            aspectRatio,
+            width,
+            advanced
+          } = data;
+          const {
+            title,
+            loading,
+            wrapper,
+            // imgAttrs,
+          } = advanced || {};
+
+          const attrs = {
+            src,
+            ...(alt && { alt }),
+            ...(aspectRatio && { aspectRatio }),
+            ...(width && { width }),
+            ...(title && { title }),
+            ...(loading && { loading }),
+            ...(wrapper && { wrapper }),
+            // ...(imgAttrs && { imgAttrs }),
+          }
+          const attrsStr = Object.entries(attrs).map(([key, value]) => `${key}="${value}"`).join(", ");
+
+          return `{% image ${attrsStr} %}`;
+        },
+        toPreview: function () {
+          return `<img src="{{src}}" alt="{{alt}}" />`;
+        },
+      });
+
+      CMS.registerEditorComponent({
+        id: "partial",
+        label: "Partial",
+        icon: "brick",
+        fields: [
+          {
+            name: "partialSlug",
+            label: "Select Partial",
+            widget: "relation",
+            collection: "partials",
+            required: true,
+          },
+          // {
+          //   name: "data",
+          //   label: "Data",
+          //   widget: "keyvalue",
+          //   required: false,
+          // },
+          // {
+          //   name: "data",
+          //   label: "Data",
+          //   widget: "code",
+          //   required: false,
+          //   // TODO: default-language not working
+          //   default_language: "json",
+          //   output_code_only: true,
+          //   allow_language_selection: false,
+          // },
+          {
+            name: "templateEngineOverride",
+            label: "Markup language override",
+            // widget: "select",
+            widget: "hidden",
+            required: false,
+            // default: "njk,md",
+            options: [
+              { value: "", label: "Default" },
+              { value: "njk,md", label: "Markdown" },
+              { value: "njk", label: "Nunjucks (HTML)" },
+              { value: "webc", label: "WebC" },
+            ],
+          },
+        ],
+        // Match example: {% include "book-btn.md" %} or {% partial "book-btn.md" %}
+        // pattern: /^{% (?:include|partial) "(.*?)\.md" %}$/ms,
+        pattern: /^{% (?:include|partial)\s+([^>]*?)\s*%}$/ms,
+
+        fromBlock: function (match) {
+          // Parse the arguments from the captured string
+          const argsString = match[1];
+          const args = argsString.split(", ").map((arg) => arg.trim());
+
+          // Extract the slug (removing quotes and .md extension)
+          const slugWithQuotes = args[0];
+          const partialSlug = slugWithQuotes
+            .replace(/("|')/g, "")
+            .replace(/\.md$/, "");
+
+          // Extract data object if present (second argument)
+          let data;
+          if (args.length > 1) {
+            try {
+              data = JSON.parse(args[1]);
+            } catch (e) {
+              // If parsing fails, it might not be a valid JSON
+              console.log("Error parsing data JSON:", e);
+            }
+          }
+
+          // Extract template engine override if present (third argument)
+          let templateEngineOverride;
+          if (args.length > 2) {
+            templateEngineOverride = args[2].replace(/("|')/g, "");
+          }
+
+          return {
+            partialSlug,
+            data,
+            templateEngineOverride,
+          };
+        },
+        toBlock: function (data) {
+          // TODO: data could be a keyval field
+          const dataString = data.data ? JSON.stringify(data.data) : "{}";
+          // const dataString = data.data ? data.data : "{}";
+
+          const args = [
+            `"${data.partialSlug}.md"`,
+            ...(data.data && dataString !== "{}"
+              ? [dataString]
+              : data.templateEngineOverride
+              ? ["{}"]
+              : []),
+            ...(data.templateEngineOverride
+              ? [`"${data.templateEngineOverride}"`]
+              : []),
+          ];
+
+          return `{% partial ${args.join(", ")} %}`;
+        },
+        toPreview: function (data) {
+          return `TEST`;
+        },
+      });
+
+      CMS.registerEditorComponent({
+        id: "wrapper",
+        label: "Wrapper",
+        icon: "lunch_dining",
+        fields: [
+          { name: "content", label: "Content", widget: "markdown", required: false },
+          {
+            name: "wrapperTag",
+            label: "Wrapper Tag",
+            required: false,
+            widget: "select",
+            options: [
+              { value: "div", label: "div" },
+              { value: "section", label: "section" },
+              { value: "article", label: "article" },
+              { value: "aside", label: "aside" },
+              { value: "header", label: "header" },
+              { value: "footer", label: "footer" },
+              { value: "main", label: "main" },
+              { value: "nav", label: "nav" },
+              { value: "figure", label: "figure" },
+              { value: "figcaption", label: "figcaption" },
+              { value: "details", label: "details" },
+              { value: "summary", label: "summary" },
+              { value: "dialog", label: "dialog" },
+            ],
+          },
+          {
+            name: "wrapperAttrs",
+            label: "Wrapper Attributes",
+            widget: "string",
+            required: false,
+          },
+        ],
+        pattern:
+          /^{%\s*wrapper\s*([^>]*?)\s*%}\s*([\S\s]*?)\s*{%\s*endwrapper\s*%}$/ms,
+        fromBlock: function (match) {
+          // console.log({ match });
+          const propsRaw = match[1];
+          // const inlineContent = match[2];
+          const content = match[2];
+          const wrapperTag = propsRaw.match(/tag="(.*?)"(,\s*)?/)?.[1];
+          const wrapperAttrs = propsRaw.replace(/tag="(.*?)"(,\s*)?/g, "");
+
+          // Convert from inline to multiline for editing
+          // const multilineContent = inlineToMultiline(inlineContent);
+          return {
+            //content: multilineContent,
+            content,
+            wrapperTag,
+            wrapperAttrs,
+          };
+        },
+        toBlock: function (data) {
+          const { content, wrapperTag = "div", wrapperAttrs = "" } = data;
+          // Convert from multiline to inline for storage
+          // const inlineContent = multilineToInline(content);
+
+          // TODO: improve parsing here to make sure we output properly formatted attributes list
+          // {% wrapper tag="div", class="any number of classes", id="any" %}
+          // Probable separators: ` `, `,`, `, `
+          // But we need to avoid splitting spaces in between quotes (like in `class`)
+          const tagAttrs = wrapperAttrs;
+
+          return `{% wrapper tag="${wrapperTag}"${
+            tagAttrs ? `, ${tagAttrs}` : ""
+          } %}
+${content}
+{% endwrapper %}`;
+        },
+        toPreview: function (data) {
+          return `TEST`;
+        },
+      });
+
+      CMS.registerEditorComponent({
+        id: "section",
+        label: "Section",
+        icon: "brick",
+        fields: [
+          {
+            name: "type",
+            label: "Type",
+            widget: "object",
+            required: true,
+            collapsed: true,
+            hint: "Select a pre-defined section type or use one of your custom section layouts (selectable in 'Advanced' bellow)",
+            types: [
+              {
+                name: "grid-fluid",
+                label: "Fluid Grid",
+                widget: "object",
+                required: false,
+                fields: [
+                  {
+                    name: "columns",
+                    label: "Columns",
+                    widget: "number",
+                    hint: "The number of columns on large screens [note: can be overwritten with a custom variable widthColumnMin defining a min column size in CSS units]",
+                    required: false,
+                  },
+                  {
+                    name: "gap",
+                    label: "Gap",
+                    widget: "string",
+                    hint: "The gap between blocks (e.g. 1em [default], var(--step-2) [fluid type scale], 0 [no gap])",
+                    required: false,
+                  },
+                ],
+              },
+              {
+                name: "switcher",
+                label: "Switcher",
+                widget: "object",
+                required: false,
+                hint: "Switch between side by side and vertical display based on section width",
+                fields: [
+                  {
+                    name: "widthWrap",
+                    label: "Width Wrap",
+                    widget: "string",
+                    hint: "Section width to switch from side by side to vertical display. (e.g. var(--width-prose) [default], 30rem, 800px, 0px [no wrap])",
+                    required: false,
+                  },
+                  {
+                    name: "gap",
+                    label: "Gap",
+                    widget: "string",
+                    hint: "The gap between blocks (e.g. 1em [default], var(--step-2) [fluid type scale], 0 [no gap])",
+                    required: false,
+                  },
+                ],
+              },
+              {
+                name: "cover",
+                label: "Cover",
+                widget: "object",
+                required: false,
+                fields: [
+                  {
+                    name: "minHeight",
+                    label: "Min Height",
+                    widget: "string",
+                    hint: "The minimum height of the cover (e.g. 100vh [default], 30rem, 800px)",
+                    required: false,
+                  },
+                  {
+                    name: "noPadding",
+                    label: "Remove Default Padding",
+                    widget: "boolean",
+                    required: false,
+                  },
+                  {
+                    name: "gap",
+                    label: "Gap",
+                    widget: "string",
+                    hint: "The gap between blocks (e.g. 1em [default], var(--step-2) [fluid type scale], 0 [no gap])",
+                    required: false,
+                  },
+                ],
+              },
+              {
+                name: "custom",
+                label: "Custom",
+                widget: "object",
+                required: false,
+                fields: [],
+              },
+            ],
+          },
+          {
+            name: "blocks",
+            label: "Blocks",
+            widget: "list",
+            required: false,
+            i18n: true,
+            collapsed: true,
+            allow_reorder: true,
+            types: [
+              {
+                name: "image",
+                label: "Image",
+                widget: "object",
+                required: false,
+                summary: "{{src}}",
+                fields: imageFields,
+              },
+              {
+                name: "markdown",
+                label: "Markdown",
+                widget: "object",
+                required: false,
+                summary: "{{value | truncate(50)}}",
+                fields: [
+                  {
+                    name: "value",
+                    widget: "markdown",
+                    required: false,
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            name: "advanced",
+            label: "Advanced",
+            widget: "object",
+            required: false,
+            fields: [
+              {
+                name: "sectionSlug",
+                label: "Overwrite Section Layout",
+                widget: "relation",
+                collection: "sectionLayouts",
+                required: false,
+              },
+              {
+                name: "vars",
+                label: "Custom Variables",
+                widget: "keyvalue",
+                required: false,
+              }
+            ],
+          },
+        ],
+        pattern: /^{% section\s+(.*?)\s*%}$/ms,
+        fromBlock: function (match) {
+          // Parse the arguments from the captured string
+          const argumentsString = match[1];
+          // Currently in this form:
+          // {% section type="grid", vars={}, blocks=[], advanced={ sectionSlug="", vars={}} %}
+          
+          const typeMatch = argumentsString.match(/type="(.*?)"/);
+          const varsString = extractProperty(argumentsString, 'vars') || "{}";
+          const blocksString = extractProperty(argumentsString, 'blocks') || "[]";
+          const advancedString = extractProperty(argumentsString, 'advanced') || "{}";
+
+          const type = typeMatch?.[1] || "";
+
+          const vars = JSON.parse(varsString) || {};
+          const blocks = JSON.parse(blocksString) || [];
+          const advanced = JSON.parse(advancedString) || {};
+
+          return {
+            type: {
+              type,
+              ...vars,
+            },
+            blocks,
+            advanced
+          };
+        },
+        toBlock: function (data) {
+          const { type: typeField, blocks, advanced } = data;
+          const { type, ...vars } = typeField || {};
+
+          const varsString = JSON.stringify(vars);
+          const blocksString = JSON.stringify(blocks);
+          const advancedString = JSON.stringify(advanced);
+          
+          return `{% section type="${type}", vars=${varsString}, blocks=${blocksString}, advanced=${advancedString} %}`;
+        },
+        toPreview: function (data) {
+          return `TEST`;
+        },
+      });
+
+      CMS.registerEditorComponent({
+        id: "links",
+        label: "Links",
+        icon: "link",
+        fields: [
+          {
+            name: "linksData",
+            label: "Links References",
+            label_singular: "Link Reference",
+            widget: "list",
+            required: true,
+            collapsed: true,
+            hint: "",
+            types: [
+              {
+                name: "collections",
+                label: "Collections",
+                widget: "object",
+                required: false,
+                collapsed: false,
+                summary: "{{collectionNames}}",
+                fields: [
+                  {
+                    name: "collectionNames",
+                    label: "Select whole collections",
+                    widget: "select",
+                    required: true,
+                    multiple: true,
+                    options: [
+                      { value: "all", label: "All Collections" },
+                      { value: "pages", label: "Pages" },
+                      ...(currentCollections || []).map((collection) => ({
+                        value: collection,
+                        label: collection
+                      }))
+                    ],
+                  },
+                ],
+              },
+              {
+                name: "tags",
+                label: "Tags",
+                widget: "object",
+                required: false,
+                collapsed: false,
+                summary: "{{collectionNames}}",
+                fields: [
+                  {
+                    name: "collectionNames",
+                    label: "Select Tags",
+                    widget: "relation",
+                    collection: "dataFiles",
+                    file: "translatedData",
+                    value_field: "tagsList.*.slug",
+                    display_fields: ["tagsList.*.name"],
+                    required: true,
+                    multiple: true,
+                  },
+                ],
+              },
+              {
+                name: "pages",
+                label: "Pages",
+                widget: "object",
+                required: false,
+                collapsed: false,
+                summary: "{{slugs}}",
+                fields: [
+                  {
+                    name: "slugs",
+                    label: "Select pages",
+                    widget: "relation",
+                    collection: "pages",
+                    required: true,
+                    multiple: true,
+                  },
+                ],
+              },
+              {
+                name: "articles",
+                label: "Articles",
+                widget: "object",
+                required: false,
+                collapsed: false,
+                summary: "{{slugs}}",
+                fields: [
+                  {
+                    name: "slugs",
+                    label: "Select articles",
+                    widget: "relation",
+                    collection: "articles",
+                    required: true,
+                    multiple: true,
+                  },
+                ],
+              },
+              {
+                name: "external",
+                label: "External link",
+                widget: "object",
+                required: false,
+                collapsed: true,
+                summary: "{{href}}",
+                fields: [
+                  {
+                    name: "href",
+                    label: "URL",
+                    widget: "string",
+                    required: true,
+                  },
+                  {
+                    name: "text",
+                    label: "Text",
+                    widget: "string",
+                    required: false,
+                    hint: "Display Text. Optional: Shows the URL if not defined"
+                  },
+                  {
+                    name: "target",
+                    label: "Target",
+                    widget: "select",
+                    required: false,
+                    options: [
+                      { value: "_blank", label: "_blank" },
+                      { value: "_self", label: "_self" },
+                      { value: "_parent", label: "_parent" },
+                      { value: "_top", label: "_top" },
+                    ],
+                  },
+                  {
+                    name: "rel",
+                    label: "Rel",
+                    widget: "select",
+                    required: false,
+                    multiple: true,
+                    default: ["noopener"],
+                    options: [
+                      { value: "noopener", label: "noopener" },
+                      { value: "noreferrer", label: "noreferrer" },
+                      { value: "nofollow", label: "nofollow" },
+                      { value: "alternate", label: "alternate" },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            name: "itemLayout",
+            label: "Item Layout",
+            widget: "object",
+            required: false,
+            collapsed: true,
+            types: [
+              {
+                name: "markdown",
+                label: "Markdown",
+                widget: "object",
+                required: false,
+                summary: "{{value | truncate(50)}}",
+                fields: [
+                  {
+                    name: "value",
+                    widget: "markdown",
+                    required: false,
+                  },
+                ],
+              },
+              {
+                name: "partial",
+                label: "Partial",
+                widget: "object",
+                summary: "{{slug}}",
+                fields: [
+                  {
+                    name: "slug",
+                    label: "Partial Slug",
+                    widget: "relation",
+                    collection: "partials",
+                    required: false,
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            name: "wrapperLayout",
+            label: "Wrapper Layout",
+            widget: "object",
+            required: false,
+            collapsed: true,
+            hint: "Warning: If using a Wrapper Layout AND an Item Layout, you will have to use your Item Layout manually in the Wrapper.",
+            types: [
+              {
+                name: "markdown",
+                label: "Markdown",
+                widget: "object",
+                required: false,
+                summary: "{{value | truncate(50)}}",
+                fields: [
+                  {
+                    name: "value",
+                    widget: "markdown",
+                    required: false,
+                  },
+                ],
+              },
+              {
+                name: "partial",
+                label: "Partial",
+                widget: "object",
+                summary: "{{slug}}",
+                fields: [
+                  {
+                    name: "slug",
+                    label: "Partial Slug",
+                    widget: "relation",
+                    collection: "partials",
+                    required: false,
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+        pattern: /^{% links\s+(.*?)\s*%}$/ms,
+        fromBlock: function (match) {
+          // Parse the arguments from the captured string
+          const argumentsString = match[1];
+          // Currently in this form:
+          // {% links linksData=[{"type":"pages","slugs":["test","index"]}] %}
+          
+          const linksDataString = extractProperty(argumentsString, 'linksData') || "[]";
+          const itemLayoutString = extractProperty(argumentsString, 'itemLayout') || "{}";
+          const wrapperLayoutString = extractProperty(argumentsString, 'wrapperLayout') || "{}";
+          const linksData = JSON.parse(linksDataString) || [];
+          const itemLayout = JSON.parse(itemLayoutString) || {};
+          const wrapperLayout = JSON.parse(wrapperLayoutString) || {};
+
+          console.log("From Block", { wrapperLayout })
+
+          return {
+            linksData,
+            itemLayout,
+            wrapperLayout,
+          };
+        },
+        toBlock: function (data) {
+          const { linksData, itemLayout, wrapperLayout } = data;
+          console.log("To Block", { wrapperLayout })
+          const linksDataString = JSON.stringify(linksData);
+          const itemLayoutString = JSON.stringify(itemLayout);
+          const wrapperLayoutString = JSON.stringify(wrapperLayout);
+          
+          return [
+            `{% links linksData=${linksDataString}`,
+            itemLayoutString ? `, itemLayout=${itemLayoutString}` : "",
+            wrapperLayoutString ? `, wrapperLayout=${wrapperLayoutString}` : "",
+            ` %}`
+          ].join("");
+        },
+        toPreview: function (data) {
+          return `TEST`;
+        },
+      });
+    </script>
+
+<!--- BACKUP
+    <script webc:raw>
+      function multilineToInline(content) {
+        return content
+        return typeof content === 'string' ? content.replace(/\n/g, "{% n %}") : content;
+      }
+      function inlineToMultiline(content) {
+        return typeof content === 'string' ? content.replace(/\{% n %\}/g, "\n") : content;
+      }
+
+      CMS.registerEditorComponent({
+        id: "eleventyImage",
+        label: "Image ++",
+        icon: "image",
+        fields: [
+          {
+            name: "src",
+            label: "Image",
+            widget: "image",
+            required: true,
+          },
+          {
+            name: "alt",
+            label: "Alt Text",
+            widget: "string",
+            required: false,
+          },
+          {
+            name: "title",
+            label: "Title",
+            widget: "string",
+            required: false,
+          },
+          {
+            name: "width",
+            label: "Width",
+            widget: "number",
+            value_type: "int",
+            required: false,
+          },
+          {
+            name: "loading",
+            label: "Loading",
+            widget: "select",
+            options: [
+              { value: "", label: "Default" },
+              { value: "lazy", label: "Lazy" },
+              { value: "eager", label: "Eager" },
+            ],
+            required: false,
+          },
+          {
+            name: "internalLink",
+            label: "Internal Link",
+            widget: "relation",
+            collection: "pages",
+            required: false,
+          },
+          {
+            name: "wrapperTag",
+            label: "Wrapper Tag",
+            widget: "string",
+            required: false,
+          },
+          {
+            name: "imgAttrs",
+            label: "Other Image Attributes",
+            widget: "string",
+            required: false,
+          },
+          {
+            name: "wrapperAttrs",
+            label: "Wrapper Attributes",
+            widget: "string",
+            required: false,
+          },
+          {
+            name: "aAttrs",
+            label: "Link Attributes",
+            widget: "string",
+            required: false,
+          },
+        ],
+        // pattern:
+        //   /^{% image src="(.*?)" alt="(.*?)" title="(.*?)" loading="(.*?)" decoding="(.*?)" sizes="(.*?)" %}$/ms,
+        // pattern:
+        //   /^<img src="(.*?)" alt="(.*?)" title="(.*?)" loading="(.*?)" decoding="(.*?)" \/>$/ms,
+        pattern:
+          /^(?:<(\w+)\s*([^>]*?)>\s*)?(?:<a\s+([^>]*?)>\s*)?<img\s+([^>]*?)\s*\/>(?:\s*<\/a>)?(?:\s*<\/(\1)>)?$/ms,
+        // Group explanation:
+        // match[0]: Full match
+        // match[1]: Wrapper tag name (if any)
+        // match[2]: Wrapper tag attributes (if any)
+        // match[3]: Anchor tag attributes (if any)
+        // match[4]: Image tag attributes (always this group)
+        // match[5]: Closing wrapper tag reference (should match match[1])
+        fromBlock: function (match) {
+          // Check if the wrapper tag is actually the a tag
+          // If match[1] is 'a' and there's no match[3], then it's a link without a wrapper
+          let wrapperTag = "";
+          let rawWrapperAttrs = "";
+          let rawAAttrs = "";
+
+          if (match[1] === "a" && !match[3]) {
+            // This is actually an <a> tag being mistakenly identified as wrapper
+            rawAAttrs = match[2] || "";
+          } else {
+            // Normal case: separate wrapper and a tag
+            wrapperTag = match[1] || "";
+            rawWrapperAttrs = match[2] || "";
+            rawAAttrs = match[3] || "";
+          }
+
+          // Process wrapper attributes
+          let wrapperAttrs = "";
+          if (rawWrapperAttrs) {
+            // Remove class, id, and other standard attributes if needed in the future
+            wrapperAttrs = rawWrapperAttrs.trim();
+          }
+
+          // Extract internal link from href if present
+          let internalLink = "";
+          let aAttrs = "";
+          if (rawAAttrs) {
+            const href = rawAAttrs.match(/href="(.*?)"/)?.[1] || "";
+            if (href) {
+              const linkMatch = href.match(
+                /\{\{'([^']+)'\s*\|\s*locale_url\}\}/
+              );
+              internalLink = linkMatch ? linkMatch[1] : "";
+            }
+
+            // Extract other link attributes by removing href
+            aAttrs = rawAAttrs.replace(/href="[^"]*"\s*/, "").trim();
+          }
+
+          // Image attributes are always in match[4] per our regex pattern
+          const imgAttrsContent = match[4];
+          const src = imgAttrsContent?.match(/src="(.*?)"/)?.[1];
+          const alt = imgAttrsContent?.match(/alt="(.*?)"/)?.[1];
+          const title = imgAttrsContent?.match(/title="(.*?)"/)?.[1];
+          const width = imgAttrsContent?.match(/width="(.*?)"/)?.[1];
+          const loading = imgAttrsContent?.match(/loading="(.*?)"/)?.[1];
+
+          // Extract custom attributes by removing the ones we've already processed
+          let rawImgAttrs = imgAttrsContent || "";
+          const standardAttrs = ["src", "alt", "title", "width", "loading"];
+          standardAttrs.forEach((attr) => {
+            if (rawImgAttrs) {
+              rawImgAttrs = rawImgAttrs.replace(
+                new RegExp(`${attr}="[^"]*"\s*`),
+                ""
+              );
+            }
+          });
+          // Cleanup any extra spaces
+          rawImgAttrs = rawImgAttrs.trim();
+
+          return {
+            wrapperTag,
+            wrapperAttrs,
+            internalLink,
+            aAttrs,
+            src,
+            alt,
+            title,
+            width,
+            imgAttrs: rawImgAttrs,
+            loading,
+          };
+        },
+        toBlock: function ({
+          wrapperTag,
+          wrapperAttrs,
+          internalLink,
+          aAttrs,
+          imgAttrs,
+          ...dataRaw
+        }) {
+          // Filter out wrapper-specific and special properties from img attributes
+          const data = Object.fromEntries(
+            Object.entries(dataRaw).filter(
+              ([key]) =>
+                !["wrapperTag", "internalLink", "imgAttrs"].includes(key)
+            )
+          );
+
+          // Build standard img attributes
+          const standardAttrs = Object.entries(data)
+            .map(([key, value]) =>
+              key === "alt" || value ? `${key}="${value || ""}"` : ``
+            )
+            .filter(Boolean);
+
+          // Combine standard attributes with custom raw attributes if provided
+          let allAttrs = standardAttrs;
+          if (imgAttrs && typeof imgAttrs === "string" && imgAttrs.trim()) {
+            allAttrs = [...standardAttrs, imgAttrs.trim()];
+          }
+
+          // Join all attributes with spaces
+          const attrs = allAttrs.join(" ");
+
+          // Create img tag
+          let result = `<img ${attrs} />`;
+
+          // Add link if internal link is provided
+          if (internalLink) {
+            const linkAttributes = aAttrs ? ` ${aAttrs.trim()}` : "";
+            result = `<a href="{{'${internalLink}' | locale_url}}"${linkAttributes}>${result}</a>`;
+          }
+
+          // Add wrapper if provided (and it's not 'a' which would be redundant with the link)
+          if (wrapperTag && wrapperTag !== "a") {
+            const wrapperAttributes = wrapperAttrs
+              ? ` ${wrapperAttrs.trim()}`
+              : "";
+            result = `<${wrapperTag}${wrapperAttributes}>${result}</${wrapperTag}>`;
+          }
+
+          return result;
+        },
+        toPreview: function ({
+          wrapperTag,
+          wrapperAttrs,
+          internalLink,
+          aAttrs,
+          imgAttrs,
+          ...dataRaw
+        }) {
+          // Filter out wrapper-specific and special properties
+          const data = Object.fromEntries(
+            Object.entries(dataRaw).filter(
+              ([key]) =>
+                !["wrapperTag", "internalLink", "imgAttrs"].includes(key)
+            )
+          );
+
+          // Build standard img attributes
+          const standardAttrs = Object.entries(data)
+            .map(([key, value]) =>
+              key === "alt" || value ? `${key}="${value || ""}"` : ``
+            )
+            .filter(Boolean);
+
+          // Combine standard attributes with custom raw attributes if provided
+          let allAttrs = standardAttrs;
+          if (imgAttrs && typeof imgAttrs === "string" && imgAttrs.trim()) {
+            allAttrs = [...standardAttrs, imgAttrs.trim()];
+          }
+
+          // Join all attributes with spaces
+          const attrs = allAttrs.join(" ");
+
+          // Create img tag
+          let result = `<img ${attrs} />`;
+
+          // Add link if internal link is provided
+          if (internalLink) {
+            result = `<a href="#">${result}</a>`;
+          }
+
+          // Add wrapper if provided (and it's not 'a' which would be redundant with the link)
+          if (wrapperTag && wrapperTag !== "a") {
+            const wrapperAttributes = wrapperAttrs
+              ? ` ${wrapperAttrs.trim()}`
+              : "";
+            result = `<${wrapperTag}${wrapperAttributes}>${result}</${wrapperTag}>`;
+          }
+
+          return result;
+        },
+      });
+
+
+      // TODO: decide if we want to keep this or use sections instead
+      // <ul>{% for item in data %}<li>Item: {{item}}</li>{% endfor %}<ul>
+      // CMS.registerEditorComponent({
+      //   id: "advancedList",
+      //   label: "Advanced List",
+      //   icon: "list",
+      //   fields: [
+      //     {
+      //       name: "wrapperTag",
+      //       label: "Wrapper Tag",
+      //       widget: "string",
+      //       default: "ul",
+      //     },
+      //     {
+      //       name: "wrapperAttrs",
+      //       label: "Wrapper Attributes",
+      //       widget: "string",
+      //       default: "role='list'",
+      //     },
+      //     {
+      //       name: "itemTag",
+      //       label: "Item Tag",
+      //       widget: "string",
+      //       default: "li",
+      //     },
+      //     {
+      //       name: "itemAttrs",
+      //       label: "Item Attributes",
+      //       widget: "string",
+      //       default: "role='listitem'",
+      //     },
+      //     { name: "data", label: "Data", widget: "string" },
+      //     { name: "content", label: "Content", widget: "markdown" },
+      //   ],
+      //   pattern:
+      //     /^(?:<([^>]+)>)?{% for item in (.*?)(?=\s*%}) %}(?:<([^>]+)>([\S\s]*?)<\/\w+>|([\S\s]*?)){% endfor %}(?:<\/\w+>)?$/ms,
+      //   fromBlock: function (match) {
+      //     // Group explanation for simplified pattern with optional tags:
+      //     // match[0]: Full match
+      //     // match[1]: Full wrapper tag with attributes (optional)
+      //     // match[2]: Data variable name
+      //     // match[3]: Full item tag with attributes (optional)
+      //     // match[4]: Item content if item tag exists
+      //     // match[5]: Item content if no item tag
+
+      //     // Parse wrapper tag and attributes
+      //     let wrapperTag = "";
+      //     let wrapperAttrs = "";
+      //     if (match[1]) {
+      //       const wrapperMatch = match[1].match(/^(\w+)(?:\s+(.*))?$/);
+      //       if (wrapperMatch) {
+      //         wrapperTag = wrapperMatch[1] || "";
+      //         wrapperAttrs = wrapperMatch[2] || "";
+      //       }
+      //     }
+
+      //     // Get data variable
+      //     const data = match[2] ? match[2].trim() : "";
+
+      //     // Parse item tag and attributes
+      //     let itemTag = "";
+      //     let itemAttrs = "";
+      //     if (match[3]) {
+      //       const itemMatch = match[3].match(/^(\w+)(?:\s+(.*))?$/);
+      //       if (itemMatch) {
+      //         itemTag = itemMatch[1] || "";
+      //         itemAttrs = itemMatch[2] || "";
+      //       }
+      //     }
+
+      //     // Get content (with or without item tags)
+      //     const inlineContent = match[4] || match[5] || "";
+
+      //     // Convert from inline to multiline for editing
+      //     const multilineContent = inlineToMultiline(inlineContent);
+
+      //     return {
+      //       wrapperTag,
+      //       wrapperAttrs,
+      //       data,
+      //       itemTag,
+      //       itemAttrs,
+      //       content: multilineContent,
+      //     };
+      //   },
+      //   toBlock: function (data) {
+      //     const content = data.content + "\n";
+      //     const wrapperTag = data.wrapperTag || "";
+      //     const wrapperAttrs = data.wrapperAttrs || "";
+      //     const itemTag = data.itemTag || "";
+      //     const itemAttrs = data.itemAttrs || "";
+      //     const dataVar = data.data || "";
+
+      //     // Convert from multiline to inline for storage
+      //     const inlineContent = multilineToInline(content);
+
+      //     // Build wrapper attributes
+      //     const wrapperAttrStr = wrapperAttrs ? ` ${wrapperAttrs}` : "";
+
+      //     // Build item attributes
+      //     const itemAttrStr = itemAttrs ? ` ${itemAttrs}` : "";
+
+      //     const wrapperStr = wrapperTag
+      //       ? `<${wrapperTag}${wrapperAttrStr}>`
+      //       : "";
+      //     const endWrapperStr = wrapperTag ? `</${wrapperTag}>` : "";
+      //     const itemStr = itemTag ? `<${itemTag}${itemAttrStr}>` : "";
+      //     const endItemStr = itemTag ? `</${itemTag}>` : "";
+
+      //     return `${wrapperStr}{% for item in ${dataVar} %}${itemStr}${inlineContent}${endItemStr}{% endfor %}${endWrapperStr}`;
+      //   },
+      //   toPreview: function (data) {
+      //     return `TEST`;
+      //   },
+      // });
+
+      // OLD TESTS
+
+      // CMS.registerEditorComponent({
+      //   id: "test",
+      //   label: "Test",
+      //   fields: [{ name: "content", label: "Content", widget: "markdown" }],
+      //   pattern: /^{% test %}\s*([\S\s]*?)\s*{% \/test %}$/ms,
+      //   fromBlock: function (match) {
+      //     return {
+      //       content: match[1],
+      //     };
+      //   },
+      //   toBlock: function (data) {
+      //     return `{% test %}${data.content}{% /test %}`;
+      //   },
+      //   toPreview: function (data) {
+      //     return `TEST`;
+      //   },
+      // });
+
+      //   // Internal id of the component
+      //   id: "collapsible-note",
+      //   // Visible label
+      //   label: "Collapsible Note",
+      //   // Fields the user need to fill out when adding an instance of the component
+      //   fields: [
+      //     {
+      //       name: "summary",
+      //       label: "Summary",
+      //       widget: "string",
+      //     },
+      //     {
+      //       name: "contents",
+      //       label: "Contents",
+      //       widget: "markdown",
+      //     },
+      //   ],
+      //   // Regex pattern used to search for instances of this block in the markdown document.
+      //   // Patterns are run in a multiline environment (against the entire markdown document),
+      //   // and so generally should make use of the multiline flag (`m`). If you need to capture
+      //   // newlines in your capturing groups, you can either use something like
+      //   // `([\S\s]*)`, or you can additionally enable the "dot all" flag (`s`),
+      //   // which will cause `(.*)` to match newlines as well.
+      //   //
+      //   // Additionally, it's recommended that you use non-greedy capturing groups (e.g.
+      //   // `(.*?)` vs `(.*)`), especially if matching against newline characters.
+      //   pattern: /^<details><summary>(.*?)<\/summary>(.*?)<\/details>$/ms,
+      //   // Given a RegExp Match object
+      //   // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value),
+      //   // return an object with one property for each field defined in `fields`.
+      //   //
+      //   // This is used to populate the custom widget in the markdown editor in the CMS.
+      //   fromBlock: function (match) {
+      //     return {
+      //       summary: match[1],
+      //       contents: match[2],
+      //     };
+      //   },
+      //   // Given an object with one property for each field defined in `fields`,
+      //   // return the string you wish to be inserted into your markdown.
+      //   //
+      //   // This is used to serialize the data from the custom widget to the
+      //   // markdown document
+      //   toBlock: function (data) {
+      //     return `<details><summary>${data.summary}</summary>${data.contents}</details>`;
+      //   },
+      //   // Preview output for this component. Can either be a string or a React component
+      //   // (component gives better render performance)
+      //   toPreview: function (data) {
+      //     console.log("TO SUMMARY PREVIEW: ", { data });
+      //     return `
+      //   <details>
+      //     <summary>${data.summary}</summary>
+
+      //     ${data.contents}
+
+      //   </details>
+      //   `;
+      //   },
+      // });
+
+      // CMS.registerEditorComponent({
+      //   id: "Image",
+      //   label: "Image",
+      //   fields: [{ name: "src", label: "Image", widget: "image" }],
+      //   pattern:
+      //     /^{% Image src="([\S\s]*?)" alt="([\S\s]*?)" eleventy="([\S\s]*?)" %}\s*([\S\s]*?)\s*{% \/Image %}$/ms,
+      //   // pattern: /^{% Image %}\s*([\S\s]*?)\s*{% \/Image %}$/ms,
+      //   fromBlock: function (match) {
+      //     console.log({ match });
+      //     return {
+      //       src: match[1],
+      //       alt: match[2],
+      //       eleventy: match[3],
+      //     };
+      //   },
+      //   toBlock: function (data) {
+      //     return `{% Image src="${data.src}" alt="Una Scelta" eleventy={widths:"300", "pictureattr:style": "display:block;width:300px;margin-inline: auto"} /%}`;
+      //   },
+      //   toPreview: function (data) {
+      //     return `<img src="${data.src}" />`;
+      //   },
+      // });
+
+      //       CMS.registerEditorComponent({
+      //         id: "callout",
+      //         label: "Callout",
+      //         fields: [{ name: "content", label: "Content", widget: "markdown" }],
+      //         pattern: /^\{\% callout \%\}\s*([\S\s]*?)\s*\{\% \/callout \%\}$/m,
+      //         fromBlock: function (match) {
+      //           console.log({ match });
+      //           return {
+      //             content: match[1],
+      //           };
+      //         },
+      //         toBlock: function (data) {
+      //           console.log({ data });
+      //           return `
+      // {% callout %}
+      // ${data.content}
+      // {% /callout %}
+      // `;
+      //         },
+      //         toPreview: function (data) {
+      //           return `
+      //         <div style="border: 1px solid currentColor; padding: 10px;">
+      //           ${data.content}
+      //         </div>
+      //         `;
+      //         },
+      //       });
+    </script>
+--->
+  </body>
+</html>

@@ -8,6 +8,7 @@ const defaultLang = languages.find((lang) => lang.isWebsiteDefault)?.code;
 export default {
   // ...temp,
   language: (data) => {
+    // Display collection names only
     const filePathStem = data.page.filePathStem;
     const language = languages.find((lang) =>
       lang.defaultPrefixRegex.test(filePathStem)
@@ -23,6 +24,9 @@ export default {
     );
 
     return language?.code || data.lang || defaultLang;
+  },
+  layout: (data) => {
+    return data?.pageLayout || data?.layout;
   },
   templateTranslations: (data) => {
     const { translationKey, localizationKey } = data;
@@ -46,6 +50,7 @@ export default {
           url: template.page.url,
           name: template.data.name,
           title: template.data.title,
+          pagePreview: template.data.pagePreview,
           isCurrent: template.data.lang === data.lang,
           isDefault: template.data.lang === defaultLang,
         };
@@ -76,6 +81,9 @@ export default {
   },
   title: (data) => data.title || data.name || data.h1Content,
   permalink: (data) => {
+    if (data.generatePage === "previewOnly") {
+      return false;
+    }
     if (typeof data.permalink === "boolean" && !data.permalink) {
       return false;
     }
@@ -120,7 +128,18 @@ export default {
       image: (data.metadata?.image || gMeta.image) ?? "",
     };
   },
+  pagePreview: (data) => {
+    const title = data.pagePreview?.title || data.title || null;
+    const description =
+      data.pagePreview?.description || data.metadata?.description || null;
+    const image = data.pagePreview?.image || data.metadata?.image || null;
+    return {
+      title,
+      description,
+      image,
+    };
+  },
   // Just to make them easier to find in the data object
-  date: (data) => data.page?.date,
-  url: (data) => data.page?.url,
+  date: (data) => data.date || data.page?.date,
+  url: (data) => data.url || data.page?.url,
 };
