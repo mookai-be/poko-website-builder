@@ -184,6 +184,14 @@ try {
   brandConfig = yaml.load(brandConfigYaml);
 } catch (error) {
   console.error("Error reading brandConfig.yaml:", error);
+  brandConfig = {
+    ctxCssImport: { filename: "_ctx.css" },
+    widthsContexts: [],
+    fontStacksContexts: [],
+    typeScales: [],
+    colors: [],
+    palettes: [],
+  };
 }
 export { globalSettings, brandConfig };
 // More specific useful global settings

@@ -160,9 +160,16 @@ export const config = {
 export default async function (eleventyConfig) {
   // --------------------- Base Config
   eleventyConfig.setQuietMode(true);
+
+  // eleventyConfig.setWatchThrottleWaitTime(500); // in milliseconds
+
   eleventyConfig.addWatchTarget("./src/config-11ty/**/*", {
     resetConfig: true,
   });
+  // eleventyConfig.addWatchTarget("./src/**/*");
+  // eleventyConfig.addWatchTarget("./env.config.js", { resetConfig: true });
+  // eleventyConfig.addWatchTarget(`${WORKING_DIR}/**/*`, { resetConfig: true });
+  // eleventyConfig.watchIgnores.add(`${WORKING_DIR}/_styles/_ctx.css`);
   // eleventyConfig.setUseGitIgnore(false);
 
   // --------------------- Custom Nunjucks setup
@@ -256,6 +263,8 @@ export default async function (eleventyConfig) {
         .use(markdownItContainer, "header", mRCTOptions("header"))
         .use(markdownItContainer, "nav", mRCTOptions("nav"))
         .use(markdownItContainer, "main", mRCTOptions("main"))
+        .use(markdownItContainer, "ul", mRCTOptions("ul"))
+        .use(markdownItContainer, "ol", mRCTOptions("ol"))
         .use(markdownItContainer, "div", mRCTOptions("div"))
         .use(markdownItContainer, "block")
         .use(markdownItContainer, "flow")
@@ -485,6 +494,7 @@ export default async function (eleventyConfig) {
   );
   // I18n
   eleventyConfig.addFilter("locale_url", locale_url);
+  eleventyConfig.addFilter("link", locale_url); // Alias for locale_url
   eleventyConfig.addFilter("locale_links", locale_links);
   // Date
   eleventyConfig.addFilter("toIsoString", toISOString);

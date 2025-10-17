@@ -13,6 +13,10 @@ export default async function (eleventyConfig, pluginOptions) {
   const generator = await createGenerator(unoConfig);
 
   eleventyConfig.addTransform("UnoCSS", async function (content) {
+    if (/admin\/index.html/.test(this.page.outputPath)) {
+      return content;
+    }
+
     if ((this.page.outputPath || "").endsWith(".html")) {
       const { css } = await generator.generate(content);
       // console.log(`UnoCSS generated:\n${css}`);

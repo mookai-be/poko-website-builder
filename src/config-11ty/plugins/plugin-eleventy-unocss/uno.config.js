@@ -22,16 +22,16 @@ const fontStacksContexts = brandConfig?.fontStacksContexts;
 let customFontsInUse = [];
 // List custom fonts that are used in a stack
 for (const fontStackContext of fontStacksContexts) {
-  const stacks = Object.values(fontStackContext);
+  const stacks = Object.values(fontStackContext || {});
   for (const stack of stacks) {
-    if (stack.custom) {
-      customFontsInUse.push(stack.custom);
+    if (stack?.custom) {
+      customFontsInUse.push(stack?.custom);
     }
   }
 }
 
 const customFontsImportObj = Object.fromEntries(
-  brandConfig?.customFontsImport
+  (brandConfig?.customFontsImport || [])
     ?.map((font) =>
       // Filter custom fonts to only include those that are actually used in a stack
       customFontsInUse.includes(font.name)

@@ -1,3 +1,4 @@
+import { languages } from "../../../env.config.js";
 import { getNestedValue } from "../../utils/objects.js";
 
 // remove any lang prefix if present and leading/trailing slashes
@@ -69,13 +70,16 @@ function lookupTemplateTranslations(
 
 // input can be a url (with or without lang prefix) or ideally a translationKey
 // lang is optional and overwrites the current page's lang
-export function locale_url(
-  input,
-  langOverride,
-  propName = "url",
-  collectionName = "all"
-) {
+export function locale_url(...args) {
   // const originalFilter = this.env.getFilter("locale_url_original");
+  const input = args[0];
+  const langOverride =
+    (args[1] && languages.find((lang) => lang.code === args[1])?.code) ||
+    undefined;
+  const propName =
+    args[2] || (typeof langOverride === "undefined" && args[1]) || "url";
+  const collectionName = args[3] || "all";
+
   try {
     const lang = langOverride || this.page.lang;
     const templateTranslations = lookupTemplateTranslations.call(
@@ -88,6 +92,10 @@ export function locale_url(
     const translationMatch = templateTranslations?.find((translation) => {
       return translation.lang === lang;
     });
+
+    if (translationMatch) {
+      translationMatch.html = `<a href="${translationMatch.url}">${translationMatch.title}</a>`;
+    }
 
     if (propName === "all") {
       return translationMatch;

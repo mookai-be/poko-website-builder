@@ -53,7 +53,7 @@ export function transformBaseFontStack(name, stackDef, customFontsImport) {
   const { native, custom } = stackDef || {};
   const customFontName = customFontsImport?.find((font) => font.name === custom)
     ?.source?.name;
-  console.log({ customFontName, custom });
+
   // TODO: implement custom font here as well
   const stylesString =
     custom || (native && nativeFontStacks[native])
@@ -74,7 +74,6 @@ export function transformBaseFontStack(name, stackDef, customFontsImport) {
 }
 
 export function transformFontStacksContext(baseFontStacks, customFontsImport) {
-  console.log({ customFontsImport });
   const { name, body, heading, code } = baseFontStacks || {};
   const vars = {
     body: body && transformBaseFontStack("body", body, customFontsImport),
@@ -97,7 +96,7 @@ export function transformFontStacksContexts(
   fontStacksContexts,
   customFontsImport
 ) {
-  return fontStacksContexts.map((fontStacksContext) =>
+  return (fontStacksContexts || []).map((fontStacksContext) =>
     transformFontStacksContext(fontStacksContext, customFontsImport)
   );
 }
@@ -176,5 +175,5 @@ export function transformTypeScale(typeScaleDef) {
 }
 
 export function transformTypeScales(typeScales) {
-  return typeScales.map(transformTypeScale);
+  return (typeScales || []).map(transformTypeScale);
 }
