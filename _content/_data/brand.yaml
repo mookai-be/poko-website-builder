@@ -1,0 +1,41 @@
+ctxCssImport:
+  filename: _ctx.css
+widthsContexts:
+  - name: main
+    max: 80rem
+    prose: 50rem
+fontStacksContexts:
+  - name: main
+    body:
+      native: humanist
+      custom: ''
+    heading:
+      native: geometric-humanist
+    code:
+      native: monospace-code
+typeScales:
+  - name: main
+    minFontSize: 18
+    maxFontSize: 24
+    minTypeScale: 1.2
+    maxTypeScale: 1.25
+    advanced: null
+colors:
+  - name: indigo
+    value: '#130e35'
+  - name: white
+    value: '#ffffff'
+  - name: pink
+    value: '#ef4d99'
+palettes:
+  - name: main
+    text: white
+    bg: indigo
+    text-decoration: pink
+    text-emphasis: pink
+    text--selection: indigo
+    bg--selection: white
+    advanced:
+      text__a: pink
+      bg__a: ''
+      text__a--hover: white

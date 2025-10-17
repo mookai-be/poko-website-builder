@@ -1,0 +1,40 @@
+@import "./_ctx.css";
+
+body,
+[class*="palette"] {
+  color: hsl(from var(--color-text) h s 90% / alpha);
+}
+/* prettier-ignore */
+.h8, .h7, h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1, .h0, .h-1 {
+    color: var(--color-text);
+}
+/* Strikethrough */
+s {
+  text-decoration-thickness: 3px;
+}
+
+body > header,
+body > footer {
+  padding-block: 2rem;
+}
+body > header {
+  max-inline-size: var(--width-prose);
+  margin-block-end: 2rem;
+  border-block-end: 1px dotted var(--white);
+
+  & > nav > ul {
+    gap: var(--step--1);
+  }
+}
+
+body > footer {
+  text-align: center;
+  margin-block-start: 2rem;
+  border-block-start: 1px dotted var(--white);
+}
+
+.callout {
+  margin-block: var(--step-2);
+  padding: var(--step-0);
+  border: 1px solid var(--pink);
+}

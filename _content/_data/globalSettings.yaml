@@ -1,6 +1,9 @@
 siteName: poko
 productionUrl: https://poko.m4rr.co
 logo: /_images/poko-logo-rvb-02.webp
+htmlHead: |-
+  <!--- Github buttons --->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
 languages:
   - code: en
     name: English
@@ -9,5 +12,11 @@ languages:
     status: published
     isCmsDefault: true
     isWebsiteDefault: true
+  - code: fr
+    name: French
+    customUrlPrefix: null
+    status: inactive
+    isCmsDefault: false
+    isWebsiteDefault: false
 collections:
   - articles
