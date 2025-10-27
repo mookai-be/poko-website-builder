@@ -560,7 +560,7 @@ ${content}
                     name: "minHeight",
                     label: "Min Height",
                     widget: "string",
-                    hint: "The minimum height of the cover (e.g. 100vh [default], 30rem, 800px)",
+                    hint: "The minimum height of the cover (e.g. 100svh [default], 30rem, 800px)",
                     required: false,
                   },
                   {
@@ -888,6 +888,7 @@ ${content}
                     name: "value",
                     widget: "markdown",
                     required: false,
+                    default: "<ul>{% for link in links %}<li>{{link.html | safe}}</li>{% endfor %}<ul>",
                   },
                 ],
               },

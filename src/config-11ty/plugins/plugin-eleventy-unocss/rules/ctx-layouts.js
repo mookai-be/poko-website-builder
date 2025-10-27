@@ -330,15 +330,15 @@ export default [
       return [
         {
           [symbols.selector]: () => `:where(.cover)`,
-          "--gap-cover": "var(--gap, 1em)",
           display: "flex",
           "flex-direction": "column",
-          "min-block-size": "var(--min-height-cover, 100vh)",
-          padding: "var(--gap-cover)",
+          "min-block-size": "100vh",
+          "min-block-size": "var(--min-height-cover, 100svh)",
+          padding: "var(--gap-cover, 1em)",
         },
         {
           [symbols.selector]: () => `:where(.cover) > *`,
-          "margin-block": "var(--gap-cover)",
+          "margin-block": "var(--gap-cover, 1em)",
         },
         {
           [symbols.selector]: () =>
