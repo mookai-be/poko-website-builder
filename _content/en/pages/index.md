@@ -13,9 +13,8 @@ metadata:
   description: poko is a lightweight, eco-focused, powerful, hackable website builder for the people
   image:
     src: /_images/poko-logo-rvb-02.webp
-tags:
 ---
-{% section type="cover", vars={"minHeight":"","noPadding":false,"gap":""}, blocks=[{"value":"# [poko]{style=color:var(--pink)} is a lightweight, eco-focused, powerful, hackable website builder for the people {.centered .h0}\n\n{{ \"get-started\" | link(undefined,\"html\") | safe }} {{ \"commitment\" | link(undefined,\"html\") | safe }} {.cluster}\n\n<a href=\"#why-poko\" class=\"scroll pile\"></a>","type":"markdown"}], advanced={} %}
+{% section type="cover", vars={"minHeight":"","noPadding":false,"gap":""}, blocks=[{"value":"# [poko]{style=color:var(--pink)} is a lightweight, eco-focused, powerful, hackable website builder for the people {.centered .h0}\n\n{{ \"get-started\" | link(undefined,\"html\") | safe }} {{ \"commitment\" | link(undefined,\"html\") | safe }} {{ \"docs\" | link(undefined,\"html\") | safe }} {.cluster style=--justify-cluster:center}\n\n<a href=\"#why-poko\" class=\"scroll pile\"></a>","type":"markdown"}], advanced={} %}
 
 ## Why poko?
 
@@ -53,6 +52,9 @@ Push to GitHub, connect to free hosting, and your site goes live. Updates deploy
 {{ "get-started" | link(undefined,"html") | safe }}
 
 {% css %}
+body {
+padding-block-start: 0;
+}
 .scroll {
 --_proportions: var(--step-2);
 inline-size: var(--_proportions);
@@ -70,20 +72,14 @@ height: calc(var(--_proportions) / 4);
 border-left: 2px solid var(--white);
 border-bottom: 2px solid var(--white);
 transform: rotate(-45deg);
-margin-top: calc(var(--_proportions) * -0.05);
+margin-top: calc(var(--_proportions) \* -0.05);
 }
 }
 
 @keyframes down {
-0% {
-transform: translate(0);
-}
-20% {
-transform: translateY(calc(var(--_proportions) / 4));
-}
-40% {
-transform: translate(0);
-}
+0% {transform: translate(0);}
+20% {transform: translateY(calc(var(--_proportions) / 4));}
+40% {transform: translate(0);}
 }
 
 {% endcss %}

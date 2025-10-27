@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="{{lang or 'en'}}" class="no-js">
+  <head>
+    {% partial "_html-head-default.md" %} {% getBundle "html", "head" %}
+    <style>
+      body {
+        --width-nav: var(--width-max);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    {% partial "_main-nav.md", {}, "njk" %}
+
+    <div
+      class="with-sidebar"
+      style="--content-min: min(var(--width-prose) / 2, 100%)"
+    >
+      <div class="docs-nav flow">{% partial "docs-nav.md", {}, "njk" %}</div>
+      <div class="docs-content">
+        <!-- Content -->
+        {% partial "_main-content.md" %}
+      </div>
+    </div>
+    <!-- Footer -->
+    {% partial '_footer.md' %}
+  </body>
+</html>
