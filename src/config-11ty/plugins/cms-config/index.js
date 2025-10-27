@@ -1093,6 +1093,24 @@ class CmsConfig {
           required: false,
           output_code_only: true,
           allow_language_selection: false,
+          default: `<!DOCTYPE html>
+<html lang="{{lang or 'en'}}" class="no-js">
+  <head>
+    {% partial "_html-head-default.md" %}
+    {% getBundle "html", "head" %}
+  </head>
+  <body>
+    <!-- Navigation -->
+    {% partial "_main-nav.md", {}, "njk" %}
+
+    <!-- Content -->
+    {% partial "_main-content.md" %}
+
+    <!-- Footer -->
+    {% partial '_footer.md' %}
+  </body>
+</html>
+`,
         },
       ],
     };

@@ -130,15 +130,15 @@ export default async function (eleventyConfig, pluginOptions) {
 
     // Apply layout
     const wrapperMarkdownLayout =
-      wrapperLayout.type === "markdown" ? wrapperLayout.value : "";
+      wrapperLayout?.type === "markdown" ? wrapperLayout.value : "";
     const wrapperPartialFileName =
-      wrapperLayout.type === "partial" && wrapperLayout.slug
+      wrapperLayout?.type === "partial" && wrapperLayout.slug
         ? wrapperLayout.slug + ".md"
         : "";
     const itemMarkdownLayout =
-      itemLayout.type === "markdown" ? itemLayout.value : "";
+      itemLayout?.type === "markdown" ? itemLayout.value : "";
     const itemPartialFileName =
-      itemLayout.type === "partial" && itemLayout.slug
+      itemLayout?.type === "partial" && itemLayout.slug
         ? itemLayout.slug + ".md"
         : "";
     // TODO: Do we want to join strings before processing? Otherwise each string is always wrapped in a <p> because alone when rendered

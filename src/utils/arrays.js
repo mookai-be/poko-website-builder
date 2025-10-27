@@ -38,6 +38,12 @@ export function filterCollection(collection, filtersRaw) {
         );
       case "lang":
         return collection.filter((item) => item.data.lang === value);
+      case "parent":
+        return collection.filter(
+          (item) =>
+            item.data.parent === value ||
+            item.data.eleventyNavigation?.parent === value
+        );
       // NOTE: If no keyword is matched, suppose it is a nested property to be filtered by
       // TODO: Debug: This does not seem to work
       default:
