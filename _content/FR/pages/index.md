@@ -8,7 +8,6 @@ status: published
 name: Associatif humain créatif engagé
 eleventyNavigation:
   order: 1
-vars: {}
 ---
 ## Associatif humain créatif engagé
 
@@ -19,7 +18,7 @@ Vous voulez **collaborer** avec une équipe **créative** et **engagée**?
 
 (bouton) Racontez-nous!
 
-{% image src="/_images/mooka%C3%AF-cover.webp" %}
+{% image src="/_images/mookai-cover.webp" %}
 
 ## Valeurs
 
