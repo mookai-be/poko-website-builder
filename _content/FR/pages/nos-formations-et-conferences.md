@@ -87,7 +87,7 @@ A la fin de la formation, tu devrais avoir pu identifier quel outil de création
 
 ## Organisation personnelle et gestion de l’information
 
-{% image src="/_images/hygi%C3%A8ne-digitale.webp" %}
+{% image src="/_images/hygiene-digitale.webp" %}
 
 Tu galères pour t’organiser, retrouver tes infos importantes, communiquer avec tes collaborateurs ou coordonner tes projets?
 On ne va pas prétendre multiplier par 10 ta productivité mais en prenant un peu de recul sur ton organisation et en appliquant quelques bonnes pratiques, on peut au moins réduire un petit peu la charge mentale et fluidifier le travail, la collaboration et la communication.
