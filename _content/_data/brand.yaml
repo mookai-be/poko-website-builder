@@ -8,6 +8,7 @@ fontStacksContexts:
   - name: main
     body:
       native: system-ui
+      custom: Roboto Condensed
     heading:
       native: system-ui
     code:
@@ -31,6 +32,21 @@ typeScales:
     maxFontSize: 20
     minTypeScale: 1.2
     maxTypeScale: 1.25
+colors:
+  - name: Bordeau
+    value: '#741e16'
+  - name: Corail
+    value: '#d34322'
+  - name: Sand
+    value: '#a2724e'
+  - name: Gold
+    value: '#e6941a'
+  - name: Purple
+    value: '#8c8197'
+  - name: Black
+    value: '#262626'
+  - name: White
+    value: '#ffffff'
 styleContexts:
   - name: main
     value: ctx
