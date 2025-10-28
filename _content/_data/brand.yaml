@@ -86,3 +86,8 @@ palettes:
 styleContexts:
   - name: main
     value: ctx
+  - name: Footer
+    widthsContext: main
+    fontStacksContext: main
+    typeScale: main
+    palette: Black background
