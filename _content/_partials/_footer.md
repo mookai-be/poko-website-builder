@@ -1,4 +1,4 @@
-{% image src="/_images/mookai-logo-RVB-SANS-BORDS-07.webp", alt="Logo mookaï", width="200" %}
+{% image src="/_images/mookai-logo-RVB-SANS-BORDS-07.webp", alt="Logo mookaï", width="50" %}
 
 hello@mookai.be
 
