@@ -66,6 +66,23 @@ palettes:
     stroke: Corail
     outline--focus: Corail
     advanced: null
+  - name: Black background
+    text: White
+    bg: Black
+    border: ''
+    outline: Gold
+    text-decoration: ''
+    text--marker: ''
+    text-emphasis: ''
+    text--selection: ''
+    bg--selection: ''
+    shadow: ''
+    caret: ''
+    column-rule: ''
+    fill: ''
+    stroke: Gold
+    outline--focus: ''
+    advanced: null
 styleContexts:
   - name: main
     value: ctx
