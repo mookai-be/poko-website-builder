@@ -8,6 +8,7 @@ status: published
 name: Associatif humain créatif engagé
 eleventyNavigation:
   order: 1
+vars: {}
 ---
 ## Associatif humain créatif engagé
 
@@ -91,7 +92,7 @@ C'est gratuit et vous verrez, c'est cool de parler à un humain ;-)
 
 ### Marc
 
-{% image src="/_images/IMG_7294.webp", alt="Marc" %}
+{% image src="/_images/IMG_7294.webp", alt="Marc", width="200" %}
 
 - Stratégie
 - Architecture d’information
@@ -102,7 +103,7 @@ Marc, dis [M4rrco](https://www.m4rr.co/fr/) sur la toile est curieux, intelligen
 
 ### Tess
 
-{% image src="/_images/IMG_7234.webp", alt="Tess" %}
+{% image src="/_images/IMG_7234.webp", alt="Tess", width="200" %}
 
 - Identité visuelle
 - Travail artistique personnalisé
