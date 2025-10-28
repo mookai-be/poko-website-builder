@@ -47,6 +47,24 @@ colors:
     value: '#262626'
   - name: White
     value: '#ffffff'
+palettes:
+  - name: Default
+    text: Bordeau
+    bg: White
+    border: Corail
+    outline: ''
+    text-decoration: Corail
+    text--marker: Corail
+    text-emphasis: ''
+    text--selection: ''
+    bg--selection: Corail
+    shadow: Black
+    caret: ''
+    column-rule: ''
+    fill: Corail
+    stroke: Corail
+    outline--focus: Corail
+    advanced: null
 styleContexts:
   - name: main
     value: ctx
