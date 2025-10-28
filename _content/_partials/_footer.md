@@ -2,7 +2,7 @@
 
 hello@mookai.be
 
-**©mookaï asbl**
+©mookaï asbl
 
 _mookaï asbl_
 _BE 1003.532.405_
