@@ -49,7 +49,7 @@ colors:
   - name: White
     value: '#ffffff'
 palettes:
-  - name: Default
+  - name: Default White Background
     text: Bordeau
     bg: White
     border: Corail
