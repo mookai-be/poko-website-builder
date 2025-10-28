@@ -8,12 +8,13 @@ status: published
 name: Pourquoi 'mookaï'?
 eleventyNavigation:
   order: 10
+vars: {}
 ---
 # Pourquoi 'mookaï'?
 
 ## La mookaïte
 
-<img src="/_images/Capture%20d%E2%80%99%C3%A9cran%202023-12-15%20%C3%A0%2013.36.33.webp" alt="" />
+{% image src="/_images/Capture%20d%E2%80%99%C3%A9cran%202023-12-15%20%C3%A0%2013.36.33.webp" %}
 
 Le nom de notre ASBL, **Mookaï**, est directement inspiré de la pierre précieuse **jaspe Mookaïte**, une gemme australienne réputée pour ses vertus énergétiques, émotionnelles et spirituelles. Elle incarne à merveille les valeurs et la mission que nous portons.
 
