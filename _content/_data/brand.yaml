@@ -11,6 +11,7 @@ fontStacksContexts:
       custom: Roboto Condensed
     heading:
       native: system-ui
+      custom: Roboto Condensed
     code:
       native: monospace-code
 customFontsImport:
