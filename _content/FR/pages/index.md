@@ -8,7 +8,6 @@ status: published
 name: Associatif humain créatif engagé
 eleventyNavigation:
   order: 1
-vars: {}
 ---
 ## Associatif humain créatif engagé
 
@@ -86,7 +85,7 @@ améliorer son organisation personnelle ou l'organisation interne de ses équipe
 
 C'est gratuit et vous verrez, c'est cool de parler à un humain ;-)
 
-(quote in chantal font)`Your only job is to be more you`
+(quote in chantal font) `Your only job is to be more you`
 
 ## Équipe
 
