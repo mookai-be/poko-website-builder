@@ -13,7 +13,7 @@ eleventyNavigation:
 
 ## Formation InDesign 1j
 
-{% image src="/_images/Adobe_InDesign_CC_icon.svg.webp" %}
+{% image src="/_images/Adobe_InDesign_CC_icon.svg.webp", width="100" %}
 
 ### Le béaba d’InDesign pour être capable de créer ton propre projet (print ou digital)
 
@@ -69,7 +69,7 @@ _Tu veux mon avis sur tes visuels? N’hésite pas à les apporter, on pourra le
 
 ## Un site web facile à petit prix
 
-{% image src="/_images/pexels-diva-plavalaguna-6937933.webp" %}
+{% image src="/_images/pexels-diva-plavalaguna-6937933.webp", width="100" %}
 
 Un site web facile à petit prix, c’est possible? Faire un site, c’est à la fois beaucoup plus simple que tu ne le penses et assez compliqué si tu veux faire ça bien!
 Beaucoup de plateformes te vendent un site “optimisé” dans un bel emballage marketing “clé en main”…
@@ -87,7 +87,7 @@ A la fin de la formation, tu devrais avoir pu identifier quel outil de création
 
 ## Organisation personnelle et gestion de l’information
 
-{% image src="/_images/hygiene-digitale.webp" %}
+{% image src="/_images/hygiene-digitale.webp", width="100" %}
 
 Tu galères pour t’organiser, retrouver tes infos importantes, communiquer avec tes collaborateurs ou coordonner tes projets?
 On ne va pas prétendre multiplier par 10 ta productivité mais en prenant un peu de recul sur ton organisation et en appliquant quelques bonnes pratiques, on peut au moins réduire un petit peu la charge mentale et fluidifier le travail, la collaboration et la communication.
@@ -97,7 +97,7 @@ On travaillera également en workshop pour te laisser le temps de réfléchir à
 
 ## Ma vie idéale: connexion et alignement à Soi
 
-{% image src="/_images/ma-vie-ide_ale.webp" %}
+{% image src="/_images/ma-vie-ide_ale.webp", width="100" %}
 
 **InnerFlow** est une collection de principes, de méthodes et d’outils, synthétisés en une pratique holistique visant à rechercher “l’Alignement de l’Être”. On t’invite à prendre les commandes de ta vie avec quelques astuces et surtout un changement d’état d’esprit en profondeur.
 Pour cette partie de l’atelier, nous nous concentrerons sur la connexion à soi et essayant de faire émerger l’Être que l’on aspire à devenir.
@@ -113,7 +113,7 @@ Le tableau de visualisation (ou vision board), sera une représentation visuelle
 
 ## Atelier collage: Rêves & projets - Vision Board
 
-{% image src="/_images/Atelier-collage.webp" %}
+{% image src="/_images/Atelier-collage.webp", width="100" %}
 
 Le collage est un médium super pour aller à la rencontre de soi-même et pour apprendre à s’exprimer librement. Il comporte une dimension ludique et onirique où le lâcher-prise est un élément important.
 Il s’agit de l’école du regard qui se met en place de manière intuitive et par la pratique: construction d’une image, rapports entre les couleurs, jeux de perspectives, équilibre des proportions, ombres et lumières,…
@@ -171,7 +171,7 @@ En pleine conscience et à ton rythme, une activité créative peut beaucoup t�
 
 ## Permanence graphique - en ligne
 
-{% image src="/_images/permanance-graphique.webp" %}
+{% image src="/_images/permanance-graphique.webp", width="100" %}
 
 - Tu travailles seul.e sur ta communication visuelle?
 - Tu voudrais faire voir tes projets par une graphiste professionnelle?
