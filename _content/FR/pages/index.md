@@ -8,7 +8,6 @@ status: published
 name: Associatif humain créatif engagé
 eleventyNavigation:
   order: 1
-vars: {}
 ---
 ## Associatif humain créatif engagé
 
@@ -90,16 +89,7 @@ C'est gratuit et vous verrez, c'est cool de parler à un humain ;-)
 
 ## Équipe
 
-### Marc
-
-{% image src="/_images/IMG_7294.webp", alt="Marc", width="200" %}
-
-- Stratégie
-- Architecture d’information
-- Sites web
-- Formation/conférences
-
-Marc, dis [M4rrco](https://www.m4rr.co/fr/) sur la toile est curieux, intelligent et plein de ressources. Il est passionné par l’apprentissage et conscient du monde qui l’entoure. Il trouve toujours les bons mots réhaussés d’une touche personnelle pleine de créativité.
+{% section type="grid-fluid", vars={"columns":null,"gap":""}, blocks=[{"alt":"","title":"","width":200,"aspectRatio":null,"loading":"","rawAttrs":"","type":"image","src":"/_images/IMG_7294.webp"},{"value":"### Marc\n\n- Stratégie\n- Architecture d’information\n- Sites web\n- Formation/conférences\n\nMarc, dis [M4rrco](https://www.m4rr.co/fr/) sur la toile est curieux, intelligent et plein de ressources. Il est passionné par l’apprentissage et conscient du monde qui l’entoure. Il trouve toujours les bons mots réhaussés d’une touche personnelle pleine de créativité.","type":"markdown"}], advanced=null %}
 
 ### Tess
 
