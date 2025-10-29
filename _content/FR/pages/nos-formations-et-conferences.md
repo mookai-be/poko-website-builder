@@ -42,7 +42,7 @@ Prendre avec toi de quoi manger (facile et rapide)
 
 ## Conférence: Les bonnes pratiques du graphisme - Avoir l'œil
 
-<img src="/_images/confe__rence-avoir-l-oeil-4.webp" alt="" />
+{% image src="/_images/confe__rence-avoir-l-oeil-4.webp", width="200" %}
 
 Cet atelier/conférence te propose de passer en revue les bonnes pratiques à tenir à l’œil quand tu veux faire du graphisme ou les points d’attentions si tu veux sous traiter.
 
