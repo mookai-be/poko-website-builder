@@ -57,15 +57,35 @@ palettes:
     text-decoration: Corail
     text--marker: Corail
     text-emphasis: ''
-    text--selection: ''
+    text--selection: White
     bg--selection: Corail
-    shadow: Black
-    caret: ''
+    shadow: ''
+    caret: Corail
     column-rule: ''
-    fill: Corail
-    stroke: Corail
+    fill: ''
+    stroke: ''
     outline--focus: Corail
-    advanced: null
+    advanced:
+      text__a: ''
+      bg__a: ''
+      text__a--hover: Corail
+      bg__a--hover: ''
+      text__button: ''
+      bg__button: ''
+      text__button--hover: ''
+      bg__button--hover: ''
+      text__button--disabled: ''
+      bg__button--disabled: ''
+      icon-fill: ''
+      icon-stroke: ''
+      text__code: ''
+      bg__code: ''
+      border__code: ''
+      text__mark: ''
+      bg__mark: ''
+      border__mark: ''
+      track-color: ''
+      thumb-color: ''
   - name: Black background
     text: White
     bg: Black
