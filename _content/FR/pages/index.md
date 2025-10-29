@@ -89,18 +89,9 @@ C'est gratuit et vous verrez, c'est cool de parler à un humain ;-)
 
 ## Équipe
 
-{% section type="grid-fluid", vars={"columns":null,"gap":""}, blocks=[{"alt":"","title":"","width":200,"aspectRatio":null,"loading":"","rawAttrs":"","type":"image","src":"/_images/IMG_7294.webp"},{"value":"### Marc\n\n- Stratégie\n- Architecture d’information\n- Sites web\n- Formation/conférences\n\nMarc, dis [M4rrco](https://www.m4rr.co/fr/) sur la toile est curieux, intelligent et plein de ressources. Il est passionné par l’apprentissage et conscient du monde qui l’entoure. Il trouve toujours les bons mots réhaussés d’une touche personnelle pleine de créativité.","type":"markdown"}], advanced=null %}
+{% section type="grid-fluid", vars={"columns":null,"gap":""}, blocks=[{"alt":"Marc","title":"","width":200,"aspectRatio":null,"loading":"","rawAttrs":"","type":"image","src":"/_images/IMG_7294.webp"},{"value":"### Marc\n\n- Stratégie\n- Architecture d’information\n- Sites web\n- Formation/conférences\n\nMarc, dis [M4rrco](https://www.m4rr.co/fr/) sur la toile est curieux, intelligent et plein de ressources. Il est passionné par l’apprentissage et conscient du monde qui l’entoure. Il trouve toujours les bons mots réhaussés d’une touche personnelle pleine de créativité.","type":"markdown"}], advanced={} %}
 
-### Tess
-
-{% image src="/_images/IMG_7234.webp", alt="Tess", width="200" %}
-
-- Identité visuelle
-- Travail artistique personnalisé
-- Design & Mise en page
-- Formation/conférences
-
-[Tess](https://www.tess-h.be/) est plus qu’une graphiste. Elle est artiste avant tout. De la photographie à la peinture en passant par l’illustration. Elle expérimente tous les jours la transformation des formes et des couleurs en émotions.
+{% section type="grid-fluid", vars={"columns":null,"gap":""}, blocks=[{"alt":"Tess","title":"","width":200,"aspectRatio":null,"loading":"","rawAttrs":"","type":"image","src":"/_images/IMG_7234.webp"},{"value":"### Tess\n\n- Identité visuelle\n- Travail artistique personnalisé\n- Design & Mise en page\n- Formation/conférences\n\n[Tess](https://www.tess-h.be/) est plus qu’une graphiste. Elle est artiste avant tout. De la photographie à la peinture en passant par l’illustration. Elle expérimente tous les jours la transformation des formes et des couleurs en émotions.","type":"markdown"}], advanced=null %}
 
 (bouton)Tu veux nous rejoindre?
 
