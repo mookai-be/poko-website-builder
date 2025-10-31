@@ -12,7 +12,7 @@ eleventyNavigation:
 metadata:
   description: poko is a lightweight, eco-focused, powerful, hackable website builder for the people
   image:
-    src: /_images/poko-logo-rvb-02.webp
+    src: /_images/device-set_v01_mockup-poko.webp
 ---
 {% section type="cover", vars={"minHeight":"","noPadding":false,"gap":""}, blocks=[{"value":"# [poko]{style=color:var(--pink)} is a lightweight, eco-focused, powerful, hackable website builder for the people {.centered .h0}\n\n{{ \"get-started\" | link(undefined,\"html\") | safe }} {{ \"commitment\" | link(undefined,\"html\") | safe }} {{ \"docs\" | link(undefined,\"html\") | safe }} {.cluster style=--justify-cluster:center}\n\n<a href=\"#why-poko\" class=\"scroll pile\"></a>","type":"markdown"}], advanced={} %}
 
@@ -52,7 +52,7 @@ Push to GitHub, connect to free hosting, and your site goes live. Updates deploy
 {{ "get-started" | link(undefined,"html") | safe }}
 
 {% css %}
-body {
+main {
 padding-block-start: 0;
 }
 .scroll {
