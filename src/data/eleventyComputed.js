@@ -25,6 +25,9 @@ export default {
 
     return language?.code || data.lang || defaultLang;
   },
+  layout: (data) => {
+    return data?.pageLayout || data?.layout;
+  },
   templateTranslations: (data) => {
     const { translationKey, localizationKey } = data;
     const allTemplates = data.collections.all;
@@ -126,10 +129,10 @@ export default {
     };
   },
   pagePreview: (data) => {
-    const title = data.pagePreview?.title || data.title || null;
+    const title = data.preview?.title || data.title || null;
     const description =
-      data.pagePreview?.description || data.metadata?.description || null;
-    const image = data.pagePreview?.image || data.metadata?.image || null;
+      data.preview?.description || data.metadata?.description || null;
+    const image = data.preview?.image || data.metadata?.image || null;
     return {
       title,
       description,

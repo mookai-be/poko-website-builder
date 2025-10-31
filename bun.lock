@@ -4,7 +4,7 @@
     "": {
       "name": "poko-website-builder",
       "dependencies": {
-        "@sveltia/cms": "^0.91.9",
+        "@sveltia/cms": "0.110.2",
       },
       "devDependencies": {
         "@11ty/eleventy": "^3.1.2",
@@ -39,6 +39,7 @@
         "simple-icons": "^15.5.0",
         "typescript": "^5.8.2",
         "unocss": "^66.4.2",
+        "utopia-core": "^1.6.0",
       },
     },
   },
@@ -285,7 +286,7 @@
 
     "@sindresorhus/transliterate": ["@sindresorhus/transliterate@1.6.0", "", { "dependencies": { "escape-string-regexp": "^5.0.0" } }, "sha512-doH1gimEu3A46VX6aVxpHTeHrytJAG6HgdxntYnCFiIFHEM/ZGpG8KiZGBChchjQmG0XFIBL552kBTjVcMZXwQ=="],
 
-    "@sveltia/cms": ["@sveltia/cms@0.91.9", "", {}, "sha512-z4/B9T8j4msevv4P2Qh//3ShLnKVc1fjgvrT9l2Wq6i/tUPm658tY5pZOp4Xik82IMbsgJ5QQlcixJJR5GXk9w=="],
+    "@sveltia/cms": ["@sveltia/cms@0.110.2", "", {}, "sha512-96EJ3spoaXm9gCmfUuZI9lYVwpyH1fcCP43yh7nnjM4BOaT5NFJo1tkD3corKfyCkHEUgjd5d2iupu2GX9Qcjw=="],
 
     "@tabler/icons": ["@tabler/icons@3.34.0", "", {}, "sha512-jtVqv0JC1WU2TTEBN32D9+R6mc1iEBuPwLnBsWaR02SIEciu9aq5806AWkCHuObhQ4ERhhXErLEK7Fs+tEZxiA=="],
 
@@ -776,6 +777,8 @@
     "unplugin-utils": ["unplugin-utils@0.2.5", "", { "dependencies": { "pathe": "^2.0.3", "picomatch": "^4.0.3" } }, "sha512-gwXJnPRewT4rT7sBi/IvxKTjsms7jX7QIDLOClApuZwR49SXbrB1z2NLUZ+vDHyqCj/n58OzRRqaW+B8OZi8vg=="],
 
     "urlpattern-polyfill": ["urlpattern-polyfill@10.1.0", "", {}, "sha512-IGjKp/o0NL3Bso1PymYURCJxMPNAf/ILOpendP9f5B6e1rTJgdgiOvgfoT8VxCAdY+Wisb9uhGaJJf3yZ2V9nw=="],
+
+    "utopia-core": ["utopia-core@1.6.0", "", {}, "sha512-1t74XWRugoMxwbPufCBlBRBfp4ebwXh9dLRoEEywAroO3prOQUyGykX4G4o5kHyX5PbfB3Zly1AjP2epeq6ycA=="],
 
     "vite": ["vite@7.1.2", "", { "dependencies": { "esbuild": "^0.25.0", "fdir": "^6.4.6", "picomatch": "^4.0.3", "postcss": "^8.5.6", "rollup": "^4.43.0", "tinyglobby": "^0.2.14" }, "optionalDependencies": { "fsevents": "~2.3.3" }, "peerDependencies": { "@types/node": "^20.19.0 || >=22.12.0", "jiti": ">=1.21.0", "less": "^4.0.0", "lightningcss": "^1.21.0", "sass": "^1.70.0", "sass-embedded": "^1.70.0", "stylus": ">=0.54.8", "sugarss": "^5.0.0", "terser": "^5.16.0", "tsx": "^4.8.1", "yaml": "^2.4.2" }, "optionalPeers": ["@types/node", "jiti", "less", "lightningcss", "sass", "sass-embedded", "stylus", "sugarss", "terser", "tsx", "yaml"], "bin": { "vite": "bin/vite.js" } }, "sha512-J0SQBPlQiEXAF7tajiH+rUooJPo0l8KQgyg4/aMunNtrOa7bwuZJsJbDWzeljqQpgftxuq5yNJxQ91O9ts29UQ=="],
 

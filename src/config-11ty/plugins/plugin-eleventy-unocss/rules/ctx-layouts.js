@@ -16,7 +16,7 @@ export default [
     },
   ],
   [
-    /box[\s\S]*no-border/,
+    /^no-border$/,
     (match, { symbols }) => {
       return {
         [symbols.selector]: () => `:where(.box.no-border)`,
@@ -56,7 +56,7 @@ export default [
 
   // Flow recursive modifier
   [
-    /flow[\s\S]*recursive/,
+    /^recursive$/,
     (match, { symbols }) => {
       return [
         {
@@ -69,13 +69,23 @@ export default [
             `:where(.flow.recursive:not(.horizontal)) * + *`,
           "margin-block-start": "var(--flow-space, 1em)",
         },
+
+        // Flow horizontal recursive modifier
+        {
+          [symbols.selector]: () => `:where(.flow.horizontal.recursive) *`,
+          "margin-inline": "0",
+        },
+        {
+          [symbols.selector]: () => `:where(.flow.horizontal.recursive) * + *`,
+          "margin-inline-start": "var(--gap-stack)",
+        },
       ];
     },
   ],
 
   // Flow horizontal modifier
   [
-    /flow[\s\S]*horizontal/,
+    /^horizontal$/,
     (match, { symbols }) => {
       return [
         {
@@ -95,15 +105,8 @@ export default [
           [symbols.selector]: () => `:where(.flow.horizontal:only-child)`,
           "inline-size": "100%",
         },
-      ];
-    },
-  ],
 
-  // Flow horizontal recursive modifier
-  [
-    /flow[\s\S]*horizontal[\s\S]*recursive/,
-    (match, { symbols }) => {
-      return [
+        // Flow horizontal recursive modifier
         {
           [symbols.selector]: () => `:where(.flow.horizontal.recursive) *`,
           "margin-inline": "0",
@@ -118,7 +121,7 @@ export default [
 
   // Flow split-after-me modifier
   [
-    /flow[\s\S]*split-after-me/,
+    /^split-after-me$/,
     (match, { symbols }) => {
       return [
         {
@@ -137,7 +140,7 @@ export default [
 
   // Flow split-after-[1-5] modifiers
   [
-    /flow[\s\S]*split-after-(\d+)/,
+    /^split-after-(\d+)$/,
     (match, { symbols }) => {
       const num = match[1];
       return [
@@ -157,7 +160,7 @@ export default [
 
   // Flow stop modifier (for recursive)
   [
-    /flow[\s\S]*recursive[\s\S]*stop/,
+    /^stop$/,
     (match, { symbols }) => {
       return [
         {
@@ -193,7 +196,7 @@ export default [
 
   // Center text modifier
   [
-    /center[\s\S]*text/,
+    /^text$/,
     (match, { symbols }) => {
       return {
         [symbols.selector]: () => `:where(.center.text)`,
@@ -204,7 +207,7 @@ export default [
 
   // Center intrinsic modifier
   [
-    /center[\s\S]*intrinsic/,
+    /^intrinsic$/,
     (match, { symbols }) => {
       return {
         [symbols.selector]: () => `:where(.center.intrinsic)`,
@@ -245,15 +248,8 @@ export default [
           "flex-wrap": "wrap",
           gap: "var(--gap-sidebar)",
         },
-      ];
-    },
-  ],
 
-  // With Sidebar not right modifier
-  [
-    /^with-sidebar(?!.*right)/,
-    (match, { symbols }) => {
-      return [
+        // With Sidebar NOT right modifier
         {
           [symbols.selector]: () =>
             `:where(.with-sidebar:not(.right)) > :first-child`,
@@ -273,7 +269,7 @@ export default [
 
   // With Sidebar right modifier
   [
-    /^with-sidebar[\s\S]*right/,
+    /^right$/,
     (match, { symbols }) => {
       return [
         {
@@ -315,7 +311,7 @@ export default [
 
   // Switcher limit modifiers
   [
-    /switcher[\s\S]*limit-(\d+)/,
+    /^limit-(\d+)$/,
     (match, { symbols }) => {
       const num = match[1];
       const nextNum = parseInt(num) + 1;
@@ -334,15 +330,15 @@ export default [
       return [
         {
           [symbols.selector]: () => `:where(.cover)`,
-          "--gap-cover": "var(--gap, 1em)",
           display: "flex",
           "flex-direction": "column",
-          "min-block-size": "var(--min-height-cover, 100vh)",
-          padding: "var(--gap-cover)",
+          "min-block-size": "100vh",
+          "min-block-size": "var(--min-height-cover, 100svh)",
+          padding: "var(--gap-cover, 1em)",
         },
         {
           [symbols.selector]: () => `:where(.cover) > *`,
-          "margin-block": "var(--gap-cover)",
+          "margin-block": "var(--gap-cover, 1em)",
         },
         {
           [symbols.selector]: () =>
@@ -363,17 +359,18 @@ export default [
   ],
 
   // Cover no-padding modifier
+  // NOTE: Turned into global modifier
   [
-    /cover[\s\S]*no-padding/,
+    /^no-padding$/,
     (match, { symbols }) => {
       return {
-        [symbols.selector]: () => `:where(.cover.no-padding)`,
+        [symbols.selector]: () => `:where(.no-padding)`,
         padding: "0",
       };
     },
   ],
 
-  // Grid-auto utility
+  // Grid-fluid utility
   [
     /^grid-fluid$/,
     (match, { symbols }) => {
@@ -471,7 +468,7 @@ export default [
 
   // Reel no-bar modifier
   [
-    /reel[\s\S]*no-bar/,
+    /^no-bar$/,
     (match, { symbols }) => {
       return [
         {
@@ -488,7 +485,7 @@ export default [
 
   // Reel overflowing modifier
   [
-    /reel[\s\S]*overflowing/,
+    /^overflowing$/,
     (match, { symbols }) => {
       return {
         [symbols.selector]: () => `:where(.reel.overflowing:not(.no-bar))`,
@@ -499,7 +496,7 @@ export default [
 
   // Reel no-js modifier
   [
-    /reel[\s\S]*no-js/,
+    /^no-js$/,
     (match, { symbols }) => {
       return {
         [symbols.selector]: () => `:where(.reel.no-js:not(.no-bar))`,
@@ -521,15 +518,8 @@ export default [
           "inset-inline-start": "50%",
           transform: "translate(-50%, -50%)",
         },
-      ];
-    },
-  ],
 
-  // Imposter utility - NOT breakout modifier
-  [
-    /^imposter(?!.*breakout)/,
-    (match, { symbols }) => {
-      return [
+        // Imposter utility - NOT breakout modifier
         {
           [symbols.selector]: () => `:where(.imposter:not(.breakout))`,
           "--margin-imposter": "0px",
@@ -542,12 +532,13 @@ export default [
   ],
 
   // Imposter fixed modifier
+  // NOTE: Turned into global modifier
   [
-    /imposter[\s\S]*fixed/,
+    /^fixed$/,
     (match, { symbols }) => {
       return {
-        [symbols.selector]: () => `:where(.imposter.fixed)`,
-        position: "var(--position-imposter, fixed)",
+        [symbols.selector]: () => `:where(.fixed)`,
+        position: "fixed",
       };
     },
   ],
@@ -562,50 +553,6 @@ export default [
         height: "var(--height-icon, 0.75em)",
         "vertical-align": "var(--vertical-align-icon, -0.125em)",
       };
-    },
-  ],
-
-  // Icon lowercase modifier
-  [
-    /icon[\s\S]*lowercase/,
-    (match, { symbols }) => {
-      return [
-        {
-          [symbols.selector]: () => `:where(.icon.lowercase)`,
-          width: "var(--width-icon, 1ex)",
-          height: "var(--height-icon, 1ex)",
-        },
-      ];
-    },
-  ],
-
-  // Icon sub modifier
-  [
-    /icon[\s\S]*sub/,
-    (match, { symbols }) => {
-      return [
-        {
-          [symbols.selector]: () => `:where(.icon.sub)`,
-          width: "var(--width-icon, 0.25em)",
-          height: "var(--height-icon, 0.25em)",
-          "vertical-align": "var(--vertical-align-icon, sub)",
-        },
-      ];
-    },
-  ],
-
-  // Icon super modifier
-  [
-    /icon[\s\S]*super/,
-    (match, { symbols }) => {
-      return [
-        {
-          [symbols.selector]: () => `:where(.icon.super)`,
-          width: "var(--width-icon, 0.25em)",
-          height: "var(--height-icon, 0.25em)",
-          "vertical-align": "var(--vertical-align-icon, super)",
-        },
-      ];
     },
   ],
 
@@ -624,6 +571,10 @@ export default [
           "margin-inline-end": "var(--gap-icon, 1ch)",
         },
         {
+          [symbols.selector]: () => `:where(.with-icon.right) .icon`,
+          "margin-inline-start": "var(--gap-icon, 1ch)",
+        },
+        {
           [symbols.selector]: () => `:where(.with-icon) .icon:only-child`,
           "margin-inline-end": "0",
           "margin-inline-start": "0",
@@ -632,25 +583,53 @@ export default [
     },
   ],
 
-  // With-icon lowercase modifier
+  // Icon lowercase modifier
   [
-    /with-icon[\s\S]*lowercase/,
+    /^lowercase$/,
     (match, { symbols }) => {
-      return {
-        [symbols.selector]: () => `:where(.with-icon.lowercase)`,
-        "text-transform": "lowercase",
-      };
+      return [
+        {
+          [symbols.selector]: () => `:where(.icon.lowercase)`,
+          width: "var(--width-icon, 1ex)",
+          height: "var(--height-icon, 1ex)",
+        },
+
+        // With-icon lowercase modifier
+        {
+          [symbols.selector]: () => `:where(.with-icon.lowercase)`,
+          "text-transform": "lowercase",
+        },
+      ];
     },
   ],
 
-  // With-icon right modifier
+  // Icon sub modifier
   [
-    /with-icon[\s\S]*right/,
+    /^sub$/,
     (match, { symbols }) => {
-      return {
-        [symbols.selector]: () => `:where(.with-icon.right) .icon`,
-        "margin-inline-start": "var(--gap-icon, 1ch)",
-      };
+      return [
+        {
+          [symbols.selector]: () => `:where(.icon.sub)`,
+          width: "var(--width-icon, 0.25em)",
+          height: "var(--height-icon, 0.25em)",
+          "vertical-align": "var(--vertical-align-icon, sub)",
+        },
+      ];
+    },
+  ],
+
+  // Icon super modifier
+  [
+    /^super$/,
+    (match, { symbols }) => {
+      return [
+        {
+          [symbols.selector]: () => `:where(.icon.super)`,
+          width: "var(--width-icon, 0.25em)",
+          height: "var(--height-icon, 0.25em)",
+          "vertical-align": "var(--vertical-align-icon, super)",
+        },
+      ];
     },
   ],
 
