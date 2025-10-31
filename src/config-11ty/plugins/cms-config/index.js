@@ -324,7 +324,8 @@ const pagePreviewField = {
     {
       name: "description",
       label: "Description",
-      widget: "text",
+      // widget: "text",
+      widget: "markdown",
       required: false,
       // hint: "Default: Metadata description",
       i18n: true,
@@ -1370,6 +1371,7 @@ class CmsConfig {
       eleventyNavigationField,
       simpleMetadataField,
       pagePreviewField,
+      tagsField,
       varsField,
       dataListField,
     ];
@@ -1402,6 +1404,7 @@ class CmsConfig {
       eleventyNavigationField,
       simpleMetadataField,
       pagePreviewField,
+      tagsField,
       varsField,
       dataListField,
     ];

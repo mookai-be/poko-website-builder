@@ -23,7 +23,7 @@ import populateInputDir from "./src/config-11ty/plugins/populateInputDir/index.j
 import partialsPlugin from "./src/config-11ty/plugins/partials/index.js";
 import buildExternalCSS from "./src/config-11ty/plugins/buildExternalCSS/index.js";
 import pluginUnoCSS from "./src/config-11ty/plugins/plugin-eleventy-unocss/index.js";
-import renderLinksPlugin from "./src/config-11ty/plugins/renderLinks/index.js";
+import customRenderersPlugin from "./src/config-11ty/plugins/customRenderers/index.js";
 // import keystaticPassthroughFiles from './src/config-11ty/plugins/keystaticPassthroughFiles/index.js';
 // -------- Plugins Markdown
 import markdownItContainer from "markdown-it-container";
@@ -563,7 +563,7 @@ export default async function (eleventyConfig) {
   // });
 
   // Deferred Config
-  await eleventyConfig.addPlugin(renderLinksPlugin);
+  await eleventyConfig.addPlugin(customRenderersPlugin);
 
   await eleventyConfig.addPlugin(async function (eleventyConf) {
     eleventyConf.versionCheck(">=3.0.0-alpha.1");
