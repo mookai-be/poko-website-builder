@@ -3,6 +3,12 @@
 <meta name="generator" content="{{ eleventy.generator }}" />
 <meta name="generator" content="poko" />
 
+{# NoIndex check #}
+{% if status == "noindex" %}
+
+<meta name="robots" content="noindex" />
+{% endif %}
+
 {# Metadata #}
 {% include "_metadata-default.md" ignore missing %}
 {% include "_metadata.md" ignore missing %}
