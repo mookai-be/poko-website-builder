@@ -873,6 +873,8 @@ class CmsConfig {
                   collapsed: "auto",
                   required: false,
                   fields: [
+                    { name: "text__heading", label: "Heading Text Color", ...brandColorField }, // prettier-ignore
+                    { name: "bg__heading", label: "Heading Background Color", ...brandColorField }, // prettier-ignore
                     { name: "text__a", label: "Link Text  Color", ...brandColorField }, // prettier-ignore
                     { name: "bg__a", label: "Link Background Color", ...brandColorField }, // prettier-ignore
                     { name: "text__a--hover", label: "Link Text Hover Color", ...brandColorField }, // prettier-ignore
@@ -1511,7 +1513,7 @@ class CmsConfig {
       display_url: DISPLAY_URL,
       // logo_url: "https://your-site.com/images/logo.svg",
       logo_url:
-        "https://raw.githubusercontent.com/m4rrc0/poko-website-builder/3fbe32b2f8a00e5e2b1a8fff60d7772ace8e1820/assets/favicon-POKO-01.png",
+        "https://raw.githubusercontent.com/m4rrc0/poko-website-builder/3fbe32b2f8a00e5e2b1a8fff60d7772ace8e1820/assets/assets/POKO-favicon-RVB-light_dark.svg",
       // MEDIAS
       media_folder: `/${CONTENT_DIR}/_images`,
       public_folder: "/_images",

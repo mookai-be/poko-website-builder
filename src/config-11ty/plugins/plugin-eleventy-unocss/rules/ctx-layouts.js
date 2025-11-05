@@ -7,11 +7,10 @@ export default [
     (match, { symbols }) => {
       return {
         [symbols.selector]: () => `:where(.box)`,
-        "--padding-box": "var(--padding, calc(var(--gap, 1em) / 2))",
-        "--border-width-box": "var(--border-width, var(--size-border, 1px))",
         display: "block",
-        padding: "var(--padding-box)",
-        border: "var(--border-width-box) solid",
+        padding:
+          "var(--padding-box, var(--padding, calc(var(--gap, 1em) / 2)))",
+        border: "var(--border-width-box, 0) solid",
       };
     },
   ],
