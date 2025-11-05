@@ -11,15 +11,15 @@ import {
   CMS_BACKEND,
   CMS_BRANCH,
   collections as selectedCollections,
-  languages,
+  allLanguages,
 } from "../../../../env.config.js";
 import { nativeFontStacks } from "../../../utils/transformStyles.js";
 
 const isDev = NODE_ENV === "development";
-const mustSetup = !languages?.length;
+const mustSetup = !allLanguages?.length;
 
-const default_locale = languages.find((lang) => lang.isCmsDefault)?.code;
-const locales = languages
+const default_locale = allLanguages.find((lang) => lang.isCmsDefault)?.code;
+const locales = allLanguages
   .filter((lang) => /^published|draft/.test(lang.status))
   .map((lang) => lang.code);
 
@@ -456,7 +456,8 @@ const mostCommonMarkdownCollectionConfig = {
 class CmsConfig {
   data() {
     return {
-      layout: false,
+      layout: null,
+      eleventyExcludeFromCollections: true,
       permalink: "/admin/config.json",
       lang: "en",
     };
