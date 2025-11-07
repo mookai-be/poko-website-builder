@@ -58,9 +58,9 @@ main {
 padding-block-start: 0;
 }
 .scroll {
---_proportions: var(--step-2);
-inline-size: var(--_proportions);
-block-size: var(--_proportions);
+--scroll-arrow-ratio: var(--step-2);
+inline-size: var(--scroll-arrow-ratio);
+block-size: var(--scroll-arrow-ratio);
 margin-inline: auto;
 border: 2px solid var(--white);
 border-radius: 50%;
@@ -69,18 +69,18 @@ align-items: center;
 justify-items: center;
 &::before {
 content: '';
-width: calc(var(--_proportions) / 4);
-height: calc(var(--_proportions) / 4);
+width: calc(var(--scroll-arrow-ratio) / 4);
+height: calc(var(--scroll-arrow-ratio) / 4);
 border-left: 2px solid var(--white);
 border-bottom: 2px solid var(--white);
 transform: rotate(-45deg);
-margin-top: calc(var(--_proportions) \* -0.05);
+margin-top: calc(var(--scroll-arrow-ratio) * -0.05);
 }
 }
 
 @keyframes down {
 0% {transform: translate(0);}
-20% {transform: translateY(calc(var(--_proportions) / 4));}
+20% {transform: translateY(calc(var(--scroll-arrow-ratio) / 4));}
 40% {transform: translate(0);}
 }
 
