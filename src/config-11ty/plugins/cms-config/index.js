@@ -1149,6 +1149,18 @@ class CmsConfig {
           required: false,
           output_code_only: true,
           allow_language_selection: false,
+          default: `<div
+  class="switcher {{ class }}"
+  style="--width-wrap: {{widthWrap or 'var(--width-prose)'}}; --gap-switcher: {{gap or '1em'}}"
+>
+{% for block in blocks %} {% if block.type == "markdown" %}
+<div class="block-markdown {{ block.class }}">
+{{ block.value | renderContent("njk,md", { languages: languages, collections: collections }) | safe }}
+</div>
+{% endif %} {% if block.type == "image" %}
+<img {{ block | htmlImgAttrs({ type: null, class: 'block-image ' + (block.class or '') }) }} />
+{% endif %} {% endfor %}
+</div>`,
         },
       ],
     };
