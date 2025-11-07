@@ -78,7 +78,7 @@ _Detailed step-by-step instructions coming soon._
 
 - On the first load (and only then), you will only be able to edit your 'Global Settings'. Fill in the required fields and save. You will need to wait for your site to re-build before you can see the changes.
 - You can now explore the CMS interface to edit your content.
-- ~~Check out our_ User Guide_ for more information.~~ (Coming soon)
+- ~~Check out our User Guide for more information.~~ (Coming soon)
 
 ## Video Walkthrough
 
@@ -91,7 +91,7 @@ Once your site is up and running:
 - Explore the CMS interface to edit your content
 - Customize your design and branding
 - Add pages and create your site structure
-- ~~Check out our_ User Guide_ and_ Documentation_ for more information.~~ (Coming soon)
+- ~~Check out our User Guide and Documentation for more information.~~ (Coming soon)
 
 ## Need Help?
 
