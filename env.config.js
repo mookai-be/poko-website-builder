@@ -141,6 +141,24 @@ export const BRANCH =
   processEnv.VERCEL_GIT_COMMIT_REF ||
   processEnv.GIT_BRANCH;
 
+// TODO: Verify compat with supported hosts
+const HOST_SUBDOMAIN = BRANCH && BRANCH.replaceAll("/", "-");
+const HOST_PREVIEW_URL =
+  processEnv.HOST_PREVIEW_URL ||
+  CF_PAGES_URL ||
+  (VERCEL_BRANCH_URL && `https://${VERCEL_BRANCH_URL}`) ||
+  DEPLOY_URL; // Netlify
+const HOST_BRANCH_URL =
+  processEnv.HOST_BRANCH_URL ||
+  (CF_PAGES_URL &&
+    CF_PAGES_URL.replace(
+      /https:\/\/[a-z\d]+\./,
+      `https://${HOST_SUBDOMAIN}.`
+    )) ||
+  (VERCEL_BRANCH_URL && `https://${VERCEL_BRANCH_URL}`) ||
+  DEPLOY_PRIME_URL || // Netlify
+  HOST_PREVIEW_URL;
+
 // TODO: Better way to identify live deploy
 // BUILD_LEVEL: all, active, draft, production
 export const BUILD_LEVEL =
@@ -299,13 +317,20 @@ export const brandStyles = [
 // TODO: This is prone to forgetting to define the base url
 // TODO: Could be public and defined in config
 // PROD_URL is the full URL of the 'deployed' site
-export const PROD_URL = (
-  processEnv.PROD_URL || globalSettings?.productionUrl
-)?.replace(/\/+$/, "");
+export const PROD_URL =
+  (processEnv.PROD_URL || globalSettings?.productionUrl)?.replace(/\/+$/, "") ||
+  (VERCEL_PROJECT_PRODUCTION_URL && `https://${VERCEL_PROJECT_PRODUCTION_URL}`);
 // BASE_URL is the full URL of the 'being deployed' site
 // TODO: Try and find the best ways to infer BASE_URL so we can only define a CANONICAL_URL / PROD_URL
 // TODO: If we have a decent way to infer this, we can fall back to PROD_URL
-export const BASE_URL = processEnv.BASE_URL?.replace(/\/+$/, "");
+export const BASE_URL = (
+  processEnv.BASE_URL ||
+  (BRANCH === PROD_BRANCH ? PROD_URL : "") ||
+  HOST_BRANCH_URL ||
+  // Probably not that bad to fall back to production url
+  // TODO: Verify that it is not that bad to fall back to prod url
+  PROD_URL
+)?.replace(/\/+$/, "");
 // DISPLAY_URL is for the CMS button to the deployed site (prefer current deploy against production)
 export const DISPLAY_URL =
   processEnv.DISPLAY_URL?.replace(/\/+$/, "") || BASE_URL || PROD_URL;
