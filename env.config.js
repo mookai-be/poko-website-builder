@@ -145,18 +145,18 @@ export const BRANCH =
 const HOST_SUBDOMAIN = BRANCH && BRANCH.replaceAll("/", "-");
 const HOST_PREVIEW_URL =
   processEnv.HOST_PREVIEW_URL ||
-  CF_PAGES_URL ||
-  (VERCEL_BRANCH_URL && `https://${VERCEL_BRANCH_URL}`) ||
-  DEPLOY_URL; // Netlify
+  processEnv.CF_PAGES_URL ||
+  (processEnv.VERCEL_BRANCH_URL && `https://${processEnv.VERCEL_BRANCH_URL}`) ||
+  processEnv.DEPLOY_URL; // Netlify
 const HOST_BRANCH_URL =
   processEnv.HOST_BRANCH_URL ||
-  (CF_PAGES_URL &&
-    CF_PAGES_URL.replace(
+  (processEnv.CF_PAGES_URL &&
+    processEnv.CF_PAGES_URL.replace(
       /https:\/\/[a-z\d]+\./,
       `https://${HOST_SUBDOMAIN}.`
     )) ||
-  (VERCEL_BRANCH_URL && `https://${VERCEL_BRANCH_URL}`) ||
-  DEPLOY_PRIME_URL || // Netlify
+  (processEnv.VERCEL_BRANCH_URL && `https://${processEnv.VERCEL_BRANCH_URL}`) ||
+  processEnv.DEPLOY_PRIME_URL || // Netlify
   HOST_PREVIEW_URL;
 
 // TODO: Better way to identify live deploy
