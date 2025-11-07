@@ -9,9 +9,8 @@ eleventyNavigation:
   title: Get Started
   order: 2
 metadata:
-  description: Set up your poko website in minutes with our step-by-step guide
+  description: Set up your free website builder in minutes with our step-by-step guide
 ---
-
 # Get Started
 
 ::: aside {.callout .prose}
@@ -27,7 +26,7 @@ We offer tailored website creation and setup assistance.
 
 Setting up a poko website is straightforward, but you'll need to be comfortable creating accounts and navigating web service settings. If you've set up a GitHub repository or configured hosting before, you'll be fine.
 
-**Time required:** ~15-30 minutes for first-time setup
+**Time required:** \~15-30 minutes for first-time setup
 
 **What you'll need:**
 
@@ -42,35 +41,44 @@ _Detailed step-by-step instructions coming soon._
 **Overview of the process:**
 
 1. Fork the [poko website builder](https://github.com/m4rrc0/poko-website-builder) repository on Github.
-   - ℹ️ [What is a 'Fork'?](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo)
-   - ⚡️ Quick link: [Fork m4rrc0/poko-website-builder](https://github.com/m4rrc0/poko-website-builder/fork)
+
+- ℹ️ [What is a 'Fork'?](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo)
+- ⚡️ Quick link: [Fork m4rrc0/poko-website-builder](https://github.com/m4rrc0/poko-website-builder/fork)
+
 2. Create a new fine-grained Github personal access token
-   - ℹ️ [What is a 'Personal Access Token' on Github?](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token)
-   - ⚡️ Quick link to a [pre-filled token creation form](https://github.com/settings/personal-access-tokens/new?name=poko-website-builder+token&description=Read+and+write+repo+access+for+the+CMS&expires_in=none&contents=write)
-     - If you forked the repository inside an organization, change the `Resource Owner` to match your organization name
-     - Feel free to set an `expiration date` or restrict the `Repository access` to specific repositories
-   - Copy the token value and save it in a safe place (like a password manager)
-     - ⚠️ **Do not share this token with anyone**
-     - ⚠️ **You will not be able to read the token from Github after you leave the page** (you can always create a new one though)
+
+- ℹ️ [What is a 'Personal Access Token' on Github?](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token)
+- ⚡️ Quick link to a [pre-filled token creation form](https://github.com/settings/personal-access-tokens/new?name=poko-website-builder+token&description=Read+and+write+repo+access+for+the+CMS&expires_in=none&contents=write)
+    - If you forked the repository inside an organization, change the `Resource Owner` to match your organization name
+    - Feel free to set an `expiration date` or restrict the `Repository access` to specific repositories
+- Copy the token value and save it in a safe place (like a password manager)
+    - ⚠️ **Do not share this token with anyone**
+    - ⚠️ **You will not be able to read the token from Github after you leave the page** (you can always create a new one though)
+
 3. [Create a new project on Cloudflare Pages](https://developers.cloudflare.com/pages/get-started/git-integration/) from the forked repository
-   - ⚠️ Make sure you are using a 'Pages' project, not a 'Workers' project
-   - Choose 'Import an existing Git repository'
-   - Select the forked repository as the source
-   - Choose a 'production' branch (usually `main`)
-   - Configure the build settings:
-     - Build command: `bun run cf-build`
-     - Publish directory: `dist`
-   - Click 'Create project' and wait for the first build to finish (~30 seconds)
+
+- ⚠️ Make sure you are using a 'Pages' project, not a 'Workers' project
+- Choose 'Import an existing Git repository'
+- Select the forked repository as the source
+- Choose a 'production' branch (usually `main`)
+- Configure the build settings:
+    - Build command: `bun run cf-build`
+    - Publish directory: `dist`
+- Click 'Create project' and wait for the first build to finish (\~30 seconds)
+
 4. Connect to the CMS
-   - Find the URL of your Cloudflare Pages project (e.g. `https://project-name.pages.dev`)
-   - Open the URL in your browser and add `/admin` to the end (e.g. `https://project-name.pages.dev/admin`). You should see the CMS login screen.
-   - Choose 'Sign in with GitHub Using a PAT' and enter the token you created earlier
-   - The page should reload and you should be logged in
-   - Note: The token is saved in your browser's local storage so you won't have to enter it again in that browser. But you will need it again if you sign in from another device or browser.
+
+- Find the URL of your Cloudflare Pages project (e.g. `https://project-name.pages.dev`)
+- Open the URL in your browser and add `/admin` to the end (e.g. `https://project-name.pages.dev/admin`). You should see the CMS login screen.
+- Choose 'Sign in with GitHub Using a PAT' and enter the token you created earlier
+- The page should reload and you should be logged in
+- Note: The token is saved in your browser's local storage so you won't have to enter it again in that browser. But you will need it again if you sign in from another device or browser.
+
 5. Start editing your content
-   - On the first load (and only then), you will only be able to edit your 'Global Settings'. Fill in the required fields and save. You will need to wait for your site to re-build before you can see the changes.
-   - You can now explore the CMS interface to edit your content.
-   - ~~Check out our _User Guide_ for more information.~~ (Coming soon)
+
+- On the first load (and only then), you will only be able to edit your 'Global Settings'. Fill in the required fields and save. You will need to wait for your site to re-build before you can see the changes.
+- You can now explore the CMS interface to edit your content.
+- ~~Check out our_ User Guide_ for more information.~~ (Coming soon)
 
 ## Video Walkthrough
 
@@ -83,7 +91,7 @@ Once your site is up and running:
 - Explore the CMS interface to edit your content
 - Customize your design and branding
 - Add pages and create your site structure
-- ~~Check out our _User Guide_ and _Documentation_ for more information.~~ (Coming soon)
+- ~~Check out our_ User Guide_ and_ Documentation_ for more information.~~ (Coming soon)
 
 ## Need Help?
 

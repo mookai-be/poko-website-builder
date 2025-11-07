@@ -12,10 +12,10 @@ eleventyNavigation:
 metadata:
   description: poko is a lightweight, eco-focused, powerful, hackable website builder for the people
   image:
-    src: /_images/poko-logo-rvb-02.webp
+    src: /_images/device-set_v01_mockup-poko.webp
 vars: {}
 ---
-{% section type="cover", vars={"minHeight":"100svh","noPadding":false,"gap":""}, blocks=[{"value":"# [poko]{style=color:var(--pink)} is a lightweight, eco-focused, powerful, hackable website builder for the people {.centered .h0}\n\n{{ \"get-started\" | link(undefined,\"html\") | safe }} {{ \"commitment\" | link(undefined,\"html\") | safe }} {.cluster}\n\n<a href=\"#why-poko\" class=\"scroll pile\"></a>","type":"markdown"}], advanced={} %}
+{% section type="cover", vars={"minHeight":"","noPadding":false,"gap":""}, blocks=[{"value":"# [poko]{style=color:var(--pink)} is a lightweight, eco-focused, powerful, hackable website builder for the people {.centered .h0}\n\n{{ \"get-started\" | link(undefined,\"html\") | safe }} {{ \"commitment\" | link(undefined,\"html\") | safe }} {{ \"showcase\" | link(undefined,\"html\") | safe }} {.cluster style=--justify-cluster:center}\n\n<a href=\"#why-poko\" class=\"scroll pile\"></a>","type":"markdown"}], advanced={} %}
 
 ## Why poko?
 
@@ -23,7 +23,8 @@ Most website builders lock you into expensive subscriptions and proprietary syst
 
 ### Free & independent {.h4}
 
-Host your site for free on modern static platforms. No subscriptions, no vendor lock-in. Your only recurring cost? Your domain name (\~15€/year).
+Host your site for free on modern static platforms. No subscriptions, no vendor lock-in.  
+We will even let you use our domain name for free if you want.
 
 ### Planet-friendly by default {.h4}
 
@@ -53,10 +54,13 @@ Push to GitHub, connect to free hosting, and your site goes live. Updates deploy
 {{ "get-started" | link(undefined,"html") | safe }}
 
 {% css %}
+main {
+padding-block-start: 0;
+}
 .scroll {
---_proportions: var(--step-2);
-inline-size: var(--_proportions);
-block-size: var(--_proportions);
+--scroll-arrow-ratio: var(--step-2);
+inline-size: var(--scroll-arrow-ratio);
+block-size: var(--scroll-arrow-ratio);
 margin-inline: auto;
 border: 2px solid var(--white);
 border-radius: 50%;
@@ -65,25 +69,19 @@ align-items: center;
 justify-items: center;
 &::before {
 content: '';
-width: calc(var(--_proportions) / 4);
-height: calc(var(--_proportions) / 4);
+width: calc(var(--scroll-arrow-ratio) / 4);
+height: calc(var(--scroll-arrow-ratio) / 4);
 border-left: 2px solid var(--white);
 border-bottom: 2px solid var(--white);
 transform: rotate(-45deg);
-margin-top: calc(var(--_proportions) \* -0.05);
+margin-top: calc(var(--scroll-arrow-ratio) * -0.05);
 }
 }
 
 @keyframes down {
-0% {
-transform: translate(0);
-}
-20% {
-transform: translateY(calc(var(--_proportions) / 4));
-}
-40% {
-transform: translate(0);
-}
+0% {transform: translate(0);}
+20% {transform: translateY(calc(var(--scroll-arrow-ratio) / 4));}
+40% {transform: translate(0);}
 }
 
 {% endcss %}
