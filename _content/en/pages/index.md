@@ -13,8 +13,9 @@ metadata:
   description: poko is a lightweight, eco-focused, powerful, hackable website builder for the people
   image:
     src: /_images/device-set_v01_mockup-poko.webp
+vars: {}
 ---
-{% section type="cover", vars={"minHeight":"","noPadding":false,"gap":""}, blocks=[{"value":"# [poko]{style=color:var(--pink)} is a lightweight, eco-focused, powerful, hackable website builder for the people {.centered .h0}\n\n{{ \"get-started\" | link(undefined,\"html\") | safe }} {{ \"commitment\" | link(undefined,\"html\") | safe }} {{ \"docs\" | link(undefined,\"html\") | safe }} {.cluster style=--justify-cluster:center}\n\n<a href=\"#why-poko\" class=\"scroll pile\"></a>","type":"markdown"}], advanced={} %}
+{% section type="cover", vars={"minHeight":"","noPadding":false,"gap":""}, blocks=[{"value":"# [poko]{style=color:var(--pink)} is a lightweight, eco-focused, powerful, hackable website builder for the people {.centered .h0}\n\n{{ \"get-started\" | link(undefined,\"html\") | safe }} {{ \"commitment\" | link(undefined,\"html\") | safe }} {{ \"showcase\" | link(undefined,\"html\") | safe }} {.cluster style=--justify-cluster:center}\n\n<a href=\"#why-poko\" class=\"scroll pile\"></a>","type":"markdown"}], advanced={} %}
 
 ## Why poko?
 
@@ -22,7 +23,8 @@ Most website builders lock you into expensive subscriptions and proprietary syst
 
 ### Free & independent {.h4}
 
-Host your site for free on modern static platforms. No subscriptions, no vendor lock-in. Your only recurring cost? Your domain name (\~15€/year).
+Host your site for free on modern static platforms. No subscriptions, no vendor lock-in.  
+We will even let you use our domain name for free if you want.
 
 ### Planet-friendly by default {.h4}
 

@@ -4,14 +4,12 @@ lang: en
 createdAt: 2025-10-16T08:13:00.000Z
 uuid: a8f4c9d2e5b7
 localizationKey: 9f2a1b8c6d4e
-pageLayout: docs
 name: Get Started
 eleventyNavigation:
   title: Get Started
-  parent: Docs
-  order: 1
+  order: 2
 metadata:
-  description: Set up your poko website in minutes with our step-by-step guide
+  description: Set up your free website builder in minutes with our step-by-step guide
 ---
 # Get Started
 
@@ -80,7 +78,7 @@ _Detailed step-by-step instructions coming soon._
 
 - On the first load (and only then), you will only be able to edit your 'Global Settings'. Fill in the required fields and save. You will need to wait for your site to re-build before you can see the changes.
 - You can now explore the CMS interface to edit your content.
-- ~~Check out our_ User Guide_&#32;for more information.~~ (Coming soon)
+- ~~Check out our_ User Guide_ for more information.~~ (Coming soon)
 
 ## Video Walkthrough
 
@@ -93,7 +91,7 @@ Once your site is up and running:
 - Explore the CMS interface to edit your content
 - Customize your design and branding
 - Add pages and create your site structure
-- ~~Check out our_ User Guide_&#32;and_ Documentation_&#32;for more information.~~ (Coming soon)
+- ~~Check out our_ User Guide_ and_ Documentation_ for more information.~~ (Coming soon)
 
 ## Need Help?
 

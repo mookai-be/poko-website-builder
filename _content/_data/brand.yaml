@@ -23,6 +23,8 @@ typeScales:
 colors:
   - name: indigo
     value: '#130e35'
+  - name: indigo-light
+    value: '#241a66'
   - name: white
     value: '#ffffff'
   - name: pink
