@@ -3,6 +3,12 @@
 <meta name="generator" content="{{ eleventy.generator }}" />
 <meta name="generator" content="poko" />
 
+{# NoIndex check #}
+{% if status == "noindex" %}
+
+<meta name="robots" content="noindex" />
+{% endif %}
+
 {# Metadata #}
 {% include "_metadata-default.md" ignore missing %}
 {% include "_metadata.md" ignore missing %}
@@ -11,7 +17,7 @@
 {% for link in templateTranslations %}
 
 <link rel="alternate" hreflang="{{link.lang}}" href="{{baseUrl}}{{link.url}}" />
-{% if link.isDefault %}
+{% if link.isDefaultLang %}
 <link rel="alternate" hreflang="x-default" href="{{baseUrl}}{{link.url}}" />
 {% endif %}
 

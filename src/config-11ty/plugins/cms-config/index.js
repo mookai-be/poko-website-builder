@@ -11,15 +11,15 @@ import {
   CMS_BACKEND,
   CMS_BRANCH,
   collections as selectedCollections,
-  languages,
+  allLanguages,
 } from "../../../../env.config.js";
 import { nativeFontStacks } from "../../../utils/transformStyles.js";
 
 const isDev = NODE_ENV === "development";
-const mustSetup = !languages?.length;
+const mustSetup = !allLanguages?.length;
 
-const default_locale = languages.find((lang) => lang.isCmsDefault)?.code;
-const locales = languages
+const default_locale = allLanguages.find((lang) => lang.isCmsDefault)?.code;
+const locales = allLanguages
   .filter((lang) => /^published|draft/.test(lang.status))
   .map((lang) => lang.code);
 
@@ -324,7 +324,8 @@ const pagePreviewField = {
     {
       name: "description",
       label: "Description",
-      widget: "text",
+      // widget: "text",
+      widget: "markdown",
       required: false,
       // hint: "Default: Metadata description",
       i18n: true,
@@ -455,7 +456,8 @@ const mostCommonMarkdownCollectionConfig = {
 class CmsConfig {
   data() {
     return {
-      layout: false,
+      layout: null,
+      eleventyExcludeFromCollections: true,
       permalink: "/admin/config.json",
       lang: "en",
     };
@@ -872,6 +874,8 @@ class CmsConfig {
                   collapsed: "auto",
                   required: false,
                   fields: [
+                    { name: "text__heading", label: "Heading Text Color", ...brandColorField }, // prettier-ignore
+                    { name: "bg__heading", label: "Heading Background Color", ...brandColorField }, // prettier-ignore
                     { name: "text__a", label: "Link Text  Color", ...brandColorField }, // prettier-ignore
                     { name: "bg__a", label: "Link Background Color", ...brandColorField }, // prettier-ignore
                     { name: "text__a--hover", label: "Link Text Hover Color", ...brandColorField }, // prettier-ignore
@@ -1093,6 +1097,24 @@ class CmsConfig {
           required: false,
           output_code_only: true,
           allow_language_selection: false,
+          default: `<!DOCTYPE html>
+<html lang="{{lang or 'en'}}" class="no-js">
+  <head>
+    {% partial "_html-head-default.md" %}
+    {% getBundle "html", "head" %}
+  </head>
+  <body>
+    <!-- Navigation -->
+    {% partial "_main-nav.md", {}, "njk" %}
+
+    <!-- Content -->
+    {% partial "_main-content.md" %}
+
+    <!-- Footer -->
+    {% partial '_footer.md' %}
+  </body>
+</html>
+`,
         },
       ],
     };
@@ -1127,6 +1149,18 @@ class CmsConfig {
           required: false,
           output_code_only: true,
           allow_language_selection: false,
+          default: `<div
+  class="switcher {{ class }}"
+  style="--width-wrap: {{widthWrap or 'var(--width-prose)'}}; --gap-switcher: {{gap or '1em'}}"
+>
+{% for block in blocks %} {% if block.type == "markdown" %}
+<div class="block-markdown {{ block.class }}">
+{{ block.value | renderContent("njk,md", { languages: languages, collections: collections }) | safe }}
+</div>
+{% endif %} {% if block.type == "image" %}
+<img {{ block | htmlImgAttrs({ type: null, class: 'block-image ' + (block.class or '') }) }} />
+{% endif %} {% endfor %}
+</div>`,
         },
       ],
     };
@@ -1352,6 +1386,7 @@ class CmsConfig {
       eleventyNavigationField,
       simpleMetadataField,
       pagePreviewField,
+      tagsField,
       varsField,
       dataListField,
     ];
@@ -1384,6 +1419,7 @@ class CmsConfig {
       eleventyNavigationField,
       simpleMetadataField,
       pagePreviewField,
+      tagsField,
       varsField,
       dataListField,
     ];
@@ -1490,7 +1526,7 @@ class CmsConfig {
       display_url: DISPLAY_URL,
       // logo_url: "https://your-site.com/images/logo.svg",
       logo_url:
-        "https://raw.githubusercontent.com/m4rrc0/poko-website-builder/3fbe32b2f8a00e5e2b1a8fff60d7772ace8e1820/assets/favicon-POKO-01.png",
+        "https://raw.githubusercontent.com/m4rrc0/poko-website-builder/3fbe32b2f8a00e5e2b1a8fff60d7772ace8e1820/assets/assets/POKO-favicon-RVB-light_dark.svg",
       // MEDIAS
       media_folder: `/${CONTENT_DIR}/_images`,
       public_folder: "/_images",

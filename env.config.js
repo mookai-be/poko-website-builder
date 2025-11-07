@@ -153,6 +153,10 @@ export const MINIFY =
     ? false
     : BUILD_LEVEL === "production" || BUILD_LEVEL === "draft";
 
+// Statuses can be: undefined, "published", "draft", "noindex", "private", "inactive"
+export const statusesToUnrender =
+  BUILD_LEVEL === "production" ? ["inactive", "draft"] : ["inactive"];
+
 // CMS
 export const CMS_AUTH_URL = processEnv.CMS_AUTH_URL;
 export const CMS_REPO = processEnv.CMS_REPO || REPO;
@@ -196,8 +200,18 @@ try {
 export { globalSettings, brandConfig };
 // More specific useful global settings
 export const collections = globalSettings?.collections || [];
-export const languages =
+export const allLanguages =
   globalSettings?.languages?.map(transformLanguage) || [];
+export const languages = allLanguages.filter(
+  (lang) => !statusesToUnrender.includes(lang.status)
+);
+export const defaultLanguage = allLanguages.find(
+  (lang) => lang.isWebsiteDefault
+);
+export const defaultLangCode = defaultLanguage?.code || "en";
+export const unrenderedLanguages = allLanguages
+  .filter((lang) => statusesToUnrender.includes(lang.status))
+  .map((lang) => lang.code);
 
 // ----------- Brand styles computations
 // Widths contexts

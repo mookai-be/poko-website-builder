@@ -42,6 +42,11 @@ export default {
       })
       .map((template) => {
         return {
+          // isCurrent: template.data.lang === data.lang,
+          // isDefault: template.data.lang === defaultLang,
+          isCurrentLang: template.data.lang === data.lang,
+          isDefaultLang: template.data.lang === defaultLang,
+
           fileSlug: template.page.fileSlug,
           filePathStem: template.page.filePathStem,
           translationKey: template.data.translationKey,
@@ -51,8 +56,6 @@ export default {
           name: template.data.name,
           title: template.data.title,
           pagePreview: template.data.pagePreview,
-          isCurrent: template.data.lang === data.lang,
-          isDefault: template.data.lang === defaultLang,
         };
       });
 
@@ -129,10 +132,10 @@ export default {
     };
   },
   pagePreview: (data) => {
-    const title = data.pagePreview?.title || data.title || null;
+    const title = data.preview?.title || data.title || null;
     const description =
-      data.pagePreview?.description || data.metadata?.description || null;
-    const image = data.pagePreview?.image || data.metadata?.image || null;
+      data.preview?.description || data.metadata?.description || null;
+    const image = data.preview?.image || data.metadata?.image || null;
     return {
       title,
       description,

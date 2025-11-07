@@ -114,6 +114,20 @@ export default async function (eleventyConfig, pluginOptions) {
   // const renderFileShortcodeFn =
   //   eleventyConfig.nunjucks.asyncShortcodes.renderFile;
 
+  // RENDER MARKDOWN
+  async function renderMd(mdContent, data) {
+    const safeFilter = this.env.filters.safe;
+
+    let html = mdContent;
+
+    if (mdContent) {
+      html = await renderContentFilterFn.call(this, mdContent, "njk,md", data);
+    }
+
+    return safeFilter(html);
+  }
+
+  // RENDER LINKS
   async function renderLinks({ linksData, itemLayout, wrapperLayout }) {
     // const safeFilter = this.env.filters.safe;
 
@@ -130,15 +144,15 @@ export default async function (eleventyConfig, pluginOptions) {
 
     // Apply layout
     const wrapperMarkdownLayout =
-      wrapperLayout.type === "markdown" ? wrapperLayout.value : "";
+      wrapperLayout?.type === "markdown" ? wrapperLayout.value : "";
     const wrapperPartialFileName =
-      wrapperLayout.type === "partial" && wrapperLayout.slug
+      wrapperLayout?.type === "partial" && wrapperLayout.slug
         ? wrapperLayout.slug + ".md"
         : "";
     const itemMarkdownLayout =
-      itemLayout.type === "markdown" ? itemLayout.value : "";
+      itemLayout?.type === "markdown" ? itemLayout.value : "";
     const itemPartialFileName =
-      itemLayout.type === "partial" && itemLayout.slug
+      itemLayout?.type === "partial" && itemLayout.slug
         ? itemLayout.slug + ".md"
         : "";
     // TODO: Do we want to join strings before processing? Otherwise each string is always wrapped in a <p> because alone when rendered
@@ -202,6 +216,8 @@ export default async function (eleventyConfig, pluginOptions) {
     // return safeFilter(strings.join(""));
     return htmlLinks;
   }
+
+  eleventyConfig.addFilter("md", renderMd);
 
   await eleventyConfig.addAsyncShortcode("links", renderLinks);
 }
