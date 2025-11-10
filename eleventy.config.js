@@ -15,6 +15,9 @@ import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
 import pluginRobotsTxt from "eleventy-plugin-robotstxt";
 import pluginSitemap from "@quasibit/eleventy-plugin-sitemap";
 import pluginIcons from "eleventy-plugin-icons";
+import pluginCodeblocks from "@code-blocks/eleventy-plugin";
+import pluginCodeBlocksCharts from "@code-blocks/charts";
+
 // -------- Plugins Internal
 import { imageTransformOptions } from "./src/config-11ty/plugins/imageTransform.js";
 import yamlData from "./src/config-11ty/plugins/yamlData/index.js";
@@ -490,6 +493,9 @@ export default async function (eleventyConfig) {
       class: (name, source) => `icon icon-${source} icon-${name}`,
     },
   });
+
+  eleventyConfig.addPlugin(pluginCodeblocks([pluginCodeBlocksCharts]));
+
   await eleventyConfig.addPlugin(buildExternalCSS);
   // TODO: import those classes from a data file
   eleventyConfig.addPlugin(htmlClassesTransform, {
