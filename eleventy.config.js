@@ -62,6 +62,7 @@ import {
   defaultLangCode,
   unrenderedLanguages,
   brandConfig,
+  inlineAllStyles,
   brandStyles,
 } from "./env.config.js";
 import eleventyComputed from "./src/data/eleventyComputed.js";
@@ -173,6 +174,11 @@ export default async function (eleventyConfig) {
   // eleventyConfig.watchIgnores.add(`${WORKING_DIR}/_styles/_ctx.css`);
   // eleventyConfig.setUseGitIgnore(false);
 
+  eleventyConfig.addPassthroughCopy({
+    [`${WORKING_DIR}/_config/editorComponents.js`]:
+      "admin/userEditorComponents.js",
+  });
+
   // --------------------- Custom Nunjucks setup
   // TODO: Does this work as expected?
   // NOTE: This is a workaround because virtual templates does not work for includes
@@ -277,6 +283,7 @@ export default async function (eleventyConfig) {
         .use(markdownItContainer, "grid-fluid")
         .use(markdownItContainer, "cluster")
         .use(markdownItContainer, "switcher")
+        .use(markdownItContainer, "cover")
 
         // .use(markdownItContainer, {
         //   name: "@",
@@ -353,6 +360,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addGlobalData("defaultLanguage", defaultLanguage);
   eleventyConfig.addGlobalData("defaultLangCode", defaultLangCode);
   eleventyConfig.addGlobalData("brandConfig", brandConfig);
+  eleventyConfig.addGlobalData("inlineAllStyles", inlineAllStyles);
   eleventyConfig.addGlobalData("brandStyles", brandStyles);
   // Computed Data
   eleventyConfig.addGlobalData("eleventyComputed", eleventyComputed);
@@ -540,7 +548,7 @@ export default async function (eleventyConfig) {
       "src/content",
     ],
   });
-  // Populate Default Content with virtual templates
+  // Partials expand on the renderFile shortcode
   await eleventyConfig.addPlugin(partialsPlugin, {
     dirs: [
       path.join(WORKING_DIR, PARTIALS_DIR),
@@ -548,6 +556,7 @@ export default async function (eleventyConfig) {
     ],
     shortcodeAliases: [
       "partial",
+      "component",
       // "section"
     ],
   });
