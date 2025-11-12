@@ -23,6 +23,13 @@
 <link rel="alternate" hreflang="x-default" href="{{baseUrl}}{{link.url}}" />
 {% endif %}
 
+{% if link.isCurrentLang %}
+
+<meta property="og:locale" content="{{link.lang}}" />
+{% else %}
+<meta property="og:locale:alternate" content="{{link.lang}}" />
+{% endif %}
+
 {% endfor %}
 
 {# Favicons #} {# TODO: Generate favicons, manifest, etc #}
