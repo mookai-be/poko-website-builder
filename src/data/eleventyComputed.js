@@ -1,4 +1,4 @@
-import { USER_DIR, languages } from "../../env.config.js";
+import { USER_DIR, languages, SITE_NAME } from "../../env.config.js";
 // Was usefull when parents were declared in references
 // import temp from './temp.js';
 import mapInputPathToUrl from "../utils/mapInputPathToUrl.js";
@@ -123,7 +123,8 @@ export default {
   // eleventyNavigation: (data) => data.eleventyNavigation?.add ? data.eleventyNavigation : undefined,
   metadata: (data) => {
     const gMeta = data.globalSettings?.metadata || {};
-    const siteName = data.globalSettings?.siteName || gMeta.siteName || "";
+    // const siteName = data.globalSettings?.siteName || gMeta.siteName || "";
+    const siteName = SITE_NAME;
     const titleCascade = data.metadata?.title || data.title || null;
     return {
       title: [titleCascade, siteName].filter(Boolean).join(" | "),

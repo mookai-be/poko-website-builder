@@ -341,6 +341,12 @@ export const BASE_URL = (
 export const DISPLAY_URL =
   processEnv.DISPLAY_URL?.replace(/\/+$/, "") || BASE_URL || PROD_URL;
 
+export const SITE_NAME =
+  processEnv.SITE_NAME ||
+  globalSettings?.metadata?.siteName ||
+  globalSettings?.siteName ||
+  "";
+
 if (DEBUG) {
   console.log({ processEnv });
   console.log({
