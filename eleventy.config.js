@@ -15,6 +15,9 @@ import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
 import pluginRobotsTxt from "eleventy-plugin-robotstxt";
 import pluginSitemap from "@quasibit/eleventy-plugin-sitemap";
 import pluginIcons from "eleventy-plugin-icons";
+import pluginCodeblocks from "@code-blocks/eleventy-plugin";
+import pluginCodeBlocksCharts from "@code-blocks/charts";
+
 // -------- Plugins Internal
 import { imageTransformOptions } from "./src/config-11ty/plugins/imageTransform.js";
 import yamlData from "./src/config-11ty/plugins/yamlData/index.js";
@@ -59,6 +62,7 @@ import {
   defaultLangCode,
   unrenderedLanguages,
   brandConfig,
+  inlineAllStyles,
   brandStyles,
 } from "./env.config.js";
 import eleventyComputed from "./src/data/eleventyComputed.js";
@@ -170,6 +174,11 @@ export default async function (eleventyConfig) {
   // eleventyConfig.watchIgnores.add(`${WORKING_DIR}/_styles/_ctx.css`);
   // eleventyConfig.setUseGitIgnore(false);
 
+  eleventyConfig.addPassthroughCopy({
+    [`${WORKING_DIR}/_config/editorComponents.js`]:
+      "admin/userEditorComponents.js",
+  });
+
   // --------------------- Custom Nunjucks setup
   // TODO: Does this work as expected?
   // NOTE: This is a workaround because virtual templates does not work for includes
@@ -274,6 +283,7 @@ export default async function (eleventyConfig) {
         .use(markdownItContainer, "grid-fluid")
         .use(markdownItContainer, "cluster")
         .use(markdownItContainer, "switcher")
+        .use(markdownItContainer, "cover")
 
         // .use(markdownItContainer, {
         //   name: "@",
@@ -350,6 +360,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addGlobalData("defaultLanguage", defaultLanguage);
   eleventyConfig.addGlobalData("defaultLangCode", defaultLangCode);
   eleventyConfig.addGlobalData("brandConfig", brandConfig);
+  eleventyConfig.addGlobalData("inlineAllStyles", inlineAllStyles);
   eleventyConfig.addGlobalData("brandStyles", brandStyles);
   // Computed Data
   eleventyConfig.addGlobalData("eleventyComputed", eleventyComputed);
@@ -490,6 +501,9 @@ export default async function (eleventyConfig) {
       class: (name, source) => `icon icon-${source} icon-${name}`,
     },
   });
+
+  eleventyConfig.addPlugin(pluginCodeblocks([pluginCodeBlocksCharts]));
+
   await eleventyConfig.addPlugin(buildExternalCSS);
   // TODO: import those classes from a data file
   eleventyConfig.addPlugin(htmlClassesTransform, {
@@ -534,7 +548,7 @@ export default async function (eleventyConfig) {
       "src/content",
     ],
   });
-  // Populate Default Content with virtual templates
+  // Partials expand on the renderFile shortcode
   await eleventyConfig.addPlugin(partialsPlugin, {
     dirs: [
       path.join(WORKING_DIR, PARTIALS_DIR),
@@ -542,6 +556,7 @@ export default async function (eleventyConfig) {
     ],
     shortcodeAliases: [
       "partial",
+      "component",
       // "section"
     ],
   });

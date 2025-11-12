@@ -232,6 +232,12 @@ export const unrenderedLanguages = allLanguages
   .map((lang) => lang.code);
 
 // ----------- Brand styles computations
+// TODO: REFACTOR HERE
+export const inlineAllStyles =
+  typeof brandConfig?.inlineAllStyles === "boolean"
+    ? brandConfig?.inlineAllStyles
+    : false;
+
 // Widths contexts
 export const brandWidthsContexts = (brandConfig?.widthsContexts || []).map(
   transformWidthsContext

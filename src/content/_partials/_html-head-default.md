@@ -10,14 +10,16 @@
 {% endif %}
 
 {# Metadata #}
-{% include "_metadata-default.md" ignore missing %}
-{% include "_metadata.md" ignore missing %}
+{% partial "_metadata-default.md" %}
+{% partial "_metadata.md" %}
 
 {# Alternate langs #}
 {% for link in templateTranslations %}
 
 <link rel="alternate" hreflang="{{link.lang}}" href="{{baseUrl}}{{link.url}}" />
+
 {% if link.isDefaultLang %}
+
 <link rel="alternate" hreflang="x-default" href="{{baseUrl}}{{link.url}}" />
 {% endif %}
 
@@ -33,7 +35,17 @@
 
 {# Internal CSS: E-mail obfuscation + CSS head injection (from globalSettings) + bundle #}
 
+{% if inlineAllStyles %}
+
+<style>
+{{externalStylesInline | safe}}
+</style>
+
+{% else %}
+
 {{htmlExternalCssFiles | safe}}
+
+{% endif %}
 
 <link rel="stylesheet" href="{% getBundleFileUrl 'css', 'external' %}">
 
