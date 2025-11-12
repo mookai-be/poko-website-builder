@@ -4,11 +4,12 @@
 <meta property="og:site_name" content="{{ env.SITE_NAME }}" />
 
 <title>{{ metadata.title }}</title>
-<meta name="title" property="og:title" content="{{ metadata.title }}" />
+<meta property="og:title" content="{{ metadata.title }}" />
 
 {% if metadata.description %}
 
-<meta name="description" property="og:description" content="{{ metadata.description }}" />
+<meta name="description" content="{{ metadata.description }}" />
+<meta property="og:description" content="{{ metadata.description }}" />
 {% endif %}
 
 {% if metadata.author %}
