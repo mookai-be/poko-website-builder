@@ -8,9 +8,8 @@ status: published
 name: Associatif humain créatif engagé
 eleventyNavigation:
   order: 1
-vars: {}
 ---
-## Associatif humain créatif engagé
+## Associatif d'Humains créatifs engagés
 
 **Collaboration** créative pour les projets de **bien communs**
 
