@@ -8,6 +8,7 @@ status: published
 name: Associatif humain créatif engagé
 eleventyNavigation:
   order: 1
+vars: {}
 ---
 ## Associatif d'Humains créatifs engagés
 
@@ -84,6 +85,8 @@ améliorer son organisation personnelle ou l'organisation interne de ses équipe
 (bouton) Demandez un devis
 
 C'est gratuit et vous verrez, c'est cool de parler à un humain ;-)
+
+(quote in Chantal font) `If not you, then who? If not now, then when?`
 
 (quote in Chantal font) `Your only job is to be more you`
 
