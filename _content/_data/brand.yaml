@@ -1,5 +1,6 @@
 ctxCssImport:
-  filename: _ctx.css
+  filename: ctx.css
+inlineAllStyles: true
 widthsContexts:
   - name: main
     max: 80rem
@@ -13,6 +14,17 @@ fontStacksContexts:
       native: geometric-humanist
     code:
       native: monospace-code
+customFontsImport:
+  - name: Quicksand
+    source:
+      type: fontsource
+      name: Quicksand
+      weights:
+        - '400'
+      styles:
+        - normal
+      subsets:
+        - latin
 typeScales:
   - name: main
     minFontSize: 18
