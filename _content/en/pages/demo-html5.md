@@ -58,6 +58,22 @@ vars: {}
         <li><a href="#forms__action">Action buttons</a></li>
     </ul>
     </li>
+   <li>
+  <a href="#meriton">Meriton</a>
+  <ul>
+    <li><a href="#meriton__buttons">Button variants</a></li>
+    <li><a href="#meriton__radios">Dropdown - Radios</a></li>
+    <li><a href="#meriton__checkboxes">Dropdown - Checkbox</a></li>
+    <li><a href="#meriton__nav">Navigation</a></li>
+    <li><a href="#meriton__search">Search bar</a></li>
+    <li><a href="#meriton__progress">Progress bar</a></li>
+    <li><a href="#meriton__loading">Loading</a></li>
+    <li><a href="#meriton__accordions">Accordions</a></li>
+    <li><a href="#meriton__avatar">Avatar</a></li>
+    <li><a href="#meriton__badges">Badges</a></li>
+    <li><a href="#meriton__breadcrumbs">Breadcrumbs</a></li>
+  </ul>
+</li>
 </ul>
 <section id="text">
     <header><h1>Text</h1></header>
@@ -548,3 +564,269 @@ p q r s t u v w x y z { | } \~ </code></pre>
 <footer>
 <p>Made by <a href="http://twitter.com/cbracco">@cbracco</a>. Code on <a href="http://github.com/cbracco/html5-test-page">GitHub</a>.</p>
 </footer>
+
+<br>
+<section id="meriton">
+  <h1 style='color: lightgreen'>Pico Meriton</h1>
+
+  <footer><p><a href="#top">[Top]</a></p></footer>
+  <!-- Secondary -->
+  <h4 id="meriton__buttons">Button variants</h4>
+  <details>
+    <summary role="button">English</summary>
+    <p>Hello</p>
+  </details>
+
+  <!-- Contrast -->
+  <details>
+    <summary role="button">Français</summary>
+    <p>Bonjour</p>
+  </details>
+
+  <!-- Primary outline -->
+  <details>
+    <summary role="button">Néerlandais</summary>
+    <p>Dag</p>
+  </details>
+
+  <!--------- ---------->
+  <br>
+  <footer><p><a href="#top">[Top]</a></p></footer>
+  <!-- Radios -->
+  <h4 id="meriton__radios">Dropdown - Bulle - Radios</h4>
+  <details>
+    <summary>
+       Selectionner le niveau
+    </summary>
+    <ul>
+      <li>
+        <label>
+          <input type="radio" name="phase" value="basique" />
+          Basique
+        </label>
+      </li>
+      <li>
+        <label>
+          <input type="radio" name="phase" value="Intermédiaire" />
+          Intermédiaire
+        </label>
+      </li>
+      <li>
+        <label>
+          <input type="radio" name="phase" value="Avancé" />
+          Avancé
+        </label>
+      </li>
+    </ul>
+  </details>
+
+  <br>
+  <footer><p><a href="#top">[Top]</a></p></footer>
+  <!-- Checkboxes -->
+  <h4 id="meriton__checkboxes">Dropdown - Checkbox</h4>
+  <details>
+    <summary>
+      Selectionner le niveau
+    </summary>
+    <ul>
+      <li>
+        <label>
+          <input type="checkbox" name="phase" value="basique" />
+          Basique
+        </label>
+      </li>
+      <li>
+        <label>
+          <input type="checkbox" name="phase" value="Intermédiaire" />
+          Intermédiaire
+        </label>
+      </li>
+      <li>
+        <label>
+          <input type="checkbox" name="phase" value="Avancé" />
+          Avancé
+        </label>
+      </li>
+    </ul>
+  </details>
+
+  <br>
+  <footer><p><a href="#top">[Top]</a></p></footer>
+  <!-- nav -->
+  <nav id="meriton__nav">
+  <h4>Navigation en liste</h4>
+    <details>
+      <summary>Barre de navigation</summary>
+      <ul>
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#">Service</a></li>
+        <li><a href="#">A propos</a></li>
+      </ul>
+    </details>
+  </nav>
+
+  <br>
+  <footer><p><a href="#top">[Top]</a></p></footer>
+  <!-- Search -->
+  <form role="search" id="meriton__search">
+  <h4>Barre de recherche</h4>
+    <input name="search" type="search" placeholder="Search" />
+    <input type="submit" value="Search" />
+  </form>
+
+  <br>
+  <footer><p><a href="#top">[Top]</a></p></footer>
+  <!-- Progress indeterminate. Problème d'affichage: décocher CSS border color -> body-->
+  <h4 id="meriton__progress">Barre de progrès</h4>
+  <p><progress></progress></p>
+
+  <br>
+  <footer><p><a href="#top">[Top]</a></p></footer>
+  <!-- Loading. Problème d'affichage: 
+  1. aria-busy="true" dans <span>
+  2. .icon {animation: spin 1s linear infinite;}
+  3. mettre un spin transform rotate  -->
+  <h4 id="meriton__loading">Loading process/ Saving</h4>
+  <p><span> <img src="../../_files/icons-demo/loadingProcess.svg" alt="icône point d'exclamation rouge" class="icon"> Loading...</span></p>
+
+  <br>
+  <footer><p><a href="#top">[Top]</a></p></footer>
+  <!-- Accordions -->
+  <h4 id="meriton__accordions">Accordions (verticale)</h4>
+  <details name="accordion-example">
+    <summary>Accordion 1 (paragraphe)</summary>
+    <p>1</p>
+  </details>
+
+  <details name="accordion-example">
+    <summary>Accordion 2 (liste)</summary>
+    <ul>
+      <li>2</li>
+    </ul>
+  </details>
+
+  <br>
+  <h4>Accordions (horizontale)</h4>
+  <div class="switcher">
+    <div>
+      <details name="accordion-example">
+        <summary>Accordion 1 (paragraphe)</summary>
+        <p>1</p>
+      </details>
+    </div>
+    <div>
+      <details name="accordion-example">
+        <summary>Accordion 2 (liste)</summary>
+        <ul>
+          <li>2</li>
+        </ul>
+      </details>
+    </div>
+  </div>
+
+  <br>
+  <footer><p><a href="#top">[Top]</a></p></footer>
+  <!--Avatar. exemple :https://www.w3schools.com/howto/howto_css_image_avatar.asp-->
+  <h4 id="meriton__avatar">Avatar</h4>
+  <div>
+    <img src="https://placehold.co/150x150?text=Avatar&font=Montserrat" alt="Avatar" class="avatar">
+  </div>
+
+  <br>
+  <footer><p><a href="#top">[Top]</a></p></footer>
+  <!--Badges. Icônes SVG dans le fichier:  _files > icons-demo-->
+  <h4 id="meriton__badges">Badges</h4>
+  <!--icône point d'exclamation rouge-->
+  <p><span data-status="invalid"><img src="../../_files/icons-demo/manyLemons.svg" alt="icône point d'exclamation rouge" class="icon"> Trop de citrons!</span></p>
+
+  <!--icône de succès-->
+  <p><span data-status="valid"><img src="../../_files/icons-demo/success.svg" alt="icône de succès" class="icon"> Succès</span></p>
+
+  <!--icône de radio-->
+  <p><span data-status="unfilled"><img src="../../_files/icons-demo/radio.svg" alt="icône de badge incomplet" class="icon"> Incomplet</span></p>
+
+  <!--Icône archivé-->
+  <p><span data-status="unfilled"><img src="../../_files/icons-demo/archived.svg" alt="icône de badge archivé" class="icon"> Archivé</span></p>
+
+  <!--Icône échoué-->
+  <p><span data-status="unfilled"><img src="../../_files/icons-demo/failed.svg" alt="icône d'échoué" class="icon"> Échoué</span></p>
+
+  <!--Icône nouveauté-->
+  <p><span data-status="unfilled"><img src="../../_files/icons-demo/new.svg" alt="icône de nouveau/nouvelle" class="icon"> Nouveau/ Nouvelle</span></p>
+
+  <!--Icône attention-->
+  <p><span data-status="unfilled"><img src="../../_files/icons-demo/warning.svg" alt="icône d'attention" class="icon"> Attention</span></p>
+
+  <!--Icône information principale-->
+  <p><span data-status="unfilled"><img src="../../_files/icons-demo/primaryInformation.svg" alt="icône d'information principale" class="icon"> information principale</span></p>
+
+  <!--Icône de définition-->
+  <p><span data-status="unfilled"><img src="../../_files/icons-demo/definition.svg" alt="icône de définition" class="icon"> Définition</span></p>
+
+  <!--Icône note en étoile (trop noir sur le background bleu)-->
+  <p><span data-status="unfilled"><img src="../../_files/icons-demo/starsRating.svg" alt="icône de note en étoile" class="icon"> Note en étoile</span></p>
+
+  <!--Icône de fermeture de fenêtre-->
+  <p><span data-status="unfilled"><img src="../../_files/icons-demo/closeWindow.svg" alt="icône de fermeture de fenêtre" class="icon"> Fermer la fenêtre</span></p>
+
+  <!--Icône de flèche pour un retour vers l'autre page-->
+  <p><span data-status="unfilled"><img src="../../_files/icons-demo/comeback.svg" alt="icône de flèche pour un retour vers l'autre page" class="icon"> Retour</span></p>
+
+  <!--Icône de flèche pour aller en haut de page-->
+  <p><span data-status="unfilled"><img src="../../_files/icons-demo/arrowUp.svg" alt="icône de flèche pour aller en haut de page" class="icon"> Aller en haut de page</span></p>
+
+  <!--Icône de flèche pour aller en bas de page-->
+  <p><span data-status="unfilled"><img src="../../_files/icons-demo/arrowDown.svg" alt="icône de flèche pour aller en bas de page" class="icon"> Aller en bas de page</span></p>
+
+  <!--Icône de paramètre-->
+  <p><span data-status="unfilled"><img src="../../_files/icons-demo/settings.svg" alt="icône de paramètre" class="icon"> Paramètres</span></p>
+
+  <!--Icône 'actualiser'-->
+  <p><span data-status="unfilled"><img src="../../_files/icons-demo/refresh.svg" alt="icône 'actualiser'" class="icon"> Actualiser</span></p>
+
+  <!--Icône 'Voir plus' en 3 points-->
+  <p><span data-status="unfilled"><img src="../../_files/icons-demo/moreHorizontal.svg" alt="icône 'Voir plus' en 3 points" class="icon"> Voir plus</span></p>
+
+  <!--Icône par défaut-->
+  <p><span data-status="unfilled"><img src="../../_files/icons-demo/defaultIcon.svg" alt="icône par défaut" class="icon"> Icône par défaut</span></p>
+
+  <!--Icône 'Voir plus' en chevron-->
+  <p><span data-status="unfilled"><img src="../../_files/icons-demo/moreChevron.svg" alt="icône 'Voir plus' en chevron" class="icon"> Voir plus</span></p>
+
+  <!--Icône 'Voir moins' en chevron-->
+  <p><span data-status="unfilled"><img src="../../_files/icons-demo/lessChevron.svg" alt="icône 'Voir moins' en chevron" class="icon"> Voir moins</span></p>
+
+  <!--Icône de link-->
+  <p><span data-status="unfilled"><img src="../../_files/icons-demo/link.svg" alt="icône de lien" class="icon"> Lien vers</span></p>
+  
+  <!--Icône d'un variant d'icône hamburger-->
+  <p><span data-status="unfilled"><img src="../../_files/icons-demo/hamburgerVariant.svg" alt="icône d'un variant d'icône hamburger" class="icon"> Variant de hamburger</span></p>
+
+   <!--Icône du logo X (twitter)-->
+  <p><span data-status="unfilled"><img src="../../_files/icons-demo/logoX.svg" alt="icône du logo X (twitter)" class="icon"> Icône du logo X (twitter)</span></p>
+
+   <!--Icône du logo Instagram-->
+  <p><span data-status="unfilled"><img src="../../_files/icons-demo/logoInstagram.svg" alt="icône du logo Instagram" class="icon"> Icône du logo Instagram</span></p>
+
+  <!--Icône du logo Youtube-->
+  <p><span data-status="unfilled"><img src="../../_files/icons-demo/logoYouTube.svg" alt="icône du logo Youtube" class="icon"> Icône du logo Youtube</span></p>
+
+  <!--Icône du logo LinkedIn-->
+  <p><span data-status="unfilled"><img src="../../_files/icons-demo/logoLinkedIn.svg" alt="icône du logo LinkedIn" class="icon"> Icône du logo LinkedIn</span></p>
+
+  <!--Icône du logo Figma-->
+  <p><span data-status="unfilled"><img src="../../_files/icons-demo/logoFigma.svg" alt="icône du logo Figma" class="icon"> Icône du logo Figma</span></p>
+
+  <br>
+  <footer><p><a href="#top">[Top]</a></p></footer>
+  <!--Breadcrums-->
+  <h4 id="meriton__breadcrumbs">Breadcrums</h4>
+  <nav class="prose">
+    <a href="/">Accueil</a> ›
+    <a href="/#">Catalogue</a> ›
+    <a href="/#/#">Fleurs</a> ›
+    <span>Tulipes</span>
+  </nav>
+
+  <br>
+</section>
