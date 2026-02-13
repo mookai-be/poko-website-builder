@@ -393,12 +393,15 @@ p q r s t u v w x y z { | } \~ </code></pre>
     <div><svg width="100px" height="100px"><circle cx="100" cy="100" r="100" fill="#1fa3ec"></circle></svg></div>
     <footer><p><a href="#top">[Top]</a></p></footer>
     </article>
+    <br>
+      <h4>IFrame - Embed - Object en commentaire car problème refresh à l'infinie</h4>
+    <br>
+   <!-- <article id="embedded__embed">
     <article id="embedded__iframe">
     <header><h2>IFrame</h2></header>
     <div><iframe src="index.html" height="300"></iframe></div>
     <footer><p><a href="#top">[Top]</a></p></footer>
     </article>
-    <article id="embedded__embed">
     <header><h2>Embed</h2></header>
     <div><embed src="index.html" height="300"></div>
     <footer><p><a href="#top">[Top]</a></p></footer>
@@ -407,8 +410,8 @@ p q r s t u v w x y z { | } \~ </code></pre>
     <header><h2>Object</h2></header>
     <div><object data="index.html" height="300"></object></div>
     <footer><p><a href="#top">[Top]</a></p></footer>
-    </article>
-</section>
+    </article>-->
+</section> 
 <section id="forms">
     <header><h2>Form elements</h2></header>
     <form>
