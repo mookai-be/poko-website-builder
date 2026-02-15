@@ -5,7 +5,10 @@ createdAt: 2026-02-09T13:18:00.000Z
 uuid: b295be3b6780
 localizationKey: 364680cddfc8
 name: Cloudflare
-eleventyNavigation: null
+eleventyNavigation:
+  title: ''
+  parent: ''
+  order: 10
 metadata: null
 preview: null
 tags: []
