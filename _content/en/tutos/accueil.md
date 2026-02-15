@@ -4,7 +4,7 @@ lang: fr
 createdAt: 2026-02-13T14:04:00.000Z
 uuid: 7e9142c9ed38
 localizationKey: 4aa1be3ccb17
-name: Workshop setup
+name: Your website in 1 day
 eleventyNavigation:
   title: ''
   parent: ''

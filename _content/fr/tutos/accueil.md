@@ -4,7 +4,7 @@ lang: fr
 createdAt: 2026-02-13T14:04:00.000Z
 uuid: 7e9142c9ed38
 localizationKey: 4aa1be3ccb17
-name: Workshop setup
+name: Ton site web en 1 jour
 eleventyNavigation: null
 metadata: null
 preview: null
@@ -18,7 +18,7 @@ dataList: []
 
 # Créé & publie ton site web en 1 jour avec poko
 
-{% image src="/_images/tutos/poko-logo-white-pink-rvb.webp", width="1200" %}
+{% image src="/_images/tutos/poko-logo-white-pink-rvb.webp", width="500" %}
 
 Tu veux un site rapide, solide et vraiment utile?
 Participe à cette journée pour donner du sens à ta présence en ligne.
