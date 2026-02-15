@@ -40,6 +40,8 @@
 {{ globalSettings.htmlHead | safe }}
 {# {% getBundle "html", "head" %} #}
 
+{{ fontPreloadTags | safe }}
+
 {# Internal CSS: E-mail obfuscation + CSS head injection (from globalSettings) + bundle #}
 
 {% if inlineAllStyles %}
@@ -54,7 +56,13 @@
 
 {% endif %}
 
-<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'external' %}">
+{# TODO: Avoid generating this tag if no content in the bundle #}
+{% set externalBundleContent %}{% getBundle 'css', 'external' %}{% endset %}
+{% if externalBundleContent == '/*__EleventyBundle:get:css:external:EleventyBundle__*/' %}
+<!-- No forced external CSS bundle -->
+{% else %}
+<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'external' %}" fetchpriority="low">
+{% endif %}
 
 <style>
 {{ globalSettings.cssHead | safe }}

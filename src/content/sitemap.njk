@@ -4,4 +4,5 @@ layout: null
 eleventyExcludeFromCollections: true
 ---
 
-{% sitemap collections.sitemap %}
+{% if collections.sitemap | length %} {% sitemap collections.sitemap %} {% endif
+%}

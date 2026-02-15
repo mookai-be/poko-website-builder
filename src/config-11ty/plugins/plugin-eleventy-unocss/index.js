@@ -18,13 +18,22 @@ export default async function (eleventyConfig, pluginOptions) {
     }
 
     if ((this.page.outputPath || "").endsWith(".html")) {
-      const { css } = await generator.generate(content);
+      let css = "";
+      try {
+        const generated = await generator.generate(content);
+        css = generated.css;
+      } catch (error) {
+        console.error("UnoCSS error:\n", error);
+        throw error;
+      }
       // console.log(`UnoCSS generated:\n${css}`);
       const contents = content.replace(
-        "</style>",
-        `/* UnoCSS */
+        "<style>",
+        `<style>
+/* UnoCSS */
 ${css}
-</style>`
+/* End UnoCSS */
+`,
       );
       return contents;
     }

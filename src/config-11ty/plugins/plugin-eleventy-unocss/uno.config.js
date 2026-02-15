@@ -1,10 +1,11 @@
+import path from "node:path";
 import {
   defineConfig,
   // presetAttributify,
   // presetIcons,
   // presetTypography,
   // presetWebFonts,
-  // presetWind3,
+  presetWind4,
   // transformerDirectives,
   // transformerVariantGroup
   // presetWebFonts
@@ -16,7 +17,23 @@ import layoutRules from "./rules/ctx-layouts.js";
 import utilitiesRules from "./rules/ctx-utilities.js";
 import atomsRules from "./rules/ctx-atoms.js";
 
-import { brandConfig, brandStyles } from "../../../../env.config.js";
+import { CACHE_DIR, brandConfig, brandStyles } from "../../../../env.config.js";
+
+// Some Wind4 rules are colliding with our own rules
+const presetWind4mod = presetWind4({
+  preflights: {
+    reset: false,
+    // theme: false,
+  },
+});
+const hRegexCollides = /^(?:size-)?(min-|max-)?([wh])-?(.+)$/;
+// Force '-' between w or h and the number or attribute. E.g. h-10 not h10
+// To avoid collision with our own rules for heading styles .h1, .h6, .h000, .h8
+const hRegexReplacement = /^(?:size-)?(min-|max-)?([wh])-(.+)$/;
+const modRuleIndex = presetWind4mod.rules.findIndex(
+  (ruleArr) => ruleArr[0].source === hRegexCollides.source,
+);
+presetWind4mod.rules[modRuleIndex][0] = hRegexReplacement;
 
 const fontStacksContexts = brandConfig?.fontStacksContexts;
 let customFontsInUse = [];
@@ -47,16 +64,16 @@ const customFontsImportObj = Object.fromEntries(
               };
             }),
           ]
-        : []
+        : [],
     )
-    .filter((a) => a.length) || []
+    .filter((a) => a.length) || [],
 );
 
 // TODO: Setup context class names as rules instead of shipping them by default
 // NOTE: Currently brandStyles contains the context class names defined
 //       We could extract these as rules so they are only added when the style context is used on the page.
 
-export default defineConfig({
+const computedConfig = defineConfig({
   preflights: [
     // { getCSS: ({ theme }) => `` },
     { getCSS: () => `a[href^="mailto:"] b {display: none;}` },
@@ -99,7 +116,8 @@ export default defineConfig({
       // customFetch: undefined, // default: undefined
       // This will download the fonts and serve them locally
       processors: createLocalFontProcessor({
-        cacheDir: ".cache/unocss/fonts", // Directory to cache the fonts
+        // cacheDir: ".cache/unocss/fonts", // Directory to cache the fonts
+        cacheDir: path.join(CACHE_DIR, "/unocss/fonts"), // Directory to cache the fonts
         fontAssetsDir: "dist/assets/fonts", // Directory to save the fonts assets
         fontServeBaseUrl: "/assets/fonts", // Base URL to serve the fonts from the client
         // fetch: async (url) => {
@@ -108,7 +126,7 @@ export default defineConfig({
         // }, // Custom fetch function to download the fonts
       }),
     }),
-    //   presetWind3(),
+    presetWind4mod,
     //   presetAttributify(),
     //   presetIcons(),
     //   presetTypography(),
@@ -118,3 +136,31 @@ export default defineConfig({
     //   transformerVariantGroup(),
   ],
 });
+
+const webFontsPreset = computedConfig.presets.find(
+  (preset) => preset.name === "@unocss/preset-web-fonts",
+);
+const fontsPreflights = webFontsPreset
+  ? (await Promise.all(webFontsPreset.preflights.map((p) => p.getCSS()))).join(
+      "\n",
+    )
+  : "";
+const fontUrls = [
+  ...new Map(
+    [
+      ...fontsPreflights.matchAll(
+        /url\(([^)]+)\)\s+format\(['"]?([^'")\s]+)['"]?\)/g,
+      ),
+    ].map((match) => [match[1], { url: match[1], format: match[2] }]),
+  ).values(),
+];
+export const fontPreloadTags = fontUrls
+  .map(
+    ({ url, format }) =>
+      `<link rel="preload" href="${url}" as="font" type="font/${format}" crossorigin>`,
+  )
+  .join("\n");
+
+// <link rel="preload" href="/assets/Pacifico-Bold.woff2" as="font" type="font/woff2" crossorigin>
+
+export default computedConfig;

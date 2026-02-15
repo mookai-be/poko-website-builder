@@ -2,6 +2,7 @@ import assert from "node:assert";
 import "dotenv/config";
 import { resolve, join, relative } from "path";
 import fs from "node:fs";
+import { $ } from "bun";
 import yaml from "js-yaml";
 import { transformLanguage } from "./src/utils/languages.js";
 import {
@@ -26,8 +27,8 @@ export const CMS_IMPORT = processEnv.CMS_IMPORT || "npm";
 // DIRECTORIES
 // Output directory
 export const OUTPUT_DIR = processEnv.OUTPUT_DIR || "dist";
-// Cache directory
-export const CACHE_DIR = processEnv.CACHE_DIR || ".cache";
+export const OUTPUT_DIR_ABSOLUTE =
+  processEnv.OUTPUT_DIR_ABSOLUTE || resolve(".", OUTPUT_DIR);
 // Files output directory
 export const FILES_OUTPUT_DIR = processEnv.FILES_OUTPUT_DIR || "assets/files";
 export const FILES_LIBRARY_OUTPUT_DIR =
@@ -59,17 +60,24 @@ export const POKO_THEME = processEnv.POKO_THEME || "default";
 export const USER_DIR = processEnv.USER_DIR || `_user-content`;
 
 // Detect the current hosting provider used
-export const GITHUB_PAGES_BUILD = processEnv.GITHUB_PAGES === "true";
+export const GITHUB_PAGES_BUILD =
+  processEnv.GITHUB_PAGES === "true" || processEnv.GITHUB_ACTIONS === "true";
 export const NETLIFY_BUILD = Boolean(
-  processEnv.NETLIFY || processEnv.NETLIFY_DEPLOYMENT_ID
+  processEnv.NETLIFY || processEnv.NETLIFY_DEPLOYMENT_ID,
 );
 export const CLOUDFLARE_BUILD = Boolean(
-  processEnv.CF_PAGES || processEnv.CLOUDFLARE_ACCOUNT_ID
+  processEnv.CF_PAGES || processEnv.CLOUDFLARE_ACCOUNT_ID,
 );
 export const VERCEL_BUILD = Boolean(processEnv.VERCEL_DEPLOYMENT_ID);
 export const LOCAL_BUILD = Boolean(
-  !NETLIFY_BUILD && !CLOUDFLARE_BUILD && !VERCEL_BUILD
+  !NETLIFY_BUILD && !CLOUDFLARE_BUILD && !VERCEL_BUILD,
 );
+
+// Cache directory
+export const CACHE_DIR =
+  processEnv.CACHE_DIR ||
+  (CLOUDFLARE_BUILD && ".bun/install/cache") ||
+  ".cache";
 
 // const GITHUB_REPO_INFERRED = processEnv.GIT_REMOTES?.split("\n")
 //   ?.find((remote) => remote.includes("github.com"))
@@ -82,7 +90,9 @@ export const LOCAL_BUILD = Boolean(
 // const remoteCFpages =
 //   "origin\thttps://x-a_c_c_e_s_s-t_o_k_e_n:g_h_s_11111111111111111111111111111111111@github.com/autre-ecole/poko-website-builder (fetch)\norigin\thttps://x-a_c_c_e_s_s-t_o_k_e_n:g_h_s_11111111111111111111111111111111111@github.com/autre-ecole/poko-website-builder (push)";
 
-const GITHUB_REPO_INFERRED = processEnv.GIT_REMOTES?.split("\n")
+const GIT_REMOTES =
+  processEnv.GIT_REMOTES || (await $`git remote -v`).text().replace(/\n$/, "");
+const GITHUB_REPO_INFERRED = GIT_REMOTES?.split("\n")
   ?.find((remote) => remote.includes("github.com"))
   ?.split(/@github.com(\/|:)/)
   ?.pop()
@@ -131,6 +141,8 @@ export const REPO =
   (REPO_OWNER && REPO_NAME && `${REPO_OWNER}/${REPO_NAME}`) ||
   GITHUB_REPO_INFERRED;
 
+export const WEBSITE_PATH_PREFIX = GITHUB_PAGES_BUILD ? `/${REPO_NAME}/` : "";
+
 export const PROD_BRANCH = processEnv.PROD_BRANCH || "main";
 // BRANCH inferrence
 // NOTE: Netlify uses BRANCH
@@ -139,7 +151,8 @@ export const BRANCH =
   processEnv.BRANCH ||
   processEnv.CF_PAGES_BRANCH ||
   processEnv.VERCEL_GIT_COMMIT_REF ||
-  processEnv.GIT_BRANCH;
+  processEnv.GIT_BRANCH ||
+  (await $`git symbolic-ref --short HEAD`).text().replace(/\n$/, "");
 
 // TODO: Verify compat with supported hosts
 const HOST_SUBDOMAIN = BRANCH && BRANCH.replaceAll("/", "-");
@@ -153,7 +166,7 @@ const HOST_BRANCH_URL =
   (processEnv.CF_PAGES_URL &&
     processEnv.CF_PAGES_URL.replace(
       /https:\/\/[a-z\d]+\./,
-      `https://${HOST_SUBDOMAIN}.`
+      `https://${HOST_SUBDOMAIN}.`,
     )) ||
   (processEnv.VERCEL_BRANCH_URL && `https://${processEnv.VERCEL_BRANCH_URL}`) ||
   processEnv.DEPLOY_PRIME_URL || // Netlify
@@ -205,7 +218,7 @@ try {
   const brandConfigYaml = fs.readFileSync(brandConfigPath, "utf-8");
   brandConfig = yaml.load(brandConfigYaml);
 } catch (error) {
-  console.error("Error reading brandConfig.yaml:", error);
+  console.warn("WARN: brandConfig.yaml not found");
   brandConfig = {
     ctxCssImport: { filename: "_ctx.css" },
     widthsContexts: [],
@@ -220,11 +233,12 @@ export { globalSettings, brandConfig };
 export const collections = globalSettings?.collections || [];
 export const allLanguages =
   globalSettings?.languages?.map(transformLanguage) || [];
+
 export const languages = allLanguages.filter(
-  (lang) => !statusesToUnrender.includes(lang.status)
+  (lang) => !statusesToUnrender.includes(lang.status),
 );
 export const defaultLanguage = allLanguages.find(
-  (lang) => lang.isWebsiteDefault
+  (lang) => lang.isWebsiteDefault,
 );
 export const defaultLangCode = defaultLanguage?.code || "en";
 export const unrenderedLanguages = allLanguages
@@ -240,28 +254,28 @@ export const inlineAllStyles =
 
 // Widths contexts
 export const brandWidthsContexts = (brandConfig?.widthsContexts || []).map(
-  transformWidthsContext
+  transformWidthsContext,
 );
 export const brandWidthsContextsStyles = mapStyleStringsToClassDef(
   brandWidthsContexts,
-  ".widths-"
+  ".widths-",
 );
 
 // Font stacks contexts
 export const brandFontStacksContexts = transformFontStacksContexts(
   brandConfig?.fontStacksContexts,
-  brandConfig?.customFontsImport
+  brandConfig?.customFontsImport,
 );
 export const brandFontStacksContextsStyles = mapStyleStringsToClassDef(
   brandFontStacksContexts,
-  ".font-stacks-"
+  ".font-stacks-",
 );
 
 // Type Scale
 export const brandTypeScales = transformTypeScales(brandConfig?.typeScales);
 export const brandTypeScalesStyles = mapStyleStringsToClassDef(
   brandTypeScales,
-  ".type-scale-"
+  ".type-scale-",
 );
 
 // Colors
@@ -272,11 +286,11 @@ export const brandColorsStyles = brandColors
 
 // Palettes
 export const brandPalettes = (brandConfig?.palettes || []).map(
-  transformPalette
+  transformPalette,
 );
 export const brandPalettesStyles = mapStyleStringsToClassDef(
   brandPalettes,
-  ".palette-"
+  ".palette-",
 );
 
 // Style Contexts
@@ -287,12 +301,12 @@ export const brandStyleContexts = compileStyleContexts(
     fontStacksContext: brandFontStacksContexts,
     typeScale: brandTypeScales,
     palette: brandPalettes,
-  }
+  },
 );
 export const brandStyleContextsStyles = mapStyleStringsToClassDef(
   brandStyleContexts,
   ".ctx-",
-  0
+  0,
 );
 
 // Styles to be injected
@@ -315,6 +329,10 @@ export const brandStyles = [
   brandPalettesStyles || "",
 ].join("\n");
 
+const unoCssConfig =
+  await import("./src/config-11ty/plugins/plugin-eleventy-unocss/uno.config.js");
+export const fontPreloadTags = unoCssConfig.fontPreloadTags;
+
 // TODO: Import ctx.css
 // Once ctx.css is a proper library, we can import layers individually from node_modules
 // Then chose if we want to inline styles in the head or import them as external styles
@@ -325,7 +343,8 @@ export const brandStyles = [
 // PROD_URL is the full URL of the 'deployed' site
 export const PROD_URL =
   (processEnv.PROD_URL || globalSettings?.productionUrl)?.replace(/\/+$/, "") ||
-  (VERCEL_PROJECT_PRODUCTION_URL && `https://${VERCEL_PROJECT_PRODUCTION_URL}`);
+  (processEnv.VERCEL_PROJECT_PRODUCTION_URL &&
+    `https://${processEnv.VERCEL_PROJECT_PRODUCTION_URL}`);
 // BASE_URL is the full URL of the 'being deployed' site
 // TODO: Try and find the best ways to infer BASE_URL so we can only define a CANONICAL_URL / PROD_URL
 // TODO: If we have a decent way to infer this, we can fall back to PROD_URL

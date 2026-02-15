@@ -1,45 +1,18 @@
 {
   "name": "poko-website-builder",
-  "module": "index.ts",
-  "type": "module",
-  "private": true,
   "version": "0.0.1",
-  "description": "A low cost, high power website builder you trully own",
-  "homepage": "https://github.com/m4rrc0/poko-website-builder#readme",
-  "license": "",
-  "engines": {
-    "bun": ">=1.2.22"
-  },
-  "scripts": {
-    "build": "BRANCH=$(git symbolic-ref --short HEAD) GIT_REMOTES=$(git remote -v) bun --bun run eleventy",
-    "cf-build": "bun i && bun run build",
-    "build:gh-pages": "BRANCH=$(git symbolic-ref --short HEAD) GIT_REMOTES=$(git remote -v) bun --bun run eleventy",
-    "dev": "BRANCH=$(git symbolic-ref --short HEAD) GIT_REMOTES=$(git remote -v) bun --bun run eleventy --serve",
-    "start": "BRANCH=$(git symbolic-ref --short HEAD) GIT_REMOTES=$(git remote -v) bun --bun run eleventy --serve",
-    "clean": "rm -rf dist",
-    "clean:modules": "rm -rf dist node_modules"
-  },
-  "keywords": [
-    "website-builder",
-    "cms",
-    "headless-cms",
-    "eleventy",
-    "11ty",
-    "svelte"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/m4rrc0/poko-website-builder.git"
-  },
-  "bugs": {
-    "url": "https://github.com/m4rrc0/poko-website-builder/issues"
-  },
   "author": {
     "name": "Marc Coët",
     "url": "https://www.m4rr.co/"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/m4rrc0/poko-website-builder.git"
+  },
+  "type": "module",
+  "module": "index.ts",
   "dependencies": {
-    "@sveltia/cms": "0.110.2"
+    "@sveltia/cms": "git+https://github.com/m4rrc0/sveltia-cms.git#feat/inline-editor-components"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
@@ -50,14 +23,12 @@
     "@11ty/eleventy-plugin-webc": "^0.11.2",
     "@code-blocks/charts": "^0.1.9",
     "@code-blocks/eleventy-plugin": "^0.1.8",
-    "@m4rrc0/eleventy-plugin-markdoc": "^0.1.6",
-    "@markdoc/markdoc": "^0.5.2",
     "@mdit/plugin-container": "^0.22.1",
     "@quasibit/eleventy-plugin-sitemap": "^2.2.0",
     "@sindresorhus/slugify": "^2.2.1",
     "@tabler/icons": "^3.34.0",
     "@types/bun": "latest",
-    "bun": "^1.2.18",
+    "bun": "^1.3.7",
     "chalk": "^5.4.1",
     "dayjs": "^1.11.13",
     "deepmerge": "^4.3.1",
@@ -66,6 +37,7 @@
     "eleventy-plugin-robotstxt": "^1.0.2",
     "fast-glob": "^3.3.3",
     "fast-sort": "^3.4.1",
+    "hash-sum": "^2.0.0",
     "he": "^1.2.0",
     "js-yaml": "^4.1.0",
     "lightningcss": "^1.30.1",
@@ -78,6 +50,37 @@
     "simple-icons": "^15.5.0",
     "typescript": "^5.8.2",
     "unocss": "^66.4.2",
-    "utopia-core": "^1.6.0"
+    "utopia-core": "^1.6.0",
+    "wrangler": "^4.61.1"
+  },
+  "bugs": {
+    "url": "https://github.com/m4rrc0/poko-website-builder/issues"
+  },
+  "description": "A low cost, high power website builder you trully own",
+  "engines": {
+    "bun": ">=1.2.22"
+  },
+  "homepage": "https://github.com/m4rrc0/poko-website-builder#readme",
+  "keywords": [
+    "website-builder",
+    "cms",
+    "headless-cms",
+    "eleventy",
+    "11ty",
+    "svelte"
+  ],
+  "license": "",
+  "private": true,
+  "scripts": {
+    "build-archive": "BRANCH=$(git symbolic-ref --short HEAD) GIT_REMOTES=$(git remote -v) bun --bun run eleventy",
+    "build": "bun --bun run eleventy",
+    "cf-build": "bun i && bun run build",
+    "build:gh-pages": "bun --bun run eleventy",
+    "dev": "bun --bun scripts/dev.ts",
+    "start": "bunx --bun @11ty/eleventy@canary --serve",
+    "watch": "bun --bun run eleventy --watch",
+    "serve": "bun --bun eleventy-dev-server --dir=dist",
+    "clean": "rm -rf dist",
+    "clean:modules": "rm -rf dist node_modules"
   }
 }
