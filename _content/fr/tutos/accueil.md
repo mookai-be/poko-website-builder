@@ -4,7 +4,7 @@ lang: fr
 createdAt: 2026-02-13T14:04:00.000Z
 uuid: 7e9142c9ed38
 localizationKey: 4aa1be3ccb17
-name: Accueil
+name: Workshop setup
 eleventyNavigation: null
 metadata: null
 preview: null
@@ -16,38 +16,18 @@ vars: null
 dataList: []
 ---
 
-# Bienvenue sur POKO
-
-{% image src="/_images/tutos/poko-logo-rvb.webp", width="1200" %}
-
 # Créé & publie ton site web en 1 jour avec poko
 
-- Atelier
-- Formation
-- Dans mon espace
-- Présentiel
-
-##### Un site web performant, accessible… et éco-responsable!
-
-> **Tu savais qu’un site peut être rapide, léger, inclusif et… écologique?!**
-
-En nous inspirant des principes d’écologie numérique, on conçoit des sites qui respectent ton audience et la planète. Voici ce que ça signifie concrètement:
-
--     Pages ultra-légères, pour limiter les transferts de données (moins d’énergie, moins d’impact)
--     Hébergement optimisé via CDN, pour diffuser ton contenu efficacement, sans gaspillage
--     Durée de vie prolongée, grâce à une architecture stable qui évite les refontes fréquentes
--     Performances et accessibilité au top: pages qui chargent vite, même avec des connexions lentes ou sur des appareils modestes
--     HTML sémantique, images compressées intelligemment, CSS minimaliste, aucun JavaScript inutile → pour une navigation fluide, lisible, inclusive.
+{% image src="/_images/tutos/poko-logo-white-pink-rvb.webp", width="1200" %}
 
 Tu veux un site rapide, solide et vraiment utile?
-
-Participe à cette journée pour donner un vrai sens à ta présence en ligne.
+Participe à cette journée pour donner du sens à ta présence en ligne.
 
 ## Objectif du workshop
 
 Que ton site soit en ligne à la fin de la journée, et que tu sois autonome pour le mettre à jour.
 
-Plus tu viens préparé·e (textes, images, structure…), plus ton site sera avancé. Mais un premier draft suffit pour se lancer!
+Plus tu viens préparé·e (avec tes contenus textes, images, structure, charte graphique,…), plus ton site sera avancé. Mais un premier draft suffit pour se lancer!
 
 ## Pourquoi participer?
 
@@ -55,50 +35,44 @@ Ce workshop est 100% concret et pratique.
 
 On passera la matinée à mettre en place ton site, puis l’après-midi sera plus libre: travail individuel, questions/réponses, aide ponctuelle.
 
-Exemple d’un premier site créé avec poko:
+#### Exemple de premiers site créés en 1 jour:
 
--     album.actingames.com
--     unascelta.it
--     l’autre-ecole.org
+- [voyage-aquarelle.be](voyage-aquarelle.be)
+
+#### Exemple de sites plus élaborés créés avec poko:
+
+-     [album.actingames.com](album.actingames.com)
+-     [unascelta.it](unascelta.it)
+-     [l’autre-ecole.org](l’autre-ecole.org)
+
+le Workshop est animé par [m4rrc0](www.m4rr.co), entrepreneur et développeur web éthique. Multi-passionnel et plein d’idées. Il adore concevoir des systèmes, synthétiser, simplifier, automatiser, créer des raccourcis,…
+Aime explorer les contradictions et remettre en question les idées communément admises. Est vigilant en ce qui concerne l’indépendance et la liberté, l’environnement, la souveraineté (notamment des données personnelles), l’économie, les révolutions numériques,… Il est fasciné par la psychologie et le subconscient.
 
 ## Infos pratiques
 
-### Lunch:
+De 9h30–16h30 (arrivée dès 9h)
 
-possibilité de réchauffer sur place
+Avenue Armand Huysmans 47, 1050 Ixelles
 
-**Café, thé, eau → offerts**
+**Lunch**: possibilité de réchauffer sur place
+Café, thé, eau → offerts
 
 Wifi dispo
 
-> Par m4rrc0
-
-> Hello, moi c’est m4rrc0, entrepreneur et développeur web éthique.
-
-> Je suis multi-passionnel et plein d’idées.
-
-> J’adore concevoir des systèmes, synthétiser, simplifier, automatiser, créer des raccourcis,…
-
-> J’aime explorer les contradictions et remettre en question les idées communément admises.
-
-> Je suis vigilant en ce qui concerne l’indépendance et la liberté, l’environnement, la souveraineté (notamment des données personnelles), l’économie, les révolutions numériques,…
-
-> Je suis fasciné par la psychologie et le subconscient.
-
-> www.m4rr.co
-
 ### Prochaines dates
 
-date à venir…
+- 25 février 2026
+- à venir…
 
-**De 9h30–16h30 (arrivée dès 9h)**
+### À prévoir
 
-**Avenue Armand Huysmans 47/2, 1050 Ixelles**
+- Un laptop fonctionnel (et de quoi le charger) 
+- Ton contenu facilement accessible (textes, images, structure, charte graphique,…)
 
-### À prévoir:
+### Places
 
-**Un laptop fonctionnel + ton contenu facilement accessible (textes, images…)**
+5 disponibles seulement → premier·e arrivé·e, premier·e servi·e
 
-### Places:
+### Inscription
 
-**5 disponibles seulement** → premier·e arrivé·e, premier·e servi·e
+Par mail: poko@mookai.be
