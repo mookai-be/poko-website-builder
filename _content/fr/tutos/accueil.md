@@ -18,8 +18,6 @@ dataList: []
 
 # Créé & publie ton site web en 1 jour avec poko
 
-{% image src="/_images/tutos/poko-logo-white-pink-rvb.webp", width="500" %}
-
 Tu veux un site rapide, solide et vraiment utile?
 Participe à cette journée pour donner du sens à ta présence en ligne.
 
