@@ -154,7 +154,7 @@ Commence par aller dans _"settings"_ **4**
 Vérifie que tu as bien complété tous les champs contenant une astérisque _"**\***"_.
 
 - E- Sauvegarde avec _"Save"_ que tu trouveras en haut à gauche de ta page
-- E\*- Sauvegarde et publie les modifications avec _"Save **and Publish**"_ que tu trouveras en haut à gauche de ta page
+- E\*- Sauvegarde **et publie** les modifications avec _"Save **and Publish**"_ que tu trouveras en haut à gauche de ta page sous la petite flèche
 
 {% image src="/_images/tutos/24-cms-save-and-publish.webp", width="300" %}
 
