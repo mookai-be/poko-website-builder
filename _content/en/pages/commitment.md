@@ -7,7 +7,7 @@ localizationKey: 1acc8d6e918b
 name: Commitment
 eleventyNavigation:
   title: ''
-  order: 4
+  order: 5
 metadata:
   description: We commit to building a world wide web that is more sustainable, accessible and simple for everyone
 vars: {}
