@@ -57,8 +57,6 @@ Avenue Armand Huysmans 47, 1050 Ixelles
 **Lunch**: possibilité de réchauffer sur place
 Café, thé, eau → offerts
 
-Wifi dispo
-
 ### Prochaines dates
 
 - 25 février 2026
@@ -66,8 +64,9 @@ Wifi dispo
 
 ### À prévoir
 
-- Un laptop fonctionnel (et de quoi le charger) 
+- Un laptop fonctionnel (et de quoi le charger)
 - Ton contenu facilement accessible (textes, images, structure, charte graphique,…)
+- Faire la mise en place avant le jour J. Tutoriel détaillée:** [lien vers page > /tutos]**
 
 ### Places
 
