@@ -6,7 +6,7 @@ uuid: 9393e283f871
 localizationKey: f45a3ce690be
 name: Tutorial
 eleventyNavigation:
-  title: ''
+  title: Tutorial
   parent: ''
   order: 7
 metadata: null
