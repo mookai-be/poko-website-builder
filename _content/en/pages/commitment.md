@@ -6,10 +6,13 @@ uuid: fb2d7a87369b
 localizationKey: 1acc8d6e918b
 name: Commitment
 eleventyNavigation:
-  order: 5
+  title: ''
+  order: 4
 metadata:
   description: We commit to building a world wide web that is more sustainable, accessible and simple for everyone
+vars: {}
 ---
+
 # Our commitment
 
 The web was meant to be open, accessible, and empowering. We built poko to bring that vision back.
