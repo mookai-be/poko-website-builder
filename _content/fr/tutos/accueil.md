@@ -41,9 +41,9 @@ On passera la matinée à mettre en place ton site, puis l’après-midi sera pl
 
 #### Exemple de sites plus élaborés créés avec poko:
 
--     [album.actingames.com](album.actingames.com)
--     [unascelta.it](unascelta.it)
--     [l’autre-ecole.org](l’autre-ecole.org)
+-  [album.actingames.com](album.actingames.com)
+- [unascelta.it](unascelta.it)
+- [l’autre-ecole.org](l’autre-ecole.org)
 
 le Workshop est animé par [m4rrc0](www.m4rr.co), entrepreneur et développeur web éthique. Multi-passionnel et plein d’idées. Il adore concevoir des systèmes, synthétiser, simplifier, automatiser, créer des raccourcis,…
 Aime explorer les contradictions et remettre en question les idées communément admises. Est vigilant en ce qui concerne l’indépendance et la liberté, l’environnement, la souveraineté (notamment des données personnelles), l’économie, les révolutions numériques,… Il est fasciné par la psychologie et le subconscient.
