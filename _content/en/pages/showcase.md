@@ -6,8 +6,11 @@ uuid: 4861cc7cab24
 localizationKey: 02fc4e97117e
 name: Showcase
 eleventyNavigation:
-  order: 8
+  title: ''
+  order: 4
+vars: {}
 ---
+
 # Showcase
 
 poko is still young but here are some examples of what it can do.
