@@ -16,21 +16,20 @@ vars: null
 dataList: []
 ---
 
-# Comment ajouter des collaborateurs :
+# Comment ajouter des collaborateurs
 
 Si tu veux ajouter des collaborateurs sur ton projet de site internet, tu es au bonne endroit.
 
-A) Sur ton projet sur GitHub clique sur _" setting "_.
+- A- Sur ton projet sur GitHub clique sur _"setting"_
 
 {% image src="/_images/tutos/1-setting.webp" %}
 
-B) Clique sur _" collaborators and teams "_ **1**.
-
-C) Clique sur _" Add people "_ **2**.
+- B- Clique sur _"collaborators and teams"_ **1**
+- C- Clique sur _"Add people"_ **2**
 
 {% image src="/_images/tutos/1-collaborateur.webp", width="1200" %}
 
-D) Cherche le compte de ton collaborateur dans le champ de recherche et ajoute le.
+- D- Cherche le compte de ton collaborateur dans le champ de recherche et ajoute le
 
 {% image src="/_images/tutos/2-collaborateur.webp", width="500" %}
 
@@ -40,6 +39,7 @@ Tu verras un bandeau de confirmation en haut de ta page si l'invitation est bien
 
 {% image src="/_images/tutos/4-validation.webp", width="1200" %}
 
-Il recevra un mail l'invitant sur ton projet. Il n’a plus qu'à accepter l'invitation.
+Il recevra un mail l'invitant sur ton projet. Et n’aura plus qu'à accepter l'invitation.
 
-Félicitation tu as invité ton premier collaborateurs. Tu peux répéter l'opération pour tous les collaborateur que tu voudras ajouter.
+Félicitation, tu as invité ton premier collaborateurs!
+Tu peux répéter l'opération pour tous les collaborateur que tu souhaites ajouter.
