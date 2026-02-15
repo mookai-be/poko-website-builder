@@ -16,13 +16,13 @@ vars: null
 dataList: []
 ---
 
-# Comment avoir plusieurs site internet POKO ?
+# Comment avoir plusieurs site internet poko?
 
 > Pour commencer , il faut savoir que GitHub ne permet d'avoir et d’héberger qu'un seul site internet par compte Gratuitement.
 
 > Cependant, il est possible de créer des organisations possédants leurs propre site à partir d'un même compte.
 
-### Tu vas donc apprendre à créer une Organisation sur GitHub.
+### Tu vas donc apprendre à créer une Organisation sur GitHub
 
 Commence par aller sur ta page d'accueil GitHub.
 
