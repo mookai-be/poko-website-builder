@@ -6,7 +6,7 @@ uuid: 7e9142c9ed38
 localizationKey: 4aa1be3ccb17
 name: Your website in 1 day
 eleventyNavigation:
-  title: ''
+  title: Your website in 1 day
   parent: ''
   order: 6
 metadata: null
