@@ -6,7 +6,7 @@ uuid: 0d93e97d8264
 localizationKey: 40b9067308a9
 name: Collaborators
 eleventyNavigation:
-  title: Collaborateurs
+  title: Collaborators
   parent: ''
   order: 9
 metadata: null
