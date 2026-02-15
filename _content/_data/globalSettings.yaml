@@ -7,19 +7,17 @@ htmlHead: |-
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/files/icons/apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="poko" />
   <link rel="manifest" href="/assets/files/icons/site.webmanifest" />
+cssHead: ''
 languages:
   - code: en
+    status: published
     name: English
     customUrlPrefix:
       prefix: /
-    status: published
     isCmsDefault: true
     isWebsiteDefault: true
   - code: fr
-    name: French
-    customUrlPrefix: null
-    status: inactive
-    isCmsDefault: false
-    isWebsiteDefault: false
+    status: draft
+    keepUrlPrefix: false
 collections:
   - articles
