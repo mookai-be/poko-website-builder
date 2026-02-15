@@ -6,7 +6,7 @@ uuid: b295be3b6780
 localizationKey: 364680cddfc8
 name: Cloudflare
 eleventyNavigation:
-  title: ''
+  title: Cloudflare
   parent: ''
   order: 10
 metadata: null
