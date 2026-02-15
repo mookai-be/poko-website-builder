@@ -4,7 +4,7 @@ lang: fr
 createdAt: 2026-02-12T12:30:00.000Z
 uuid: 9393e283f871
 localizationKey: f45a3ce690be
-name: Tutorial
+name: Tutoriel
 eleventyNavigation: null
 metadata: null
 preview: null

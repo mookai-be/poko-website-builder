@@ -8,7 +8,7 @@ name: Tutorial
 eleventyNavigation:
   title: ''
   parent: ''
-  order: 1
+  order: 6
 metadata: null
 preview: null
 tags: []
