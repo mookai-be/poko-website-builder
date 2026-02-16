@@ -39,8 +39,8 @@ On passera la matinée à mettre en place ton site, puis l’après-midi sera pl
 
 #### Exemples de sites custom créés avec poko via le studio créatif [mookaï](https://www.mookai.be/):
 
--  [album.actingames.com](album.actingames.com)
-- [unascelta.it](https://www.unascelta.it/it/)
+-  [album.actingames.com](https://album.actingames.com/fr/)
+- [unascelta.it](https://www.unascelta.it/fr/)
 - [l’autre-ecole.org](https://www.autre-ecole.org/)
 
 le Workshop est animé par [m4rrc0](https://www.m4rr.co/fr/), entrepreneur et développeur web éthique. Multi-passionnel et plein d’idées. Il adore concevoir des systèmes, synthétiser, simplifier, automatiser, créer des raccourcis,…
