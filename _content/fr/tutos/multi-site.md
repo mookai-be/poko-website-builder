@@ -1,5 +1,5 @@
 ---
-translationKey: avoir-plusieurs-sites-poko
+translationKey: multi-site
 lang: fr
 createdAt: 2026-02-12T08:21:00.000Z
 uuid: c2cb12c03249
@@ -69,7 +69,7 @@ Si tu ne met pas de collaborateurs à cette étape, mais que tu veux en ajouter 
 - K- Clique sur _"Complete Setup"_ **10**
 - L- Il ne te reste plus qu'à valider ton organisation via ton mail **11**
 
-{% image src="undefined" %}
+**[ PAS D'IMG!]**
 
 Félicitation, tu as maintenant une nouvelle organisation!
 
