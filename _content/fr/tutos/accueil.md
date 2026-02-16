@@ -35,7 +35,7 @@ On passera la matinée à mettre en place ton site, puis l’après-midi sera pl
 
 #### Exemples de premiers sites créés en 1 jour:
 
-- [voyage-aquarelle.be](voyage-aquarelle.be)
+- [voyage-aquarelle.be](https://www.voyage-aquarelle.be/fr/)
 
 #### Exemples de sites custom créés avec poko via le studio créatif [mookaï](https://www.mookai.be/):
 
