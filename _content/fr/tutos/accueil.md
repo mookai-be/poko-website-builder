@@ -16,7 +16,7 @@ vars: null
 dataList: []
 ---
 
-# Créé et publie ton site web en 1 jour
+# Crée et publie ton site web en 1 jour
 
 Tu veux un site rapide, solide et vraiment utile?
 Participe à cette journée pour donner du sens à ta présence en ligne.
