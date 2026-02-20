@@ -2,10 +2,13 @@
 translationKey: accueil
 lang: fr
 createdAt: 2026-02-13T14:04:00.000Z
-uuid: 7e9142c9ed38
+uuid: 7e9142c9ed3e
 localizationKey: 4aa1be3ccb17
 name: Ton site web en 1 jour
-eleventyNavigation: null
+eleventyNavigation:
+  title: ''
+  parent: ''
+  order: 6
 metadata: null
 preview: null
 tags: []

@@ -5,7 +5,10 @@ createdAt: 2026-02-12T12:30:00.000Z
 uuid: 9393e283f871
 localizationKey: f45a3ce690be
 name: Tutoriel
-eleventyNavigation: null
+eleventyNavigation:
+  title: ''
+  parent: ''
+  order: 7
 metadata: null
 preview: null
 tags: []
@@ -83,7 +86,7 @@ Copie la valeur du TOKEN "**1**" et enregistre-la dans un endroit sûr (comme [u
 
 Maintenant, tu vas héberger ta page internet via GitHub.
 
-- Pour d'autre hébergeur c'est par {% link url="cloudflare", linkType="external" %}.
+- Pour d'autre hébergeur c'est par {% link url="cloudflare", text="", linkType="external" %}.
 - A- Commence par aller dans _"Settings"_
 
 {% image src="/_images/tutos/1-setting.webp" %}

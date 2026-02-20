@@ -1,8 +1,8 @@
 ---
 translationKey: index
-lang: fr
+lang: en
 createdAt: 2026-02-12T12:30:00.000Z
-uuid: 9393e283f871
+uuid: 9393e283f87d
 localizationKey: f45a3ce690be
 name: Tutorial
 eleventyNavigation:

@@ -5,7 +5,10 @@ createdAt: 2026-02-12T08:20:00.000Z
 uuid: 0d93e97d8264
 localizationKey: 40b9067308a9
 name: Collaborateurs
-eleventyNavigation: null
+eleventyNavigation:
+  title: ''
+  parent: ''
+  order: 9
 metadata: null
 preview: null
 tags: []

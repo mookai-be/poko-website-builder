@@ -5,7 +5,10 @@ createdAt: 2026-02-12T08:21:00.000Z
 uuid: c2cb12c03249
 localizationKey: e5d28f87f782
 name: Organisations et Multi-sites
-eleventyNavigation: null
+eleventyNavigation:
+  title: ''
+  parent: ''
+  order: 8
 metadata: null
 preview: null
 tags: []

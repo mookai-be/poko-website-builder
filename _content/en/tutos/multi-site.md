@@ -1,12 +1,12 @@
 ---
 translationKey: multi-site
-lang: fr
+lang: en
 createdAt: 2026-02-12T08:21:00.000Z
-uuid: c2cb12c03249
+uuid: c2cb12c0324g
 localizationKey: e5d28f87f782
 name: Organizations and multi-site
 eleventyNavigation:
-  title: Organisations et Multi-sites
+  title: ''
   parent: ''
   order: 8
 metadata: null

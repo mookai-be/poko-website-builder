@@ -1,8 +1,8 @@
 ---
 translationKey: ajouter-des-intervenants-externes
-lang: fr
+lang: en
 createdAt: 2026-02-12T08:20:00.000Z
-uuid: 0d93e97d8264
+uuid: 0d93e97d826s
 localizationKey: 40b9067308a9
 name: Collaborators
 eleventyNavigation:

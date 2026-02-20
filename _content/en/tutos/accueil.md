@@ -1,6 +1,6 @@
 ---
 translationKey: accueil
-lang: fr
+lang: en
 createdAt: 2026-02-13T14:04:00.000Z
 uuid: 7e9142c9ed38
 localizationKey: 4aa1be3ccb17
