@@ -60,7 +60,7 @@ Aime explorer les contradictions et remettre en question les idées communément
 
 - Un laptop fonctionnel (et de quoi le charger)
 - Ton contenu facilement accessible (textes, images, structure, charte graphique,…)
-- Faire la mise en place avant le jour J. Tutoriel détaillée:** [lien vers page > /tutos]**
+- Faire la mise en place avant le jour J. > lien page Tutoriel: https://poko-tutos.poko-website.pages.dev/fr/tutos/
 
 ### Prochaines dates
 
