@@ -61,7 +61,9 @@ Commence par aller sur ta page d'accueil GitHub.
 
 {% image src="/_images/tutos/7-set-up-4.webp", width="500" %}
 
-- **Optionnel** Tu peux, si tu le veux, ajouter des collaborateurs **9** sur ton projet à cette étapes. Tu peut les chercher **9 Bis** en cherchant leurs comptes GitHub. Il recevrons ensuite un mail qui les inviteras sur ton projet
+- **Optionnel** Tu peux, si tu le veux, ajouter des collaborateurs **9** sur ton projet à cette étapes. Tu peut les chercher **9 Bis** en cherchant leurs comptes GitHub.
+
+ Il recevrons ensuite un mail qui les inviteras sur ton projet.
 
 {% image src="/_images/tutos/8-collaborateur.webp", width="500" %}
 
