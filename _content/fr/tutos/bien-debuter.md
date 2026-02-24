@@ -135,3 +135,9 @@ B) Tu aura juste à lui donner un nom dans le champ _" Slug "_ **3**. Puis dans 
 C) Une fois fait, sauvegarde le. Et voila, plus qu'à insérais ton _" Partial "_ partout ou il te seras utile.
 
 {% image src="/_images/tutos/10-content-deuxieme-volet-insert-partial.webp", width="900" %}
+
+#### III) Les Partials (HTML) :
+
+Ils sont pareille au partial. A un détaille prés, il faut savoir codé en HTML. Il propose donc plus de possibilités pour le moment. 
+
+> Mais ne t'en fait pas amie No-code, Marc travail d’arrache-pied pour que tu n'est jamais à avoir besoin de ça.
