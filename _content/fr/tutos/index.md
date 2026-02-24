@@ -129,7 +129,7 @@ Clique sur _"Sign in with GitHub Using PAT"_ **2**
 
 {% image src="/_images/tutos/18-cms-connection-admin-2.webp", width="200" %}
 
-Coller le TOKEN que tu as précieusement sauvegardé à l'étape 2 **3**
+Colle le TOKEN que tu as précieusement sauvegardé à _" l'étape 2 "_ **3**
 
 {% image src="/_images/tutos/19-cms-connection-admin-token.webp", width="300" %}
 
