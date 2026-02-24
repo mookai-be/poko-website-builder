@@ -52,13 +52,11 @@ Tu trouveras également :
 
 {% image src="/_images/tutos/0-9-page-principale.webp", alt="Image du Hub  du CMS de POKO" %}
 
-## Parti 2
-
-Créons de ta première pages web
+## Étape 2 - Créons de ta première pages web :
 
 A) Commence par aller sur _" Pages "_ **1** et clique sur _" Create New Entry "_ **2**.
 
-{% image src="/_images/tutos/1-pages-1.webp", aspectRatio="1.78" %}
+{% image src="/_images/tutos/1-pages-1.webp" %}
 
 B) Pour bien débuter ta première page doit OBLIGATOIREMENT s’appeler _" index "_ **1**. Rassure toi, tu pourras modifier ce non après l'avoir publier une première fois ta page.
 
