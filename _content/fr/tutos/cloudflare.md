@@ -25,44 +25,43 @@ On va maintenant héberger ton site web grâce à Cloudflare.
 
 Commence par te créer un compte [ICI](https://www.cloudflare.com/fr-fr/lp/dg/brand/cloudflare-enterprise/?utm_medium=cpc&utm_source=google&utm_campaign=ao-fy-acq-emea_fr-connectivity-ge-txt-general-brand_product&utm_content=brand_umbrella_core&gclsrc=aw.ds&&utm_term=cloudflare%20internet_go_cmp-20730031191_adg-158772603721_ad-679237050671_kwd-1656775846248_dev-c_ext-_prd-_sig-CjwKCAiAkbbMBhB2EiwANbxtbVoUQb8syt_Jut_cBTxhqshbsnLjW-pQQP76vyD6jkROKGMrxer0RRoCM3MQAvD_BwE&gad_source=1&gad_campaignid=20730031191&gclid=CjwKCAiAkbbMBhB2EiwANbxtbVoUQb8syt_Jut_cBTxhqshbsnLjW-pQQP76vyD6jkROKGMrxer0RRoCM3MQAvD_BwE).
 
-- A- Clique sur ce lien pour commencer: [Workers & Pages.](https://dash.cloudflare.com/234702a4576e337d12ae62cabd002e0c/workers-and-pages)
-- B- Connecte-toi à ton compte  **1** , si ce n’est pas déjà fait.
-- C- Clique sur "_Ajouter"_** 3**
+- Clique sur ce lien pour commencer: [Workers & Pages.](https://dash.cloudflare.com/234702a4576e337d12ae62cabd002e0c/workers-and-pages)
+- Connecte-toi à ton compte  **1** , si ce n’est pas déjà fait.
+- Clique sur "_Ajouter"_** 3**
 
 {% image src="/_images/tutos/7-workes-pages.webp", width="600" %}
 
 Sur cette page, tu pourras voir tous tes sites web hébergés sur Cloudflare via cet onglet "**2**"
 
-- _D- Clique sur "Pages"_** 4**
-- E- Clique sur "_Importer un référentiel Git existant"_** 5**
+- _Clique sur "Pages"_** 4**
+- Clique sur "_Importer un référentiel Git existant"_** 5**
 
 {% image src="/_images/tutos/8-importer-un-referentiel-github.webp", width="400" %}
 
-- F- Clique dans le cadre _"Sélectionner un référentiel"_ **6** sur le nom de votre projet
+- Clique dans le cadre _"Sélectionner un référentiel"_ **6** sur le nom de votre projet
 
 {% image src="/_images/tutos/9-chois-du-compte.webp", width="600" %}
 
-- G- Clique sur _"Commencer la configuration"_** 7**
+- Clique sur _"Commencer la configuration"_** 7**
 (Il restera grisé temps que le projet ne sera pas sélectionné)
 
 {% image src="/_images/tutos/10-commencer-la-configuration.webp", width="600" %}
 
-- H- Vérifie que tu es bien sur _"main"_ **8**
+- Vérifie que tu es bien sur _"main"_ **8**
 
 {% image src="/_images/tutos/11-configurer-les-versions-et-les-deploiements.webp", width="600" %}
 
-- I-
     - a) Dans _"Commande de version"_ écrit **_"bun run build"_ 9**
     - b) Puis dans _"Répertoire de sortie de version_ écrit **_"dist"_ 10**
-- J- Clique sur _"Enregistrer et déployer"_** 11**
+- Clique sur _"Enregistrer et déployer"_** 11**
 
 {% image src="/_images/tutos/12-configurer-les-versions-et-les-deploiements-2.webp", width="600" %}
 
-- K) Patient un peu \~30s, tu devrais voir cette page s’afficher quand il a fini.
+- Patient un peu \~30s, tu devrais voir cette page s’afficher quand il a fini.
 
 {% image src="/_images/tutos/13-operation-reussie.webp", width="400" %}
 
-- L) Clique sur _" Continuer le projet "_ **12**
+- Clique sur _" Continuer le projet "_ **12**
 
 {% image src="/_images/tutos/14-modifier-ou-continuer.webp", width="600" %}
 
@@ -108,12 +107,12 @@ Commence par aller dans _"settings"_ **4**.
 
 {% image src="/_images/tutos/20-cms-pages-d-accueil-vide.webp" %}
 
-- A- Nomme ton site **5**
-- B- Colle l’URL de ton site sans oublier le _"https://"_ et en enlevant tout ce qui a après _".dev"_ **6**
+- Nomme ton site **5**
+- Colle l’URL de ton site sans oublier le _"https://"_ et en enlevant tout ce qui a après _".dev"_ **6**
 
 {% image src="/_images/tutos/21-cms-settings-url.webp", width="300" %}
 
-- C- Ouvre le volet _"Languages"_ et choisi ta langue
+- Ouvre le volet _"Languages"_ et choisi ta langue
 
 {% image src="/_images/tutos/22-cms-settings-langue-1.webp", width="300" %}
 
@@ -121,15 +120,15 @@ Commence par aller dans _"settings"_ **4**.
 
 Vérifie que tu as bien complété tous les champs contenant une astérisque _"**\***"_.
 
-- E- Sauvegarde avec _" Save and Publish "_ que tu trouveras en haut à gauche de ta page
+- Sauvegarde avec _" Save and Publish "_ que tu trouveras en haut à gauche de ta page
 
 {% image src="/_images/tutos/24-cms-save-and-publish.webp", width="300" %}
 
-- F- Attends le temps que Cloudflare valide la modification (ça peut prendre un peu de temps)
+- Attends le temps que Cloudflare valide la modification (ça peut prendre un peu de temps)
 
 {% image src="/_images/tutos/25-cms-cloudflare-chargement.webp", width="500" %}
 
-- G)- Une fois validé, rafraichi ta page web. Si tu as ce visuel, bravo, tu as fini la configuration de ton site
+- Une fois validé, rafraichi ta page web. Si tu as ce visuel, bravo, tu as fini la configuration de ton site
 
 {% image src="/_images/tutos/26-cms-fin.webp", width="200" %}
 
