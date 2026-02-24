@@ -129,7 +129,7 @@ Accède au CMS  pour pouvoir le configurer.
 {% image src="/_images/tutos/8-url-2.webp", width="800" %}
 
 - Ouvre l'URL dans ton navigateur et ajoute: _"/admin"_ juste à la fin
-(Par ex. https://project-name.pages.dev**/admin**)
+(Par ex. https://project-name.pages.dev/admin)
 
 Tu devrais alors voir l'écran de connexion CMS
 
