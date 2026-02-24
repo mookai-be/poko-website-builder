@@ -101,7 +101,7 @@ F) Tu trouveras ici des options plus poussées **6**.
 
 {% image src="/_images/tutos/8-content-deuxieme-volet-insert-image-3.webp" %}
 
-G) class \*\*(c'est quoi?) \*\*
+G) class **(c'est quoi?)**
 
 H) Id \*\*(c'est quoi?) \*\*
 
@@ -138,6 +138,6 @@ C) Une fois fait, sauvegarde le. Et voila, plus qu'à insérais ton _" Partial "
 
 #### III) Les Partials (HTML) :
 
-Ils sont pareille au partial. A un détaille prés, il faut savoir codé en HTML. Il propose donc plus de possibilités pour le moment. 
+Ils sont pareille au partial. A un détaille prés, il faut savoir codé en HTML. Il propose donc plus de possibilités pour le moment.
 
 > Mais ne t'en fait pas amie No-code, Marc travail d’arrache-pied pour que tu n'est jamais à avoir besoin de ça.
