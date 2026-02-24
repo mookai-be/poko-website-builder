@@ -75,7 +75,7 @@ D) Dans le content nous avons dans l'ordre :
 - La liste des insertions **8**
 - L’affichage en forma code
 
-{% image src="/_images/tutos/2-pages-2.webp", alt="Titre + Content", width="500" %}
+{% image src="/_images/tutos/2-pages-2.webp", alt="Titre + Content", width="900" %}
 
 E) Les différents rendu de la liste des paragraphes sont visibles juste là :
 
