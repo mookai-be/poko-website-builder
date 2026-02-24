@@ -147,7 +147,7 @@ Bienvenue dans ton CMS.
 
 Configure celui-ci pour que tu puisses enfin voir ton site prendre forme.
 
-Commence par aller dans _"settings"_ **4**
+- Commence par aller dans _"settings"_ **4**
 
 {% image src="/_images/tutos/20-cms-pages-d-accueil-vide.webp" %}
 
@@ -172,7 +172,9 @@ Vérifie que tu as bien complété tous les champs contenant une astérisque _"*
 
 {% image src="/_images/tutos/25-cms-cloudflare-chargement.webp", width="500" %}
 
-- Une fois validé, rafraichi ta page web. Si tu as ce visuel, bravo, tu as fini la configuration de ton CMS
+- Une fois validé, rafraichi ta page web. 
+
+Si tu as ce visuel, bravo, tu as fini la configuration de ton CMS.
 
 {% image src="/_images/tutos/26-cms-fin.webp", width="200" %}
 
