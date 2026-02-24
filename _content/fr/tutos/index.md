@@ -131,13 +131,13 @@ Accède au CMS  pour pouvoir le configurer.
 - Ouvre l'URL dans ton navigateur et ajoute: _"/admin"_ juste à la fin
 (Par ex. https://project-name.pages.dev/admin)
 
-Tu devrais alors voir l'écran de connexion CMS
+Tu devrais alors voir l'écran de connexion CMS.
 
-Clique sur _"Sign in with GitHub Using PAT"_ **2**
+- Clique sur _"Sign in with GitHub Using PAT"_ **2**
 
 {% image src="/_images/tutos/18-cms-connection-admin-2.webp", width="200" %}
 
-Colle le TOKEN que tu as précieusement sauvegardé à _" l'étape 2 "_ **3**
+- Colle le TOKEN que tu as précieusement sauvegardé à _" l'étape 2 "_ **3**
 
 {% image src="/_images/tutos/19-cms-connection-admin-token.webp", width="300" %}
 
