@@ -25,13 +25,13 @@ On va maintenant héberger ton site web grâce à Cloudflare.
 
 Commence par te créer un compte [ICI](https://www.cloudflare.com/fr-fr/lp/dg/brand/cloudflare-enterprise/?utm_medium=cpc&utm_source=google&utm_campaign=ao-fy-acq-emea_fr-connectivity-ge-txt-general-brand_product&utm_content=brand_umbrella_core&gclsrc=aw.ds&&utm_term=cloudflare%20internet_go_cmp-20730031191_adg-158772603721_ad-679237050671_kwd-1656775846248_dev-c_ext-_prd-_sig-CjwKCAiAkbbMBhB2EiwANbxtbVoUQb8syt_Jut_cBTxhqshbsnLjW-pQQP76vyD6jkROKGMrxer0RRoCM3MQAvD_BwE&gad_source=1&gad_campaignid=20730031191&gclid=CjwKCAiAkbbMBhB2EiwANbxtbVoUQb8syt_Jut_cBTxhqshbsnLjW-pQQP76vyD6jkROKGMrxer0RRoCM3MQAvD_BwE).
 
-- Clique sur ce lien pour commencer: [Workers & Pages.](https://dash.cloudflare.com/234702a4576e337d12ae62cabd002e0c/workers-and-pages)
-- Connecte-toi à ton compte  **1** , si ce n’est pas déjà fait.
+- Clique sur ce lien pour commencer: [Workers & Pages](https://dash.cloudflare.com/234702a4576e337d12ae62cabd002e0c/workers-and-pages)
+- Connecte-toi à ton compte  **1** , si ce n’est pas déjà fait
 - Clique sur "_Ajouter"_** 3**
 
 {% image src="/_images/tutos/7-workes-pages.webp", width="600" %}
 
-Sur cette page, tu pourras voir tous tes sites web hébergés sur Cloudflare via cet onglet "**2**"
+Sur cette page, tu pourras voir tous tes sites web hébergés sur Cloudflare via cet onglet "**2**".
 
 - _Clique sur "Pages"_** 4**
 - Clique sur "_Importer un référentiel Git existant"_** 5**
@@ -57,7 +57,7 @@ Sur cette page, tu pourras voir tous tes sites web hébergés sur Cloudflare via
 
 {% image src="/_images/tutos/12-configurer-les-versions-et-les-deploiements-2.webp", width="600" %}
 
-- Patient un peu \~30s, tu devrais voir cette page s’afficher quand il a fini.
+- Patient un peu \~30s, tu devrais voir cette page s’afficher quand il a fini
 
 {% image src="/_images/tutos/13-operation-reussie.webp", width="400" %}
 
@@ -65,31 +65,34 @@ Sur cette page, tu pourras voir tous tes sites web hébergés sur Cloudflare via
 
 {% image src="/_images/tutos/14-modifier-ou-continuer.webp", width="600" %}
 
-Si ça échoue, clique simplement sur _"Modifier les paramètres"_ **13**.
+- Si ça échoue, clique simplement sur _"Modifier les paramètres"_ **13**
+
+
 L’erreur la plus commune étant de se tromper sur _"Commande de version" et " Répertoire de sortie de version_ écrit" (voir étape 1).
 
-Si ça ne marche toujours pas clique sur l’onglet Workers & Pages à gauche, clique sur les _"…"_ **14** du site créé puis sur _"Paramètre"_ **15**.
+- Si ça ne marche toujours pas clique sur l’onglet Workers & Pages à gauche, clique sur les _"…"_ **14** du site créé puis sur _"Paramètre"_ **15**
 
 {% image src="/_images/tutos/15.webp", width="600" %}
 
-Supprime-le, puis refais la manipulation depuis le début, en validant bien chaque étape.
-
-Tu trouveras l'option de suppression tout en bas des paramètres **16**.
+- Supprime-le, puis refais la manipulation depuis le début, en validant bien chaque étape
+- Tu trouveras l'option de suppression tout en bas des paramètres **16**
 
 {% image src="/_images/tutos/16-suprimer.webp", width="600" %}
 
 ## Étape 4
 
-Ton site est maintenant hébergé ;p
+Ton site est maintenant hébergé ;p.
 
 On doit maintenant accéder au CMS  pour pouvoir le configurer.
 
-- Trouvez l'URL de ton projet **1** _"Cloudflare Pages"_. (par ex. https://project-name.pages.dev)
-- Ouvrez l'URL dans ton navigateur et ajoutez _"/admin"_ juste à la fin (Par exemple: https://project-name.pages.dev/admin). Tu devrais voir l'écran de connexion CMS.
+- Trouvez l'URL de ton projet **1** _"Cloudflare Pages"_ (par ex. https://project-name.pages.dev)
+- Ouvrez l'URL dans ton navigateur et ajoutez _"/admin"_ juste à la fin (Par exemple: https://project-name.pages.dev/admin)
+
+Tu devrais voir l'écran de connexion CMS.
 
 {% image src="/_images/tutos/17-cms-connection-admin.webp", width="500" %}
 
-Clique sur _"Sign in with GitHub Using PAT"_ **2**.
+- Clique sur _"Sign in with GitHub Using PAT"_ **2**
 
 {% image src="/_images/tutos/18-cms-connection-admin-2.webp", width="200" %}
 
@@ -103,7 +106,7 @@ Bienvenue sur ton CMS.
 
 Configure celui-ci pour que tu puisses enfin voir ton site prendre forme.
 
-Commence par aller dans _"settings"_ **4**.
+- Commence par aller dans _"settings"_ **4**
 
 {% image src="/_images/tutos/20-cms-pages-d-accueil-vide.webp" %}
 
