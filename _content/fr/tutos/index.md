@@ -129,7 +129,7 @@ Accède au CMS  pour pouvoir le configurer.
 {% image src="/_images/tutos/8-url-2.webp", width="800" %}
 
 - Ouvre l'URL dans ton navigateur et ajoute: _"/admin"_ juste à la fin
-(Par ex. https://project-name.pages.dev**_/admin_**)
+(Par ex. https://project-name.pages.dev**/admin**)
 
 Tu devrais alors voir l'écran de connexion CMS
 
@@ -172,7 +172,7 @@ Vérifie que tu as bien complété tous les champs contenant une astérisque _"*
 
 {% image src="/_images/tutos/25-cms-cloudflare-chargement.webp", width="500" %}
 
-- Une fois validé, rafraichi ta page web. 
+- Une fois validé, rafraichi ta page web.
 
 Si tu as ce visuel, bravo, tu as fini la configuration de ton CMS.
 
