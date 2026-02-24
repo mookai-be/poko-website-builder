@@ -103,18 +103,18 @@ F) Tu trouveras ici des options plus poussées **6**.
 
 G) class **(c'est quoi?)**
 
-H) Id \*\*(c'est quoi?) \*\*
+H) Id **(c'est quoi?)**
 
-I) Title \*\*(c'est quoi?) \*\*
+I) Title **(c'est quoi?)**
 
 J) C'est la façon dont le site vas charger ton image. Par défaut c'est sur " Lazy ".
 
 - En " Lazy " ton image chargeras plus lentement. C'est utile pour limiter les latences.
 - En " Eager " tu forces le chargement de l'image en priorité. C'est surtout utile si tu commence avec un logo ou une image en haut de ta page.
 
-K) Le Wrapper \*\*(c'est quoi?) \*\*
+K) Le Wrapper **(c'est quoi?)**
 
-L) Other raw image attributes \*\*(c'est quoi?) \*\*
+L) Other raw image attributes **(c'est quoi?)**
 
 {% image src="/_images/tutos/9-content-deuxieme-volet-insert-image-4.webp" %}
 
