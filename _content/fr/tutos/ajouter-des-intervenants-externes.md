@@ -30,7 +30,7 @@ Si tu veux ajouter des collaborateurs sur ton projet de site internet, tu es au 
 - Clique sur _"collaborators and teams"_ **1**
 - Clique sur _"Add people"_ **2**
 
-{% image src="undefined" %}
+{% image src="/_images/tutos/1-5-collaborateur.webp" %}
 
 - Cherche le compte de ton collaborateur dans le champ de recherche et ajoute le
 
