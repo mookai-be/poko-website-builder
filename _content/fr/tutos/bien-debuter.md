@@ -84,3 +84,13 @@ E) Les différents rendu de la liste des paragraphes sont visibles juste là :
 Parlons maintenant plus en profondeur des insertions :
 
 {% image src="/_images/tutos/5-content-deuxieme-volet-insert.webp", width="400" %}
+
+#### I) Les images :
+
+A) Tu commence par insérer ton image **1**.
+
+B) Tu peux ensuite cliquer sur " Attributes " pour avoir des options d'affichages **2**.
+
+{% image src="/_images/tutos/6-content-deuxieme-volet-insert-image-1.webp", width="900" %}
+
+C)
