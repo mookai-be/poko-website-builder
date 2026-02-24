@@ -164,12 +164,11 @@ Commence par aller dans _"settings"_ **4**
 
 Vérifie que tu as bien complété tous les champs contenant une astérisque _"**\***"_.
 
-- Sauvegarde avec _"Save"_ que tu trouveras en haut à gauche de ta page
 - Sauvegarde **et publie** les modifications avec _"Save **and Publish**"_ que tu trouveras en haut à gauche de ta page sous la petite flèche
 
 {% image src="/_images/tutos/24-cms-save-and-publish.webp", width="300" %}
 
-- Attends quelques instants que Cloudflare valide les modifications (ça peut prendre un peu de temps = minutes)
+- Attends quelques instants que GitHub valide les modifications (ça peut prendre un peu de temps, +- 1 minutes)
 
 {% image src="/_images/tutos/25-cms-cloudflare-chargement.webp", width="500" %}
 
