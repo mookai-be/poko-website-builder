@@ -76,3 +76,11 @@ D) Dans le content nous avons dans l'ordre :
 - L’affichage en forma code
 
 {% image src="/_images/tutos/2-pages-2.webp", alt="Titre + Content", width="500" %}
+
+E) Les différents rendu de la liste des paragraphes sont visibles juste là :
+
+{% image src="/_images/tutos/4-content-premier-volet-paragraphe-2.webp", alt="Visuelles des différents effet de la liste de paragraphe", width="700" %}
+
+Parlons maintenant plus en profondeur des insertions :
+
+{% image src="/_images/tutos/5-content-deuxieme-volet-insert.webp", width="400" %}
