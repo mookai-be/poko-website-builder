@@ -25,20 +25,23 @@ Avant toute chose, crée toi un compte [GitHub](https://github.com/). C’est **
 
 ## Étape 1
 
-- Aller sur: [poko-website-builder](https://github.com/m4rrc0/poko-website-builder)
-- Vérifie bien que tu es connecté sur ton compte
-- Cliquer sur _"Fork"_
+A) Aller sur: [poko-website-builder](https://github.com/m4rrc0/poko-website-builder).
+
+B) Vérifie bien que tu es connecté sur ton compte.
+
+C) Cliquer sur _"Fork"._
 
 {% image src="/_images/tutos/fork.webp" %}
 
-- Ajoute une **description** à ton nouveau projet et **renomme** le
-- Clique sur _"Create fork"_ pour valider
+D) Ajoute une **description** à ton nouveau projet et **renomme** le.
 
-Tu obtiens un nouvel onglet avec une copie du _"website-builder"_ qui sera sur ton compte GitHub
+E) Clique sur _"Create fork"_ pour valider.
+
+Tu obtiens un nouvel onglet avec une copie du _"website-builder"_ qui sera sur ton compte GitHub.
 
 {% image src="/_images/tutos/2-new-fork.webp", width="600" %}
 
-Félicitation c’est ton nouveau bébé, prend en soins ;)
+Félicitation c’est ton nouveau bébé, prend en soins ;).
 
 ## Étape 2
 
@@ -48,21 +51,21 @@ Il te faut maintenant un **TOKEN.**
 
 Tu pourras le créer en passant par [ce lien](https://github.com/settings/personal-access-tokens/new?name=poko-website-builder+token&description=Read+and+write+repo+access+for+the+CMS&expires_in=none&contents=write).
 
-#### Tu peux
+#### Tu peux :
 
-- A- Renommer ton TOKEN **1**
-- B- Mettre une description **2**
-- C- Définir le propriétaire **3**
-- D- Choisir une date d’expiration (seulement si tu souhaites donner un accès temporaire) **4**
+- Renommer ton TOKEN **1**
+- Mettre une description **2**
+- Définir le propriétaire **3**
+- Choisir une date d’expiration (seulement si tu souhaites donner un accès temporaire) **4**
 
 {% image src="/_images/tutos/3-creation-de-token.webp", width="600" %}
 
-- E- Choisir le type d’accès **5**
-- F- Choisir le type d’accès **6**
+- Choisir le type d’accès **5**
+- Choisir le type de permissions **6**
 
 {% image src="/_images/tutos/4-creation-de-token-2.webp", width="600" %}
 
-- G- Et enfin générer le TOKEN **7**
+- Et enfin générer le TOKEN **7**
 
 {% image src="/_images/tutos/5-creation-de-token-3.webp", width="200" %}
 
@@ -86,28 +89,29 @@ Copie la valeur du TOKEN "**1**" et enregistre-la dans un endroit sûr (comme [u
 
 Maintenant, tu vas héberger ta page internet via GitHub.
 
-- Pour d'autre hébergeur c'est par {% link url="cloudflare", text="", linkType="external" %}.
-- A- Commence par aller dans _"Settings"_
+Pour d'autre hébergeur c'est par là : {% link url="cloudflare", text="", linkType="external" %}.
+
+- Commence par aller dans _"Settings"_
 
 {% image src="/_images/tutos/1-setting.webp" %}
 
-- B- Clique sur _"Pages"_
+- Clique sur _"Pages"_
 
 {% image src="/_images/tutos/2-pages.webp", width="300" %}
 
-- C- Clique sur le menu déroulant puis sur _"GitHub Actions"_ **1**
+- Clique sur le menu déroulant puis sur _"GitHub Actions"_ **1**
 
 {% image src="/_images/tutos/3-giyhub-action.webp", width="1200" %}
 
-- D- Vas maintenant dans l'onglet principale _"Actions"_ **2** puis clique sur _"I understand my workflows, go ahead and enable them"_ **3**
+- Vas maintenant dans l'onglet principale _"Actions"_ **2** puis clique sur _"I understand my workflows, go ahead and enable them"_ **3**
 
 {% image src="/_images/tutos/4-je-comprend-et-valide.webp", width="1200" %}
 
-- E- Clique sur _"Deploy 11 ty site to pages"_ **4**
+- Clique sur _"Deploy 11 ty site to pages"_ **4**
 
 {% image src="/_images/tutos/5-deploy.webp", width="1200" %}
 
-- F- Déroule _"Run workflow"_ et vérifie que tu es bien sur main **5** puis valide **6**
+- Déroule _"Run workflow"_ et vérifie que tu es bien sur main **5** puis valide **6**
 
 {% image src="/_images/tutos/6-run-workflow.webp", width="1200" %}
 
@@ -119,11 +123,12 @@ Accède au CMS  pour pouvoir le configurer.
 
 # [pas d'image - In Progress…]
 
-- Trouve l'URL de ton projet en allant sur _"Actions"_. Clique sur le dernier update en date. Tu y trouveras le lien vers ton site
+- Trouve l'URL de ton projet en allant sur _"Actions"_. Clique sur le dernier _" update "_ en date. Tu y trouveras le lien vers ton site
 (par exemple: **https://project-name.pages.dev**)
 - Ouvre l'URL dans ton navigateur et ajoute: _"/admin"_ juste à la fin
 (Par ex. https://project-name.pages.dev**_/admin_**)
-- Tu devrais alors voir l'écran de connexion CMS
+
+Tu devrais alors voir l'écran de connexion CMS
 
 Clique sur _"Sign in with GitHub Using PAT"_ **2**
 
