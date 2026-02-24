@@ -20,4 +20,14 @@ dataList: []
 
 Bienvenue dans ta première création de pages internet
 
-Pour commencer on vas créer ta première page :
+## Étape 1
+
+Petit présentation du CMS :
+
+1) En haut à gauche tu trouveras un bouton pour voir les document et image stocké dans le CMS.
+
+Dans les onglets à gauche tu trouveras :
+
+2) Tes pages et les différente catégories choisis lors du _" Settings "._
+
+_3)_
