@@ -91,4 +91,12 @@ B) Tu peux ensuite cliquer sur " Attributes " pour avoir des options d'affichage
 
 {% image src="/_images/tutos/6-content-deuxieme-volet-insert-image-1.webp", width="900" %}
 
-C)
+C) Dans le champ _" Alt Text "_  **3**, tu peut mettre une description succincte de ton image. Cette description sert pour les audios descriptions.
+
+D) C'est là pour un ratio précis **4**. Par exemple 16:9, 4:3, ...
+
+E) C'est la que tu peut fixer une dimension précise de ton image en pixel (px) **5**. Par défaut ton image féras la dimension maximale de la fenêtre d’affichage du navigateur.
+
+F) Tu trouveras ici des options plus poussées **6**.
+
+{% image src="/_images/tutos/8-content-deuxieme-volet-insert-image-3.webp" %}
