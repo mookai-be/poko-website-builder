@@ -12,6 +12,6 @@ tags: []
 status: ''
 pageLayout: ''
 generatePage: ''
-vars: {}
+vars: null
 dataList: []
 ---

@@ -12,7 +12,7 @@ tags: []
 status: ''
 pageLayout: ''
 generatePage: ''
-vars: {}
+vars: null
 dataList: []
 ---
 
@@ -28,7 +28,7 @@ Dans les onglets à gauche tu trouveras :
 
 **2)** Tes pages et les différentes catégories choisis lors du _" Settings "._
 
-**3)** C'est là que tu trouveras le _" Navigateur, Footeurs et Pages Layouts ". _**(Tuto à venir + Work in progress)**
+**3)** C'est là que tu trouveras le _" Navigateur, Footeurs et Pages Layouts ". **(Tuto à venir + Work in progress)**
 
 **4)** Tu trouves ici tes _" Partials "_.
 
@@ -54,4 +54,25 @@ Tu trouveras également :
 
 ## Parti 2
 
-Création de ta première pages web
+Créons de ta première pages web
+
+A) Commence par aller sur _" Pages "_ **1** et clique sur _" Create New Entry "_ **2**.
+
+{% image src="/_images/tutos/1-pages-1.webp", aspectRatio="1.78" %}
+
+B) Pour bien débuter ta première page doit OBLIGATOIREMENT s’appeler _" index "_ **1**. Rassure toi, tu pourras modifier ce non après l'avoir publier une première fois ta page.
+
+C) Nous avons ensuite le _" content "_. C'est là que toute la magie opère :).
+
+D) Dans le content nous avons dans l'ordre :
+
+- La liste des paragraphes, bullet point, et citation **2**
+- Le Gras **3**
+- L'italique **4**
+- Le texte barré **5**
+- Les balise pour mettre en forme du texte et faire comprendre que c'est du code **6**
+- Les liens **7**
+- La liste des insertions **8**
+- L’affichage en forma code
+
+{% image src="/_images/tutos/2-pages-2.webp", alt="Titre + Content", width="500" %}
