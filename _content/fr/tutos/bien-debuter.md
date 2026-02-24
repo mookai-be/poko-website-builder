@@ -100,3 +100,38 @@ E) C'est la que tu peut fixer une dimension précise de ton image en pixel (px) 
 F) Tu trouveras ici des options plus poussées **6**.
 
 {% image src="/_images/tutos/8-content-deuxieme-volet-insert-image-3.webp" %}
+
+G) class \*\*(c'est quoi?) \*\*
+
+H) Id \*\*(c'est quoi?) \*\*
+
+I) Title \*\*(c'est quoi?) \*\*
+
+J) C'est la façon dont le site vas charger ton image. Par défaut c'est sur " Lazy ".
+
+- En " Lazy " ton image chargeras plus lentement. C'est utile pour limiter les latences.
+- En " Eager " tu forces le chargement de l'image en priorité. C'est surtout utile si tu commence avec un logo ou une image en haut de ta page.
+
+K) Le Wrapper \*\*(c'est quoi?) \*\*
+
+L) Other raw image attributes \*\*(c'est quoi?) \*\*
+
+{% image src="/_images/tutos/9-content-deuxieme-volet-insert-image-4.webp" %}
+
+#### II) Les Partials :
+
+Ce sont des morceaux de modèles réutilisables que l’on peut intégrer dans plusieurs pages. Comme par exemple des en-têtes, pied de pages, un bouton personnalisé, un bloc d'adresse, ...
+
+Pour créer un _" Partial "_, rien de plus simple :
+
+A) Tu peux en crée un nouveau **2** en passant par le Hub **1**.
+
+{% image src="/_images/tutos/0-1-partial-1.webp" %}
+
+B) Tu aura juste à lui donner un nom dans le champ _" Slug "_ **3**. Puis dans _" content "_ **4**, tu aura accès à tous les outils habituels pour faire ton _" Partiel "_.
+
+{% image src="/_images/tutos/0-1-partial-2.webp" %}
+
+C) Une fois fait, sauvegarde le. Et voila, plus qu'à insérais ton _" Partial "_ partout ou il te seras utile.
+
+{% image src="/_images/tutos/10-content-deuxieme-volet-insert-partial.webp", width="900" %}
