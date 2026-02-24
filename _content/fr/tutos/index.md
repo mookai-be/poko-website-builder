@@ -121,10 +121,13 @@ Ton site est maintenant hébergé!
 
 Accède au CMS  pour pouvoir le configurer.
 
-# [pas d'image - In Progress…]
-
 - Trouve l'URL de ton projet en allant sur _"Actions"_. Clique sur le dernier _" update "_ en date. Tu y trouveras le lien vers ton site
 (par exemple: **https://project-name.pages.dev**)
+
+{% image src="/_images/tutos/7-url-1.webp", width="800" %}
+
+{% image src="/_images/tutos/8-url-2.webp", width="800" %}
+
 - Ouvre l'URL dans ton navigateur et ajoute: _"/admin"_ juste à la fin
 (Par ex. https://project-name.pages.dev**_/admin_**)
 
@@ -148,12 +151,12 @@ Commence par aller dans _"settings"_ **4**
 
 {% image src="/_images/tutos/20-cms-pages-d-accueil-vide.webp" %}
 
-- A- Nomme ton site **5**
-- B- Colle l’URL de ton site sans oublier le _"https://"_ et en enlevant tout ce qui a après _".dev"_ **6**
+- Nomme ton site **5**
+- Colle l’URL de ton site sans oublier le _"https://"_ et en enlevant tout ce qui a après _".dev"_ **6**
 
 {% image src="/_images/tutos/21-cms-settings-url.webp", width="300" %}
 
-- C- Ouvre le volet _" Languages "_ et choisi ta langue
+- Ouvre le volet _" Languages "_ et choisi ta langue
 
 {% image src="/_images/tutos/22-cms-settings-langue-1.webp", width="300" %}
 
@@ -161,16 +164,16 @@ Commence par aller dans _"settings"_ **4**
 
 Vérifie que tu as bien complété tous les champs contenant une astérisque _"**\***"_.
 
-- E- Sauvegarde avec _"Save"_ que tu trouveras en haut à gauche de ta page
-- E\*- Sauvegarde **et publie** les modifications avec _"Save **and Publish**"_ que tu trouveras en haut à gauche de ta page sous la petite flèche
+- Sauvegarde avec _"Save"_ que tu trouveras en haut à gauche de ta page
+- Sauvegarde **et publie** les modifications avec _"Save **and Publish**"_ que tu trouveras en haut à gauche de ta page sous la petite flèche
 
 {% image src="/_images/tutos/24-cms-save-and-publish.webp", width="300" %}
 
-- F- Attends quelques instants que Cloudflare valide les modifications (ça peut prendre un peu de temps = minutes)
+- Attends quelques instants que Cloudflare valide les modifications (ça peut prendre un peu de temps = minutes)
 
 {% image src="/_images/tutos/25-cms-cloudflare-chargement.webp", width="500" %}
 
-- G- Une fois validé, rafraichi ta page web. Si tu as ce visuel, bravo, tu as fini la configuration de ton site
+- Une fois validé, rafraichi ta page web. Si tu as ce visuel, bravo, tu as fini la configuration de ton CMS
 
 {% image src="/_images/tutos/26-cms-fin.webp", width="200" %}
 
