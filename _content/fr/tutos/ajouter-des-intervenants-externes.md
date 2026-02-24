@@ -23,16 +23,16 @@ dataList: []
 
 Si tu veux ajouter des collaborateurs sur ton projet de site internet, tu es au bonne endroit.
 
-- A- Sur ton projet sur GitHub clique sur _"setting"_
+- Sur ton projet sur GitHub clique sur _"setting"_
 
 {% image src="/_images/tutos/1-setting.webp" %}
 
-- B- Clique sur _"collaborators and teams"_ **1**
-- C- Clique sur _"Add people"_ **2**
+- Clique sur _"collaborators and teams"_ **1**
+- Clique sur _"Add people"_ **2**
 
-{% image src="/_images/tutos/1-collaborateur.webp", width="1200" %}
+{% image src="undefined" %}
 
-- D- Cherche le compte de ton collaborateur dans le champ de recherche et ajoute le
+- Cherche le compte de ton collaborateur dans le champ de recherche et ajoute le
 
 {% image src="/_images/tutos/2-collaborateur.webp", width="500" %}
 
