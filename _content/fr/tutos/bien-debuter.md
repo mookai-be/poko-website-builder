@@ -67,17 +67,17 @@ Rassure toi, tu pourras modifier ce non après l'avoir publier une première foi
 
 {% image src="/_images/tutos/2-pages-2.webp", width="800" %}
 
-Les différents rendu de la liste des paragraphes sont visibles juste là :
+##### Les différents rendu de la liste des paragraphes sont visibles juste là :
 
 {% image src="/_images/tutos/4-content-premier-volet-paragraphe-2.webp", width="800" %}
 
-Pour les liens **7** tu peux :
+##### Pour les liens **7** tu peux :
 
-Cliquer dessus puis rentrer le lien A puis le texte qui apparaitra B
+- Cliquer dessus puis rentrer le lien dans _" URL "_ **A** puis le _" text "_ **B**, qui apparaitra sur ton site
 
 {% image src="/_images/tutos/2-5-content-link-1.webp", width="800" %}
 
-Ou alors sélectionner directement le texte déjà écrit C et juste coller le lien dans le champ D
+- Ou alors, sélectionner directement le texte déjà écrit **C** et juste coller le lien dans _" URL "_ **D**
 
 {% image src="/_images/tutos/2-6-content-link-2.webp", width="800" %}
 
