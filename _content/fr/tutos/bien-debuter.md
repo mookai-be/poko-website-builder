@@ -231,4 +231,6 @@ Le _" switche Vrap "_ **14 (c'est quoi?)**
 
 Et de nouveau le _" Gap "_ **15** et le _" Class Name "_ **16**
 
+{% image src="/_images/tutos/24-5-content-deuxieme-volet-grids-5-switcher.webp", width="800" %}
+
 #### VIII) Two Columns Section :
