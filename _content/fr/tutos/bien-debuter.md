@@ -101,8 +101,10 @@ Ils te permettrons d'intégrer tout sorte de chose autre que du texte dans le co
 
 - Trouver les image déjà utilisé sur ton site dans " Your site " **A**
 - Rentrer le lien URL d'une image dans " External Locations " **B**
-- Trouver une image directement sur un des site de stock proposer dans "Stock Photos " **C**
-- Ou enfin, chercher directement sur ton ordinateur en cliquant sur " Upload " **D**
+- Trouver une image directement sur un des site de stock proposer 
+dans "Stock Photos " **C**
+- Ou enfin, chercher directement sur ton ordinateur en cliquant 
+sur " Upload " **D**
 
 > Pour finaliser tu doit bien sélectionner ton image et cliquer sur " Insert ".
 
