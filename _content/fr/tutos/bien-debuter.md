@@ -160,7 +160,7 @@ Ce sont tous les petits logos et images que tu pourrais vouloir intégrer direct
 Tu pourras insérer des liens dans tes texte via cette insertion.
 
 - Le premier champ **1** sert à écrire le texte qui seras visible sur ta page
-- Tu devras ensuite ouvrir le menu déroulant **2 **pour choisir ton type de lien
+- Tu devras ensuite ouvrir le menu déroulant **2** pour choisir ton type de lien
 
 {% image src="/_images/tutos/14-content-deuxieme-volet-links-1.webp", width="800" %}
 
@@ -177,6 +177,11 @@ Tu as plusieurs chois pour tes liens :
 {% image src="/_images/tutos/17-content-deuxieme-volet-links-4-external-link.webp", width="800" %}
 
 - Tu peut mettre un lien directement vers un mail **5**
+
+{% image src="/_images/tutos/18-content-deuxieme-volet-links-5-e-mail.webp", width="500" %}
+
+{% image src="/_images/tutos/19-content-deuxieme-volet-links-6-e-mail-options.webp", width="500" %}
+
 - Et enfin tu peut mettre un lien vers un fichier de ton chois **(Work in Progress)**
 
 #### VII) Grid Section :
