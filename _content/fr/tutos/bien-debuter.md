@@ -152,7 +152,7 @@ Une fois fait, sauvegarde le. Et voila, tu n'as plus qu'à insérais ton _" Part
 
 #### III) Les Partials (HTML) :
 
-Ils sont pareille au partial. A un détaille prés, il faut savoir codé en HTML. Il propose donc plus de possibilités pour le moment.
+Ils sont pareilles aux _" partials "_. A un détaille prés, il faut savoir codé en HTML. Il propose donc plus de possibilités pour le moment.
 
 > Mais ne t'en fait pas amie No-code, Marc travail d’arrache-pied pour que tu n'est jamais à avoir besoin de ça.
 
@@ -168,18 +168,18 @@ Ce sont tous les petits logos et images que tu pourrais vouloir intégrer direct
 
 {% image src="/_images/tutos/11-content-deuxieme-volet-insert-icone-1.webp", width="800" %}
 
-- Tu peut ensuite choisir le site d'hébergement d’icônes de ton chois dans la liste
+- Tu peut ensuite choisir le site d'hébergement d’icônes de ton choix dans la liste
 
 {% image src="/_images/tutos/12-content-deuxieme-volet-insert-icone-2.webp", width="500" %}
 
-- Trouve l’icône de ton chois sur le site choisi **2** et retrouve sont nom dans la liste du menue déroulant **3**
+- Trouve l’icône de ton chois sur le site choisi **2** et retrouve sont nom dans la liste du menu déroulant **3**
 
 {% image src="/_images/tutos/13-content-deuxieme-volet-insert-icone-3.webp", width="800" %}
 
 - Tu as également _" Size "_ **4** pour ça taille en pixel(px)
-- La _" class "_ **(c'est quoi?) 5**
-- _" Other raw attributes "_ **(c'est quoi?) 6**
-- N’oublie pas de cliquer sur _" Insert "_ pour valider tes chois **7**
+- La _" class "_ **5 (c'est quoi?)**
+- _" Other raw attributes "_ **6 (c'est quoi?)**
+- N’oublie pas de cliquer sur _" Insert "_ **7** pour valider tes chois
 - Si tu veux supprimer l’icône clique sur _" Remove "_ **8**
 
 {% image src="/_images/tutos/13-5-content-deuxieme-volet-insert-icone-4.webp", width="800" %}
@@ -188,12 +188,12 @@ Ce sont tous les petits logos et images que tu pourrais vouloir intégrer direct
 
 Tu pourras insérer des liens dans tes texte via cette insertion.
 
-- Le premier champ **1** sert à écrire le texte qui seras visible sur ta page
+- Le champ _" Texte "_ **1** sert à écrire le texte qui seras visible sur ta page
 - Tu devras ensuite ouvrir le menu déroulant **2** pour choisir ton type de lien
 
 {% image src="/_images/tutos/14-content-deuxieme-volet-links-1.webp", width="800" %}
 
-Tu as plusieurs chois pour tes liens :
+##### Tu as plusieurs chois pour tes liens :
 
 {% image src="/_images/tutos/15-content-deuxieme-volet-links-2.webp", width="500" %}
 
@@ -205,17 +205,17 @@ Tu as plusieurs chois pour tes liens :
 
 {% image src="/_images/tutos/17-content-deuxieme-volet-links-4-external-link.webp", width="800" %}
 
-Pour un lien directement vers un mail **5** :
+##### Pour un lien directement vers un mail **5** :
 
-Tu peut Mettre le mail que tu veux lier **A**
-
-Aller dans les options pour une meilleur précision **B**
+- Tu peux mettre le mail que tu veux lier **A**
+- Tu peux ensuite aller dans les options pour une meilleur précision **B**
 
 {% image src="/_images/tutos/18-content-deuxieme-volet-links-5-e-mail.webp", width="800" %}
 
-- Tu peut mettre des mail en copie **C**
-- Tu peut également mettre des mail en copie caché **D** (il ne seront pas visible dans les mails partager par les autres personnes qui reçoivent ce mail)
-- Tu peut préremplir un objet de mail **E** (pratique pour trier rapidement ses mail ;p)
+- Tu peux mettre des mails en copie **C**
+- Tu peux également mettre des mails en copie cachée **D** (ils ne seront pas visibles dans les mails partagés par les autres personnes qui reçoivent ce mail)
+- Tu peux préremplir un objet de mail **E** 
+(pratique pour trier rapidement ses mail ;p)
 - Enfin tu peut préremplir le contenue du mail **F**
 
 {% image src="/_images/tutos/19-content-deuxieme-volet-links-6-e-mail-options.webp", width="800" %}
