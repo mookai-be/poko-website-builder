@@ -18,30 +18,30 @@ dataList: []
 
 # Crée ta page en quelque clic
 
-Bienvenue dans ta première création de pages internet
+Bienvenue dans ta première création de pages web.
 
 ## 1 - Petit présentation du CMS :
 
 - En haut à gauche tu trouveras un bouton pour voir les document et image stocké dans le CMS **1**
 
-Dans les onglets à gauche tu trouveras dans l'ordre :
+##### Dans les onglets à gauche tu trouveras dans l'ordre :
 
-- Tes pages et les différentes catégories choisis lors du _" Settings "_ **2**
+- Les _" pages "_ **2** et les différentes catégories choisis lors du _" Settings "_
 - Le  _" Navigateur, Footeurs et Pages Layouts "_ **3 (Tuto à venir + Work in progress)**
 - Tes _" Partials "_ **4**
 - Les options pour tes contenues **5**
 - Des options complexes supplémentaires **6 (Tuto à venir + Work in progress)**
-- Tes _" Settings "_ généraux pour le CMS **7**
+- Tes _" Settings "_ **7** pour le CMS
 
-Tu trouveras également :
+##### Tu trouveras également :
 
-- L’aperçu principales de tes onglets **8**
+- L’aperçu principale de tes onglets **8**
 - Un champ rechercher **9**
-- Un bouton très utile **(je crois, tuto à venir) 10**
-- Le  _" + "_ sert à ajouter plein de chose utile **(tuto à venir) 11**
-- Ton avatar te donnant accès à des options supplémentaires **12** .**(tuto à venir)**
-- Deux boutons te permetant de supprimer et recréer des pages est autres modules **13**
-- Un petit filtre pour une meilleur lisibilité **14**
+- Un bouton **10** très utile **(je crois, tuto à venir)**
+- Le  _" + "_ **11** sert à ajouter plein de chose utile **(tuto à venir)**
+- Ton avatar **12** te donnant accès à des options supplémentaires. **(tuto à venir)**
+- Deux boutons **13** te permettant de supprimer et recréer des pages est autres modules
+- Un petit filtre **14** pour une meilleur lisibilité
 
 {% image src="/_images/tutos/0-9-page-principale-finale.webp" %}
 
@@ -51,10 +51,10 @@ Tu trouveras également :
 
 {% image src="/_images/tutos/1-pages-1.webp" %}
 
-- Pour bien débuter ta première page doit OBLIGATOIREMENT s’appeler _" index "_ **1**. Rassure toi, tu pourras modifier ce non après l'avoir publier une première fois ta page
-- Nous avons ensuite le _" content "_. C'est là que toute la magie opère :)
+- Pour bien débuter ta première page doit **OBLIGATOIREMENT** s’appeler _" index "_ **1**.
+Rassure toi, tu pourras modifier ce non après l'avoir publier une première fois ta page
 
-Dans le content nous avons dans l'ordre :
+##### Nous avons ensuite le _" content "_ ou tu trouveras :
 
 - La liste des paragraphes, bullet point, et citation **2**
 - Le Gras **3**
@@ -70,6 +70,16 @@ Dans le content nous avons dans l'ordre :
 Les différents rendu de la liste des paragraphes sont visibles juste là :
 
 {% image src="/_images/tutos/4-content-premier-volet-paragraphe-2.webp", width="800" %}
+
+Pour les liens **7** tu peux :
+
+Cliquer dessus puis rentrer le lien A puis le texte qui apparaitra B
+
+{% image src="/_images/tutos/2-5-content-link-1.webp", width="800" %}
+
+Ou alors sélectionner directement le texte déjà écrit C et juste coller le lien dans le champ D
+
+{% image src="/_images/tutos/2-6-content-link-2.webp", width="800" %}
 
 ## 3 - Les insertions :
 
