@@ -197,4 +197,6 @@ Aller dans les options pour une meilleur précision **B**
 
 #### VII) Grid Section :
 
+La _" Grid Section "_ te permet de mettre plusieurs image et texte cote à cote sur ta page.
+
 #### VIII) Two Columns Section :
