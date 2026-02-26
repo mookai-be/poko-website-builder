@@ -24,7 +24,7 @@ Bienvenue dans ta première création de pages web.
 
 - En haut à gauche tu trouveras un bouton pour voir les document et image stocké dans le CMS **1**
 
-##### Dans les onglets à gauche tu trouveras dans l'ordre :
+Dans les onglets à gauche tu trouveras dans l'ordre :
 
 - Les _" pages "_ **2** et les différentes catégories choisis lors du _" Settings "_
 - Le  _" Navigateur, Footeurs et Pages Layouts "_ **3 (Tuto à venir + Work in progress)**
@@ -33,7 +33,7 @@ Bienvenue dans ta première création de pages web.
 - Des options complexes supplémentaires **6 (Tuto à venir + Work in progress)**
 - Tes _" Settings "_ **7** pour le CMS
 
-##### Tu trouveras également :
+Tu trouveras également :
 
 - L’aperçu principale de tes onglets **8**
 - Un champ rechercher **9**
@@ -54,7 +54,7 @@ Bienvenue dans ta première création de pages web.
 - Pour bien débuter ta première page doit **OBLIGATOIREMENT** s’appeler _" index "_ **1**.
 Rassure toi, tu pourras modifier ce non après l'avoir publier une première fois ta page
 
-##### Nous avons ensuite le _" content "_ ou tu trouveras :
+Nous avons ensuite le _" content "_ ou tu trouveras :
 
 - La liste des paragraphes, bullet point, et citation **2**
 - Le Gras **3**
@@ -67,11 +67,11 @@ Rassure toi, tu pourras modifier ce non après l'avoir publier une première foi
 
 {% image src="/_images/tutos/2-pages-2.webp", width="800" %}
 
-##### Les différents rendu de la liste des paragraphes sont visibles juste là :
+Les différents rendu de la liste des paragraphes sont visibles juste là :
 
 {% image src="/_images/tutos/4-content-premier-volet-paragraphe-2.webp", width="800" %}
 
-##### Pour les liens **7** tu peux :
+Pour les liens **7** tu peux :
 
 - Cliquer dessus puis rentrer le lien dans _" URL "_ **A** puis le _" text "_ **B**, qui apparaitra sur ton site
 
@@ -89,7 +89,7 @@ Ils te permettrons d'intégrer tout sorte de chose autre que du texte dans le co
 
 #### I) Les images :
 
-##### Pour insérer ton image tu as 2 options :
+Pour insérer ton image tu as 2 options :
 
 - Sois tu fait un cliquer glissé dans la zone du petit nuage
 
@@ -97,7 +97,7 @@ Ils te permettrons d'intégrer tout sorte de chose autre que du texte dans le co
 
 - Sois tu clique dessus pour avoir plus d'option
 
-##### Dans cette option tu peut :
+Dans cette option tu peut :
 
 - Trouver les image déjà utilisé sur ton site dans " Your site " **A**
 - Rentrer le lien URL d'une image dans " External Locations " **B**
@@ -193,7 +193,7 @@ Tu pourras insérer des liens dans tes texte via cette insertion.
 
 {% image src="/_images/tutos/14-content-deuxieme-volet-links-1.webp", width="800" %}
 
-##### Tu as plusieurs chois pour tes liens :
+Tu as plusieurs chois pour tes liens :
 
 {% image src="/_images/tutos/15-content-deuxieme-volet-links-2.webp", width="500" %}
 
@@ -205,7 +205,7 @@ Tu pourras insérer des liens dans tes texte via cette insertion.
 
 {% image src="/_images/tutos/17-content-deuxieme-volet-links-4-external-link.webp", width="800" %}
 
-##### Pour un lien directement vers un mail **5** :
+Pour un lien directement vers un mail **5** :
 
 - Tu peux mettre le mail que tu veux lier **A**
 - Tu peux ensuite aller dans les options pour une meilleur précision **B**
@@ -226,7 +226,7 @@ Tu pourras insérer des liens dans tes texte via cette insertion.
 
 #### VII) Grid Section :
 
-La _" Grid Section "_ te permet de mettre plusieurs image et texte côte à côte sur ta page.
+La _" Grid Section "_ te permet de mettre plusieurs image et texte côte à côte sur ta page. Chaque _" Grid "_ seras toujours à égal distance les un des autres.
 
 > Tu trouveras toujours dans les _" Section "_, un _" Header "_ **1** et un _" Footer "_ **5**, qui te permettrons respectivement de mettre du contenue avant et après tas mise en forme principale (Grid, Two Columns, ...)
 
@@ -263,3 +263,11 @@ Et de nouveau le _" Gap "_ **15** et le _" Class Name "_ **16**
 {% image src="/_images/tutos/24-5-content-deuxieme-volet-grids-5-switcher.webp", width="800" %}
 
 #### VIII) Two Columns Section :
+
+Contrairement au _" Grid Section "_ le _" Two Columns Section "_ permet d'avoir deux sections de dimension différente sur une même ligne. Bien que du coup, il ne soit justement limiter à deux colonnes.
+
+Tu trouveras dans la section _" Columns Item"_ **1**, la colone de gauche _" column left "_ **2** et la colonne de droite _" column Right "_ **3**
+
+{% image src="/_images/tutos/25-content-deuxieme-volet-grids-deux-collones-1.webp", width="800" %}
+
+Tu peut ensuite cliquer sur " Add Layout Option " **4**
