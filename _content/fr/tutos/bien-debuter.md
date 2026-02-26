@@ -243,7 +243,7 @@ La _" Grid Section "_ te permet de mettre plusieurs image et texte côte à côt
 
 {% image src="/_images/tutos/23-content-deuxieme-volet-grids-3.webp", width="800" %}
 
-Dans le _" Fluid Grid "_ tu trouveras :
+##### Dans le _" Fluid Grid "_ tu trouveras :
 
 - Le nombre de colonnes **11** que tu veux définir par ligne
 
