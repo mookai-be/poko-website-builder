@@ -226,11 +226,11 @@ Tu pourras insérer des liens dans tes texte via cette insertion.
 
 #### VII) Grid Section :
 
-La _" Grid Section "_ te permet de mettre plusieurs image et texte cote à cote sur ta page.
+La _" Grid Section "_ te permet de mettre plusieurs image et texte côte à côte sur ta page.
 
-> Tu trouveras toujours dans les _" Section "_, un _" Header "_ **1** et un _" Fouter "_ **5**, qui te permettrons respectivement de mettre du contenue avant et après tas mise en forme principale (Grid, Two Columns, ...)
+> Tu trouveras toujours dans les _" Section "_, un _" Header "_ **1** et un _" Footer "_ **5**, qui te permettrons respectivement de mettre du contenue avant et après tas mise en forme principale (Grid, Two Columns, ...)
 
-- Tu as ensuite les _" Grid "_ **2** dans lesquelles tu peux ajouter le contenue dans _" content "_ **7** que tu souhaite mettre en forme
+- Dans le _" Grid "_ **2**, tu peux ajouter le contenue que tu souhaite mettre en forme dans _" content "_ **7**
 
 {% image src="/_images/tutos/22-content-deuxieme-volet-grids-2.webp", width="800" %}
 
