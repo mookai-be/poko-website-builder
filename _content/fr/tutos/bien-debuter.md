@@ -129,4 +129,26 @@ Ils sont pareille au partial. A un détaille prés, il faut savoir codé en HTML
 
 **(C'est quoi? )**
 
-#### V) Icon
+#### V) Icon :
+
+Ce sont tous les petits logos et images que tu pourrais vouloir intégrer directement dans ton texte.
+
+- Tu peut cliquer sur _" Add Icon Library "_ **1** 
+
+{% image src="/_images/tutos/11-content-deuxieme-volet-insert-icone-1.webp", width="900" %}
+
+- Tu peut ensuite choisir le site d'hébergement d’icônes de ton chois dans la liste
+
+{% image src="/_images/tutos/12-content-deuxieme-volet-insert-icone-2.webp", width="500" %}
+
+- Trouve l’icône de ton chois sur le site choisi **2** et retrouve sont nom dans la liste du menue déroulant **3**
+
+{% image src="/_images/tutos/13-content-deuxieme-volet-insert-icone-3.webp", width="900" %}
+
+- Tu as également _" Size "_ **4** pour ça taille en pixel(px)
+- La _" class "_ **(c'est quoi?) 5**
+- _" Other raw attributes "_ **(c'est quoi?) 6**
+- N’oublie pas de cliquer sur _" Insert "_ pour valider tes chois **7**
+- Si tu veux supprimer l’icône clique sur _" Remove "_ **8**
+
+{% image src="/_images/tutos/13-5-content-deuxieme-volet-insert-icone-4.webp", width="900" %}
