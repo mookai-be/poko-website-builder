@@ -118,17 +118,17 @@ sur " Upload " **D**
 
 {% image src="/_images/tutos/8-content-deuxieme-volet-insert-image-3.webp", width="800" %}
 
-- class **(c'est quoi?) 7**
-- Id **(c'est quoi?) 8**
-- Title **(c'est quoi?) 9**
-- C'est la façon dont le site vas charger ton image. Par défaut c'est sur " Lazy " **10**.
+- _" class "_ **(c'est quoi?) 7**
+- _" Id " _**(c'est quoi?) 8**
+- _" Title "_ **(c'est quoi?) 9**
+- _" Loading "_ **10** est la façon dont le site vas charger ton image. Par défaut c'est sur _" Lazy "_.
 
-> En " Lazy " ton image chargeras plus lentement. C'est utile pour limiter les latences.
+> En _" Lazy "_ ton image chargeras plus lentement. C'est utile pour limiter les latences.
 
-> En " Eager " tu forces le chargement de l'image en priorité. C'est surtout utile si tu commence avec un logo ou une image en haut de ta page.
+> En _" Eager "_ tu forces le chargement de l'image en priorité. C'est surtout utile si tu commence avec un logo ou une image en haut de ta page.
 
-- Le Wrapper **(c'est quoi?) 11**
-- Other raw image attributes **(c'est quoi?) 12**
+- Le _" Wrapper "_ **11 (c'est quoi?)**
+- _" Other raw image attributes "_ **12 (c'est quoi?)**
 
 {% image src="/_images/tutos/9-content-deuxieme-volet-insert-image-4.webp", width="800" %}
 
@@ -138,15 +138,15 @@ Ce sont des morceaux de modèles réutilisables que l’on peut intégrer dans p
 
 Pour créer un _" Partial "_, rien de plus simple :
 
-- Tu peux en crée un nouveau **2** en passant par le Hub **1**.
+- Tu peux en crée un nouveau en cliquant sur _" Create New Entry "_**2** en passant par le Hub **1**.
 
 {% image src="/_images/tutos/0-1-partial-1.webp" %}
 
-- Tu aura juste à lui donner un nom dans le champ _" Slug "_ **3**. Puis dans _" content "_ **4**, tu aura accès à tous les outils habituels pour faire ton _" Partiel "_.
+- Tu aura juste à lui donner un nom dans le champ _" Slug "_ **3**. Puis dans _" content "_ **4**, tu aura accès à tous les outils habituels pour faire ton _" Partials "_.
 
 {% image src="/_images/tutos/0-1-partial-2.webp", width="800" %}
 
-- Une fois fait, sauvegarde le. Et voila, plus qu'à insérais ton _" Partial "_ partout ou il te seras utile.
+Une fois fait, sauvegarde le. Et voila, tu n'as plus qu'à insérais ton _" Partials "_ partout où il te seras utile.
 
 {% image src="/_images/tutos/10-content-deuxieme-volet-insert-partial.webp", width="800" %}
 
