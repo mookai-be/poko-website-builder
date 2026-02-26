@@ -89,7 +89,7 @@ Ils te permettrons d'intégrer tout sorte de chose autre que du texte dans le co
 
 #### I) Les images :
 
-##### Pour insérer ton image tu as 2 option :
+##### Pour insérer ton image tu as 2 options :
 
 - Sois tu fait un cliquer glissé dans la zone du petit nuage
 
@@ -108,8 +108,7 @@ Ils te permettrons d'intégrer tout sorte de chose autre que du texte dans le co
 
 {% image src="/_images/tutos/6-5-content-deuxieme-volet-insert-image-1-5.webp", width="800" %}
 
-##### Si tu clique sur _" Attributes "_ **2**,  tu auras les options d'affichages suivantes :
-
+- Tu peux ensuite cliquer sur _" Attributes "_ **2**, pour les options
 - Dans le champ _" Alt Text "_  **3**, tu peut mettre une description succincte de ton image. Cette description sert pour les audios descriptions.
 - Dans _" Aspect Ration "_ **4**, tu pourras définir un ratio d'image spécifique (Par exemple 16:9, 4:3, ...)
 - Dans _" Whit "_ **5**, tu peut fixer une dimension précise de ton image en pixel (px). Par défaut ton image féras la dimension maximale de la fenêtre d’affichage du navigateur.
