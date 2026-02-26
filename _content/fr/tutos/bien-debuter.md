@@ -154,3 +154,9 @@ Ce sont tous les petits logos et images que tu pourrais vouloir intégrer direct
 - Si tu veux supprimer l’icône clique sur _" Remove "_ **8**
 
 {% image src="/_images/tutos/13-5-content-deuxieme-volet-insert-icone-4.webp", width="800" %}
+
+#### VI) Links :
+
+#### VII) Grid Section :
+
+#### VIII) Two Columns Section :
