@@ -80,14 +80,14 @@ Les différents rendu de la liste des paragraphes sont visibles juste là :
 - Tu commence par insérer ton image **1**
 - Tu peux ensuite cliquer sur _" Attributes "_ pour avoir des options d'affichages **2**
 
-{% image src="/_images/tutos/6-content-deuxieme-volet-insert-image-1.webp", width="500" %}
+{% image src="/_images/tutos/6-content-deuxieme-volet-insert-image-1.webp", width="800" %}
 
 - Dans le champ _" Alt Text "_  **3**, tu peut mettre une description succincte de ton image. Cette description sert pour les audios descriptions.
 - C'est là pour un ratio précis **4**. Par exemple 16:9, 4:3, ...
 - C'est la que tu peut fixer une dimension précise de ton image en pixel (px) **5**. Par défaut ton image féras la dimension maximale de la fenêtre d’affichage du navigateur.
 - Tu trouveras ici des options plus poussées **6**
 
-{% image src="/_images/tutos/8-content-deuxieme-volet-insert-image-3.webp", width="500" %}
+{% image src="/_images/tutos/8-content-deuxieme-volet-insert-image-3.webp", width="800" %}
 
 - class **(c'est quoi?) 7**
 - Id **(c'est quoi?) 8**
@@ -101,7 +101,7 @@ Les différents rendu de la liste des paragraphes sont visibles juste là :
 - Le Wrapper **(c'est quoi?) 11**
 - Other raw image attributes **(c'est quoi?) 12**
 
-{% image src="/_images/tutos/9-content-deuxieme-volet-insert-image-4.webp", width="500" %}
+{% image src="/_images/tutos/9-content-deuxieme-volet-insert-image-4.webp", width="800" %}
 
 #### II) Les Partials :
 
