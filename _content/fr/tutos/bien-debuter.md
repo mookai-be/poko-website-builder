@@ -247,7 +247,7 @@ La _" Grid Section "_ te permet de mettre plusieurs image et texte côte à côt
 
 - Le nombre de colonnes **11** que tu veux définir par ligne
 
-> Si tu met 4 " Grid " mais que défini que 2 colonnes, tu en aura 2 cote à cote et les 2 autres cote à cote en dessous des deux premier.
+> Si tu met 4 " Grid " mais que tu ne défini que 2 colonnes, tu en aura 2 côte à côte et les 2 autres côte à côte en dessous des deux premier.
 
 - Le _" Gap "_ **12 (c'est quoi?)**
 - Le _" Class Name "_ **13(c'est quoi?)**
