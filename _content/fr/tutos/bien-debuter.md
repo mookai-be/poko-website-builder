@@ -83,19 +83,37 @@ Rassure toi, tu pourras modifier ce non après l'avoir publier une première foi
 
 ## 3 - Les insertions :
 
+Ils te permettrons d'intégrer tout sorte de chose autre que du texte dans le contenue de ton site.
+
 {% image src="/_images/tutos/5-content-deuxieme-volet-insert.webp", width="500" %}
 
 #### I) Les images :
 
-- Tu commence par insérer ton image **1**
-- Tu peux ensuite cliquer sur _" Attributes "_ pour avoir des options d'affichages **2**
+##### Pour insérer ton image tu as 2 option :
+
+- Sois tu fait un cliquer glissé dans la zone du petit nuage
 
 {% image src="/_images/tutos/6-content-deuxieme-volet-insert-image-1.webp", width="800" %}
 
+- Sois tu clique dessus pour avoir plus d'option
+
+##### Dans cette option tu peut :
+
+- Trouver les image déjà utilisé sur ton site dans " Your site " **A**
+- Rentrer le lien URL d'une image dans " External Locations " **B**
+- Trouver une image directement sur un des site de stock proposer dans "Stock Photos " **C**
+- Ou enfin, chercher directement sur ton ordinateur en cliquant sur " Upload " **D**
+
+> Pour finaliser tu doit bien sélectionner ton image et cliquer sur " Insert ".
+
+{% image src="/_images/tutos/6-5-content-deuxieme-volet-insert-image-1-5.webp", width="800" %}
+
+##### Si tu clique sur _" Attributes "_ **2**,  tu auras les options d'affichages suivantes :
+
 - Dans le champ _" Alt Text "_  **3**, tu peut mettre une description succincte de ton image. Cette description sert pour les audios descriptions.
-- C'est là pour un ratio précis **4**. Par exemple 16:9, 4:3, ...
-- C'est la que tu peut fixer une dimension précise de ton image en pixel (px) **5**. Par défaut ton image féras la dimension maximale de la fenêtre d’affichage du navigateur.
-- Tu trouveras ici des options plus poussées **6**
+- Dans _" Aspect Ration "_ **4**, tu pourras définir un ratio d'image spécifique (Par exemple 16:9, 4:3, ...)
+- Dans _" Whit "_ **5**, tu peut fixer une dimension précise de ton image en pixel (px). Par défaut ton image féras la dimension maximale de la fenêtre d’affichage du navigateur.
+- Dans _" Advanced Attributes "_ **6**, tu trouveras des options plus poussées
 
 {% image src="/_images/tutos/8-content-deuxieme-volet-insert-image-3.webp", width="800" %}
 
