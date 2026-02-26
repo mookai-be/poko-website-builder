@@ -101,9 +101,9 @@ Ils te permettrons d'intégrer tout sorte de chose autre que du texte dans le co
 
 - Trouver les image déjà utilisé sur ton site dans " Your site " **A**
 - Rentrer le lien URL d'une image dans " External Locations " **B**
-- Trouver une image directement sur un des site de stock proposer 
+- Trouver une image directement sur un des site de stock proposer
 dans "Stock Photos " **C**
-- Ou enfin, chercher directement sur ton ordinateur en cliquant 
+- Ou enfin, chercher directement sur ton ordinateur en cliquant
 sur " Upload " **D**
 
 > Pour finaliser tu doit bien sélectionner ton image et cliquer sur " Insert ".
@@ -214,7 +214,7 @@ Tu pourras insérer des liens dans tes texte via cette insertion.
 
 - Tu peux mettre des mails en copie **C**
 - Tu peux également mettre des mails en copie cachée **D** (ils ne seront pas visibles dans les mails partagés par les autres personnes qui reçoivent ce mail)
-- Tu peux préremplir un objet de mail **E** 
+- Tu peux préremplir un objet de mail **E**
 (pratique pour trier rapidement ses mail ;p)
 - Enfin tu peut préremplir le contenue du mail **F**
 
@@ -230,14 +230,14 @@ La _" Grid Section "_ te permet de mettre plusieurs image et texte côte à côt
 
 > Tu trouveras toujours dans les _" Section "_, un _" Header "_ **1** et un _" Footer "_ **5**, qui te permettrons respectivement de mettre du contenue avant et après tas mise en forme principale (Grid, Two Columns, ...)
 
-- Dans le _" Grid "_ **2**, tu peux ajouter le contenue que tu souhaite mettre en forme dans _" content "_ **7**
-
-{% image src="/_images/tutos/22-content-deuxieme-volet-grids-2.webp", width="800" %}
-
 - Tu peux ajouter **4** ou supprimer **3** autant de _" Grid "_ que tu veux
 - Pour plus d'option, tu peux cliquer sur _" Add Layout and Options "_ **6**
 
 {% image src="/_images/tutos/21-content-deuxieme-volet-grids-1.webp", width="800" %}
+
+- Dans le _" Grid "_ **2**, tu peux ajouter le contenue que tu souhaite mettre en forme dans _" content "_ **7**
+
+{% image src="/_images/tutos/22-content-deuxieme-volet-grids-2.webp", width="800" %}
 
 - Tu as 2 option, le _" Fluid Grid "_ **9** et le _" Switcher "_ **10**
 
