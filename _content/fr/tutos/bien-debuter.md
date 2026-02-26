@@ -266,8 +266,31 @@ Et de nouveau le _" Gap "_ **15** et le _" Class Name "_ **16**
 
 Contrairement au _" Grid Section "_ le _" Two Columns Section "_ permet d'avoir deux sections de dimension différente sur une même ligne. Bien que du coup, il ne soit justement limiter à deux colonnes.
 
-Tu trouveras dans la section _" Columns Item"_ **1**, la colone de gauche _" column left "_ **2** et la colonne de droite _" column Right "_ **3**
+- Tu trouveras dans la section _" Columns Item"_ **1**, la colone de gauche _" column left "_ **2** et la colonne de droite _" column Right "_ **3**
 
 {% image src="/_images/tutos/25-content-deuxieme-volet-grids-deux-collones-1.webp", width="800" %}
 
-Tu peut ensuite cliquer sur " Add Layout Option " **4**
+- Tu peut ensuite cliquer sur _" Add Layout Option "_ **4**
+
+Deux choix s’offre à toi :
+
+- Soit tu choisis _" Symmetrical "_ **5**
+
+> Tu y trouveras les même option que pour le _" Switcher "_ vue précédemment. Cela reviendra au même qu'en passant par _" Grid Section "_ tout en te limitant à 2 colonnes.
+
+- Soit tu choisis " Asymmertical " **6**
+
+{% image src="/_images/tutos/26-content-deuxieme-volet-grids-deux-collones-2.webp", width="500" %}
+
+Dans _" Asymmetrical "_ tu pourras :
+
+- Quel sera la petit colonne dans _" Small Column Side "_ **7**
+- Choisir la taille de la petite colonne dans _" Small Column Whit "_ **8**
+- Choisir la taille minimal de la plus grande colonnes dans _" Big Column Min With "_ **9**
+
+> Par défaut la taille minimal de la plus grande colonne est de 50% de la page.
+
+- Le _" Gap "_ **10 (c'est quoi?)**
+- Et enfin le _" Class Name "_ **11 (C'est quoi?)**
+
+{% image src="/_images/tutos/27-content-deuxieme-volet-grids-deux-collones-3.webp", width="800" %}
