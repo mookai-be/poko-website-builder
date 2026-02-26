@@ -176,9 +176,18 @@ Tu as plusieurs chois pour tes liens :
 
 {% image src="/_images/tutos/17-content-deuxieme-volet-links-4-external-link.webp", width="800" %}
 
-- Tu peut mettre un lien directement vers un mail **5**
+Pour un lien directement vers un mail **5** :
+
+Tu peut Mettre le mail que tu veux lier **A**
+
+Aller dans les options pour une meilleur précision **B**
 
 {% image src="/_images/tutos/18-content-deuxieme-volet-links-5-e-mail.webp", width="500" %}
+
+- Tu peut mettre des mail en copie **C**
+- Tu peut également mettre des mail en copie caché **D** (il ne seront pas visible dans les mails partager par les autres personnes qui reçoivent ce mail)
+- Tu peut préremplir un objet de mail **E** (pratique pour trier rapidement ses mail ;p)
+- Enfin tu peut préremplir le contenue du mail **F**
 
 {% image src="/_images/tutos/19-content-deuxieme-volet-links-6-e-mail-options.webp", width="500" %}
 
