@@ -43,13 +43,13 @@ Tu trouveras également :
 - Deux boutons te permetant de supprimer et recréer des pages est autres modules **13**
 - Un petit filtre pour une meilleur lisibilité **14**
 
-{% image src="undefined" %}
+{% image src="/_images/tutos/0-9-page-principale-finale.webp" %}
 
 ## 2 - Créons de ta première pages web :
 
 - Commence par aller sur _" Pages "_ **1** et clique sur _" Create New Entry "_ **2**
 
-{% image src="undefined" %}
+{% image src="/_images/tutos/1-pages-1.webp" %}
 
 - Pour bien débuter ta première page doit OBLIGATOIREMENT s’appeler _" index "_ **1**. Rassure toi, tu pourras modifier ce non après l'avoir publier une première fois ta page
 - Nous avons ensuite le _" content "_. C'est là que toute la magie opère :)
@@ -65,29 +65,29 @@ Dans le content nous avons dans l'ordre :
 - La liste des insertions **8**
 - L’affichage en forma code **9**
 
-{% image src="undefined" %}
+{% image src="/_images/tutos/2-pages-2.webp", width="800" %}
 
 Les différents rendu de la liste des paragraphes sont visibles juste là :
 
-{% image src="undefined" %}
+{% image src="/_images/tutos/4-content-premier-volet-paragraphe-2.webp", width="800" %}
 
 ## 3 - Les insertions :
 
-{% image src="undefined" %}
+{% image src="/_images/tutos/5-content-deuxieme-volet-insert.webp", width="500" %}
 
 #### I) Les images :
 
 - Tu commence par insérer ton image **1**
 - Tu peux ensuite cliquer sur _" Attributes "_ pour avoir des options d'affichages **2**
 
-{% image src="undefined" %}
+{% image src="/_images/tutos/6-content-deuxieme-volet-insert-image-1.webp", width="500" %}
 
 - Dans le champ _" Alt Text "_  **3**, tu peut mettre une description succincte de ton image. Cette description sert pour les audios descriptions.
 - C'est là pour un ratio précis **4**. Par exemple 16:9, 4:3, ...
 - C'est la que tu peut fixer une dimension précise de ton image en pixel (px) **5**. Par défaut ton image féras la dimension maximale de la fenêtre d’affichage du navigateur.
 - Tu trouveras ici des options plus poussées **6**
 
-{% image src="undefined" %}
+{% image src="/_images/tutos/8-content-deuxieme-volet-insert-image-3.webp", width="500" %}
 
 - class **(c'est quoi?) 7**
 - Id **(c'est quoi?) 8**
@@ -101,7 +101,7 @@ Les différents rendu de la liste des paragraphes sont visibles juste là :
 - Le Wrapper **(c'est quoi?) 11**
 - Other raw image attributes **(c'est quoi?) 12**
 
-{% image src="undefined" %}
+{% image src="/_images/tutos/9-content-deuxieme-volet-insert-image-4.webp", width="500" %}
 
 #### II) Les Partials :
 
@@ -111,15 +111,15 @@ Pour créer un _" Partial "_, rien de plus simple :
 
 - Tu peux en crée un nouveau **2** en passant par le Hub **1**.
 
-{% image src="undefined" %}
+{% image src="/_images/tutos/0-1-partial-1.webp" %}
 
 - Tu aura juste à lui donner un nom dans le champ _" Slug "_ **3**. Puis dans _" content "_ **4**, tu aura accès à tous les outils habituels pour faire ton _" Partiel "_.
 
-{% image src="undefined" %}
+{% image src="/_images/tutos/0-1-partial-2.webp", width="800" %}
 
 - Une fois fait, sauvegarde le. Et voila, plus qu'à insérais ton _" Partial "_ partout ou il te seras utile.
 
-{% image src="undefined" %}
+{% image src="/_images/tutos/10-content-deuxieme-volet-insert-partial.webp", width="800" %}
 
 #### III) Les Partials (HTML) :
 
@@ -137,15 +137,15 @@ Ce sont tous les petits logos et images que tu pourrais vouloir intégrer direct
 
 - Tu peut cliquer sur _" Add Icon Library "_ **1**
 
-{% image src="undefined" %}
+{% image src="/_images/tutos/11-content-deuxieme-volet-insert-icone-1.webp", width="800" %}
 
 - Tu peut ensuite choisir le site d'hébergement d’icônes de ton chois dans la liste
 
-{% image src="undefined" %}
+{% image src="/_images/tutos/12-content-deuxieme-volet-insert-icone-2.webp", width="500" %}
 
 - Trouve l’icône de ton chois sur le site choisi **2** et retrouve sont nom dans la liste du menue déroulant **3**
 
-{% image src="undefined" %}
+{% image src="/_images/tutos/13-content-deuxieme-volet-insert-icone-3.webp", width="800" %}
 
 - Tu as également _" Size "_ **4** pour ça taille en pixel(px)
 - La _" class "_ **(c'est quoi?) 5**
@@ -153,4 +153,4 @@ Ce sont tous les petits logos et images que tu pourrais vouloir intégrer direct
 - N’oublie pas de cliquer sur _" Insert "_ pour valider tes chois **7**
 - Si tu veux supprimer l’icône clique sur _" Remove "_ **8**
 
-{% image src="undefined" %}
+{% image src="/_images/tutos/13-5-content-deuxieme-volet-insert-icone-4.webp", width="800" %}
