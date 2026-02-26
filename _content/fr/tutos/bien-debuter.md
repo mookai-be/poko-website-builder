@@ -199,4 +199,36 @@ Aller dans les options pour une meilleur précision **B**
 
 La _" Grid Section "_ te permet de mettre plusieurs image et texte cote à cote sur ta page.
 
+> Tu trouveras toujours dans les _" Section "_, un _" Header "_ **1** et un _" Fouter "_ **5**, qui te permettrons respectivement de mettre du contenue avant et après tas mise en forme principale (Grid, Two Columns, ...)
+
+- Tu as ensuite les _" Grid "_ **2** dans lesquelles tu peux ajouter le contenue dans _" content "_ **7** que tu souhaite mettre en forme
+
+{% image src="/_images/tutos/22-content-deuxieme-volet-grids-2.webp", width="800" %}
+
+- Tu peux ajouter **4** ou supprimer **3** autant de _" Grid "_ que tu veux
+- Pour plus d'option, tu peux cliquer sur _" Add Layout and Options "_ **6**
+
+{% image src="/_images/tutos/21-content-deuxieme-volet-grids-1.webp", width="800" %}
+
+- Tu as 2 option, le _" Fluid Grid "_ **9** et le _" Switcher "_ **10**
+
+{% image src="/_images/tutos/23-content-deuxieme-volet-grids-3.webp", width="800" %}
+
+Dans le _" Fluid Grid "_ tu trouveras :
+
+- Le nombre de colonnes **11** que tu veux définir par ligne
+
+> Si tu met 4 " Grid " mais que défini que 2 colonnes, tu en aura 2 cote à cote et les 2 autres cote à cote en dessous des deux premier.
+
+- Le _" Gap "_ **12 (c'est quoi?)**
+- Le _" Class Name "_ **13(c'est quoi?)**
+
+{% image src="/_images/tutos/24-content-deuxieme-volet-grids-4.webp", width="800" %}
+
+Dans le _" Switcher "_ tu trouveras :
+
+Le _" switche Vrap "_ **14 (c'est quoi?)**
+
+Et de nouveau le _" Gap "_ **15** et le _" Class Name "_ **16**
+
 #### VIII) Two Columns Section :
