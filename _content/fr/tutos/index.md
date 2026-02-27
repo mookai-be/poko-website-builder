@@ -68,7 +68,7 @@ Tu pourras le créer en passant par [ce lien](https://github.com/settings/person
 
 #### _À savoir:_
 
-- Si tu as bifurqué le dépôt dans une organisation, change le "_Resource Ownerpour_" pour correspondre au nom de ton **organisation**.
+- Si tu as bifurqué le dépôt dans une organisation, change le "_Resource Ownerpour_" pour correspondre au nom de ton [organisation](https://poko-tutos.poko-website.pages.dev/fr/tutos/multi-site/).
 - N’hésite pas à définir une date d’expiration ou à restreindre le "_Repository access_"
 
 Le but étant d’avoir un TOKEN de secours pour pouvoir accéder à ton projet de n’importe où (garde bien une date d’expiration **illimitée** cette fois).
@@ -159,7 +159,7 @@ Configure celui-ci pour que tu puisses enfin voir ton site prendre forme.
 
 {% image src="/_images/tutos/23-cms-settings-langue-2.webp", width="300" %}
 
-Vérifie que tu as bien complété tous les champs contenant une astérisque _"**\***"_.
+Vérifie que tu as bien complété tous les champs contenant une astérisque _" **\* **"_.
 
 - Sauvegarde **et publie** les modifications avec _"Save **and Publish**"_ que tu trouveras en haut à gauche de ta page sous la petite flèche
 
