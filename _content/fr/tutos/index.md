@@ -159,7 +159,7 @@ Configure celui-ci pour que tu puisses enfin voir ton site prendre forme.
 
 {% image src="/_images/tutos/23-cms-settings-langue-2.webp", width="300" %}
 
-Vérifie que tu as bien complété tous les champs contenant une astérisque _" \*** **"_.
+Vérifie que tu as bien complété tous les champs contenant une astérisque _"\*"_.
 
 - Sauvegarde **et publie** les modifications avec _"Save **and Publish**"_ que tu trouveras en haut à gauche de ta page sous la petite flèche
 
