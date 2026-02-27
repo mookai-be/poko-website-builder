@@ -25,17 +25,14 @@ Avant toute chose, crée toi un compte [GitHub](https://github.com/). C’est **
 
 ## Étape 1
 
-A) Aller sur: [poko-website-builder](https://github.com/m4rrc0/poko-website-builder).
-
-B) Vérifie bien que tu es connecté sur ton compte.
-
-C) Cliquer sur _"Fork"._
+- Vas sur: [poko-website-builder](https://github.com/m4rrc0/poko-website-builder).
+- Vérifie bien que tu es connecté sur ton compte.
+- Cliquer sur _"Fork"._
 
 {% image src="/_images/tutos/fork.webp" %}
 
-D) Ajoute une **description** à ton nouveau projet et **renomme** le.
-
-E) Clique sur _"Create fork"_ pour valider.
+- Ajoute une **description** à ton nouveau projet et **renomme** le.
+- Clique sur _"Create fork"_ pour valider.
 
 Tu obtiens un nouvel onglet avec une copie du _"website-builder"_ qui sera sur ton compte GitHub.
 
