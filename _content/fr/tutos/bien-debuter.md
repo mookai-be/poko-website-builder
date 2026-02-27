@@ -65,21 +65,21 @@ Nous avons ensuite le _" content "_ ou tu trouveras :
 - La liste des insertions **8**
 - L’affichage en forma code **9**
 
-{% image src="/_images/tutos/2-pages-2.webp", width="800" %}
+{% image src="/_images/tutos/2-pages-2.webp", width="900" %}
 
 Les différents rendu de la liste des paragraphes sont visibles juste là :
 
-{% image src="/_images/tutos/4-content-premier-volet-paragraphe-2.webp", width="800" %}
+{% image src="/_images/tutos/4-content-premier-volet-paragraphe-2.webp", width="900" %}
 
 Pour les liens **7** tu peux :
 
 - Cliquer dessus puis rentrer le lien dans _" URL "_ **A** puis le _" text "_ **B**, qui apparaitra sur ton site
 
-{% image src="/_images/tutos/2-5-content-link-1.webp", width="800" %}
+{% image src="/_images/tutos/2-5-content-link-1.webp", width="900" %}
 
 - Ou alors, sélectionner directement le texte déjà écrit **C** et juste coller le lien dans _" URL "_ **D**
 
-{% image src="/_images/tutos/2-6-content-link-2.webp", width="800" %}
+{% image src="/_images/tutos/2-6-content-link-2.webp", width="900" %}
 
 ## 3 - Les insertions :
 
@@ -93,7 +93,7 @@ Pour insérer ton image tu as 2 options :
 
 - Sois tu fait un cliquer glissé dans la zone du petit nuage
 
-{% image src="/_images/tutos/6-content-deuxieme-volet-insert-image-1.webp", width="800" %}
+{% image src="/_images/tutos/6-content-deuxieme-volet-insert-image-1.webp", width="900" %}
 
 - Sois tu clique dessus pour avoir plus d'option
 
@@ -108,7 +108,7 @@ sur " Upload " **D**
 
 > Pour finaliser tu doit bien sélectionner ton image et cliquer sur " Insert ".
 
-{% image src="/_images/tutos/6-5-content-deuxieme-volet-insert-image-1-5.webp", width="800" %}
+{% image src="/_images/tutos/6-5-content-deuxieme-volet-insert-image-1-5.webp" %}
 
 - Tu peux ensuite cliquer sur _" Attributes "_ **2**, pour les options
 - Dans le champ _" Alt Text "_  **3**, tu peut mettre une description succincte de ton image. Cette description sert pour les audios descriptions.
@@ -116,7 +116,7 @@ sur " Upload " **D**
 - Dans _" Whit "_ **5**, tu peut fixer une dimension précise de ton image en pixel (px). Par défaut ton image féras la dimension maximale de la fenêtre d’affichage du navigateur.
 - Dans _" Advanced Attributes "_ **6**, tu trouveras des options plus poussées
 
-{% image src="/_images/tutos/8-content-deuxieme-volet-insert-image-3.webp", width="800" %}
+{% image src="/_images/tutos/8-content-deuxieme-volet-insert-image-3.webp", width="900" %}
 
 - _" class "_ **(c'est quoi?) 7**
 - _" Id " _**(c'est quoi?) 8**
@@ -130,7 +130,7 @@ sur " Upload " **D**
 - Le _" Wrapper "_ **11 (c'est quoi?)**
 - _" Other raw image attributes "_ **12 (c'est quoi?)**
 
-{% image src="/_images/tutos/9-content-deuxieme-volet-insert-image-4.webp", width="800" %}
+{% image src="/_images/tutos/9-content-deuxieme-volet-insert-image-4.webp", width="900" %}
 
 #### II) Les Partials :
 
@@ -144,11 +144,11 @@ Pour créer un _" Partial "_, rien de plus simple :
 
 - Tu aura juste à lui donner un nom dans le champ _" Slug "_ **3**. Puis dans _" content "_ **4**, tu aura accès à tous les outils habituels pour faire ton _" Partials "_.
 
-{% image src="/_images/tutos/0-1-partial-2.webp", width="800" %}
+{% image src="/_images/tutos/0-1-partial-2.webp", width="900" %}
 
 Une fois fait, sauvegarde le. Et voila, tu n'as plus qu'à insérais ton _" Partials "_ partout où il te seras utile.
 
-{% image src="/_images/tutos/10-content-deuxieme-volet-insert-partial.webp", width="800" %}
+{% image src="/_images/tutos/10-content-deuxieme-volet-insert-partial.webp", width="900" %}
 
 #### III) Les Partials (HTML) :
 
@@ -166,7 +166,7 @@ Ce sont tous les petits logos et images que tu pourrais vouloir intégrer direct
 
 - Tu peut cliquer sur _" Add Icon Library "_ **1**
 
-{% image src="/_images/tutos/11-content-deuxieme-volet-insert-icone-1.webp", width="800" %}
+{% image src="/_images/tutos/11-content-deuxieme-volet-insert-icone-1.webp", width="900" %}
 
 - Tu peut ensuite choisir le site d'hébergement d’icônes de ton choix dans la liste
 
@@ -174,7 +174,7 @@ Ce sont tous les petits logos et images que tu pourrais vouloir intégrer direct
 
 - Trouve l’icône de ton chois sur le site choisi **2** et retrouve sont nom dans la liste du menu déroulant **3**
 
-{% image src="/_images/tutos/13-content-deuxieme-volet-insert-icone-3.webp", width="800" %}
+{% image src="/_images/tutos/13-content-deuxieme-volet-insert-icone-3.webp", width="900" %}
 
 - Tu as également _" Size "_ **4** pour ça taille en pixel(px)
 - La _" class "_ **5 (c'est quoi?)**
@@ -182,7 +182,7 @@ Ce sont tous les petits logos et images que tu pourrais vouloir intégrer direct
 - N’oublie pas de cliquer sur _" Insert "_ **7** pour valider tes chois
 - Si tu veux supprimer l’icône clique sur _" Remove "_ **8**
 
-{% image src="/_images/tutos/13-5-content-deuxieme-volet-insert-icone-4.webp", width="800" %}
+{% image src="/_images/tutos/13-5-content-deuxieme-volet-insert-icone-4.webp", width="900" %}
 
 #### VI) Links :
 
@@ -191,7 +191,7 @@ Tu pourras insérer des liens dans tes texte via cette insertion.
 - Le champ _" Texte "_ **1** sert à écrire le texte qui seras visible sur ta page
 - Tu devras ensuite ouvrir le menu déroulant **2** pour choisir ton type de lien
 
-{% image src="/_images/tutos/14-content-deuxieme-volet-links-1.webp", width="800" %}
+{% image src="/_images/tutos/14-content-deuxieme-volet-links-1.webp", width="900" %}
 
 Tu as plusieurs chois pour tes liens :
 
@@ -199,18 +199,18 @@ Tu as plusieurs chois pour tes liens :
 
 - Tu peut faire un lien vers une autre page de ton site **3**
 
-{% image src="/_images/tutos/16-content-deuxieme-volet-links-3-pages.webp", width="800" %}
+{% image src="/_images/tutos/16-content-deuxieme-volet-links-3-pages.webp", width="900" %}
 
 - Tu peut mettre un lien externe **4**
 
-{% image src="/_images/tutos/17-content-deuxieme-volet-links-4-external-link.webp", width="800" %}
+{% image src="/_images/tutos/17-content-deuxieme-volet-links-4-external-link.webp", width="900" %}
 
 Pour un lien directement vers un mail **5** :
 
 - Tu peux mettre le mail que tu veux lier **A**
 - Tu peux ensuite aller dans les options pour une meilleur précision **B**
 
-{% image src="/_images/tutos/18-content-deuxieme-volet-links-5-e-mail.webp", width="800" %}
+{% image src="/_images/tutos/18-content-deuxieme-volet-links-5-e-mail.webp", width="900" %}
 
 - Tu peux mettre des mails en copie **C**
 - Tu peux également mettre des mails en copie cachée **D** (ils ne seront pas visibles dans les mails partagés par les autres personnes qui reçoivent ce mail)
@@ -218,11 +218,11 @@ Pour un lien directement vers un mail **5** :
 (pratique pour trier rapidement ses mail ;p)
 - Enfin tu peut préremplir le contenue du mail **F**
 
-{% image src="/_images/tutos/19-content-deuxieme-volet-links-6-e-mail-options.webp", width="800" %}
+{% image src="/_images/tutos/19-content-deuxieme-volet-links-6-e-mail-options.webp", width="900" %}
 
 - Et enfin tu peut mettre un lien vers un fichier de ton chois **(Work in Progress)**
 
-{% image src="/_images/tutos/20-content-deuxieme-volet-links-7-files.webp", width="800" %}
+{% image src="/_images/tutos/20-content-deuxieme-volet-links-7-files.webp", width="900" %}
 
 #### VII) Grid Section :
 
@@ -233,15 +233,15 @@ La _" Grid Section "_ te permet de mettre plusieurs image et texte côte à côt
 - Tu peux ajouter **4** ou supprimer **3** autant de _" Grid "_ que tu veux
 - Pour plus d'option, tu peux cliquer sur _" Add Layout and Options "_ **6**
 
-{% image src="/_images/tutos/21-content-deuxieme-volet-grids-1.webp", width="800" %}
+{% image src="/_images/tutos/21-content-deuxieme-volet-grids-1.webp", width="900" %}
 
 - Dans le _" Grid "_ **2**, tu peux ajouter le contenue que tu souhaite mettre en forme dans _" content "_ **7**
 
-{% image src="/_images/tutos/22-content-deuxieme-volet-grids-2.webp", width="800" %}
+{% image src="/_images/tutos/22-content-deuxieme-volet-grids-2.webp", width="900" %}
 
 - Tu as 2 option, le _" Fluid Grid "_ **9** et le _" Switcher "_ **10**
 
-{% image src="/_images/tutos/23-content-deuxieme-volet-grids-3.webp", width="800" %}
+{% image src="/_images/tutos/23-content-deuxieme-volet-grids-3.webp", width="900" %}
 
 ##### Dans le _" Fluid Grid "_ tu trouveras :
 
@@ -252,14 +252,14 @@ La _" Grid Section "_ te permet de mettre plusieurs image et texte côte à côt
 - Le _" Gap "_ **12 (c'est quoi?)**
 - Le _" Class Name "_ **13(c'est quoi?)**
 
-{% image src="/_images/tutos/24-content-deuxieme-volet-grids-4.webp", width="800" %}
+{% image src="/_images/tutos/24-content-deuxieme-volet-grids-4.webp", width="900" %}
 
 Dans le _" Switcher "_ tu trouveras :
 
 - Le _" switche Vrap "_ **14 (c'est quoi?)**
 - Et de nouveau le _" Gap "_ **15** et le _" Class Name "_ **16**
 
-{% image src="/_images/tutos/24-5-content-deuxieme-volet-grids-5-switcher.webp", width="800" %}
+{% image src="/_images/tutos/24-5-content-deuxieme-volet-grids-5-switcher.webp", width="900" %}
 
 #### VIII) Two Columns Section :
 
@@ -267,7 +267,7 @@ Contrairement au _" Grid Section "_ le _" Two Columns Section "_ permet d'avoir 
 
 - Tu trouveras dans la section _" Columns Item"_ **1**, la colone de gauche _" column left "_ **2** et la colonne de droite _" column Right "_ **3**
 
-{% image src="/_images/tutos/25-content-deuxieme-volet-grids-deux-collones-1.webp", width="800" %}
+{% image src="/_images/tutos/25-content-deuxieme-volet-grids-deux-collones-1.webp", width="900" %}
 
 - Tu peut ensuite cliquer sur _" Add Layout Option "_ **4**
 
@@ -292,4 +292,4 @@ Dans _" Asymmetrical "_ tu pourras :
 - Le _" Gap "_ **10 (c'est quoi?)**
 - Et enfin le _" Class Name "_ **11 (C'est quoi?)**
 
-{% image src="/_images/tutos/27-content-deuxieme-volet-grids-deux-collones-3.webp", width="800" %}
+{% image src="/_images/tutos/27-content-deuxieme-volet-grids-deux-collones-3.webp", width="900" %}
