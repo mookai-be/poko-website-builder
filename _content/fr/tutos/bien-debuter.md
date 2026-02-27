@@ -256,9 +256,8 @@ La _" Grid Section "_ te permet de mettre plusieurs image et texte côte à côt
 
 Dans le _" Switcher "_ tu trouveras :
 
-Le _" switche Vrap "_ **14 (c'est quoi?)**
-
-Et de nouveau le _" Gap "_ **15** et le _" Class Name "_ **16**
+- Le _" switche Vrap "_ **14 (c'est quoi?)**
+- Et de nouveau le _" Gap "_ **15** et le _" Class Name "_ **16**
 
 {% image src="/_images/tutos/24-5-content-deuxieme-volet-grids-5-switcher.webp", width="800" %}
 
@@ -284,7 +283,7 @@ Deux choix s’offre à toi :
 
 Dans _" Asymmetrical "_ tu pourras :
 
-- Quel sera la petit colonne dans _" Small Column Side "_ **7**
+- Définir la petit colonne dans _" Small Column Side "_ **7**
 - Choisir la taille de la petite colonne dans _" Small Column Whit "_ **8**
 - Choisir la taille minimal de la plus grande colonnes dans _" Big Column Min With "_ **9**
 
