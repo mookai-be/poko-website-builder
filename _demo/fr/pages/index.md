@@ -4,12 +4,50 @@ lang: fr
 createdAt: 2025-07-19T20:12:00.000Z
 uuid: 2530cfdfddec
 localizationKey: fa748ce625bb
-status: published
 name: Accueil
-eleventyNavigation: null
+eleventyNavigation:
+  title: ''
+  parent: ''
+  order: 1
 metadata:
   title: ''
   description: ''
   image: ''
+tags:
+  - featured
+status: published
+pageNav: navtest
+vars: null
 ---
+
 # poko demo FR
+
+{% icon "tablerOutline:device-ipad-horizontal-up" %}
+
+{% link url="mon-article", text="article", linkType="internal", collection="articles" %}
+
+{% link url="test@mail.com", text="bcjkqsncsqlkn", linkType="email", subject="Hello", body="Hello\n\nWorld", class="button" %}
+
+{% image src="/_images/POKO-logo-RVB-01.jpg", alt="poko logo square" %}
+
+{% sectionGrid %}
+{% sectionHeader %}
+## My section Header
+
+And a paragraph
+
+{% image src="/_images/POKO-logo-RVB-01.jpg" %}
+{% endsectionHeader %}
+{% grid type="switcher" %}
+{% gridItem %}
+#### Hello inside gridItem 1
+{% endgridItem %}
+{% gridItem %}
+#### Hello inside gridItem 2
+{% endgridItem %}
+{% gridItem %}
+#### Hello inside gridItem 3
+{% endgridItem %}
+{% endgrid %}
+
+{% endsectionGrid %}

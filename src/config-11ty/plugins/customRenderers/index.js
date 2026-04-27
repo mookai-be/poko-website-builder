@@ -24,12 +24,17 @@ export function transformLink(link) {
             const templateTranslation = p?.data?.templateTranslations?.find(
               (t) => {
                 return t.lang === lang;
-              }
+              },
             );
+            // TODO: Need to populate this with more data (e.g. sort)
             return transformLink.call(self, {
               type: link.type,
-              ogLink: link,
-              page: templateTranslation,
+              linkData: link,
+              ...templateTranslation,
+              // page: {
+              //   ...templateTranslation.page,
+              //   ...templateTranslation,
+              // },
             });
           });
       })
@@ -52,11 +57,11 @@ export function transformLink(link) {
         slug,
         lang,
         "all", // all the 'templateTranslations' fields of that page
-        collectionName
+        collectionName,
       );
       return transformLink.call(self, {
         type: link.type,
-        ogLink: link,
+        linkData: link,
         page: pageMatch,
       });
     });
@@ -108,12 +113,26 @@ export default async function (eleventyConfig, pluginOptions) {
   eleventyConfig.versionCheck(">=3.0.0-alpha.1");
 
   const renderContentFilterFn = eleventyConfig.universal.filters.renderContent;
-  const partialShortcodeFn = eleventyConfig.nunjucks.asyncShortcodes.partial;
+  const partialShortcodeFn = eleventyConfig.universal.shortcodes.partial;
 
   // const renderTemplateTagFn = eleventyConfig.nunjucks.tags.renderTemplate;
   // const renderFileShortcodeFn =
-  //   eleventyConfig.nunjucks.asyncShortcodes.renderFile;
+  //   eleventyConfig.universal.shortcodes.renderFile;
 
+  // RENDER MARKDOWN
+  async function renderMd(mdContent, data) {
+    const safeFilter = this.env.filters.safe;
+
+    let html = mdContent;
+
+    if (mdContent) {
+      html = await renderContentFilterFn.call(this, mdContent, "njk,md", data);
+    }
+
+    return safeFilter(html);
+  }
+
+  // RENDER LINKS
   async function renderLinks({ linksData, itemLayout, wrapperLayout }) {
     // const safeFilter = this.env.filters.safe;
 
@@ -152,11 +171,11 @@ export default async function (eleventyConfig, pluginOptions) {
             this,
             itemMarkdownLayout,
             "njk,md",
-            { link: l }
+            { link: l },
           );
 
           return linkStr;
-        })
+        }),
       );
 
       htmlLinks = strings.join("");
@@ -171,7 +190,7 @@ export default async function (eleventyConfig, pluginOptions) {
             });
 
           return linkStr;
-        })
+        }),
       );
       htmlLinks = strings.join("");
     }
@@ -181,7 +200,7 @@ export default async function (eleventyConfig, pluginOptions) {
         this,
         wrapperMarkdownLayout,
         "njk,md",
-        { links: uniqueLinks, htmlLinks }
+        { links: uniqueLinks, htmlLinks },
       );
 
       return rendered;
@@ -202,6 +221,8 @@ export default async function (eleventyConfig, pluginOptions) {
     // return safeFilter(strings.join(""));
     return htmlLinks;
   }
+
+  eleventyConfig.addFilter("md", renderMd);
 
   await eleventyConfig.addAsyncShortcode("links", renderLinks);
 }

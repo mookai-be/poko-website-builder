@@ -104,61 +104,40 @@ export default [
         {
           [symbols.selector]: () => `:where(.breakout-clickable)`,
           position: "relative",
+          isolation: "isolate",
           "box-shadow": "var(--shadow-breakout-clickable)",
         },
         {
           [symbols.selector]: () =>
-            `:where(.breakout-clickable) .clickable::after`,
+            `:where(.breakout-clickable .clickable)::after, :where(.breakout-clickable:not(:has(.clickable)) a):only-of-type::after`,
           content: "''",
           display: "block",
           position: "absolute",
-          top: "0",
-          left: "0",
-          width: "100%",
-          height: "100%",
+          inset: "0",
         },
         {
           [symbols.selector]: () =>
-            `:where(.breakout-clickable) a:only-of-type::after`,
-          content: "''",
-          display: "block",
-          position: "absolute",
-          top: "0",
-          left: "0",
-          width: "100%",
-          height: "100%",
-        },
-        {
-          [symbols.selector]: () => `:where(.breakout-clickable):hover`,
-          "box-shadow": "var(--shadow-breakout-clickable-hover)",
-          transform: "var(--transform-breakout-clickable-hover)",
-        },
-        {
-          [symbols.selector]: () => `:where(.breakout-clickable):focus-within`,
+            `:where(.breakout-clickable):hover, :where(.breakout-clickable):focus-within`,
           "box-shadow": "var(--shadow-breakout-clickable-hover)",
           transform: "var(--transform-breakout-clickable-hover)",
         },
         {
           [symbols.selector]: () =>
-            `:where(.breakout-clickable) .clickable:focus`,
+            `:where(.breakout-clickable) .clickable:focus, :where(.breakout-clickable) a:only-of-type:focus`,
           outline: "none",
         },
         {
           [symbols.selector]: () =>
-            `:where(.breakout-clickable) a:only-of-type:focus`,
-          outline: "none",
-        },
-        {
-          [symbols.selector]: () =>
-            `:where(.breakout-clickable) .clickable:focus::after`,
+            `:where(.breakout-clickable) .clickable:focus::after, :where(.breakout-clickable) a:only-of-type:focus::after`,
           outline: "1px solid var(--color-outline--focus, currentColor)",
           "outline-offset": "calc(var(--focus-offset, 1rem) / 2 * -1)",
         },
+        // Secondary actions
         {
           [symbols.selector]: () =>
-            `:where(.breakout-clickable) a:only-of-type:focus::after`,
-          outline: "1px solid var(--color-outline--focus, currentColor)",
-          "outline-offset": "calc(var(--focus-offset, 1rem) / 2 * -1)",
+            `:where(.clickable-secondary, a, button, .button, input, textarea, label, select, details, audio, video, object, [contenteditable], [tabindex]):not(.clickable)`,
+          position: "relative",
+          "z-index": "1",
         },
       ];
     },
@@ -224,6 +203,20 @@ export default [
           "z-index": "-1",
         },
       ];
+    },
+  ],
+  // Bleed background with the least interference
+  [
+    /^bleed-bg$/,
+    (match, { symbols }) => {
+      return {
+        [symbols.selector]: () => `:where(.bleed-bg)`,
+        "border-image": `conic-gradient(var(--color-bg) 0 0) fill 0/0/
+          var(--bleed-top, var(--bleed-block, 0))
+          var(--bleed-right, var(--bleed-inline, 100vw))
+          var(--bleed-bottom, var(--bleed-block, 0))
+          var(--bleed-left, var(--bleed-inline, 100vw))`,
+      };
     },
   ],
 

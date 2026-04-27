@@ -1,4 +1,5 @@
-import { calculateTypeScale } from "utopia-core";
+import { calculateTypeScale, calculateClamps } from "utopia-core";
+import { flattenObject } from "./objects.js";
 
 // prettier-ignore
 export const nativeFontStacks = {
@@ -45,7 +46,7 @@ function compileStyleContext(styleContext, contextMap) {
 
 export function compileStyleContexts(styleContexts, contextMap) {
   return (styleContexts || []).map((styleContext) =>
-    compileStyleContext(styleContext, contextMap)
+    compileStyleContext(styleContext, contextMap),
   );
 }
 
@@ -94,10 +95,10 @@ export function transformFontStacksContext(baseFontStacks, customFontsImport) {
 
 export function transformFontStacksContexts(
   fontStacksContexts,
-  customFontsImport
+  customFontsImport,
 ) {
   return (fontStacksContexts || []).map((fontStacksContext) =>
-    transformFontStacksContext(fontStacksContext, customFontsImport)
+    transformFontStacksContext(fontStacksContext, customFontsImport),
   );
 }
 
@@ -124,11 +125,10 @@ export function transformBrandColors(colors) {
 }
 
 export function transformPalette(palette) {
-  const { name, advanced, ...baseVars } = palette || {};
-  let unifiedPalette = {
-    ...baseVars,
-    ...advanced,
-  };
+  // Color attributions data is sometimes nested for CMS clarity but can be flattened
+  const { name, ...baseVarsAndNested } = palette || {};
+  let unifiedPalette = flattenObject(baseVarsAndNested);
+
   // Remove keys with falsy values
   Object.keys(unifiedPalette).forEach((key) => {
     if (!unifiedPalette[key]) {
@@ -154,7 +154,7 @@ export function transformTypeScale(typeScaleDef) {
     maxFontSize: typeScaleDef?.maxFontSize || 20,
     minTypeScale: typeScaleDef?.minTypeScale || 1.2,
     maxTypeScale: typeScaleDef?.maxTypeScale || 1.25,
-    positiveSteps: typeScaleDef?.advanced?.positiveSteps || 6,
+    positiveSteps: typeScaleDef?.advanced?.positiveSteps || 9,
     negativeSteps: typeScaleDef?.advanced?.negativeSteps || 2,
     relativeTo: typeScaleDef?.advanced?.relativeTo || "viewport-width",
     labelStyle: typeScaleDef?.advanced?.labelStyle || "utopia",
@@ -162,7 +162,31 @@ export function transformTypeScale(typeScaleDef) {
   };
 
   const typeScale = calculateTypeScale(vars);
-  const stylesString = typeScale
+
+  // Custom Clamps based on original steps
+  const pairs = typeScaleDef?.customSteps?.map((step) => {
+    const minFontSize = typeScale.find(
+      (item) => item.label === step.startStep,
+    )?.minFontSize;
+    const maxFontSize = typeScale.find(
+      (item) => item.label === step.endStep,
+    )?.maxFontSize;
+
+    return [minFontSize, maxFontSize];
+  });
+  const clamps = pairs?.length
+    ? calculateClamps({
+        minWidth: vars.minWidth,
+        maxWidth: vars.maxWidth,
+        pairs,
+      }).map((clamp, i) => ({
+        ...clamp,
+        label: `${typeScaleDef?.customSteps[i].startStep}-${typeScaleDef?.customSteps[i].endStep}`,
+      }))
+    : [];
+
+  // Turn clamp steps into CSS variables
+  const stylesString = [...typeScale, ...clamps]
     .map(({ label, clamp }) => `--${vars.prefix}-${label}:${clamp};`)
     .join("");
 

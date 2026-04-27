@@ -3,16 +3,31 @@
 <meta name="generator" content="{{ eleventy.generator }}" />
 <meta name="generator" content="poko" />
 
+{# NoIndex check #}
+{% if status == "noindex" %}
+
+<meta name="robots" content="noindex" />
+{% endif %}
+
 {# Metadata #}
-{% include "_metadata-default.md" ignore missing %}
-{% include "_metadata.md" ignore missing %}
+{% partial "_metadata-default.md" %}
+{% partial "_metadata.md" %}
 
 {# Alternate langs #}
 {% for link in templateTranslations %}
 
 <link rel="alternate" hreflang="{{link.lang}}" href="{{baseUrl}}{{link.url}}" />
-{% if link.isDefault %}
+
+{% if link.isDefaultLang %}
+
 <link rel="alternate" hreflang="x-default" href="{{baseUrl}}{{link.url}}" />
+{% endif %}
+
+{% if link.isCurrentLang %}
+
+<meta property="og:locale" content="{{link.lang}}" />
+{% else %}
+<meta property="og:locale:alternate" content="{{link.lang}}" />
 {% endif %}
 
 {% endfor %}
@@ -25,14 +40,46 @@
 {{ globalSettings.htmlHead | safe }}
 {# {% getBundle "html", "head" %} #}
 
-{# Internal CSS: E-mail obfuscation + CSS head injection (from globalSettings) + bundle #}
+{{ fontPreloadTags | safe }}
 
-{{htmlExternalCssFiles | safe}}
+{# Order of CSS imports for cascade: CTX, Uno, Proj. Stylesheets, Proj. external bundle, Proj. CssHead, Proj. CSS bundles #}
+{# UnoCSS styles contain brand styles as preload #}
 
-<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'external' %}">
+{% if inlineAllStyles %}
 
 <style>
+/* CTX CSS Styles */
+{{CtxCssInline | safe}}
+/* UnoCSS Styles */
+.noop-load-uno{}
+/* Project Stylesheets */
+{{externalStylesInline | safe}}
+</style>
+
+{% else %}
+<!-- CTX CSS Styles -->
+{{htmlExternalCtxCssTag | safe}}
+<!-- UnoCSS Styles -->
+<style>
+.noop-load-uno{}
+</style>
+<!-- Project Stylesheets -->
+{{htmlExternalCssTags | safe}}
+
+{% endif %}
+
+{# NOTE: Avoid generating this tag if no content in the bundle #}
+{% set externalBundleContent %}{% getBundle 'css', 'external' %}{% endset %}
+{% if externalBundleContent == '/*__EleventyBundle:get:css:external:EleventyBundle__*/' %}
+<!-- No forced external CSS bundle -->
+{% else %}
+<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'external' %}" fetchpriority="low" data-forced-external-css>
+{% endif %}
+
+<style>
+/* globalSettings.cssHead */
 {{ globalSettings.cssHead | safe }}
+/* CSS template bundles */
 {% getBundle "css" %}
 </style>
 

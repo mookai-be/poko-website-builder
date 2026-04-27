@@ -1,4 +1,4 @@
-import { USER_DIR, languages } from "../../env.config.js";
+import { USER_DIR, languages, SITE_NAME } from "../../env.config.js";
 // Was usefull when parents were declared in references
 // import temp from './temp.js';
 import mapInputPathToUrl from "../utils/mapInputPathToUrl.js";
@@ -11,7 +11,7 @@ export default {
     // Display collection names only
     const filePathStem = data.page.filePathStem;
     const language = languages.find((lang) =>
-      lang.defaultPrefixRegex.test(filePathStem)
+      lang.defaultPrefixRegex.test(filePathStem),
     );
 
     return language;
@@ -20,7 +20,7 @@ export default {
     // TODO: We should be able to rely on data.languages computed above but it seems unreliable...
     const filePathStem = data.page.filePathStem;
     const language = languages.find((lang) =>
-      lang.defaultPrefixRegex.test(filePathStem)
+      lang.defaultPrefixRegex.test(filePathStem),
     );
 
     return language?.code || data.lang || defaultLang;
@@ -30,39 +30,66 @@ export default {
   },
   templateTranslations: (data) => {
     const { translationKey, localizationKey } = data;
-    const allTemplates = data.collections.all;
-    const templates = allTemplates
-      .filter((template) => {
+    const allCollectionItems = data.collections.all;
+    const collectionItems = allCollectionItems
+      .filter((collectionItem) => {
         return (
-          (template.data.translationKey &&
-            template.data.translationKey === translationKey) ||
-          (template.data.localizationKey &&
-            template.data.localizationKey === localizationKey)
+          (collectionItem.data.translationKey &&
+            collectionItem.data.translationKey === translationKey) ||
+          (collectionItem.data.localizationKey &&
+            collectionItem.data.localizationKey === localizationKey)
         );
       })
-      .map((template) => {
+      .map((collectionItem) => {
+        const {
+          brand,
+          brandStyles,
+          brandConfig,
+          fontServices,
+          eleventyComputed,
+          externalStylesInline,
+          eleventy,
+          pkg,
+          collections,
+          ...data
+        } = { ...collectionItem.data };
+        const page = { ...collectionItem.page };
+
+        // delete data.brandStyles;
+        // delete data.eleventyComputed;
+        // delete data.externalStylesInline;
+        // delete data.eleventy;
+        // delete data.pkg;
+        // delete data.collections;
+
         return {
-          fileSlug: template.page.fileSlug,
-          filePathStem: template.page.filePathStem,
-          translationKey: template.data.translationKey,
-          localizationKey: template.data.localizationKey,
-          lang: template.data.lang,
-          url: template.page.url,
-          name: template.data.name,
-          title: template.data.title,
-          pagePreview: template.data.pagePreview,
-          isCurrent: template.data.lang === data.lang,
-          isDefault: template.data.lang === defaultLang,
+          data,
+          page,
+
+          // isCurrent: collectionItem.data.lang === data.lang,
+          // isDefault: collectionItem.data.lang === defaultLang,
+          isCurrentLang: collectionItem.data.lang === data.lang,
+          isDefaultLang: collectionItem.data.lang === defaultLang,
+
+          fileSlug: collectionItem.page.fileSlug,
+          filePathStem: collectionItem.page.filePathStem,
+          translationKey: collectionItem.data.translationKey,
+          localizationKey: collectionItem.data.localizationKey,
+          lang: collectionItem.data.lang,
+          url: collectionItem.page.url,
+          name: collectionItem.data.name,
+          title: collectionItem.data.title,
+          pagePreview: collectionItem.data.pagePreview,
         };
       });
 
-    const orderedTemplates = languages
+    const orderedCollectionItems = languages
       .map((lang) => {
-        return templates.find((template) => template.lang === lang.code);
+        return collectionItems.find((colItem) => colItem.lang === lang.code);
       })
       .filter(Boolean);
 
-    return orderedTemplates;
+    return orderedCollectionItems;
   },
   h1Content: (data) => {
     const { rawInput } = data.page;
@@ -120,7 +147,8 @@ export default {
   // eleventyNavigation: (data) => data.eleventyNavigation?.add ? data.eleventyNavigation : undefined,
   metadata: (data) => {
     const gMeta = data.globalSettings?.metadata || {};
-    const siteName = data.globalSettings?.siteName || gMeta.siteName || "";
+    // const siteName = data.globalSettings?.siteName || gMeta.siteName || "";
+    const siteName = SITE_NAME;
     const titleCascade = data.metadata?.title || data.title || null;
     return {
       title: [titleCascade, siteName].filter(Boolean).join(" | "),
@@ -129,10 +157,10 @@ export default {
     };
   },
   pagePreview: (data) => {
-    const title = data.pagePreview?.title || data.title || null;
+    const title = data.preview?.title || data.title || null;
     const description =
-      data.pagePreview?.description || data.metadata?.description || null;
-    const image = data.pagePreview?.image || data.metadata?.image || null;
+      data.preview?.description || data.metadata?.description || null;
+    const image = data.preview?.image || data.metadata?.image || null;
     return {
       title,
       description,
@@ -142,4 +170,21 @@ export default {
   // Just to make them easier to find in the data object
   date: (data) => data.date || data.page?.date,
   url: (data) => data.url || data.page?.url,
+
+  pageFooter: (data) => {    
+    // Prioritize the footer selected on the collection, then the default in settings
+    const raw = data.pageFooter || data.globalSettings?.pageFooter || "";
+    // const key =
+    //   typeof raw === "string"
+    //     ? raw
+    //         .trim()
+    //         .replace(/\.(md|njk|11ty\.js|liquid|html)$/i, "")
+    //         .split("/")
+    //         .filter(Boolean)
+    //         .pop()
+    //     : "";
+
+    // If no footer is defined, keep it empty so templates can fallback cleanly.
+    return `${data.lang}/footers/${data.pageFooter}`;
+  },
 };
