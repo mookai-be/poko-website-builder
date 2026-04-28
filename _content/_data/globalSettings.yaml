@@ -1,13 +1,19 @@
 siteName: mookaï asbl
 productionUrl: https://www.mookai.be
 logo: /_images/mookai-logo-RVB-SANS-BORDS-38.webp
+htmlHead: ''
+cssHead: ''
 languages:
-  - code: FR
+  - code: fr
+    status: published
+    keepUrlPrefix: false
     name: Français
     customUrlPrefix:
       prefix: ''
-    status: published
     isCmsDefault: false
     isWebsiteDefault: false
 collections:
-  - articles
+  - services
+  - projects
+  - people
+  - organizations
