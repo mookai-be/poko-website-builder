@@ -107,6 +107,12 @@ export default [
           isolation: "isolate",
           "box-shadow": "var(--shadow-breakout-clickable)",
         },
+        // Primary action
+        {
+          [symbols.selector]: () =>
+            `:where(.breakout-clickable .clickable), :where(.breakout-clickable:not(:has(.clickable)) a):only-of-type`,
+          position: "initial",
+        },
         {
           [symbols.selector]: () =>
             `:where(.breakout-clickable .clickable)::after, :where(.breakout-clickable:not(:has(.clickable)) a):only-of-type::after`,
@@ -135,7 +141,7 @@ export default [
         // Secondary actions
         {
           [symbols.selector]: () =>
-            `:where(.clickable-secondary, a, button, .button, input, textarea, label, select, details, audio, video, object, [contenteditable], [tabindex]):not(.clickable)`,
+            `:where(:where(.clickable-secondary, a, button, .button, input, textarea, label, select, details, audio, video, object, [contenteditable], [tabindex]):not(.clickable))`,
           position: "relative",
           "z-index": "1",
         },

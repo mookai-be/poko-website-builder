@@ -228,8 +228,7 @@ export const pageFooterRelationField = {
   label: "Footer",
   widget: "relation",
   collection: "footers",
-  hint:
-    "Select a footer for this entry. Leave empty to use default footer set in global settings.",
+  hint: "Select a footer for this entry. Leave empty to use default footer set in global settings.",
   required: false,
   i18n: "duplicate",
   search_fields: ["slug"],
@@ -1831,7 +1830,11 @@ export const navCollection = (allSelectedCollections) => ({
                         },
                       ],
                     },
-                    ...createNavLevels(allSelectedCollections, 1, NAV_DEPTH_MAX), // Adjust the second argument to set max levels
+                    ...createNavLevels(
+                      allSelectedCollections,
+                      1,
+                      NAV_DEPTH_MAX,
+                    ), // Adjust the second argument to set max levels
                   ],
                 },
                 ...createNavLevels(allSelectedCollections, 1, NAV_DEPTH_MAX), // Adjust the second argument to set max levels
@@ -1942,8 +1945,7 @@ const globalSettingsSingleton = {
       label: "Default Footer",
       widget: "relation",
       collection: "footers",
-      hint:
-        "Footer used for all pages and collections that don't have a specific footer set.",
+      hint: "Footer used for all pages and collections that don't have a specific footer set.",
       required: false,
       i18n: true,
       // search_fields: ["slug"],
@@ -2586,7 +2588,7 @@ class CmsConfig {
             transformations: {
               raster_image: {
                 format: "webp",
-                quality: 98,
+                quality: 92,
                 width: 5000,
                 height: 5000,
               },

@@ -82,6 +82,7 @@
     "watch": "bun --bun run eleventy --watch",
     "serve": "bun --bun eleventy-dev-server --dir=dist",
     "clean": "rm -rf dist",
-    "clean:modules": "rm -rf dist node_modules"
+    "clean:modules": "rm -rf dist node_modules",
+    "clean:cache": "rm -rf dist .cache"
   }
 }

@@ -125,11 +125,11 @@ if (DEBUG) {
   console.log("---------ENV-----------\n", env, "\n---------/ENV---------");
 }
 
-// TODOS:
-// - Look at persisting images in cache between builds: https://github.com/11ty/eleventy-img/issues/285
-
 function shouldNotRender(data) {
-  if (data.page.filePathStem.startsWith("/_")) {
+  if (
+    data.page.filePathStem.startsWith("/_") ||
+    data.page.filePathStem.startsWith("/.")
+  ) {
     return true;
   }
   for (const lang of unrenderedLanguages) {
@@ -265,10 +265,14 @@ export default async function (eleventyConfig) {
   // eleventyConfig.setLibrary("njk", nunjucksEnvironment);
 
   // --------------------- Eleventy Events
+  // INFO: persisting images in cache between builds: https://github.com/11ty/eleventy-img/issues/285
   eleventyConfig.on("eleventy.after", () => {
-    fs.cpSync(IMAGE_CACHE_DIR, IMAGES_OUTPUT_DIR, {
-      recursive: true,
-    });
+    // Make sure directories exist
+    if (fs.existsSync(IMAGE_CACHE_DIR)) {
+      fs.cpSync(IMAGE_CACHE_DIR, IMAGES_OUTPUT_DIR, {
+        recursive: true,
+      });
+    }
   });
   // eleventyConfig.on(
   //   "eleventy.before",
