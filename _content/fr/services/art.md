@@ -9,23 +9,30 @@ eleventyNavigation: null
 metadata: null
 preview: null
 tags: []
-status: ''
-pageLayout: ''
-pageFooter: ''
-pageNav: ''
-generatePage: ''
+status: ""
+pageLayout: ""
+pageFooter: ""
+pageNav: ""
+generatePage: ""
 vars: null
 dataList: []
 ---
 
-# Oeuvres d'art
+# De l'art pour sublimer tes espaces pro
 
-(Client cible potentiel: cabinets médicaux, horeca, bureaux, ...)
+Tes bureaux, ton cabinet ou ton restaurant sont aussi une vitrine de ton identité. Une œuvre d'art choisie avec soin peut transformer un lieu, inspirer tes équipes et marquer l'esprit de tes clients.
 
-Peinture, aquarelle, crayon, digital, photo, ...
+On te propose une sélection d'œuvres originales (peinture, aquarelle, photo, art digital...) pour habiller tes murs et créer une atmosphère unique.
 
-Tu cherches à embellir ton espace pro? Tu peux choisir parmi nos créations ou prendre un moment avec nous pour discuter de ce que tu voudrais.
+## Pour qui?
 
-Montrer des exemples
+- Cabinets médicaux ou paramédicaux
+- Espaces de coworking, bureaux d'entreprise
+- Hôtels, restaurants, cafés
+- Et tout espace professionnel qui a une âme.
 
-Afficher des oeuvres personnelles, c'est booster ton énergie et ta créativité et renforcer ton image auprès de tes clients ou patients...
+Tu peux choisir parmi les créations de Tess ou nous commander une œuvre sur mesure, parfaitement adaptée à ton espace et à tes valeurs.
+
+## Quelques exemples
+
+[Galerie à venir]

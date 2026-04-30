@@ -1,0 +1,23 @@
+---
+translationKey: una-scelta-site-web
+lang: fr
+name: Una Scelta - Site web
+tags:
+  - web
+  - site-custom
+images: []
+---
+
+# Le site web de Una Scelta
+
+Un site web sur mesure, multilingue et riche en fonctionnalités personnalisées, réalisé avec [poko](https://www.poko.eco/).
+
+## Quelques points forts
+
+- Site multilingue
+- Design sur mesure
+- [Calendrier "carousel" custom pour la prise de rendez-vous](https://www.unascelta.it/en/booking/)
+- Édition de données personnalisée depuis le CMS
+- [Excellent score au Website Carbon Calculator](https://www.websitecarbon.com/website/unascelta-it-it/)
+
+[Voir le site en ligne](https://www.unascelta.it/en/)

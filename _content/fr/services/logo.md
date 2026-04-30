@@ -10,19 +10,69 @@ metadata: null
 preview: null
 tags:
   - print
-status: ''
-pageLayout: ''
-pageFooter: ''
-pageNav: ''
-generatePage: ''
+status: ""
+pageLayout: ""
+pageFooter: ""
+pageNav: ""
+generatePage: ""
 vars: null
 dataList: []
 ---
 
-# Ton logo
+# Ton logo: bien plus qu'une image
 
-Logo / identité graphique + charte ...
+Un logo, ce n'est pas juste un joli dessin. C'est le visage de ton projet. C'est la première chose que tes clients voient, et la dernière dont ils se souviennent. Chez mookaï, on prend ça très au sérieux, mais toujours avec le sourire.
 
-4 packs: voir https://www.tess-h.be/packs-logo/
+Notre spécificité? On combine deux approches:
 
-+ penser à ce qu'on peut dire qui fait notre spécificité !
+- **L'intuition créative de Tess:** pour un logo qui a une âme, qui raconte ton histoire et qui te ressemble.
+- **La vision stratégique de Marc:** pour s'assurer que ton logo soit pertinent, déclinable et qu'il serve tes objectifs sur le long terme.
+
+---
+
+## Nos formules pour ton identité visuelle
+
+On a concocté plusieurs packs pour répondre à chaque besoin et à chaque budget.
+
+### Pack 1: Caractère(s) - 750€
+
+Idéal pour démarrer avec une identité forte et épurée. On se concentre sur le pouvoir des lettres pour créer un logo purement typographique.
+
+- **Ce que tu reçois:** 2 à 3 propositions de logos, les fichiers de ton logo final (pour le web et l'impression), un favicon, une signature mail, le design de ta carte de visite et une mini charte graphique.
+
+### Pack 2: Lifting - 1000€
+
+Ton logo actuel a pris un petit coup de vieux? On lui offre une seconde jeunesse! On modernise ton logo existant pour qu'il soit à nouveau au top.
+
+- **Ce que tu reçois:** 2 à 3 propositions de lifting, tous les éléments du pack 1, plus une cover pour tes réseaux sociaux.
+
+### Pack 3: Forte IMP'ression - 1800€
+
+Le best-seller. On part d'une page blanche pour créer un logo complet, avec un symbole et/ou une typographie unique qui incarne ton projet.
+
+- **Ce que tu reçois:** 3 propositions de logos originaux, tous les éléments du pack Lifting.
+
+### Pack 4: IMP'ression supérieure - 3100€
+
+L'offre la plus complète pour une communication en béton. En plus d'un logo sur mesure, on développe une identité visuelle riche et déclinable sur tous tes supports.
+
+- **Ce que tu reçois:** 3 propositions de logos, tous les fichiers (y compris les fichiers sources vectoriels .eps), tous les éléments du pack Forte IMP'ression, une charte graphique complète et un support de communication au choix (flyer, dépliant, template de présentation...).
+
+---
+
+### C'est quoi, une charte graphique?
+
+C'est le mode d'emploi de ton logo. Elle garantit que ton identité sera toujours utilisée correctement.
+
+- **La mini charte:** l'essentiel. Les couleurs, les typographies, les tailles minimales et les zones de protection de ton logo.
+- **La charte complète:** le guide ultime. Elle ajoute les interdits, des exemples d'utilisation, des mises en page types, etc.
+
+### Besoin d'un logo pour hier et avec un petit budget?
+
+Jette un œil à notre offre de [logo "flash"](/services/logo-flash/). C'est rapide, efficace et économique.
+
+---
+
+_Un acompte de 30% est demandé pour démarrer la collaboration. Pour les packs 1, 2 et 3, les fichiers sources vectoriels (.ai, .pdf) sont disponibles en option pour 500€._
+
+[Prêt(e) à créer ton identité? Contacte-nous!](/contact/)

@@ -1,22 +1,22 @@
 ---
 translationKey: autre-ecole-site-web
 lang: fr
-createdAt: 2026-04-28T12:12:00.000Z
-uuid: 9dc2378cb278
-localizationKey: 9db33e78c23c
-name: Autre École - Site web
-eleventyNavigation: null
-metadata: null
-preview: null
+name: L'Autre École - Site web
 tags:
   - web
-status: ''
-pageLayout: ''
-pageFooter: ''
-pageNav: ''
-generatePage: ''
-vars: null
-dataList: []
+  - site-custom
+images: []
 ---
 
-# Le site web de l'Autre École
+# Le site web de L'Autre École
+
+Un site sur mesure réalisé avec [poko](https://www.poko.eco/), notre website builder éco-conçu.
+
+## Quelques points forts
+
+- Design sur mesure, parfaitement aligné avec l'identité de l'école
+- Collection "People" personnalisée et triée dynamiquement
+- [Excellent score au Website Carbon Calculator](https://www.websitecarbon.com/website/autre-ecole-org/)
+- Performance, accessibilité et éco-conception au rendez-vous
+
+[Voir le site en ligne](https://www.autre-ecole.org/)

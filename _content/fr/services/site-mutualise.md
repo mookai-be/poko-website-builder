@@ -10,23 +10,43 @@ metadata: null
 preview: null
 tags:
   - web
-status: ''
-pageLayout: ''
-pageFooter: ''
-pageNav: ''
-generatePage: ''
+status: ""
+pageLayout: ""
+pageFooter: ""
+pageNav: ""
+generatePage: ""
 vars: null
 dataList: []
 ---
 
-# Sites web mutualisés
+# Des sites pour tout ton réseau, la simplicité en plus
 
-Offres sur mesure
+Tu gères une fédération, une franchise, un réseau d'indépendants ou de points de vente? Tu veux offrir à tes membres un site web professionnel et cohérent avec ton image de marque, sans que ça devienne un casse-tête à gérer?
 
-Tu représentes un groupe, un réseau, un ... ?
-Tu souhaites fournir des sites web indépendants à tes clients, tes membres, tes bénéficiaires?
+On a la solution: l'infrastructure mutualisée.
 
-On peut mettre en place une infrastructure mutualisée. On peut se connecter à un service existant (qui fait déjà partie de ton infra) pour puiser les données à afficher sur les sites indépendants et on peut aussi fournir aux bénéficiaires une interface privée pour éditer certains contenus de leur site.
+**Prix:** sur mesure, en fonction de ton projet.
 
-ICI, METTRE EN AVANT TOUS LES BÉNÉFICES POTENTIELS... + EXTRAPOLER LES POSSIBILITÉS
-Toutes les mêmes valeurs que décrites sur la page des sites custom et le reste du site + par ex. simplicité de gestion, vue d'ensemble du pool de sites web créés, ...
+---
+
+### Le principe? C'est simple
+
+On crée une base de site web unique, un "modèle master", qui respecte parfaitement ta charte graphique et tes besoins. Ensuite, chaque membre de ton réseau peut générer son propre site, personnalisé avec ses informations (nom, contact, photos, textes...) et si tu le souhaite, son propre branding.
+
+### Les avantages pour toi
+
+- **Cohérence garantie:** tu gardes le contrôle de l'image de marque sur l'ensemble de ton réseau.
+- **Gestion centralisée:** une seule infrastructure à maintenir pour des dizaines ou des centaines de sites.
+- **Simplicité extrême:** plus besoin de gérer chaque site individuellement. On peut automatiser la création et les mises à jour.
+
+### Les avantages pour tes membres
+
+- **Un site pro à moindre coût:** ils bénéficient d'un outil de qualité professionnelle, sans devoir investir dans un développement complet.
+- **Autonomie:** chaque membre peut gérer ses propres contenus via une interface simple.
+- **Pas de soucis techniques:** ils se concentrent sur leur métier, on s'occupe de la technique.
+
+On peut connecter cette infrastructure à tes outils existants (CRM, base de données...) pour automatiser encore plus le processus.
+
+Bien entendu, chaque site créé bénéficie de toutes les qualités qui font l'ADN de mookaï: éco-conception, performance, sécurité, accessibilité et optimisation pour le référencement.
+
+[Contacte-nous pour une démo](/fr/contact)

@@ -10,25 +10,41 @@ metadata: null
 preview: null
 tags:
   - web
-status: ''
-pageLayout: ''
-pageFooter: ''
-pageNav: ''
-generatePage: ''
+status: ""
+pageLayout: ""
+pageFooter: ""
+pageNav: ""
+generatePage: ""
 vars: null
 dataList: []
 ---
 
-# Le site minimaliste
+# Ton site web pro en une journée chrono?
 
-Apd 500€
+Tu as un projet génial, mais un budget serré? Tu veux être autonome et ne pas dépendre d'une agence pour chaque virgule à changer? Alors notre formule "site minimaliste" est faite pour toi.
 
-Places limitées: postulation via formulaire. On se réserve le droit de choisir de manière totalement subjective les projets qui pourront bénéficier de cet accompagnement. (On choisi en fonction du projet, de l'état de la communication, du niveau du postulant en informatique, ...)
+**Le concept:** on passe une journée ensemble, et à la fin, ton site est en ligne. Simple, efficace, et 100% à toi.
 
-Accompagnement à la journée pour faire ton site minimaliste tout en respectant toutes les valeurs qui nous sont chères (voir Site custom et valeurs, etc). Minimum 1 jour mais peut être prolongé au même tarif de 500€/jour.
+**Prix:** à partir de 500€ par jour.
 
-On travaille une journée côte à côte sur ton site et à la fin de la journée, il est en ligne avec un design simple et élégant qui respecte ton branding. On y intègre tes textes et tes photos. On peut s'aider de l'IA au besoin pour structurer tes idées et rédiger des contenus (mais on préfère si tout ça vient de toi directement  évidemment). On t'explique les bases du web et du système qu'on met entre tes mains. On met en place les différents outils à ton nom pour que tu sois 100% autonome par la suite. En une journée, tu as un site simple en ligne et prêt à être édité et modifié par toi, en toute indépendance. Les outils qu'on utilise sont gratuits (y compris l'hébergement).
+---
 
-Les outils utilisés sont relativement faciles à comprendre pour un usage simple mais plus tu es à l'aise avec les concept de l'informatique et du web, plus ce sera facile pour toi de les prendre en main et de faire évoluer ton site par la suite.
+### C'est pour qui?
 
-Si tu n'es pas complètement à l'aise avec tout ça ou si tu veux simplement un soutien digital, on propose un abonnement (totalement optionnel) à 350€/an ou 35€/mois pour le support technique, l'intégration de contenus et la mise à jour annuelle du système.
+Cette formule est pensée pour les porteurs de projet, les indépendants et les petites asbl qui ont des besoins clairs et qui veulent un site vitrine élégant sans se compliquer la vie.
+
+Attention, les places sont limitées. On sélectionne les projets pour qui cette formule est vraiment la plus adaptée. On veut s'assurer que tu repartes avec un outil qui te serve vraiment.
+
+### Comment ça marche concrètement?
+
+1.  **On prépare le terrain ensemble:** avant le jour J, on t'aide à rassembler tes textes et tes images.
+2.  **Une journée de co-création:** on travaille côte à côte. Tu apprends, tu comprends, tu valides. On s'occupe de la technique, tu t'occupes du contenu.
+3.  **À la fin de la journée:** ton site est en ligne, fonctionnel, et tu sais comment le mettre à jour. Tu es 100% autonome avec des outils gratuits (hébergement inclus!).
+
+### Et après?
+
+Notre but, c'est ton indépendance. Mais si tu préfères garder un copilote, on propose un **abonnement de soutien optionnel** (350€/an). Ça inclut le support technique, l'aide à l'intégration de contenus et une mise à jour annuelle du système. Zéro pression, c'est toi qui décides.
+
+Prêt(e) à lancer ton site?
+
+[Postule pour une journée site minimaliste](/fr/contact)

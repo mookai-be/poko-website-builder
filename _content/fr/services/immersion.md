@@ -9,35 +9,35 @@ eleventyNavigation: null
 metadata: null
 preview: null
 tags: []
-status: ''
-pageLayout: ''
-pageFooter: ''
-pageNav: ''
-generatePage: ''
+status: ""
+pageLayout: ""
+pageFooter: ""
+pageNav: ""
+generatePage: ""
 vars: null
 dataList: []
 ---
 
-# Immersion dans ton business
+# Un regard neuf pour booster ton projet
 
-Minimum 1 mois. Apd 9876,54€/mois
+Parfois, quand on a la tête dans le guidon, on manque de recul pour voir les opportunités. L'offre "Immersion", c'est notre service de conseil le plus complet. On devient ton partenaire stratégique le temps d'une mission pour travailler **sur** ton projet, plutôt que **dans** ton projet.
 
-Un "équivalent temps plein" pour bosser SUR ton business (et pas DANS ton business). On conjugue les talents de mookaï & Co. (mookaï et nos partenaires) pour travailler sur des aspects créatifs, techniques, marketing, stratégiques de ton business avec un impact direct sur ton chiffre d'affaire, ton image, le bien-être au travail et la compétitivité.
+**Le principe:** on intègre ton équipe (ou on travaille en étroite collaboration) pendant une période définie pour t'apporter un regard extérieur, de nouvelles idées et des compétences pointues.
 
-On vient avec un regard neuf et des idées en dehors du cadre.
+**Prix:** sur mesure, à partir de 9876,54€/mois pour un équivalent temps plein.
 
-On peut par exemple bosser sur: (points à réorganiser selon importance)
+---
 
-- Culture d'entreprise
-- Homogénéité de ta communication
-- Déco et agencement de l'espace physique
-- Organisation digitale
-- Automatisation
-- Audit et conseils techniques
-- SEO
-- Digitalisation
-- Stratégie commerciale et marketing
-- Monétisation de services ou de ressources
-- Coaching individuel ou en équipe pour managers et/ou employés
-- Team building / Happiness management
-- Communication inter et intra
+### Notre mission, si tu l'acceptes
+
+On met notre double expertise (stratégie/technique et création/humain) au service de tes défis. On peut intervenir sur une multitude d'aspects:
+
+- **Stratégie globale:** affiner ton positionnement, ta stratégie marketing et commerciale.
+- **Optimisation digitale:** auditer tes outils, automatiser tes processus, améliorer ton SEO.
+- **Communication & Branding:** assurer la cohérence de ton image de marque sur tous les supports.
+- **Culture d'entreprise:** le bien-être au travail, la communication interne, l'organisation du travail, le management, ...
+- **Innovation:** explorer de nouvelles pistes de monétisation ou de nouveaux services.
+
+C'est un véritable coup d'accélérateur pour ton projet, avec un impact direct sur ton chiffre d'affaires, ton image et la motivation de tes équipes.
+
+[Prêt(e) à prendre de la hauteur?](/contact/)
