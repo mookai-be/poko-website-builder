@@ -1,19 +1,42 @@
 ---
 translationKey: showcase
+order: null
 lang: en
 createdAt: 2025-11-05T14:35:00.000Z
-uuid: 4861cc7cab24
-localizationKey: 02fc4e97117e
 name: Showcase
 eleventyNavigation:
   order: 8
+localizationKey: 02fc4e97117e
+uuid: 4861cc7cab24
 ---
+
 # Showcase
 
 poko is still young but here are some examples of what it can do.
 
-{% section type="fixed-fluid", vars={"widthFixed":"","widthFluidMin":"","fixedRight":false,"gap":"","class":""}, blocks=[{"type":"markdown","value":"## [Una Scelta](https://www.unascelta.it/en/)"},{"type":"image","alt":"Una Scelta website screenshot","aspectRatio":null,"loading":"","rawAttrs":"","src":"https://v1.screenshot.11ty.dev/https%3A%2F%2Fwww.unascelta.it%2Fen%2F/opengraph/","title":"","width":660},{"value":"### Some highlights {.h4}\n\n- Multi-lingual\n- [Website Carbon Calculator score](https://www.websitecarbon.com/website/unascelta-it-it/)\n- Custom Design\n- [Custom 'Carousel-like' Calendar](https://www.unascelta.it/en/booking/#calendar)\n- Custom Data editing from the CMS","type":"markdown"}], advanced={"sectionSlug":"showcase-entry","vars":null} %}
+{% sectionCollection  %}
 
-{% section type="fixed-fluid", vars={"widthFixed":"","widthFluidMin":"","fixedRight":false,"gap":"","class":""}, blocks=[{"type":"markdown","value":"## [L'Autre École](https://www.autre-ecole.org/)"},{"type":"image","alt":"Autre École website screenshot","aspectRatio":null,"loading":"","rawAttrs":"","src":"https://v1.screenshot.11ty.dev/https%3A%2F%2Fwww.autre-ecole.org%2F/opengraph/","title":"","width":660},{"value":"### Some highlights {.h4}\n\n- [Website Carbon Calculator score](https://www.websitecarbon.com/website/autre-ecole-org/)\n- Custom Design\n- 'People' collection customized and sorted ","type":"markdown"}], advanced={"sectionSlug":"showcase-entry","vars":null} %}
+{% collection collection="projects", type="flow", class="v--flow-space:5rem"%}{% endcollection %}
 
-{% section type="fixed-fluid", vars={"widthFixed":"","widthFluidMin":"","fixedRight":false,"gap":"","class":""}, blocks=[{"type":"markdown","value":"## [Mind the mind now!](https://www.mindthemind-now.org/)"},{"type":"image","alt":"Mind the mind now! - website screenshot","aspectRatio":1.9,"loading":"","rawAttrs":"","src":"/_images/og_img-mtmn.webp","title":"","width":660},{"value":"### Some highlights {.h4}\n\n- [Website Carbon Calculator score](https://www.websitecarbon.com/website/mindthemind-now-org/)\n- Custom Design\n- 'People' collection customized and sorted\n- Editable [SVG graph](https://www.mindthemind-now.org/objectif/#pour-un-numerique-digne-de-confiance)","type":"markdown"}], advanced={"sectionSlug":"showcase-entry","vars":null} %}
+{% endsectionCollection %}
+
+{% css %}
+.collection-item h2,
+.collection-item h2 a,
+    .highlights li {
+      font-family: Calibri, sans-serif;
+    }
+  .collection-item ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  .collection-item ul li {
+    padding-inline: var(--step--1);
+    border-radius: .5rem;
+  }
+
+  .collection-item_content {
+    border-radius: var(--step--2);
+    overflow: hidden;
+  }
+{% endcss %}

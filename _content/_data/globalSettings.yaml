@@ -9,17 +9,18 @@ htmlHead: |-
   <link rel="manifest" href="/assets/files/icons/site.webmanifest" />
 languages:
   - code: en
+    status: published
     name: English
     customUrlPrefix:
       prefix: /
-    status: published
     isCmsDefault: true
     isWebsiteDefault: true
   - code: fr
+    status: inactive
     name: French
     customUrlPrefix: null
-    status: inactive
     isCmsDefault: false
     isWebsiteDefault: false
 collections:
   - articles
+  - people

@@ -1,5 +1,3 @@
-ctxCssImport:
-  filename: ctx.css
 inlineAllStyles: true
 widthsContexts:
   - name: main
@@ -8,10 +6,9 @@ widthsContexts:
 fontStacksContexts:
   - name: main
     body:
-      native: humanist
-      custom: ''
+      native: classical-humanist
     heading:
-      native: geometric-humanist
+      native: classical-humanist
     code:
       native: monospace-code
 typeScales:
@@ -20,7 +17,6 @@ typeScales:
     maxFontSize: 24
     minTypeScale: 1.2
     maxTypeScale: 1.25
-    advanced: null
 colors:
   - name: indigo
     value: '#130e35'
@@ -32,13 +28,14 @@ colors:
     value: '#ef4d99'
 palettes:
   - name: main
+    advanced:
+      text__a: pink
+      text__a--hover: white
     text: white
     bg: indigo
     text-decoration: pink
     text-emphasis: pink
     text--selection: indigo
     bg--selection: white
-    advanced:
-      text__a: pink
-      bg__a: ''
-      text__a--hover: white
+ctxCssImport:
+  filename: ctx.css
