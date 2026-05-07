@@ -52,6 +52,20 @@ export default [
       ];
     },
   ],
+  // Flow Space
+  [
+    /^space:(.+)$/,
+    ([, value], { symbols }) => {
+      // If value starts with --, it's a CSS variable reference
+      const cssValue = value.startsWith("--") ? `var(${value})` : value;
+      return [
+        {
+          [symbols.selector]: (selector) => `:where(.flow${selector} > *)`,
+          [`--flow-space`]: cssValue,
+        },
+      ];
+    },
+  ],
 
   // Flow recursive modifier
   [
@@ -187,7 +201,7 @@ export default [
         "box-sizing": "content-box",
         "margin-inline": "auto",
         "max-inline-size":
-          "var(--max-width, var(--width-max, var(--measure, 60ch)))",
+          "var(--max-width, var(--width-body, var(--measure, 60ch)))",
         "padding-inline": "var(--gutters-center)",
       };
     },
@@ -360,7 +374,7 @@ export default [
           "--gap-grid": "var(--gap, 1em)",
           // NOTE: width - gap * (columns - 1) / (columns + 1)
           "--width-column-min":
-            "calc(calc(var(--width-max) - var(--gap-grid) * calc(var(--columns) - 1)) / calc(var(--columns) + 1))",
+            "calc(calc(var(--width-body) - var(--gap-grid) * calc(var(--columns) - 1)) / calc(var(--columns) + 1))",
           display: "grid",
           "grid-gap": "var(--gap-grid)",
           "grid-template-columns":
@@ -528,7 +542,7 @@ export default [
     /^icon$/,
     (match, { symbols }) => {
       return {
-        [symbols.selector]: () => `:where(.icon)`,
+        [symbols.selector]: () => `:where(p .icon)`,
         width: "var(--width-icon, var(--size-icon, 0.75em))",
         height: "var(--height-icon, var(--size-icon, 0.75em))",
         "vertical-align": "var(--vertical-align-icon, -0.125em)",
@@ -547,15 +561,18 @@ export default [
           "align-items": "baseline",
         },
         {
-          [symbols.selector]: () => `:where(.with-icon:not(.right)) .icon`,
+          [symbols.selector]: () =>
+            `:where(.with-icon:not(.right)) :where(.icon, svg)`,
           "margin-inline-end": "var(--gap-icon, 1ch)",
         },
         {
-          [symbols.selector]: () => `:where(.with-icon.right) .icon`,
+          [symbols.selector]: () =>
+            `:where(.with-icon.right) :where(.icon, svg)`,
           "margin-inline-start": "var(--gap-icon, 1ch)",
         },
         {
-          [symbols.selector]: () => `:where(.with-icon) .icon:only-child`,
+          [symbols.selector]: () =>
+            `:where(.with-icon) :where(.icon:only-child, svg:only-child)`,
           "margin-inline-end": "0",
           "margin-inline-start": "0",
         },
@@ -610,6 +627,19 @@ export default [
           "vertical-align": "var(--vertical-align-icon, super)",
         },
       ];
+    },
+  ],
+
+  // Container query helper
+  // Matches "container" and "container:myContainerName"
+  [
+    /^container(?::([a-zA-Z]+))?$/,
+    ([, name], { symbols }) => {
+      return {
+        [symbols.selector]: (selector) => `:where(${selector})`,
+        "container-type": "inline-size",
+        ...(name ? { "container-name": name } : {}),
+      };
     },
   ],
 

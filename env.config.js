@@ -1,6 +1,6 @@
 import assert from "node:assert";
 import "dotenv/config";
-import { resolve, join, relative } from "path";
+import { resolve, join, relative } from "node:path";
 import fs from "node:fs";
 import { $ } from "bun";
 import yaml from "js-yaml";
@@ -18,11 +18,11 @@ import {
 const processEnv = typeof process !== "undefined" ? process.env : {};
 
 // GENERAL
-export const DEBUG = processEnv.DEBUG === "false" ? false : true;
+export const DEBUG = processEnv.DEBUG === "true" ? true : false;
 export const NODE_ENV = processEnv.NODE_ENV || "production";
 export const ELEVENTY_RUN_MODE = processEnv.ELEVENTY_RUN_MODE;
-// Can be "cdn", "npm", "<relative-path>"
-export const CMS_IMPORT = processEnv.CMS_IMPORT || "npm";
+// Can be "cdn", "npm", "<relative-path>", local // Default should be npm
+export const CMS_IMPORT = processEnv.CMS_IMPORT || "local";
 
 // DIRECTORIES
 // Output directory
@@ -31,6 +31,8 @@ export const OUTPUT_DIR_ABSOLUTE =
   processEnv.OUTPUT_DIR_ABSOLUTE || resolve(".", OUTPUT_DIR);
 // Files output directory
 export const FILES_OUTPUT_DIR = processEnv.FILES_OUTPUT_DIR || "assets/files";
+export const IMAGES_OUTPUT_DIR = join(OUTPUT_DIR, `assets/images`);
+
 export const FILES_LIBRARY_OUTPUT_DIR =
   processEnv.FILES_LIBRARY_OUTPUT_DIR || `${FILES_OUTPUT_DIR}/library`;
 
@@ -56,6 +58,8 @@ export const SRC_DIR_FROM_WORKING_DIR = WORKING_DIR_ABSOLUTE
 
 // POKO_THEME
 export const POKO_THEME = processEnv.POKO_THEME || "default";
+// NAVIGATION MAX DEPTH
+export const NAV_DEPTH_MAX = processEnv.NAV_DEPTH_MAX || 4;
 // USER_DIR
 export const USER_DIR = processEnv.USER_DIR || `_user-content`;
 
@@ -76,33 +80,33 @@ export const LOCAL_BUILD = Boolean(
 // Cache directory
 export const CACHE_DIR =
   processEnv.CACHE_DIR ||
-  (CLOUDFLARE_BUILD && ".bun/install/cache") ||
+  // (CLOUDFLARE_BUILD && ".bun/install/cache") ||
   ".cache";
-
-// const GITHUB_REPO_INFERRED = processEnv.GIT_REMOTES?.split("\n")
-//   ?.find((remote) => remote.includes("github.com"))
-//   ?.split(":")
-//   ?.pop()
-//   ?.split(".")?.[0];
-
-// const remoteLocalGit =
-//   "origin\tgit@github.com:m4rrc0/poko-website-builder.git (fetch)\norigin\tgit@github.com:m4rrc0/poko-website-builder.git (push)";
-// const remoteCFpages =
-//   "origin\thttps://x-a_c_c_e_s_s-t_o_k_e_n:g_h_s_11111111111111111111111111111111111@github.com/autre-ecole/poko-website-builder (fetch)\norigin\thttps://x-a_c_c_e_s_s-t_o_k_e_n:g_h_s_11111111111111111111111111111111111@github.com/autre-ecole/poko-website-builder (push)";
-
-const GIT_REMOTES =
-  processEnv.GIT_REMOTES || (await $`git remote -v`).text().replace(/\n$/, "");
-const GITHUB_REPO_INFERRED = GIT_REMOTES?.split("\n")
-  ?.find((remote) => remote.includes("github.com"))
-  ?.split(/@github.com(\/|:)/)
-  ?.pop()
-  ?.split(/\.git\s|\s/)?.[0];
+export const IMAGE_CACHE_DIR = join(CACHE_DIR, `@11ty/img`); // .cache/@11ty/img/
 
 // GITHUB Pages REPO inferrence
 export const GITHUB_GIT_REPO_OWNER = processEnv.GITHUB_REPOSITORY_OWNER;
 export const GITHUB_GIT_REPO_NAME =
   processEnv.GITHUB_REPOSITORY?.split("/")?.pop();
 export const GITHUB_GIT_REPO = processEnv.GITHUB_REPOSITORY;
+// NETLIFY REPO inferrence
+export const REPOSITORY_URL = processEnv.REPOSITORY_URL;
+
+const REPO_EARLY = processEnv.REPO || GITHUB_GIT_REPO || REPOSITORY_URL;
+
+const GIT_REMOTES = REPO_EARLY
+  ? ""
+  : processEnv.GIT_REMOTES ||
+    (await $`cd ${WORKING_DIR_ABSOLUTE}/../ && git remote -v`)
+      .text()
+      .replace(/\n$/, "");
+const GITHUB_REPO_INFERRED = GIT_REMOTES
+  ? GIT_REMOTES?.split("\n")
+      ?.find((remote) => remote.includes("github.com"))
+      ?.split(/@github.com(\/|:)/)
+      ?.pop()
+      ?.split(/\.git\s|\s/)?.[0]
+  : "";
 
 // VERCEL REPO inferrence
 export const VERCEL_GIT_REPO_OWNER =
@@ -111,7 +115,6 @@ export const VERCEL_GIT_REPO_SLUG =
   processEnv.VERCEL_GIT_REPO_SLUG || processEnv.VERCEL_GIT_REPO_SLUG;
 
 // NETLIFY REPO inferrence
-export const REPOSITORY_URL = processEnv.REPOSITORY_URL;
 const repoUrlParts = REPOSITORY_URL?.split(":")?.pop()?.split("/");
 export const NETLIFY_REPO_NAME = repoUrlParts?.pop();
 export const NETLIFY_REPO_OWNER = repoUrlParts?.pop();
@@ -122,6 +125,7 @@ export const NETLIFY_REPO =
 
 // CLOUDFLARE REPO inferrence
 // NOTE: Doesn't look like Cloudflare export these env variables...?
+// So we need to infer from GIT_REMOTES and GITHUB_REPO_INFERRED
 
 // REPO inferrence
 export const REPO_OWNER =
@@ -135,9 +139,7 @@ export const REPO_NAME =
   VERCEL_GIT_REPO_SLUG ||
   NETLIFY_REPO_NAME;
 export const REPO =
-  processEnv.REPO ||
-  GITHUB_GIT_REPO ||
-  REPOSITORY_URL ||
+  REPO_EARLY ||
   (REPO_OWNER && REPO_NAME && `${REPO_OWNER}/${REPO_NAME}`) ||
   GITHUB_REPO_INFERRED;
 
@@ -152,7 +154,25 @@ export const BRANCH =
   processEnv.CF_PAGES_BRANCH ||
   processEnv.VERCEL_GIT_COMMIT_REF ||
   processEnv.GIT_BRANCH ||
-  (await $`git symbolic-ref --short HEAD`).text().replace(/\n$/, "");
+  (await $`cd ${WORKING_DIR_ABSOLUTE}/../ && git symbolic-ref --short HEAD`)
+    .text()
+    .replace(/\n$/, "");
+
+function getGithubPagesUrl(repo) {
+  // repo = "owner/repo"
+  if (!repo) return null;
+
+  const [owner, name] = repo.split("/");
+
+  // User/Org site: <owner>.github.io
+  if (name === `${owner}.github.io`) {
+    return `https://${owner}.github.io`;
+  }
+
+  // Project site: <owner>.github.io/<repo>
+  return `https://${owner}.github.io/${name}`;
+}
+const GITHUB_DEFAULT_URL = getGithubPagesUrl(REPO_EARLY);
 
 // TODO: Verify compat with supported hosts
 const HOST_SUBDOMAIN = BRANCH && BRANCH.replaceAll("/", "-");
@@ -160,7 +180,8 @@ const HOST_PREVIEW_URL =
   processEnv.HOST_PREVIEW_URL ||
   processEnv.CF_PAGES_URL ||
   (processEnv.VERCEL_BRANCH_URL && `https://${processEnv.VERCEL_BRANCH_URL}`) ||
-  processEnv.DEPLOY_URL; // Netlify
+  processEnv.DEPLOY_URL || // Netlify
+  GITHUB_DEFAULT_URL; // GitHub Pages
 const HOST_BRANCH_URL =
   processEnv.HOST_BRANCH_URL ||
   (processEnv.CF_PAGES_URL &&
@@ -197,10 +218,92 @@ export const CMS_BRANCH = processEnv.CMS_BRANCH || BRANCH;
 // Fallback hosting service for local dev
 export const PREFERRED_HOSTING = processEnv.PREFERRED_HOSTING || "node";
 
-assert(BRANCH, "[env] BRANCH is required");
-// assert(CMS_AUTH_URL, "[env] CMS_AUTH_URL is required"); // Not required anymore with github personal token
-// TODO: reinstate this !
-// assert(BASE_URL, "[env] BASE_URL is required");
+export const COLLECTIONS = {
+  websites: {
+    name: "websites",
+    label: "Websites",
+    label_singular: "Website",
+    ldType: "WebSite",
+  },
+  pages: {
+    name: "pages",
+    label: "Pages",
+    label_singular: "Page",
+    ldType: "WebPage",
+  },
+  articles: {
+    name: "articles",
+    label: "Articles",
+    label_singular: "Article",
+    ldType: "Article",
+  },
+  courses: {
+    name: "courses",
+    label: "Courses",
+    label_singular: "Course",
+    ldType: "Course",
+  },
+  documentations: {
+    name: "documentations",
+    label: "Documentations",
+    label_singular: "Documentation",
+    ldType: "HowTo",
+  },
+  events: {
+    name: "events",
+    label: "Events",
+    label_singular: "Event",
+    ldType: "Event",
+  },
+  faqs: {
+    name: "faqs",
+    label: "FAQs",
+    label_singular: "FAQ",
+    ldType: "FAQPage",
+  },
+  organizations: {
+    name: "organizations",
+    label: "Organizations",
+    label_singular: "Organization",
+    ldType: "Organization",
+  },
+  people: {
+    name: "people",
+    label: "People",
+    label_singular: "Person",
+    ldType: "Person",
+  },
+  places: {
+    name: "places",
+    label: "Places",
+    label_singular: "Place",
+    ldType: "Place",
+  },
+  products: {
+    name: "products",
+    label: "Products",
+    label_singular: "Product",
+    ldType: "Product",
+  },
+  projects: {
+    name: "projects",
+    label: "Projects",
+    label_singular: "Project",
+    ldType: "Project",
+  },
+  reviews: {
+    name: "reviews",
+    label: "Reviews",
+    label_singular: "Review",
+    ldType: "Review",
+  },
+  services: {
+    name: "services",
+    label: "Services",
+    label_singular: "Service",
+    ldType: "Service",
+  },
+};
 
 // User Config from CMS
 // Read file in ${WORKING_DIR_ABSOLUTE}/_data/globalSettings.yaml
@@ -229,8 +332,46 @@ try {
   };
 }
 export { globalSettings, brandConfig };
+
+export const userCmsConfig = async function () {
+  let userCmsConfigTemp = {
+    collections: [],
+    singletons: [],
+  };
+  try {
+    const uc = await import(`${WORKING_DIR_ABSOLUTE}/_config/index.js`);
+
+    userCmsConfigTemp = {
+      ...userCmsConfigTemp,
+      ...uc,
+    };
+  } catch (error) {
+    console.warn(
+      `WARN: Could not import user config from "${WORKING_DIR_ABSOLUTE}/_config/index.js"`,
+    );
+  }
+  return userCmsConfigTemp;
+};
+
+export const userHtmlClasses = async function () {
+  let userHtmlClassesTemp = {};
+  try {
+    const uhc = await import(`${WORKING_DIR_ABSOLUTE}/_config/htmlClasses.js`);
+
+    userHtmlClassesTemp = { ...(uhc?.default || {}) };
+  } catch (error) {
+    console.warn(
+      `INFO: No custom HTML classes found from "${WORKING_DIR_ABSOLUTE}/_config/htmlClasses.js"`,
+    );
+  }
+  return userHtmlClassesTemp;
+};
+
+// export const userCmsConfig = userCmsConfigTemp;
+
 // More specific useful global settings
-export const collections = globalSettings?.collections || [];
+export const selectedCollections = globalSettings?.collections || [];
+
 export const allLanguages =
   globalSettings?.languages?.map(transformLanguage) || [];
 
@@ -341,10 +482,16 @@ export const fontPreloadTags = unoCssConfig.fontPreloadTags;
 // TODO: This is prone to forgetting to define the base url
 // TODO: Could be public and defined in config
 // PROD_URL is the full URL of the 'deployed' site
-export const PROD_URL =
-  (processEnv.PROD_URL || globalSettings?.productionUrl)?.replace(/\/+$/, "") ||
+export const PROD_URL = (
+  processEnv.PROD_URL ||
+  globalSettings?.productionUrl ||
   (processEnv.VERCEL_PROJECT_PRODUCTION_URL &&
-    `https://${processEnv.VERCEL_PROJECT_PRODUCTION_URL}`);
+    `https://${processEnv.VERCEL_PROJECT_PRODUCTION_URL}`)
+)
+  ?.replace(/\/+$/, "") // Remove trailing slashes
+  .trim()
+  .toLowerCase()
+  .replace(/^(?!https?:\/\/)/, "https://"); // Add https scheme if missing
 // BASE_URL is the full URL of the 'being deployed' site
 // TODO: Try and find the best ways to infer BASE_URL so we can only define a CANONICAL_URL / PROD_URL
 // TODO: If we have a decent way to infer this, we can fall back to PROD_URL
@@ -354,8 +501,13 @@ export const BASE_URL = (
   HOST_BRANCH_URL ||
   // Probably not that bad to fall back to production url
   // TODO: Verify that it is not that bad to fall back to prod url
-  PROD_URL
-)?.replace(/\/+$/, "");
+  PROD_URL ||
+  "http://localhost:8080"
+)
+  ?.replace(/\/+$/, "") // Remove trailing slashes
+  .trim()
+  .toLowerCase()
+  .replace(/^(?!https?:\/\/)/, "https://"); // Add https scheme if missing
 // DISPLAY_URL is for the CMS button to the deployed site (prefer current deploy against production)
 export const DISPLAY_URL =
   processEnv.DISPLAY_URL?.replace(/\/+$/, "") || BASE_URL || PROD_URL;
@@ -374,3 +526,7 @@ if (DEBUG) {
     REPO,
   });
 }
+
+assert(BRANCH, "[env] BRANCH is required");
+// assert(CMS_AUTH_URL, "[env] CMS_AUTH_URL is required"); // Not required anymore with github personal token
+assert(BASE_URL, "[env] BASE_URL is required");

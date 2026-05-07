@@ -1,6 +1,10 @@
 export const removeUndefinedProps = (obj) =>
   Object.fromEntries(Object.entries(obj).filter(([_, v]) => v !== undefined));
 
+// Removes both null and undefined values from an object
+export const removeNullishProps = (obj) =>
+  Object.fromEntries(Object.entries(obj).filter(([_, v]) => v != null));
+
 // Convert [{key: value}, {key: value}] to {key: value}
 export const ensureKeyValObject = (objOrArr) =>
   Array.isArray(objOrArr)

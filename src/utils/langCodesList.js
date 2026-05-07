@@ -80,7 +80,7 @@ export const fullList = [
   { code: "et", name: "Estonian" },
   { code: "fa", name: "Persian" },
   { code: "fa-ir", name: "Persian (Iran)" },
-  { code: "fa", name: "Farsi" },
+  // { code: "fa", name: "Farsi" },
   { code: "fo", name: "Faeroese" },
   { code: "fi", name: "Finnish" },
   { code: "fj", name: "Fijian" },
@@ -199,7 +199,7 @@ export const fullList = [
 ];
 
 export const shortList = fullList
-  .filter((lang) => lang.code.length < 3)
+  .filter((lang) => lang.code.length < 4)
   .map((lang) => ({
     code: lang.code,
     name: lang.name.replace(/ \([^)]*\)/, ""), // remove variants in parenthesis

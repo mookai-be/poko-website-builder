@@ -113,11 +113,11 @@ export default async function (eleventyConfig, pluginOptions) {
   eleventyConfig.versionCheck(">=3.0.0-alpha.1");
 
   const renderContentFilterFn = eleventyConfig.universal.filters.renderContent;
-  const partialShortcodeFn = eleventyConfig.nunjucks.asyncShortcodes.partial;
+  const partialShortcodeFn = eleventyConfig.universal.shortcodes.partial;
 
   // const renderTemplateTagFn = eleventyConfig.nunjucks.tags.renderTemplate;
   // const renderFileShortcodeFn =
-  //   eleventyConfig.nunjucks.asyncShortcodes.renderFile;
+  //   eleventyConfig.universal.shortcodes.renderFile;
 
   // RENDER MARKDOWN
   async function renderMd(mdContent, data) {

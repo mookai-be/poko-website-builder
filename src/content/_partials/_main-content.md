@@ -1,1 +1,1 @@
-<main>{{ content | safe }}</main>
+<main id="main-content">{{ content | safe }}</main>

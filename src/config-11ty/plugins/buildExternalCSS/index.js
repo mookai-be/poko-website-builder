@@ -1,6 +1,6 @@
 import { build as bunBuild, plugin as bunPlugin } from "bun";
 import fglob from "fast-glob";
-import { MINIFY, brandConfig } from "../../../../env.config.js";
+import { MINIFY, brandConfig, POKO_THEME } from "../../../../env.config.js";
 
 const mustImportCtxCss = !!brandConfig?.ctxCssImport;
 const ctxCssEntrypoint = `./src/styles/ctx/ctx.css`;
@@ -12,14 +12,50 @@ export default async function (eleventyConfig, pluginOptions) {
     pluginOptions || {};
   const outdir = `./${dir.output}/${outputDir}`;
 
+  const htmlExternalCtxCssTag = `<link rel="stylesheet" href="/${outputDir}/ctx.css">`;
   let externalStylesInline = null;
-  let entrypoints = await fglob(`${dir.input}/${inputGlob}`);
+  let CtxCssInline = null;
+
+  let entrypoints = await fglob([
+    `src/themes/${POKO_THEME}/_styles/*.css`,
+    `${dir.input}/${inputGlob}`,
+  ]);
   // Remove entrypoint files that start with an underscore
   entrypoints = entrypoints.filter(
     (entrypoint) => !entrypoint.split("/").pop().startsWith("_"),
   );
   if (mustImportCtxCss) {
-    entrypoints.unshift(ctxCssEntrypoint);
+    // NOTE: Not a good idea to merge CTX CSS with other stylesheets
+    // because CTX.css are the most global styles and the rest is project specific.
+    // We need to load UnoCSS styles in between
+    // entrypoints.unshift(ctxCssEntrypoint);
+    await bunBuild({
+      entrypoints: [ctxCssEntrypoint],
+      outdir,
+      naming: "ctx.css",
+      // naming: "index.css",
+      // plugins: [cssTransformPlugin],
+      minify: MINIFY,
+      cssChunking: true,
+    })
+      .catch((e) => {
+        console.error(e);
+        throw e;
+      })
+      .then(async ({ outputs, success, logs }) => {
+        // Read content of each output file
+        const fileContents = await Promise.all(
+          outputs.map(async (output) => {
+            const content = await Bun.file(output.path).text();
+            return {
+              path: output.path,
+              content,
+            };
+          }),
+        );
+
+        CtxCssInline = fileContents.map((file) => file.content).join("");
+      });
   }
 
   const externalCssFiles = entrypoints.map((entrypoint) => {
@@ -31,7 +67,7 @@ export default async function (eleventyConfig, pluginOptions) {
       out: localUrl,
     };
   });
-  const htmlExternalCssFiles = externalCssFiles
+  const htmlExternalCssTags = externalCssFiles
     .map((file) => `<link rel="stylesheet" href="/${file.out}">`)
     .join("\n");
 
@@ -67,7 +103,9 @@ export default async function (eleventyConfig, pluginOptions) {
       });
   }
 
-  eleventyConfig.addGlobalData("htmlExternalCssFiles", htmlExternalCssFiles);
+  eleventyConfig.addGlobalData("htmlExternalCtxCssTag", htmlExternalCtxCssTag);
+  eleventyConfig.addGlobalData("htmlExternalCssTags", htmlExternalCssTags);
+  eleventyConfig.addGlobalData("CtxCssInline", CtxCssInline);
   eleventyConfig.addGlobalData("externalStylesInline", externalStylesInline);
 
   // TODO: add global data for generated stylesheets urls ? (Should we account for drafts? Probably not as we can use underscores in file names?)

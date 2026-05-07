@@ -27,14 +27,8 @@ export default async function (eleventyConfig, pluginOptions) {
         throw error;
       }
       // console.log(`UnoCSS generated:\n${css}`);
-      const contents = content.replace(
-        "<style>",
-        `<style>
-/* UnoCSS */
-${css}
-/* End UnoCSS */
-`,
-      );
+      // Inject UnoCSS styles between global styles and project specific styles
+      const contents = content.replace(".noop-load-uno{}", `${css}`);
       return contents;
     }
 

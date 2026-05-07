@@ -30,8 +30,10 @@ import yamlData from "./src/config-11ty/plugins/yamlData/index.js";
 import cmsConfigPlugin from "./src/config-11ty/plugins/cms-config/index.js";
 import autoCollections from "./src/config-11ty/plugins/auto-collections/index.js";
 import htmlClassesTransform from "./src/config-11ty/plugins/html-classes-transform/index.js";
+import ioElementsTransform from "./src/config-11ty/plugins/io-elements-transform/index.js";
 import populateInputDir from "./src/config-11ty/plugins/populateInputDir/index.js";
 import partialsPlugin from "./src/config-11ty/plugins/partials/index.js";
+import partialShortcodesPlugin from "./src/config-11ty/plugins/partialShortcodes/index.js";
 import buildExternalCSS from "./src/config-11ty/plugins/buildExternalCSS/index.js";
 import ctxCss from "./src/config-11ty/plugins/ctxCss/index.js";
 import pluginUnoCSS from "./src/config-11ty/plugins/plugin-eleventy-unocss/index.js";
@@ -56,6 +58,8 @@ import {
   WORKING_DIR_ABSOLUTE,
   CONTENT_DIR,
   // SRC_DIR_FROM_WORKING_DIR,
+  IMAGE_CACHE_DIR,
+  IMAGES_OUTPUT_DIR,
   PARTIALS_DIR,
   LAYOUTS_DIR,
   OUTPUT_DIR,
@@ -63,6 +67,7 @@ import {
   BASE_URL,
   PROD_URL,
   WEBSITE_PATH_PREFIX,
+  POKO_THEME,
   statusesToUnrender,
   allLanguages,
   languages,
@@ -73,8 +78,12 @@ import {
   inlineAllStyles,
   brandStyles,
   fontPreloadTags,
+  userCmsConfig,
+  userHtmlClasses,
 } from "./env.config.js";
+import { getSelectedCollections } from "./src/config-11ty/plugins/cms-config/index.js";
 import eleventyComputed from "./src/data/eleventyComputed.js";
+import ldWebSite from "./src/data/structured-data/ldWebSite.js";
 
 // Eleventy Config
 import {
@@ -96,14 +105,18 @@ import {
   desc,
   ogImageSrc,
   image as imageFilter,
+  imgStats,
   emailLink,
   email,
   htmlAttrs,
   htmlImgAttrs,
+  ioAttr,
 } from "./src/config-11ty/filters/index.js";
 import {
   newLine,
   fetchFile as fetchFileShortcode,
+  linkPaired as linkPairedShortcode,
+  buttonPaired as buttonPairedShortcode,
   link as linkShortcode,
   button as buttonShortcode,
   image,
@@ -116,11 +129,12 @@ if (DEBUG) {
   console.log("---------ENV-----------\n", env, "\n---------/ENV---------");
 }
 
-// TODOS:
-// - Look at persisting images in cache between builds: https://github.com/11ty/eleventy-img/issues/285
-
 function shouldNotRender(data) {
-  if (data.page.filePathStem.startsWith("/_")) {
+  // This excludes files whose path contains a `.` or a `_` directly after a `/`
+  if (
+    /(?:^|\/)_/.test(data.page.filePathStem) ||
+    /(?:^|\/)\\./.test(data.page.filePathStem)
+  ) {
     return true;
   }
   for (const lang of unrenderedLanguages) {
@@ -206,7 +220,7 @@ export const config = {
     includes: PARTIALS_DIR, // this is probably '_partials'
     layouts: LAYOUTS_DIR, // this is probably '_layouts'
     // data: "../src/data", // Directory for global data files. Default: "_data"
-    // data: "/src/data", // Directory for global data files. Default: "_data"
+    // data: ["_data", path.join(SRC_DIR_FROM_WORKING_DIR, "content/_data")], // NOTE: Not possible to provide an array here
     // output: "public",
     output: OUTPUT_DIR,
   },
@@ -224,6 +238,9 @@ export default async function (eleventyConfig) {
   eleventyConfig.setWatchThrottleWaitTime(500); // in milliseconds
 
   eleventyConfig.addWatchTarget("./src/config-11ty/**/*", {
+    resetConfig: true,
+  });
+  eleventyConfig.addWatchTarget("./src/styles/**/*.css", {
     resetConfig: true,
   });
   // eleventyConfig.addWatchTarget("./src/**/*");
@@ -253,6 +270,15 @@ export default async function (eleventyConfig) {
   // eleventyConfig.setLibrary("njk", nunjucksEnvironment);
 
   // --------------------- Eleventy Events
+  // INFO: persisting images in cache between builds: https://github.com/11ty/eleventy-img/issues/285
+  eleventyConfig.on("eleventy.after", () => {
+    // Make sure directories exist
+    if (fs.existsSync(IMAGE_CACHE_DIR)) {
+      fs.cpSync(IMAGE_CACHE_DIR, IMAGES_OUTPUT_DIR, {
+        recursive: true,
+      });
+    }
+  });
   // eleventyConfig.on(
   //   "eleventy.before",
   //   async (/*{ directories,`src/styles/ctx/index.css` runMode, outputMode, dir, ...arg }*/) => {
@@ -300,28 +326,16 @@ export default async function (eleventyConfig) {
   });
 
   // --------------------- Plugins Markdown
+  eleventyConfig.amendLibrary("md", (mdLib) =>
+    mdLib.set({
+      breaks: true,
+      // linkify: true // Do not do this until we implement an automatic email protection 11ty transform
+    }),
+  );
   eleventyConfig.amendLibrary(
     "md",
     (mdLib) =>
       mdLib
-        // https://github.com/markdown-it/markdown-it-container
-        // .use(markdownItContainer, "@", {
-        //   render: function (tokens, idx) {
-        //     const token = tokens[idx];
-        //     const attrsStr =
-        //       token.attrs
-        //         ?.map(([name, value]) => `${name}="${value}"`)
-        //         ?.join(" ") || "";
-        //     const tagMatch = token.info
-        //       .trim()
-        //       .match(/^@\s*([a-zA-Z0-9]+)\s*(.*)$/);
-        //     const tag = tagMatch ? tagMatch[1] : "div";
-
-        //     console.log({ token, idx, tag, attrsStr });
-
-        //     return token.nesting === 1 ? `<${tag} ${attrsStr}>` : `</${tag}>`;
-        //   },
-        // })
         // Use it like this:
         // ::: section
         // :::
@@ -351,54 +365,7 @@ export default async function (eleventyConfig) {
         .use(markdownItContainer, "cover")
         .use(markdownItContainer, "fixed-fluid")
         .use(markdownItContainer, "prose")
-
-        // .use(markdownItContainer, {
-        //   name: "@",
-        //   // render: function (tokens, idx) {
-        //   //   const token = tokens[idx];
-        //   //   const attrsStr =
-        //   //     token.attrs
-        //   //       ?.map(([name, value]) => `${name}="${value}"`)
-        //   //       ?.join(" ") || "";
-        //   //   const tagMatch = token.info
-        //   //     .trim()
-        //   //     .match(/^@\s*([a-zA-Z0-9]+)\s*(.*)$/);
-        //   //   const tag = tagMatch ? tagMatch[1] : "div";
-
-        //   //   return token.nesting === 1 ? `<${tag} ${attrsStr}>` : `</${tag}>`;
-        //   // },
-        //   openRender: (tokens, idx, _options) => {
-        //     const token = tokens[idx];
-        //     const attrsStr =
-        //       token.attrs
-        //         ?.map(([name, value]) => `${name}="${value}"`)
-        //         ?.join(" ") || "";
-        //     const tagMatch = token.info
-        //       .trim()
-        //       .match(/^@\s*([a-zA-Z0-9]+)\s*(.*)$/);
-        //     const tag = tagMatch ? tagMatch[1] : "div";
-
-        //     console.log({ token, tag, attrsStr, _options });
-
-        //     return `<${tag} ${attrsStr}>`;
-        //   },
-        //   closeRender: (tokens, idx, _options) => {
-        //     const tagMatch = tokens[idx].info
-        //       .trim()
-        //       .match(/^@\s*([a-zA-Z0-9]+)\s*(.*)$/);
-        //     const tag = tagMatch ? tagMatch[1] : "div";
-
-        //     console.log({ token: tokens[idx], tag, _options });
-
-        //     return `</${tag}>`;
-        //   },
-        // })
-        // .use(markdownItContainer, { name: "block" })
-        // .use(markdownItContainer, { name: "flow" })
-        // .use(markdownItContainer, { name: "grid-fluid" })
-        // .use(markdownItContainer, { name: "cluster" })
-        // .use(markdownItContainer, { name: "switcher" })
-
+        //
         .use(markdownItMark) // https://github.com/markdown-it/markdown-it-mark
         .use(markdownItLinkAttributes) // https://github.com/crookedneighbor/markdown-it-link-attributes
         .use(markdownItAttrs) // https://github.com/arve0/markdown-it-attrs
@@ -432,8 +399,10 @@ export default async function (eleventyConfig) {
   eleventyConfig.addGlobalData("inlineAllStyles", inlineAllStyles);
   eleventyConfig.addGlobalData("brandStyles", brandStyles);
   eleventyConfig.addGlobalData("fontPreloadTags", fontPreloadTags);
+  // eleventyConfig.addGlobalData("pageFooter", "");
   // Computed Data
   eleventyConfig.addGlobalData("eleventyComputed", eleventyComputed);
+  eleventyConfig.addGlobalData("ldWebSite", ldWebSite);
 
   // --------------------- Collections
   eleventyConfig.addCollection("sitemap", function (collectionApi) {
@@ -552,22 +521,30 @@ export default async function (eleventyConfig) {
     sources: iconSources,
     icon: {
       class: (name, source) => `icon icon-${source} icon-${name}`,
+      transform: async (svg) => {
+        const min = (svg || "").replace(/\s+/g, " ");
+        return min;
+      },
     },
   });
 
   eleventyConfig.addPlugin(pluginCodeblocks([pluginCodeBlocksCharts]));
 
-  // await eleventyConfig.addPlugin(ctxCss);
-  await eleventyConfig.addPlugin(buildExternalCSS);
-  await eleventyConfig.addPlugin(pluginUnoCSS);
-  // TODO: import those classes from a data file
+  // Add classes to specific elements depending on the project
+  const userHtmlClassesImport = await userHtmlClasses();
   eleventyConfig.addPlugin(htmlClassesTransform, {
     classes: {
       // <selector>: "<class>",
       // html: "imported-html-class",
       // body: "imported-body-class",
+      ...(userHtmlClassesImport || {}),
     },
   });
+
+  // await eleventyConfig.addPlugin(ctxCss);
+  await eleventyConfig.addPlugin(buildExternalCSS);
+  await eleventyConfig.addPlugin(pluginUnoCSS);
+  eleventyConfig.addPlugin(ioElementsTransform);
 
   // --------------------- Populate files and default content
   eleventyConfig.addPassthroughCopy({
@@ -591,23 +568,39 @@ export default async function (eleventyConfig) {
       "node_modules/@sveltia/cms/dist/sveltia-cms.mjs":
         "assets/js/sveltia-cms.mjs",
     });
-  } else if (CMS_IMPORT !== "cdn") {
+  } else if (CMS_IMPORT.startsWith("../../")) {
     eleventyConfig.addPassthroughCopy({
       [CMS_IMPORT + "sveltia-cms.js"]: "assets/js/sveltia-cms.js",
       [CMS_IMPORT + "sveltia-cms.mjs"]: "assets/js/sveltia-cms.mjs",
+    });
+  } else if (CMS_IMPORT === "local") {
+    eleventyConfig.addPassthroughCopy({
+      "assets/js/sveltia-cms.js": "assets/js/sveltia-cms.js",
+      "assets/js/sveltia-cms.mjs": "assets/js/sveltia-cms.mjs",
     });
   }
 
   eleventyConfig.addTemplate(
     "env.11ty.js",
-    function (data) {
-      const collections = data?.globalSettings?.collections;
-      const icons = {};
+    async function (data) {
+      const userCmsConfigImport = await userCmsConfig();
+      const selectedCollections = getSelectedCollections();
+      const activeCollections = [
+        ...selectedCollections,
+        ...(userCmsConfigImport?.collections || []),
+      ];
+      const activeCollectionNames = activeCollections?.collections?.map(
+        ({ name }) => name,
+      );
 
-      return `export const env = ${JSON.stringify({
-        collections,
-        iconLists,
-      })};`;
+      const envVars = { CONTENT_DIR };
+
+      return `
+export const env = ${JSON.stringify(envVars)};
+export const activeCollections = ${JSON.stringify(activeCollections)};
+export const activeCollectionNames = ${JSON.stringify(activeCollectionNames)};
+export const iconLists = ${JSON.stringify(iconLists)};
+`;
     },
     {
       permalink: "/admin/env.js",
@@ -621,16 +614,20 @@ export default async function (eleventyConfig) {
     // logLevel: 'debug',
     sources: [
       // TODO: Make this selectable from the CMS
-      "src/themes/default",
+      `src/themes/${POKO_THEME}`,
       "src/content",
     ],
   });
   // Partials expand on the renderFile shortcode
   await eleventyConfig.addPlugin(partialsPlugin, {
-    defaultExt: ["njk", "md"],
+    defaultExt: ["11ty.js", "njk", "md"],
     dirs: [
+      {
+        pattern: path.join(WORKING_DIR, "*", PARTIALS_DIR),
+        resolveDiscriminant: (data) => (data?.lang ? `/${data.lang}/` : ""),
+      },
       path.join(WORKING_DIR, PARTIALS_DIR),
-      path.join("src/themes/default/_partials"),
+      path.join(`src/themes/${POKO_THEME}/_partials`),
       path.join("src/content/_partials"),
     ],
     shortcodeAliases: [
@@ -645,6 +642,7 @@ export default async function (eleventyConfig) {
       "componentWrapper",
     ],
   });
+
   // Copy files (Keystatic)
   // Retrieve public files from the _files directory
   // eleventyConfig.addPlugin(keystaticPassthroughFiles)
@@ -680,12 +678,15 @@ export default async function (eleventyConfig) {
   // Images
   eleventyConfig.addAsyncFilter("ogImage", ogImageSrc);
   eleventyConfig.addAsyncFilter("image", imageFilter);
+  eleventyConfig.addAsyncFilter("imgStats", imgStats);
   // Email
   eleventyConfig.addFilter("emailLink", emailLink);
   eleventyConfig.addFilter("email", email);
   // HTML helpers
   eleventyConfig.addFilter("htmlAttrs", htmlAttrs);
   eleventyConfig.addFilter("htmlImgAttrs", htmlImgAttrs);
+  eleventyConfig.addFilter("ioAttr", ioAttr);
+  eleventyConfig.addFilter("io", ioAttr);
 
   // --------------------- Shortcodes
   // eleventyConfig.addAsyncShortcode("partial", partialShortcode);
@@ -699,11 +700,15 @@ export default async function (eleventyConfig) {
     "fetchFile",
     fetchFileShortcode,
   );
-  eleventyConfig.addShortcode("link", linkShortcode);
-  eleventyConfig.addShortcode("button", buttonShortcode);
+  eleventyConfig.addPairedShortcode("link", linkPairedShortcode);
+  eleventyConfig.addPairedShortcode("button", buttonPairedShortcode);
+  // TODO: remove these someday!
+  // We are keeping for now for easier migration from '{% link' to '{% linkSimple' before manually replacing
+  eleventyConfig.addAsyncShortcode("linkSimple", linkShortcode);
+  eleventyConfig.addShortcode("buttonSimple", buttonShortcode);
   eleventyConfig.addShortcode("image", image);
   eleventyConfig.addShortcode("gallery", gallery);
-  eleventyConfig.addPairedShortcode("wrapper", wrapper);
+  // eleventyConfig.addPairedShortcode("wrapper", wrapper);
   // eleventyConfig.addPairedShortcode("calloutShortcode", calloutShortcode);
   // eleventyConfig.addShortcode("ogImageSelected", ogImageSelected);
   // eleventyConfig.addShortcode(
@@ -733,13 +738,14 @@ export default async function (eleventyConfig) {
 
   // Deferred Config
   await eleventyConfig.addPlugin(customRenderersPlugin);
+  await eleventyConfig.addPlugin(partialShortcodesPlugin);
 
   await eleventyConfig.addPlugin(async function (eleventyConf) {
     eleventyConf.versionCheck(">=3.0.0-alpha.1");
     // const { dir } = eleventyConf;
 
     // const safeFilter = this.env.filters.safe;
-    const partialShortcodeFn = eleventyConfig.nunjucks.asyncShortcodes.partial;
+    const partialShortcodeFn = eleventyConfig.universal.shortcodes.partial;
 
     await eleventyConf.addShortcode("section", async function (...args) {
       // Old Section implementation mirroring Partial

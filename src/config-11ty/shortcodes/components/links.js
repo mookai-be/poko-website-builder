@@ -1,35 +1,69 @@
 // import obfuscateEmail from "../../utils/emailObfuscate.js";
+import slugify from "@sindresorhus/slugify";
 import { locale_url } from "../../filters/i18n.js";
+import { emailLink } from "../../filters/email.js";
 
-export function link(unnamedAttrOrObj, optionalAttrsObj) {
+function isFileUrl(urlString) {
+  try {
+    // Use a dummy base for relative URLs
+    const url = new URL(urlString, "http://x");
+    const pathname = url.pathname;
+
+    if (pathname.endsWith("/")) return false;
+
+    return /\.\w{2,5}$/i.test(pathname);
+  } catch {
+    return false;
+  }
+}
+
+export async function link(unnamedAttrOrObj, optionalAttrsObj) {
   const {
     __keywords,
     url,
     text,
+    content,
     lang,
     prop,
     collection,
-    isEmail: isEmailPass,
-    isFile: isFilePass,
-    isExternal: isExternalPass,
-    isInternal: isInternalPass,
+    type: typeTemp,
+    linkType,
+    anchor,
+    // Email fields
+    subject,
+    body,
+    cc,
+    bcc,
+    // TODO: implement the following?
+    // download,
+    // target,
+    // rel,
+    // hreflang,
     ...attrs
   } = optionalAttrsObj || unnamedAttrOrObj;
+  const type = typeTemp || linkType;
+
+  const htmlContent = content || text;
+
   const urlRef = typeof unnamedAttrOrObj === "string" ? unnamedAttrOrObj : url;
   // Boolean checks
   const isEmail =
-    isEmailPass ||
+    type === "email" ||
     /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(urlRef);
-  const isFile = isFilePass || urlRef.startsWith("file:");
+  const isFile = type === "file" || isFileUrl(urlRef);
   const isExternal =
-    isExternalPass || urlRef.startsWith("http") || urlRef.startsWith("www.");
-  const isInternal = isInternalPass || (!isEmail && !isExternal && !isFile);
+    type === "external" ||
+    urlRef.startsWith("http") ||
+    urlRef.startsWith("www.");
+  const isInternal =
+    type === "internal" || (!isEmail && !isExternal && !isFile);
 
   // could be one of:
   // - [ ] translationKey
   // - [ ] page url
   // - [ ] external url
   // - [ ] email
+  // - [ ] file url
   //
   // pageRef | locale_url(lang, propName, collectionName)
 
@@ -46,8 +80,36 @@ export function link(unnamedAttrOrObj, optionalAttrsObj) {
       .join(" ");
 
     if (typeof pageData === "object") {
-      return `<a href="${pageData.url}" ${attrsStr}>${text || pageData.name || pageData.url}</a>`;
+      const anchorStr = anchor ? `#${slugify(anchor)}` : "";
+      return `<a href="${pageData.url}${anchorStr}" ${attrsStr}>${htmlContent || pageData.name || pageData.url}</a>`;
     }
+  }
+
+  if (isExternal) {
+    const attrsStr = Object.entries(attrs)
+      .map(([key, value]) => `${key}="${value}"`)
+      .join(" ");
+
+    return `<a href="${urlRef}" ${attrsStr}>${htmlContent || urlRef}</a>`;
+  }
+
+  if (isEmail) {
+    return emailLink.call(this, urlRef, {
+      text: htmlContent,
+      subject,
+      body,
+      cc,
+      bcc,
+      ...attrs,
+    });
+  }
+
+  if (isFile) {
+    const attrsStr = Object.entries(attrs)
+      .map(([key, value]) => `${key}="${value}"`)
+      .join(" ");
+
+    return `<a href="${urlRef}" ${attrsStr}>${htmlContent || urlRef}</a>`;
   }
 
   return "";
@@ -69,4 +131,29 @@ export function button(unnamedAttrOrObj, optionalAttrsObj) {
   });
 }
 
-// TODO: Email, tel, files, external, ...
+export async function linkPaired(
+  contentRaw,
+  unnamedAttrOrObj,
+  optionalAttrsObj,
+) {
+  const content = (contentRaw || "").replace(/\n\n+/g, "<br>");
+  // const content = contentRaw;
+  return link.call(this, {
+    ...normalizeAttributes(unnamedAttrOrObj, optionalAttrsObj),
+    content,
+  });
+}
+
+export async function buttonPaired(
+  contentRaw,
+  unnamedAttrOrObj,
+  optionalAttrsObj,
+) {
+  const content = (contentRaw || "").replace(/\n\n+/g, "<br>");
+  // const content = contentRaw;
+  return link.call(this, {
+    ...normalizeAttributes(unnamedAttrOrObj, optionalAttrsObj),
+    content,
+    class: `button ${unnamedAttrOrObj?.class || optionalAttrsObj?.class || ""}`,
+  });
+}
