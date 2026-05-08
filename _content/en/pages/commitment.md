@@ -10,7 +10,7 @@ eleventyNavigation:
 metadata:
   description: We commit to building a world wide web that is more sustainable, accessible and simple for everyone
 ---
-# Our commitment
+{% partial "page-header.njk", {title: "Our Commitment"} %}
 
 The web was meant to be open, accessible, and empowering. We built poko to bring that vision back.
 

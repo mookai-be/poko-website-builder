@@ -4,7 +4,6 @@ lang: en
 createdAt: 2025-09-30T20:01:00.000Z
 uuid: b59c6173211c
 localizationKey: 8c143928dd34
-pageLayout: homepage
 name: The Liberating Website Builder
 eleventyNavigation:
   title: Home
@@ -16,7 +15,7 @@ metadata:
 vars: {}
 ---
 {% section type="cover", vars={"minHeight":"","noPadding":false,"gap":""}, blocks=[{"value":"# [poko]{style=color:var(--pink)} is a lightweight, eco-focused, powerful, hackable website builder for the people {.centered .h0}\n\n{{ \"get-started\" | link(undefined,\"html\") | safe }} {{ \"commitment\" | link(undefined,\"html\") | safe }} {{ \"showcase\" | link(undefined,\"html\") | safe }} {.cluster style=--justify-cluster:center}\n\n<a href=\"#why-poko\" class=\"scroll pile\"></a>","type":"markdown"}], advanced={} %}
-
+::: section
 ## Why poko?
 
 Most website builders lock you into expensive subscriptions and proprietary systems. We want to build something different.
@@ -38,8 +37,10 @@ No database. No plugins. Your content lives in readable files you control. Updat
 
 Static sites can't execute malicious code—hackers have no way in. No security updates needed. Set it up once, and it stays secure.
 
-{{ "get-started" | link(undefined,"html") | safe }}
+{% linkSimple url="get-started", text="Get Started", linkType="internal", class="cta" %}
+:::
 
+::: section
 ## How it works
 
 **1. Set up your project**  
@@ -51,7 +52,8 @@ Use the no-code interface to manage your content. Or dig into the code if you wa
 **3. Deploy and go live**  
 Push to GitHub, connect to free hosting, and your site goes live. Updates deploy automatically.
 
-{{ "get-started" | link(undefined,"html") | safe }}
+{% linkSimple url="get-started", text="Get Started", linkType="internal", class="cta" %}
+:::
 
 {% css %}
 main {

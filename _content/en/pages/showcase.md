@@ -9,8 +9,7 @@ eleventyNavigation:
 localizationKey: 02fc4e97117e
 uuid: 4861cc7cab24
 ---
-
-# Showcase
+{% partial "page-header.njk", {title: "Showcase"} %}
 
 poko is still young but here are some examples of what it can do.
 
@@ -29,10 +28,21 @@ poko is still young but here are some examples of what it can do.
   .collection-item ul {
     list-style: none;
     padding-left: 0;
+    justify-content: center;
+    align-items: center;
+    margin-inline: auto;
   }
   .collection-item ul li {
     padding-inline: var(--step--1);
     border-radius: .5rem;
+  }
+
+  .collection-item ul li.small:hover {
+    color: var(--color-pop);
+  }
+
+  .collection-item_header h2 {
+    margin-inline: auto;
   }
 
   .collection-item_content {

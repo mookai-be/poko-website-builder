@@ -11,18 +11,19 @@ eleventyNavigation:
 metadata:
   description: Set up your free website builder in minutes with our step-by-step guide
 ---
-# Get Started
+{% partial "page-header.njk", {title: "Get Started"} %}
 
-::: aside {.callout .prose}
+::: aside {.callout .prose .box .palette--tone}
 
 ## Need help or want a professionally designed site? {.h4}
 
 We offer tailored website creation and setup assistance.  
-[Contact us](mailto:hello@poko.eco) to discuss your project.
+{% linkSimple url="hello@poko.eco", text="Contact us", linkType="mailTo", class="cta cta-secondary" %}
+
 
 :::
 
-## Before You Begin
+## Before you Begin
 
 Setting up a poko website is straightforward, but you'll need to be comfortable creating accounts and navigating web service settings. If you've set up a GitHub repository or configured hosting before, you'll be fine.
 
@@ -39,12 +40,14 @@ Setting up a poko website is straightforward, but you'll need to be comfortable 
 _Detailed step-by-step instructions coming soon._
 
 **Overview of the process:**
-
+::: div {.overview .palette--bg .width-prose .center .box}
 1. Fork the [poko website builder](https://github.com/m4rrc0/poko-website-builder) repository on Github.
 
 - ℹ️ [What is a 'Fork'?](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo)
 - ⚡️ Quick link: [Fork m4rrc0/poko-website-builder](https://github.com/m4rrc0/poko-website-builder/fork)
+:::
 
+::: div {.overview .palette--bg .width-prose .center .box}
 2. Create a new fine-grained Github personal access token
 
 - ℹ️ [What is a 'Personal Access Token' on Github?](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token)
@@ -54,7 +57,9 @@ _Detailed step-by-step instructions coming soon._
 - Copy the token value and save it in a safe place (like a password manager)
     - ⚠️ **Do not share this token with anyone**
     - ⚠️ **You will not be able to read the token from Github after you leave the page** (you can always create a new one though)
+:::
 
+::: div {.overview .palette--bg .width-prose .center .box}
 3. [Create a new project on Cloudflare Pages](https://developers.cloudflare.com/pages/get-started/git-integration/) from the forked repository
 
 - ⚠️ Make sure you are using a 'Pages' project, not a 'Workers' project
@@ -65,7 +70,9 @@ _Detailed step-by-step instructions coming soon._
     - Build command: `bun run cf-build`
     - Publish directory: `dist`
 - Click 'Create project' and wait for the first build to finish (\~30 seconds)
+:::
 
+::: div {.overview .palette--bg .width-prose .center .box}
 4. Connect to the CMS
 
 - Find the URL of your Cloudflare Pages project (e.g. `https://project-name.pages.dev`)
@@ -73,13 +80,15 @@ _Detailed step-by-step instructions coming soon._
 - Choose 'Sign in with GitHub Using a PAT' and enter the token you created earlier
 - The page should reload and you should be logged in
 - Note: The token is saved in your browser's local storage so you won't have to enter it again in that browser. But you will need it again if you sign in from another device or browser.
+:::
 
+::: div {.overview .palette--bg .width-prose .center .box}
 5. Start editing your content
 
 - On the first load (and only then), you will only be able to edit your 'Global Settings'. Fill in the required fields and save. You will need to wait for your site to re-build before you can see the changes.
 - You can now explore the CMS interface to edit your content.
 - ~~Check out our User Guide for more information.~~ (Coming soon)
-
+:::
 ## Video Walkthrough
 
 _Video tutorial coming soon to guide you through the entire setup process._

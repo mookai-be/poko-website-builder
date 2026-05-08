@@ -26,16 +26,18 @@ colors:
     value: '#ffffff'
   - name: pink
     value: '#ef4d99'
+  - name: lavender
+    value: '#B1AFE6'
+  - name: purple
+    value: '#E8B2F0'
 palettes:
   - name: main
-    advanced:
-      text__a: pink
-      text__a--hover: white
-    text: white
-    bg: indigo
-    text-decoration: pink
-    text-emphasis: pink
-    text--selection: indigo
-    bg--selection: white
+    read: white
+    tone: purple
+    pop: pink
+    neutral: lavender
+    selection:
+      text--selection: indigo
+      bg--selection: lavender
 ctxCssImport:
   filename: ctx.css
