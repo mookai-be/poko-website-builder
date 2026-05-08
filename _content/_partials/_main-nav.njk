@@ -1,0 +1,65 @@
+{% set navPages = collections.all | filterCollection([{ by: 'lang', value:
+lang }, { by: 'parent', value: '' }]) | eleventyNavigation %}
+
+{% if navPages | length %}
+
+<header class="width-max">
+  <nav id="main-nav">
+    <a href="{{ homeUrl }}" id="logo" aria-label="Home">
+      {% partial "poko-logo-cc.md" %}
+    </a>
+    <ul role="list" class="cluster">
+       {% for link in navPages %}
+        <li>
+        {# prettier-ignore #}
+        <a
+            href="{{link.url}}"
+            hreflang="{{link.lang}}"
+            {% if link.url == page.url %}aria-current="page"{% endif %}
+            >{{link.title}}</a
+        >
+        </li>
+        {% endfor %}
+    </ul>
+  </nav>
+</header>
+
+{% css %}
+header {
+    border: none;
+}
+#main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#logo {
+    width: var(--step-7);
+}
+
+#logo svg {
+    width: 100%;
+    height: auto;
+}
+
+
+#main-nav ul{
+    margin-block-start: 0;
+    
+}
+
+#main-nav a{
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: Calibri, sans-serif;
+    color: var(--color-text);
+}
+
+#main-nav a[aria-current="page"] {
+    text-decoration: underline;
+    text-underline-offset: 0.4em;
+    text-decoration-color: var(--color-pop);
+}
+{% endcss %}
+{% endif %}

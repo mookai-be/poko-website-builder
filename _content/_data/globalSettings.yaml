@@ -21,6 +21,7 @@ languages:
     customUrlPrefix: null
     isCmsDefault: false
     isWebsiteDefault: false
+customNav: main
 collections:
   - articles
   - people
