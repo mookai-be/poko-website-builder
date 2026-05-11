@@ -1,9 +1,8 @@
 ---
 translationKey: index
+order: null
 lang: en
 createdAt: 2025-09-30T20:01:00.000Z
-uuid: b59c6173211c
-localizationKey: 8c143928dd34
 name: The Liberating Website Builder
 eleventyNavigation:
   title: Home
@@ -12,9 +11,11 @@ metadata:
   description: poko is a lightweight, eco-focused, powerful, hackable website builder for the people
   image:
     src: /_images/device-set_v01_mockup-poko.webp
-vars: {}
+pageLayout: homepage
+localizationKey: 8c143928dd34
+uuid: b59c6173211c
 ---
-{% section type="cover", vars={"minHeight":"","noPadding":false,"gap":""}, blocks=[{"value":"# [poko]{style=color:var(--pink)} is a lightweight, eco-focused, powerful, hackable website builder for the people {.centered .h0}\n\n{{ \"get-started\" | link(undefined,\"html\") | safe }} {{ \"commitment\" | link(undefined,\"html\") | safe }} {{ \"showcase\" | link(undefined,\"html\") | safe }} {.cluster style=--justify-cluster:center}\n\n<a href=\"#why-poko\" class=\"scroll pile\"></a>","type":"markdown"}], advanced={} %}
+
 ::: section
 ## Why poko?
 
@@ -22,7 +23,7 @@ Most website builders lock you into expensive subscriptions and proprietary syst
 
 ### Free & independent {.h4}
 
-Host your site for free on modern static platforms. No subscriptions, no vendor lock-in.  
+Host your site for free on modern static platforms. No subscriptions, no vendor lock-in.
 We will even let you use our domain name for free if you want.
 
 ### Planet-friendly by default {.h4}
@@ -41,15 +42,16 @@ Static sites can't execute malicious code—hackers have no way in. No security 
 :::
 
 ::: section
+
 ## How it works
 
-**1. Set up your project**  
+**1. Set up your project**
 Clone the starter template, install dependencies, and configure your site. Takes about 15 minutes.
 
-**2. Edit with the CMS**  
+**2. Edit with the CMS**
 Use the no-code interface to manage your content. Or dig into the code if you want—nothing is hidden.
 
-**3. Deploy and go live**  
+**3. Deploy and go live**
 Push to GitHub, connect to free hosting, and your site goes live. Updates deploy automatically.
 
 {% linkSimple url="get-started", text="Get Started", linkType="internal", class="cta" %}
@@ -64,26 +66,21 @@ padding-block-start: 0;
 inline-size: var(--scroll-arrow-ratio);
 block-size: var(--scroll-arrow-ratio);
 margin-inline: auto;
-border: 2px solid var(--white);
-border-radius: 50%;
 animation: down 1.5s infinite;
 align-items: center;
 justify-items: center;
-&::before {
-content: '';
-width: calc(var(--scroll-arrow-ratio) / 4);
-height: calc(var(--scroll-arrow-ratio) / 4);
-border-left: 2px solid var(--white);
-border-bottom: 2px solid var(--white);
-transform: rotate(-45deg);
-margin-top: calc(var(--scroll-arrow-ratio) * -0.05);
-}
+width: fit-content;
+margin-block-end: var(--step-2) !important;
 }
 
 @keyframes down {
 0% {transform: translate(0);}
 20% {transform: translateY(calc(var(--scroll-arrow-ratio) / 4));}
 40% {transform: translate(0);}
+}
+
+.hero-homepage {
+  margin-block: auto;
 }
 
 {% endcss %}

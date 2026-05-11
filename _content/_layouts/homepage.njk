@@ -4,9 +4,12 @@
     {% partial "_html-head-default.md" %} {% getBundle "html", "head" %}
   </head>
   <body>
+    {% partial "homepage-header.njk" %}
+  
     <!-- Content -->
     {% partial "_main-content.md" %}
     <!-- Footer -->
-    {% partial '_footer.md' %}
+    {% partial '_main-footer.njk' %}
+
   </body>
 </html>
