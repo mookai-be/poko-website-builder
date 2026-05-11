@@ -1,8 +1,10 @@
+import { image as imageShortcode } from "../../src/config-11ty/shortcodes/components/image.js";
+
 export default async function (data) {
   const { title, description, url, image, highlights, pagePreview } = data;
 
   const imageStr = image?.src
-    ? `<img src="${image.src}" alt="${image.alt || ""}">`
+    ? await imageShortcode({ src: image.src, alt: image.alt || "" })
     : "";
 
   const highlightsStr = (highlights || [])

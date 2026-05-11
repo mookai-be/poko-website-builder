@@ -8,6 +8,7 @@ name: Get Started
 eleventyNavigation:
   title: Get Started
   order: 2
+pageLayout: docs
 metadata:
   description: Set up your free website builder in minutes with our step-by-step guide
 ---
