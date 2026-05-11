@@ -8,7 +8,7 @@ export default async function (data) {
   const highlightsStr = (highlights || [])
     .map(({ text, url: hUrl }) =>
       hUrl ? `<li class="small" style="background-color: ${data.capsuleBackgroundColor || "white"};">
-    <a href="${hUrl}" style="color: ${data.textColor || data.backgroundColor || "inherit"}">${text}</a></li>` : `<li class="small" style="background-color: ${data.capsuleBackgroundColor || "white"}; color: ${data.textColor || data.backgroundColor || "inherit"}">${text}</li>`
+    <a href="${hUrl}" style="color: ${data.textColor || data.backgroundColor || "inherit"}" target='_blank' rel='noopener noreferrer'>${text}</a></li>` : `<li class="small" style="background-color: ${data.capsuleBackgroundColor || "white"}; color: ${data.textColor || data.backgroundColor || "inherit"}">${text}</li>`
     )
     .join("\n");
 

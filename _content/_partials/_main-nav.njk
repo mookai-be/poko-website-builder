@@ -3,12 +3,14 @@ lang }, { by: 'parent', value: '' }]) | eleventyNavigation %}
 
 {% if navPages | length %}
 
-<header class="width-max">
-  <nav id="main-nav">
-    <a href="{{ homeUrl }}" id="logo" aria-label="Home">
-      {% partial "poko-logo-cc.md" %}
-    </a>
+<header class="">
+  <nav id="main-nav" class="cluster">
     <ul role="list" class="cluster">
+        <li id="logo-item">
+          <a href="/" id="logo" aria-label="Home">
+            {% partial "poko-logo-cc.md" %}
+          </a>
+        </li>
        {% for link in navPages %}
         <li>
         {# prettier-ignore #}
@@ -25,17 +27,33 @@ lang }, { by: 'parent', value: '' }]) | eleventyNavigation %}
 </header>
 
 {% css %}
+:root {
+ --gap-cover: 1em;
+
+}
+:where(body > :where(header, footer, main, aside)) {
+    padding: var(--gap-cover, 1em);
+}
 header {
     border: none;
 }
 #main-nav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
+}
+#main-nav:not(section.cover #main-nav){
+    padding-inline: 0;
+}
+
+#logo-item {
+    margin-inline-end: auto;
 }
 
 #logo {
-    width: var(--step-7);
+    display: block;
+    width: var(--step-8);
+    max-width: var(--step-8);
 }
 
 #logo svg {
@@ -46,7 +64,9 @@ header {
 
 #main-nav ul{
     margin-block-start: 0;
-    
+    width: 100%;
+    justify-content: flex-end;
+
 }
 
 #main-nav a{

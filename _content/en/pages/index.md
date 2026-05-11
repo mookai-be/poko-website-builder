@@ -4,9 +4,6 @@ order: null
 lang: en
 createdAt: 2025-09-30T20:01:00.000Z
 name: The Liberating Website Builder
-eleventyNavigation:
-  title: Home
-  order: 1
 metadata:
   description: poko is a lightweight, eco-focused, powerful, hackable website builder for the people
   image:
@@ -17,6 +14,7 @@ uuid: b59c6173211c
 ---
 
 ::: section
+
 ## Why poko?
 
 Most website builders lock you into expensive subscriptions and proprietary systems. We want to build something different.
