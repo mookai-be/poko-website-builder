@@ -11,7 +11,7 @@ uuid: 4861cc7cab24
 ---
 {% partial "page-header.njk", {title: "Showcase"} %}
 
-poko is still young but here are some examples of what it can do.
+poko is still young but here are some examples of what it can do. { .text-center}
 
 {% sectionCollection  %}
 

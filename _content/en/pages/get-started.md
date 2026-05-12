@@ -12,14 +12,14 @@ pageLayout: docs
 metadata:
   description: Set up your free website builder in minutes with our step-by-step guide
 ---
-{% partial "page-header.njk", {title: "Get Started"} %}
+# Get Started
 
 ::: aside {.callout .prose .box .palette--tone}
 
 ## Need help or want a professionally designed site? {.h4}
 
 We offer tailored website creation and setup assistance.  
-{% linkSimple url="hello@poko.eco", text="Contact us", linkType="mailTo", class="cta cta-secondary" %}
+<p>{% linkSimple url="hello@poko.eco", text="Contact us", linkType="mailTo", class="cta cta-secondary" %}</p>
 
 
 :::
