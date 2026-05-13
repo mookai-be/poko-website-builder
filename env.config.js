@@ -285,6 +285,12 @@ export const COLLECTIONS = {
     label_singular: "Product",
     ldType: "Product",
   },
+  docs: {
+    name: "docs",
+    label: "Docs",
+    label_singular: "Doc",
+    ldType: "WebPage",
+  },
   projects: {
     name: "projects",
     label: "Projects",

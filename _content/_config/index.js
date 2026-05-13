@@ -12,7 +12,7 @@ import {
   CMS_BRANCH,
 } from "../../env.config.js";
 
-const { projects, spreadPageSetup } = await import(
+const { projects, pages, spreadPageSetup } = await import(
   `../${SRC_DIR_FROM_WORKING_DIR}/config-11ty/plugins/cms-config/index.js`
 );
 
@@ -105,13 +105,59 @@ const projectFields = [
     ...projects.fields.slice(pos),
 ]
 
+const additionalDocsConfig = [
+    {
+        name: "docsNav",
+        label: "Docs Navigation",
+        widget: "object",
+        collapsed: false,
+        required: false,
+        i18n: "duplicate",
+        fields: [
+            {
+                name: "section",
+                label: "Section",
+                widget: "select",
+                required: false,
+                i18n: "duplicate",
+                options: [
+                    { value: "getting-started", label: "Getting Started" },
+                    { value: "content", label: "Content" },
+                    { value: "building-pages", label: "Building Pages" },
+                    { value: "advanced", label: "Advanced" },
+                ],
+            },
+            {
+                name: "order",
+                label: "Order",
+                widget: "number",
+                value_type: "int",
+                required: false,
+                hint: "Position dans la section",
+                i18n: "duplicate",
+            },
+        ],
+    },
+];
+
+const docsFields = [
+    ...pages.fields.slice(0, pos),
+    ...additionalDocsConfig,
+    ...pages.fields.slice(pos),
+]
+
 export const collections = [
     {
         ...projects,
         ...spreadPageSetup("projects"),
         icon: "folder_open",
         fields: projectFields,
-    }
+    },
+    {
+        ...spreadPageSetup("docs"),
+        icon: "menu_book",
+        fields: docsFields,
+    },
 ];
 
 export const singletons = [];

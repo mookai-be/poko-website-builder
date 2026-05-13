@@ -1,42 +1,30 @@
+{% set docsPages = collections.docs
+  | filterCollection([{ by: "lang", value: lang }])
+  | sortCollection([{ by: "docsNav.order", direction: "asc" }]) %}
+
+{% set navSections = [
+  { key: "getting-started", label: "Getting Started" },
+  { key: "content",         label: "Content" },
+  { key: "building-pages",  label: "Building Pages" },
+  { key: "advanced",        label: "Advanced" }
+] %}
+
 <nav class="docs-nav-sidebar flow">
-
-  <details class="docs-nav-group" open>
-    <summary class="docs-nav-section-title">Getting Started</summary>
-    <ul role="list" class="docs-nav-list reset">
-      <li><a href="#">Introduction &amp; setup</a></li>
-      <li><a href="#">Global settings</a></li>
-      <li><a href="#">Brand &amp; design config</a></li>
-    </ul>
-  </details>
-
-  <details class="docs-nav-group">
-    <summary class="docs-nav-section-title">Content</summary>
-    <ul role="list" class="docs-nav-list reset">
-      <li><a href="#">Content authoring</a></li>
-      <li><a href="#">Media &amp; icons</a></li>
-      <li><a href="#">Navigation &amp; links</a></li>
-    </ul>
-  </details>
-
-  <details class="docs-nav-group">
-    <summary class="docs-nav-section-title">Building Pages</summary>
-    <ul role="list" class="docs-nav-list reset">
-      <li><a href="#">Layout primitives</a></li>
-      <li><a href="#">Section components</a></li>
-      <li><a href="#">Design system &amp; utilities</a></li>
-    </ul>
-  </details>
-
-  <details class="docs-nav-group">
-    <summary class="docs-nav-section-title">Advanced</summary>
-    <ul role="list" class="docs-nav-list reset">
-      <li><a href="#">Partials</a></li>
-      <li><a href="#">Assets (CSS &amp; JS)</a></li>
-      <li><a href="#">Extending the CMS</a></li>
-      <li><a href="#">htmlClasses.js</a></li>
-    </ul>
-  </details>
-
+  {% for section in navSections %}
+    {%- set sectionPages = docsPages | filterCollection([{ by: "docsNav.section", value: section.key }]) %}
+    {%- if sectionPages | length %}
+      {%- set sectionUrls = [] %}
+      {%- for p in sectionPages %}{%- set __ = (sectionUrls.push(p.url), null) %}{%- endfor %}
+      <details class="docs-nav-group"{% if page.url in sectionUrls %} open{% endif %}>
+        <summary class="docs-nav-section-title">{{ section.label }}</summary>
+        <ul role="list" class="docs-nav-list reset">
+          {%- for p in sectionPages %}
+          <li><a href="{{ p.url }}"{% if p.url == page.url %} aria-current="page"{% endif %}>{{ p.data.name }}</a></li>
+          {%- endfor %}
+        </ul>
+      </details>
+    {%- endif %}
+  {%- endfor %}
 </nav>
 
 {% css %}

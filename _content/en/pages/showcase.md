@@ -23,7 +23,6 @@ poko is still young but here are some examples of what it can do. { .text-center
 .collection-item h2,
 .collection-item h2 a,
     .highlights li {
-      font-family: Calibri, sans-serif;
     }
   .collection-item ul {
     list-style: none;
