@@ -1,6 +1,6 @@
 <footer>
 
-{% partial "poko-logo-cc.md" %}
+{% partial "poko-logo-cc.njk" %}
 
 [poko]{style=color:var(--pink)} makes eco-design easy  
 Here is the [carbon footprint](https://www.websitecarbon.com/website/poko-eco/) of this website's homepage

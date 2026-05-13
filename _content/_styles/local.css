@@ -272,6 +272,114 @@ footer {
 footer address {
   margin-block-start: 0;
 }
+.footer-group {
+  padding: 0;
+}
+.poko-label {
+  background-color: var(--indigo-light);
+  position: sticky;
+  top: calc(100vh - 1px);
+  font-size: var(--step--2);
+
+}
+.poko-label>div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--step-1);
+  padding-block: var(--step--3);
+}
+.poko-label p {
+  margin: 0;
+  text-align: center;
+}
+
+.poko-label .logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.poko-label .logo-poko {
+  width: var(--step-7);
+  max-width: var(--step-7);
+}
+
+.poko-label .logo-poko svg {
+  width: 100%;
+  height: auto;
+}
+
+/* Side label drawer */
+.side-label {
+  --side-label-panel-w: 21rem;
+  position: fixed;
+  right: 0;
+  top: 90vh;
+  transform: translateY(-50%) translateX(var(--side-label-panel-w));
+  display: flex;
+  align-items: stretch;
+  z-index: 1000;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.side-label .st1 {
+  fill: var(--indigo);
+}
+
+.side-label.is-open {
+  transform: translateY(-50%) translateX(0);
+}
+
+.side-label__tab {
+  --tab-logo-visual-w: 3rem;
+  --tab-logo-visual-h: 9rem;
+  flex-shrink: 0;
+  width: var(--tab-logo-visual-w);
+  padding-block: 1.5rem;
+  background: var(--white);
+  border: none;
+  border-radius: 0.5rem 0 0 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: clip;
+}
+
+.side-label__tab .poko-logo-cc {
+  width: var(--tab-logo-visual-h);
+  height: var(--tab-logo-visual-w);
+  transform: rotate(-90deg) scale(1.5);
+  transform-origin: center;
+}
+
+.side-label__panel {
+  width: var(--side-label-panel-w);
+  background: var(--white);
+  padding-block: var(--step--3);
+  color: var(--indigo);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--step--4);
+  font-size: var(--step--2);
+  border-left: 1px solid var(--indigo);
+}
+
+.side-label__panel p {
+  margin: 0;
+}
+
+.side-label__panel a:not(.palette--pop) {
+  color: var(--indigo);
+}
+
+.side-label__logo .poko-logo-cc {
+  width: var(--step-6);
+  height: auto;
+}
 
 @supports (animation-timeline: scroll()) {
   @keyframes parallax {

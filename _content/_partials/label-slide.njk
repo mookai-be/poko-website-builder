@@ -1,0 +1,43 @@
+<div class="side-label" id="side-label">
+    <button
+        class="side-label__tab"
+        aria-expanded="false"
+        aria-controls="side-label-panel"
+    >
+        {% partial "poko-logo-cc.njk" %}
+    </button>
+    <div class="side-label__panel" id="side-label-panel" aria-hidden="true">
+        <p>
+            Built by <a href="https://www.mookai.be/" target="_blank" rel="noopener">mookaï</a> with <a href="https://www.poko.eco/" class="palette--pop" target="_blank" rel="noopener">poko</a>, an independent website builder fighting for a more ethical web
+        </p>
+        <p>
+            Cleaner than 99% of pages tested on <a href="https://www.websitecarbon.com/" target="_blank" rel="noopener">Website Carbon</a>
+        </p>
+    </div>
+</div>
+<script>
+(function () {
+    var el = document.getElementById('side-label');
+    var btn = el.querySelector('.side-label__tab');
+    var panel = document.getElementById('side-label-panel');
+
+    function close() {
+        el.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+        panel.setAttribute('aria-hidden', 'true');
+    }
+
+    btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var isOpen = el.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', isOpen);
+        panel.setAttribute('aria-hidden', !isOpen);
+    });
+
+    document.addEventListener('click', function (e) {
+        if (el.classList.contains('is-open') && !el.contains(e.target)) {
+            close();
+        }
+    });
+}());
+</script>

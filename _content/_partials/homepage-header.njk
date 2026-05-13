@@ -13,21 +13,3 @@
   {% icon "tablerOutline:arrow-narrow-down", { "width": "64", "height": "64", "stroke-width": "1" } %}
 </a>
 </section>
-
-{% css %}
-@keyframes pop-up {
-  0%   { transform: scaleX(1.5) scaleY(0.1) translateY(40%); opacity: 0; }
-  8%   { transform: scaleX(0.65) scaleY(1.35) translateY(0); opacity: 1; }
-  13%  { transform: scaleX(1.2) scaleY(0.82); }
-  17%  { transform: scaleX(0.9) scaleY(1.1); }
-  20%  { transform: scaleX(1) scaleY(1); opacity: 1; }
-  100% { transform: scaleX(1) scaleY(1); opacity: 1; }
-}
-
-.cta {
-  transform-origin: bottom center;
-  animation: pop-up 4s ease-out infinite;
-  animation-delay: 0.8s;
-  animation-fill-mode: backwards;
-}
-{% endcss %}

@@ -1,8 +1,9 @@
+<div class="footer-group">
 <footer class="switcher palette--tone text-left">
     <div class="switcher">
         <div style="padding-inline-start: 1em;">
-            <p class="h4" style="color: var(--color-pop);">{% icon "tablerOutline:arrow-narrow-right", { "width": "1em", "height": "1em", "style": "margin-inline-start: -1em; margin-inline-end: 0.25em; vertical-align: middle;" } %}Resources</p>
-            <nav>
+            <p style="color: var(--color-pop);">{% icon "tablerOutline:arrow-narrow-right", { "width": "1em", "height": "1em", "style": "margin-inline-start: -1em; margin-inline-end: 0.25em; vertical-align: middle;" } %}Resources</p>
+            <nav class="small">
                 <ul class="reset">
                     <li>
                         {% link url="docs", type="internal", collection="pages" %}Documentation{% endlink %}
@@ -20,8 +21,8 @@
             </nav>
         </div>
         <div style="padding-inline-start: 1em;">
-            <p class="h4" style="color: var(--color-pop);">{% icon "tablerOutline:arrow-narrow-right", { "width": "1em", "height": "1em", "style": "margin-inline-start: -1em; margin-inline-end: 0.25em; vertical-align: middle;" } %}Product</p>
-            <nav>
+            <p style="color: var(--color-pop);">{% icon "tablerOutline:arrow-narrow-right", { "width": "1em", "height": "1em", "style": "margin-inline-start: -1em; margin-inline-end: 0.25em; vertical-align: middle;" } %}Product</p>
+            <nav class="small">
                 <ul class="reset">
                     <li>
                         {% link url="showcase", type="internal", collection="pages" %}License{% endlink %}
@@ -35,19 +36,19 @@
     </div>
     <div class="switcher">
         <div style="padding-inline-start: 1em;">
-            <p class="h4" style="color: var(--color-pop);">{% icon "tablerOutline:arrow-narrow-right", { "width": "1em", "height": "1em", "style": "margin-inline-start: -1em; margin-inline-end: 0.25em; vertical-align: middle;" } %}Company</p>
-            <address>
+            <p style="color: var(--color-pop);">{% icon "tablerOutline:arrow-narrow-right", { "width": "1em", "height": "1em", "style": "margin-inline-start: -1em; margin-inline-end: 0.25em; vertical-align: middle;" } %}Company</p>
+            <add class="small"ress>
                 <ul class="reset">
                     <li>BE 1003.532.405</li>
                     <li>47/2, avenue Armand Huysmans</li>
                     <li>1050 Bruxelles</li>
                     <li>Belgique</li>
                 </ul>
-            </address>
+            </add>
         </div>
         <div style="padding-inline-start: 1em;">
-            <p class="h4" style="color: var(--color-pop);">{% icon "tablerOutline:arrow-narrow-right", { "width": "1em", "height": "1em", "style": "margin-inline-start: -1em; margin-inline-end: 0.25em; vertical-align: middle;" } %}Contact</p>
-            <nav>
+            <p style="color: var(--color-pop);">{% icon "tablerOutline:arrow-narrow-right", { "width": "1em", "height": "1em", "style": "margin-inline-start: -1em; margin-inline-end: 0.25em; vertical-align: middle;" } %}Contact</p>
+            <nav class="small">
                 <ul class="reset">
                     <li>
                         {% link url="showcase", type="internal", collection="pages" %}FAQ{% endlink %}
@@ -60,3 +61,5 @@
         </div>
     </div>
 </footer>
+{%partial "label-footer.njk" %}
+</div>
