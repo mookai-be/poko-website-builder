@@ -2,20 +2,9 @@
 translationKey: formations
 lang: fr
 createdAt: 2026-04-28T11:50:00.000Z
-uuid: 444536fdd2e0
-localizationKey: 97a994a5a5d3
 name: Formations
-eleventyNavigation: null
-metadata: null
-preview: null
-tags: []
-status: ""
-pageLayout: ""
-pageFooter: ""
-pageNav: ""
-generatePage: ""
-vars: null
-dataList: []
+tags:
+  - support
 ---
 
 # Deviens autonome sur tes outils de com'

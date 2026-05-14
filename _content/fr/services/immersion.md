@@ -2,20 +2,10 @@
 translationKey: immersion
 lang: fr
 createdAt: 2026-04-28T11:34:00.000Z
-uuid: 2c668f3ac758
-localizationKey: 287f82ac9f16
 name: Immersion
-eleventyNavigation: null
-metadata: null
-preview: null
-tags: []
-status: ""
-pageLayout: ""
-pageFooter: ""
-pageNav: ""
-generatePage: ""
-vars: null
-dataList: []
+
+tags:
+  - support
 ---
 
 # Un regard neuf pour booster ton projet

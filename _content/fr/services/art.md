@@ -8,7 +8,8 @@ name: Art
 eleventyNavigation: null
 metadata: null
 preview: null
-tags: []
+tags:
+  - art
 status: ""
 pageLayout: ""
 pageFooter: ""

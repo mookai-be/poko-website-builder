@@ -1,67 +1,87 @@
 ---
 translationKey: mookai
+order: 1
 lang: fr
 createdAt: 2026-04-27T19:48:00.000Z
-uuid: d4982dbf5e7f
-localizationKey: 750409af66ba
 name: mookaï
 eleventyNavigation:
   title: À propos
-  parent: ""
-  order: 3
-metadata: null
-preview: null
-tags: []
-status: ""
-pageLayout: ""
-pageFooter: ""
-pageNav: ""
-generatePage: ""
-vars: null
-dataList: []
 ---
 
-Cette page décrit l'asbl mookaï.
+# On bosse avec des gens bien. Pour faire des trucs qui ont du sens.
 
-Inspiration sur le site actuel: https://www.mookai.be/
+mookaï, c'est un studio créatif belge actif depuis 2015. On combine design graphique et développement web pour aider les projets à impact à exister — vraiment — sur le web et dans la tête des gens.
 
-mookai a pour but de fournir un soutien créatif et informatique aux projets qui oeuvrent pour le bien commun (toute forme d'organisation et/ou individu).
+On est une ASBL. Pas par hasard.
 
-Les valeurs sont notre moteur principal: No-bullshit, Eco-conception, Qualité, Good Vibes, Partage, Impact Positif
+## Tess + Marc — deux têtes, un studio
 
-Engagement dans l'entrepreunariat et dans nos métiers en respectant nos valeurs et notre éthique depuis 2015.
+### Tess — graphiste et artiste
 
-Equipe:
+Tess crée des identités visuelles qui ressemblent à ceux qui les portent. Son approche est intuitive et humaine: elle cherche à créer du lien, pas juste du beau. Elle est aussi artiste — et ça se voit dans chaque projet. Son univers est visible sur [tess-h.be](https://www.tess-h.be/).
 
-- Tess h.: graphiste intuitive et artiste tess-h.be
-- m4rrc0: stratège et développeur web, créateur de https://www.poko.eco. Son site est à https://www.m4rr.co
+### Marc — stratège et développeur web
 
-Pourquoi mookaï -> symbolique de la pierre précieuse mookaïte
+Marc code, conçoit et questionne. Il a une conviction: le web peut être performant, éthique et sobre en même temps. Alors plutôt que d'utiliser des outils qui ne lui conviennent pas, il en construit. _poko_, son website builder indépendant, en est la preuve directe. Son univers est sur [m4rr.co](https://www.m4rr.co/).
 
-Le logo -> Sigil
+## Ce qui nous anime
 
-Partenariats: On est ouverts aux partenariats. On peut aider, collaborer, remplacer, assister. (aussi voir "services" pour compléter cette section). Partenariats possibles avec indépendants, agences créatives/web/communication/..., projets éthiques et porteurs de sens, ...
+> If not you, then who? If not now, then when?
 
-Rejoindre l'équipe: en tant que partenaire ou en tant que stagiaire (dev, graphiste, commercial, marketing)
+On sait que c'est difficile de faire bouger les lignes. Alors on se donne à fond pour toi — le rêveur, le convaincu, le fou qui entreprend pour un monde meilleur.
+Tu as déjà choisi d'agir et on t'en remercie. Nous, on veut que ton message résonne comme il le mérite.
 
----
+Voilà comment ça se traduit concrètement:
 
-## Notre ADN
+- **No-bullshit:** on te dit ce qu'on pense, ce qu'on peut faire, et ce qu'on ne fait pas. Pas de langue de bois, pas de devis qui gonfle en cours de route.
+- **Éco-conception:** on conçoit léger par défaut — pour le web comme pour l'impression. Parce qu'un site rapide et sobre, c'est mieux pour tout le monde.
+- **Qualité:** on fait moins pour faire mieux. On préfère quelques projets bien menés à un pipeline de chantiers bâclés.
+- **Good Vibes:** si sur toute la chaîne il n'y a pas un max de gens avec le sourire, ça ne nous intéresse pas. Point.
+- **Partage:** on documente, on explique, on transmet. Ton autonomie à la fin du projet, c'est aussi notre objectif.
+- **Impact positif:** on travaille avec des gens qui font des choses qui comptent. C'est un choix, pas un argument marketing.
 
-mookaï, c'est l'alliance de deux expertises complémentaires:
+## Pourquoi une ASBL?
 
-- **La vision stratégique et technique:** C'est le domaine de Marc. Développeur et stratège, il est à la fois pragmatique et créatif. C'est un militant du web qui, par conviction, développe ses propres outils pour concevoir des solutions numériques performantes et éthiques hors des sentiers battus.
+Parce qu'on ne court pas après les profits, mais après l'impact. Le statut d'ASBL, c'est notre façon de mettre les actes en accord avec les mots.
 
-- **La sensibilité créative et humaine:** C'est la touche de Tess. Graphiste et artiste, elle donne vie aux projets avec une approche intuitive qui cherche à créer du lien. C'est elle qui insuffle l'âme et l'authenticité dans chaque visuel.
+Ça veut dire qu'on peut choisir nos clients, refuser des projets qui ne nous correspondent pas, et travailler à notre rythme sans répondre à des actionnaires. Si tu cherches un rapport artificiel pour remplir tes KPIs, on n'est probablement pas faits l'un pour l'autre — et c'est ok.
 
-Cette dualité, c'est notre force. On allie la rigueur technique à la créativité pour que ton projet soit non seulement efficace, mais aussi juste et inspirant.
+## poko — notre website builder, notre conviction
 
-## Plus qu'une agence, un partenaire de route
+[poko.eco](https://www.poko.eco/) est le website builder indépendant développé par Marc. L'idée de départ: se battre pour un web plus éthique, plus ouvert, plus libre, sans dépendre des plateformes fermées qui enferment les clients et leurs contenus, et sans les maux de tête que peuvent provoquer l'hébergement d'un WordPress ou autres CMS open source.
 
-On a choisi le statut d'ASBL parce qu'on ne court pas après les profits, mais après l'impact. On ne se voit pas comme de simples prestataires, mais comme des alliés engagés à tes côtés.
+On utilise poko pour construire nos propres projets — dont ce site. Ce que ça change pour toi:
 
-Notre but? T'aider à faire grandir tes idées sans te perdre en chemin. On est là pour traduire ta passion, simplifier le complexe et te donner les outils pour que tu puisses te concentrer sur ce que tu fais de mieux.
+- **Plus d'autonomie:** tu peux gérer ton contenu sans nous appeler à chaque fois
+- **Moins de dépendance:** ton site t'appartient vraiment, pas à un SaaS américain
+- **Plus sobre:** des sites légers, rapides, éco-conçus par défaut
+- **Un engagement sur la qualité**: on ne livre pas un produit, on construit une expérience qui dure
+- **Une liberté de design inégalée:** pas de templates limitants, juste des possibilités infinies
 
-## Notre logo, un sceau d'intention
+En bonus, chaque site sur-mesure qu'on construit renforce la plateforme pour que tout le monde en profite.
 
-Notre logo est un **sigil**, un symbole chargé d'une intention claire: canaliser notre énergie créative et technique pour amplifier la portée des projets qui œuvrent pour le bien commun. C'est notre promesse, notre engagement, gravé dans notre identité.
+## Notre nom, notre logo
+
+**mookaï** s'inspire de la mookaïte, une pierre précieuse aux couleurs vives et variées — un symbole d'énergie créative ancrée dans le concret.
+
+Notre logo est un **sigil**: un symbole forgé avec une intention précise. Amplifier la portée des projets qui œuvrent pour le bien commun. C'est notre promesse, gravée dans notre identité.
+
+## On cherche des complices
+
+On travaille avec des indépendants, des ASBL, des coopératives, des petites structures qui ont quelque chose à dire et besoin d'aide pour le dire bien.
+
+On est aussi ouverts aux **partenariats** avec d'autres agences, freelances créatifs ou développeurs qui partagent nos valeurs — pour collaborer, compléter nos compétences ou se passer des projets.
+
+Tu veux rejoindre l'aventure en tant que stagiaire (dev, graphisme, communication) ? [Dis-le-nous](/contact/).
+
+## Ils en parlent
+
+{% sectionCollection  %}
+
+{% collection collection="reviews", type="grid-fluid", columns=2, itemPartial="review-card" %}{% endcollection %}
+
+{% endsectionCollection %}
+
+## On fait connaissance?
+
+Un projet en tête, une question, ou juste l'envie de voir si le courant passe — [on est là](/contact/).

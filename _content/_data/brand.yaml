@@ -1,9 +1,5 @@
-ctxCssImport:
-  filename: ctx.css
-widthsContexts:
-  - name: main
-    max: 80rem
-    prose: 50rem
+ctxCssImport: true
+inlineAllStyles: true
 fontStacksContexts:
   - name: main
     body:
@@ -34,100 +30,20 @@ typeScales:
     minTypeScale: 1.2
     maxTypeScale: 1.25
 colors:
-  - name: Bordeau
+  - name: bordeau
     value: '#741e16'
-  - name: Corail
+  - name: corail
     value: '#d34322'
-  - name: Sand
+  - name: sand
     value: '#a2724e'
-  - name: Gold
+  - name: gold
     value: '#e6941a'
-  - name: Purple
+  - name: purple
     value: '#8c8197'
-  - name: Black
+  - name: black
     value: '#262626'
-  - name: White
+  - name: white
     value: '#ffffff'
-palettes:
-  - name: Default White Background
-    text: Bordeau
-    bg: White
-    border: Corail
-    outline: ''
-    text-decoration: Corail
-    text--marker: Corail
-    text-emphasis: ''
-    text--selection: White
-    bg--selection: Corail
-    shadow: ''
-    caret: Corail
-    column-rule: ''
-    fill: ''
-    stroke: ''
-    outline--focus: Corail
-    advanced:
-      text__a: ''
-      bg__a: ''
-      text__a--hover: Corail
-      bg__a--hover: ''
-      text__button: ''
-      bg__button: ''
-      text__button--hover: ''
-      bg__button--hover: ''
-      text__button--disabled: ''
-      bg__button--disabled: ''
-      icon-fill: ''
-      icon-stroke: ''
-      text__code: ''
-      bg__code: ''
-      border__code: ''
-      text__mark: ''
-      bg__mark: ''
-      border__mark: ''
-      track-color: ''
-      thumb-color: ''
-  - name: Black background
-    text: White
-    bg: Black
-    border: ''
-    outline: Gold
-    text-decoration: ''
-    text--marker: ''
-    text-emphasis: ''
-    text--selection: ''
-    bg--selection: ''
-    shadow: ''
-    caret: ''
-    column-rule: ''
-    fill: ''
-    stroke: Gold
-    outline--focus: ''
-    advanced:
-      text__a: ''
-      bg__a: ''
-      text__a--hover: Gold
-      bg__a--hover: ''
-      text__button: ''
-      bg__button: ''
-      text__button--hover: ''
-      bg__button--hover: ''
-      text__button--disabled: ''
-      bg__button--disabled: ''
-      icon-fill: ''
-      icon-stroke: ''
-      text__code: ''
-      bg__code: ''
-      border__code: ''
-      text__mark: ''
-      bg__mark: ''
-      border__mark: ''
-      track-color: ''
-      thumb-color: ''
 styleContexts:
   - name: main
     value: ctx
-  - name: Footer
-    widthsContext: main
-    fontStacksContext: main
-    typeScale: main
-    palette: Black background

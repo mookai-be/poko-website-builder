@@ -1,27 +1,26 @@
 ---
 translationKey: portfolio
+order: 2
 lang: fr
 createdAt: 2026-04-28T12:21:00.000Z
-uuid: 68bab99b9284
-localizationKey: ae918e295d3c
 name: Portfolio
-eleventyNavigation:
-  title: ''
-  parent: ''
-  order: 5
-metadata: null
-preview: null
-tags: []
-status: ''
-pageLayout: ''
-pageFooter: ''
-pageNav: ''
-generatePage: ''
-vars: null
-dataList: []
 ---
 
-# Nos projets
+# Plus de 10 ans de projets. Voilà ceux qui nous ressemblent le plus.
+
+Du logo au site sur mesure, en passant par l'illustration et la mise en page — on a eu la chance de bosser avec des gens qui avaient quelque chose à dire. Voilà une partie de ce qu'on a fait ensemble.
+
+## Une sélection
+
+{% sectionCollection  %}
+
+{% collection collection="projects", filters=[{"value":"featured","by":"tag"}], sortCriterias=[] %}{% endcollection %}
+
+{% endsectionCollection %}
+
+Un projet dans ces eaux-là? [On adore ça.](/contact/)
+
+## Tous les projets
 
 {% sectionCollection  %}
 
@@ -29,4 +28,4 @@ dataList: []
 
 {% endsectionCollection %}
 
-[ Dans le dossier \`projects\`, on peut ajouter plusieurs projets. Tous ceux qui sont listés sur cette page: https://www.poko.eco/showcase/. Les plus pertinents du portfolio de Tess ici: https://www.behance.net/TessGRAPHICDESIGNER (qui sont raccord avec nos services sur mookaï). Les plus pertinents de cette page: https://www.feedbydesign.com/fr/portfolio/ (notre ancienne agence). ]
+[Moi aussi je veux mon projet dans cette liste!](/contact/)

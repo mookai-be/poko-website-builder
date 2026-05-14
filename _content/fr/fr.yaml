@@ -3,5 +3,9 @@ tagsList:
     name: Graphisme
   - slug: web
     name: Web
-vars: null
-dataList: []
+  - slug: art
+    name: Art
+  - slug: support
+    name: Accompagnement
+  - slug: featured
+    name: Mis en avant
