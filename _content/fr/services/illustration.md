@@ -1,23 +1,17 @@
 ---
 translationKey: illustration
+order: 4
 lang: fr
 createdAt: 2026-04-28T11:20:00.000Z
-uuid: 53248b09c763
-localizationKey: 91d5df47af1b
 name: Illustration
-eleventyNavigation: null
-metadata: null
-preview: null
 tags:
   - print
-status: ""
-pageLayout: ""
-pageFooter: ""
-pageNav: ""
-generatePage: ""
-vars: null
-dataList: []
+localizationKey: 91d5df47af1b
+uuid: 53248b09c763
+pageFooter: ''
+pageNav: ''
 ---
+
 
 # L'illustration qui raconte ton histoire
 

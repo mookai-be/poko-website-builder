@@ -1,23 +1,17 @@
 ---
 translationKey: site-minimaliste
+order: 6
 lang: fr
 createdAt: 2026-04-28T10:28:00.000Z
-uuid: 452511b3d7f5
-localizationKey: 5413282c45a2
 name: Site minimaliste
-eleventyNavigation: null
-metadata: null
-preview: null
 tags:
   - web
-status: ""
-pageLayout: ""
-pageFooter: ""
-pageNav: ""
-generatePage: ""
-vars: null
-dataList: []
+localizationKey: 5413282c45a2
+uuid: 452511b3d7f5
+pageFooter: ''
+pageNav: ''
 ---
+
 
 # Ton site web pro en une journée chrono?
 

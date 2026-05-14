@@ -4,6 +4,8 @@ order: 2
 lang: fr
 createdAt: 2026-04-28T12:21:00.000Z
 name: Portfolio
+eleventyNavigation:
+  add: Nav
 ---
 
 # Plus de 10 ans de projets. Voilà ceux qui nous ressemblent le plus.
@@ -14,17 +16,17 @@ Du logo au site sur mesure, en passant par l'illustration et la mise en page —
 
 {% sectionCollection  %}
 
-{% collection collection="projects", filters=[{"value":"featured","by":"tag"}], sortCriterias=[] %}{% endcollection %}
+{% collection collection="creative-works", filters=[{"value":"featured","by":"tag"}], sortCriterias=[] %}{% endcollection %}
 
 {% endsectionCollection %}
 
 Un projet dans ces eaux-là? [On adore ça.](/contact/)
 
-## Tous les projets
+## Les autres projets
 
 {% sectionCollection  %}
 
-{% collection collection="projects" %}{% endcollection %}
+{% collection collection="creative-works", filters=[{"by":"tag","value":["featured"]}], exclusions=true, sortCriterias=[{"by":"random"}] %}{% endcollection %}
 
 {% endsectionCollection %}
 

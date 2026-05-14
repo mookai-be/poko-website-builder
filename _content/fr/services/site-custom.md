@@ -1,23 +1,17 @@
 ---
 translationKey: site-custom
+order: 5
 lang: fr
 createdAt: 2026-04-28T10:06:00.000Z
-uuid: 680b12bf36ea
-localizationKey: 49cadc5a6887
 name: Site custom
-eleventyNavigation: null
-metadata: null
-preview: null
 tags:
   - web
-status: ""
-pageLayout: ""
-pageFooter: ""
-pageNav: ""
-generatePage: ""
-vars: null
-dataList: []
+localizationKey: 49cadc5a6887
+uuid: 680b12bf36ea
+pageFooter: ''
+pageNav: ''
 ---
+
 
 # Un site web sur mesure, qui te ressemble vraiment
 

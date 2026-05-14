@@ -1,23 +1,17 @@
 ---
 translationKey: art
+order: 10
 lang: fr
 createdAt: 2026-04-28T11:22:00.000Z
-uuid: ca8d2ad6018d
-localizationKey: d5cfe5d7225c
 name: Art
-eleventyNavigation: null
-metadata: null
-preview: null
 tags:
   - art
-status: ""
-pageLayout: ""
-pageFooter: ""
-pageNav: ""
-generatePage: ""
-vars: null
-dataList: []
+localizationKey: d5cfe5d7225c
+uuid: ca8d2ad6018d
+pageFooter: ''
+pageNav: ''
 ---
+
 
 # De l'art pour sublimer tes espaces pro
 

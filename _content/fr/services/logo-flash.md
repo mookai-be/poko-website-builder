@@ -1,23 +1,17 @@
 ---
 translationKey: logo-flash
+order: 3
 lang: fr
 createdAt: 2026-04-28T11:18:00.000Z
-uuid: 11d2be9ea653
-localizationKey: 43fa496c69b8
 name: Logo flash
-eleventyNavigation: null
-metadata: null
-preview: null
 tags:
   - print
-status: ""
-pageLayout: ""
-pageFooter: ""
-pageNav: ""
-generatePage: ""
-vars: null
-dataList: []
+localizationKey: 43fa496c69b8
+uuid: 11d2be9ea653
+pageFooter: ''
+pageNav: ''
 ---
+
 
 # Un logo pro, et vite!
 

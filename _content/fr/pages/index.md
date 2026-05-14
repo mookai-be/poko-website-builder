@@ -24,7 +24,7 @@ Pas de jargon, pas de sur-promesse. On travaille avec toi, pas pour toi. Notre m
 
 {% sectionCollection  %}
 
-{% collection collection="projects", filters=[{"value":"featured","by":"tag"}], sortCriterias=[] %}{% endcollection %}
+{% collection collection="creative-works", filters=[{"by":"tag","value":["featured"]}], sortCriterias=[] %}{% endcollection %}
 
 {% endsectionCollection %}
 

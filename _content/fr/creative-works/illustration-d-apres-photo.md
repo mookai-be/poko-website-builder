@@ -1,0 +1,17 @@
+---
+translationKey: illustration-d-apres-photo
+order: 68
+lang: fr
+name: Illustration d'après photo
+tags:
+  - illustration
+vars: {}
+images: []
+---
+
+
+# Illustration d'après photo
+
+Illustrations réalisées d'après photographies.
+
+[Voir sur Behance](https://www.behance.net/gallery/126899051/Illustration-dapres-photo)

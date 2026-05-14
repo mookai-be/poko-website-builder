@@ -1,23 +1,17 @@
 ---
 translationKey: mise-en-page
+order: 2
 lang: fr
 createdAt: 2026-04-28T11:14:00.000Z
-uuid: "192753223677"
-localizationKey: 1bac5ad486a8
 name: Mise en page
-eleventyNavigation: null
-metadata: null
-preview: null
 tags:
   - print
-status: ""
-pageLayout: ""
-pageFooter: ""
-pageNav: ""
-generatePage: ""
-vars: null
-dataList: []
+localizationKey: 1bac5ad486a8
+uuid: '192753223677'
+pageFooter: ''
+pageNav: ''
 ---
+
 
 # Des documents qui donnent envie d'être lus
 

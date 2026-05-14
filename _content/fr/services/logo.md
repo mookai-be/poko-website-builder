@@ -1,23 +1,17 @@
 ---
 translationKey: logo
+order: 1
 lang: fr
 createdAt: 2026-04-28T11:11:00.000Z
-uuid: 2b48e4567d44
-localizationKey: 0eadee7319ce
 name: Logo
-eleventyNavigation: null
-metadata: null
-preview: null
 tags:
   - print
-status: ""
-pageLayout: ""
-pageFooter: ""
-pageNav: ""
-generatePage: ""
-vars: null
-dataList: []
+localizationKey: 0eadee7319ce
+uuid: 2b48e4567d44
+pageFooter: ''
+pageNav: ''
 ---
+
 
 # Ton logo: bien plus qu'une image
 

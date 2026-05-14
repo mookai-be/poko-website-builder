@@ -1,10 +1,9 @@
 ---
 translationKey: contact
-order: 4
+order: 8
 lang: fr
 createdAt: 2026-04-27T19:44:00.000Z
 name: Contact
-vars: {}
 eleventyNavigation:
   order: 4
 ---
@@ -18,11 +17,8 @@ Tu as un projet en tête, une question, ou juste envie de voir si le courant pas
 Pas sûr de ce dont tu as besoin? Voilà comment ça démarre souvent:
 
 - **Tu as un projet web à lancer** — un site vitrine, un outil sur mesure, une refonte complète. On en parle et on trouve la bonne taille pour ton budget et tes besoins.
-
 - **Tu veux (re)faire ton identité visuelle** — logo, charte graphique, ou juste un coup de main pour que tes documents ressemblent à quelque chose.
-
 - **Tu cherches un partenaire créatif** — agence, freelance, ou projet éthique qui cherche un duo design + tech pour collaborer.
-
 - **Tu ne sais pas encore exactement ce dont tu as besoin** — c'est ok, c'est aussi un chouette point de départ. On démêle ça ensemble.
 
 ## Écris-nous

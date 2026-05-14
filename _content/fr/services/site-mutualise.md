@@ -1,23 +1,17 @@
 ---
 translationKey: site-mutualise
+order: 7
 lang: fr
 createdAt: 2026-04-28T10:54:00.000Z
-uuid: 2a8f78018e5e
-localizationKey: 38a2c3ac40d8
 name: Site mutualisé
-eleventyNavigation: null
-metadata: null
-preview: null
 tags:
   - web
-status: ""
-pageLayout: ""
-pageFooter: ""
-pageNav: ""
-generatePage: ""
-vars: null
-dataList: []
+localizationKey: 38a2c3ac40d8
+uuid: 2a8f78018e5e
+pageFooter: ''
+pageNav: ''
 ---
+
 
 # Des sites pour tout ton réseau, la simplicité en plus
 
