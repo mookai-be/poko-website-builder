@@ -47,7 +47,7 @@ import markdownItLinkAttributes from "markdown-it-link-attributes";
 import markdownItAttrs from "markdown-it-attrs";
 import markdownItBracketedSpans from "markdown-it-bracketed-spans";
 // -------- Env Variables
-import * as env from "./env.config.js";
+import * as envConf from "./env.config.js";
 import {
   DEBUG,
   CMS_IMPORT,
@@ -83,6 +83,10 @@ import {
 } from "./env.config.js";
 import { getSelectedCollections } from "./src/config-11ty/plugins/cms-config/index.js";
 import eleventyComputed from "./src/data/eleventyComputed.js";
+import ldWebSite from "./src/data/structured-data/ldWebSite.js";
+
+const env = { ...envConf.default, ...envConf };
+delete env.default;
 
 // Eleventy Config
 import {
@@ -104,6 +108,7 @@ import {
   desc,
   ogImageSrc,
   image as imageFilter,
+  imgStats,
   emailLink,
   email,
   htmlAttrs,
@@ -113,6 +118,8 @@ import {
 import {
   newLine,
   fetchFile as fetchFileShortcode,
+  linkPaired as linkPairedShortcode,
+  buttonPaired as buttonPairedShortcode,
   link as linkShortcode,
   button as buttonShortcode,
   image,
@@ -126,9 +133,10 @@ if (DEBUG) {
 }
 
 function shouldNotRender(data) {
+  // This excludes files whose path contains a `.` or a `_` directly after a `/`
   if (
-    data.page.filePathStem.startsWith("/_") ||
-    data.page.filePathStem.startsWith("/.")
+    /(?:^|\/)_/.test(data.page.filePathStem) ||
+    /(?:^|\/)\\./.test(data.page.filePathStem)
   ) {
     return true;
   }
@@ -215,7 +223,7 @@ export const config = {
     includes: PARTIALS_DIR, // this is probably '_partials'
     layouts: LAYOUTS_DIR, // this is probably '_layouts'
     // data: "../src/data", // Directory for global data files. Default: "_data"
-    // data: "/src/data", // Directory for global data files. Default: "_data"
+    // data: ["_data", path.join(SRC_DIR_FROM_WORKING_DIR, "content/_data")], // NOTE: Not possible to provide an array here
     // output: "public",
     output: OUTPUT_DIR,
   },
@@ -397,6 +405,7 @@ export default async function (eleventyConfig) {
   // eleventyConfig.addGlobalData("pageFooter", "");
   // Computed Data
   eleventyConfig.addGlobalData("eleventyComputed", eleventyComputed);
+  eleventyConfig.addGlobalData("ldWebSite", ldWebSite);
 
   // --------------------- Collections
   eleventyConfig.addCollection("sitemap", function (collectionApi) {
@@ -515,6 +524,10 @@ export default async function (eleventyConfig) {
     sources: iconSources,
     icon: {
       class: (name, source) => `icon icon-${source} icon-${name}`,
+      transform: async (svg) => {
+        const min = (svg || "").replace(/\s+/g, " ");
+        return min;
+      },
     },
   });
 
@@ -549,6 +562,7 @@ export default async function (eleventyConfig) {
     [`${WORKING_DIR}/_files/_headers`]: "_headers",
     // All CSS files to assets
     [`${WORKING_DIR}/*.css`]: "/assets/styles/",
+    "assets/js/instant-page.js": "assets/js/instant-page.js",
   });
   // Copy Sveltia CMS if not using CDN
   if (CMS_IMPORT === "npm") {
@@ -612,6 +626,10 @@ export const iconLists = ${JSON.stringify(iconLists)};
   await eleventyConfig.addPlugin(partialsPlugin, {
     defaultExt: ["11ty.js", "njk", "md"],
     dirs: [
+      {
+        pattern: path.join(WORKING_DIR, "*", PARTIALS_DIR),
+        resolveDiscriminant: (data) => (data?.lang ? `/${data.lang}/` : ""),
+      },
       path.join(WORKING_DIR, PARTIALS_DIR),
       path.join(`src/themes/${POKO_THEME}/_partials`),
       path.join("src/content/_partials"),
@@ -664,6 +682,7 @@ export const iconLists = ${JSON.stringify(iconLists)};
   // Images
   eleventyConfig.addAsyncFilter("ogImage", ogImageSrc);
   eleventyConfig.addAsyncFilter("image", imageFilter);
+  eleventyConfig.addAsyncFilter("imgStats", imgStats);
   // Email
   eleventyConfig.addFilter("emailLink", emailLink);
   eleventyConfig.addFilter("email", email);
@@ -685,8 +704,12 @@ export const iconLists = ${JSON.stringify(iconLists)};
     "fetchFile",
     fetchFileShortcode,
   );
-  eleventyConfig.addShortcode("link", linkShortcode);
-  eleventyConfig.addShortcode("button", buttonShortcode);
+  eleventyConfig.addPairedShortcode("link", linkPairedShortcode);
+  eleventyConfig.addPairedShortcode("button", buttonPairedShortcode);
+  // TODO: remove these someday!
+  // We are keeping for now for easier migration from '{% link' to '{% linkSimple' before manually replacing
+  eleventyConfig.addAsyncShortcode("linkSimple", linkShortcode);
+  eleventyConfig.addShortcode("buttonSimple", buttonShortcode);
   eleventyConfig.addShortcode("image", image);
   eleventyConfig.addShortcode("gallery", gallery);
   // eleventyConfig.addPairedShortcode("wrapper", wrapper);

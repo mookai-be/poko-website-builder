@@ -8,7 +8,7 @@ import { DEBUG } from "../../../../env.config.js";
 
 // let cachedPartials = new Map();
 
-function cleanOutput(str) {
+function cleanMdString(str) {
   // Removes leading whitespace from each line and multiples line breaks become a single line break
   return str.replace(/^\s+/gm, "").replace(/\n+/g, "\n");
 }
@@ -16,9 +16,17 @@ function cleanOutput(str) {
 export default async function (eleventyConfig, pluginOptions) {
   eleventyConfig.versionCheck(">=3.0.0-alpha.1");
   const { dir, templateFormats, templateFormatsAdded } = eleventyConfig;
-  const { dirs = [path.join(dir.input, dir.includes)] } = pluginOptions;
+  const rawDirs = pluginOptions?.dirs ?? [path.join(dir.input, dir.includes)];
   const defaultExt = pluginOptions?.defaultExt ||
     templateFormats || ["11ty.js", "njk", "liquid", "md"];
+  const globalResolveDiscriminant =
+    pluginOptions?.resolveDiscriminant ?? (() => undefined);
+  const normalisedDirs = rawDirs.map((d) =>
+    typeof d === "string"
+      ? { pattern: d, resolveDiscriminant: globalResolveDiscriminant }
+      : { resolveDiscriminant: globalResolveDiscriminant, ...d },
+  );
+  const dirs = normalisedDirs.map(({ pattern }) => pattern);
   const shortcodeAliases = (Array.isArray(pluginOptions?.shortcodeAliases) &&
     pluginOptions?.shortcodeAliases.length > 0 &&
     pluginOptions.shortcodeAliases) || ["partial"];
@@ -29,17 +37,17 @@ export default async function (eleventyConfig, pluginOptions) {
     pluginOptions.pairedShortcodeAliases) || ["partialWrapper"];
 
   // We use the renderFile shortcodes to render partials
-  const renderFileShortcodeFn =
-    eleventyConfig.universal.shortcodes.renderFile;
+  const renderFileShortcodeFn = eleventyConfig.universal.shortcodes.renderFile;
 
-  async function retrievePartial(filename) {
+  async function retrievePartial(filename, data) {
     if (!/\./.test(filename)) {
       for (const ext of defaultExt) {
-        const file = await retrievePartial(`${filename}.${ext}`);
+        const file = await retrievePartial(`${filename}.${ext}`, data);
         if (file) {
           return file;
         }
       }
+      return "";
     }
 
     const isFullPath = dirs.some((dirPath) => filename.startsWith(dirPath));
@@ -47,12 +55,29 @@ export default async function (eleventyConfig, pluginOptions) {
     if (isFullPath) {
       return filename;
     }
-    // Otherwise, try to find the file in the includes directories and take the first match
-    const files = dirs.map((dirPath) => path.join(dirPath, filename));
-    const file = files.find((file) => (fglob.globSync(file) || []).length > 0);
-    if (file) {
-      return file;
+
+    // Otherwise, try to find the file in the provided directories in order and take the first match
+    for (const { pattern: dirPath, resolveDiscriminant } of normalisedDirs) {
+      const pattern = path.join(dirPath, filename);
+      const matches = fglob.globSync(pattern);
+      if (!matches.length) continue;
+
+      const discriminant = resolveDiscriminant(data);
+      const discriminants = discriminant
+        ? (Array.isArray(discriminant) ? discriminant : [discriminant]).filter(
+            Boolean,
+          )
+        : [];
+
+      if (discriminants.length && matches.length > 1) {
+        for (const d of discriminants) {
+          const preferred = matches.find((m) => m.includes(d));
+          if (preferred) return preferred;
+        }
+      }
+      return matches[0];
     }
+
     if (DEBUG) {
       console.warn(`Partial "${filename}" not found in "${dirs}"`);
     }
@@ -85,7 +110,7 @@ export default async function (eleventyConfig, pluginOptions) {
     //   return cachedPartials.get(cacheKey);
     // }
 
-    const file = await retrievePartial(filename);
+    const file = await retrievePartial(filename, data);
 
     if (file) {
       return await renderFileShortcodeFn
@@ -97,7 +122,7 @@ export default async function (eleventyConfig, pluginOptions) {
         .then((result) => {
           const cleanResult = shouldKeepMdFormating
             ? result
-            : cleanOutput(result);
+            : cleanMdString(result);
 
           // cachedPartials.set(cacheKey, cleanResult);
           return cleanResult;
@@ -123,7 +148,7 @@ export default async function (eleventyConfig, pluginOptions) {
 
   // TODO: Check if this works
   eleventyConfig.addAsyncFilter("partialExists", async function (rawFilename) {
-    const filename = await retrievePartial(rawFilename);
+    const filename = await retrievePartial(rawFilename, this.ctx);
     return filename !== "";
   });
 
@@ -139,7 +164,7 @@ export default async function (eleventyConfig, pluginOptions) {
       }
       const partialRetrieved = await Promise.all(
         filenames.map(async (f) => {
-          return await retrievePartial(f);
+          return await retrievePartial(f, this.ctx);
         }),
       );
       console.log({ rawFilenames, filenames, partialRetrieved });

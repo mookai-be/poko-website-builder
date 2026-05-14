@@ -9,6 +9,10 @@ const { CONTENT_DIR } = env;
 // const iconLists = env?.iconLists || {};
 const iconLibs = Object.keys(iconLists) || [];
 
+const SECTION_WRAPPER_STYLE = `background-color: hsl(var(--sui-background-color-3-hsl) / 0.3);`;
+const AREA_ITEM_PREVIEW_STYLE = `border: 1px dashed hsl(var(--sui-background-color-4-hsl) / 1); margin-block-start: .5rem; padding: 0 1rem .5rem;`;
+const AREA_PREVIEW_STYLE = `border: 1px dashed hsl(var(--sui-background-color-4-hsl) / 1); margin-block-start: .5rem; padding: 0 .5rem .5rem;`;
+
 const multilineToInline = (multi) => {
   return multi?.replace(/\n/g, "\\n")?.replace(/"/g, '\\"');
 };
@@ -368,6 +372,558 @@ const extractAllSectionAreaData = (contentString, tagName) => {
   return items;
 };
 
+const extractAllSectionAreaDataMultipleTags = (contentString, tagNames) => {
+  if (!contentString || !tagNames?.length) return [];
+
+  const allMatches = [];
+
+  tagNames.forEach((tagName) => {
+    const regex = new RegExp(
+      `{%\\s*${tagName}(?:\\s+([^%]*?))?\\s*%}\\s*([\\s\\S]*?)\\s*{%\\s*end${tagName}\\s*%}`,
+      "gms",
+    );
+
+    let match;
+    while ((match = regex.exec(contentString)) !== null) {
+      allMatches.push({
+        tagName,
+        index: match.index,
+        attributes: match[1]?.trim() || null,
+        content: match[2].trim(),
+      });
+    }
+  });
+
+  // Sort by position to maintain order
+  allMatches.sort((a, b) => a.index - b.index);
+
+  // Process attributes for each match.
+  // NOTE: only `class` is promoted to top-level here. `type` MUST be left in
+  // the remaining attributes string so that `parseLayoutAttrs` (called later
+  // by parseTwoColumnsBody/parseGridBody/parseFlowBody/parseReelBody/
+  // parseCollectionBody) can capture it as the `layoutOptions.type`
+  // discriminator (e.g. "switcher", "fixedFluid", "grid-fluid", ...).
+  const items = allMatches.map(({ tagName, attributes, content }) => {
+    const { extracted, remaining } = extractAttributes(attributes || "", [
+      "class",
+    ]);
+    const className = extracted?.class || null;
+    return {
+      tagName,
+      class: className,
+      attributes: remaining,
+      content,
+    };
+  });
+
+  return items;
+};
+
+// ---------------------------------------------------------------------------
+// Section helpers
+// Shared building blocks for section fromBlock/toBlock implementations.
+// ---------------------------------------------------------------------------
+
+const buildBodyPreview = ({ items }) => {
+  const itemsStr = items?.length
+    ? items
+        .map((item) => {
+          return item?.content
+            ? `<div style="${AREA_ITEM_PREVIEW_STYLE}">
+
+${item.content}
+</div>`
+            : "";
+        })
+        .filter(Boolean)
+        .join("\n")
+    : "";
+
+  if (!itemsStr) return "";
+
+  return `<div style="${AREA_PREVIEW_STYLE}">
+
+${itemsStr}
+</div>`;
+};
+
+/**
+ * Parse sectionHeader and sectionFooter from a section's inner content.
+ * Returns `undefined` for empty header/footer so callers can spread directly.
+ */
+const parseSectionHeaderFooter = (sectionInner) => {
+  const header = extractSectionAreaData(sectionInner, "sectionHeader");
+  const footer = extractSectionAreaData(sectionInner, "sectionFooter");
+  return {
+    header: header?.content ? header : undefined,
+    footer: footer?.content ? footer : undefined,
+  };
+};
+
+/**
+ * Build the `{% sectionHeader %}` and `{% sectionFooter %}` markup strings.
+ * Returns empty strings for missing header/footer.
+ */
+const buildSectionHeaderFooterMarkup = ({ header, footer }) => {
+  const headerAttrs = njkAttrsStringFromSectionAreaData(header);
+  const headerContent = header?.content
+    ? `{% sectionHeader ${headerAttrs} %}
+${header.content}
+{% endsectionHeader %}`
+    : "";
+
+  const footerAttrs = njkAttrsStringFromSectionAreaData(footer);
+  const footerContent = footer?.content
+    ? `{% sectionFooter ${footerAttrs} %}
+${footer.content}
+{% endsectionFooter %}`
+    : "";
+
+  return { headerContent, footerContent };
+};
+
+const buildSectionHeaderFooterMarkupPreview = ({ header, footer }) => {
+  const headerContent = header?.content
+    ? `<header>
+
+${header.content}
+</header>`
+    : "";
+
+  const footerContent = footer?.content
+    ? `<footer>
+
+${footer.content}
+</footer>`
+    : "";
+
+  return { headerContent, footerContent };
+};
+
+/**
+ * Parse a layout tag's attribute string into { class, layoutOptions, attributes }.
+ * `class` is promoted to top-level; `layoutOptions` holds the remaining known
+ * layout keys; `attributes` holds any leftover raw attribute string.
+ */
+const parseLayoutAttrs = (attrsString, layoutKeys) => {
+  const { extracted, remaining } = extractAttributes(attrsString || "", [
+    "class",
+    ...layoutKeys,
+  ]);
+  const { class: className, ...layoutOptions } = extracted;
+  return {
+    class: className || undefined,
+    layoutOptions,
+    attributes: remaining || undefined,
+  };
+};
+
+/**
+ * Build a layout tag's attribute string from { class, layoutOptions, attributes }.
+ * Produces `layoutKey1="v1", layoutKey2="v2", class="...", <raw attributes>`.
+ */
+const buildLayoutAttrsString = ({
+  class: className,
+  layoutOptions,
+  attributes,
+}) =>
+  [
+    njkAttrsStringFromObj({ ...(layoutOptions || {}), class: className }),
+    attributes || "",
+  ]
+    .filter(Boolean)
+    .join(", ");
+
+// Known layout attribute keys per layout element
+const FLOW_LAYOUT_KEYS = ["type", "gap"];
+const TWO_COLUMNS_LAYOUT_KEYS = [
+  "type",
+  "gap",
+  "widthWrap",
+  "widthFixed",
+  "widthFluidMin",
+  "fixedSide",
+];
+const GRID_LAYOUT_KEYS = ["type", "gap", "widthWrap", "columns"];
+const REEL_LAYOUT_KEYS = ["type", "itemWidth", "height", "gap", "noBar"];
+
+/**
+ * Parse a `{% twoColumns %}...{% endtwoColumns %}` block into structured data.
+ * `block` is the result of `extractWithNunjucksTag` (or equivalent), i.e.
+ * `{ attributes, content }`. Returns `undefined` if block is missing.
+ */
+const parseTwoColumnsBody = (block) => {
+  if (!block) return undefined;
+  const {
+    class: className,
+    layoutOptions,
+    attributes,
+  } = parseLayoutAttrs(block.attributes, TWO_COLUMNS_LAYOUT_KEYS);
+
+  const items = extractAllSectionAreaData(
+    block.content || "",
+    "twoColumnsItem",
+  );
+
+  return {
+    class: className,
+    layoutOptions,
+    attributes,
+    itemLeft: items[0]?.content ? items[0] : undefined,
+    itemRight: items[1]?.content ? items[1] : undefined,
+  };
+};
+
+/**
+ * Build a `{% twoColumns %}...{% endtwoColumns %}` markup string from structured data.
+ * Returns an empty string if neither itemLeft nor itemRight has content.
+ */
+const buildTwoColumnsBody = ({
+  class: className,
+  layoutOptions,
+  attributes,
+  itemLeft,
+  itemRight,
+}) => {
+  const leftAttrs = njkAttrsStringFromSectionAreaData(itemLeft);
+  const leftContent = itemLeft?.content
+    ? `{% twoColumnsItem ${leftAttrs} %}
+${itemLeft.content}
+{% endtwoColumnsItem %}`
+    : "";
+
+  const rightAttrs = njkAttrsStringFromSectionAreaData(itemRight);
+  const rightContent = itemRight?.content
+    ? `{% twoColumnsItem ${rightAttrs} %}
+${itemRight.content}
+{% endtwoColumnsItem %}`
+    : "";
+
+  if (!leftContent && !rightContent) return "";
+
+  const attrsStr = buildLayoutAttrsString({
+    class: className,
+    layoutOptions,
+    attributes,
+  });
+
+  return `{% twoColumns ${attrsStr} %}
+${leftContent}
+${rightContent}
+{% endtwoColumns %}`;
+};
+
+/**
+ * Parse a `{% grid %}...{% endgrid %}` block into structured data.
+ * `block` is `{ attributes, content }`. Returns `undefined` if block is missing.
+ */
+const parseGridBody = (block) => {
+  if (!block) return undefined;
+  const {
+    class: className,
+    layoutOptions,
+    attributes,
+  } = parseLayoutAttrs(block.attributes, GRID_LAYOUT_KEYS);
+
+  const items = extractAllSectionAreaData(block.content || "", "gridItem");
+
+  return {
+    class: className,
+    layoutOptions,
+    attributes,
+    items,
+  };
+};
+
+/**
+ * Build a `{% grid %}...{% endgrid %}` markup string from structured data.
+ * Returns an empty string if there are no items.
+ */
+const buildGridBody = ({
+  class: className,
+  layoutOptions,
+  attributes,
+  items,
+}) => {
+  const gridItemsStr = items?.length
+    ? items
+        .map((item) => {
+          const itemAttrs = njkAttrsStringFromSectionAreaData(item);
+          return item.content
+            ? `{% gridItem ${itemAttrs} %}
+${item.content}
+{% endgridItem %}`
+            : "";
+        })
+        .filter(Boolean)
+        .join("\n")
+    : "";
+
+  if (!gridItemsStr) return "";
+
+  const attrsStr = buildLayoutAttrsString({
+    class: className,
+    layoutOptions,
+    attributes,
+  });
+
+  return `{% grid ${attrsStr} %}
+${gridItemsStr}
+{% endgrid %}`;
+};
+
+/**
+ * Parse a collection area's body content and attributes into structured data.
+ * Extracts collection-specific fields (collection, filters, sortCriterias, exclusions)
+ * and layout options from the {% collection %} tag.
+ */
+const parseCollectionBody = ({ attributes, content }) => {
+  const filters = extractJsonProperty(attributes, "filters") || [];
+  const sortCriterias = extractJsonProperty(attributes, "sortCriterias") || [];
+
+  // Extract collection-specific attrs first
+  const { extracted: collectionSpecific, remaining: afterCollectionSpecific } =
+    extractAttributes(attributes, [
+      "collection",
+      "filters",
+      "sortCriterias",
+      "exclusions",
+      "itemPartial",
+    ]);
+
+  // Then parse layout attrs from what remains
+  const { class: className, layoutOptions } = parseLayoutAttrs(
+    afterCollectionSpecific,
+    GRID_LAYOUT_KEYS,
+  );
+  // `itemPartial` was already pulled out into `collectionSpecific` above.
+  const itemPartial = collectionSpecific.itemPartial;
+
+  const sortAndFilterOptions =
+    filters.length || sortCriterias.length || collectionSpecific.exclusions
+      ? {
+          filters,
+          sortCriterias,
+          exclusions: !!collectionSpecific.exclusions,
+        }
+      : undefined;
+
+  return {
+    collection: collectionSpecific.collection,
+    sortAndFilterOptions,
+    class: className,
+    itemPartial,
+    layoutOptions,
+    attributes: afterCollectionSpecific,
+  };
+};
+
+/**
+ * Build the Nunjucks markup for a collection area from structured data.
+ * Takes collection, sortAndFilterOptions, class, layoutOptions, and attributes
+ * and returns the {% collection %} tag with proper attributes.
+ */
+const buildCollectionBody = ({
+  collection,
+  sortAndFilterOptions,
+  class: className,
+  itemPartial,
+  layoutOptions,
+  attributes,
+}) => {
+  const { filters, sortCriterias, exclusions } = sortAndFilterOptions || {};
+  const { type, gap, widthWrap, columns } = layoutOptions || {};
+
+  const collAttrs = {
+    collection: collection || "all",
+    filters,
+    exclusions,
+    sortCriterias,
+    type,
+    columns,
+    gap,
+    class: className,
+    itemPartial,
+    widthWrap,
+  };
+  const collAttrsStr = njkAttrsStringFromObj(collAttrs);
+
+  return `{% collection ${collAttrsStr} %}{% endcollection %}`;
+};
+
+/**
+ * Parse a flow area's body content and attributes into structured data.
+ * Extracts flow-specific fields (items, gap) and layout options from the {% flow %} tag.
+ */
+const parseFlowBody = (block) => {
+  if (!block) return undefined;
+  const {
+    class: className,
+    layoutOptions,
+    attributes,
+  } = parseLayoutAttrs(block.attributes, FLOW_LAYOUT_KEYS);
+
+  const items = extractAllSectionAreaData(block.content || "", "flowItem");
+
+  return {
+    class: className,
+    layoutOptions,
+    attributes,
+    items,
+  };
+};
+
+/**
+ * Build the Nunjucks markup for a flow area from structured data.
+ * Takes items, class, layoutOptions, and attributes and returns the {% flow %} tag with proper attributes.
+ */
+const buildFlowBody = ({
+  class: className,
+  layoutOptions,
+  attributes,
+  items,
+}) => {
+  const flowItemsStr = items?.length
+    ? items
+        .map((item) => {
+          const itemAttrs = njkAttrsStringFromSectionAreaData(item);
+          return item.content
+            ? `{% flowItem ${itemAttrs} %}
+${item.content}
+{% endflowItem %}`
+            : "";
+        })
+        .filter(Boolean)
+        .join("\n")
+    : "";
+
+  if (!flowItemsStr) return "";
+
+  const attrsStr = buildLayoutAttrsString({
+    class: className,
+    layoutOptions,
+    attributes,
+  });
+
+  return `{% flow ${attrsStr} %}
+${flowItemsStr}
+{% endflow %}`;
+};
+
+/**
+ * Parse a reel area's body content and attributes into structured data.
+ * Extracts reel-specific fields (items, itemWidth, height, gap, noBar) and layout options from the {% reel %} tag.
+ */
+const parseReelBody = (block) => {
+  if (!block) return undefined;
+  const {
+    class: className,
+    layoutOptions,
+    attributes,
+  } = parseLayoutAttrs(block.attributes, REEL_LAYOUT_KEYS);
+
+  const items = extractAllSectionAreaData(block.content || "", "reelItem");
+
+  return {
+    class: className,
+    layoutOptions,
+    attributes,
+    items,
+  };
+};
+
+/**
+ * Build the Nunjucks markup for a reel area from structured data.
+ * Takes items, class, layoutOptions, and attributes and returns the {% reel %} tag with proper attributes.
+ */
+const buildReelBody = ({
+  class: className,
+  layoutOptions,
+  attributes,
+  items,
+}) => {
+  const reelItemsStr = items?.length
+    ? items
+        .map((item) => {
+          const itemAttrs = njkAttrsStringFromSectionAreaData(item);
+          return item.content
+            ? `{% reelItem ${itemAttrs} %}
+${item.content}
+{% endreelItem %}`
+            : "";
+        })
+        .filter(Boolean)
+        .join("\n")
+    : "";
+
+  if (!reelItemsStr) return "";
+
+  const attrsStr = buildLayoutAttrsString({
+    class: className,
+    layoutOptions,
+    attributes,
+  });
+
+  return `{% reel ${attrsStr} %}
+${reelItemsStr}
+{% endreel %}`;
+};
+
+/**
+ * Parse a section's outer-tag attribute string into structured `sectionWrapper`
+ * data: `{ class, attributes }`. The `class` is promoted to a first-class field
+ * so it stops being hidden inside the raw attributes string.
+ */
+const parseSectionWrapper = (attrsString) => {
+  const { extracted, remaining } = extractAttributes(attrsString || "", [
+    "class",
+  ]);
+  return {
+    class: extracted?.class || undefined,
+    attributes: remaining || undefined,
+  };
+};
+
+/**
+ * Build the section's outer-tag attribute string from `sectionWrapper` data.
+ */
+const buildSectionWrapperString = (sectionWrapper) => {
+  const { class: className, attributes } = sectionWrapper || {};
+  return [className ? `class="${className}"` : "", attributes || ""]
+    .filter(Boolean)
+    .join(", ");
+};
+
+/**
+ * Shared CMS field definition for the section wrapper. Groups together the
+ * class names and raw attributes that apply to the OUTER section element
+ * (e.g. `{% sectionGrid %}`), as opposed to the inner layout element
+ * (e.g. `{% grid %}`). Collapsed by default since it is rarely edited.
+ */
+const sectionWrapperField = {
+  name: "sectionWrapper",
+  label: "Section Wrapper Options",
+  hint: "Class names and raw attributes applied to the outer section element",
+  widget: "object",
+  required: false,
+  collapsed: true,
+  fields: [
+    {
+      name: "class",
+      label: "Section Class Names",
+      widget: "string",
+      hint: "Class names added to the outer section element (e.g. 'my-class another-class')",
+      required: false,
+    },
+    {
+      name: "attributes",
+      label: "Section Raw Attributes",
+      widget: "string",
+      required: false,
+    },
+  ],
+};
+
 const parsePartialSyntax = (match) => {
   // Parse the arguments from the captured string
   const partialSlug = match[1];
@@ -558,19 +1114,12 @@ const layoutTypeGridFluid = {
       hint: "The gap between blocks (e.g. 1em [default], var(--step-2) [fluid type scale], 0 [no gap])",
       required: false,
     },
-    {
-      name: "class",
-      label: "Class Names",
-      widget: "string",
-      hint: "Additional class names to add to the section (e.g. 'my-class another-class')",
-      required: false,
-    },
   ],
 };
 const layoutTypeSwitcher = {
   name: "switcher",
   // label: "Switcher: Switch from side by side to vertical display",
-  label: "Switcher",
+  label: "Switcher (Symmetrical Columns)",
   required: false,
   hint: "Switch between side by side and vertical display based on section width",
   fields: [
@@ -588,19 +1137,13 @@ const layoutTypeSwitcher = {
       hint: "The gap between blocks (e.g. 1em [default], var(--step-2) [fluid type scale], 0 [no gap])",
       required: false,
     },
-    {
-      name: "class",
-      label: "Class Names",
-      widget: "string",
-      hint: "Additional class names to add to the section (e.g. 'my-class another-class')",
-      required: false,
-    },
   ],
 };
 const layoutTypeFixedFluid = {
   name: "fixedFluid",
-  label: "Asymmetrical Columns",
+  label: "Fixed-Fluid (Asymmetrical Columns)",
   collapsed: true,
+  // icon: "vertical_split", // Would be nice
   fields: [
     {
       name: "fixedSide",
@@ -635,11 +1178,68 @@ const layoutTypeFixedFluid = {
       hint: "The gap between columns (e.g. 1em [default], var(--step-2) [fluid type scale], 0 [no gap])",
       required: false,
     },
+  ],
+};
+const layoutTypeCluster = {
+  name: "cluster",
+  label: "Cluster",
+  collapsed: true,
+  fields: [
     {
-      name: "class",
-      label: "Class Names",
+      name: "gap",
+      label: "Gap",
       widget: "string",
-      hint: "Additional class names to add to the section (e.g. 'my-class another-class')",
+      hint: "The gap between blocks (e.g. 1em [default], var(--step-2) [fluid type scale], 0 [no gap])",
+      required: false,
+    },
+  ],
+};
+const layoutTypeFlow = {
+  name: "flow",
+  label: "Flow",
+  collapsed: true,
+  fields: [
+    {
+      name: "gap",
+      label: "Gap",
+      widget: "string",
+      hint: "The gap between blocks (e.g. 1em [default], var(--step-2) [fluid type scale], 0 [no gap])",
+      required: false,
+    },
+  ],
+};
+const layoutTypeReel = {
+  name: "reel",
+  label: "Reel",
+  collapsed: true,
+  fields: [
+    {
+      name: "itemWidth",
+      label: "Item Width",
+      widget: "string",
+      hint: "The width of each child element (e.g. 20rem, 300px)",
+      required: false,
+    },
+    {
+      name: "height",
+      label: "Height",
+      widget: "string",
+      hint: "The height of the parent (Reel) element (e.g. 20rem, 300px)",
+      required: false,
+    },
+    {
+      name: "gap",
+      label: "Gap",
+      widget: "string",
+      hint: "The gap between reel items (e.g. 1em [default], var(--step-2) [fluid type scale], 0 [no gap])",
+      required: false,
+    },
+    {
+      name: "noBar",
+      label: "Hide Scrollbar",
+      widget: "boolean",
+      hint: "Whether to hide the scrollbar",
+      default: false,
       required: false,
     },
   ],
@@ -651,15 +1251,8 @@ export const link = {
   icon: "link",
   dialog: true,
   summary:
-    "🔗 {{text | truncate(20)}}{{text | ternary(': ', '')}}{{linkType.url | truncate(30)}}",
+    "🔗 {{content | truncate(20)}}{{content | ternary(': ', '')}}{{linkType.url | truncate(30)}}",
   fields: [
-    {
-      name: "text",
-      label: "Text",
-      widget: "string",
-      required: false,
-      hint: "Optional text to display for the link",
-    },
     {
       name: "linkType",
       label: "Link Type",
@@ -677,6 +1270,14 @@ export const link = {
               collection: "pages",
               required: true,
             },
+            {
+              name: "anchor",
+              label: "Anchor",
+              widget: "string",
+              // type: "url", // NOTE: might be useful but not working currently
+              required: false,
+              hint: "Optional anchor. Link to any title by copy-pasting it here",
+            },
           ],
         },
         ...activeCollections.map((collection) => ({
@@ -693,6 +1294,14 @@ export const link = {
               widget: "relation",
               collection: collection.name,
               required: true,
+            },
+            {
+              name: "anchor",
+              label: "Anchor",
+              widget: "string",
+              // type: "url", // NOTE: might be useful but not working currently
+              required: false,
+              hint: "Optional anchor. Link to any title by copy-pasting it here",
             },
           ],
         })),
@@ -771,19 +1380,40 @@ export const link = {
       ],
     },
     {
+      name: "text",
+      label: "Text",
+      widget: "hidden",
+      required: false,
+      hint: "Optional text to display for the link",
+    },
+    {
+      name: "content",
+      label: "Content",
+      widget: "markdown",
+      minimal: true,
+      buttons: ["bold", "italic", "strikethrough", "code"],
+      editor_components: ["icon", "imageShortcode"],
+      required: false,
+      hint: "Optional content to display for the link. Defaults to internal page name or link URL",
+    },
+    {
       name: "otherAttrs",
       label: "Other raw attributes",
       widget: "hidden",
       required: false,
     },
   ],
-  pattern: /{% link\s+(.*?)\s*%}/,
+  // pattern: /{% link\s+(.*?)\s*%}/,
+  pattern: /{%\s*link\s*([^>]*?)\s*%}(.*?){% endlink %}/,
   fromBlock: function (match) {
     const argumentsString = match[1] || "";
     const text = extractQuotedString(argumentsString, "text") || "";
+    const content = match[2] || text;
     const url = extractQuotedString(argumentsString, "url") || "";
-    let linkType = extractQuotedString(argumentsString, "linkType") || "";
-    const collection = extractQuotedString(argumentsString, "collection") || "";
+    const anchor = extractQuotedString(argumentsString, "anchor") || "";
+    const linkType = extractQuotedString(argumentsString, "linkType") || "";
+    let type = extractQuotedString(argumentsString, "type") || linkType || "";
+    let collection = extractQuotedString(argumentsString, "collection") || "";
     const cc = extractQuotedString(argumentsString, "cc") || "";
     const bcc = extractQuotedString(argumentsString, "bcc") || "";
     const subject = extractQuotedString(argumentsString, "subject") || "";
@@ -794,7 +1424,7 @@ export const link = {
     const otherAttrs = argumentsString
       .replace(/^\s*,\s*/, "")
       .replace(
-        /(text|url|linkType|collection|cc|bcc|subject|body)="[^"]*"(?:\s*,)?/g,
+        /(text|content|url|linkType|type|collection|cc|bcc|subject|body|anchor)="[^"]*"(?:\s*,)?/g,
         "",
       )
       .trim();
@@ -813,24 +1443,21 @@ export const link = {
       }
     }
 
-    switch (true) {
-      case !!linkType:
-        break;
-      case url.startsWith("http") || url.startsWith("www."):
-        linkType = "external";
-        break;
-      case /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(url):
-        linkType = "email";
-        break;
-      case isFileUrl(url):
-        linkType = "file";
-        break;
-      default:
-        linkType = "external";
+    if (!type) {
+      // Atribute a type if it is not provided
+      if (url.startsWith("http") || url.startsWith("www.")) {
+        type = "external";
+      } else if (/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(url)) {
+        type = "email";
+      } else if (isFileUrl(url)) {
+        type = "file";
+      } else {
+        type = "external";
+      }
     }
 
-    if (linkType == "internal") {
-      linkType = collection || "all";
+    if (type == "internal") {
+      collection = collection || "pages";
     }
 
     let advanced;
@@ -845,47 +1472,66 @@ export const link = {
     }
 
     return {
-      text: text || "",
       linkType: {
-        type: linkType,
+        type: type === "internal" ? collection : type,
         url,
-        ...(linkType === "email" && advanced ? { advanced } : {}),
+        anchor,
+        ...(type === "email" && advanced ? { advanced } : {}),
       },
+      // text: text || "",
+      content: content || "",
       otherAttrs,
     };
   },
 
   toBlock: function (data) {
-    const text = data?.text || "";
-    let linkType = data?.linkType?.type;
+    const content = data?.content || data?.text || "";
+    let type = data?.linkType?.type;
     const url = data?.linkType?.url;
+    const anchor = data?.linkType?.anchor;
     const advanced = data?.linkType?.advanced || {};
     const { cc, bcc, subject, body } = advanced;
     const otherAttrs = data?.otherAttrs;
     const otherAttrsString = otherAttrs?.trim() ? `, ${otherAttrs}` : "";
 
-    if (linkType === "external" || linkType === "file") {
-      return `{% link url="${url}", text="${text}", linkType="${linkType}"${otherAttrsString} %}`;
-    } else if (linkType === "email") {
-      const attrsStr = njkAttrsStringFromObj({
+    let attrsStr = "";
+
+    if (type === "external" || type === "file") {
+      attrsStr = njkAttrsStringFromObj({ url, type });
+    } else if (type === "email") {
+      attrsStr = njkAttrsStringFromObj({
         url,
-        text,
-        linkType,
+        type,
         cc,
         bcc,
         subject,
         body: toQuotableString(body),
       });
-
-      return `{% link ${attrsStr}${otherAttrsString} %}`;
     } else {
-      const collection = linkType;
-      linkType = "internal";
-      return `{% link url="${url}", text="${text}", linkType="${linkType}", collection="${collection}"${otherAttrsString} %}`;
+      attrsStr = njkAttrsStringFromObj({
+        url,
+        anchor,
+        type: "internal",
+        collection: type,
+      });
     }
+
+    return `{% link ${attrsStr}${otherAttrsString} %}${content || ""}{% endlink %}`;
   },
 
-  toPreview: (data) => `<span>LINK</span>`,
+  toPreview: (data) => {
+    const content = data?.content || data?.text || "";
+    let type = data?.linkType?.type;
+    const url = data?.linkType?.url;
+    const isInternal =
+      type !== "external" && type !== "email" && type !== "file";
+    // For internal link, lead to the relevant page in the CMS
+    const href = isInternal
+      ? `/admin/#/collections/pages/entries/${type}/${url}`
+      : url;
+
+    return `<a href="${href}">${content || url}${isInternal ? ` <sup>🢱${url}</sup>` : ""}</a>`;
+  },
 };
 
 export const icon = {
@@ -1016,6 +1662,9 @@ export const imageShortcode = {
   id: "imageShortcode",
   label: "Image",
   icon: "image",
+  // dialog: true,
+  // summary:
+  //   "🖼️ {{attributes.alt | truncate(20)}}{{attributes.alt | ternary(': ', '')}}{{src | truncate(30)}}",
   fields: [
     {
       name: "src",
@@ -1107,7 +1756,7 @@ export const imageShortcode = {
       ],
     },
   ],
-  pattern: /^{% image\s+(.*?)\s*%}$/ms,
+  pattern: /{% image\s+(.*?)\s*%}/,
   fromBlock: function (match) {
     // Parse the arguments from the captured string
     const argumentsString = match[1];
@@ -1192,7 +1841,7 @@ export const imageShortcode = {
 export const partial = {
   id: "partial",
   label: "Partial",
-  icon: "brick",
+  icon: "extension",
   fields: [
     {
       name: "partialSlug",
@@ -1244,7 +1893,7 @@ export const partial = {
     return stringifyPartial(data, ".md", "partial");
   },
   toPreview: function (data) {
-    return `TEST`;
+    return `<PARTIAL>`;
   },
 };
 
@@ -1302,7 +1951,7 @@ export const htmlPartial = {
     return stringifyPartial(data, ".njk", "htmlPartial");
   },
   toPreview: function (data) {
-    return `TEST`;
+    return `<HTML PARTIAL>`;
   },
 };
 
@@ -1376,7 +2025,12 @@ ${content}
 {% endwrapper %}`;
   },
   toPreview: function (data) {
-    return `TEST`;
+    const { content, tag, class: className } = data;
+
+    return `<${tag || "div"} class="${className || ""}">
+
+${content}
+</${tag || "div"}>`;
   },
 };
 
@@ -1929,9 +2583,139 @@ ${content}
 //   },
 // };
 
+export const sectionFlow = {
+  id: "sectionFlow",
+  label: "Section > Flow",
+  icon: "flex_direction",
+  fields: [
+    sectionHeaderField,
+    {
+      name: "items",
+      label: "Flow Items",
+      widget: "list",
+      required: true,
+      default: [{ content: "" }, { content: "" }],
+      summary: "{{item | truncate(50)}}",
+      fields: [
+        {
+          name: "content",
+          label: "Flow Item Content",
+          widget: "markdown",
+          required: false,
+        },
+        {
+          name: "class",
+          label: "Flow Item Classes",
+          widget: "string",
+          required: false,
+        },
+        {
+          name: "attributes",
+          label: "Flow Item Raw Attributes",
+          widget: "hidden",
+          required: false,
+        },
+      ],
+    },
+    {
+      name: "layoutOptions",
+      label: "Layout Options",
+      hint: "Manually select a layout and related options",
+      widget: "object",
+      required: false,
+      collapsed: true,
+      types: [
+        {
+          name: "gap",
+          label: "Gap",
+          fields: [
+            {
+              name: "gap",
+              label: "Gap",
+              widget: "string",
+              hint: "The gap between flow items (e.g. 1em [default], var(--step-2) [fluid type scale], 0 [no gap])",
+              default: "1em",
+              required: false,
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: "class",
+      label: "Layout Class Names",
+      widget: "string",
+      hint: "Class names added to the inner layout element ({% flow %}). For classes on the outer section element, use the Section Wrapper below.",
+      required: false,
+    },
+    sectionFooterField,
+    sectionWrapperField,
+  ],
+  pattern:
+    /^{%\s*sectionFlow\s*([^>]*?)\s*%}\s*([\S\s]*?)\s*{%\s*endsectionFlow\s*%}$/gm,
+  fromBlock: function (match) {
+    const sectionAttributes = match[1];
+    const sectionInner = match[2];
+
+    const { header, footer } = parseSectionHeaderFooter(sectionInner);
+    const flow = parseFlowBody(extractWithNunjucksTag(sectionInner, "flow"));
+
+    return {
+      header,
+      footer,
+      items: flow?.items || [],
+      layoutOptions: flow?.layoutOptions || {},
+      class: flow?.class,
+      sectionWrapper: parseSectionWrapper(sectionAttributes),
+    };
+  },
+  toBlock: function (data) {
+    const { headerContent, footerContent } = buildSectionHeaderFooterMarkup({
+      header: data?.header,
+      footer: data?.footer,
+    });
+
+    const flowContent = buildFlowBody({
+      class: data?.class,
+      layoutOptions: data?.layoutOptions,
+      items: data?.items,
+    });
+
+    const sectionAttrsStr = buildSectionWrapperString(data?.sectionWrapper);
+
+    return `{% sectionFlow ${sectionAttrsStr} %}
+${headerContent}
+${flowContent}
+${footerContent}
+{% endsectionFlow %}`;
+  },
+  toPreview: (data) => {
+    const { headerContent, footerContent } =
+      buildSectionHeaderFooterMarkupPreview({
+        header: data?.header,
+        footer: data?.footer,
+      });
+
+    const areaContent = buildBodyPreview({ items: data?.items });
+
+    return `<section class="section-flow" style="${SECTION_WRAPPER_STYLE}">
+<small style="float:right;">Flow</small>
+
+${headerContent}
+
+${areaContent}
+
+${footerContent}
+
+</section>
+`;
+  },
+};
+
 export const sectionGrid = {
   id: "sectionGrid",
   label: "Section > Grid",
+  // icon: "flex_wrap",
   icon: "grid_view",
   fields: [
     sectionHeaderField,
@@ -1940,7 +2724,7 @@ export const sectionGrid = {
       label: "Grid Items",
       widget: "list",
       required: true,
-      default: [{ item: "" }, { item: "" }, { item: "" }],
+      default: [{ content: "" }, { content: "" }, { content: "" }],
       summary: "{{item | truncate(50)}}",
       // collapsed: true,
       fields: [
@@ -1964,7 +2748,6 @@ export const sectionGrid = {
         },
       ],
     },
-    sectionFooterField,
     {
       name: "layoutOptions",
       label: "Layout Options",
@@ -1974,14 +2757,17 @@ export const sectionGrid = {
       widget: "object",
       required: false,
       collapsed: true,
-      types: [layoutTypeSwitcher, layoutTypeGridFluid],
+      types: [layoutTypeSwitcher, layoutTypeGridFluid, layoutTypeCluster],
     },
     {
-      name: "attributes",
-      label: "Section Raw Attributes",
+      name: "class",
+      label: "Layout Class Names",
       widget: "string",
+      hint: "Class names added to the inner layout element ({% grid %}). For classes on the outer section element, use the Section Wrapper below.",
       required: false,
     },
+    sectionFooterField,
+    sectionWrapperField,
     // {
     //   name: "itemsAttributes",
     //   label: "Items Raw Attributes",
@@ -1999,88 +2785,66 @@ export const sectionGrid = {
     const sectionAttributes = match[1];
     const sectionInner = match[2];
 
-    const header = extractSectionAreaData(sectionInner, "sectionHeader");
-    const footer = extractSectionAreaData(sectionInner, "sectionFooter");
-
-    const grid = extractWithNunjucksTag(sectionInner, "grid");
-    const { extracted: gridAttributes } = extractAttributes(grid.attributes, [
-      "type",
-      "gap",
-      "class",
-      "widthWrap",
-      "columns",
-    ]);
-
-    // Extract all gridItems with their attributes
-    const items = extractAllSectionAreaData(grid?.content || "", "gridItem");
+    const { header, footer } = parseSectionHeaderFooter(sectionInner);
+    const grid = parseGridBody(extractWithNunjucksTag(sectionInner, "grid"));
 
     return {
-      header: header?.content ? header : undefined,
-      footer: footer?.content ? footer : undefined,
-      items,
-      layoutOptions: gridAttributes,
-      attributes: sectionAttributes,
-      // itemsAttributes,
+      header,
+      footer,
+      items: grid?.items || [],
+      layoutOptions: grid?.layoutOptions || {},
+      class: grid?.class,
+      sectionWrapper: parseSectionWrapper(sectionAttributes),
     };
   },
   toBlock: function (data) {
-    const {
-      type,
-      gap,
-      class: className,
-      widthWrap,
-      columns,
-    } = data?.layoutOptions || {};
+    const { headerContent, footerContent } = buildSectionHeaderFooterMarkup({
+      header: data?.header,
+      footer: data?.footer,
+    });
 
-    const headerAttrs = njkAttrsStringFromSectionAreaData(data?.header);
-    const headerContent = data?.header?.content
-      ? `{% sectionHeader ${headerAttrs} %}
-${data?.header?.content}
-{% endsectionHeader %}`
-      : "";
+    const gridContent = buildGridBody({
+      class: data?.class,
+      layoutOptions: data?.layoutOptions,
+      items: data?.items,
+    });
 
-    const footerAttrs = njkAttrsStringFromSectionAreaData(data?.footer);
-    const footerContent = data?.footer?.content
-      ? `{% sectionFooter ${footerAttrs} %}
-${data?.footer?.content}
-{% endsectionFooter %}`
-      : "";
+    const sectionAttrsStr = buildSectionWrapperString(data?.sectionWrapper);
 
-    const gridItemsStr = data?.items?.length
-      ? data.items
-          .map((item, index) => {
-            const itemAttrs = njkAttrsStringFromSectionAreaData(item);
-            return item.content
-              ? `{% gridItem ${itemAttrs} %}
-${item.content}
-{% endgridItem %}`
-              : "";
-          })
-          .filter(Boolean)
-          .join("\n")
-      : "";
-
-    const gridAttrs = { type, columns, gap, class: className, widthWrap };
-    const gridAttrsStr = njkAttrsStringFromObj(gridAttrs);
-    const gridContent = data?.items?.length
-      ? `{% grid ${gridAttrsStr} %}
-${gridItemsStr}
-{% endgrid %}`
-      : "";
-
-    return `{% sectionGrid ${data?.attributes || ""} %}
+    return `{% sectionGrid ${sectionAttrsStr} %}
 ${headerContent}
 ${gridContent}
 ${footerContent}
 {% endsectionGrid %}`;
   },
-  toPreview: (data) => `<span>GRID SECTION</span>`,
+  toPreview: (data) => {
+    const { headerContent, footerContent } =
+      buildSectionHeaderFooterMarkupPreview({
+        header: data?.header,
+        footer: data?.footer,
+      });
+
+    const areaContent = buildBodyPreview({ items: data?.items });
+
+    return `<section class="section-grid" style="${SECTION_WRAPPER_STYLE}">
+<small style="float:right;">Grid</small>
+
+${headerContent}
+
+${areaContent}
+
+${footerContent}
+
+</section>
+`;
+  },
 };
 
 export const sectionTwoColumns = {
   id: "sectionTwoColumns",
   label: "Section > Two Columns",
-  icon: "grid_view",
+  icon: "view_column_2",
+  icon: "vertical_split",
   fields: [
     sectionHeaderField,
     {
@@ -2139,54 +2903,6 @@ export const sectionTwoColumns = {
         },
       ],
     },
-    // {
-    //   name: "items",
-    //   label: "Column Items",
-    //   widget: "object",
-    //   required: true,
-    //   default: [{ itemLeft: "", itemRight: "" }],
-    //   summary: "{{item | truncate(50)}}",
-    //   // collapsed: true,
-    //   fields: [
-    //     {
-    //       name: "contentItemLeft",
-    //       label: "Column Left",
-    //       widget: "markdown",
-    //       required: false,
-    //     },
-    //     {
-    //       name: "classItemLeft",
-    //       label: "Left Column Classes",
-    //       widget: "string",
-    //       required: false,
-    //     },
-    //     {
-    //       name: "attributesItemLeft",
-    //       label: "Left Column Raw Attributes",
-    //       widget: "hidden",
-    //       required: false,
-    //     },
-    //     {
-    //       name: "contentItemRight",
-    //       label: "Column Right",
-    //       widget: "markdown",
-    //       required: false,
-    //     },
-    //     {
-    //       name: "classItemRight",
-    //       label: "Right Column Classes",
-    //       widget: "string",
-    //       required: false,
-    //     },
-    //     {
-    //       name: "attributesItemRight",
-    //       label: "Right Column Raw Attributes",
-    //       widget: "hidden",
-    //       required: false,
-    //     },
-    //   ],
-    // },
-    sectionFooterField,
     {
       name: "layoutOptions",
       label: "Layout Options",
@@ -2197,11 +2913,14 @@ export const sectionTwoColumns = {
       types: [layoutTypeSwitcher, layoutTypeFixedFluid],
     },
     {
-      name: "attributes",
-      label: "Section Raw Attributes",
+      name: "class",
+      label: "Layout Class Names",
       widget: "string",
+      hint: "Class names added to the inner layout element ({% twoColumns %}). For classes on the outer section element, use the Section Wrapper below.",
       required: false,
     },
+    sectionFooterField,
+    sectionWrapperField,
   ],
   pattern:
     /^{%\s*sectionTwoColumns\s*([^>]*?)\s*%}\s*([\S\s]*?)\s*{%\s*endsectionTwoColumns\s*%}$/gm,
@@ -2209,136 +2928,186 @@ export const sectionTwoColumns = {
     const sectionAttributes = match[1];
     const sectionInner = match[2];
 
-    // const header = extractWithNunjucksTag(sectionInner, "sectionHeader");
-    // const footer = extractWithNunjucksTag(sectionInner, "sectionFooter");
-
-    const header = extractSectionAreaData(sectionInner, "sectionHeader");
-    const footer = extractSectionAreaData(sectionInner, "sectionFooter");
-
-    const twoColumns = extractWithNunjucksTag(sectionInner, "twoColumns");
-    const { extracted: twoColumnsAttributes } = extractAttributes(
-      twoColumns?.attributes,
-      [
-        "type",
-        "gap",
-        "class",
-        "widthWrap",
-        "widthFixed",
-        "widthFluidMin",
-        "fixedSide",
-      ],
+    const { header, footer } = parseSectionHeaderFooter(sectionInner);
+    const twoColumns = parseTwoColumnsBody(
+      extractWithNunjucksTag(sectionInner, "twoColumns"),
     );
-
-    const items = extractAllSectionAreaData(
-      twoColumns?.content || "",
-      "twoColumnsItem",
-    );
-
-    // Extract the two column items (left = first, right = second)
-    // const columnItems = extractAllWithNunjucksTag(
-    //   twoColumns?.content || "",
-    //   "twoColumnsItem",
-    // );
-
-    // const itemLeft = columnItems[0]?.content || "";
-    // const attributesItemLeft = columnItems[0]?.attributes || "";
-
-    // const itemRight = columnItems[1]?.content || "";
-    // const attributesItemRight = columnItems[1]?.attributes || "";
 
     return {
-      header: header?.content ? header : undefined,
-      footer: footer?.content ? footer : undefined,
-      itemLeft: items[0]?.content ? items[0] : undefined,
-      itemRight: items[1]?.content ? items[1] : undefined,
-      // items: {
-      //   itemLeft,
-      //   classItemLeft,
-      //   attributesItemLeft,
-      //   itemRight,
-      //   classItemRight,
-      //   attributesItemRight
-      // },
-      layoutOptions: twoColumnsAttributes,
-      attributes: sectionAttributes,
+      header,
+      footer,
+      itemLeft: twoColumns?.itemLeft,
+      itemRight: twoColumns?.itemRight,
+      layoutOptions: twoColumns?.layoutOptions || {},
+      class: twoColumns?.class,
+      sectionWrapper: parseSectionWrapper(sectionAttributes),
     };
   },
   toBlock: function (data) {
-    const {
-      type,
-      gap,
-      class: className,
-      widthWrap,
-      widthFixed,
-      widthFluidMin,
-      fixedSide,
-    } = data?.layoutOptions || {};
+    const { headerContent, footerContent } = buildSectionHeaderFooterMarkup({
+      header: data?.header,
+      footer: data?.footer,
+    });
 
-    const headerAttrs = njkAttrsStringFromSectionAreaData(data?.header);
-    const headerContent = data?.header?.content
-      ? `{% sectionHeader ${headerAttrs} %}
-${data?.header?.content}
-{% endsectionHeader %}`
-      : "";
+    const twoColumnsContent = buildTwoColumnsBody({
+      class: data?.class,
+      layoutOptions: data?.layoutOptions,
+      itemLeft: data?.itemLeft,
+      itemRight: data?.itemRight,
+    });
 
-    const footerAttrs = njkAttrsStringFromSectionAreaData(data?.footer);
-    const footerContent = data?.footer?.content
-      ? `{% sectionFooter ${footerAttrs} %}
-${data?.footer?.content}
-{% endsectionFooter %}`
-      : "";
+    const sectionAttrsStr = buildSectionWrapperString(data?.sectionWrapper);
 
-    const itemLeftAttrs = njkAttrsStringFromSectionAreaData(data?.itemLeft);
-    const itemLeftContent = data?.itemLeft?.content
-      ? `{% twoColumnsItem ${itemLeftAttrs} %}
-${data?.itemLeft?.content}
-{% endtwoColumnsItem %}`
-      : "";
-
-    const itemRightAttrs = njkAttrsStringFromSectionAreaData(data?.itemRight);
-    const itemRightContent = data?.itemRight?.content
-      ? `{% twoColumnsItem ${itemRightAttrs} %}
-${data?.itemRight?.content}
-{% endtwoColumnsItem %}`
-      : "";
-
-    // TODO: Check what happens when one of the items is empty
-    const columnItemsStr = [itemLeftContent, itemRightContent]
-      .filter(Boolean)
-      .join("\n");
-
-    // Build twoColumns attributes based on layout type
-    const twoColumnsAttrs = {
-      type,
-      gap,
-      class: className,
-      widthWrap,
-      widthFixed,
-      widthFluidMin,
-      fixedSide,
-    };
-
-    const twoColumnsAttrsStr = njkAttrsStringFromObj(twoColumnsAttrs);
-
-    const twoColumnsContent = columnItemsStr
-      ? `{% twoColumns ${twoColumnsAttrsStr} %}
-${columnItemsStr}
-{% endtwoColumns %}`
-      : "";
-
-    return `{% sectionTwoColumns ${data?.attributes || ""} %}
+    return `{% sectionTwoColumns ${sectionAttrsStr} %}
 ${headerContent}
 ${twoColumnsContent}
 ${footerContent}
 {% endsectionTwoColumns %}`;
   },
-  toPreview: (data) => `<span>TWO COLUMNS SECTION</span>`,
+  toPreview: (data) => {
+    const { headerContent, footerContent } =
+      buildSectionHeaderFooterMarkupPreview({
+        header: data?.header,
+        footer: data?.footer,
+      });
+
+    const areaContent = buildBodyPreview({
+      items: [data?.itemLeft, data?.itemRight],
+    });
+
+    return `<section class="section-two-columns" style="${SECTION_WRAPPER_STYLE}">
+<small style="float:right;">Two Columns</small>
+
+${headerContent}
+
+${areaContent}
+
+${footerContent}
+
+</section>
+`;
+  },
+};
+
+export const sectionReel = {
+  id: "sectionReel",
+  label: "Section > Reel",
+  // icon: "view_week",
+  icon: "flex_no_wrap",
+  fields: [
+    sectionHeaderField,
+    {
+      name: "items",
+      label: "Reel Items",
+      widget: "list",
+      required: true,
+      default: [{ content: "" }, { content: "" }],
+      summary: "{{item | truncate(50)}}",
+      fields: [
+        {
+          name: "content",
+          label: "Reel Item Content",
+          widget: "markdown",
+          required: false,
+        },
+        {
+          name: "class",
+          label: "Reel Item Classes",
+          widget: "string",
+          required: false,
+        },
+        {
+          name: "attributes",
+          label: "Reel Item Raw Attributes",
+          widget: "hidden",
+          required: false,
+        },
+      ],
+    },
+    {
+      name: "layoutOptions",
+      label: "Layout Options",
+      hint: "Manually select a layout and related options",
+      widget: "object",
+      required: false,
+      collapsed: true,
+      types: [layoutTypeReel],
+    },
+    {
+      name: "class",
+      label: "Layout Class Names",
+      widget: "string",
+      hint: "Class names added to the inner layout element ({% reel %}). For classes on the outer section element, use the Section Wrapper below.",
+      required: false,
+    },
+    sectionFooterField,
+    sectionWrapperField,
+  ],
+  pattern:
+    /^{%\s*sectionReel\s*([^>]*?)\s*%}\s*([\S\s]*?)\s*{%\s*endsectionReel\s*%}$/gm,
+  fromBlock: function (match) {
+    const sectionAttributes = match[1];
+    const sectionInner = match[2];
+
+    const { header, footer } = parseSectionHeaderFooter(sectionInner);
+    const reel = parseReelBody(extractWithNunjucksTag(sectionInner, "reel"));
+
+    return {
+      header,
+      footer,
+      items: reel?.items || [],
+      layoutOptions: reel?.layoutOptions || {},
+      class: reel?.class,
+      sectionWrapper: parseSectionWrapper(sectionAttributes),
+    };
+  },
+  toBlock: function (data) {
+    const { headerContent, footerContent } = buildSectionHeaderFooterMarkup({
+      header: data?.header,
+      footer: data?.footer,
+    });
+
+    const reelContent = buildReelBody({
+      class: data?.class,
+      layoutOptions: data?.layoutOptions,
+      items: data?.items,
+    });
+
+    const sectionAttrsStr = buildSectionWrapperString(data?.sectionWrapper);
+
+    return `{% sectionReel ${sectionAttrsStr} %}
+${headerContent}
+${reelContent}
+${footerContent}
+{% endsectionReel %}`;
+  },
+  toPreview: (data) => {
+    const { headerContent, footerContent } =
+      buildSectionHeaderFooterMarkupPreview({
+        header: data?.header,
+        footer: data?.footer,
+      });
+
+    const areaContent = buildBodyPreview({ items: data?.items });
+
+    return `<section class="section-reel" style="${SECTION_WRAPPER_STYLE}">
+<small style="float:right;">Reel</small>
+
+${headerContent}
+
+${areaContent}
+
+${footerContent}
+
+</section>
+`;
+  },
 };
 
 export const sectionCollection = {
   id: "sectionCollection",
   label: "Section > Collection List",
-  icon: "grid_view",
+  icon: "bookmark_stacks",
   fields: [
     sectionHeaderField,
     {
@@ -2365,65 +3134,6 @@ export const sectionCollection = {
       widget: "object",
       required: false,
       fields: [
-        {
-          name: "filters",
-          label: "Filters",
-          label_singular: "Filter",
-          hint: "Filtering rules to apply on the Collection",
-          widget: "list",
-          required: false,
-          collapsed: true,
-          summary: "{{value}}",
-          typeKey: "by",
-          types: [
-            {
-              name: "tag",
-              label: "Filter by Tag",
-              fields: [
-                {
-                  name: "value",
-                  label: "Tag Name",
-                  hint: "Tags must first exist in the in [Data Files > Translated Data](/admin/#/collections/dataFiles/entries/translatedData)",
-                  widget: "relation",
-                  collection: "dataFiles",
-                  file: "translatedData",
-                  value_field: "tagsList.*.slug",
-                  display_fields: ["tagsList.*.name"],
-                  required: true,
-                  multiple: false,
-                },
-              ],
-            },
-            {
-              name: "first",
-              label: "First",
-              fields: [
-                {
-                  name: "value",
-                  label: "Count",
-                  hint: "Only display the first x items",
-                  widget: "number",
-                  required: true,
-                  default: 3,
-                },
-              ],
-            },
-            {
-              name: "last",
-              label: "Last",
-              fields: [
-                {
-                  name: "value",
-                  label: "Count",
-                  hint: "Only display the last x items",
-                  widget: "number",
-                  required: true,
-                  default: 3,
-                },
-              ],
-            },
-          ],
-        },
         {
           name: "sortCriterias",
           label: "Sort Criterias",
@@ -2496,9 +3206,96 @@ export const sectionCollection = {
             // },
           ],
         },
+        {
+          name: "filters",
+          label: "Filters",
+          label_singular: "Filter",
+          hint: "Filtering rules to apply on the Collection",
+          widget: "list",
+          required: false,
+          collapsed: true,
+          summary: "{{value}}",
+          typeKey: "by",
+          types: [
+            {
+              name: "tag",
+              label: "Filter by Tag",
+              summary: "{{value}}", // TODO: understand why this is not working
+              fields: [
+                {
+                  name: "value",
+                  label: "Tag Name",
+                  hint: "Tags must first exist in [Data Files > Translated Data](/admin/#/collections/dataFiles/entries/translatedData)",
+                  widget: "relation",
+                  collection: "dataFiles",
+                  file: "translatedData",
+                  value_field: "tagsList.*.slug",
+                  display_fields: ["tagsList.*.name"],
+                  required: true,
+                  multiple: true,
+                },
+              ],
+            },
+            {
+              name: "name",
+              label: "Filter by Name",
+              fields: [
+                {
+                  name: "value",
+                  label: "Name matches",
+                  hint: "Case-insensitive, partial match. Provide one or more values; an item matches if any value is found in its name.",
+                  widget: "list",
+                  allow_add: true,
+                  required: true,
+                  field: {
+                    name: "value",
+                    label: "Value",
+                    widget: "string",
+                  },
+                },
+              ],
+            },
+            {
+              name: "first",
+              label: "First",
+              fields: [
+                {
+                  name: "value",
+                  label: "Count",
+                  hint: "Only display the first x items",
+                  widget: "number",
+                  required: true,
+                  default: 3,
+                },
+              ],
+            },
+            {
+              name: "last",
+              label: "Last",
+              fields: [
+                {
+                  name: "value",
+                  label: "Count",
+                  hint: "Only display the last x items",
+                  widget: "number",
+                  required: true,
+                  default: 3,
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: "exclusions",
+          label: "Exclusions",
+          label_singular: "Exclusion",
+          widget: "boolean",
+          required: false,
+          default: false,
+          hint: "When enabled, the defined filters will exclude items instead of including them. For example, if you set a Tag filter with 'example' value and enable Exclusions, items with 'example' tag will not be displayed in the section.",
+        },
       ],
     },
-    sectionFooterField,
     {
       name: "layoutOptions",
       label: "Layout Options",
@@ -2506,14 +3303,32 @@ export const sectionCollection = {
       widget: "object",
       required: false,
       collapsed: true,
-      types: [layoutTypeSwitcher, layoutTypeGridFluid],
+      types: [
+        layoutTypeSwitcher,
+        layoutTypeGridFluid,
+        layoutTypeCluster,
+        layoutTypeFlow,
+        layoutTypeReel,
+      ],
     },
     {
-      name: "attributes",
-      label: "Section Raw Attributes",
+      name: "class",
+      label: "Layout Class Names",
       widget: "string",
+      hint: "Class names added to the inner layout element ({% collection %}). For classes on the outer section element, use the Section Wrapper below.",
       required: false,
     },
+    {
+      name: "itemPartial",
+      label: "Item Partial",
+      hint: "Select a custom partial to be used to display items",
+      widget: "relation",
+      collection: "htmlPartials",
+      required: false,
+      value_field: "{{slug}}",
+    },
+    sectionFooterField,
+    sectionWrapperField,
   ],
   pattern:
     /^{%\s*sectionCollection\s*([^>]*?)\s*%}\s*([\S\s]*?)\s*{%\s*endsectionCollection\s*%}$/gm,
@@ -2521,139 +3336,830 @@ export const sectionCollection = {
     const sectionAttributes = match[1];
     const sectionInner = match[2];
 
-    // const header = extractWithNunjucksTag(sectionInner, "sectionHeader");
-    // const footer = extractWithNunjucksTag(sectionInner, "sectionFooter");
-    const header = extractSectionAreaData(sectionInner, "sectionHeader");
-    const footer = extractSectionAreaData(sectionInner, "sectionFooter");
+    const { header, footer } = parseSectionHeaderFooter(sectionInner);
 
     const collection = extractWithNunjucksTag(sectionInner, "collection");
-    const filters =
-      extractJsonProperty(collection?.attributes, "filters") || [];
-    const sortCriterias =
-      extractJsonProperty(collection?.attributes, "sortCriterias") || [];
-    const sortAndFilterOptions =
-      filters.length || sortCriterias.length
-        ? { filters, sortCriterias }
-        : undefined;
-    const { extracted: collectionAttributes } = extractAttributes(
-      collection?.attributes,
-      [
-        "collection",
-        "filters", // Complex value. We just extract it here to avoid polluting `remaining` attributes
-        "sortCriterias", // Complex value. We just extract it here to avoid polluting `remaining` attributes
-        "type",
-        "gap",
-        "class",
-        "widthWrap",
-        "columns",
-      ],
-    );
-    const {
-      collection: collectionName,
-      filters: noop1, // Just to remove key from ...layoutOptions
-      sortCriterias: noop2, // Just to remove key from ...layoutOptions
-      ...layoutOptions
-    } = collectionAttributes;
+    const parsed = parseCollectionBody({
+      attributes: collection?.attributes,
+      content: collection?.content,
+    });
 
     return {
-      header: header?.content ? header : undefined,
-      footer: footer?.content ? footer : undefined,
-      collection: collectionName,
-      sortAndFilterOptions,
-      layoutOptions,
-      sectionAttributes,
+      header,
+      footer,
+      collection: parsed?.collection,
+      sortAndFilterOptions: parsed?.sortAndFilterOptions,
+      layoutOptions: parsed?.layoutOptions,
+      class: parsed?.class,
+      itemPartial: parsed?.itemPartial,
+      sectionWrapper: parseSectionWrapper(sectionAttributes),
     };
   },
   toBlock: function (data) {
-    const collection = data?.collection || "all";
-    const { filters, sortCriterias } = data?.sortAndFilterOptions || {};
-    // const tag = data?.tags;
-    // const sort = data?.sortOptions?.sort;
-    // const sortBy = data?.sortOptions?.sortBy;
-    // const filterOptions = data?.filterOptions || [];
-    // const layoutOptions = data?.layoutOptions || {};
-    // const layoutType = layoutOptions?.type;
-    const {
-      type,
-      gap,
-      class: className,
-      widthWrap,
-      columns,
-    } = data?.layoutOptions || {};
+    const { headerContent, footerContent } = buildSectionHeaderFooterMarkup({
+      header: data?.header,
+      footer: data?.footer,
+    });
 
-    // Build layout attrs from layoutOptions
-    // let layoutAttrs = {};
-    // if (layoutType === "switcher") {
-    //   layoutAttrs = {
-    //     type: "switcher",
-    //     ...(layoutOptions.widthWrap
-    //       ? { widthWrap: layoutOptions.widthWrap }
-    //       : {}),
-    //     ...(layoutOptions.gap ? { gap: layoutOptions.gap } : {}),
-    //     ...(layoutOptions.class ? { class: layoutOptions.class } : {}),
-    //   };
-    // } else if (layoutType === "grid-fluid") {
-    //   layoutAttrs = {
-    //     type: "grid-fluid",
-    //     ...(layoutOptions.columns ? { columns: layoutOptions.columns } : {}),
-    //     ...(layoutOptions.gap ? { gap: layoutOptions.gap } : {}),
-    //     ...(layoutOptions.class ? { class: layoutOptions.class } : {}),
-    //   };
-    // }
+    const collectionContent = buildCollectionBody({
+      collection: data?.collection,
+      sortAndFilterOptions: data?.sortAndFilterOptions,
+      class: data?.class,
+      itemPartial: data?.itemPartial,
+      layoutOptions: data?.layoutOptions,
+    });
 
-    const headerAttrs = njkAttrsStringFromSectionAreaData(data?.header);
-    const headerContent = data?.header?.content
-      ? `{% sectionHeader ${headerAttrs} %}
-${data?.header?.content}
-{% endsectionHeader %}`
-      : "";
+    const sectionAttrsStr = buildSectionWrapperString(data?.sectionWrapper);
 
-    const footerAttrs = njkAttrsStringFromSectionAreaData(data?.footer);
-    const footerContent = data?.footer?.content
-      ? `{% sectionFooter ${footerAttrs} %}
-${data?.footer?.content}
-{% endsectionFooter %}`
-      : "";
-
-    // Build filterFirst / filterLast from filterOptions list
-    // const filterFirst = filterOptions.find((o) => o.type === "filterFirst");
-    // const filterLast = filterOptions.find((o) => o.type === "filterLast");
-
-    // const colAttrs = {
-    //   collection,
-    //   ...(tag ? { tag } : {}),
-    //   ...(sort ? { sort } : {}),
-    //   ...(sortBy ? { sortBy } : {}),
-    //   ...layoutAttrs,
-    //   ...(filterFirst ? { filterFirst: filterFirst.count } : {}),
-    //   ...(filterLast ? { filterLast: filterLast.count } : {}),
-    // };
-    // const colAttrsStr = Object.entries(colAttrs)
-    //   .filter(([, value]) => value !== undefined && value !== "")
-    //   .map(([key, value]) => `${key}="${value}"`)
-    //   .join(", ");
-
-    // const collLogicAttrs = { collection, filters, sortCriterias }
-    const collAttrs = {
-      collection,
-      filters,
-      sortCriterias,
-      type,
-      columns,
-      gap,
-      class: className,
-      widthWrap,
-    };
-    const collAttrsStr = njkAttrsStringFromObj(collAttrs);
-    const collectionContent = `{% collection ${collAttrsStr} %}{% endcollection %}`;
-
-    return `{% sectionCollection ${data?.sectionAttributes || ""} %}
+    return `{% sectionCollection ${sectionAttrsStr} %}
 ${headerContent}
 ${collectionContent}
 ${footerContent}
 {% endsectionCollection %}`;
   },
   toPreview: (data) => `<span>COLLECTION SECTION</span>`,
+};
+
+export const sectionBuilder = {
+  id: "sectionBuilder",
+  label: "Section > Builder",
+  icon: "brick",
+  fields: [
+    sectionHeaderField,
+    {
+      name: "areas",
+      label: "Areas",
+      label_singular: "Area",
+      widget: "list",
+      required: false,
+      collapsed: false,
+      hint: "Select a pre-defined section type or use one of your custom section layouts (selectable in 'Advanced' bellow)",
+      types: [
+        {
+          name: "areaRaw",
+          label: "Raw content",
+          fields: [
+            {
+              name: "content",
+              label: "Content",
+              widget: "richtext",
+            },
+            {
+              name: "class",
+              label: "Area Classes",
+              widget: "string",
+              required: false,
+            },
+            {
+              name: "attributes",
+              label: "Area Raw Attributes",
+              widget: "hidden",
+              required: false,
+            },
+          ],
+        },
+        {
+          name: "twoColumns",
+          label: "Two Columns",
+          fields: [
+            {
+              name: "itemLeft",
+              label: "Column Left",
+              widget: "object",
+              required: true,
+              summary: "{{content | truncate(50)}}",
+              // collapsed: true,
+              fields: [
+                {
+                  name: "content",
+                  label: "Column Left Content",
+                  widget: "markdown",
+                  required: false,
+                },
+                {
+                  name: "class",
+                  label: "Column Left Classes",
+                  widget: "string",
+                  required: false,
+                },
+                {
+                  name: "attributes",
+                  label: "Column Left Raw Attributes",
+                  widget: "hidden",
+                  required: false,
+                },
+              ],
+            },
+            {
+              name: "itemRight",
+              label: "Column Right",
+              widget: "object",
+              required: true,
+              summary: "{{content | truncate(50)}}",
+              // collapsed: true,
+              fields: [
+                {
+                  name: "content",
+                  label: "Column Right Content",
+                  widget: "markdown",
+                  required: false,
+                },
+                {
+                  name: "class",
+                  label: "Column Right Classes",
+                  widget: "string",
+                  required: false,
+                },
+                {
+                  name: "attributes",
+                  label: "Column Right Raw Attributes",
+                  widget: "hidden",
+                  required: false,
+                },
+              ],
+            },
+            {
+              name: "class",
+              label: "Area Classes",
+              widget: "string",
+              required: false,
+            },
+            {
+              name: "layoutOptions",
+              label: "Layout Options",
+              hint: "Manually select a layout and related options",
+              widget: "object",
+              required: false,
+              collapsed: true,
+              types: [layoutTypeSwitcher, layoutTypeFixedFluid],
+            },
+            {
+              name: "attributes",
+              label: "Area Raw Attributes",
+              widget: "hidden",
+              required: false,
+            },
+          ],
+        },
+        {
+          name: "grid",
+          label: "Grid",
+          fields: [
+            {
+              name: "items",
+              label: "Grid Items",
+              label_singular: "Grid Item",
+              widget: "list",
+              required: true,
+              collapsed: true,
+              default: [{ content: "" }, { content: "" }, { content: "" }],
+              summary: "{{content | truncate(50)}}",
+              fields: [
+                {
+                  name: "content",
+                  label: "Item Content",
+                  widget: "markdown",
+                  required: false,
+                },
+                {
+                  name: "class",
+                  label: "Item Classes",
+                  widget: "string",
+                  required: false,
+                },
+                {
+                  name: "attributes",
+                  label: "Item Raw Attributes",
+                  widget: "hidden",
+                  required: false,
+                },
+              ],
+            },
+            {
+              name: "class",
+              label: "Area Classes",
+              widget: "string",
+              required: false,
+            },
+            {
+              name: "layoutOptions",
+              label: "Layout Options",
+              hint: "Manually select a layout and related options",
+              widget: "object",
+              required: false,
+              collapsed: true,
+              types: [
+                layoutTypeSwitcher,
+                layoutTypeGridFluid,
+                layoutTypeCluster,
+              ],
+            },
+            {
+              name: "attributes",
+              label: "Area Raw Attributes",
+              widget: "hidden",
+              required: false,
+            },
+          ],
+        },
+        {
+          name: "collection",
+          label: "Collection",
+          fields: [
+            {
+              name: "collection",
+              label: "Select a collection to display",
+              widget: "select",
+              required: true,
+              multiple: false,
+              dropdown_threshold: 12,
+              default: "all",
+              options: [
+                { value: "all", label: "All Collections" },
+                { value: "pages", label: "Pages" },
+                ...activeCollections.map((collection) => ({
+                  value: collection.name,
+                  label: collection.label || collection.name,
+                })),
+              ],
+            },
+            {
+              name: "sortAndFilterOptions",
+              label: "Sort & Filter Options",
+              label_singular: "Sort & Filter Option",
+              widget: "object",
+              required: false,
+              fields: [
+                {
+                  name: "sortCriterias",
+                  label: "Sorting rules to apply on the Collection",
+                  widget: "list",
+                  required: false,
+                  collapsed: true,
+                  summary: "{{direction}}",
+                  typeKey: "by",
+                  types: [
+                    {
+                      name: "date",
+                      label: "Sort by Date",
+                      fields: [
+                        {
+                          name: "direction",
+                          label: "Sort Direction",
+                          widget: "select",
+                          collapsed: true,
+                          default: "desc",
+                          options: [
+                            { value: "asc", label: "Ascending" },
+                            { value: "desc", label: "Descending" },
+                          ],
+                        },
+                      ],
+                    },
+                    {
+                      name: "title",
+                      label: "Sort by Title",
+                      collapsed: true,
+                      fields: [
+                        {
+                          name: "direction",
+                          label: "Sort Direction",
+                          widget: "select",
+                          default: "asc",
+                          options: [
+                            { value: "asc", label: "Ascending" },
+                            { value: "desc", label: "Descending" },
+                          ],
+                        },
+                      ],
+                    },
+                  ],
+                },
+                {
+                  name: "filters",
+                  label: "Filters",
+                  label_singular: "Filter",
+                  hint: "Filtering rules to apply on the Collection",
+                  widget: "list",
+                  required: false,
+                  collapsed: true,
+                  summary: "{{value}}",
+                  typeKey: "by",
+                  types: [
+                    {
+                      name: "tag",
+                      label: "Filter by Tag",
+                      fields: [
+                        {
+                          name: "value",
+                          label: "Tag Name",
+                          hint: "Tags must first exist in the in [Data Files > Translated Data](/admin/#/collections/dataFiles/entries/translatedData)",
+                          widget: "relation",
+                          collection: "dataFiles",
+                          file: "translatedData",
+                          value_field: "tagsList.*.slug",
+                          display_fields: ["tagsList.*.name"],
+                          required: true,
+                          multiple: true,
+                        },
+                      ],
+                    },
+                    {
+                      name: "name",
+                      label: "Filter by Name",
+                      fields: [
+                        {
+                          name: "value",
+                          label: "Name matches",
+                          hint: "Case-insensitive, partial match. Provide one or more values; an item matches if any value is found in its name.",
+                          widget: "list",
+                          allow_add: true,
+                          required: true,
+                          field: {
+                            name: "value",
+                            label: "Value",
+                            widget: "string",
+                          },
+                        },
+                      ],
+                    },
+                    {
+                      name: "first",
+                      label: "First",
+                      fields: [
+                        {
+                          name: "value",
+                          label: "Count",
+                          hint: "Only display the first x items",
+                          widget: "number",
+                          required: true,
+                          default: 3,
+                        },
+                      ],
+                    },
+                    {
+                      name: "last",
+                      label: "Last",
+                      fields: [
+                        {
+                          name: "value",
+                          label: "Count",
+                          hint: "Only display the last x items",
+                          widget: "number",
+                          required: true,
+                          default: 3,
+                        },
+                      ],
+                    },
+                  ],
+                },
+                {
+                  name: "exclusions",
+                  label: "Exclusions",
+                  label_singular: "Exclusion",
+                  widget: "boolean",
+                  required: false,
+                  default: false,
+                  hint: "When enabled, the defined filters will exclude items instead of including them. For example, if you set a Tag filter with 'example' value and enable Exclusions, items with 'example' tag will not be displayed in the section.",
+                },
+              ],
+            },
+            {
+              name: "class",
+              label: "Area Classes",
+              widget: "string",
+              required: false,
+            },
+            {
+              name: "layoutOptions",
+              label: "Layout Options",
+              hint: "Manually select a layout and related options",
+              widget: "object",
+              required: false,
+              collapsed: true,
+              types: [
+                layoutTypeSwitcher,
+                layoutTypeGridFluid,
+                layoutTypeCluster,
+              ],
+            },
+            {
+              name: "attributes",
+              label: "Area Raw Attributes",
+              widget: "hidden",
+              required: false,
+            },
+          ],
+        },
+        {
+          name: "flow",
+          label: "Flow",
+          fields: [
+            {
+              name: "items",
+              label: "Flow Items",
+              label_singular: "Flow Item",
+              widget: "list",
+              required: true,
+              collapsed: false,
+              summary: "{{content | truncate(50)}}",
+              default: [{ content: "" }, { content: "" }],
+              fields: [
+                {
+                  name: "content",
+                  label: "Item Content",
+                  widget: "markdown",
+                  required: false,
+                },
+                {
+                  name: "class",
+                  label: "Item Classes",
+                  widget: "string",
+                  required: false,
+                },
+                {
+                  name: "attributes",
+                  label: "Item Raw Attributes",
+                  widget: "hidden",
+                  required: false,
+                },
+              ],
+            },
+            {
+              name: "class",
+              label: "Area Classes",
+              widget: "string",
+              required: false,
+            },
+            {
+              name: "layoutOptions",
+              label: "Layout Options",
+              hint: "Manually select a layout and related options",
+              widget: "object",
+              required: false,
+              collapsed: true,
+              types: [layoutTypeFlow],
+            },
+            {
+              name: "attributes",
+              label: "Area Raw Attributes",
+              widget: "hidden",
+              required: false,
+            },
+          ],
+        },
+        {
+          name: "reel",
+          label: "Reel",
+          fields: [
+            {
+              name: "items",
+              label: "Reel Items",
+              label_singular: "Reel Item",
+              widget: "list",
+              required: true,
+              collapsed: false,
+              summary: "{{content | truncate(50)}}",
+              default: [{ content: "" }, { content: "" }],
+              fields: [
+                {
+                  name: "content",
+                  label: "Item Content",
+                  widget: "markdown",
+                  required: false,
+                },
+                {
+                  name: "class",
+                  label: "Item Classes",
+                  widget: "string",
+                  required: false,
+                },
+                {
+                  name: "attributes",
+                  label: "Item Raw Attributes",
+                  widget: "hidden",
+                  required: false,
+                },
+              ],
+            },
+            {
+              name: "class",
+              label: "Area Classes",
+              widget: "string",
+              required: false,
+            },
+            {
+              name: "layoutOptions",
+              label: "Layout Options",
+              hint: "Manually select a layout and related options",
+              widget: "object",
+              required: false,
+              collapsed: true,
+              types: [layoutTypeReel],
+            },
+            {
+              name: "attributes",
+              label: "Area Raw Attributes",
+              widget: "hidden",
+              required: false,
+            },
+          ],
+        },
+        // {
+        //   name: "cover",
+        //   label: "Cover: Fixed height section with optional padding",
+        //   widget: "object",
+        //   required: false,
+        //   fields: [
+        //     {
+        //       name: "minHeight",
+        //       label: "Min Height",
+        //       widget: "string",
+        //       hint: "The minimum height of the cover (e.g. 100svh [default], 30rem, 800px)",
+        //       required: false,
+        //     },
+        //     {
+        //       name: "noPadding",
+        //       label: "Remove Default Padding",
+        //       widget: "boolean",
+        //       required: false,
+        //     },
+        //     {
+        //       name: "gap",
+        //       label: "Gap",
+        //       widget: "string",
+        //       hint: "The gap between blocks (e.g. 1em [default], var(--step-2) [fluid type scale], 0 [no gap])",
+        //       required: false,
+        //     },
+        //     {
+        //       name: "class",
+        //       label: "Class Names",
+        //       widget: "string",
+        //       hint: "Additional class names to add to the section (e.g. 'my-class another-class')",
+        //       required: false,
+        //     },
+        //   ],
+        // },
+        // {
+        //   name: "custom",
+        //   label: "Custom: Use your own Section Layout",
+        //   widget: "object",
+        //   required: false,
+        //   fields: [],
+        // },
+      ],
+    },
+    sectionFooterField,
+    sectionWrapperField,
+  ],
+  pattern:
+    /^{%\s*sectionBuilder\s*([^>]*?)\s*%}\s*([\S\s]*?)\s*{%\s*endsectionBuilder\s*%}$/gm,
+  fromBlock: function (match) {
+    const sectionAttributes = match[1];
+    const sectionInner = match[2];
+
+    const { header, footer } = parseSectionHeaderFooter(sectionInner);
+
+    // Extract all areas with their attributes.
+    // Note: `extractAllSectionAreaDataMultipleTags` already pulls `class` out of
+    // `area.attributes` into `area.class`. We preserve that behaviour.
+    const areas = extractAllSectionAreaDataMultipleTags(sectionInner || "", [
+      "area",
+      "areaRaw",
+      "twoColumns",
+      "grid",
+      "collection",
+      "flow",
+      "reel",
+    ]);
+
+    // Enrich complex area types with structured data.
+    const processedAreas = areas.map((area) => {
+      if (area.tagName === "twoColumns") {
+        const parsed = parseTwoColumnsBody({
+          attributes: area.attributes,
+          content: area.content,
+        });
+        console.log({ area, parsed });
+        return {
+          type: "twoColumns",
+          class: area.class || parsed?.class,
+          layoutOptions: parsed?.layoutOptions || {},
+          attributes: parsed?.attributes,
+          itemLeft: parsed?.itemLeft,
+          itemRight: parsed?.itemRight,
+        };
+      }
+      if (area.tagName === "grid") {
+        const parsed = parseGridBody({
+          attributes: area.attributes,
+          content: area.content,
+        });
+        return {
+          type: "grid",
+          class: area.class || parsed?.class,
+          layoutOptions: parsed?.layoutOptions || {},
+          attributes: parsed?.attributes,
+          items: parsed?.items || [],
+        };
+      }
+      if (area.tagName === "collection") {
+        const parsed = parseCollectionBody({
+          attributes: area.attributes,
+          content: area.content,
+        });
+        return {
+          type: "collection",
+          class: area.class || parsed?.class,
+          layoutOptions: parsed?.layoutOptions || {},
+          attributes: parsed?.attributes,
+          collection: parsed?.collection,
+          sortAndFilterOptions: parsed?.sortAndFilterOptions,
+        };
+      }
+      if (area.tagName === "flow") {
+        const parsed = parseFlowBody(
+          extractWithNunjucksTag(sectionInner, "flow"),
+        );
+        return {
+          type: "flow",
+          class: area.class || parsed?.class,
+          layoutOptions: parsed?.layoutOptions || {},
+          attributes: parsed?.attributes,
+          items: parsed?.items || [],
+        };
+      }
+      if (area.tagName === "reel") {
+        const parsed = parseReelBody(
+          extractWithNunjucksTag(sectionInner, "reel"),
+        );
+        return {
+          type: "reel",
+          class: area.class || parsed?.class,
+          layoutOptions: parsed?.layoutOptions || {},
+          attributes: parsed?.attributes,
+          items: parsed?.items || [],
+        };
+      }
+      return area;
+    });
+
+    return {
+      header,
+      footer,
+      areas: processedAreas,
+      sectionWrapper: parseSectionWrapper(sectionAttributes),
+    };
+  },
+  toBlock: function (data) {
+    const { headerContent, footerContent } = buildSectionHeaderFooterMarkup({
+      header: data?.header,
+      footer: data?.footer,
+    });
+
+    const areasStr = data?.areas?.length
+      ? data.areas
+          .map((area) => {
+            switch (area.type) {
+              case "twoColumns":
+                return buildTwoColumnsBody({
+                  class: area.class,
+                  layoutOptions: area.layoutOptions,
+                  attributes: area.attributes,
+                  itemLeft: area.itemLeft,
+                  itemRight: area.itemRight,
+                });
+
+              case "grid":
+                return buildGridBody({
+                  class: area.class,
+                  layoutOptions: area.layoutOptions,
+                  attributes: area.attributes,
+                  items: area.items,
+                });
+
+              case "collection":
+                return buildCollectionBody({
+                  collection: area.collection,
+                  sortAndFilterOptions: area.sortAndFilterOptions,
+                  class: area.class,
+                  layoutOptions: area.layoutOptions,
+                  attributes: area.attributes,
+                });
+
+              case "flow":
+                return buildFlowBody({
+                  class: area.class,
+                  layoutOptions: area.layoutOptions,
+                  attributes: area.attributes,
+                  items: area.items,
+                });
+
+              case "reel":
+                return buildReelBody({
+                  class: area.class,
+                  layoutOptions: area.layoutOptions,
+                  attributes: area.attributes,
+                  items: area.items,
+                });
+
+              case "areaRaw": {
+                if (!area.content) return "";
+                const areaAttrs = njkAttrsStringFromSectionAreaData(area);
+                return `{% areaRaw ${areaAttrs} %}
+${area.content}
+{% endareaRaw %}`;
+              }
+
+              case "area":
+              default: {
+                if (!area.content) return "";
+                const areaAttrs = njkAttrsStringFromSectionAreaData(area);
+                return `{% area ${areaAttrs} %}
+${area.content}
+{% endarea %}`;
+              }
+            }
+          })
+          .filter(Boolean)
+          .join("\n")
+      : "";
+
+    const sectionAttrsStr = buildSectionWrapperString(data?.sectionWrapper);
+
+    return `{% sectionBuilder ${sectionAttrsStr} %}
+${headerContent}
+${areasStr}
+${footerContent}
+{% endsectionBuilder %}`;
+  },
+  toPreview: (data) => {
+    const { headerContent, footerContent } =
+      buildSectionHeaderFooterMarkupPreview({
+        header: data?.header,
+        footer: data?.footer,
+      });
+
+    let itemStr = "";
+    const wrapItemStr = ({ itemStr: str, label }) => `<div>
+<small style="float:right;clear:both;margin-right:.5rem;">${label}</small>
+
+${str}
+</div>`;
+
+    const areasStr = data?.areas?.length
+      ? data.areas
+          .map((area) => {
+            switch (area.type) {
+              case "twoColumns":
+                itemStr = buildBodyPreview({
+                  items: [area.itemLeft, area.itemRight],
+                });
+                return wrapItemStr({ itemStr, label: "Two Columns" });
+
+              case "grid":
+                itemStr = buildBodyPreview({ items: area?.items });
+                return wrapItemStr({ itemStr, label: "Grid" });
+
+              case "collection":
+                itemStr = "<COLLECTION>";
+                return wrapItemStr({ itemStr, label: "Collection" });
+
+              case "flow":
+                itemStr = buildBodyPreview({ items: area?.items });
+                return wrapItemStr({ itemStr, label: "Flow" });
+
+              case "reel":
+                itemStr = buildBodyPreview({ items: area?.items });
+                return wrapItemStr({ itemStr, label: "Reel" });
+
+              case "areaRaw":
+              case "area":
+              default: {
+                if (!area.content) return "";
+                itemStr = buildBodyPreview({ items: [area] });
+                return wrapItemStr({ itemStr, label: "Raw" });
+              }
+            }
+          })
+          .filter(Boolean)
+          .join("\n")
+      : "";
+
+    // const areaContent = buildBodyPreview({ items: data?.items });
+
+    return `<section class="section-builder" style="${SECTION_WRAPPER_STYLE}">
+<small style="float:right;">Builder</small>
+
+${headerContent}
+
+${areasStr}
+
+${footerContent}
+
+</section>
+`;
+  },
 };
 
 // Example for project specific component def

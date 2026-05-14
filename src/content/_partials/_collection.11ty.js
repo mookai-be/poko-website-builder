@@ -1,3 +1,17 @@
+// const njkAttrsStringFromObj = (obj) =>
+//   Object.entries(obj)
+//     .filter(
+//       ([key, value]) =>
+//         !!value && key !== "content" && !key.startsWith("content:"),
+//     )
+//     .map(([key, value]) => {
+//       if (typeof value === "string") {
+//         return `${key}="${value}"`;
+//       }
+//       return `${key}=` + JSON.stringify(value);
+//     })
+//     .join(", ");
+
 export default async function ({
   // Data from context template
   collections,
@@ -6,6 +20,7 @@ export default async function ({
   // content,
   collection,
   filters,
+  exclusions,
   sortCriterias,
   type,
   gap,
@@ -15,10 +30,13 @@ export default async function ({
   widthColumnMax,
   class: className,
   tag,
+  itemPartial,
+  wrapperPartial,
 }) {
   const filterCollection = this.filterCollection;
   const sortCollection = this.sortCollection;
   const partialSc = this.partial;
+  // const partialWrapperSc = this.partialWrapper;
 
   // 1. Get the collection of items
   let items = collections[collection || "all"] || [];
@@ -26,20 +44,32 @@ export default async function ({
   items = sortCollection(items, sortCriterias);
   // 3. Filter the collection if filters are provided
   // TODO: Provide an escape hatch if we want to filter by another language that the current one
-  items = filterCollection(items, [
-    { by: "lang", value: lang },
-    ...(filters ? filters : []),
-  ]);
+  items = filterCollection(items, [{ by: "lang", value: lang }]);
+
+  if (filters && filters.length > 0) {
+    items = filterCollection(items, filters, exclusions);
+  }
 
   const itemsStr = (
     await Promise.all(
-      items.map(async (item) => {
-        return await partialSc.call(this, "_collectionItem", {
+      items.map(async (item, index) => {
+        return await partialSc.call(this, itemPartial || "_collectionItem", {
+          index,
           ...item.data,
+          rawInput: item.rawInput ?? item.template?.inputContent ?? "",
+          // rawInput: item.rawInput,
+          // content: item?.content, // Error: render template oo early
         });
       }),
     )
   ).join("\n");
+
+  // const itemsStr = items
+  //   .map((item, index) => {
+  //     const itemAttrs = njkAttrsStringFromObj(item.data);
+  //     return `{% partial "${itemPartial || "_collectionItem"}", index=${index}, ${itemAttrs} %}`;
+  //   })
+  //   .join("\n");
 
   // const contentRendered = await this.renderTemplate(content, "njk,md");
   // const gridItemRegex = /class=["'][^"']*\bitem-grid\b[^"']*["']/g;
@@ -57,9 +87,30 @@ export default async function ({
     .filter(([key, value]) => value)
     .map(([key, value]) => `${key}: ${value};`)
     .join(" ");
-  styleStr = styleStr ? `style="${styleStr}"` : "";
+  // styleStr = styleStr ? `style="${styleStr}"` : "";
+  const wrapperClasses = `layout area main list-collection ${type || layoutClass} ${className || ""}`;
 
-  return `<${tag || "div"} class="layout area main list-collection ${type || layoutClass} ${className || ""}" ${styleStr}>
+  // const wrapperStr = await partialWrapperSc.call(
+  //   this,
+  //   wrapperPartial || "training-cards" || "_collectionWrapper",
+  //   {
+  //     class: wrapperClasses,
+  //     style: styleStr,
+  //     items,
+  //     content: itemsStr,
+  //   },
+  // );
+
+  // return wrapperStr;
+
+  // TODO: Improve. This seems fragile!
+  //  Should we use partialSc instead of partialWrapperSc to process with JS?
+
+  return wrapperPartial
+    ? `{% partialWrapper "${wrapperPartial}", class="${wrapperClasses}", style="${styleStr}" %}
+${itemsStr}
+{% endpartialWrapper %}`
+    : `<${tag || "div"} class="${wrapperClasses}" style="${styleStr}">
 ${itemsStr}
 </${tag || "div"}>`;
 }

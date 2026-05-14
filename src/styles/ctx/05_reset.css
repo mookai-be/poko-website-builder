@@ -103,10 +103,9 @@ html {
     > :where(img, picture, video):only-child {
     display: block;
 }*/
-
-:where(:where(p, h1, h2, h3, h4, h5, h6) > :where(img, picture, video)):not(
-    :only-child
-) {
+/* prettier-ignore */
+:where(:where(h1, h2, h3, h4, h5, h6) > :where(img, picture, video)):not(:only-child),
+:where(:where(p, a, span, li, dt, dd, dt, dd) > :where(img, picture, video)) {
     display: inline;
 } /* prettier-ignore */
 

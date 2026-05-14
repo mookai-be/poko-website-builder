@@ -6,15 +6,17 @@ uuid: 2eb143424a0d
 localizationKey: c82148fca0f5
 name: Article sur les fleurs
 eleventyNavigation:
-  title: ''
-  parent: ''
+  title: ""
+  parent: ""
   order: 1
 metadata: null
 preview: null
-tags: []
-status: ''
-pageLayout: ''
-generatePage: ''
+tags:
+  - graphisme
+  - featured
+status: ""
+pageLayout: ""
+generatePage: ""
 vars: null
 dataList: []
 ---
@@ -31,7 +33,9 @@ Le monde floral est d’une richesse impressionnante. On estime qu’il existe d
 
 {% sectionGrid %}
 {% sectionHeader %}
+
 ## Préserver la beauté florale
+
 {% endsectionHeader %}
 {% grid type="switcher", class="prose" %}
 {% gridItem %}
@@ -46,7 +50,9 @@ La présence de fleurs dans notre environnement a un effet positif sur le moral.
 
 {% sectionTwoColumns %}
 {% sectionHeader %}
+
 ## Bienfaits pour le bien-être
+
 {% endsectionHeader %}
 {% twoColumns type="switcher", class="width-prose" %}
 {% twoColumnsItem %}

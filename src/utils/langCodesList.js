@@ -80,7 +80,7 @@ export const fullList = [
   { code: "et", name: "Estonian" },
   { code: "fa", name: "Persian" },
   { code: "fa-ir", name: "Persian (Iran)" },
-  { code: "fa", name: "Farsi" },
+  // { code: "fa", name: "Farsi" },
   { code: "fo", name: "Faeroese" },
   { code: "fi", name: "Finnish" },
   { code: "fj", name: "Fijian" },

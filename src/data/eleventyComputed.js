@@ -1,12 +1,34 @@
-import { USER_DIR, languages, SITE_NAME } from "../../env.config.js";
+import {
+  USER_DIR,
+  languages,
+  SITE_NAME,
+  COLLECTIONS,
+} from "../../env.config.js";
 // Was usefull when parents were declared in references
 // import temp from './temp.js';
 import mapInputPathToUrl from "../utils/mapInputPathToUrl.js";
+import { ldWebPage } from "./structured-data/ldWebPage.js";
+import ld from "./structured-data/ld.js";
 
 const defaultLang = languages.find((lang) => lang.isWebsiteDefault)?.code;
 
 export default {
   // ...temp,
+  ldType: (data) => {
+    if (data.eleventyExcludeFromCollections) return undefined;
+    if (data.eleventyExcludeFromCollections) return undefined;
+    const type = data.page?.ldType || data.ldType;
+    if (type) return type;
+
+    const segments = data.page.filePathStem
+      .replace(/^\/+/, "") // Remove leading slashes
+      .split("/") // Get the first directory
+      .filter(Boolean);
+
+    const collectionDir = segments.slice(1, 2)?.[0];
+
+    return COLLECTIONS[collectionDir]?.ldType || "WebPage";
+  },
   language: (data) => {
     // Display collection names only
     const filePathStem = data.page.filePathStem;
@@ -136,7 +158,7 @@ export default {
       key: data.page.fileSlug, // TODO: Should we use localizationKey here?
       title: data.eleventyNavigation?.title || data.title,
       parent: data.eleventyNavigation?.parent,
-      order: data.eleventyNavigation?.order,
+      order: data.order || data.eleventyNavigation?.order,
     };
   },
   // eleventyNavigation: {
@@ -151,11 +173,14 @@ export default {
     const siteName = SITE_NAME;
     const titleCascade = data.metadata?.title || data.title || null;
     return {
+      ...data.metadata,
       title: [titleCascade, siteName].filter(Boolean).join(" | "),
       description: (data.metadata?.description || gMeta.description) ?? "",
       image: (data.metadata?.image || gMeta.image) ?? "",
     };
   },
+  ldWebPage,
+  ld,
   pagePreview: (data) => {
     const title = data.preview?.title || data.title || null;
     const description =
@@ -171,7 +196,7 @@ export default {
   date: (data) => data.date || data.page?.date,
   url: (data) => data.url || data.page?.url,
 
-  pageFooter: (data) => {    
+  pageFooter: (data) => {
     // Prioritize the footer selected on the collection, then the default in settings
     const raw = data.pageFooter || data.globalSettings?.pageFooter || "";
     // const key =

@@ -1,4 +1,5 @@
 // import obfuscateEmail from "../../utils/emailObfuscate.js";
+import slugify from "@sindresorhus/slugify";
 import { locale_url } from "../../filters/i18n.js";
 import { emailLink } from "../../filters/email.js";
 
@@ -16,15 +17,18 @@ function isFileUrl(urlString) {
   }
 }
 
-export function link(unnamedAttrOrObj, optionalAttrsObj) {
+export async function link(unnamedAttrOrObj, optionalAttrsObj) {
   const {
     __keywords,
     url,
     text,
+    content,
     lang,
     prop,
     collection,
+    type: typeTemp,
     linkType,
+    anchor,
     // Email fields
     subject,
     body,
@@ -37,18 +41,22 @@ export function link(unnamedAttrOrObj, optionalAttrsObj) {
     // hreflang,
     ...attrs
   } = optionalAttrsObj || unnamedAttrOrObj;
+  const type = typeTemp || linkType;
+
+  const htmlContent = content || text;
+
   const urlRef = typeof unnamedAttrOrObj === "string" ? unnamedAttrOrObj : url;
   // Boolean checks
   const isEmail =
-    linkType === "email" ||
+    type === "email" ||
     /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(urlRef);
-  const isFile = linkType === "file" || isFileUrl(urlRef);
+  const isFile = type === "file" || isFileUrl(urlRef);
   const isExternal =
-    linkType === "external" ||
-    urlRef.startsWith("http") ||
-    urlRef.startsWith("www.");
+    type === "external" ||
+    (urlRef || "").startsWith("http") ||
+    (urlRef || "").startsWith("www.");
   const isInternal =
-    linkType === "internal" || (!isEmail && !isExternal && !isFile);
+    type === "internal" || (!isEmail && !isExternal && !isFile);
 
   // could be one of:
   // - [ ] translationKey
@@ -72,7 +80,8 @@ export function link(unnamedAttrOrObj, optionalAttrsObj) {
       .join(" ");
 
     if (typeof pageData === "object") {
-      return `<a href="${pageData.url}" ${attrsStr}>${text || pageData.name || pageData.url}</a>`;
+      const anchorStr = anchor ? `#${slugify(anchor)}` : "";
+      return `<a href="${pageData.url}${anchorStr}" ${attrsStr}>${htmlContent || pageData.name || pageData.url}</a>`;
     }
   }
 
@@ -81,12 +90,12 @@ export function link(unnamedAttrOrObj, optionalAttrsObj) {
       .map(([key, value]) => `${key}="${value}"`)
       .join(" ");
 
-    return `<a href="${urlRef}" ${attrsStr}>${text || urlRef}</a>`;
+    return `<a href="${urlRef}" ${attrsStr}>${htmlContent || urlRef}</a>`;
   }
 
   if (isEmail) {
     return emailLink.call(this, urlRef, {
-      text,
+      text: htmlContent,
       subject,
       body,
       cc,
@@ -100,7 +109,7 @@ export function link(unnamedAttrOrObj, optionalAttrsObj) {
       .map(([key, value]) => `${key}="${value}"`)
       .join(" ");
 
-    return `<a href="${urlRef}" ${attrsStr}>${text || urlRef}</a>`;
+    return `<a href="${urlRef}" ${attrsStr}>${htmlContent || urlRef}</a>`;
   }
 
   return "";
@@ -118,6 +127,33 @@ function normalizeAttributes(unnamedAttrOrObj, optionalAttrsObj) {
 export function button(unnamedAttrOrObj, optionalAttrsObj) {
   return link.call(this, {
     ...normalizeAttributes(unnamedAttrOrObj, optionalAttrsObj),
+    class: `button ${unnamedAttrOrObj?.class || optionalAttrsObj?.class || ""}`,
+  });
+}
+
+export async function linkPaired(
+  contentRaw,
+  unnamedAttrOrObj,
+  optionalAttrsObj,
+) {
+  const content = (contentRaw || "").replace(/\n\n+/g, "<br>");
+  // const content = contentRaw;
+  return link.call(this, {
+    ...normalizeAttributes(unnamedAttrOrObj, optionalAttrsObj),
+    content,
+  });
+}
+
+export async function buttonPaired(
+  contentRaw,
+  unnamedAttrOrObj,
+  optionalAttrsObj,
+) {
+  const content = (contentRaw || "").replace(/\n\n+/g, "<br>");
+  // const content = contentRaw;
+  return link.call(this, {
+    ...normalizeAttributes(unnamedAttrOrObj, optionalAttrsObj),
+    content,
     class: `button ${unnamedAttrOrObj?.class || optionalAttrsObj?.class || ""}`,
   });
 }

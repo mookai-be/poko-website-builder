@@ -17,8 +17,10 @@ import {
 
 const processEnv = typeof process !== "undefined" ? process.env : {};
 
+export default { ...processEnv };
+
 // GENERAL
-export const DEBUG = processEnv.DEBUG === "false" ? false : true;
+export const DEBUG = processEnv.DEBUG === "true" ? true : false;
 export const NODE_ENV = processEnv.NODE_ENV || "production";
 export const ELEVENTY_RUN_MODE = processEnv.ELEVENTY_RUN_MODE;
 // Can be "cdn", "npm", "<relative-path>", local // Default should be npm
@@ -218,6 +220,99 @@ export const CMS_BRANCH = processEnv.CMS_BRANCH || BRANCH;
 // Fallback hosting service for local dev
 export const PREFERRED_HOSTING = processEnv.PREFERRED_HOSTING || "node";
 
+export const COLLECTIONS = {
+  websites: {
+    name: "websites",
+    label: "Websites",
+    label_singular: "Website",
+    ldType: "WebSite",
+  },
+  pages: {
+    name: "pages",
+    label: "Pages",
+    label_singular: "Page",
+    ldType: "WebPage",
+  },
+  articles: {
+    name: "articles",
+    label: "Articles",
+    label_singular: "Article",
+    ldType: "Article",
+  },
+  courses: {
+    name: "courses",
+    label: "Courses",
+    label_singular: "Course",
+    ldType: "Course",
+  },
+  howtos: {
+    name: "howtos",
+    label: "How Tos",
+    label_singular: "How To",
+    ldType: "HowTo",
+  },
+  events: {
+    name: "events",
+    label: "Events",
+    label_singular: "Event",
+    ldType: "Event",
+  },
+  faqs: {
+    name: "faqs",
+    label: "FAQs",
+    label_singular: "FAQ",
+    ldType: "FAQPage",
+  },
+  organizations: {
+    name: "organizations",
+    label: "Organizations",
+    label_singular: "Organization",
+    ldType: "Organization",
+  },
+  people: {
+    name: "people",
+    label: "People",
+    label_singular: "Person",
+    ldType: "Person",
+  },
+  places: {
+    name: "places",
+    label: "Places",
+    label_singular: "Place",
+    ldType: "Place",
+  },
+  products: {
+    name: "products",
+    label: "Products",
+    label_singular: "Product",
+    ldType: "Product",
+  },
+  projects: {
+    name: "projects",
+    label: "Projects",
+    label_singular: "Project",
+    ldType: "Project",
+  },
+  reviews: {
+    name: "reviews",
+    label: "Reviews",
+    label_singular: "Review",
+    ldType: "Review",
+  },
+  services: {
+    name: "services",
+    label: "Services",
+    label_singular: "Service",
+    ldType: "Service",
+  },
+  creativeWorks: {
+    name: "creativeWorks",
+    label: "Creative Works",
+    label_singular: "Creative Work",
+    ldType: "CreativeWork",
+  },
+};
+
 // User Config from CMS
 // Read file in ${WORKING_DIR_ABSOLUTE}/_data/globalSettings.yaml
 const globalSettingsPath = `${WORKING_DIR_ABSOLUTE}/_data/globalSettings.yaml`;
@@ -395,10 +490,16 @@ export const fontPreloadTags = unoCssConfig.fontPreloadTags;
 // TODO: This is prone to forgetting to define the base url
 // TODO: Could be public and defined in config
 // PROD_URL is the full URL of the 'deployed' site
-export const PROD_URL =
-  (processEnv.PROD_URL || globalSettings?.productionUrl)?.replace(/\/+$/, "") ||
+export const PROD_URL = (
+  processEnv.PROD_URL ||
+  globalSettings?.productionUrl ||
   (processEnv.VERCEL_PROJECT_PRODUCTION_URL &&
-    `https://${processEnv.VERCEL_PROJECT_PRODUCTION_URL}`);
+    `https://${processEnv.VERCEL_PROJECT_PRODUCTION_URL}`)
+)
+  ?.replace(/\/+$/, "") // Remove trailing slashes
+  .trim()
+  .toLowerCase()
+  .replace(/^(?!https?:\/\/)/, "https://"); // Add https scheme if missing
 // BASE_URL is the full URL of the 'being deployed' site
 // TODO: Try and find the best ways to infer BASE_URL so we can only define a CANONICAL_URL / PROD_URL
 // TODO: If we have a decent way to infer this, we can fall back to PROD_URL
@@ -410,7 +511,11 @@ export const BASE_URL = (
   // TODO: Verify that it is not that bad to fall back to prod url
   PROD_URL ||
   "http://localhost:8080"
-)?.replace(/\/+$/, "");
+)
+  ?.replace(/\/+$/, "") // Remove trailing slashes
+  .trim()
+  .toLowerCase()
+  .replace(/^(?!https?:\/\/)/, "https://"); // Add https scheme if missing
 // DISPLAY_URL is for the CMS button to the deployed site (prefer current deploy against production)
 export const DISPLAY_URL =
   processEnv.DISPLAY_URL?.replace(/\/+$/, "") || BASE_URL || PROD_URL;

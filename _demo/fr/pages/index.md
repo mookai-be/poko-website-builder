@@ -24,14 +24,16 @@ vars: null
 
 {% icon "tablerOutline:device-ipad-horizontal-up" %}
 
-{% link url="mon-article", text="article", linkType="internal", collection="articles" %}
+{% link url="mon-article", text="article", anchor="", linkType="internal", collection="articles" %}
+
+{% link url="theme1", text="", anchor="introduce-yourself", linkType="internal", collection="pages" %}
 
 {% link url="test@mail.com", text="bcjkqsncsqlkn", linkType="email", subject="Hello", body="Hello\n\nWorld", class="button" %}
 
 {% image src="/_images/POKO-logo-RVB-01.jpg", alt="poko logo square" %}
 
-{% sectionGrid %}
-{% sectionHeader %}
+{% sectionGrid  %}
+{% sectionHeader  %}
 ## My section Header
 
 And a paragraph
@@ -39,14 +41,41 @@ And a paragraph
 {% image src="/_images/POKO-logo-RVB-01.jpg" %}
 {% endsectionHeader %}
 {% grid type="switcher" %}
-{% gridItem %}
+{% gridItem  %}
 #### Hello inside gridItem 1
 {% endgridItem %}
-{% gridItem %}
+{% gridItem  %}
 #### Hello inside gridItem 2
 {% endgridItem %}
-{% gridItem %}
+{% gridItem  %}
 #### Hello inside gridItem 3
+{% endgridItem %}
+{% endgrid %}
+
+{% endsectionGrid %}
+
+{% sectionGrid  %}
+{% sectionHeader  %}
+sectionGrid layout cluster
+{% endsectionHeader %}
+{% grid type="cluster" %}
+{% gridItem  %}
+#### Hello inside gridItem 1
+{% endgridItem %}
+{% gridItem  %}
+#### Hello inside gridItem 2
+{% endgridItem %}
+{% gridItem  %}
+#### Hello inside gridItem 3
+{% endgridItem %}
+{% gridItem  %}
+#### Hello inside gridItem 4
+{% endgridItem %}
+{% gridItem  %}
+#### Hello inside gridItem 5
+{% endgridItem %}
+{% gridItem  %}
+#### Hello inside gridItem 6
 {% endgridItem %}
 {% endgrid %}
 

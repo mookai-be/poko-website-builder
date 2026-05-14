@@ -11,7 +11,7 @@ export default [
   // Aspect ratio utility
   [
     /^aspect-ratio-(\d+(?:\.\d+)?)$/,
-    ([, d]) => ({ "aspect-ratio": d, "object-fit": "cover" }),
+    ([, d]) => ({ "aspect-ratio": d, "object-fit": "var(--fit, cover)" }),
   ],
   // Width utility
   // E.g. width-prose, width-body, width-card, ...

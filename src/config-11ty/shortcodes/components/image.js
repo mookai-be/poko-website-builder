@@ -81,6 +81,7 @@ export async function image(args) {
             ...((fetchpriority || loading === "eager") && {
               fetchpriority: fetchpriority || "high",
             }),
+            ...(width && { sizes: null }), // TODO: right?
             ...(sizes && { sizes }),
             ...((aspectRatio && {
               class: `${className || imgAttributes?.class || ""} aspect-ratio-${aspectRatio}`,
@@ -89,7 +90,9 @@ export async function image(args) {
                 class: className || imgAttributes?.class || "",
               })),
             ...(id && { id }),
-            ...((width && { style: `max-width:${width}px;${style || ""}` }) ||
+            ...((width && {
+              style: `inline-size:${width}px;${style || ""}`,
+            }) ||
               (style && { style })),
             // ...(style && { style }),
             ...otherArgs,

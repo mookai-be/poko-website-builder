@@ -12,6 +12,7 @@ import {
   CMS_BACKEND,
   CMS_BRANCH,
   NAV_DEPTH_MAX,
+  COLLECTIONS,
   selectedCollections,
   allLanguages,
   userCmsConfig,
@@ -67,6 +68,7 @@ export const varsField = {
   widget: "keyvalue",
   i18n: true,
   required: false,
+  preview: false,
 };
 export const imageFields = [
   {
@@ -139,6 +141,7 @@ export const dataListField = {
   collapsed: true,
   i18n: "duplicate",
   allow_reorder: true,
+  preview: false,
   types: [
     {
       name: "text",
@@ -197,6 +200,7 @@ export const statusField = {
   default: "",
   required: false,
   i18n: true,
+  preview: false,
 };
 export const generatePageField = {
   name: "generatePage",
@@ -211,6 +215,7 @@ export const generatePageField = {
   default: "",
   required: false,
   i18n: "duplicate",
+  preview: false,
 };
 export const pageLayoutRelationField = {
   name: "pageLayout",
@@ -220,33 +225,37 @@ export const pageLayoutRelationField = {
   hint: "Select a layout for this page or leave empty to use the default layout",
   required: false,
   i18n: "duplicate",
+  preview: false,
 };
 
 // footer defined page by page (in the CMS)
-export const pageFooterRelationField = {
-  name: "pageFooter",
-  label: "Footer",
-  widget: "relation",
-  collection: "footers",
-  hint: "Select a footer for this entry. Leave empty to use default footer set in global settings.",
-  required: false,
-  i18n: "duplicate",
-  search_fields: ["slug"],
-  display_fields: ["slug"],
-  value_field: "{{slug}}",
-};
-export const pageNavRelationField = {
-  name: "pageNav",
-  label: "Page Navigation",
-  widget: "relation",
-  collection: "nav",
-  hint: "Select a navigation for this page or leave empty to use the default navigation",
-  required: false,
-  i18n: "duplicate",
-  search_fields: ["name"],
-  value_field: "{{name}}",
-  display_fields: ["name"],
-};
+// export const pageFooterRelationField = {
+//   name: "pageFooter",
+//   label: "Footer",
+//   widget: "relation",
+//   // collection: "footers",
+//   collection: "partials",
+//   hint: "Select a partial as footer for this entry. Leave empty to use default footer set in global settings.",
+//   required: false,
+//   i18n: "duplicate",
+//   search_fields: ["slug"],
+//   display_fields: ["slug"],
+//   value_field: "{{slug}}",
+//   preview: false,
+// };
+// export const pageNavRelationField = {
+//   name: "pageNav",
+//   label: "Page Navigation",
+//   widget: "relation",
+//   collection: "navs",
+//   hint: "Select a navigation for this page or leave empty to use the default navigation",
+//   required: false,
+//   i18n: "duplicate",
+//   search_fields: ["name"],
+//   value_field: "{{name}}",
+//   display_fields: ["name"],
+//   preview: false,
+// };
 
 // const bodyMarkdownField = {
 //   name: "body",
@@ -270,9 +279,19 @@ export const eleventyNavigationField = {
   widget: "object",
   collapsed: true,
   required: false,
-  summary: "Position: {{fields.order}} | Nav Title: {{fields.title}}",
+  // summary: "Position: {{fields.order}} | Nav Title: {{fields.title}}",
+  summary:
+    "Custom order: {{fields.order}} | Nav Title: {{fields.title}}{{fields.title | ternary('', '(Page Name)')}}",
   i18n: true,
+  preview: false,
   fields: [
+    {
+      name: "add",
+      label: "Add to Navigation",
+      widget: "string",
+      default: "Nav",
+      required: false,
+    },
     {
       name: "title",
       label: "Title",
@@ -292,23 +311,32 @@ export const eleventyNavigationField = {
       required: false,
       i18n: "duplicate",
     },
-    {
-      name: "order",
-      label: "Order",
-      widget: "number",
-      default: 0,
-      required: false,
-      i18n: "duplicate",
-    },
+    // {
+    //   name: "order",
+    //   label: "Order",
+    //   widget: "number",
+    //   // default: 0,
+    //   required: false,
+    //   i18n: "duplicate",
+    // },
   ],
+};
+export const orderField = {
+  name: "order",
+  label: "Order",
+  widget: "number",
+  required: false,
+  i18n: "duplicate",
+  preview: false,
 };
 export const simpleMetadataField = {
   name: "metadata",
   label: "Metadata",
   widget: "object",
   required: false,
-  collapsed: true,
+  collapsed: "auto",
   i18n: true,
+  preview: false,
   fields: [
     {
       name: "title",
@@ -332,7 +360,23 @@ export const simpleMetadataField = {
       required: false,
       hint: "The default image used when sharing this web page",
       i18n: "duplicate",
-      fields: imageFields,
+      fields: [
+        {
+          name: "src",
+          label: "Image",
+          widget: "image",
+          required: true,
+          i18n: true,
+        },
+        {
+          name: "alt",
+          label: "Alt Text",
+          widget: "string",
+          required: false,
+          hint: "~125 characters max; Be specific, concise, focused on the image purpose, avoid redundant phrases like 'image of…'",
+          i18n: true,
+        },
+      ],
     },
   ],
 };
@@ -344,6 +388,7 @@ export const pagePreviewField = {
   collapsed: true,
   i18n: true,
   hint: "Fields to be used when linking to this page or listing it",
+  preview: false,
   fields: [
     {
       name: "title",
@@ -389,6 +434,7 @@ export const tagsField = {
   display_fields: ["tagsList.*.name"],
   required: false,
   i18n: "duplicate",
+  preview: false,
 };
 export const brandColorField = {
   widget: "relation",
@@ -452,20 +498,20 @@ export const commonCollectionFields = [
     default: "{{datetime}}",
     i18n: true,
   },
-  {
-    name: "uuid",
-    label: "UUID",
-    widget: "hidden",
-    default: "{{uuid_short}}",
-    i18n: true,
-  },
-  {
-    name: "localizationKey",
-    label: "Localization Key",
-    widget: "hidden",
-    default: "{{uuid_short}}",
-    i18n: "duplicate",
-  },
+  // {
+  //   name: "uuid",
+  //   label: "UUID",
+  //   widget: "hidden",
+  //   default: "{{uuid_short}}",
+  //   i18n: true,
+  // },
+  // {
+  //   name: "localizationKey",
+  //   label: "Localization Key",
+  //   widget: "hidden",
+  //   default: "{{uuid_short}}",
+  //   i18n: "duplicate",
+  // },
 ];
 
 export const mostCommonMarkdownCollectionConfig = {
@@ -474,6 +520,7 @@ export const mostCommonMarkdownCollectionConfig = {
   extension: "md",
   format: "yaml-frontmatter",
   create: true,
+  duplicate: true,
   identifier_field: "name",
   summary: "{{name}}",
   sortable_fields: {
@@ -483,9 +530,19 @@ export const mostCommonMarkdownCollectionConfig = {
       direction: "ascending",
     },
   },
-  editor: {
-    preview: false,
+  view_groups: {
+    groups: [
+      {
+        label: "Nav Items",
+        field: "eleventyNavigation.add",
+        value: "Nav",
+      },
+    ],
+    default: "eleventyNavigation.add",
   },
+  // editor: {
+  //   preview: false,
+  // },
 };
 
 export const stylesheetsCollection = {
@@ -548,7 +605,8 @@ export const advancedDataFilesCollection = {
   // i18n: false,
   icon: "hardware",
   name: "advancedDataFiles",
-  label: "Advanced Data Files",
+  label: "Files",
+  label_singular: "File",
   editor: { preview: false },
   i18n: true,
   files: [
@@ -601,24 +659,6 @@ export const advancedDataFilesCollection = {
       ],
     },
     {
-      name: "dataFiles",
-      label: "Data Files",
-      icon: "code",
-      file: `${CONTENT_DIR}/_data/none.yaml`,
-      media_folder: `/${CONTENT_DIR}/_data`,
-      public_folder: "/_data",
-      fields: [
-        {
-          label: "Notice",
-          name: "notice",
-          widget: "boolean",
-          default: false,
-          readonly: true,
-          before_input: `See the [dedicated assets directory](/admin/#/assets/_content/_data) to manage and edit advanced data files.`,
-        },
-      ],
-    },
-    {
       name: "publicFiles",
       label: "Public Files",
       icon: "attach_file",
@@ -633,6 +673,42 @@ export const advancedDataFilesCollection = {
           default: false,
           readonly: true,
           before_input: `See the [dedicated assets directory](/admin/#/assets/_content/_files) to manage public files.`,
+        },
+      ],
+    },
+    {
+      name: "globalPartials",
+      label: "Global Partials",
+      icon: "code_blocks",
+      file: `${CONTENT_DIR}/_partials/none.yaml`,
+      media_folder: `/${CONTENT_DIR}/_partials`,
+      public_folder: "/_partials",
+      fields: [
+        {
+          label: "Notice",
+          name: "notice",
+          widget: "boolean",
+          default: false,
+          readonly: true,
+          before_input: `See the [dedicated assets directory](/admin/#/assets/_content/_partials) to manage and edit global partials.`,
+        },
+      ],
+    },
+    {
+      name: "dataFiles",
+      label: "Data Files",
+      icon: "code",
+      file: `${CONTENT_DIR}/_data/none.yaml`,
+      media_folder: `/${CONTENT_DIR}/_data`,
+      public_folder: "/_data",
+      fields: [
+        {
+          label: "Notice",
+          name: "notice",
+          widget: "boolean",
+          default: false,
+          readonly: true,
+          before_input: `See the [dedicated assets directory](/admin/#/assets/_content/_data) to manage and edit advanced data files.`,
         },
       ],
     },
@@ -739,14 +815,17 @@ export const pageLayoutsCollection = {
 //   ],
 // };
 export const partialsCollection = {
-  identifier_field: "{{slug}}",
   name: "partials",
   label: "Partials",
   label_singular: "Partial",
-  path: "{{slug}}",
   slug: "{{fields._slug}}",
-  icon: "brick",
-  folder: `${CONTENT_DIR}/_partials`,
+  icon: "extension",
+  identifier_field: "{{slug}}",
+  // folder: `${CONTENT_DIR}/_partials`,
+  // path: "{{slug}}",
+  i18n: true,
+  folder: `${CONTENT_DIR}`,
+  path: "_partials/{{slug}}",
   extension: "md",
   format: "yaml-frontmatter",
   create: true,
@@ -940,48 +1019,100 @@ export const bodyMarkdownField = {
     ...userEditorComponentNames,
   ],
 };
-export const commonPageFields = [
+
+// export const commonPageFields = [
+//   {
+//     name: "name",
+//     label: "Name",
+//     widget: "string",
+//     required: true,
+//     i18n: true,
+//     // PERSON had ...
+//     // i18n: "duplicate",
+//   },
+//   // {
+//   //   name: "currentSlug",
+//   //   label: "Current slug",
+//   //   widget: "compute",
+//   //   value: "{{fields.name}}",
+//   //   i18n: true,
+//   // },
+//   // { name: "path", label: "Page URL path", widget: "string", required: true, pattern: ['^(?![\s\/\-]*$)(?!\/)[a-z0-9\/\-]*[a-z0-9\-]$', "URL must contain only letters, numbers, dashes, and forward slashes (not starting or ending with a slash or dash), and at least one letter or number"], hint: "URL-friendly slug or path (may contain '/' and '-'). NOTE: The homepage must be called 'index'"},
+//   bodyMarkdownField,
+//   eleventyNavigationField,
+//   simpleMetadataField,
+//   pagePreviewField,
+//   tagsField,
+//   statusField,
+//   pageLayoutRelationField,
+//   pageFooterRelationField,
+//   pageNavRelationField,
+//   generatePageField,
+//   varsField,
+//   dataListField,
+// ];
+export function spreadCommonPageFields(modFields) {
+  const defaultFields = {
+    name: {
+      name: "name",
+      label: "Name",
+      widget: "string",
+      required: true,
+      i18n: true,
+      // PERSON had ...
+      // i18n: "duplicate",
+      preview: false,
+    },
+    // {
+    //   name: "currentSlug",
+    //   label: "Current slug",
+    //   widget: "compute",
+    //   value: "{{fields.name}}",
+    //   i18n: true,
+    // },
+    // { name: "path", label: "Page URL path", widget: "string", required: true, pattern: ['^(?![\s\/\-]*$)(?!\/)[a-z0-9\/\-]*[a-z0-9\-]$', "URL must contain only letters, numbers, dashes, and forward slashes (not starting or ending with a slash or dash), and at least one letter or number"], hint: "URL-friendly slug or path (may contain '/' and '-'). NOTE: The homepage must be called 'index'"},
+    bodyMarkdown: bodyMarkdownField,
+    eleventyNavigation: eleventyNavigationField,
+    order: orderField,
+    simpleMetadata: simpleMetadataField,
+    pagePreview: pagePreviewField,
+    tags: tagsField,
+    status: statusField,
+    pageLayoutRelation: pageLayoutRelationField,
+    // pageFooterRelation: pageFooterRelationField,
+    // pageNavRelation: pageNavRelationField,
+    generatePage: generatePageField,
+    vars: varsField,
+    dataList: dataListField,
+    ...modFields,
+  };
+  return Object.values(defaultFields);
+}
+export const pageFields = [
+  ...commonCollectionFields,
   {
-    name: "name",
-    label: "Name",
-    widget: "string",
-    required: true,
-    i18n: true,
-    // PERSON had ...
-    // i18n: "duplicate",
+    name: "ldType",
+    label: "LD Type",
+    widget: "hidden",
+    required: false,
+    i18n: "duplicate",
+    default: COLLECTIONS["pages"].ldType,
   },
-  // {
-  //   name: "currentSlug",
-  //   label: "Current slug",
-  //   widget: "compute",
-  //   value: "{{fields.name}}",
-  //   i18n: true,
-  // },
-  // { name: "path", label: "Page URL path", widget: "string", required: true, pattern: ['^(?![\s\/\-]*$)(?!\/)[a-z0-9\/\-]*[a-z0-9\-]$', "URL must contain only letters, numbers, dashes, and forward slashes (not starting or ending with a slash or dash), and at least one letter or number"], hint: "URL-friendly slug or path (may contain '/' and '-'). NOTE: The homepage must be called 'index'"},
-  bodyMarkdownField,
-  eleventyNavigationField,
-  simpleMetadataField,
-  pagePreviewField,
-  tagsField,
-  statusField,
-  pageLayoutRelationField,
-  pageFooterRelationField,
-  pageNavRelationField,
-  generatePageField,
-  varsField,
-  dataListField,
+  ...spreadCommonPageFields(),
 ];
-export const pageFields = [...commonCollectionFields, ...commonPageFields];
 export const pages = {
   ...mostCommonMarkdownCollectionConfig,
-  name: "pages",
-  label: "Pages",
-  label_singular: "Page",
+  name: COLLECTIONS.pages.name,
+  label: COLLECTIONS.pages.label,
+  label_singular: COLLECTIONS.pages.label_singular,
   icon: "description",
   thumbnail: ["pagePreview.image.src", "metadata.image.src"],
   // TODO: check if it works
   slug: "{{name | localize}}", // This allows the slug to be localized
   // slug: "{{fields._slug | localize}}",
+  reorder: true,
+  summary:
+    "{{order | default('x')}} - **{{name}}** {{tags.0 | ternary('- #', '')}}{{tags}}",
 
   // MEDIAS
   media_folder: `/${CONTENT_DIR}/_images`,
@@ -991,8 +1122,9 @@ export const pages = {
 export const pagesCollection = {
   ...pages,
   path: "pages/{{slug}}",
-  summary:
-    "{{name}} {{eleventyNavigation.order | ternary(' (nav ', '')}}{{eleventyNavigation.order}}{{eleventyNavigation.order | ternary(')', '')}}",
+  // summary:
+  //   "{{name}} {{eleventyNavigation.order | ternary(' (nav ', '')}}{{eleventyNavigation.order}}{{eleventyNavigation.order | ternary(')', '')}}",
+  // summary: "{{order | default('x')}} - {{name}}",
   sortable_fields: {
     fields: [
       "eleventyNavigation.parent",
@@ -1015,14 +1147,15 @@ export const pagesCollection = {
   // index_file: {
   //   name: "pages",
   //   label: "Page Data",
-  //   path: "pages/{{slug}}",
   //   // path: "_index",
-  //   extension: "yaml",
+  //   // path: "pages/pages.yaml",
+  //   file: `${CONTENT_DIR}/{{locale}}/pages/pages.yaml`,
+  //   // extension: "yaml",
   //   // file: `${CONTENT_DIR}/_data/brand.yaml`,
   //   // format: "yaml",
   //   icon: "home",
   //   editor: { preview: false },
-  //   i18n: false,
+  //   // i18n: false,
   //   fields: [
   //     {
   //       name: "layout",
@@ -1052,223 +1185,276 @@ export function spreadPageSetup(collectionNameRaw) {
     path: `${collectionName}/{{slug}}`,
   };
 }
-// ARTICLES
-export const articleFields = [...commonCollectionFields, ...commonPageFields];
-export const articles = {
-  ...spreadPageSetup("articles"),
-  icon: "ink_pen",
-  fields: [
-    ...articleFields,
-    {
-      name: "author",
-      label: "Author",
-      type: "text",
-      widget: "string",
-      required: true,
-      i18n: true,
-      // field: { list with objects
-      //   name: "url",
-      //   label: "Link to profile",
-      //   widget: "string",
-      //   type: "url",
-      //   required: false,
-      //   i18n: true,
-      // },
-    },
-    {
-      name: "datePublished",
-      label: "Date Published",
-      type: "datetime",
-      widget: "datetime",
-      format: "YYYY-MM-DDTHH:mm:ss",
-      required: true,
-      i18n: true,
-    },
-    {
-      name: "dateUpdated",
-      label: "Date Updated",
-      type: "datetime",
-      widget: "datetime",
-      format: "YYYY-MM-DDTHH:mm:ss",
-      required: true,
-      i18n: true,
-    },
-    {
-      name: "images",
-      label: "Images",
-      widget: "list",
-      required: "false",
-      i18n: true,
+// CREATIVE WORKS
+export const creativeWorkFields = [
+  ...commonCollectionFields,
+  {
+    name: "ldType",
+    label: "LD Type",
+    widget: "hidden",
+    required: false,
+    i18n: "duplicate",
+    default: COLLECTIONS["creativeWorks"].ldType,
+  },
+  ...spreadCommonPageFields({
+    simpleMetadata: {
+      ...simpleMetadataField,
       fields: [
+        ...simpleMetadataField.fields,
         {
-          name: "image",
-          label: "Image",
-          widget: "image",
+          name: "author",
+          label: "Author",
+          type: "text",
+          widget: "relation",
+          collection: "people",
           multiple: true,
-          required: true,
+          required: false,
+          i18n: "duplicate",
+        },
+        {
+          name: "datePublished",
+          label: "Date Published",
+          type: "datetime",
+          widget: "datetime",
+          format: "YYYY-MM-DDTHH:mm:ss",
+          required: false,
+          i18n: true,
+        },
+        {
+          name: "dateModified",
+          label: "Date Modified",
+          type: "datetime",
+          widget: "datetime",
+          format: "YYYY-MM-DDTHH:mm:ss",
+          required: false,
           i18n: true,
         },
       ],
     },
-    {
-      name: "website",
-      label: "Website",
-      widget: "string",
-      type: "url",
-      required: false,
-      i18n: true,
-      hint: "Link to the articles pages",
+  }),
+];
+export const creativeWorks = {
+  ...spreadPageSetup("creativeWorks"),
+  name: COLLECTIONS.creativeWorks.name,
+  label: COLLECTIONS.creativeWorks.label,
+  label_singular: COLLECTIONS.creativeWorks.label_singular,
+  icon: "wall_art",
+  fields: creativeWorkFields,
+};
+export const creativeWorksCollection = { ...creativeWorks };
+// ARTICLES
+export const articleFields = [
+  ...commonCollectionFields,
+  {
+    name: "ldType",
+    label: "LD Type",
+    widget: "hidden",
+    required: false,
+    i18n: "duplicate",
+    default: COLLECTIONS["articles"].ldType,
+  },
+  ...spreadCommonPageFields({
+    simpleMetadata: {
+      ...simpleMetadataField,
+      fields: [
+        ...simpleMetadataField.fields,
+        {
+          name: "author",
+          label: "Author",
+          type: "text",
+          widget: "relation",
+          collection: "people",
+          multiple: true,
+          required: false,
+          i18n: "duplicate",
+        },
+        {
+          name: "datePublished",
+          label: "Date Published",
+          type: "datetime",
+          widget: "datetime",
+          format: "YYYY-MM-DDTHH:mm:ss",
+          required: false,
+          i18n: true,
+        },
+        {
+          name: "dateModified",
+          label: "Date Modified",
+          type: "datetime",
+          widget: "datetime",
+          format: "YYYY-MM-DDTHH:mm:ss",
+          required: false,
+          i18n: true,
+        },
+      ],
     },
-  ],
+  }),
+];
+export const articles = {
+  ...spreadPageSetup("articles"),
+  name: COLLECTIONS.articles.name,
+  label: COLLECTIONS.articles.label,
+  label_singular: COLLECTIONS.articles.label_singular,
+  icon: "ink_pen",
+  fields: articleFields,
 };
 export const articlesCollection = { ...articles };
 // SERVICES
-export const serviceFields = [...commonCollectionFields, ...commonPageFields];
+export const serviceFields = [
+  ...commonCollectionFields,
+  {
+    name: "ldType",
+    label: "LD Type",
+    widget: "hidden",
+    required: false,
+    i18n: "duplicate",
+    default: COLLECTIONS["services"].ldType,
+  },
+  ...spreadCommonPageFields({
+    simpleMetadata: {
+      ...simpleMetadataField,
+      fields: [
+        ...simpleMetadataField.fields,
+        {
+          name: "slogan",
+          label: "Slogan",
+          widget: "string",
+          type: "text",
+          required: false,
+          i18n: true,
+        },
+      ],
+    },
+  }),
+];
 export const services = {
   ...spreadPageSetup("services"),
+  name: COLLECTIONS.services.name,
+  label: COLLECTIONS.services.label,
+  label_singular: COLLECTIONS.services.label_singular,
   icon: "hand_meal",
   fields: serviceFields,
 };
 export const servicesCollection = { ...services };
 // EVENTS
-export const eventFields = [...commonCollectionFields, ...commonPageFields];
-export const events = {
-  ...spreadPageSetup("events"),
-  icon: "event",
-  fields: [
-    ...eventFields,
-    {
-      name: "startDate",
-      label: "Start Date",
-      widget: "datetime",
-      type: "datetime",
-      format: "YYYY-MM-DDTHH:mm:ss",
-      required: true,
-      i18n: true,
-    },
-    {
-      name: "endDate",
-      label: "End Date",
-      widget: "datetime",
-      type: "datetime",
-      format: "YYYY-MM-DDTHH:mm:ss",
-      required: false,
-      i18n: true,
-    },
-    {
-      name: "eventStatus",
-      label: "Event Status",
-      widget: "select",
-      default: "scheduled",
-      options: [
-        { value: "scheduled", label: "Scheduled" },
-        { value: "rescheduled", label: "Rescheduled" },
-        { value: "ongoing", label: "Ongoing" },
-        { value: "completed", label: "Completed" },
-        { value: "cancelled", label: "Cancelled" },
-        { value: "postponed", label: "Postponed" },
-      ],
-      required: false,
-      i18n: true,
-    },
-    {
-      name: "location",
-      label: "Location",
-      widget: "object",
-      required: false,
-      i18n: true,
+export const eventFields = [
+  ...commonCollectionFields,
+  {
+    name: "ldType",
+    label: "LD Type",
+    widget: "hidden",
+    required: false,
+    i18n: "duplicate",
+    default: COLLECTIONS["events"].ldType,
+  },
+  ...spreadCommonPageFields({
+    simpleMetadata: {
+      ...simpleMetadataField,
       fields: [
+        ...simpleMetadataField.fields,
         {
-          name: "name",
-          label: "Name",
-          widget: "string",
+          name: "startDate",
+          label: "Start Date",
+          widget: "datetime",
+          type: "datetime",
+          hint: "Start date of the event",
+          format: "YYYY-MM-DDTHH:mm:ss",
           required: false,
-          i18n: true,
+          i18n: "duplicate",
         },
         {
-          name: "address",
-          label: "Address",
+          name: "endDate",
+          label: "End Date",
+          widget: "datetime",
+          type: "datetime",
+          hint: "End date of the event",
+          format: "YYYY-MM-DDTHH:mm:ss",
+          required: false,
+          i18n: "duplicate",
+        },
+        {
+          name: "eventStatus",
+          label: "Event Status",
+          widget: "select",
+          hint: "Status of the event",
+          default: "scheduled",
+          options: [
+            { value: "EventScheduled", label: "Scheduled" },
+            { value: "EventRescheduled", label: "Rescheduled" },
+            { value: "EventMovedOnline", label: "Moved Online" },
+            { value: "EventCancelled", label: "Cancelled" },
+            { value: "EventPostponed", label: "Postponed" },
+          ],
+          required: false,
+          i18n: "duplicate",
+        },
+        {
+          name: "location",
+          label: "Location",
           widget: "object",
           required: false,
           i18n: true,
           fields: [
             {
-              name: "streetAddress",
-              label: "Street Address",
+              name: "name",
+              label: "Name",
               widget: "string",
+              hint: "Name of the location",
               required: false,
               i18n: true,
             },
             {
-              name: "addressLocality",
-              label: "City",
-              widget: "string",
+              name: "address",
+              label: "Address",
+              widget: "object",
               required: false,
               i18n: true,
-            },
-            {
-              name: "postalCode",
-              label: "Postal Code",
-              widget: "string",
-              required: false,
-              i18n: true,
-            },
-            {
-              name: "addressRegion",
-              label: "State/Province",
-              widget: "string",
-              required: false,
-              i18n: true,
-            },
-            {
-              name: "addressCountry",
-              label: "Country",
-              widget: "string",
-              required: false,
-              i18n: true,
+              fields: [
+                {
+                  name: "streetAddress",
+                  label: "Street Address",
+                  widget: "string",
+                  required: false,
+                  i18n: true,
+                },
+                {
+                  name: "addressLocality",
+                  label: "City",
+                  widget: "string",
+                  required: false,
+                  i18n: true,
+                },
+                {
+                  name: "addressCountry",
+                  label: "Country",
+                  widget: "string",
+                  required: false,
+                  i18n: true,
+                },
+                {
+                  name: "postalCode",
+                  label: "Postal Code",
+                  widget: "string",
+                  required: false,
+                  i18n: true,
+                },
+                {
+                  name: "addressRegion",
+                  label: "State/Province",
+                  widget: "string",
+                  required: false,
+                  i18n: true,
+                },
+              ],
             },
           ],
         },
-      ],
-    },
-    {
-      // double emploi avec metadata
-      name: "images",
-      label: "Images",
-      widget: "list",
-      required: false,
-      i18n: true,
-      fields: [
         {
-          name: "image",
-          label: "Image",
-          widget: "image",
-          multiple: true,
-          required: true,
-          i18n: true,
-        },
-      ],
-    },
-    {
-      // double emploi avec metadata
-      name: "description",
-      label: "Description",
-      widget: "text",
-      required: false,
-      i18n: true,
-    },
-    {
-      name: "offers",
-      label: "Offers",
-      widget: "list",
-      required: false,
-      i18n: true,
-      fields: [
-        {
-          name: "offer",
-          label: "Offer",
-          widget: "object",
-          required: true,
+          name: "offers",
+          label: "Offers",
+          widget: "list",
+          hint: "Offers for the event for example tickets, etc.",
+          required: false,
           i18n: true,
           fields: [
             {
@@ -1301,9 +1487,9 @@ export const events = {
               widget: "select",
               default: "inStock",
               options: [
-                { value: "inStock", label: "In Stock" },
-                { value: "soldOut", label: "Sold Out" },
-                { value: "preOrder", label: "Pre-order" },
+                { value: "InStock", label: "In Stock" },
+                { value: "SoldOut", label: "Sold Out" },
+                { value: "PreOrder", label: "Pre-order" },
               ],
               required: false,
               i18n: true,
@@ -1321,66 +1507,92 @@ export const events = {
             },
           ],
         },
-      ],
-    },
-    {
-      name: "performers",
-      label: "Performers",
-      widget: "list",
-      required: false,
-      i18n: true,
-      fields: [
         {
           name: "performer",
-          label: "Performer",
-          widget: "object",
-          required: true,
+          label: "Performers",
+          widget: "relation",
+          collection: "people",
+          multiple: true,
+          required: false,
           i18n: true,
-          fields: [
-            {
-              name: "name",
-              label: "Name",
-              widget: "string",
-              required: true,
-              i18n: true,
-            },
-          ],
         },
-      ],
-    },
-    {
-      name: "organizers",
-      label: "Organizers",
-      widget: "list",
-      required: false,
-      i18n: true,
-      fields: [
         {
           name: "organizer",
-          label: "Organizer",
-          widget: "object",
-          required: true,
+          label: "Organizers",
+          widget: "relation",
+          collection: "people",
+          multiple: true,
+          required: false,
           i18n: true,
-          fields: [
-            {
-              name: "name",
-              label: "Name",
-              widget: "string",
-              required: true,
-              i18n: true,
-            },
-          ],
         },
       ],
     },
-  ],
+  }),
+];
+export const events = {
+  ...spreadPageSetup("events"),
+  name: COLLECTIONS.events.name,
+  label: COLLECTIONS.events.label,
+  label_singular: COLLECTIONS.events.label_singular,
+  icon: "event",
+  fields: eventFields,
 };
 export const eventsCollection = { ...events };
 // PEOPLE
-export const personFields = [...commonCollectionFields, ...commonPageFields];
+export const personFields = [
+  ...commonCollectionFields,
+  {
+    name: "ldType",
+    label: "LD Type",
+    widget: "hidden",
+    required: false,
+    i18n: "duplicate",
+    default: COLLECTIONS["people"].ldType,
+  },
+  ...spreadCommonPageFields({
+    simpleMetadata: {
+      ...simpleMetadataField,
+      fields: [
+        ...simpleMetadataField.fields,
+        {
+          name: "jobTitle",
+          label: "Job Title",
+          widget: "string",
+          required: false,
+          i18n: true,
+        },
+        {
+          name: "links",
+          label: "Links",
+          widget: "list",
+          required: false,
+          i18n: true,
+          fields: [
+            {
+              name: "name",
+              label: "Name",
+              widget: "string",
+              required: false,
+              i18n: true,
+            },
+            {
+              name: "url",
+              label: "URL",
+              widget: "string",
+              required: false,
+              i18n: true,
+            },
+          ],
+        },
+      ],
+    },
+  }),
+];
 export const people = {
   ...spreadPageSetup("people"),
-  label_singular: "Person",
+  name: COLLECTIONS.people.name,
+  label: COLLECTIONS.people.label,
+  label_singular: COLLECTIONS.people.label_singular,
   icon: "person",
   fields: personFields,
 };
@@ -1388,75 +1600,277 @@ export const peopleCollection = { ...people };
 // ORGANIZATIONS
 export const organizationFields = [
   ...commonCollectionFields,
-  ...commonPageFields,
+  {
+    name: "ldType",
+    label: "LD Type",
+    widget: "hidden",
+    required: false,
+    i18n: "duplicate",
+    default: COLLECTIONS["organizations"].ldType,
+  },
+  ...spreadCommonPageFields({
+    simpleMetadata: {
+      ...simpleMetadataField,
+      fields: [
+        ...simpleMetadataField.fields,
+        {
+          name: "email",
+          label: "Email",
+          widget: "string",
+          required: false,
+          i18n: "duplicate",
+        },
+        {
+          name: "telephone",
+          label: "Telephone",
+          widget: "string",
+          required: false,
+          i18n: "duplicate",
+        },
+        {
+          name: "address",
+          label: "Address",
+          widget: "object",
+          required: false,
+          i18n: true,
+          fields: [
+            {
+              name: "streetAddress",
+              label: "Street Address",
+              widget: "string",
+              required: false,
+              i18n: true,
+            },
+            {
+              name: "addressLocality",
+              label: "City",
+              widget: "string",
+              required: false,
+              i18n: true,
+            },
+            {
+              name: "addressCountry",
+              label: "Country",
+              widget: "string",
+              required: false,
+              i18n: true,
+            },
+            {
+              name: "addressRegion",
+              label: "State/Province",
+              widget: "string",
+              required: false,
+              i18n: true,
+            },
+            {
+              name: "postalCode",
+              label: "Postal Code",
+              widget: "string",
+              required: false,
+              i18n: true,
+            },
+          ],
+        },
+      ],
+    },
+  }),
 ];
 export const organizations = {
   ...spreadPageSetup("organizations"),
+  name: COLLECTIONS.organizations.name,
+  label: COLLECTIONS.organizations.label,
+  label_singular: COLLECTIONS.organizations.label_singular,
   icon: "add_home_work",
   fields: organizationFields,
 };
 export const organizationsCollection = { ...organizations };
 // COURSES
-export const courseFields = [...commonCollectionFields, ...commonPageFields];
+export const courseFields = [
+  ...commonCollectionFields,
+  {
+    name: "ldType",
+    label: "LD Type",
+    widget: "hidden",
+    required: false,
+    i18n: "duplicate",
+    default: COLLECTIONS["courses"].ldType,
+  },
+  ...spreadCommonPageFields(),
+];
 export const courses = {
   ...spreadPageSetup("courses"),
+  name: COLLECTIONS.courses.name,
+  label: COLLECTIONS.courses.label,
+  label_singular: COLLECTIONS.courses.label_singular,
   icon: "school",
   fields: courseFields,
 };
 export const coursesCollection = { ...courses };
 // PLACES
-export const placeFields = [...commonCollectionFields, ...commonPageFields];
+export const placeFields = [
+  ...commonCollectionFields,
+  {
+    name: "ldType",
+    label: "LD Type",
+    widget: "hidden",
+    required: false,
+    i18n: "duplicate",
+    default: COLLECTIONS["places"].ldType,
+  },
+  ...spreadCommonPageFields(),
+];
 export const places = {
   ...spreadPageSetup("places"),
+  name: COLLECTIONS.places.name,
+  label: COLLECTIONS.places.label,
+  label_singular: COLLECTIONS.places.label_singular,
   icon: "location_on",
   fields: placeFields,
 };
 export const placesCollection = { ...places };
 // PRODUCTS
-export const productFields = [...commonCollectionFields, ...commonPageFields];
+export const productFields = [
+  ...commonCollectionFields,
+  {
+    name: "ldType",
+    label: "LD Type",
+    widget: "hidden",
+    required: false,
+    i18n: "duplicate",
+    default: COLLECTIONS["products"].ldType,
+  },
+  ...spreadCommonPageFields(),
+];
 export const products = {
   ...spreadPageSetup("products"),
+  name: COLLECTIONS.products.name,
+  label: COLLECTIONS.products.label,
+  label_singular: COLLECTIONS.products.label_singular,
   icon: "add_shopping_cart",
   fields: productFields,
 };
 export const productsCollection = { ...products };
 // REVIEWS
-export const reviewFields = [...commonCollectionFields, ...commonPageFields];
+export const reviewFields = [
+  ...commonCollectionFields,
+  {
+    name: "ldType",
+    label: "LD Type",
+    widget: "hidden",
+    required: false,
+    i18n: "duplicate",
+    default: COLLECTIONS["reviews"].ldType,
+  },
+  ...spreadCommonPageFields(),
+];
 export const reviews = {
   ...spreadPageSetup("reviews"),
+  name: COLLECTIONS.reviews.name,
+  label: COLLECTIONS.reviews.label,
+  label_singular: COLLECTIONS.reviews.label_singular,
   icon: "reviews",
   fields: reviewFields,
 };
 export const reviewsCollection = { ...reviews };
 // FAQs
-export const faqFields = [...commonCollectionFields, ...commonPageFields];
+export const faqFields = [
+  ...commonCollectionFields,
+  {
+    name: "ldType",
+    label: "LD Type",
+    widget: "hidden",
+    required: false,
+    i18n: "duplicate",
+    default: COLLECTIONS["faqs"].ldType,
+  },
+  ...spreadCommonPageFields({
+    simpleMetadata: {
+      ...simpleMetadataField,
+      fields: [
+        ...simpleMetadataField.fields,
+        {
+          name: "faq",
+          label: "FAQ Items",
+          widget: "list",
+          required: false,
+          i18n: true,
+          fields: [
+            {
+              name: "question",
+              label: "Question",
+              widget: "text",
+              required: false,
+              i18n: true,
+            },
+            {
+              name: "answer",
+              label: "Answer",
+              widget: "text",
+              required: false,
+              i18n: true,
+            },
+          ],
+        },
+      ],
+    },
+  }),
+];
 export const faqs = {
   ...spreadPageSetup("faqs"),
+  name: COLLECTIONS.faqs.name,
+  label: COLLECTIONS.faqs.label,
+  label_singular: COLLECTIONS.faqs.label_singular,
   icon: "indeterminate_question_box",
   fields: faqFields,
 };
 export const faqsCollection = { ...faqs };
 // PROJECTS
-export const projectFields = [...commonCollectionFields, ...commonPageFields];
+export const projectFields = [
+  ...commonCollectionFields,
+  {
+    name: "ldType",
+    label: "LD Type",
+    widget: "hidden",
+    required: false,
+    i18n: "duplicate",
+    default: COLLECTIONS["projects"].ldType,
+  },
+  ...spreadCommonPageFields(),
+];
 export const projects = {
   ...spreadPageSetup("projects"),
+  name: COLLECTIONS.projects.name,
+  label: COLLECTIONS.projects.label,
+  label_singular: COLLECTIONS.projects.label_singular,
   icon: "folder_open",
   fields: projectFields,
 };
 export const projectsCollection = { ...projects };
-// DOCUMENTATION -- HowTo in schema.org
-export const documentationFields = [
+// HowTo in schema.org
+export const howtoFields = [
   ...commonCollectionFields,
-  ...commonPageFields,
+  {
+    name: "ldType",
+    label: "LD Type",
+    widget: "hidden",
+    required: false,
+    i18n: "duplicate",
+    default: COLLECTIONS["howtos"].ldType,
+  },
+  ...spreadCommonPageFields(),
 ];
-export const documentations = {
-  ...spreadPageSetup("documentations"),
+export const howtos = {
+  ...spreadPageSetup("howtos"),
+  name: COLLECTIONS.howtos.name,
+  label: COLLECTIONS.howtos.label,
+  label_singular: COLLECTIONS.howtos.label_singular,
   icon: "menu_book",
   fields: projectFields,
 };
-export const documentationCollection = { ...documentations };
+export const howtoCollection = { ...howtos };
 
 const optionalCollections = {
+  creativeWorks: creativeWorksCollection,
   articles: articlesCollection,
   services: servicesCollection,
   events: eventsCollection,
@@ -1468,7 +1882,7 @@ const optionalCollections = {
   places: placesCollection,
   reviews: reviewsCollection,
   faqs: faqsCollection,
-  documentations: documentationCollection, //HowTo in schema.org
+  howtos: howtoCollection, //HowTo in schema.org
 };
 export function getSelectedCollections() {
   const selectedOptionalCollections = (selectedCollections || [])
@@ -1676,215 +2090,215 @@ function createNavLevels(allSelectedCollections, currentLevel, maxLevels) {
   ];
 }
 
-export const navCollection = (allSelectedCollections) => ({
-  ...mostCommonMarkdownCollectionConfig,
-  identifier_field: "{{slug}}",
-  name: "nav",
-  label: "Navigations",
-  label_singular: "Navigation",
-  path: "nav/{{slug}}",
-  slug: "{{fields._slug}}",
-  icon: "menu_open",
-  folder: `${CONTENT_DIR}/_data`,
-  format: "yaml",
-  extension: "yaml",
-  summary: "{{slug}}",
-  media_folder: `/${CONTENT_DIR}/_images`,
-  public_folder: "/_images",
-  fields: [
-    {
-      name: "items",
-      label: "Items",
-      label_singular: "Item (Level 1)",
-      widget: "list",
-      i18n: "duplicate",
-      required: true,
-      fields: [
-        {
-          name: "linkTo",
-          label: "Link to ...",
-          widget: "object",
-          required: false,
-          i18n: "duplicate",
-          collapsed: "auto",
-          types: [
-            {
-              name: "linkTo",
-              label: "Link to ...",
-              widget: "object",
-              required: false,
-              i18n: "duplicate",
-              collapsed: "auto",
-              root: true,
-              types: [
-                {
-                  name: "pages",
-                  label: "Page",
-                  fields: [
-                    {
-                      name: "slug",
-                      label: "Select Page",
-                      widget: "relation",
-                      collection: "pages",
-                      search_fields: ["name"],
-                      display_fields: ["name"],
-                      required: false,
-                      i18n: "duplicate",
-                    },
-                    {
-                      name: "label",
-                      label: "Label",
-                      widget: "string",
-                      required: false,
-                      hint: "Override the page title",
-                      i18n: true,
-                    },
-                    {
-                      name: "image",
-                      label: "Image",
-                      widget: "object",
-                      hint: "Override the page title with an image",
-                      required: false,
-                      i18n: "duplicate",
-                      summary: "{{src}}",
-                      fields: [
-                        {
-                          name: "src",
-                          label: "Image",
-                          widget: "image",
-                          required: true,
-                          i18n: true,
-                        },
-                      ],
-                    },
-                  ],
-                },
-                ...getMiscLinkTypes(allSelectedCollections, 1, NAV_DEPTH_MAX),
-                {
-                  name: "url",
-                  label: "Custom URL",
-                  fields: [
-                    {
-                      name: "label",
-                      label: "Label",
-                      widget: "string",
-                      required: false,
-                      hint: "Override the page title",
-                      i18n: true,
-                    },
-                    {
-                      name: "url",
-                      label: "Custom URL",
-                      widget: "string",
-                      required: false,
-                      hint: "Use this for external links or if you want to override the page link.",
-                      i18n: true,
-                    },
-                    {
-                      name: "image",
-                      label: "Image",
-                      widget: "object",
-                      hint: "Override the page title with an image",
-                      required: false,
-                      i18n: "duplicate",
-                      summary: "{{src}}",
-                      fields: [
-                        {
-                          name: "src",
-                          label: "Src",
-                          widget: "image",
-                          required: true,
-                          i18n: true,
-                        },
-                      ],
-                    },
-                  ],
-                },
-                {
-                  name: "subItems",
-                  label: "Sub Menu",
-                  fields: [
-                    {
-                      name: "label",
-                      label: "Label",
-                      widget: "string",
-                      required: true,
-                      hint: "Override the page title",
-                      i18n: true,
-                    },
-                    {
-                      name: "image",
-                      label: "Image",
-                      widget: "object",
-                      hint: "Override the page title with an image",
-                      required: false,
-                      i18n: "duplicate",
-                      summary: "{{src}}",
-                      fields: [
-                        {
-                          name: "src",
-                          label: "Src",
-                          widget: "image",
-                          required: true,
-                          i18n: true,
-                        },
-                      ],
-                    },
-                    ...createNavLevels(
-                      allSelectedCollections,
-                      1,
-                      NAV_DEPTH_MAX,
-                    ), // Adjust the second argument to set max levels
-                  ],
-                },
-                ...createNavLevels(allSelectedCollections, 1, NAV_DEPTH_MAX), // Adjust the second argument to set max levels
-              ],
-            },
-            ...getMiscLinkTypes(allSelectedCollections, 1, NAV_DEPTH_MAX),
-            {
-              name: "url",
-              label: "Custom URL",
-              fields: [
-                {
-                  name: "label",
-                  label: "Label",
-                  widget: "string",
-                  required: false,
-                  hint: "Override the page title",
-                  i18n: true,
-                },
-                {
-                  name: "url",
-                  label: "Custom URL",
-                  widget: "string",
-                  required: false,
-                  hint: "Use this for external links or if you want to override the page link.",
-                  i18n: true,
-                },
-                ...createNavLevels(allSelectedCollections, 1, NAV_DEPTH_MAX), // Adjust the second argument to set max levels
-              ],
-            },
-            {
-              name: "label",
-              label: "Label Only",
-              fields: [
-                {
-                  name: "label",
-                  label: "Label",
-                  widget: "string",
-                  required: false,
-                  hint: "Override the page title",
-                  i18n: true,
-                },
-                ...createNavLevels(allSelectedCollections, 1, NAV_DEPTH_MAX), // Adjust the second argument to set max levels
-              ],
-            },
-          ],
-        },
-      ],
-    },
-  ],
-});
+// export const navCollection = (allSelectedCollections) => ({
+//   ...mostCommonMarkdownCollectionConfig,
+//   identifier_field: "{{slug}}",
+//   name: "nav",
+//   label: "Navigations",
+//   label_singular: "Navigation",
+//   path: "nav/{{slug}}",
+//   slug: "{{fields._slug}}",
+//   icon: "menu_open",
+//   folder: `${CONTENT_DIR}/_data`,
+//   format: "yaml",
+//   extension: "yaml",
+//   summary: "{{slug}}",
+//   media_folder: `/${CONTENT_DIR}/_images`,
+//   public_folder: "/_images",
+//   fields: [
+//     {
+//       name: "items",
+//       label: "Items",
+//       label_singular: "Item (Level 1)",
+//       widget: "list",
+//       i18n: "duplicate",
+//       required: true,
+//       fields: [
+//         {
+//           name: "linkTo",
+//           label: "Link to ...",
+//           widget: "object",
+//           required: false,
+//           i18n: "duplicate",
+//           collapsed: "auto",
+//           types: [
+//             {
+//               name: "linkTo",
+//               label: "Link to ...",
+//               widget: "object",
+//               required: false,
+//               i18n: "duplicate",
+//               collapsed: "auto",
+//               root: true,
+//               types: [
+//                 {
+//                   name: "pages",
+//                   label: "Page",
+//                   fields: [
+//                     {
+//                       name: "slug",
+//                       label: "Select Page",
+//                       widget: "relation",
+//                       collection: "pages",
+//                       search_fields: ["name"],
+//                       display_fields: ["name"],
+//                       required: false,
+//                       i18n: "duplicate",
+//                     },
+//                     {
+//                       name: "label",
+//                       label: "Label",
+//                       widget: "string",
+//                       required: false,
+//                       hint: "Override the page title",
+//                       i18n: true,
+//                     },
+//                     {
+//                       name: "image",
+//                       label: "Image",
+//                       widget: "object",
+//                       hint: "Override the page title with an image",
+//                       required: false,
+//                       i18n: "duplicate",
+//                       summary: "{{src}}",
+//                       fields: [
+//                         {
+//                           name: "src",
+//                           label: "Image",
+//                           widget: "image",
+//                           required: true,
+//                           i18n: true,
+//                         },
+//                       ],
+//                     },
+//                   ],
+//                 },
+//                 ...getMiscLinkTypes(allSelectedCollections, 1, NAV_DEPTH_MAX),
+//                 {
+//                   name: "url",
+//                   label: "Custom URL",
+//                   fields: [
+//                     {
+//                       name: "label",
+//                       label: "Label",
+//                       widget: "string",
+//                       required: false,
+//                       hint: "Override the page title",
+//                       i18n: true,
+//                     },
+//                     {
+//                       name: "url",
+//                       label: "Custom URL",
+//                       widget: "string",
+//                       required: false,
+//                       hint: "Use this for external links or if you want to override the page link.",
+//                       i18n: true,
+//                     },
+//                     {
+//                       name: "image",
+//                       label: "Image",
+//                       widget: "object",
+//                       hint: "Override the page title with an image",
+//                       required: false,
+//                       i18n: "duplicate",
+//                       summary: "{{src}}",
+//                       fields: [
+//                         {
+//                           name: "src",
+//                           label: "Src",
+//                           widget: "image",
+//                           required: true,
+//                           i18n: true,
+//                         },
+//                       ],
+//                     },
+//                   ],
+//                 },
+//                 {
+//                   name: "subItems",
+//                   label: "Sub Menu",
+//                   fields: [
+//                     {
+//                       name: "label",
+//                       label: "Label",
+//                       widget: "string",
+//                       required: true,
+//                       hint: "Override the page title",
+//                       i18n: true,
+//                     },
+//                     {
+//                       name: "image",
+//                       label: "Image",
+//                       widget: "object",
+//                       hint: "Override the page title with an image",
+//                       required: false,
+//                       i18n: "duplicate",
+//                       summary: "{{src}}",
+//                       fields: [
+//                         {
+//                           name: "src",
+//                           label: "Src",
+//                           widget: "image",
+//                           required: true,
+//                           i18n: true,
+//                         },
+//                       ],
+//                     },
+//                     ...createNavLevels(
+//                       allSelectedCollections,
+//                       1,
+//                       NAV_DEPTH_MAX,
+//                     ), // Adjust the second argument to set max levels
+//                   ],
+//                 },
+//                 ...createNavLevels(allSelectedCollections, 1, NAV_DEPTH_MAX), // Adjust the second argument to set max levels
+//               ],
+//             },
+//             ...getMiscLinkTypes(allSelectedCollections, 1, NAV_DEPTH_MAX),
+//             {
+//               name: "url",
+//               label: "Custom URL",
+//               fields: [
+//                 {
+//                   name: "label",
+//                   label: "Label",
+//                   widget: "string",
+//                   required: false,
+//                   hint: "Override the page title",
+//                   i18n: true,
+//                 },
+//                 {
+//                   name: "url",
+//                   label: "Custom URL",
+//                   widget: "string",
+//                   required: false,
+//                   hint: "Use this for external links or if you want to override the page link.",
+//                   i18n: true,
+//                 },
+//                 ...createNavLevels(allSelectedCollections, 1, NAV_DEPTH_MAX), // Adjust the second argument to set max levels
+//               ],
+//             },
+//             {
+//               name: "label",
+//               label: "Label Only",
+//               fields: [
+//                 {
+//                   name: "label",
+//                   label: "Label",
+//                   widget: "string",
+//                   required: false,
+//                   hint: "Override the page title",
+//                   i18n: true,
+//                 },
+//                 ...createNavLevels(allSelectedCollections, 1, NAV_DEPTH_MAX), // Adjust the second argument to set max levels
+//               ],
+//             },
+//           ],
+//         },
+//       ],
+//     },
+//   ],
+// });
 
 const globalSettingsSingleton = {
   name: "globalSettings",
@@ -1939,20 +2353,20 @@ const globalSettingsSingleton = {
       output_code_only: true,
       allow_language_selection: false,
     },
-    {
-      // footer defined in global settings (in the CMS)
-      name: "pageFooter",
-      label: "Default Footer",
-      widget: "relation",
-      collection: "footers",
-      hint: "Footer used for all pages and collections that don't have a specific footer set.",
-      required: false,
-      i18n: true,
-      // search_fields: ["slug"],
-      // display_fields: ["fields.slug"],
-      // value_field: "{{slug}}",
-      // options: faire une liste avec les footers disponibles dans la collection footers
-    },
+    // {
+    //   // footer defined in global settings (in the CMS)
+    //   name: "pageFooter",
+    //   label: "Default Footer",
+    //   widget: "relation",
+    //   collection: "footers",
+    //   hint: "Footer used for all pages and collections that don't have a specific footer set.",
+    //   required: false,
+    //   i18n: true,
+    //   // search_fields: ["slug"],
+    //   // display_fields: ["fields.slug"],
+    //   // value_field: "{{slug}}",
+    //   // options: faire une liste avec les footers disponibles dans la collection footers
+    // },
     {
       name: "languages",
       label: "Languages",
@@ -2049,17 +2463,17 @@ const globalSettingsSingleton = {
       options: Object.keys(optionalCollections),
       dropdown_threshold: 100,
     },
-    {
-      name: "customNav",
-      label: "Custom Navigation",
-      widget: "relation",
-      collection: "nav",
-      value_field: "slug",
-      search_fields: ["slug"],
-      display_fields: ["slug"],
-      required: false,
-      hint: "Choose which custom nav file to use globally",
-    },
+    // {
+    //   name: "customNav",
+    //   label: "Custom Navigation",
+    //   widget: "relation",
+    //   collection: "nav",
+    //   value_field: "slug",
+    //   search_fields: ["slug"],
+    //   display_fields: ["slug"],
+    //   required: false,
+    //   hint: "Choose which custom nav file to use globally",
+    // },
   ],
 };
 
@@ -2338,7 +2752,8 @@ const stylesConfigCollection = (fontsourceFonts) => ({
           required: false,
           collapsed: true,
           allow_reorder: true,
-          summary: "Palette '{{name}}'  [Text '{{text}}', Background '{{bg}}']",
+          summary:
+            ".palette-{{name}}  [{{read}}  {{tone}}  {{pop}}  {{neutral}}]",
           hint: "The first palette is used as the default",
           fields: [
             {
@@ -2348,18 +2763,18 @@ const stylesConfigCollection = (fontsourceFonts) => ({
               required: true,
             },
             // prettier-ignore
-            { name: "type", label: "Typography Color", ...brandColorField, required: true }, // prettier-ignore
-            { name: "alt", label: "Alternative Typography Color", ...brandColorField, required: true }, // prettier-ignore
-            { name: "accent", label: "Accent Color", ...brandColorField, required: true }, // prettier-ignore
-            { name: "contrast", label: "Contrast Color (E.g. for background)", ...brandColorField, required: true }, // prettier-ignore
-            { name: "text", label: "Text Color", ...brandColorField }, // prettier-ignore
-            { name: "bg", label: "Background Color", ...brandColorField }, // prettier-ignore
-            { name: "border", label: "Border Color", ...brandColorField }, // prettier-ignore
-            { name: "text-decoration", label: "Text Decoration Color", ...brandColorField }, // prettier-ignore
-            { name: "text--marker", label: "Text Marker Color (bullet points, etc.)", ...brandColorField }, // prettier-ignore
+            { name: "read", label: "read: Most readable Color (Typography)", ...brandColorField, required: true }, // prettier-ignore
+            { name: "tone", label: "tone: Alternative tone Color", ...brandColorField, required: true }, // prettier-ignore
+            { name: "pop", label: "pop: Accent Color that 'pops'", ...brandColorField, required: true }, // prettier-ignore
+            { name: "neutral", label: "neutral: Neutral Color for surface", ...brandColorField, required: true }, // prettier-ignore
             // prettier-ignore
             {
               name: "advancedDefaults", label: "Advanced Defaults", widget: "object", collapsed: "auto", required: false, fields: [
+                { name: "text", label: "Text Color", ...brandColorField }, // prettier-ignore
+                { name: "bg", label: "Background Color", ...brandColorField }, // prettier-ignore
+                { name: "border", label: "Border Color", ...brandColorField }, // prettier-ignore
+                { name: "text-decoration", label: "Text Decoration Color", ...brandColorField }, // prettier-ignore
+                { name: "text--marker", label: "Text Marker Color (bullet points, etc.)", ...brandColorField }, // prettier-ignore
                 { name: "outline", label: "Outline Color", ...brandColorField }, // prettier-ignore
                 { name: "shadow", label: "Shadow Color", ...brandColorField }, // prettier-ignore
                 { name: "caret", label: "Caret Color", ...brandColorField }, // prettier-ignore
@@ -2559,7 +2974,7 @@ class CmsConfig {
       },
       // TODO: configure data formating: https://github.com/sveltia/sveltia-cms?tab=readme-ov-file#controlling-data-output
       output: {
-        omit_empty_optional_fields: false,
+        omit_empty_optional_fields: true,
         encode_file_path: true, // true to URL-encode file paths for File/Image fields
         json: {
           indent_style: "space", // space or tab
@@ -2626,8 +3041,9 @@ class CmsConfig {
               // {
               //   divider: Boolean(!mustSetup && userConfig.collections?.length),
               // },
-              navCollection(allSelectedCollections),
-              footerCollection,
+              // navCollection(allSelectedCollections),
+              // navCollection2,
+              // footerCollection,
               pageLayoutsCollection,
               { divider: true },
               partialsCollection,
@@ -2652,42 +3068,76 @@ class CmsConfig {
     return JSON.stringify(generalConfig, null, isDev ? 2 : 0);
   }
 }
+// export const navCollection2 = {
+//   name: "navs",
+//   label: "Navs",
+//   label_singular: "Nav",
+//   path: "navs/{{slug}}",
+//   slug: "{{fields._slug}}",
+//   icon: "menu_open",
+//   folder: `${CONTENT_DIR}/_partials`,
+//   extension: "md",
+//   format: "yaml-frontmatter",
+//   create: true,
+//   editor: { preview: false }, // to not display the preview of the page like in other collections
+//   summary: "{{slug}}",
+//   i18n: true, // to have the left-right feature with the two languages
+//   // MEDIAS
+//   media_folder: `/${CONTENT_DIR}/_images`,
+//   public_folder: "/_images",
+//   sortable_fields: {
+//     fields: ["slug"],
+//     default: {
+//       field: "slug",
+//       direction: "ascending",
+//     },
+//   },
+//   fields: [
+//     {
+//       name: "body",
+//       label: "Content",
+//       widget: "markdown",
+//       required: false,
+//       i18n: true, // each language has its own body
+//     },
+//   ],
+// };
 
-export const footerCollection = {
-  // identifier_field: "{{slug}}",
-  name: "footers",
-  label: "Footers",
-  label_singular: "Footer",
-  path: "footers/{{slug}}",
-  slug: "{{fields._slug}}",
-  icon: "bottom_navigation",
-  folder: `${CONTENT_DIR}/_partials`,
-  extension: "md",
-  format: "yaml-frontmatter",
-  create: true,
-  editor: { preview: false }, // to not display the preview of the page like in other collections
-  summary: "{{slug}}",
-  i18n: true, // to have the left-right feature with the two languages
-  // MEDIAS
-  media_folder: `/${CONTENT_DIR}/_images`,
-  public_folder: "/_images",
-  sortable_fields: {
-    fields: ["slug"],
-    default: {
-      field: "slug",
-      direction: "ascending",
-    },
-  },
-  fields: [
-    {
-      name: "body",
-      label: "Content",
-      widget: "markdown",
-      required: false,
-      i18n: true, // each language has its own body
-    },
-  ],
-};
+// export const footerCollection = {
+//   // identifier_field: "{{slug}}",
+//   name: "footers",
+//   label: "Footers",
+//   label_singular: "Footer",
+//   path: "footers/{{slug}}",
+//   slug: "{{fields._slug}}",
+//   icon: "bottom_navigation",
+//   folder: `${CONTENT_DIR}/_partials`,
+//   extension: "md",
+//   format: "yaml-frontmatter",
+//   create: true,
+//   editor: { preview: false }, // to not display the preview of the page like in other collections
+//   summary: "{{slug}}",
+//   i18n: true, // to have the left-right feature with the two languages
+//   // MEDIAS
+//   media_folder: `/${CONTENT_DIR}/_images`,
+//   public_folder: "/_images",
+//   sortable_fields: {
+//     fields: ["slug"],
+//     default: {
+//       field: "slug",
+//       direction: "ascending",
+//     },
+//   },
+//   fields: [
+//     {
+//       name: "body",
+//       label: "Content",
+//       widget: "markdown",
+//       required: false,
+//       i18n: true, // each language has its own body
+//     },
+//   ],
+// };
 
 export default async function (eleventyConfig, pluginOptions) {
   eleventyConfig.versionCheck(">=3.0.0-alpha.1");

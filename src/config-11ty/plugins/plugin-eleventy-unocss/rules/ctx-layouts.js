@@ -201,7 +201,7 @@ export default [
         "box-sizing": "content-box",
         "margin-inline": "auto",
         "max-inline-size":
-          "var(--max-width, var(--width-max, var(--measure, 60ch)))",
+          "var(--max-width, var(--width-body, var(--measure, 60ch)))",
         "padding-inline": "var(--gutters-center)",
       };
     },
@@ -374,7 +374,7 @@ export default [
           "--gap-grid": "var(--gap, 1em)",
           // NOTE: width - gap * (columns - 1) / (columns + 1)
           "--width-column-min":
-            "calc(calc(var(--width-max) - var(--gap-grid) * calc(var(--columns) - 1)) / calc(var(--columns) + 1))",
+            "calc(calc(var(--width-body) - var(--gap-grid) * calc(var(--columns) - 1)) / calc(var(--columns) + 1))",
           display: "grid",
           "grid-gap": "var(--gap-grid)",
           "grid-template-columns":
