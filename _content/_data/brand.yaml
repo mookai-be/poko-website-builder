@@ -31,19 +31,33 @@ typeScales:
     maxTypeScale: 1.25
 colors:
   - name: bordeau
-    value: '#741e16'
+    value: '#731E15'
+  - name: rouge
+    value: '#970711'
   - name: corail
     value: '#d34322'
-  - name: sand
-    value: '#a2724e'
-  - name: gold
-    value: '#e6941a'
+  - name: mocha
+    value: '#4B3934'
+  - name: taupe
+    value: '#CCA496'
+  - name: peche
+    value: '#FFCBB9'
   - name: purple
     value: '#8c8197'
+  - name: gold
+    value: '#D07F10'
   - name: black
-    value: '#262626'
+    value: '#000000'
   - name: white
     value: '#ffffff'
+palettes:
+  - name: main
+    read: peche
+    tone: purple
+    pop: mocha
+    neutral: corail
+    selection:
+      bg--selection: mocha
 styleContexts:
   - name: main
     value: ctx
