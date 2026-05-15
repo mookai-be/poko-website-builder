@@ -91,6 +91,7 @@
 html {
   background: #0d0a26;
   position: relative;
+  overflow-x: clip;
 }
 
 /* html::before {
@@ -131,6 +132,7 @@ html::after {
 
 body {
   background: transparent;
+  /* overflow-x: clip; */
 }
 
 /* body::before {
@@ -311,61 +313,64 @@ footer address {
   height: auto;
 }
 
-/* Side label drawer */
-.side-label {
-  --side-label-panel-w: 21rem;
+/* Side label: fixed bottom-right, remonte via JS au scroll du footer */
+.side-label-anchor {
+  --tab-size: 2.75rem;
   position: fixed;
+  bottom: 0;
   right: 0;
-  top: 90vh;
-  transform: translateY(-50%) translateX(var(--side-label-panel-w));
-  display: flex;
-  align-items: stretch;
   z-index: 1000;
+  transition: bottom 0.1s linear;
+}
+
+.side-label {
+  --panel-w: min(23rem, calc(100vw - var(--tab-size)));
+  position: relative;
+  width: var(--tab-size);
+  transform: translateX(0);
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.side-label .st1 {
-  fill: var(--indigo);
-}
-
 .side-label.is-open {
-  transform: translateY(-50%) translateX(0);
+  transform: translateX(calc(-1 * var(--panel-w)));
 }
 
 .side-label__tab {
-  --tab-logo-visual-w: 3rem;
-  --tab-logo-visual-h: 9rem;
-  flex-shrink: 0;
-  width: var(--tab-logo-visual-w);
-  padding-block: 1.5rem;
+  width: var(--tab-size);
+  height: var(--tab-size);
   background: var(--white);
   border: none;
-  border-radius: 0.5rem 0 0 0.5rem;
+  border-radius: .3em 0 0 .3em;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: clip;
+  padding: 0.4rem;
 }
 
-.side-label__tab .poko-logo-cc {
-  width: var(--tab-logo-visual-h);
-  height: var(--tab-logo-visual-w);
-  transform: rotate(-90deg) scale(1.5);
-  transform-origin: center;
+.side-label__tab svg {
+  width: 100%;
+  height: 100%;
+}
+
+.side-label__tab .st1 {
+  fill: var(--indigo);
 }
 
 .side-label__panel {
-  width: var(--side-label-panel-w);
+  position: absolute;
+  bottom: 0;
+  left: 100%;
+  width: var(--panel-w);
   background: var(--white);
-  padding-block: var(--step--3);
+  padding-block: var(--step--2);
   color: var(--indigo);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: var(--step--4);
+  gap: var(--step--2);
   font-size: var(--step--2);
-  border-left: 1px solid var(--indigo);
+  border-radius: .3em 0 0 0;
 }
 
 .side-label__panel p {
@@ -376,9 +381,13 @@ footer address {
   color: var(--indigo);
 }
 
-.side-label__logo .poko-logo-cc {
-  width: var(--step-6);
-  height: auto;
+.side-label__tab:focus-visible {
+  outline: 2px solid var(--color-pop);
+  outline-offset: -2px;
+}
+
+.side-label-anchor:focus-within .side-label__tab {
+  opacity: 1;
 }
 
 @supports (animation-timeline: scroll()) {
