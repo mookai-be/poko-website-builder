@@ -2,8 +2,6 @@
 translationKey: index
 order: 1
 name: Accueil
-eleventyNavigation:
-  order: 1
 ---
 
 # Changer le monde, c'est ton boulot. Le faire savoir, c'est le nôtre.

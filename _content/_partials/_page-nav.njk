@@ -4,9 +4,14 @@ lang }, { by: 'parent', value: '' }]) | eleventyNavigation %}
 {% if navPages | length %}
 
 <header>
-    <nav class="flex flex-nowrap gap-[--step-0] flex-justify-between items-start">
+    <nav id="main-nav" class="cluster">
     <!-- Main pages navigation -->
-    <ul role="list" id="main-nav" class="cluster">
+    <ul role="list" class="cluster">
+        <li id="logo-item">
+          <a href="/" id="logo" aria-label="Acceuil">
+            {% partial "mookai-logo-cc.njk" %}
+          </a>
+        </li>
         {% for link in navPages %}
         <li>
         {# prettier-ignore #}
@@ -38,4 +43,76 @@ lang }, { by: 'parent', value: '' }]) | eleventyNavigation %}
     </nav>
 
 </header>
+
+{% css %}
+:root {
+ --gap-cover: 1em;
+
+}
+:where(body > :where(header, footer, main, aside)) {
+    padding: var(--gap-cover, 1em);
+}
+header {
+    background-color: var(--color-neutral);
+    color: var(--color-read);
+    border: none;
+    box-shadow: 0px 3px 6px #00000029;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+#main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+#main-nav:not(section.cover #main-nav){
+    padding-inline: 0;
+}
+
+#logo-item {
+    margin-inline-end: auto;
+}
+
+#logo {
+    display: block;
+    width: var(--step-9);
+    max-width: var(--step-9);
+}
+
+#logo svg {
+    width: 100%;
+    height: auto;
+    fill: var(--color-read);
+    stroke: none;
+}
+
+#logo svg .cls-1 {
+    fill: var(--color-read);
+}
+
+
+#main-nav ul{
+    margin-block-start: 0;
+    width: 100%;
+    justify-content: flex-end;
+    row-gap: .25em;
+
+}
+
+#main-nav a{
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: Calibri, sans-serif;
+    color: var(--color-text);
+    font-size: var(--step--1);
+}
+
+#main-nav a[aria-current="page"] {
+    color: var(--color-pop);
+    font-weight: 700;
+
+
+}
+{% endcss %}
 {% endif %}
