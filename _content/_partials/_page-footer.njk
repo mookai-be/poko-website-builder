@@ -1,3 +1,55 @@
-<footer>
-    {% partial "mookai-logo-carre.njk" %}
+<footer id="page-footer" class="cluster small palette--contrast bleed-bg">
+    <div id="footer-nav">
+        <ul role="list" class="reset">
+            <li class="flow horizontal">
+                {% icon "tablerFilled:brand-linkedin" %}
+                {% icon "tablerFilled:brand-facebook" %}
+                {% icon "tablerFilled:brand-instagram" %}
+            </li>
+            <li>FAQ</li>
+        </ul>
+        <ul role="list">
+            <li>{% link url="https://www.poko.eco/"%}poko.eco{% endlink %}</li>
+            <li>{% link url="https://www.tess-h.be/"%}Tess-h.be{% endlink %}</li>
+            <li>{% link url="https://www.m4rr.co/fr/"%}m4rr.co{% endlink %}</li>
+        </ul>
+    </div>
+    <div id="footer-contact">
+        <p><strong>© mookaï asbl</strong></p>
+        {% link url="hello@mookai.be" %}hello@mookai.be{% endlink %}
+        <p>BE 1003.532.405</p>
+        <address>Avenue Armand Huysmans 47/2,<br>1050 Bruxelles, Belgique</address>
+    </div>
+    <div id="footer-logo">
+        {% partial "mookai-logo-carre.njk" %}
+    </div>
 </footer>
+
+{% css %}
+footer svg {
+    stroke: none;
+}
+#page-footer {
+    justify-content: flex-end;
+    text-align: right;
+    align-items: end;
+    gap: var(--step-4);
+    color: var(--bordeau);
+
+    --color-text__a: var(--bordeau);
+}
+#page-footer div {
+    height: 100%;
+}
+
+#footer-logo {
+    height: var(--step-9, 8rem);
+    flex-shrink: 0;
+}
+
+#footer-logo svg {
+    width: 100%;
+    height: auto;
+    height: 17rem;
+}
+{% endcss %}
