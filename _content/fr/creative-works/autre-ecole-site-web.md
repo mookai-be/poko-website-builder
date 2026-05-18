@@ -3,6 +3,9 @@ translationKey: autre-ecole-site-web
 order: 11
 lang: fr
 name: L'Autre École - Site web
+metadata:
+  image:
+    src: /_images/mookai-asbl/1.webp
 tags:
   - web
   - site-custom

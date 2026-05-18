@@ -3,6 +3,9 @@ translationKey: una-scelta-site-web
 order: 4
 lang: fr
 name: Una Scelta - Site web
+metadata:
+  image:
+    src: /_images/mookai-asbl/1.webp
 tags:
   - web
   - site-custom

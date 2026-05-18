@@ -3,6 +3,9 @@ translationKey: phytaroma
 order: 3
 lang: fr
 name: PHYTAROMA
+metadata:
+  image:
+    src: /_images/mookai-asbl/1.webp
 tags:
   - branding
   - logo

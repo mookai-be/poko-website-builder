@@ -1,0 +1,28 @@
+<article class="featured-work breakout-clickable">
+
+    {%- if images and images[0] %}
+    <div class="featured-work-image">
+        {% image src=images[0].url, alt="{{ name }}" %}
+    </div>
+    {%- elif pagePreview and pagePreview.image %}
+    <div class="featured-work-image">
+        <img src="{{ pagePreview.image.src }}" alt="{{ name }}">
+    </div>
+    {%- endif %}
+
+    <div class="featured-work-content flow" aria-hidden="true">
+        <h3>{{ name }}</h3>
+        {%- if tags %}
+        <ul class="cluster reset" role="list">
+            {%- for tag in tags %}
+            {%- if tag != "featured" %}
+            <li class="featured-work-tag">{{ tag | replace("-", " ") }}</li>
+            {%- endif %}
+            {%- endfor %}
+        </ul>
+        {%- endif %}
+    </div>
+
+    <a href="{{ url | locale_url }}" aria-label="{{ name }}"></a>
+
+</article>

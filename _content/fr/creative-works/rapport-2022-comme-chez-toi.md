@@ -3,6 +3,9 @@ translationKey: rapport-2022-comme-chez-toi
 order: 10
 lang: fr
 name: Rapport annuel 2022 - Comme Chez Toi ASBL
+metadata:
+  image:
+    src: /_images/mookai-asbl/1.webp
 tags:
   - mise-en-page
   - print

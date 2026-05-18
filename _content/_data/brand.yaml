@@ -4,17 +4,17 @@ fontStacksContexts:
   - name: main
     body:
       native: system-ui
-      custom: Roboto Condensed
+      custom: DM Sans
     heading:
       native: system-ui
-      custom: Roboto Condensed
+      custom: DM Sans
     code:
       native: monospace-code
 customFontsImport:
-  - name: Roboto Condensed
+  - name: DM Sans
     source:
       type: fontsource
-      name: Roboto Condensed
+      name: DM Sans
       weights:
         - '400'
         - '700'
@@ -58,6 +58,20 @@ palettes:
     neutral: corail
     selection:
       bg--selection: mocha
+  - name: mocha
+    read: peche
+    tone: purple
+    pop: corail
+    neutral: mocha
+    selection:
+      bg--selection: corail
+  - name: purple
+    read: mocha
+    tone: peche
+    pop: gold
+    neutral: purple
+    selection:
+      bg--selection: corail
 styleContexts:
   - name: main
     value: ctx

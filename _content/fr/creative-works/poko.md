@@ -3,15 +3,16 @@ translationKey: poko
 order: 1
 lang: fr
 name: poko
+metadata:
+  image:
+    src: /_images/mookai-asbl/1.webp
 tags:
   - web
   - branding
   - logo
   - featured
-vars: {}
 images: []
 ---
-
 
 # poko
 
