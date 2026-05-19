@@ -3,6 +3,9 @@ translationKey: wanna-play
 order: 2
 lang: fr
 name: Wanna Play
+metadata:
+  image:
+    src: /_images/mookai-asbl/1.webp
 tags:
   - branding
   - logo

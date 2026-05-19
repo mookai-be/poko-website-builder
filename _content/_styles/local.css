@@ -172,7 +172,7 @@
 .featured-work:focus-within .featured-work-image img {
     transform: scale(1.04);
 }
-.featured-work-tag {
+.work-tag {
     display: inline-block;
     padding: 0.2em 0.8em;
     border: 1px solid currentColor;
