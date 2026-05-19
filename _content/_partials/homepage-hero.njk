@@ -1,5 +1,4 @@
 {% sectionTwoColumns class="homepage-hero palette-mocha bleed-bg" %}
-
 {% twoColumns type="fixedFluid", widthFixed="40%", widthFluidMin="60%", gap="0" %}
 {% twoColumnsItem class="flow" %}
 {% partial "mookai-logo-carre.njk" %}
@@ -24,15 +23,24 @@ On fait du **design** et du **web** pour les projets qui veulent faire **bouger 
 
 {% endsectionTwoColumns %}
 
+<div class="title-container">
+<h1 class="bg-title">
+Studio créatif engagé
+</h1>
+</div>
+
 {% css %}
 .homepage-hero {
     padding-block: 0;
+    margin-top: 0;
     min-height: 100dvh;
+    order: -1;
 }
 .homepage-hero,
 .homepage-hero > .two-columns {
     min-block-size: 100svh;
     padding: 0;
+    margin-block-start: 0;
 }
 .homepage-hero .item-two-columns {
     padding: var(--py-section) var(--px-section);

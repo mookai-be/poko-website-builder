@@ -3,7 +3,7 @@ lang }, { by: 'parent', value: '' }]) | eleventyNavigation %}
 
 {% if navPages | length %}
 
-<header class="bleed-bg">
+<header class="bleed-bg full-bleed">
     <nav id="main-nav" class="cluster">
     <!-- Main pages navigation -->
     <ul role="list" class="cluster">
@@ -41,9 +41,7 @@ lang }, { by: 'parent', value: '' }]) | eleventyNavigation %}
     </ul>
     {% endif %}
     </nav>
-
 </header>
-
 {% css %}
 :root {
  --gap-cover: 1em;
@@ -60,14 +58,15 @@ header {
     position: sticky;
     top: 0;
     z-index: 10;
+    padding-block: var(--step--2);
 }
 #main-nav {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-}
-#main-nav:not(section.cover #main-nav){
-    padding-inline: 0;
+    max-inline-size: var(--width-max);
+    margin-inline: auto;
+    padding-inline: var(--gap-cover, 1em);
 }
 
 #logo-item {

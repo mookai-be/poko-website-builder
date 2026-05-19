@@ -4,11 +4,10 @@ order: 1
 name: Accueil
 pageLayout: homepage
 ---
+    {% partial "headless/page-nav.11ty.js" %}
 
-::: section {.bg-title-section}
-
-# Studio créatif engagé {.bg-title}
-
+{% partial "homepage-hero.njk" %}
+:::div {.bg-title-section}
 ## Ce qu'on fait
 
 Du site web au logo, en passant par l'illustration et la mise en page — on construit les outils visuels et digitaux qui donnent à ton projet la visibilité qu'il mérite.
@@ -17,7 +16,6 @@ Pas de jargon, pas de sur-promesse. On travaille avec toi, pas pour toi. Notre m
 
 [Voir nos services](/services/){.cta}
 :::
-
 ## Des projets, pas des promesses
 
 {% sectionCollection  %}
@@ -59,6 +57,7 @@ Nos sites sont construits avec [poko](https://www.poko.eco/), un website builder
 
 C'est notre conviction mise en pratique.
 
+{% partial "poko-logo-cc.njk" %}
 :::
 
 ::: div {.full-bleed .banner}
@@ -72,12 +71,3 @@ On répond vite et sans bullshit.
 
 [Dis-nous ce que tu prépares](/contact/){.cta}
 :::
-{% css %}
-.section-collection{
-  overflow: visible;
-}
-.list-collection{
-    gap: 0;
-    padding-inline: 0;
-}
-{% endcss %}

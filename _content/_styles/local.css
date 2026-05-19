@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "Chantal";
+  src: url("../_files/chantal-medium-regular.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
 /* The theme choses how to apply colors */
 :where(:root, body, [class*="palette"]) {
   /* --- DEFAULTS --- */
@@ -68,10 +74,15 @@
   color: var(--color-pop);
   background-color: var(--color-neutral);
 }
-.bg-title-section {
+.title-container {
     position: relative;
 }
+.bg-title-section{
+    position: relative;
+    margin-block-start: var(--step-7);
+}
 .bg-title {
+  font-family: "Chantal", cursive, sans-serif;
   color: var(--color--bg-title, var(--bordeau));
   position: absolute;
   inset-block-start: 0;
@@ -81,12 +92,22 @@
   font-size: clamp(4rem, 12vw, 16rem);
   line-height: 1;
   pointer-events: none;
-  opacity: 0.2;
+  opacity: 20%;
   z-index: 0;
   overflow: hidden;
   margin: 0;
   width: 100%;
-  height: 100%;
+  height: auto;
+  overflow: visible;
+  mix-blend-mode: multiply;
+  top: 3rem;
+}
+.section-collection{
+  overflow: visible;
+}
+.list-collection{
+    gap: 0;
+    padding-inline: 0;
 }
 
 .featured-work {
@@ -124,11 +145,16 @@
     z-index: 2;
     color: var(--color-text);
     text-align: center;
-    padding: var(--py-section) var(--px-section);
+    padding: 1em;
     max-inline-size: var(--width-prose);
     opacity: 0;
     translate: 0 0.5rem;
     transition: opacity 0.3s ease, translate 0.3s ease;
+    height: 100%;
+    justify-content: center;
+}
+.featured-work-content a {
+  margin: auto;
 }
 .featured-work-content ul {
   --gap-cluster: var(--step--4);
@@ -188,4 +214,20 @@
     object-fit: cover;
     object-position: center ;
     padding: 0;
+}
+
+#main-content-homepage{
+    display: flex;
+    flex-direction: column;
+    padding-top: 0;
+}
+
+.poko-logo-cc {
+    display: block;
+    width: 20em;
+    height: auto;
+  }
+.poko-logo-cc path {
+  fill: var(--color-read);
+  transition: fill 0.3s ease;
 }
