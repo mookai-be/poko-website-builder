@@ -38,6 +38,8 @@ colors:
     value: '#d34322'
   - name: mocha
     value: '#4B3934'
+  - name: taupeDark
+    value: '#958075'
   - name: taupe
     value: '#CCA496'
   - name: peche
@@ -60,16 +62,30 @@ palettes:
       bg--selection: mocha
   - name: mocha
     read: peche
-    tone: purple
+    tone: taupe
     pop: corail
     neutral: mocha
     selection:
       bg--selection: corail
   - name: purple
     read: mocha
-    tone: peche
-    pop: gold
+    tone: taupe
+    pop: peche
     neutral: purple
+    selection:
+      bg--selection: corail
+  - name: bordeau
+    read: peche
+    tone: taupeDark
+    pop: corail
+    neutral: bordeau
+    selection:
+      bg--selection: corail
+  - name: gold
+    read: bordeau
+    tone: corail
+    pop: taupeDark
+    neutral: gold
     selection:
       bg--selection: corail
 styleContexts:

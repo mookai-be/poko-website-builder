@@ -50,7 +50,7 @@ lang }, { by: 'parent', value: '' }]) | eleventyNavigation %}
 :where(body > :where(header, footer, main, aside)) {
     padding: var(--gap-cover, 1em);
 }
-header {
+header:has(#main-nav) {
     background-color: var(--color-neutral);
     color: var(--color-read);
     border: none;
