@@ -10,14 +10,24 @@ localizationKey: 1bac5ad486a8
 uuid: '192753223677'
 pageFooter: ''
 pageNav: ''
+pageClass: palette-bordeau
 ---
 
+<div class="title-container">
+  <h1 class="bg-title">
+    Mise en page
+  </h1>
+</div>
+
+:::div {.bg-title-section}
 
 # Des documents qui donnent envie d'être lus
 
 Un bon contenu, c'est essentiel. Mais si la présentation ne suit pas, ton message risque de se perdre. Pour nous, la mise en page, c'est l'art de rendre tes documents non seulement beaux, mais aussi clairs, agréables à lire et 100% alignés avec ton identité.
 
 Confie-nous tes textes, et on les transforme en supports de communication professionnels qui marquent les esprits.
+
+:::
 
 ### On peut s'occuper de tout:
 
@@ -31,4 +41,4 @@ Confie-nous tes textes, et on les transforme en supports de communication profes
 
 Notre plus? On ne se contente pas d'aligner des blocs de texte. On réfléchit à la structure, à la hiérarchie de l'information et à l'expérience de lecture pour que ton message passe avec un maximum d'impact.
 
-[Voir notre portfolio](/portfolio/)
+[Voir notre portfolio](/portfolio/) {.cta}

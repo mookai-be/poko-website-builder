@@ -60,6 +60,11 @@
   /* --thumb-color */
 }
 
+body {
+  --color-bg-theme: inherit;
+  --color-fg-theme: inherit;
+}
+
 .cta {
   display: inline-block;
   color: var(--color-read);

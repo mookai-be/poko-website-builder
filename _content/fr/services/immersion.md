@@ -7,8 +7,16 @@ name: Immersion
 tags:
   - support
 vars: {}
+pageClass: palette-gold
 ---
 
+<div class="title-container">
+  <h1 class="bg-title">
+    Immersion
+  </h1>
+</div>
+
+:::div {.bg-title-section}
 
 # Un regard neuf pour booster ton projet
 
@@ -18,7 +26,7 @@ Parfois, quand on a la tête dans le guidon, on manque de recul pour voir les op
 
 **Prix:** sur mesure, à partir de 9876,54€/mois pour un équivalent temps plein.
 
----
+:::
 
 ### Notre mission, si tu l'acceptes
 
@@ -32,4 +40,4 @@ On met notre double expertise (stratégie/technique et création/humain) au serv
 
 C'est un véritable coup d'accélérateur pour ton projet, avec un impact direct sur ton chiffre d'affaires, ton image et la motivation de tes équipes.
 
-[Prêt(e) à prendre de la hauteur?](/contact/)
+[Prêt(e) à prendre de la hauteur?](/contact/) {.cta}

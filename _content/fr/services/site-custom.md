@@ -10,8 +10,16 @@ localizationKey: 49cadc5a6887
 uuid: 680b12bf36ea
 pageFooter: ''
 pageNav: ''
+pageClass: palette-mocha palette--contrast palette--bg-tone
 ---
 
+<div class="title-container">
+  <h1 class="bg-title">
+    Site custom
+  </h1>
+</div>
+
+:::div {.bg-title-section}
 
 # Un site web sur mesure, qui te ressemble vraiment
 
@@ -21,8 +29,9 @@ Pour respecter ton budget, on part d'une base technique solide et flexible, qu'o
 
 **Prix:** à partir de 3000€.
 
----
+:::
 
+::: section
 ### Les avantages d'un site custom mookaï
 
 - **Performance maximale:** nos sites sont légers, rapides et optimisés pour le référencement (SEO). Ça veut dire une meilleure expérience pour tes visiteurs et une meilleure place sur Google.
@@ -32,7 +41,9 @@ Pour respecter ton budget, on part d'une base technique solide et flexible, qu'o
 - **Liberté et transparence**: le site t'appartient, sans compromis! Tes contenus vivent dans des fichiers facilement lisibles plutôt qu'une base de données opaque.
 
 Pour plus de détails sur la solution que nous utilisons, va voir [poko](https://www.poko.eco/).
+:::
 
+::: section {.palette .bleed-bg}
 ### Notre méthode
 
 Tu es détenteur de la vision du projet et tu connais ton audience et le milieu dans lequel tu évolues. Nous, on s'occupe de traduire ta vision en un support digital performant, élégant, accessible et respectueux de tes visiteurs.
@@ -41,6 +52,7 @@ Si l'un de nos templates te convient, tant mieux, on gagne du temps et de l'arge
 Si tu veux du custom, on commence par une maquette graphique et on l'affine ensemble (jusqu'à 3 sessions de feedback) pour que le résultat final ~~soit à la hauteur~~ dépasse tes attentes.
 
 Ensuite, on implémente la vision en respectant les meilleures pratiques pour un web plus ouvert, connecté et inclusif.
+:::
 
 ### Des options à la carte
 
@@ -52,4 +64,4 @@ Besoin de plus? Voilà quelques exemples de services sur mesure qui peuvent vrai
 - Un design vraiment hors du commun
 - Et bien plus encore...
 
-[Parlons de ton projet sur mesure](/fr/contact)
+[Parlons de ton projet sur mesure](/fr/contact) {.cta}

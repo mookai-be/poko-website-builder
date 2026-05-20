@@ -10,8 +10,16 @@ localizationKey: 91d5df47af1b
 uuid: 53248b09c763
 pageFooter: ''
 pageNav: ''
+pageClass: palette-bordeau
 ---
 
+<div class="title-container">
+  <h1 class="bg-title">
+    Logo flash
+  </h1>
+</div>
+
+:::div {.bg-title-section}
 
 # L'illustration qui raconte ton histoire
 
@@ -19,6 +27,9 @@ Parfois, une image vaut mille mots. L'illustration, c'est un moyen puissant de d
 
 Que tu cherches une mascotte pour ta marque, une série d'icônes pour ton site web ou une illustration unique pour un article de blog, Tess met sa palette au service de ton projet.
 
+:::
+
+::: section 
 ### Nos techniques
 
 - Illustration digitale
@@ -29,4 +40,6 @@ On adore mixer les styles pour créer des visuels qui te ressemblent et qui parl
 
 N'hésite pas à consulter la [galerie d'art](/services/art/) également pour plus d'inspirations.
 
-[Discutons de ton projet d'illustration](/contact)
+[Discutons de ton projet d'illustration](/contact) {.cta}
+
+:::

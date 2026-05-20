@@ -8,7 +8,7 @@ lang }, { by: 'parent', value: '' }]) | eleventyNavigation %}
     <!-- Main pages navigation -->
     <ul role="list" class="cluster">
         <li id="logo-item">
-          <a href="/" id="logo" aria-label="Acceuil">
+          <a href="/" id="logo-mookai" aria-label="Acceuil">
             {% partial "mookai-logo-cc.njk" %}
           </a>
         </li>
@@ -51,8 +51,8 @@ lang }, { by: 'parent', value: '' }]) | eleventyNavigation %}
     padding: var(--gap-cover, 1em);
 }
 header:has(#main-nav) {
-    background-color: var(--color-neutral);
-    color: var(--color-read);
+    background-color: inherit;
+    color: inherit;
     border: none;
     box-shadow: 0px 3px 6px #00000029;
     position: sticky;
@@ -73,21 +73,20 @@ header:has(#main-nav) {
     margin-inline-end: auto;
 }
 
-#logo {
+#logo-mookai {
     display: block;
     width: var(--step-9);
     max-width: var(--step-9);
 }
 
-#logo svg {
+#logo-mookai svg {
     width: 100%;
     height: auto;
-    fill: var(--color-read);
     stroke: none;
 }
 
-#logo svg .cls-1 {
-    fill: var(--color-read);
+#logo-mookai svg .cls-1 {
+    fill: var(--color-fg-theme);
 }
 
 

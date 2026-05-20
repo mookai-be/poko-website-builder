@@ -10,8 +10,16 @@ localizationKey: 38a2c3ac40d8
 uuid: 2a8f78018e5e
 pageFooter: ''
 pageNav: ''
+pageClass: palette-mocha palette--contrast palette--bg-tone
 ---
 
+<div class="title-container">
+  <h1 class="bg-title">
+    Web mutualité
+  </h1>
+</div>
+
+:::div {.bg-title-section}
 
 # Des sites pour tout ton réseau, la simplicité en plus
 
@@ -21,7 +29,7 @@ On a la solution: l'infrastructure mutualisée.
 
 **Prix:** sur mesure, en fonction de ton projet.
 
----
+:::
 
 ### Le principe? C'est simple
 
@@ -43,4 +51,4 @@ On peut connecter cette infrastructure à tes outils existants (CRM, base de don
 
 Bien entendu, chaque site créé bénéficie de toutes les qualités qui font l'ADN de mookaï: éco-conception, performance, sécurité, accessibilité et optimisation pour le référencement.
 
-[Contacte-nous pour une démo](/fr/contact)
+[Contacte-nous pour une démo](/fr/contact) {.cta}

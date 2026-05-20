@@ -10,8 +10,16 @@ localizationKey: 5413282c45a2
 uuid: 452511b3d7f5
 pageFooter: ''
 pageNav: ''
+pageClass: palette-mocha palette--contrast palette--bg-tone
 ---
 
+<div class="title-container">
+  <h1 class="bg-title">
+    Site minimaliste
+  </h1>
+</div>
+
+:::div {.bg-title-section}
 
 # Ton site web pro en une journée chrono?
 
@@ -21,7 +29,7 @@ Tu as un projet génial, mais un budget serré? Tu veux être autonome et ne pas
 
 **Prix:** à partir de 500€ par jour.
 
----
+:::
 
 ### C'est pour qui?
 
@@ -41,4 +49,4 @@ Notre but, c'est ton indépendance. Mais si tu préfères garder un copilote, on
 
 Prêt(e) à lancer ton site?
 
-[Postule pour une journée site minimaliste](/fr/contact)
+[Postule pour une journée site minimaliste](/fr/contact) {.cta}

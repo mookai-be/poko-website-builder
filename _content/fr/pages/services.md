@@ -52,7 +52,7 @@ Un logo, c'est le visage de ton projet. Une illustration, c'est sa personnalité
 
 Parfois, ce qu'il faut n'est pas un livrable mais un regard extérieur, un coup de main pour prendre du recul ou apprendre à tenir les rênes. C'est là qu'on intervient différemment — en tant que partenaire, pas prestataire.
 {% endsectionHeader %}
-{% collection collection="services", filters=[{"by":"tag","value":["support"]}], sortCriterias=[], type="flow", class=" palette--bg-tone bleed-bg" %}{% endcollection %}
+{% collection collection="services", filters=[{"by":"tag","value":["support"]}], sortCriterias=[], type="flow", class=" palette--bg-pop bleed-bg" %}{% endcollection %}
 
 {% endsectionCollection %}
 

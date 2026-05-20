@@ -83,8 +83,8 @@ palettes:
       bg--selection: corail
   - name: gold
     read: bordeau
-    tone: corail
-    pop: taupeDark
+    tone: taupeDark
+    pop: corail
     neutral: gold
     selection:
       bg--selection: corail
