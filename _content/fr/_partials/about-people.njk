@@ -1,0 +1,27 @@
+<div class="with-sidebar">
+<div class="sidebar">
+{% image src=metadata.image.src, alt=metadata.image.alt %}
+
+</div>
+<div class="flow">
+
+<hgroup>
+<h3 class="h-2">{{name}}</h3>
+<p class="h3">{{metadata.jobTitle}}</p>
+</hgroup>
+
+{% for linkItem in metadata.links %}{% if linkItem.name == "site" %}<a href="{{ linkItem.url }}">{{ linkItem.url | replace("https://www.", "") | replace("https://", "") }}</a>{% endif %}{% endfor %}
+
+{{ rawInput | renderContent("njk,md") | safe }}
+
+<ul class="reset cluster" role="list">
+  {% for linkItem in metadata.links %}
+  {% if linkItem.name != "site" %}
+  {% set iconName = "tablerOutline:brand-" ~ linkItem.name %}
+  <li>{% link url=linkItem.url %}{% icon iconName %}{% endlink %}</li>
+  {% endif %}
+  {% endfor %}
+</ul>
+
+</div>
+</div>

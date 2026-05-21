@@ -19,9 +19,11 @@ pageClass: palette-mocha palette--contrast palette--bg-tone
   </h1>
 </div>
 
+::: section
+
 :::div {.bg-title-section}
 
-# Un site web sur mesure, qui te ressemble vraiment
+## Un site web sur mesure, qui te ressemble vraiment
 
 Que ta vision soit déjà limpide ou encore en pleine exploration, le site custom est _la_ solution sur mesure polyvalente et vraiment personnalisée. On est là pour t'aider à définir tes besoins et créer l'outil digital parfaitement adapté à ton projet.
 
@@ -54,6 +56,8 @@ Si tu veux du custom, on commence par une maquette graphique et on l'affine ense
 Ensuite, on implémente la vision en respectant les meilleures pratiques pour un web plus ouvert, connecté et inclusif.
 :::
 
+::: section
+
 ### Des options à la carte
 
 Besoin de plus? Voilà quelques exemples de services sur mesure qui peuvent vraiment faire la différence pour te faciliter la gestion et t'aider à développer ton activité:
@@ -65,3 +69,4 @@ Besoin de plus? Voilà quelques exemples de services sur mesure qui peuvent vrai
 - Et bien plus encore...
 
 [Parlons de ton projet sur mesure](/fr/contact) {.cta}
+:::

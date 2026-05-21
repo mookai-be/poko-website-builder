@@ -19,9 +19,11 @@ pageClass: palette-bordeau
   </h1>
 </div>
 
+::: section
+
 :::div {.bg-title-section}
 
-# Ton logo: bien plus qu'une image
+## Ton logo: bien plus qu'une image
 
 Un logo, ce n'est pas juste un joli dessin. C'est le visage de ton projet. C'est la première chose que tes clients voient, et la dernière dont ils se souviennent. Chez mookaï, on prend ça très au sérieux, mais toujours avec le sourire.
 
@@ -94,12 +96,19 @@ le guide ultime. Elle ajoute les interdits, des exemples d'utilisation, des mise
 
 :::
 
+::: section
 ### Besoin d'un logo pour hier et avec un petit budget?
 
 Jette un œil à notre offre de [logo "flash"](/services/logo-flash/). C'est rapide, efficace et économique.
 
-***
 
 _Un acompte de 30% est demandé pour démarrer la collaboration. Pour les packs 1, 2 et 3, les fichiers sources vectoriels (.ai, .pdf) sont disponibles en option pour 500€._
 
 [Prêt(e) à créer ton identité? Contacte-nous!](/contact/) {.cta}
+:::
+
+{% css %}
+.section-grid .list-grid {
+  row-gap: var(--step-7);
+}
+{% endcss %}

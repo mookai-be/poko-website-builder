@@ -60,16 +60,95 @@
   /* --thumb-color */
 }
 
+:root {
+  /* --width-prose: 50rem; */
+  /*--width-max: (alias for width-body) ;*/
+  /*--width-outset: ;*/
+  /* --width-body: calc(var(--width-prose) * 1.618); */
+  /*--width-max: var(--width-body);*/
+  /* --width-section: var(--width-body); */
+  /*--width-inset: ;*/
+  /* --width-featured: calc(var(--width-prose) / 1.618); */
+  /* --width-card: calc(var(--width-prose) / 2.618); */
+  /* --width-token: calc(var(--width-prose) / 4.2358); */
+
+  /* --radius-round: 1e5px; */
+  /*--radius-body: 0rem;*/
+  /*--radius-section: 2rem;*/
+  --radius-prose: 1rem;
+  --radius-featured: 1rem;
+  /* --radius-card: 1rem; */
+  --radius-token: var(--radius-round);
+
+  --thick-body: 5px;
+  --thick-section: 5px;
+  --thick-prose: 5px;
+  --thick-featured: 2px;
+  --thick-card: 2px;
+  --thick-token: 1px;
+
+  /*--border-style-body: solid;*/
+  /*--border-style-section: solid;*/
+  /*--border-style-prose: solid;*/
+  /*--border-style-featured: solid;*/
+  /*--border-style-card: solid;*/
+  --border-style-token: solid;
+
+  --px-body: var(--step--2);
+  --px-section: var(--step--1);
+  --px-prose: var(--step--1);
+  --px-featured: var(--step--1);
+  --px-card: var(--step-1);
+  --px-token: 1.5em;
+
+  --py-body: var(--step-2);
+  --py-section: var(--step-6);
+  /*--py-area: var(--step-1);*/
+  --py-prose: var(--step-1);
+  --py-featured: var(--step-0);
+  --py-card: var(--step-1);
+  --py-token: 0.2em;
+
+  /* --gap-body: var(--step-0, 1.25rem); */
+  /* --gap-section: var(--step-0, 1.25rem); */
+  /* --gap-prose: var(--step--1, 1rem); */
+  /* --gap-featured: var(--step--1, 1rem); */
+  /* --gap-card: var(--step--1, 1rem); */
+  /* --gap-token: var(--step--1, 1rem); */
+
+  /* --flow-p: 1em; */
+  /* --flow-h1: 0.67em; */
+  /* --flow-h2: 0.83em; */
+  /* --flow-h3: 1em; */
+  /* --flow-h4: 1.33em; */
+  /* --flow-h5: 1.67em; */
+  /* --flow-h6: 2.33em; */
+  /* --flow-hr: 1em; */
+  /* --flow-prose: var(--step-1); */
+  /* --flow-section: var(--step-2); */
+  /* --flow-area: var(--step-3); */
+
+  /* ul and ol left padding */
+  /* --offset-list: 2rem; */
+  /* --offset-blockquote: 1rem; */
+  /* --text-underline-offset: 0.15em; */
+  /* --fit: cover; */
+}
+
 body {
   --color-bg-theme: inherit;
   --color-fg-theme: inherit;
+}
+
+main:has(.homepage-hero) {
+  padding-top: 0;
 }
 
 .cta {
   display: inline-block;
   color: var(--color-read);
   background-color: var(--color-pop);
-  padding: var(--step--3) var(--step-1);
+  padding: 0.25em 0.75em;
   border: 2px solid var(--color-pop);
   border-radius: var(--radius-round);
   text-decoration: none;
@@ -84,7 +163,6 @@ body {
 }
 .bg-title-section{
     position: relative;
-    margin-block-start: var(--step-7);
 }
 .bg-title {
   font-family: "Chantal", cursive, sans-serif;
@@ -94,7 +172,7 @@ body {
   inset-inline-start: 0;
   inline-size: 100%;
   max-inline-size: var(--width-max);
-  font-size: clamp(4rem, 12vw, 16rem);
+  font-size: var(--step-7);
   line-height: 1;
   pointer-events: none;
   opacity: 20%;
@@ -191,6 +269,7 @@ body {
   max-inline-size: 25em;
   position: relative;
   overflow: visible;
+  background-color: transparent;
 }
 .review-card blockquote {
   border: none;

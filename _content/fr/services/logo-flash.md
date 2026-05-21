@@ -19,9 +19,11 @@ pageClass: palette-bordeau
   </h1>
 </div>
 
+::: section
+
 :::div {.bg-title-section}
 
-# Un logo pro, et vite!
+## Un logo pro, et vite!
 
 Besoin d'un logo rapidement sans sacrifier la qualité? La formule "logo flash" est faite pour toi.
 

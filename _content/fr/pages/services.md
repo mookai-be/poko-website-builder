@@ -14,9 +14,11 @@ eleventyNavigation:
   </h1>
 </div>
 
+::: section
+
 :::div {.bg-title-section}
 
-# Ce qu'on fait. Et pourquoi on le fait comme ça.
+## Ce qu'on fait. Et pourquoi on le fait comme ça.
 
 On ne vend pas des livrables. On construit des outils qui durent, des identités qui tiennent la route et des relations qui valent le coup. Voilà ce qu'on propose — et pour qui c'est fait.
 
@@ -70,7 +72,7 @@ Tess est aussi artiste. Et si tes murs de bureau, ton cabinet ou ton espace de c
 {% image src="/_images/dscf0466.webp" %}
 :::
 
-::: div {.flow .text-center .my-[var(--step-7)]}
+::: section
 
 Tu ne sais pas par où commencer? {.h3}
 
@@ -81,9 +83,6 @@ On en parle, et on trouve ensemble ce qui a du sens pour toi.
 :::
 
 {% css %}
-.bg-title-section {
-  margin-block-end: var(--step-7);
-}
 
 .section-collection.switcher {
   padding: 0;

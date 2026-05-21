@@ -32,7 +32,7 @@ typeScales:
 colors:
   - name: bordeau
     value: '#731E15'
-  - name: rouge
+  - name: red
     value: '#970711'
   - name: corail
     value: '#d34322'
@@ -42,7 +42,7 @@ colors:
     value: '#958075'
   - name: taupe
     value: '#CCA496'
-  - name: peche
+  - name: peach
     value: '#FFCBB9'
   - name: purple
     value: '#8c8197'
@@ -54,14 +54,14 @@ colors:
     value: '#ffffff'
 palettes:
   - name: main
-    read: peche
+    read: peach
     tone: purple
     pop: mocha
     neutral: corail
     selection:
       bg--selection: mocha
   - name: mocha
-    read: peche
+    read: peach
     tone: taupe
     pop: corail
     neutral: mocha
@@ -70,12 +70,12 @@ palettes:
   - name: purple
     read: mocha
     tone: taupe
-    pop: peche
+    pop: peach
     neutral: purple
     selection:
       bg--selection: corail
   - name: bordeau
-    read: peche
+    read: peach
     tone: taupeDark
     pop: corail
     neutral: bordeau
@@ -88,6 +88,21 @@ palettes:
     neutral: gold
     selection:
       bg--selection: corail
+  - name: white
+    read: purple
+    tone: taupeDark
+    pop: bordeau
+    neutral: white
+    selection:
+      bg--selection: purple
+  - name: red
+    read: peach
+    tone: taupe
+    pop: purple
+    neutral: red
+    selection:
+      bg--selection: purple
+
 styleContexts:
   - name: main
     value: ctx

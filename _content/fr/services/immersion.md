@@ -16,9 +16,11 @@ pageClass: palette-gold
   </h1>
 </div>
 
+::: section
+
 :::div {.bg-title-section}
 
-# Un regard neuf pour booster ton projet
+## Un regard neuf pour booster ton projet
 
 Parfois, quand on a la tête dans le guidon, on manque de recul pour voir les opportunités. L'offre "Immersion", c'est notre service de conseil le plus complet. On devient ton partenaire stratégique le temps d'une mission pour travailler **sur** ton projet, plutôt que **dans** ton projet.
 

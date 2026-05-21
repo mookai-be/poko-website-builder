@@ -15,9 +15,11 @@ pageClass: palette-gold
   </h1>
 </div>
 
+::: section
+
 :::div {.bg-title-section}
 
-# Deviens autonome sur tes outils de com'
+## Deviens autonome sur tes outils de com'
 
 Être entrepreneur, c'est souvent devoir porter plusieurs casquettes. Mais tu n'as pas besoin de devenir un expert en tout pour être efficace. On a créé des formations et des ateliers pour te donner les clés et les raccourcis qui te feront gagner un temps précieux.
 
@@ -88,11 +90,14 @@ texte
 {% endgridItem %}
 {% endgrid %}
 
-{% endsectionGrid %}
-
+{% sectionFooter %}
 Que ce soit en individuel ou en groupe, on est là pour partager notre passion et te rendre plus indépendant sans compromis sur la qualité.
 
 [Dis-nous ce que tu veux apprendre](/contact/) {.cta}
+{% endsectionFooter %}
+
+{% endsectionGrid %}
+
 
 {% css %}
 .banner-formations {

@@ -19,9 +19,11 @@ pageClass: palette-bordeau
   </h1>
 </div>
 
+::: section
+
 :::div {.bg-title-section}
 
-# L'illustration qui raconte ton histoire
+## L'illustration qui raconte ton histoire
 
 Parfois, une image vaut mille mots. L'illustration, c'est un moyen puissant de donner une personnalité unique à ta communication, de simplifier des idées complexes ou simplement d'ajouter une touche de poésie à tes supports.
 
