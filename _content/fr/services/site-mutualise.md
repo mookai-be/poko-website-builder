@@ -53,4 +53,4 @@ On peut connecter cette infrastructure à tes outils existants (CRM, base de don
 
 Bien entendu, chaque site créé bénéficie de toutes les qualités qui font l'ADN de mookaï: éco-conception, performance, sécurité, accessibilité et optimisation pour le référencement.
 
-[Contacte-nous pour une démo](/fr/contact) {.cta}
+[Contacte-nous pour une démo](/fr/contact){.cta}

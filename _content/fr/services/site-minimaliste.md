@@ -51,4 +51,4 @@ Notre but, c'est ton indépendance. Mais si tu préfères garder un copilote, on
 
 Prêt(e) à lancer ton site?
 
-[Postule pour une journée site minimaliste](/fr/contact) {.cta}
+[Postule pour une journée site minimaliste](/fr/contact){.cta}

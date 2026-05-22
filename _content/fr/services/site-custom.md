@@ -68,5 +68,5 @@ Besoin de plus? Voilà quelques exemples de services sur mesure qui peuvent vrai
 - Un design vraiment hors du commun
 - Et bien plus encore...
 
-[Parlons de ton projet sur mesure](/fr/contact) {.cta}
+[Parlons de ton projet sur mesure](/fr/contact){.cta}
 :::

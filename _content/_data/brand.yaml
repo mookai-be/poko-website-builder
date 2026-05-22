@@ -58,50 +58,36 @@ palettes:
     tone: purple
     pop: mocha
     neutral: corail
-    selection:
-      bg--selection: mocha
   - name: mocha
     read: peach
     tone: taupe
     pop: corail
     neutral: mocha
-    selection:
-      bg--selection: corail
   - name: purple
     read: mocha
     tone: taupe
     pop: peach
     neutral: purple
-    selection:
-      bg--selection: corail
   - name: bordeau
     read: peach
     tone: taupeDark
     pop: corail
     neutral: bordeau
-    selection:
-      bg--selection: corail
   - name: gold
     read: bordeau
     tone: taupeDark
     pop: corail
     neutral: gold
-    selection:
-      bg--selection: corail
   - name: white
     read: purple
     tone: taupeDark
     pop: bordeau
     neutral: white
-    selection:
-      bg--selection: purple
   - name: red
     read: peach
     tone: taupe
     pop: purple
     neutral: red
-    selection:
-      bg--selection: purple
 
 styleContexts:
   - name: main

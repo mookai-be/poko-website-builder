@@ -41,7 +41,7 @@ Pas sûr de ce dont tu as besoin? Voilà comment ça démarre souvent:
 {% collection collection="reviews", filters=[{"by":"name","value":["Marie-Laure"]}], sortCriterias=[], itemPartial="review-card" %}{% endcollection %}
 :::
 
-::: section {.palette-purple .bleed-bg}
+::: section {.palette-purple .bleed-bg .pb-[var(--step-9)]}
 
 ## Écris-nous
 
@@ -89,7 +89,7 @@ Tu es plutôt réseaux sociaux? On est là aussi: [Instagram](https://instagram.
 
 Et si tu cherches à rejoindre l'équipe ou proposer un partenariat, mentionne-le dans le formulaire ou l'email. On lit tout, vraiment.
 {% endtwoColumnsItem %}
-{% twoColumnsItem  %}
+{% twoColumnsItem class="item-two-columns-img-bleed" %}
 {% image src="/_images/dscf0434.webp" %}
 {% endtwoColumnsItem %}
 {% endtwoColumns %}

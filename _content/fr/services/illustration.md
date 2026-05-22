@@ -42,6 +42,6 @@ On adore mixer les styles pour créer des visuels qui te ressemblent et qui parl
 
 N'hésite pas à consulter la [galerie d'art](/services/art/) également pour plus d'inspirations.
 
-[Discutons de ton projet d'illustration](/contact) {.cta}
+[Discutons de ton projet d'illustration](/contact){.cta}
 
 :::

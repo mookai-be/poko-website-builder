@@ -104,7 +104,7 @@ Jette un œil à notre offre de [logo "flash"](/services/logo-flash/). C'est rap
 
 _Un acompte de 30% est demandé pour démarrer la collaboration. Pour les packs 1, 2 et 3, les fichiers sources vectoriels (.ai, .pdf) sont disponibles en option pour 500€._
 
-[Prêt(e) à créer ton identité? Contacte-nous!](/contact/) {.cta}
+[Prêt(e) à créer ton identité? Contacte-nous!](/contact/){.cta}
 :::
 
 {% css %}

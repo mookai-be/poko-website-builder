@@ -42,4 +42,4 @@ On met notre double expertise (stratégie/technique et création/humain) au serv
 
 C'est un véritable coup d'accélérateur pour ton projet, avec un impact direct sur ton chiffre d'affaires, ton image et la motivation de tes équipes.
 
-[Prêt(e) à prendre de la hauteur?](/contact/) {.cta}
+[Prêt(e) à prendre de la hauteur?](/contact/){.cta}

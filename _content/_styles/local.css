@@ -12,7 +12,7 @@
   /* --color-border: var(); */
   /* --color-border: var(); */
   /* --color-outline: var(); */
-  /* --color-text-decoration: var(); */
+  --color-text-decoration: var(--color-pop-theme);
   /* --color-text-emphasis: var(); */
   /* --color-shadow has to be used manually in box-shadow definitions */
   /*--color-shadow: var();*/
@@ -25,13 +25,13 @@
   /* --color-outline--focus: var(); */
 
   /* --- SELECTION --- */
-  /*--color-text--selection: var();
-    --color-bg--selection: var();*/
+  --color-text--selection: var(--color-bg);
+  --color-bg--selection: var(--color-text);
 
   /* --- A --- */
   /* --color-text__a: var(); */
   /* --color-bg__a: transparent; */
-  --color-text__a--hover: var(--color-pop-theme);
+  /* --color-text__a--hover: var(--color-pop-theme); */
   /* --color-bg__a--hover: var(); */
 
   /* --- BUTTON --- */
@@ -144,6 +144,38 @@ main:has(.homepage-hero) {
   padding-top: 0;
 }
 
+a {
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: var(--deco-thickness, 0.2em);
+  text-underline-offset: var(--deco-offset, 0.15em);
+}
+
+a:hover {
+  text-decoration-thickness: var(--deco-thickness-hover, 1.2em);
+  text-underline-offset: var(--deco-offset-hover, -0.9em);
+  background-color: transparent;
+}
+
+/* a:not(.cta, .nav-links, #logo-mookai, :has(svg)) {
+  background: linear-gradient(var(--color-pop), var(--color-pop)) no-repeat 0 100%;
+  background-size: 100% 0.2em;
+  transition: background-size 0.25s ease;
+  text-decoration: none;
+}
+a:not(.cta, .nav-links, #logo-mookai, :has(svg)):hover {
+  background-size: 100% 100%;
+  color: var(--color-read);
+}
+
+.palette--bg-pop a:not(.cta, .nav-links, #logo-mookai, :has(svg)) {
+  background: linear-gradient(var(--color-tone), var(--color-tone)) no-repeat 0 100%;
+  background-size: 100% 0.2em;
+}
+.palette--bg-pop a:not(.cta, .nav-links, #logo-mookai, :has(svg)):hover {
+  background-size: 100% 100%;
+  color: var(--color-read);
+} */
+
 .cta {
   display: inline-block;
   color: var(--color-read);
@@ -156,7 +188,7 @@ main:has(.homepage-hero) {
 
 .cta:hover {
   color: var(--color-pop);
-  background-color: var(--color-neutral);
+  background-color: transparent;
 }
 .title-container {
     position: relative;
@@ -190,7 +222,6 @@ main:has(.homepage-hero) {
 }
 .list-collection{
     gap: 0;
-    padding-inline: 0;
 }
 
 .featured-work {
@@ -312,6 +343,27 @@ main:has(.homepage-hero) {
     height: auto;
   }
 .poko-logo-cc path {
-  fill: var(--color-read);
+  fill: var(--color-pop);
   transition: fill 0.3s ease;
+}
+
+.item-two-columns-img-bleed {
+  margin-top: -9rem;
+}
+
+.item-two-columns-img-bleed img {
+  border-radius: var(--step-1);
+}
+
+section:has(.item-two-columns-img-bleed) {
+  overflow: visible;
+}
+
+.section-collection:has(.review-card) .list-collection {
+  display: block;
+  columns: 2;
+}
+
+.section-collection:has(.review-card) .list-collection figure {
+  break-inside: avoid;
 }

@@ -47,7 +47,7 @@ L’asbl à été fondée fin décembre 2024… on travail ensemble depuis 2015�
   </p>
 </address>
 
-[Les statuts](/organizations/mookai/){.cta}
+[En savoir plus sur nous](/organizations/mookai/){.cta}
 :::
 
 

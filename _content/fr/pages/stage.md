@@ -56,7 +56,8 @@ Selon tes compétences et ton évolution pendant le stage:
 
 :::
 
-{% sectionTwoColumns class="searched-profiles pb-0" %}
+
+{% sectionBuilder class="searched-profiles pb-0" %}
 {% sectionHeader  %}
 ## Profils recherché
 
@@ -77,11 +78,8 @@ On ne cherche pas un profil “parfait”, mais quelqu’un de solide sur au moi
 {% endtwoColumnsItem %}
 {% endtwoColumns %}
 
-{% endsectionTwoColumns %}
 
-{% sectionTwoColumns class="searched-profiles pt-0" %}
-
-{% twoColumns class="v--gap-switcher:0" %}
+{% twoColumns class="v--gap-switcher:0 mt-0" %}
 {% twoColumnsItem class="palette-gold" %}
 ### Communication vente
 
@@ -96,7 +94,7 @@ On ne cherche pas un profil “parfait”, mais quelqu’un de solide sur au moi
 {% endtwoColumnsItem %}
 {% endtwoColumns %}
 
-{% endsectionTwoColumns %}
+{% endsectionBuilder %}
 
 ::: section
 
@@ -140,7 +138,7 @@ On ne cherche pas un profil “parfait”, mais quelqu’un de solide sur au moi
 {% sectionTwoColumns  %}
 
 {% twoColumns type="switcher" %}
-{% twoColumnsItem  %}
+{% twoColumnsItem class="item-two-columns-img-bleed" %}
 {% image src="/_images/dscf0430.webp" %}
 {% endtwoColumnsItem %}
 {% twoColumnsItem  %}

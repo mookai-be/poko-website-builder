@@ -17,6 +17,7 @@ lang }, { by: 'parent', value: '' }]) | eleventyNavigation %}
         {# prettier-ignore #}
         <a
             href="{{link.url}}"
+            class="nav-links"
             hreflang="{{link.lang}}"
             {% if link.url == page.url %}aria-current="page"{% endif %}
             >{{link.title}}</a
@@ -32,6 +33,7 @@ lang }, { by: 'parent', value: '' }]) | eleventyNavigation %}
         <li>
         <a
             href="{{link.url}}"
+            class="nav-links"
             hreflang="{{link.lang}}"
             aria-current="{{ 'page' if link.lang === page.lang else 'false' }}"
             ><abbr lang="{{link.lang}}" title="{{link.label}}"
@@ -46,9 +48,6 @@ lang }, { by: 'parent', value: '' }]) | eleventyNavigation %}
 :root {
  --gap-cover: 1em;
 
-}
-:where(body > :where(header, footer, main, aside)) {
-    padding: var(--gap-cover, 1em);
 }
 header:has(#main-nav) {
     background-color: var(--color-bg);

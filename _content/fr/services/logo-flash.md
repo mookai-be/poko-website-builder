@@ -31,4 +31,4 @@ C'est une sélection de logos pré-dessinés par Tess, prêts à être adaptés 
 
 :::
 
-[Toutes les infos et les logos disponibles sont sur le site de Tess](https://www.tess-h.be/logo-flash/) {.cta}
+[Toutes les infos et les logos disponibles sont sur le site de Tess](https://www.tess-h.be/logo-flash/){.cta}

@@ -58,7 +58,7 @@ Depuis 2015, on aide les projets à impact à grandir et à se faire entendre.
 
 [En savoir plus sur mookaï](/organizations/mookai/){.cta}
 {% endtwoColumnsItem %}
-{% twoColumnsItem  %}
+{% twoColumnsItem class="item-two-columns-img-bleed" %}
 {% image src="/_images/dscf0062.webp" %}
 {% endtwoColumnsItem %}
 {% endtwoColumns %}

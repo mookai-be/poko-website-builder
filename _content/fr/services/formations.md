@@ -93,7 +93,7 @@ texte
 {% sectionFooter %}
 Que ce soit en individuel ou en groupe, on est là pour partager notre passion et te rendre plus indépendant sans compromis sur la qualité.
 
-[Dis-nous ce que tu veux apprendre](/contact/) {.cta}
+[Dis-nous ce que tu veux apprendre](/contact/){.cta}
 {% endsectionFooter %}
 
 {% endsectionGrid %}
