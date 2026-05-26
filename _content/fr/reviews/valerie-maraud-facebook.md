@@ -11,4 +11,4 @@ vars: {}
 
 > Vraiment à l'écoute de mes besoins et très flexible. Je recommande vivement de les rencontrer de belles personnes.
 
-Valérie Maraud - {% link type="internal" %}https://www.facebook.com/vmaraud/{% endlink %}
+Valérie Maraud - {% link url="https://www.facebook.com/vmaraud/", type="external" %}Breath love eat{% endlink %}
