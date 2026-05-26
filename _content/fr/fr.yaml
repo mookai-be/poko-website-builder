@@ -13,3 +13,5 @@ tagsList:
     name: Accompagnement
   - slug: featured
     name: Mis en avant
+  - slug: illustration
+    name: Illustration
