@@ -1,10 +1,14 @@
 tagsList:
   - slug: print
     name: Graphisme
+  - slug: branding
+    name: Branding
   - slug: web
     name: Web
   - slug: art
     name: Art
+  - slug: photo
+    name: Photo
   - slug: support
     name: Accompagnement
   - slug: featured
