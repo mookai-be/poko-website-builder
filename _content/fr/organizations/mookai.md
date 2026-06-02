@@ -27,7 +27,7 @@ On est une ASBL. Pas par hasard.
 :::
 
 ::: div {.full-bleed .banner}
-{% image src="/_images/dscf0466.webp" %}
+{% image src="/_images/dscf0466-2.webp" %}
 :::
 
 {% sectionCollection class="profile palette-mocha bleed-bg v--width-sidebar:18rem v--radius:var(--step-4) v--bleed-bottom:6rem" %}
