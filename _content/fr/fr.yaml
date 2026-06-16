@@ -15,3 +15,5 @@ tagsList:
     name: Mis en avant
   - slug: illustration
     name: Illustration
+  - slug: logo
+    name: Logo
