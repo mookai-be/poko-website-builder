@@ -19,3 +19,7 @@ tagsList:
     name: Logo
   - slug: site-custom
     name: Site custom
+  - slug: mise-en-page
+    name: Mise en page
+  - slug: site-toile
+    name: Site toile
