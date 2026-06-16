@@ -3,13 +3,14 @@ translationKey: index
 order: 1
 name: Accueil
 pageLayout: homepage
+vars: {}
 ---
 
 :::div {.flex .flex-col}
 
-{% htmlPartial "headless/page-nav.11ty.js" %}
+{% component "headless/page-nav.11ty.js" %}
 
-{% partial "homepage-hero.njk" %}
+{% htmlPartial "homepage-hero.njk" %}
 
 :::
 
