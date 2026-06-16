@@ -4,7 +4,6 @@ order: 3
 lang: fr
 createdAt: 2026-04-27T19:42:00.000Z
 name: Services
-vars: {}
 eleventyNavigation:
   order: 2
 ---
@@ -70,7 +69,7 @@ Tess est aussi artiste. Et si tes murs de bureau, ton cabinet ou ton espace de c
 {% endsectionCollection %}
 
 ::: div {.full-bleed .banner}
-{% image src="/_images/dscf0466.webp" %}
+{% image src="/_images/dscf0466-2.webp" %}
 :::
 
 ::: section
