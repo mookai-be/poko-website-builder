@@ -78,7 +78,7 @@ Tu ne sais pas par où commencer? {.h3}
 
 On en parle, et on trouve ensemble ce qui a du sens pour toi. 
 
-[On est là.](/contact/){.cta}
+[On est là](/contact/){.cta}
 
 :::
 
