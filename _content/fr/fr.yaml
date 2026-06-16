@@ -17,3 +17,5 @@ tagsList:
     name: Illustration
   - slug: logo
     name: Logo
+  - slug: site-custom
+    name: Site custom
