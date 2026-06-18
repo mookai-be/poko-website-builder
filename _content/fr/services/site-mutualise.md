@@ -6,6 +6,7 @@ createdAt: 2026-04-28T10:54:00.000Z
 name: Site mutualisé
 tags:
   - web
+vars: {}
 localizationKey: 38a2c3ac40d8
 uuid: 2a8f78018e5e
 pageFooter: ''
@@ -39,9 +40,9 @@ On crée une base de site web unique, un "modèle master", qui respecte parfaite
 
 ### Les avantages pour toi
 
-- **Cohérence garantie:** tu gardes le contrôle de l'image de marque sur l'ensemble de ton réseau.
-- **Gestion centralisée:** une seule infrastructure à maintenir pour des dizaines ou des centaines de sites.
-- **Simplicité extrême:** plus besoin de gérer chaque site individuellement. On peut automatiser la création et les mises à jour.
+- **Cohérence garantie:** tu gardes le contrôle de l'image de marque sur l'ensemble de ton réseau
+- **Gestion centralisée:** une seule infrastructure à maintenir pour des dizaines ou des centaines de sites
+- **Simplicité extrême:** plus besoin de gérer chaque site individuellement. On peut automatiser la création et les mises à jour
 
 ### Les avantages pour tes membres
 
