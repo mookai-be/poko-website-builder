@@ -6,6 +6,7 @@ createdAt: 2026-04-28T10:28:00.000Z
 name: Site minimaliste
 tags:
   - web
+vars: {}
 localizationKey: 5413282c45a2
 uuid: 452511b3d7f5
 pageFooter: ''
@@ -29,7 +30,7 @@ Tu as un projet génial, mais un budget serré? Tu veux être autonome et ne pas
 
 **Le concept:** on passe une journée ensemble, et à la fin, ton site est en ligne. Simple, efficace, et 100% à toi.
 
-**Prix:** à partir de 500€ par jour.
+**Prix:** à partir de 500€ par jour
 
 :::
 
