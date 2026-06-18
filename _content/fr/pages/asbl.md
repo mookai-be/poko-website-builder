@@ -5,7 +5,6 @@ lang: fr
 createdAt: 2026-05-21T09:59:00.000Z
 ldType: WebPage
 name: asbl
-vars: {}
 pageClass: palette-mocha palette--contrast palette--bg-tone
 ---
 
@@ -81,5 +80,5 @@ Pour certaines collaborations professionnelles, notamment avec des structures as
 :::
 
 ::: div {.full-bleed .banner}
-{% image src="/_images/dscf0345.webp" %}
+{% image src="/_images/dscf3885.webp" %}
 :::
