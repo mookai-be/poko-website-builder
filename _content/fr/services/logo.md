@@ -30,7 +30,7 @@ Un logo, ce n'est pas juste un joli dessin. C'est le visage de ton projet. C'est
 
 Notre spécificité? On combine deux approches:
 
-- **L'expertise et l'intuition créative de Tess:** pour un logo qui a une âme, qui raconte ton histoire et qui te ressemble, tout en respectant le côté technique et soit déclinable.
+- **L'expertise et l'intuition créative de Tess:** pour un logo qui a une âme, qui raconte ton histoire et qui te ressemble, tout en respectant le côt technique et soit déclinable.
 - **La vision stratégique de Marc:** pour s'assurer que ton logo soit pertinent et qu'il serve tes objectifs sur le long terme
 
 :::
@@ -54,7 +54,8 @@ Idéal pour démarrer avec une identité forte et épurée. On se concentre sur 
 
 Ton logo actuel a pris un petit coup de vieux? On lui offre une seconde jeunesse! On modernise ton logo existant pour qu'il soit à nouveau au top.
 
-- **Ce que tu reçois:** 2 à 3 propositions de lifting, tous les éléments du pack 1, plus une cover pour tes réseaux sociaux.
+- **Ce que tu reçois:** 2 à 3 propositions de lifting, les fichiers de ton logo final (pour le web et l'impression), un favicon, une signature mail, le design de ta carte de visite et une mini charte graphique
++ une cover pour tes réseaux sociaux
 {% endgridItem %}
 {% gridItem  %}
 ### Pack 3: logo symbol - 1800€
