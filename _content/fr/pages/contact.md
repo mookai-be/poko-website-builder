@@ -4,6 +4,7 @@ order: 8
 lang: fr
 createdAt: 2026-04-27T19:44:00.000Z
 name: Contact
+vars: {}
 eleventyNavigation:
   order: 4
 pageClass: palette-mocha palette--contrast palette--bg-tone
@@ -90,7 +91,7 @@ Tu es plutôt réseaux sociaux? On est là aussi: [Instagram](https://instagram.
 Et si tu cherches à rejoindre l'équipe ou proposer un partenariat, mentionne-le dans le formulaire ou l'email. On lit tout, vraiment.
 {% endtwoColumnsItem %}
 {% twoColumnsItem class="item-two-columns-img-bleed" %}
-{% image src="/_images/dscf0434.webp" %}
+{% image src="/_images/dscf0434-2.webp" %}
 {% endtwoColumnsItem %}
 {% endtwoColumns %}
 
