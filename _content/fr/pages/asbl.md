@@ -20,7 +20,23 @@ pageClass: palette-mocha palette--contrast palette--bg-tone
 
 ## Un peu d’administratif
 
-L’asbl à été fondée fin décembre 2024… on travail ensemble depuis 2015…
+mookaï commence bien avant la création de l'ASBL.
+
+Depuis 2015, nous travaillons ensemble sur des projets de communication, de graphisme, communication et de développement web. Pendant plusieurs années, nous avons développé notre activité au sein de Feed by Design, en accompagnant des associations, des institutions, des PME et des entrepreneurs dans leurs projets numériques et créatifs.
+
+Au fil du temps, une évidence s'est imposée: nos compétences, nos personnalités et nos façons d'aborder les projets se complètent naturellement.
+
+Tess est graphiste, illustratrice, photographe et artiste. Elle apporte la sensibilité visuelle, la créativité, le sens du détail et la capacité à raconter des histoires qui touchent les gens.
+
+Marc est développeur web, formateur et passionné de technologies. Il apporte la structure, la réflexion stratégique, les solutions techniques et la capacité à transformer les idées en outils concrets et durables.
+
+Cette complémentarité nous permet d'accompagner un projet dans son ensemble ou d'intervenir à n'importe quelle étape de son développement. De l'identité visuelle au site web, de la stratégie à la mise en œuvre technique, du support imprimé à l'expérience numérique, nous pouvons construire des solutions cohérentes de A à Z.
+
+En décembre 2023, nous avons créé mookaï ASBL pour donner un cadre à cette vision commune: mettre nos compétences au service de projets qui contribuent, à leur échelle, au bien commun.
+
+Aujourd'hui, nous accompagnons principalement des associations, des acteurs culturels, des structures éducatives, des organisations engagées et des entrepreneurs qui souhaitent communiquer avec plus de sens, d'authenticité et de cohérence.
+
+Parce qu'au fond, nous croyons qu'un projet porteur de valeurs mérite autant de soin dans sa communication que dans sa mission.
 
 :::
 
