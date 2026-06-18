@@ -83,7 +83,7 @@ C'est notre conviction mise en pratique.
 
 :::section {.flow .text-center}
 
-## Un projet? Une question?
+## Un projet ? Une question?
 
 On répond vite et sans bullshit
 
