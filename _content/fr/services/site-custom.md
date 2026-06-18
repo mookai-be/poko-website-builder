@@ -6,6 +6,7 @@ createdAt: 2026-04-28T10:06:00.000Z
 name: Site custom
 tags:
   - web
+vars: {}
 localizationKey: 49cadc5a6887
 uuid: 680b12bf36ea
 pageFooter: ''
@@ -29,11 +30,12 @@ Que ta vision soit déjà limpide ou encore en pleine exploration, le site custo
 
 Pour respecter ton budget, on part d'une base technique solide et flexible, qu'on personnalise ensuite largement pour coller à ton identité. Pour les projets plus ambitieux, on peut bien sûr partir d'une page blanche pour un design 100% original.
 
-**Prix:** à partir de 3000€.
+**Prix:** à partir de 3000€
 
 :::
 
 ::: section
+
 ### Les avantages d'un site custom mookaï
 
 - **Performance maximale:** nos sites sont légers, rapides et optimisés pour le référencement (SEO). Ça veut dire une meilleure expérience pour tes visiteurs et une meilleure place sur Google.
@@ -46,6 +48,7 @@ Pour plus de détails sur la solution que nous utilisons, va voir [poko](https:/
 :::
 
 ::: section {.palette .bleed-bg}
+
 ### Notre méthode
 
 Tu es détenteur de la vision du projet et tu connais ton audience et le milieu dans lequel tu évolues. Nous, on s'occupe de traduire ta vision en un support digital performant, élégant, accessible et respectueux de tes visiteurs.
