@@ -23,7 +23,7 @@ tags:
 
 Une illustration n'est pas seulement un outil de communication. C'est aussi une œuvre capable de transformer un lieu, de raconter une histoire ou de susciter une émotion au quotidien.
 
-Nous réalisons des illustrations originales destinées à être exposées dans des espaces professionnels ou privés : bureaux, salles d'attente, restaurants, commerces ou lieux d'accueil. Chaque création apporte une identité visuelle forte et contribue à créer une atmosphère qui te ressemble.
+Nous réalisons des illustrations originales destinées à être exposées dans des espaces professionnels ou privés: bureaux, salles d'attente, restaurants, commerces ou lieux d'accueil. Chaque création apporte une identité visuelle forte et contribue à créer une atmosphère qui te ressemble.
 
 Tu peux choisir parmi les œuvres existantes de Tess ou nous confier une création sur mesure inspirée de ton univers, de tes valeurs ou de l'histoire de ton projet.
 
@@ -41,7 +41,7 @@ Tu peux choisir parmi les œuvres existantes de Tess ou nous confier une créati
 
 ## Nos techniques
 
-- Illustration digitale imprimée en haute qualité
+- Illustration digitale
 - Aquarelle
 - Techniques mixtes
 - Créations personnalisées
