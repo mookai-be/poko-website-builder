@@ -46,9 +46,9 @@ On crée une base de site web unique, un "modèle master", qui respecte parfaite
 
 ### Les avantages pour tes membres
 
-- **Un site pro à moindre coût:** ils bénéficient d'un outil de qualité professionnelle, sans devoir investir dans un développement complet.
-- **Autonomie:** chaque membre peut gérer ses propres contenus via une interface simple.
-- **Pas de soucis techniques:** ils se concentrent sur leur métier, on s'occupe de la technique.
+- **Un site pro à moindre coût:** ils bénéficient d'un outil de qualité professionnelle, sans devoir investir dans un développement complet
+- **Autonomie:** chaque membre peut gérer ses propres contenus via une interface simple
+- **Pas de soucis techniques:** ils se concentrent sur leur métier, on s'occupe de la technique
 
 On peut connecter cette infrastructure à tes outils existants (CRM, base de données...) pour automatiser encore plus le processus.
 
