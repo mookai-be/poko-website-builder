@@ -20,7 +20,9 @@ pageClass: palette-mocha
 
 :::div {.bg-title-section}
 
-## Plus de 10 ans de projets. Voilà ceux qui nous ressemblent le plus.
+## Plus de 10 ans de projets.
+
+## Voilà ceux qui nous ressemblent le plus.
 
 Du logo au site sur mesure, en passant par l'illustration et la mise en page — on a eu la chance de bosser avec des gens qui avaient quelque chose à dire. Voilà une partie de ce qu'on a fait ensemble.
 :::
