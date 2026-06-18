@@ -28,7 +28,7 @@ On ne vend pas des livrables. On construit des outils qui durent, des identités
 :::
 
 ::: div {.full-bleed .banner}
-{% image src="/_images/dscf0466-2.webp" %}
+{% image src="/_images/dscf9920-2.webp" %}
 :::
 
 {% sectionCollection class="switcher palette-mocha bleed-bg mt-0" %}
@@ -72,7 +72,7 @@ Tess est aussi artiste. Et si tes murs de bureau, ton cabinet ou ton espace de c
 {% endsectionCollection %}
 
 ::: div {.full-bleed .banner}
-{% image src="/_images/dscf0466-2.webp" %}
+{% image src="/_images/dscf9954.webp" %}
 :::
 
 ::: section
