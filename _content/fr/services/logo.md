@@ -62,7 +62,8 @@ Ton logo actuel a pris un petit coup de vieux? On lui offre une seconde jeunesse
 
 Le best-seller. On part d'une page blanche pour créer un logo complet, avec un symbole et/ou une typographie unique qui incarne ton projet.
 
-- **Ce que tu reçois:** 3 propositions de logos originaux, tous les éléments du pack Lifting.
+- **Ce que tu reçois:** 3 propositions de logos, les fichiers de ton logo final (pour le web et l'impression), un favicon, une signature mail, le design de ta carte de visite et une mini charte graphique.
++ une cover pour tes réseaux sociaux
 {% endgridItem %}
 {% gridItem  %}
 ### Pack 4: logo - 3100€
