@@ -6,6 +6,7 @@ createdAt: 2026-04-28T11:11:00.000Z
 name: Logo
 tags:
   - print
+vars: {}
 localizationKey: 0eadee7319ce
 uuid: 2b48e4567d44
 pageFooter: ''
@@ -29,8 +30,8 @@ Un logo, ce n'est pas juste un joli dessin. C'est le visage de ton projet. C'est
 
 Notre spécificité? On combine deux approches:
 
-- **L'intuition créative de Tess:** pour un logo qui a une âme, qui raconte ton histoire et qui te ressemble.
-- **La vision stratégique de Marc:** pour s'assurer que ton logo soit pertinent, déclinable et qu'il serve tes objectifs sur le long terme.
+- **L'intuition créative de Tess:** pour un logo qui a une âme, qui raconte ton histoire et qui te ressemble
+- **La vision stratégique de Marc:** pour s'assurer que ton logo soit pertinent, déclinable et qu'il serve tes objectifs sur le long terme
 
 :::
 
@@ -40,7 +41,7 @@ Notre spécificité? On combine deux approches:
 
 On a concocté plusieurs packs pour répondre à chaque besoin et à chaque budget.
 {% endsectionHeader %}
-{% grid  columns="2" %}
+{% grid columns="2" %}
 {% gridItem  %}
 ### Pack 1: Caractère(s) - 750€
 
@@ -97,10 +98,10 @@ le guide ultime. Elle ajoute les interdits, des exemples d'utilisation, des mise
 :::
 
 ::: section
+
 ### Besoin d'un logo pour hier et avec un petit budget?
 
 Jette un œil à notre offre de [logo "flash"](/services/logo-flash/). C'est rapide, efficace et économique.
-
 
 _Un acompte de 30% est demandé pour démarrer la collaboration. Pour les packs 1, 2 et 3, les fichiers sources vectoriels (.ai, .pdf) sont disponibles en option pour 500€._
 
