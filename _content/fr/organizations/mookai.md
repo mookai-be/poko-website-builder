@@ -6,7 +6,6 @@ createdAt: 2026-04-27T19:48:00.000Z
 name: mookaï
 eleventyNavigation:
   title: À propos
-vars: {}
 ---
 
 <div class="title-container">
@@ -19,7 +18,8 @@ vars: {}
 
 :::div {.bg-title-section}
 
-## On bosse avec des gens bien. Pour faire des trucs qui ont du sens.
+## On bosse avec des gens bien.
+Pour faire des trucs qui ont du sens.
 
 mookaï, c'est un studio créatif belge actif depuis 2015. On combine design graphique et développement web pour aider les projets à impact à exister — vraiment — sur le web et dans la tête des gens.
 
