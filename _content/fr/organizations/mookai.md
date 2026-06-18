@@ -19,6 +19,7 @@ eleventyNavigation:
 :::div {.bg-title-section}
 
 ## On bosse avec des gens bien.
+
 Pour faire des trucs qui ont du sens.
 
 mookaï, c'est un studio créatif belge actif depuis 2015. On combine design graphique et développement web pour aider les projets à impact à exister — vraiment — sur le web et dans la tête des gens.
@@ -61,7 +62,7 @@ Voilà comment ça se traduit concrètement:
   </div>
   <div class="values-card flow palette-bordeau" role="listitem" tabindex="0" aria-expanded="false">
     <span class="values-card__title h1">Qualité</span>
-    <p class="values-card__desc">on fait moins pour faire mieux. On préfère quelques projets bien menés à un pipeline de chantiers bâclés.</p>
+    <p class="values-card__desc">on choisi pour faire mieux. On préfère quelques projets bien menés à un pipeline de chantiers bâclés.</p>
   </div>
   <div class="values-card flow palette-gold" role="listitem" tabindex="0" aria-expanded="false">
     <span class="values-card__title h1">Good Vibes</span>
