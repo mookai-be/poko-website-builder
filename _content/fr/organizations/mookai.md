@@ -132,7 +132,7 @@ On travaille avec des indépendants, des ASBL, des coopératives, des petites st
 
 On est aussi ouverts aux **partenariats** avec d'autres agences, freelances créatifs ou développeurs qui partagent nos valeurs — pour collaborer, compléter nos compétences ou se passer des projets.
 
-Tu veux rejoindre l'aventure en tant que stagiaire (dev, graphisme, communication)? 
+Tu veux rejoindre l'aventure en tant que stagiaire (dev, graphisme, communication)?
 
 [Dis-le-nous](/contact/){.cta}
 :::
