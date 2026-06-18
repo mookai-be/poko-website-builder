@@ -39,7 +39,7 @@ Confie-nous tes textes, et on les transforme en supports de communication profes
 - E-book, livret
 - Dossier de présentation
 - Carte de visite
-- Et tout autre document qui mérite d'être mis en valeur.
+- Et tout autre document qui mérite d'être mis en valeur
 
 Notre plus? On ne se contente pas d'aligner des blocs de texte. On réfléchit à la structure, à la hiérarchie de l'information et à l'expérience de lecture pour que ton message passe avec un maximum d'impact.
 
