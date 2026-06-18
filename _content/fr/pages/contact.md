@@ -35,7 +35,7 @@ Pas sûr de ce dont tu as besoin? Voilà comment ça démarre souvent:
 :::
 
 ::: div {.full-bleed .banner}
-{% image src="/_images/dscf0466-2.webp" %}
+{% image src="/_images/dscf0325.webp" %}
 :::
 
 :::section
