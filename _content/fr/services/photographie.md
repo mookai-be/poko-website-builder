@@ -52,4 +52,4 @@ Notre approche privilégie l'authenticité et le naturel afin de créer une banq
 
 ## Quelques exemples
 
-[Galerie à venir)
+[Galerie à venir]
