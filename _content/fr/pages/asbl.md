@@ -75,7 +75,7 @@ Parce qu'au fond, nous croyons qu'un projet porteur de valeurs mérite autant de
 
 ## Co-fondateurs d’une asbl liée au jeu de société en Belgique
 
-En 2017, nous avons cofondé Wanna Play avec une idée simple: le jeu est un formidable outil de connexion. Il rassemble, crée du lien, stimule la créativité et permet de vivre des expériences collectives uniques. Pourtant, l’univers ludique belge était souvent dispersé et difficile à explorer dans son ensemble. Wanna Play est né pour centraliser cette richesse, mettre en lumière les acteurs du secteur et aider chacun — joueurs, associations, professionnels ou curieux — à trouver sa place dans cette communauté. 
+En 2017, nous avons co-fondé {% link url="https://www.wanna-play.be/fr/", type="external" %}Wanna Play{% endlink %} avec une idée simple: le jeu est un formidable outil de connexion. Il rassemble, crée du lien, stimule la créativité et permet de vivre des expériences collectives uniques. Pourtant, l’univers ludique belge était souvent dispersé et difficile à explorer dans son ensemble. Wanna Play est né pour centraliser cette richesse, mettre en lumière les acteurs du secteur et aider chacun — joueurs, associations, professionnels ou curieux — à trouver sa place dans cette communauté. 
 
 Aujourd’hui, Wanna Play agit comme un média, un guide et un point de rencontre pour la culture ludique en Belgique: référencement de lieux et d’événements, valorisation des créateurs, animations, formations et accompagnement autour du jeu sous toutes ses formes. 
 
