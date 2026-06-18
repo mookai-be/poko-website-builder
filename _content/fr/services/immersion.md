@@ -6,7 +6,6 @@ createdAt: 2026-04-28T11:34:00.000Z
 name: Immersion
 tags:
   - support
-vars: {}
 pageClass: palette-gold
 ---
 
@@ -34,11 +33,11 @@ Parfois, quand on a la tête dans le guidon, on manque de recul pour voir les op
 
 On met notre double expertise (stratégie/technique et création/humain) au service de tes défis. On peut intervenir sur une multitude d'aspects:
 
-- **Stratégie globale:** affiner ton positionnement, ta stratégie marketing et commerciale.
-- **Optimisation digitale:** auditer tes outils, automatiser tes processus, améliorer ton SEO.
-- **Communication & Branding:** assurer la cohérence de ton image de marque sur tous les supports.
-- **Culture d'entreprise:** le bien-être au travail, la communication interne, l'organisation du travail, le management, ...
-- **Innovation:** explorer de nouvelles pistes de monétisation ou de nouveaux services.
+- **Stratégie globale:** affiner ton positionnement, ta stratégie marketing et commerciale
+- **Optimisation digitale:** auditer tes outils, automatiser tes processus, améliorer ton SEO
+- **Communication & Branding:** assurer la cohérence de ton image de marque sur tous les supports
+- **Culture d'entreprise:** le bien-être au travail, la communication interne, l'organisation du travail, le management,...
+- **Innovation:** explorer de nouvelles pistes de monétisation ou de nouveaux services
 
 C'est un véritable coup d'accélérateur pour ton projet, avec un impact direct sur ton chiffre d'affaires, ton image et la motivation de tes équipes.
 
