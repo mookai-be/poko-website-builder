@@ -6,6 +6,7 @@ createdAt: 2026-04-28T11:50:00.000Z
 name: Formations
 tags:
   - support
+vars: {}
 pageClass: palette-gold
 ---
 
@@ -23,7 +24,7 @@ pageClass: palette-gold
 
 Être entrepreneur, c'est souvent devoir porter plusieurs casquettes. Mais tu n'as pas besoin de devenir un expert en tout pour être efficace. On a créé des formations et des ateliers pour te donner les clés et les raccourcis qui te feront gagner un temps précieux.
 
-Notre approche? Pas de blabla théorique. Du concret, des astuces de pro, et une bonne dose de pratique pour que tu sois opérationnel tout de suite.
+Notre approche? Pas trop de blabla théorique. Du concret, des astuces de pro, et une bonne dose de pratique pour que tu sois opérationnel tout de suite.
 
 :::
 
@@ -49,7 +50,6 @@ Apprends à reconnaître un bon design et à donner des feedbacks constructifs �
 
 On te montre une technique incroyablement facile pour créer et héberger ton site gratuitement. En même temps, on t'explique les bases du web pour démystifier tout ça et te rendre autonome.
 :::
-
 {% endgridItem %}
 {% gridItem class="card palette--bg-pop" %}
 {% image src="/_images/hygiene-digitale-1.webp", aspectRatio=1.78 %}
@@ -86,18 +86,14 @@ Apprends à reconnaître un bon design et à donner des feedbacks constructifs �
 
 texte
 :::
-
 {% endgridItem %}
 {% endgrid %}
-
-{% sectionFooter %}
+{% sectionFooter  %}
 Que ce soit en individuel ou en groupe, on est là pour partager notre passion et te rendre plus indépendant sans compromis sur la qualité.
 
 [Dis-nous ce que tu veux apprendre](/contact/){.cta}
 {% endsectionFooter %}
-
 {% endsectionGrid %}
-
 
 {% css %}
 .banner-formations {
