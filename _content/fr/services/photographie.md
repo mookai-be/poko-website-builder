@@ -44,7 +44,7 @@ Nous réalisons des reportages et des portraits naturels qui mettent en lumière
 - Reportages événementiels
 - Lieux de travail et espaces professionnels
 - Produits, créations et savoir-faire
-- Coulisses et vie quotidienne de ton activité
+- Coulisses et détails de la vie quotidienne de ton activité
 
 Notre approche privilégie l'authenticité et le naturel afin de créer une banque d'images cohérente, durable et fidèle à ton identité.
 
