@@ -54,7 +54,7 @@ Idéal pour démarrer avec une identité forte et épurée. On se concentre sur 
 
 Ton logo actuel a pris un petit coup de vieux? On lui offre une seconde jeunesse! On modernise ton logo existant pour qu'il soit à nouveau au top.
 
-- **Ce que tu reçois:** 2 à 3 propositions de lifting, les fichiers de ton logo final (pour le web et l'impression), un favicon, une signature mail, le design de ta carte de visite et une mini charte graphique
+- **Ce que tu reçois:** 2 à 3 propositions de liftin, les fichiers de ton logo final (pour le web et l'impression), un favicon, une signature mail, le design de ta carte de visite et une mini charte graphique
 + une cover pour tes réseaux sociaux
 {% endgridItem %}
 {% gridItem  %}
@@ -70,7 +70,10 @@ Le best-seller. On part d'une page blanche pour créer un logo complet, avec un 
 
 L'offre la plus complète pour une communication en béton. En plus d'un logo sur mesure, on développe une identité visuelle riche et déclinable sur tous tes supports.
 
-- **Ce que tu reçois:** 3 propositions de logos, tous les fichiers (y compris les fichiers sources vectoriels .eps), tous les éléments du pack Forte IMP'ression, une charte graphique complète et un support de communication au choix (flyer, dépliant, template de présentation...).
+- **Ce que tu reçois:** 3 propositions de logos, les fichiers de ton logo final (pour le web et l'impression), un favicon, une signature mail, le design de ta carte de visite et une charte graphique complète.
++ une cover pour tes réseaux sociaux
++ un support de communication au choix (flyer, dépliant, template de présentation...)
++ les fichiers sources vectoriels
 {% endgridItem %}
 {% endgrid %}
 
