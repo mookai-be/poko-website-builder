@@ -6,6 +6,7 @@ createdAt: 2026-04-28T11:20:00.000Z
 name: Illustration
 tags:
   - print
+vars: {}
 localizationKey: 91d5df47af1b
 uuid: 53248b09c763
 pageFooter: ''
@@ -15,7 +16,7 @@ pageClass: palette-bordeau
 
 <div class="title-container">
   <h1 class="bg-title">
-    Logo flash
+    Illustration
   </h1>
 </div>
 
@@ -32,6 +33,7 @@ Que tu cherches une mascotte pour ta marque, une série d'icônes pour ton site 
 :::
 
 ::: section 
+
 ### Nos techniques
 
 - Illustration digitale
