@@ -22,7 +22,7 @@ pageClass: palette-mocha palette--contrast palette--bg-tone
 
 ## On discute?
 
-Tu as un projet en tête, une question, ou juste envie de voir si le courant passe? On répond dans les 24-48h — sans bullshit, sans relance commerciale, et souvent avec un vrai conseil même si on n'est pas la bonne solution pour toi.
+Tu as un projet en tête, une question, ou juste envie de voir si le courant passe? On répond rapidement — sans bullshit, sans relance commerciale, et souvent avec un vrai conseil même si on n'est pas la bonne solution pour toi.
 
 ## Ce qu'on peut faire ensemble
 
