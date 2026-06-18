@@ -5,8 +5,10 @@ lang: fr
 createdAt: 2026-05-21T09:59:00.000Z
 ldType: WebPage
 name: asbl
+vars: {}
 pageClass: palette-mocha palette--contrast palette--bg-tone
 ---
+
 <div class="title-container">
   <h1 class="bg-title">
     L'asbl
@@ -50,9 +52,8 @@ L’asbl à été fondée fin décembre 2024… on travail ensemble depuis 2015�
 [En savoir plus sur nous](/organizations/mookai/){.cta}
 :::
 
-
 ::: div {.full-bleed .banner}
-{% image src="/_images/dscf0345.webp" %}
+{% image src="/_images/dscf3807.webp" %}
 :::
 
 ::: section
