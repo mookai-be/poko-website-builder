@@ -5,7 +5,8 @@ lang: fr
 createdAt: 2026-06-18T10:59:00.000Z
 ldType: Service
 name: Photographie
-vars: {}
+tags:
+  - art
 ---
 
 <div class="title-container">
