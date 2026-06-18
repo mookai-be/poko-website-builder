@@ -5,6 +5,8 @@ lang: fr
 createdAt: 2026-06-18T10:58:00.000Z
 ldType: Service
 name: Illustration
+tags:
+  - art
 ---
 
 <div class="title-container">
