@@ -3,7 +3,6 @@ translationKey: index
 order: 1
 name: Accueil
 pageLayout: homepage
-vars: {}
 ---
 
 :::div {.flex .flex-col}
@@ -86,7 +85,7 @@ C'est notre conviction mise en pratique.
 
 ## Un projet? Une question?
 
-On répond vite et sans bullshit.
+On répond vite et sans bullshit
 
 [Dis-nous ce que tu prépares](/contact/){.cta}
 :::
