@@ -6,6 +6,7 @@ createdAt: 2026-04-28T11:22:00.000Z
 name: Art
 tags:
   - art
+vars: {}
 localizationKey: d5cfe5d7225c
 uuid: ca8d2ad6018d
 pageFooter: ''
@@ -38,7 +39,7 @@ On te propose une sélection d'œuvres originales (peinture, aquarelle, photo, a
 - Cabinets médicaux ou paramédicaux
 - Espaces de coworking, bureaux d'entreprise
 - Hôtels, restaurants, cafés
-- Et tout espace professionnel qui a une âme.
+- Et tout espace professionnel qui a une âme
 
 Tu peux choisir parmi les créations de Tess ou nous commander une œuvre sur mesure, parfaitement adaptée à ton espace et à tes valeurs.
 
