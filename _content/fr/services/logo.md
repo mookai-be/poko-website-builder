@@ -30,8 +30,8 @@ Un logo, ce n'est pas juste un joli dessin. C'est le visage de ton projet. C'est
 
 Notre spécificité? On combine deux approches:
 
-- **L'intuition créative de Tess:** pour un logo qui a une âme, qui raconte ton histoire et qui te ressemble
-- **La vision stratégique de Marc:** pour s'assurer que ton logo soit pertinent, déclinable et qu'il serve tes objectifs sur le long terme
+- **L'expertise et l'intuition créative de Tess:** pour un logo qui a une âme, qui raconte ton histoire et qui te ressemble, tout en respectant le côté technique et soit déclinable.
+- **La vision stratégique de Marc:** pour s'assurer que ton logo soit pertinent et qu'il serve tes objectifs sur le long terme
 
 :::
 
