@@ -18,7 +18,7 @@ pageClass: palette-mocha palette--contrast palette--bg-tone
 
 :::div {.bg-title-section}
 
-## Un peu d'historique…
+## Un peu d'histoire…
 
 mookaï commence bien avant la création de l'ASBL.
 
