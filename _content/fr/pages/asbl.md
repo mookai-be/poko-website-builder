@@ -64,6 +64,8 @@ Parce qu'au fond, nous croyons qu'un projet porteur de valeurs mérite autant de
   </p>
 </address>
 
+https://www.companyweb.be/fr/1003532405/mookai
+
 [En savoir plus sur nous](/organizations/mookai/){.cta}
 :::
 
@@ -90,6 +92,8 @@ Pour certaines collaborations professionnelles, notamment avec des structures as
     1050 Bruxelles, Belgique
   </p>
 </address>
+
+https://www.companyweb.be/fr/0695574033/wanna-play 
 
 [Les statuts](/organizations/mookai/){.cta}
 
