@@ -4,7 +4,6 @@ order: 3
 lang: fr
 createdAt: 2026-04-27T19:42:00.000Z
 name: Services
-vars: {}
 eleventyNavigation:
   order: 2
 ---
@@ -35,7 +34,7 @@ On ne vend pas des livrables. On construit des outils qui durent, des identités
 {% sectionHeader  %}
 ## Ton site web
 
-Nos sites sont construits avec [poko](https://www.poko.eco/), notre website builder indépendant. Ça veut dire: légers, rapides, éco-conçus par défaut, et entièrement à toi. Pas de dépendance à un SaaS américain, pas de frais cachés, pas de mises à jour de sécurité à gérer. Juste un site qui marche.
+Nos sites sont construits avec [poko](https://www.poko.eco/), notre website builder indépendant. Ça veut dire: légers, rapides, éco-conçus par défaut, et entièrement à toi. Pas de dépendance à un SaaS américain, pas de frais cachés, pas de mises à jour de sécurité à gérer. Juste un site qui fonction.
 {% endsectionHeader %}
 {% collection collection="services", filters=[{"value":"web","by":"tag"}], sortCriterias=[], type="flow", class="palette--contrast palette--bg-tone bleed-bg" %}{% endcollection %}
 
