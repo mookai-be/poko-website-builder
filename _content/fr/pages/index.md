@@ -25,7 +25,7 @@ Studio créatif engagé
 
 ## Ce qu'on fait
 
-Du site web au logo, en passant par l'illustration et la mise en page — on construit les outils visuels et digitaux qui donnent à ton projet la visibilité qu'il mérite.
+Du logo au site web, en passant par l'illustration et la mise en page — on construit les outils visuels et digitaux qui donnent à ton projet la visibilité qu'il mérite.
 
 Pas de jargon, pas de sur-promesse. On travaille avec toi, pas pour toi. Notre mission est réussie si ton impact grandit.
 
