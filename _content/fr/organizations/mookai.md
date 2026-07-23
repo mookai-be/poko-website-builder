@@ -18,9 +18,7 @@ eleventyNavigation:
 
 :::div {.bg-title-section}
 
-## On bosse avec des gens bien.
-
-Pour faire des trucs qui ont du sens.
+## On bosse avec des gens bien. <br> Pour faire des trucs qui ont du sens.
 
 mookaï, c'est un studio créatif belge actif depuis 2015. On combine design graphique et développement web pour aider les projets à impact à exister — vraiment — sur le web et dans la tête des gens.
 
@@ -158,6 +156,7 @@ Un projet en tête, une question, ou juste l'envie de voir si le courant passe.
 [On est là](/contact/){.cta}
 
 :::
+
 {% css %}
 .profile {
   margin-top: 0;
@@ -245,6 +244,11 @@ blockquote:has(.quote) {
 }
 .credit-img {
   position: relative;
+}
+
+.section-collection:has(.review-card) .list-collection {
+  display: block;
+  columns: 2;
 }
 
 {% endcss %}

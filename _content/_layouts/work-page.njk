@@ -13,6 +13,12 @@
     <!-- Footer -->
     {% partial "headless/page-footer.11ty.js" %}
     {% partial "_page-footer.njk" %}
-
+    
+    <!-- Injected page styles -->
+    {% if pageStyles %}
+    <style>
+      {{pageStyles | safe}}
+    </style>
+    {% endif %}
   </body>
 </html>

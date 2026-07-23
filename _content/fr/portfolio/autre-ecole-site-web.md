@@ -5,7 +5,7 @@ lang: fr
 name: L'Autre École - Site web
 metadata:
   image:
-    src: /_images/mookai-asbl/1.webp
+    src: /_images/portfolio/mookai-asbl/1.webp
 tags:
   - web
   - site-custom
@@ -13,7 +13,6 @@ tags:
 vars: {}
 images: []
 ---
-
 
 # Le site web de L'Autre École
 

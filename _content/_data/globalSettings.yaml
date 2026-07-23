@@ -7,7 +7,7 @@ languages:
     keepUrlPrefix: false
     name: Français
     customUrlPrefix:
-      prefix: ''
+      prefix: ""
     isCmsDefault: false
     isWebsiteDefault: false
 collections:
@@ -17,3 +17,12 @@ collections:
   - organizations
   - creativeWorks
   - articles
+newTabLinkTypes:
+  - external
+cssHead: |
+  @font-face {
+    font-family: "Chantal";
+    src: url("../assets/files/chantal-medium-regular.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+  }

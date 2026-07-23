@@ -5,7 +5,7 @@ lang: fr
 name: Wanna Play
 metadata:
   image:
-    src: /_images/mookai-asbl/1.webp
+    src: /_images/portfolio/wanna-play/1.webp
 tags:
   - branding
   - logo
@@ -13,12 +13,10 @@ tags:
   - web
   - site-custom
   - featured
-vars: {}
 images:
-  - alt: Wanna Play - identité visuelle
-    url: https://images.ctfassets.net/1tq41wraq9ir/25FiCTMFaA64yqGMguyecM/074bced78d44451e6fe754eb9e0f83a3/wanna-play-imgcover.png
+  - url: https://images.ctfassets.net/1tq41wraq9ir/25FiCTMFaA64yqGMguyecM/074bced78d44451e6fe754eb9e0f83a3/wanna-play-imgcover.png
+    alt: Wanna Play - identité visuelle
 ---
-
 
 # Wanna Play
 

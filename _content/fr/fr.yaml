@@ -1,25 +1,25 @@
 tagsList:
   - slug: print
-    name: Graphisme
+    label: Graphisme
   - slug: branding
-    name: Branding
+    label: Branding
   - slug: web
-    name: Web
+    label: Web
   - slug: art
-    name: Art
+    label: Art
   - slug: photo
-    name: Photo
+    label: Photo
   - slug: support
-    name: Accompagnement
+    label: Accompagnement
   - slug: featured
-    name: Mis en avant
+    label: Mis en avant
   - slug: illustration
-    name: Illustration
+    label: Illustration
   - slug: logo
-    name: Logo
+    label: Logo
   - slug: site-custom
-    name: Site custom
+    label: Site custom
   - slug: mise-en-page
-    name: Mise en page
+    label: Mise en page
   - slug: site-toile
-    name: Site toile
+    label: Site toile

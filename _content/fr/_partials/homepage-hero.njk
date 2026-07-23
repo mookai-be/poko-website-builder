@@ -1,0 +1,32 @@
+{% sectionTwoColumns class="homepage-hero palette-mocha bleed-bg pb-0 mb-0" %}
+{% twoColumns type="fixedFluid", widthFixed="32rem", widthFluidMin="40%", gap="0", class="px-0" %}
+{% twoColumnsItem class="flow px-page py-card justify-end" %}
+{% partial "mookai-logo-carre.njk", { style: 'width:9rem;height:auto;' } %}
+
+## Changer le monde, c'est ton boulot. <br> Le faire savoir, c'est le nôtre.
+
+On fait du **design** et du **web** pour les projets qui veulent faire **bouger les lignes** — et qui veulent que ça s'entende
+
+::: cluster
+{% button url="services", class="cta" %}Nos services{% endbutton %}
+
+{% button url="portfolio", class="cta" %}Nos projets{% endbutton %}
+
+{% button url="contact", class="cta" %}On discute?{% endbutton %}
+:::
+
+{% endtwoColumnsItem %}
+{% twoColumnsItem class="container:home-hero-image-container" %}
+{% image src="/_images/dscf1506.webp", alt="Tess et Marc travaillent à leur bureau", aspectRatio=1 %}
+{% endtwoColumnsItem %}
+{% endtwoColumns %}
+
+{% endsectionTwoColumns %}
+
+<style>
+.homepage-hero {
+    min-block-size: min(100vh, 30rem);
+    order: -1;
+}
+
+</style>

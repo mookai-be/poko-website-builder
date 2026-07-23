@@ -16,8 +16,8 @@ customFontsImport:
       type: fontsource
       name: DM Sans
       weights:
-        - '400'
-        - '700'
+        - "400"
+        - "700"
       styles:
         - normal
         - italic
@@ -31,27 +31,27 @@ typeScales:
     maxTypeScale: 1.25
 colors:
   - name: bordeau
-    value: '#731E15'
+    value: "#731E15"
   - name: red
-    value: '#970711'
+    value: "#970711"
   - name: corail
-    value: '#d34322'
+    value: "#d34322"
   - name: mocha
-    value: '#4B3934'
+    value: "#4B3934"
   - name: taupeDark
-    value: '#958075'
+    value: "#958075"
   - name: taupe
-    value: '#CCA496'
+    value: "#CCA496"
   - name: peach
-    value: '#FFCBB9'
+    value: "#FFCBB9"
   - name: purple
-    value: '#8c8197'
+    value: "#8c8197"
   - name: gold
-    value: '#D07F10'
+    value: "#D07F10"
   - name: black
-    value: '#000000'
+    value: "#000000"
   - name: white
-    value: '#ffffff'
+    value: "#ffffff"
 palettes:
   - name: main
     read: peach
@@ -88,7 +88,6 @@ palettes:
     tone: taupe
     pop: purple
     neutral: red
-
 styleContexts:
   - name: main
     value: ctx

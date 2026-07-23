@@ -32,16 +32,18 @@ On ne vend pas des livrables. On construit des outils qui durent, des identités
 
 {% sectionCollection class="switcher palette-mocha bleed-bg mt-0" %}
 {% sectionHeader  %}
+
 ## Ton site web
 
 Nos sites sont construits avec [poko](https://www.poko.eco/), notre website builder indépendant. Ça veut dire: légers, rapides, éco-conçus par défaut, et entièrement à toi. Pas de dépendance à un SaaS américain, pas de frais cachés, pas de mises à jour de sécurité à gérer. Juste un site qui fonction.
 {% endsectionHeader %}
-{% collection collection="services", filters=[{"value":"web","by":"tag"}], sortCriterias=[], type="flow", class="palette--contrast palette--bg-tone bleed-bg" %}{% endcollection %}
+{% collection collection="services", filters=[{"value":"web","by":"tag"}], sortCriterias=[], type="flow", class="palette--contrast-tone bleed-bg" %}{% endcollection %}
 
 {% endsectionCollection %}
 
 {% sectionCollection class="switcher palette-bordeau bleed-bg" %}
 {% sectionHeader class="palette--fg-neutral palette--bg-tone bleed-bg" %}
+
 ## Ton identité visuelle
 
 Un logo, c'est le visage de ton projet. Une illustration, c'est sa personnalité. Une mise en page soignée, c'est ce qui donne envie de lire. Tess combine approche intuitive et exigence graphique pour que chaque visuel te ressemble vraiment — et serve tes objectifs sur le long terme.
@@ -52,6 +54,7 @@ Un logo, c'est le visage de ton projet. Une illustration, c'est sa personnalité
 
 {% sectionCollection class="switcher palette-gold bleed-bg" %}
 {% sectionHeader  %}
+
 ## Pour aller plus loin
 
 Parfois, ce qu'il faut n'est pas un livrable mais un regard extérieur, un coup de main pour prendre du recul ou apprendre à tenir les rênes. C'est là qu'on intervient différemment — en tant que partenaire, pas prestataire.
@@ -62,6 +65,7 @@ Parfois, ce qu'il faut n'est pas un livrable mais un regard extérieur, un coup 
 
 {% sectionCollection class="switcher palette-purple palette--pop bleed-bg" %}
 {% sectionHeader  %}
+
 ## Art
 
 Tess est aussi artiste. Et si tes murs de bureau, ton cabinet ou ton espace de coworking méritent une âme, on peut s'en occuper.
@@ -78,7 +82,7 @@ Tess est aussi artiste. Et si tes murs de bureau, ton cabinet ou ton espace de c
 
 Tu ne sais pas par où commencer? {.h3}
 
-On en parle, et on trouve ensemble ce qui a du sens pour toi. 
+On en parle, et on trouve ensemble ce qui a du sens pour toi.
 
 [On est là](/contact/){.cta}
 
@@ -87,22 +91,22 @@ On en parle, et on trouve ensemble ce qui a du sens pour toi.
 {% css %}
 
 .section-collection.switcher {
-  padding: 0;
-  gap: 0;
+padding: 0;
+gap: 0;
 }
 .section-collection.switcher header,
 .section-collection.switcher .list-collection {
-  padding-inline: var(--step-1);
-  padding-block: var(--step-7);
+padding-inline: var(--step-1);
+padding-block: var(--step-7);
 }
 .section-collection .list-collection{
-  margin-block: 0;
+margin-block: 0;
 }
 .section-collection .list-collection.bleed-bg {
-  --bleed-left: 0;
+--bleed-left: 0;
 }
 .section-collection header.bleed-bg {
-  --bleed-right: 0;
+--bleed-right: 0;
 }
 
 {% endcss %}

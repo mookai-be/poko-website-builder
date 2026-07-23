@@ -5,7 +5,7 @@ lang: fr
 name: Rapport annuel 2022 - Comme Chez Toi ASBL
 metadata:
   image:
-    src: /_images/mookai-asbl/1.webp
+    src: /_images/portfolio/mookai-asbl/1.webp
 tags:
   - mise-en-page
   - print
@@ -13,7 +13,6 @@ tags:
 vars: {}
 images: []
 ---
-
 
 # Rapport annuel 2022 - Comme Chez Toi ASBL
 

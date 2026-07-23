@@ -1,0 +1,12 @@
+<article class="featured-work breakout-clickable">
+    {% if firstPic %}
+        <div class="featured-work-image">
+            {% image src=firstPic, alt="{{ name }}" %}
+        </div>
+    {% endif %}
+    <div class="featured-work-content flow" aria-hidden="true">
+        <a href="{{ url | locale_url }}" aria-label="{{ name }}" class="clickable">
+            <h3 class="p">{{ name }}</h3>
+        </a>
+    </div>
+</article>

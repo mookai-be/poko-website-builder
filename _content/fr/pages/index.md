@@ -2,12 +2,14 @@
 translationKey: index
 order: 1
 name: Accueil
+eleventyNavigation:
+  add: Nav
 pageLayout: homepage
 ---
 
 :::div {.flex .flex-col}
 
-{% component "headless/page-nav.11ty.js" %}
+{% component "headless/page-nav.11ty.js", { class: "py-body" } %}
 
 {% htmlPartial "homepage-hero.njk" %}
 
@@ -36,11 +38,11 @@ Pas de jargon, pas de sur-promesse. On travaille avec toi, pas pour toi. Notre m
 {% sectionHeader  %}
 ## Des projets, pas des promesses
 {% endsectionHeader %}
-{% collection collection="creative-works", filters=[{"by":"tag","value":["featured"]}], sortCriterias=[], class="full-bleed", itemPartial="featured-work.njk" %}{% endcollection %}
+{% collection collection="portfolio", filters=[{"by":"tag","value":["featured"]}], sortCriterias=[], class="full-bleed", itemPartial="featured-work.njk" %}{% endcollection %}
 
 {% endsectionCollection %}
 
-{% sectionCollection  %}
+{% sectionCollection class="breathe" %}
 
 {% collection collection="reviews", filters=[{"by":"name","value":["guido"]}], sortCriterias=[], type="flow", itemPartial="review-card" %}{% endcollection %}
 
