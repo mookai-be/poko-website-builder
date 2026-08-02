@@ -3,12 +3,13 @@ translationKey: mariage-sojo
 order: 31
 lang: fr
 name: Mariage SoJo
+metadata:
+  image:
+    src: /_images/portfolio/mariage-sojo/3.webp
 tags:
   - mise-en-page
-vars: {}
 images: []
 ---
-
 
 # Mariage SoJo
 
