@@ -3,15 +3,16 @@ translationKey: therapie-nature
 order: 66
 lang: fr
 name: Thérapie nature
+metadata:
+  image:
+    src: /_images/portfolio/therapie-nature/6.webp
 tags:
   - branding
   - logo
   - web
   - site-toile
-vars: {}
 images: []
 ---
-
 
 # Thérapie nature
 
