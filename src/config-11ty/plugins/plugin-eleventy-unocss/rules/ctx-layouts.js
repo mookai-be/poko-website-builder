@@ -637,7 +637,7 @@ export default [
   // Container query helper
   // Matches "container" and "container:myContainerName"
   [
-    /^container(?::([a-zA-Z]+))?$/,
+    /^container(?::(-?[a-zA-Z_][a-zA-Z0-9_-]*))?$/,
     ([, name], { symbols }) => {
       return {
         [symbols.selector]: (selector) => `:where(${selector})`,
