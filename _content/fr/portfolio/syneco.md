@@ -3,14 +3,15 @@ translationKey: syneco
 order: 18
 lang: fr
 name: Syneco
+metadata:
+  image:
+    src: /_images/portfolio/syneco/21.webp
 tags:
   - branding
   - logo
   - print
-vars: {}
 images: []
 ---
-
 
 # Syneco
 
