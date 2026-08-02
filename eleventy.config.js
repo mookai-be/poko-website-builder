@@ -138,7 +138,7 @@ function shouldNotRender(data) {
   // This excludes files whose path contains a `.` or a `_` directly after a `/`
   if (
     /(?:^|\/)_/.test(data.page.filePathStem) ||
-    /(?:^|\/)\\./.test(data.page.filePathStem)
+    /(?:^|\/)\./.test(data.page.filePathStem)
   ) {
     return true;
   }
