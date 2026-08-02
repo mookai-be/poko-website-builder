@@ -3,13 +3,14 @@ translationKey: etiquettes-nutty-cheeze
 order: 50
 lang: fr
 name: Étiquettes rondes - The Nutty Cheeze
+metadata:
+  image:
+    src: /_images/portfolio/etiquettes-nutty-cheeze/2.webp
 tags:
   - mise-en-page
   - print
-vars: {}
 images: []
 ---
-
 
 # Étiquettes rondes - The Nutty Cheeze
 
