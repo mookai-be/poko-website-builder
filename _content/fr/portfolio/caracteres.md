@@ -3,13 +3,14 @@ translationKey: caracteres
 order: 39
 lang: fr
 name: CARACTERE(S)
+metadata:
+  image:
+    src: /_images/portfolio/caracteres/1.webp
 tags:
   - mise-en-page
   - photo
-vars: {}
 images: []
 ---
-
 
 # CARACTERE(S)
 
