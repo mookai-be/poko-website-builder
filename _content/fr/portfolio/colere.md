@@ -3,13 +3,14 @@ translationKey: colere
 order: 78
 lang: fr
 name: COLERE
+metadata:
+  image:
+    src: /_images/portfolio/colere/9.webp
 tags:
   - art
   - photo
-vars: {}
 images: []
 ---
-
 
 # COLERE
 
