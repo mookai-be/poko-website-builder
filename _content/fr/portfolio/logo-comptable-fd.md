@@ -3,13 +3,14 @@ translationKey: logo-comptable-fd
 order: 83
 lang: fr
 name: Logo Comptable FD
+metadata:
+  image:
+    src: /_images/portfolio/logo-comptable-fd/4.webp
 tags:
   - branding
   - logo
-vars: {}
 images: []
 ---
-
 
 # Logo Comptable FD
 
