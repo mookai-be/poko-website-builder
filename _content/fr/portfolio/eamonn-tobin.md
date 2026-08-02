@@ -5,7 +5,7 @@ lang: fr
 name: Eamonn Tobin
 metadata:
   image:
-    src: /_images/portfolio/eamonn-tobin/2.webp
+    src: /_images/portfolio/eamonn-tobin/7.webp
 tags:
   - branding
   - logo
