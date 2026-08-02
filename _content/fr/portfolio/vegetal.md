@@ -3,13 +3,14 @@ translationKey: vegetal
 order: 44
 lang: fr
 name: Végétal
+metadata:
+  image:
+    src: /_images/portfolio/vegetal/12.webp
 tags:
   - illustration
   - art
-vars: {}
 images: []
 ---
-
 
 # Végétal
 
