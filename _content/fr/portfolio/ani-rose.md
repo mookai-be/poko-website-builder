@@ -3,13 +3,14 @@ translationKey: ani-rose
 order: 87
 lang: fr
 name: Ani Rose - songs from the Soul
+metadata:
+  image:
+    src: /_images/portfolio/ani-rose/6.webp
 tags:
   - illustration
   - art
-vars: {}
 images: []
 ---
-
 
 # Ani Rose - songs from the Soul
 
