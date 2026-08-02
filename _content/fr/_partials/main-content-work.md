@@ -33,7 +33,7 @@
 {% if firstPic %}
 
 <div class="work-page-image">
-{% image src=firstPic, alt=name %}
+{% image src=firstPic, alt=name, width=400 %}
 </div>
 {% endif %}
 
@@ -48,7 +48,7 @@
 {% for pic in pics %}
 {% if pic %}
 {% gridItem %}
-{% image src=pic, aspectRatio="1" %}
+{% image src=pic, aspectRatio="1", width=400 %}
 {% endgridItem %}
 {% endif %}
 {% endfor %}

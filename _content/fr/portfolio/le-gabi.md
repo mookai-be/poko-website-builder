@@ -3,13 +3,14 @@ translationKey: le-gabi
 order: 5
 lang: fr
 name: Le GABI
+metadata:
+  image:
+    src: /_images/portfolio/le-gabi/2.webp
 tags:
   - branding
   - logo
-vars: {}
 images: []
 ---
-
 
 # Le GABI
 

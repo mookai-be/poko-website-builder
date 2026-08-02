@@ -71,7 +71,7 @@
   /*--radius-section: 2rem;*/
   --radius-prose: 1rem;
   --radius-featured: 1rem;
-  /* --radius-card: 1rem; */
+  --radius-card: var(--step-4);
   --radius-token: var(--radius-round);
 
   --thick-body: 5px;
@@ -143,10 +143,6 @@
   --color-fg-theme: inherit;
 } */
 
-main:has(.homepage-hero) {
-  padding-top: 0;
-}
-
 a {
   text-decoration-skip-ink: none;
   text-decoration-thickness: var(--deco-thickness, 0.2em);
@@ -164,10 +160,15 @@ a:hover {
   background-color: transparent;
 }
 
-.main-header a[aria-current="page"] {
-  /* color: var(--color-pop); */
+/*
+.main-header a {
   text-decoration-color: transparent;
 }
+.main-header a[aria-current="page"],
+.main-header a:hover {
+  text-decoration-color: var(--color-text-decoration);
+}
+*/
 
 /* a:not(.cta, .nav-links, #logo-mookai, :has(svg)) {
   background: linear-gradient(var(--color-pop), var(--color-pop)) no-repeat 0 100%;
@@ -205,7 +206,7 @@ a:not(.cta, .nav-links, #logo-mookai, :has(svg)):hover {
 }
 .title-container {
   position: relative;
-  max-inline-size: var(--width-outset);
+  max-inline-size: var(--width-body);
   margin-inline: auto;
 }
 .bg-title-section {
@@ -218,7 +219,7 @@ a:not(.cta, .nav-links, #logo-mookai, :has(svg)):hover {
   inset-block-start: 0;
   inset-inline-start: 0;
   inline-size: 100%;
-  max-inline-size: var(--width-max);
+  max-inline-size: var(--width-body);
   font-size: var(--step-7);
   line-height: 1;
   pointer-events: none;

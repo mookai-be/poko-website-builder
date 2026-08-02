@@ -2,18 +2,12 @@
 translationKey: index
 order: 1
 name: Accueil
-eleventyNavigation:
-  add: Nav
 pageLayout: homepage
 ---
 
-:::div {.flex .flex-col}
-
-{% component "headless/page-nav.11ty.js", { class: "py-body" } %}
-
 {% htmlPartial "homepage-hero.njk" %}
 
-:::
+{% component "headless/page-nav.11ty.js", { class: "py-body" } %}
 
 <div class="title-container">
 <h1 class="bg-title">

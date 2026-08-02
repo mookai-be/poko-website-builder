@@ -30,7 +30,7 @@ On est une ASBL. Pas par hasard.
 {% image src="/_images/dscf9674-2.webp" %}
 :::
 
-{% sectionCollection class="profile palette-mocha bleed-bg v--width-sidebar:18rem v--radius:var(--step-4) v--bleed-bottom:6rem" %}
+{% sectionCollection class="profile palette-mocha bleed-bg v--width-sidebar:18rem v--bleed-bottom:6rem" %}
 {% sectionHeader  %}
 ## Deux têtes, un studio
 {% endsectionHeader %}

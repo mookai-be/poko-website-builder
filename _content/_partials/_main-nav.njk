@@ -3,13 +3,17 @@ lang }, { by: 'parent', value: '' }]) | eleventyNavigation %}
 
 {% if navPages | length %}
 
-<header class="bleed-bg full-bleed">
+<header class="main-header palette bleed-bg full-bleed {{ class }}">
     <nav id="main-nav" class="cluster">
     <!-- Main pages navigation -->
     <ul role="list" class="cluster">
         <li id="logo-item">
-          <a href="/" id="logo-mookai" aria-label="Acceuil">
-            {% partial "mookai-logo-cc.njk" %}
+          <a
+            href="/"
+            id="logo-mookai"
+            aria-label="Accueil"
+            {% if '/' == page.url %}aria-current="page"{% endif %}
+            >{% partial "mookai-logo-cc.njk" %}
           </a>
         </li>
         {% for link in navPages %}
@@ -18,7 +22,7 @@ lang }, { by: 'parent', value: '' }]) | eleventyNavigation %}
         <a
             href="{{link.url}}"
             class="nav-links"
-            hreflang="{{link.lang}}"
+            {% if link.lang %}hreflang="{{link.lang}}"{% endif %}
             {% if link.url == page.url %}aria-current="page"{% endif %}
             >{{link.title}}</a
         >
@@ -34,7 +38,7 @@ lang }, { by: 'parent', value: '' }]) | eleventyNavigation %}
         <a
             href="{{link.url}}"
             class="nav-links"
-            hreflang="{{link.lang}}"
+            {% if link.lang %}hreflang="{{link.lang}}"{% endif %}
             aria-current="{{ 'page' if link.lang === page.lang else 'false' }}"
             ><abbr lang="{{link.lang}}" title="{{link.label}}"
             >{{link.lang | upper}}</abbr></a>
@@ -44,14 +48,15 @@ lang }, { by: 'parent', value: '' }]) | eleventyNavigation %}
     {% endif %}
     </nav>
 </header>
-{% css %}
+
+<style>
 :root {
  --gap-cover: 1em;
 
 }
-header:has(#main-nav) {
-    background-color: var(--color-bg);
-    color: inherit;
+body > header,
+body > main > header,
+main > .homepage-hero-wrapper > header {
     border: none;
     box-shadow: 0px 3px 6px #00000029;
     position: sticky;
@@ -74,20 +79,14 @@ header:has(#main-nav) {
 
 #logo-mookai {
     display: block;
-    width: var(--step-9);
-    max-width: var(--step-9);
+    inline-size: var(--step-9);
+    max-inline-size: 100%;
 }
 
 #logo-mookai svg {
     width: 100%;
     height: auto;
-    stroke: none;
 }
-
-#logo-mookai svg .cls-1 {
-    fill: var(--color-fg-theme);
-}
-
 
 #main-nav ul{
     margin-block-start: 0;
@@ -108,8 +107,6 @@ header:has(#main-nav) {
 #main-nav a[aria-current="page"] {
     color: var(--color-pop);
     font-weight: 700;
-
-
 }
-{% endcss %}
+</style>
 {% endif %}
