@@ -3,17 +3,18 @@ translationKey: mookai-asbl
 order: 69
 lang: fr
 name: mookaï asbl
+metadata:
+  image:
+    src: /_images/portfolio/mookai-asbl/36.webp
 tags:
   - branding
   - logo
   - web
   - site-custom
-vars: {}
 images:
-  - alt: mookaï asbl - identité visuelle
-    url: https://mir-s3-cdn-cf.behance.net/project_modules/1400/ac2bfa199368595.674da3ad5b177.jpg
+  - url: https://mir-s3-cdn-cf.behance.net/project_modules/1400/ac2bfa199368595.674da3ad5b177.jpg
+    alt: mookaï asbl - identité visuelle
 ---
-
 
 # mookaï asbl
 
