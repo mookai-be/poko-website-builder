@@ -3,13 +3,14 @@ translationKey: plaquette
 order: 59
 lang: fr
 name: Plaquette
+metadata:
+  image:
+    src: /_images/portfolio/plaquette/2.webp
 tags:
   - mise-en-page
   - print
-vars: {}
 images: []
 ---
-
 
 # Plaquette
 
