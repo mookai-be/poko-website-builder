@@ -3,13 +3,14 @@ translationKey: laurence-v
 order: 26
 lang: fr
 name: Laurence v. - Wellbeing & Wellbirthing
+metadata:
+  image:
+    src: /_images/portfolio/laurence-v/41.webp
 tags:
   - branding
   - logo
-vars: {}
 images: []
 ---
-
 
 # Laurence v. - Wellbeing & Wellbirthing
 
