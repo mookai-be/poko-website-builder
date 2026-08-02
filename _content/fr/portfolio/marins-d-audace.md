@@ -3,13 +3,14 @@ translationKey: marins-d-audace
 order: 93
 lang: fr
 name: Marins d'Audace
+metadata:
+  image:
+    src: /_images/portfolio/marins-d-audace/1.webp
 tags:
   - mise-en-page
   - print
-vars: {}
 images: []
 ---
-
 
 # Marins d'Audace
 
