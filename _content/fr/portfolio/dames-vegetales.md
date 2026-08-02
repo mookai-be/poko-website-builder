@@ -3,13 +3,14 @@ translationKey: dames-vegetales
 order: 86
 lang: fr
 name: Dames Végétales
+metadata:
+  image:
+    src: /_images/portfolio/dames-vegetales/28.webp
 tags:
   - illustration
   - art
-vars: {}
 images: []
 ---
-
 
 # Dames Végétales
 
