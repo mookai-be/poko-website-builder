@@ -3,14 +3,15 @@ translationKey: livret-jeunes-aidants
 order: 61
 lang: fr
 name: Livret A5 - Jeunes aidants proches
+metadata:
+  image:
+    src: /_images/portfolio/livret-jeunes-aidants/2.webp
 tags:
   - mise-en-page
   - print
   - illustration
-vars: {}
 images: []
 ---
-
 
 # Livret A5 - Jeunes aidants proches
 
