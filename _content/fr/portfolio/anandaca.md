@@ -3,16 +3,17 @@ translationKey: anandaca
 order: 94
 lang: fr
 name: Anandaca
+metadata:
+  image:
+    src: /_images/portfolio/anandaca/2.webp
 tags:
   - branding
   - logo
   - print
-vars: {}
 images:
-  - alt: Anandaca - identité visuelle
-    url: https://images.ctfassets.net/1tq41wraq9ir/1WwvcGpQDKgK08y8UcIyAo/9eccfebdff345175474822d1d0f522ec/anandaca-imgcover.png
+  - url: https://images.ctfassets.net/1tq41wraq9ir/1WwvcGpQDKgK08y8UcIyAo/9eccfebdff345175474822d1d0f522ec/anandaca-imgcover.png
+    alt: Anandaca - identité visuelle
 ---
-
 
 # Anandaca
 
