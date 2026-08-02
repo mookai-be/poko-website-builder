@@ -3,16 +3,17 @@ translationKey: julien-blanc
 order: 46
 lang: fr
 name: Julien Blanc
+metadata:
+  image:
+    src: /_images/portfolio/julien-blanc/3.webp
 tags:
   - branding
   - logo
   - print
-vars: {}
 images:
-  - alt: Julien Blanc - identité visuelle
-    url: https://images.ctfassets.net/1tq41wraq9ir/VucePGFsseGCGw6qgEkg8/60ff19865a7ab61ae65f253496cbb268/julienblanc-imgcover.png
+  - url: https://images.ctfassets.net/1tq41wraq9ir/VucePGFsseGCGw6qgEkg8/60ff19865a7ab61ae65f253496cbb268/julienblanc-imgcover.png
+    alt: Julien Blanc - identité visuelle
 ---
-
 
 # Julien Blanc
 
