@@ -3,13 +3,14 @@ translationKey: the-southern-experience
 order: 77
 lang: fr
 name: The Southern Experience
+metadata:
+  image:
+    src: /_images/portfolio/the-southern-experience/23.webp
 tags:
   - branding
   - logo
-vars: {}
 images: []
 ---
-
 
 # The Southern Experience
 
