@@ -3,13 +3,14 @@ translationKey: luc-besson-book
 order: 29
 lang: fr
 name: Luc Besson BOOK
+metadata:
+  image:
+    src: /_images/portfolio/luc-besson-book/1.webp
 tags:
   - mise-en-page
   - print
-vars: {}
 images: []
 ---
-
 
 # Luc Besson BOOK
 
