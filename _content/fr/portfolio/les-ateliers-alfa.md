@@ -3,13 +3,14 @@ translationKey: les-ateliers-alfa
 order: 82
 lang: fr
 name: Les Ateliers ALFA
+metadata:
+  image:
+    src: /_images/portfolio/les-ateliers-alfa/10.webp
 tags:
   - branding
   - logo
-vars: {}
 images: []
 ---
-
 
 # Les Ateliers ALFA
 
