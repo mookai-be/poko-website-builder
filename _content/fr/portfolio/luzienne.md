@@ -3,6 +3,9 @@ translationKey: luzienne
 order: 6
 lang: fr
 name: LuZienne
+metadata:
+  image:
+    src: /_images/portfolio/luzienne/15.webp
 tags:
   - mise-en-page
   - print
@@ -10,10 +13,8 @@ tags:
   - logo
   - web
   - site-toile
-vars: {}
 images: []
 ---
-
 
 # LuZienne
 
