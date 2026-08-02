@@ -1,3 +1,10 @@
+const resolveNamedValue = (name, varPrefix, varFallback) =>
+  name.startsWith("-")
+    ? `var(-${name}, ${varFallback})`
+    : /\d/.test(name) || cssKeywordNames.includes(name)
+      ? name
+      : `var(${varPrefix}${name}, ${varFallback})`;
+
 export default [
   // Background overlay utility
   [
@@ -155,11 +162,35 @@ export default [
     (match, { symbols }) => {
       return {
         [symbols.selector]: () => `:where(.full-bleed)`,
-        width: "min(99.99vw, var(--full-bleed-max-width, 99.99vw))",
-        "margin-left":
+        "max-inline-size": "99.99vw",
+        "padding-inline": "unset",
+        "inline-size": "min(99.99vw, var(--full-bleed-max-width, 99.99vw))",
+        "margin-inline-start":
           "calc(50% - min(99.99vw, var(--full-bleed-max-width, 99.99vw)) / 2)",
       };
     },
+  ],
+  [
+    /^full-bleed-([a-zA-Z0-9\-]+)$/,
+    ([, name], { symbols }) => {
+      const varExpression = resolveNamedValue(name, "--width-", "99.99vw");
+      return {
+        [symbols.selector]: (selector) => `:where(${selector})`,
+        "max-inline-size": "99.99vw",
+        "padding-inline": "unset",
+        // "inline-size": `min(99.99vw, ${varExpression})`,
+        "inline-size": varExpression,
+        "margin-inline-start": `calc(50% - min(99.99vw, ${varExpression}) / 2)`,
+      };
+    },
+  ],
+
+  [
+    /^width-$/,
+    ([, name], { symbols }) => ({
+      [symbols.selector]: () => `:where(.width-${name})`,
+      "margin-inline": "auto",
+    }),
   ],
 
   // Full bleed before utility
@@ -323,8 +354,8 @@ export default [
         "background-image":
           "linear-gradient(to right, white, white), " +
           "linear-gradient(to right, white, white), " +
-          "linear-gradient(to right, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0)), " +
-          "linear-gradient(to left, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0))",
+          "linear-gradient(to right, var(--color-shadow-overflow-scroll, rgba(0, 0, 0, 0.25)), rgba(255, 255, 255, 0)), " +
+          "linear-gradient(to left, var(--color-shadow-overflow-scroll, rgba(0, 0, 0, 0.25)), rgba(255, 255, 255, 0))",
         "background-position":
           "left center, right center, left center, right center",
         "background-repeat": "no-repeat",

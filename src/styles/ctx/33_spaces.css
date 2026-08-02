@@ -51,10 +51,27 @@
 /* ----- Max Width ----- */
 
 :where(body) {
-  max-inline-size: min(100%, var(--width-body));
-  margin-inline: auto;
+  /* --max-width: min(100%, var(--width-page));
+  max-inline-size: min(100%, var(--width-page));
+  margin-inline: auto; */
+  --mi-auto-applied: auto;
+  --max-width: min(100%, var(--width-page));
 }
+/* prettier-ignore */
+/* :where(:where(section, .section) > :where(.area, header, footer, .header, .footer, .main)), */
+/* prettier-ignore */
+:where(*:not(html, body, main, section, .section, header, footer, aside, article, hgroup, div), .layout) {
+/* :where(body > *:not(main), main > *) { */
+  max-inline-size: var(--max-width);
+  margin-inline: var(--mi-auto-applied);
+
+  & > * {
+      --mi-auto-applied: 0;
+  }
+}
+
 /*:where(img, picture, video) {
+    --max-width: min(100%, var(--width-prose));
     max-inline-size: min(100%, var(--width-prose));
     margin-inline: auto;
 }*/
@@ -63,31 +80,47 @@
 :where(.prose, .featured, .card, p, h1, h2, h3, h4, h5, h6, hgroup, address, :where(ul, ol):not([role="list"]):not(.reset), menu, search),
 :where(figure,figcaption,form,fieldset),
 :where(dl,dt,dd,blockquote,details) {
-    max-inline-size: min(100%, var(--width-prose));
-    margin-inline: auto;
+    --max-width: min(100%, var(--width-prose));
+    /* max-inline-size: min(100%, var(--width-prose)); */
+    /* margin-inline: auto; */
 
-    :where(& *),
-    :where(.layout &),
-    :where(:where(section, .section) > :where(.area, header, footer, .header, .footer, .main) &) {
+    /* NOTE: was useful before we switched to non constrained body width */
+    /* :where(:where(section, .section) > :where(.area, header, footer, .header, .footer, .main) &) { */
+    /* :where(& *),
+    :where(.layout &) {
         margin-inline: 0;
-    }
-    :where(&.reset-w),
+    } */
+    /* :where(&.reset-w),
     :where(.reset-down-w &){
         max-inline-size: unset;
         margin-inline: unset;
-    }
+    } */
 
     /* Reset Flow */
     margin-block-start: 0;
 }
+:where(section, .section) {
+  --max-width: min(100%, var(--width-section, var(--width-page)));
+  /* max-inline-size: min(100%, var(--width-section, var(--width-page))); */
+}
 :where(.featured) {
-  max-inline-size: min(100%, var(--width-featured, var(--width-prose)));
+  --max-width: min(100%, var(--width-featured, var(--width-prose)));
+  /* max-inline-size: min(100%, var(--width-featured, var(--width-prose))); */
 }
+/* NOTE: limiting width automatically on cards might be an anti-pattern with our layouts if width is too narrow.
+   Parents constrain children. */
 :where(.card) {
-  max-inline-size: min(100%, var(--width-card, var(--width-prose)));
+  --max-width: min(100%, var(--width-card, var(--width-prose)));
+  /* max-inline-size: min(100%, var(--width-card, var(--width-prose))); */
 }
-:where(:where(.card, .box, [class*="width-"]) *) {
-  margin-inline: 0;
+:where(.reset-w),
+:where(.reset-down-w *),
+:where(:where(.card, .box, [class^="width-"], [class*=" width-"]) > *) {
+  /* margin-inline: 0; */
+  --mi-auto-applied: unset;
+  --max-width: unset;
+  max-inline-size: unset;
+  margin-inline: unset;
 }
 
 /* ----- Flow ----- */
@@ -139,9 +172,11 @@
 
 /* Avoid previous defaults in some situations */
 /* prettier-ignore */
+:where(.no-flow),
+:where(.no-flow) > *,
 :where(address) > *,
 :where(p, h1, h2, h3, h4, h5, h6, li, figure, figcaption, td, th, dt, dd, button, label, input, summary) :where(img, picture, video),
-:where(:where(.layout, .switcher, .grid-fluid, .cluster, .fixed-fluid, .center, cover, reel) > *),
+:where(:where(.layout, .switcher, .grid-fluid, .cluster, .fixed-fluid, cover, reel) > *),
 :where(hgroup > *) {
     margin-block-start: 0;
 }
@@ -176,7 +211,8 @@
 
 /* METHOD 3: Tracking depth and apply only the first time we encounter non structural elements */
 /* Initialize the flag */
-:where(body) {
+:where(body),
+.px-restore {
   --px-applied: 0;
 }
 
@@ -209,7 +245,7 @@
 } /* prettier-ignore */
 
 /* Special case for ul and ol: base setup */ /* prettier-ignore */
-:where(blockquote) {
+:where(blockquote:not(.reset)) {
     padding-inline-start: var(--offset-blockquote, 1rem);
 } /* Special case for ul and ol: nested */ /* prettier-ignore */
 /* TODO: find a way to display the blockquote indent bar without margin because this breaks the general prose centering */

@@ -3,10 +3,11 @@ export {
   formatDate,
   dateToSlug,
   toLocaleString,
+  formatDateLocalized,
 } from "./dates.js";
 export { slugifyPath } from "./slugify.js";
 export { glob } from "./files.js";
-export { locale_url, locale_links } from "./i18n.js";
+export { locale_url, locale_links, tagLabel } from "./i18n.js";
 export {
   filterCollection,
   join,

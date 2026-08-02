@@ -135,8 +135,18 @@ export function transformPalette(palette) {
       delete unifiedPalette[key];
     }
   });
+
+  // const stylesString = Object.entries(unifiedPalette)
+  //   .map(([key, value]) => `--color-${key}:var(--${value});`)
+  //   .join("");
+
   const stylesString = Object.entries(unifiedPalette)
-    .map(([key, value]) => `--color-${key}:var(--${value});`)
+    .map(([key, value]) => {
+      // const varPrefix = /read|neutral|pop|tone/.test(key) ? "" : "color-";
+      const varPrefix = "color-";
+      const varPostfix = /read|neutral|pop|tone/.test(key) ? "-palette" : "";
+      return `--${varPrefix}${key}${varPostfix}:var(--${value});`;
+    })
     .join("");
 
   return {
@@ -154,8 +164,8 @@ export function transformTypeScale(typeScaleDef) {
     maxFontSize: typeScaleDef?.maxFontSize || 20,
     minTypeScale: typeScaleDef?.minTypeScale || 1.2,
     maxTypeScale: typeScaleDef?.maxTypeScale || 1.25,
-    positiveSteps: typeScaleDef?.advanced?.positiveSteps || 9,
-    negativeSteps: typeScaleDef?.advanced?.negativeSteps || 2,
+    positiveSteps: typeScaleDef?.advanced?.positiveSteps || 12,
+    negativeSteps: typeScaleDef?.advanced?.negativeSteps || 4,
     relativeTo: typeScaleDef?.advanced?.relativeTo || "viewport-width",
     labelStyle: typeScaleDef?.advanced?.labelStyle || "utopia",
     prefix: typeScaleDef?.advanced?.prefix || "step",

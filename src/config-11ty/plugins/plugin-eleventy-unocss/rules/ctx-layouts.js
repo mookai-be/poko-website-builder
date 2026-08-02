@@ -10,7 +10,7 @@ export default [
         display: "block",
         padding:
           "var(--padding-box, var(--padding, calc(var(--gap, 1em) / 2)))",
-        border: "var(--border-width-box, 0) solid",
+        border: "var(--border-width-box, var(--thickness, 0)) solid",
       };
     },
   ],
@@ -423,6 +423,8 @@ export default [
           "--gap-reel": "var(--gap, 1em)",
           display: "flex",
           "block-size": "var(--height, auto)",
+          // "max-inline-size": "100%",
+          // "min-inline-size": "0",
           "overflow-x": "auto",
           "overflow-y": "hidden",
           "scrollbar-color":
@@ -431,6 +433,7 @@ export default [
         {
           [symbols.selector]: () => `:where(.reel) > *`,
           flex: "0 0 var(--item-width, auto)",
+          // "min-inline-size": "0",
         },
         {
           [symbols.selector]: () => `:where(.reel) > img`,
@@ -542,7 +545,8 @@ export default [
     /^icon$/,
     (match, { symbols }) => {
       return {
-        [symbols.selector]: () => `:where(p .icon)`,
+        [symbols.selector]: () =>
+          `:where(p .icon, span .icon, .with-icon .icon)`,
         width: "var(--width-icon, var(--size-icon, 0.75em))",
         height: "var(--height-icon, var(--size-icon, 0.75em))",
         "vertical-align": "var(--vertical-align-icon, -0.125em)",
@@ -633,7 +637,7 @@ export default [
   // Container query helper
   // Matches "container" and "container:myContainerName"
   [
-    /^container(?::([a-zA-Z]+))?$/,
+    /^container(?::(-?[a-zA-Z_][a-zA-Z0-9_-]*))?$/,
     ([, name], { symbols }) => {
       return {
         [symbols.selector]: (selector) => `:where(${selector})`,

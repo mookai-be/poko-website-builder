@@ -16,7 +16,6 @@ export default {
   // ...temp,
   ldType: (data) => {
     if (data.eleventyExcludeFromCollections) return undefined;
-    if (data.eleventyExcludeFromCollections) return undefined;
     const type = data.page?.ldType || data.ldType;
     if (type) return type;
 
@@ -27,7 +26,10 @@ export default {
 
     const collectionDir = segments.slice(1, 2)?.[0];
 
-    return COLLECTIONS[collectionDir]?.ldType || "WebPage";
+    return (
+      Object.values(COLLECTIONS).find((c) => c.name === collectionDir)
+        ?.ldType || "WebPage"
+    );
   },
   language: (data) => {
     // Display collection names only
@@ -196,20 +198,20 @@ export default {
   date: (data) => data.date || data.page?.date,
   url: (data) => data.url || data.page?.url,
 
-  pageFooter: (data) => {
-    // Prioritize the footer selected on the collection, then the default in settings
-    const raw = data.pageFooter || data.globalSettings?.pageFooter || "";
-    // const key =
-    //   typeof raw === "string"
-    //     ? raw
-    //         .trim()
-    //         .replace(/\.(md|njk|11ty\.js|liquid|html)$/i, "")
-    //         .split("/")
-    //         .filter(Boolean)
-    //         .pop()
-    //     : "";
+  // pageFooter: (data) => {
+  //   // Prioritize the footer selected on the collection, then the default in settings
+  //   const raw = data.pageFooter || data.globalSettings?.pageFooter || "";
+  //   // const key =
+  //   //   typeof raw === "string"
+  //   //     ? raw
+  //   //         .trim()
+  //   //         .replace(/\.(md|njk|11ty\.js|liquid|html)$/i, "")
+  //   //         .split("/")
+  //   //         .filter(Boolean)
+  //   //         .pop()
+  //   //     : "";
 
-    // If no footer is defined, keep it empty so templates can fallback cleanly.
-    return `${data.lang}/footers/${data.pageFooter}`;
-  },
+  //   // If no footer is defined, keep it empty so templates can fallback cleanly.
+  //   return `${data.lang}/footers/${data.pageFooter}`;
+  // },
 };

@@ -16,6 +16,7 @@ import { createLocalFontProcessor } from "@unocss/preset-web-fonts/local";
 import layoutRules from "./rules/ctx-layouts.js";
 import utilitiesRules from "./rules/ctx-utilities.js";
 import atomsRules from "./rules/ctx-atoms.js";
+import { colorsRules, colorsShortcuts } from "./rules/ctx-colors.js";
 
 import { CACHE_DIR, brandConfig, brandStyles } from "../../../../env.config.js";
 
@@ -30,11 +31,11 @@ const presetWind4mod = presetWind4({
 // TODO: look if I can simply load my rules before Wind4 rules so they override?
 //
 // wind4 rule are here: https://github.com/unocss/unocss/tree/main/packages-presets/preset-wind4/src/rules
-// Pervent h1, h2, h3, h4, h5, h6 collision
+// Pervent ..., h-1, h0, h1, h2, ... collision
 const hRegexCollides = /^(?:size-)?(min-|max-)?([wh])-?(.+)$/;
 // Force '-' between w or h and the number or attribute. E.g. h-10 not h10
 // To avoid collision with our own rules for heading styles .h1, .h6, .h000, .h8
-const hRegexReplacement = /^(?:size-)?(min-|max-)?([wh])-(.+)$/;
+const hRegexReplacement = /^(?:size-)(min-|max-)?([wh])-?(.+)$/;
 const modRuleIndex = presetWind4mod.rules.findIndex(
   (ruleArr) => ruleArr[0].source === hRegexCollides.source,
 );
@@ -90,10 +91,8 @@ const computedConfig = defineConfig({
     { getCSS: () => `a[href^="mailto:"] b {display: none;}` },
     { getCSS: () => brandStyles || "" },
   ],
-  rules: [...layoutRules, ...utilitiesRules, ...atomsRules],
-  // shortcuts: [
-  //   // ...
-  // ],
+  rules: [...layoutRules, ...colorsRules, ...utilitiesRules, ...atomsRules],
+  // shortcuts: [...colorsShortcuts], // TODO: could reinstate when system tested BUT delete the css rules doing the same then!
   // theme: {
   //   colors: {
   //     // ...
