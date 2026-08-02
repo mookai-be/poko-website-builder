@@ -3,12 +3,13 @@ translationKey: les-2-ans-de-liloo
 order: 56
 lang: fr
 name: les 2 ans de Liloo
+metadata:
+  image:
+    src: /_images/portfolio/les-2-ans-de-liloo/6.webp
 tags:
   - illustration
-vars: {}
 images: []
 ---
-
 
 # les 2 ans de Liloo
 
