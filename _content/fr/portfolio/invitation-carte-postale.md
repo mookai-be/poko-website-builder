@@ -3,14 +3,15 @@ translationKey: invitation-carte-postale
 order: 36
 lang: fr
 name: Invitation - carte postale
+metadata:
+  image:
+    src: /_images/portfolio/invitation-carte-postale/10.webp
 tags:
   - mise-en-page
   - print
   - illustration
-vars: {}
 images: []
 ---
-
 
 # Invitation - carte postale
 
