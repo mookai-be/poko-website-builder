@@ -3,12 +3,13 @@ translationKey: illustrations-compilation
 order: 23
 lang: fr
 name: Illustrations
+metadata:
+  image:
+    src: /_images/portfolio/illustrations-compilation/1.webp
 tags:
   - illustration
-vars: {}
 images: []
 ---
-
 
 # Illustrations
 
