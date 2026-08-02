@@ -3,14 +3,15 @@ translationKey: invitation-nature
 order: 41
 lang: fr
 name: Invitation 'nature'
+metadata:
+  image:
+    src: /_images/portfolio/invitation-nature/1.webp
 tags:
   - mise-en-page
   - print
   - photo
-vars: {}
 images: []
 ---
-
 
 # Invitation 'nature'
 
