@@ -3,13 +3,14 @@ translationKey: furiosa-style
 order: 58
 lang: fr
 name: Furiosa'style
+metadata:
+  image:
+    src: /_images/portfolio/furiosa-style/11.webp
 tags:
   - art
   - photo
-vars: {}
 images: []
 ---
-
 
 # Furiosa'style
 
