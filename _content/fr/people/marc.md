@@ -27,7 +27,7 @@ metadata:
     - name: youtube
       url: https://www.youtube.com/@m4rrc0_
     - name: github
-      url: https://www.m4rr.co/
+      url: https://github.com/m4rrc0
 generatePage: previewOnly
 ---
 
