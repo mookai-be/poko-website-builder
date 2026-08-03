@@ -4,7 +4,6 @@ order: 8
 lang: fr
 createdAt: 2026-04-27T19:44:00.000Z
 name: Contact
-vars: {}
 eleventyNavigation:
   order: 4
 pageClass: palette-mocha palette--contrast palette--bg-tone
@@ -86,7 +85,7 @@ Pas sûr de ce dont tu as besoin? Voilà comment ça démarre souvent:
 
 Tu préfères l'email direct? Pas de souci: {{ env.email | emailLink }}
 
-Tu es plutôt réseaux sociaux? On est là aussi: [Instagram](https://instagram.com/mookai) / [LinkedIn](https://linkedin.com/company/mookai) — (à vérifier/ajuster selon les vrais liens)
+Tu es plutôt réseaux sociaux? On est là aussi: [Instagram](https://instagram.com/mookai) / [LinkedIn](https://linkedin.com/company/mookai)
 
 Et si tu cherches à rejoindre l'équipe ou proposer un partenariat, mentionne-le dans le formulaire ou l'email. On lit tout, vraiment.
 {% endtwoColumnsItem %}
