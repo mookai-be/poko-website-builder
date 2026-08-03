@@ -23,9 +23,9 @@ metadata:
     - name: instagram
       url: https://www.instagram.com/marccoet/
     - name: linkedin
-      url: https://www.m4rr.co/
+      url: https://www.linkedin.com/in/marc-coet/
     - name: youtube
-      url: https://www.m4rr.co/
+      url: https://www.youtube.com/@m4rrc0_
     - name: github
       url: https://www.m4rr.co/
 generatePage: previewOnly
