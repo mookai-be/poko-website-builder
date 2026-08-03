@@ -107,9 +107,9 @@ le guide ultime. Elle ajoute les interdits, des exemples d'utilisation, des mise
 
 Jette un œil à notre offre de [logo "flash"](/services/logo-flash/). C'est rapide, efficace et économique.
 
-_Un acompte de 30% est demandé pour démarrer la collaboration. Pour les packs 1, 2 et 3. Les fichiers sources vectoriels (.eps, .ai, .pdf) sont compris dans le pack 4 ou disponibles en option pour 500€._
-
 [Prêt(e) à créer ton identité? Contacte-nous!](/contact/){.cta}
+
+_Un acompte de 30% est demandé pour démarrer la collaboration. Pour les packs 1, 2 et 3. Les fichiers sources vectoriels (.eps, .ai, .pdf) sont compris dans le pack 4 ou disponibles en option pour 500€._
 :::
 
 {% css %}
