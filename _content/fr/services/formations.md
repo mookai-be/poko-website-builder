@@ -50,6 +50,7 @@ Apprends à reconnaître un bon design et à donner des feedbacks constructifs �
 ### Site web sans prise de tête
 
 On te montre une technique incroyablement facile pour créer et héberger ton site gratuitement. En même temps, on t'explique les bases du web pour démystifier tout ça et te rendre autonome.
+Découvre une solution simple, écologique et abordable pour créer un site web professionnel sans te ruiner. Idéal pour les indépendants, associations et petits projets qui veulent être visibles en ligne.
 :::
 {% endgridItem %}
 {% gridItem class="card palette--bg-pop" %}
