@@ -14,6 +14,7 @@ metadata:
     - name: site
       url: https://www.tess-h.be/
     - name: behance
+      url: https://www.behance.net/TessGRAPHICDESIGNER
     - name: spotify
       url: https://open.spotify.com/playlist/6SnoAwjJC5DbIuZ8FydrWj
     - name: pinterest
