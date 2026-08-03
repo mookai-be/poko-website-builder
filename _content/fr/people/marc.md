@@ -15,13 +15,13 @@ metadata:
     - name: behance
       url: https://www.m4rr.co/
     - name: spotify
-      url: https://www.m4rr.co/
+      url: https://open.spotify.com/user/118092566
     - name: pinterest
-      url: https://www.m4rr.co/
+      url: https://www.pinterest.com/cot0497/
     - name: facebook
-      url: https://www.m4rr.co/
+      url: https://www.facebook.com/profile.php?id=1188225911
     - name: instagram
-      url: https://www.m4rr.co/
+      url: https://www.instagram.com/marccoet/
     - name: linkedin
       url: https://www.m4rr.co/
     - name: youtube
