@@ -12,8 +12,6 @@ metadata:
   links:
     - name: site
       url: https://www.m4rr.co/
-    - name: behance
-      url: https://www.m4rr.co/
     - name: spotify
       url: https://open.spotify.com/user/118092566
     - name: pinterest
