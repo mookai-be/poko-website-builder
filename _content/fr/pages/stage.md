@@ -5,7 +5,6 @@ lang: fr
 createdAt: 2026-05-21T10:15:00.000Z
 ldType: WebPage
 name: Stage
-vars: {}
 ---
 
 <div class="title-container">
@@ -145,7 +144,7 @@ On ne cherche pas un profil “parfait”, mais quelqu’un de solide sur au moi
 
 (Ixelles — près de l’ULB) <br> + télétravail possible certains jours 
 
-Un ordinateur personnel est nécessaire
+**Un ordinateur personnel est nécessaire.**
 
 ## Envoie-nous
 
@@ -202,4 +201,4 @@ blockquote:has(.quote) .quote {
 .two-columns .item-two-columns:nth-child(2) {
     --bleed-left: 0;
 }
-{% endcss %}
+{% endcss %}{% link url="https://www.behance.net/TessGRAPHICDESIGNER", type="external" %}{% endlink %}
