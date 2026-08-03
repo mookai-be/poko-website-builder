@@ -82,7 +82,7 @@ L'offre la plus complète pour une communication en béton. En plus d'un logo su
 
 ### C'est quoi, une charte graphique?
 
-C'est le mode d'emploi de ton logo. Elle garantit que ton identité sera toujours utilisée correctement.
+C'est le mode d'emploi de ton logo. Elle garantit que ton identité sera toujours cohérente sur les différents documents et supports de communication.
 ::: div {.switcher}
 <div>
 
