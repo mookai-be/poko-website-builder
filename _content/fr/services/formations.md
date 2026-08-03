@@ -39,7 +39,7 @@ Notre approche? Pas trop de blabla théorique. Du concret, des astuces de pro, e
 
 ### Éveille ton œil graphique
 
-Apprends à reconnaître un bon design et à donner des feedbacks constructifs à un graphiste.
+Découvre les principes qui font la différence entre un visuel amateur et un visuel professionnel. Une conférence accessible à tous pour apprendre à repérer les bonnes pratiques et améliorer l'impact de tes créations.
 :::
 {% endgridItem %}
 {% gridItem class="card palette--bg-pop" %}
@@ -49,6 +49,7 @@ Apprends à reconnaître un bon design et à donner des feedbacks constructifs �
 
 ### Site web sans prise de tête
 
+Lance ton propre site web en une journée, sans connaissances techniques. Repars avec un site clair, rapide et facile à mettre à jour, prêt à présenter ton activité ou ton projet.
 On te montre une technique incroyablement facile pour créer et héberger ton site gratuitement. En même temps, on t'explique les bases du web pour démystifier tout ça et te rendre autonome.
 Découvre une solution simple, écologique et abordable pour créer un site web professionnel sans te ruiner. Idéal pour les indépendants, associations et petits projets qui veulent être visibles en ligne.
 :::
