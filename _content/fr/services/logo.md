@@ -6,7 +6,6 @@ createdAt: 2026-04-28T11:11:00.000Z
 name: Logo
 tags:
   - print
-vars: {}
 localizationKey: 0eadee7319ce
 uuid: 2b48e4567d44
 pageFooter: ''
@@ -30,7 +29,7 @@ Un logo, ce n'est pas juste un joli dessin. C'est le visage de ton projet. C'est
 
 Notre spécificité? On combine deux approches:
 
-- **L'expertise et l'intuition créative de Tess:** pour un logo qui a une âme, qui raconte ton histoire et qui te ressemble, tout en respectant le côt technique et soit déclinable.
+- **L'expertise et l'intuition créative de Tess:** pour un logo qui a une âme, qui raconte ton histoire et qui te ressemble, tout en respectant le côté technique et soit déclinable.
 - **La vision stratégique de Marc:** pour s'assurer que ton logo soit pertinent et qu'il serve tes objectifs sur le long terme
 
 :::
