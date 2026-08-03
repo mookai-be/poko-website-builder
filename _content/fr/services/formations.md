@@ -89,7 +89,7 @@ Apprends à créer des mises en page professionnelles avec Adobe InDesign. Une j
 
 ### Permanence graphique
 
-texte
+Bloque un créneau pour poser toutes tes questions en graphisme, débloquer un projet ou recevoir un regard professionnel sur tes créations. Un accompagnement personnalisé, à distance et sans engagement.
 :::
 {% endgridItem %}
 {% endgrid %}
