@@ -5,6 +5,7 @@ lang: fr
 createdAt: 2026-05-21T10:15:00.000Z
 ldType: WebPage
 name: Stage
+vars: {}
 ---
 
 <div class="title-container">
@@ -100,6 +101,7 @@ On ne cherche pas un profil “parfait”, mais quelqu’un de solide sur au moi
 - curiosité, envie d’apprendre
 - intérêt pour un web plus éthique et durable
 - communication fluide en français
+- ponctualité
 
 :::
 
