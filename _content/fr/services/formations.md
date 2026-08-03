@@ -49,9 +49,7 @@ Découvre les principes qui font la différence entre un visuel amateur et un vi
 
 ### Site web sans prise de tête
 
-Lance ton propre site web en une journée, sans connaissances techniques. Repars avec un site clair, rapide et facile à mettre à jour, prêt à présenter ton activité ou ton projet.
-On te montre une technique incroyablement facile pour créer et héberger ton site gratuitement. En même temps, on t'explique les bases du web pour démystifier tout ça et te rendre autonome.
-Découvre une solution simple, écologique et abordable pour créer un site web professionnel sans te ruiner. Idéal pour les indépendants, associations et petits projets qui veulent être visibles en ligne.
+Découvre une méthode simple pour créer ton propre site web, sans connaissances techniques. En une journée, tu apprends les bases du web, réalises un site clair, rapide et facile à mettre à jour, puis découvres comment l'héberger gratuitement. Une solution idéale pour les indépendants, associations et petits projets qui souhaitent être visibles en ligne sans se compliquer la vie.
 :::
 {% endgridItem %}
 {% gridItem class="card palette--bg-pop" %}
