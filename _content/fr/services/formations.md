@@ -6,7 +6,6 @@ createdAt: 2026-04-28T11:50:00.000Z
 name: Formations
 tags:
   - support
-vars: {}
 pageClass: palette-gold
 ---
 
@@ -37,6 +36,7 @@ Notre approche? Pas trop de blabla théorique. Du concret, des astuces de pro, e
 {% image src="/_images/confe__rence-avoir-l-oeil-4-1.webp", aspectRatio=1.78 %}
 
 ::: div 
+
 ### Éveille ton œil graphique
 
 Apprends à reconnaître un bon design et à donner des feedbacks constructifs à un graphiste.
@@ -46,6 +46,7 @@ Apprends à reconnaître un bon design et à donner des feedbacks constructifs �
 {% image src="/_images/pexels-greta-hoffman-7674989.webp", aspectRatio=1.78 %}
 
 ::: div 
+
 ### Site web sans prise de tête
 
 On te montre une technique incroyablement facile pour créer et héberger ton site gratuitement. En même temps, on t'explique les bases du web pour démystifier tout ça et te rendre autonome.
@@ -55,6 +56,7 @@ On te montre une technique incroyablement facile pour créer et héberger ton si
 {% image src="/_images/hygiene-digitale-1.webp", aspectRatio=1.78 %}
 
 ::: div 
+
 ### Hygiène numérique pour entrepreneurs
 
 Organise tes outils, sécurise tes données et gagne en sérénité au quotidien.
@@ -64,6 +66,7 @@ Organise tes outils, sécurise tes données et gagne en sérénité au quotidien
 {% image src="/_images/pexels-diva-plavalaguna-6937933-1.webp", aspectRatio=1.78 %}
 
 ::: div
+
 ### Ateliers sur mesure
 
 On peut aussi construire une formation adaptée aux besoins spécifiques de ton équipe.
@@ -73,15 +76,17 @@ On peut aussi construire une formation adaptée aux besoins spécifiques de ton 
 {% image src="/_images/182105469_774812693226012_8715930705033717653_n.webp", aspectRatio=1.78 %}
 
 ::: div
+
 ### Le béaba d’InDesign
 
-Apprends à reconnaître un bon design et à donner des feedbacks constructifs à un graphiste.
+Apprends à créer des mises en page professionnelles avec Adobe InDesign. Une journée pratique pour maîtriser les bases du logiciel et réaliser flyers, brochures, affiches ou documents multipages en toute autonomie.
 :::
 {% endgridItem %}
 {% gridItem class="card palette--bg-pop" %}
 {% image src="/_images/img_8173.webp", aspectRatio=1.78 %}
 
 ::: div
+
 ### Permanence graphique
 
 texte
