@@ -60,6 +60,7 @@ On te montre une technique incroyablement facile pour créer et héberger ton si
 ### Hygiène numérique pour entrepreneurs
 
 Organise tes outils, sécurise tes données et gagne en sérénité au quotidien.
+Reprends le contrôle de ton quotidien numérique. Découvre des conseils concrets pour réduire la surcharge digitale, mieux organiser tes outils et retrouver du temps et de la sérénité.
 :::
 {% endgridItem %}
 {% gridItem class="card palette--bg-pop" %}
