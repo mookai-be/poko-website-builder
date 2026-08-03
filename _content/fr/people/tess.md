@@ -27,7 +27,6 @@ metadata:
       url: https://www.linkedin.com/in/tess-h/
     - name: youtube
       url: https://www.youtube.com/@Tess-h
-    - name: github
 generatePage: previewOnly
 ---
 
