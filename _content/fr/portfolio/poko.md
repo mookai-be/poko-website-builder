@@ -5,12 +5,13 @@ lang: fr
 name: poko
 metadata:
   image:
-    src: /_images/portfolio/mookai-asbl/1.webp
+    src: /_images/portfolio/poko/5.webp
 tags:
   - web
   - branding
   - logo
   - featured
+vars: {}
 images: []
 ---
 

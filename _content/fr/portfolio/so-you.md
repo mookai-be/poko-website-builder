@@ -3,13 +3,14 @@ translationKey: so-you
 order: 28
 lang: fr
 name: so You - Holistic Coaching
+metadata:
+  image:
+    src: /_images/portfolio/so-you/10.webp
 tags:
   - branding
   - logo
-vars: {}
 images: []
 ---
-
 
 # so You - Holistic Coaching
 

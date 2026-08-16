@@ -3,16 +3,17 @@ translationKey: inspiration-yoga
 order: 71
 lang: fr
 name: Inspiration - Yoga
+metadata:
+  image:
+    src: /_images/portfolio/inspiration-yoga/4.webp
 tags:
   - branding
   - logo
   - print
-vars: {}
 images:
-  - alt: Inspiration - Yoga - identité visuelle
-    url: https://images.ctfassets.net/1tq41wraq9ir/14T1dWv3zoa6iMM6sWwMkO/e47ebccf65fe9e39de4923d9709309d4/inspiration-imgcover.png
+  - url: https://images.ctfassets.net/1tq41wraq9ir/14T1dWv3zoa6iMM6sWwMkO/e47ebccf65fe9e39de4923d9709309d4/inspiration-imgcover.png
+    alt: Inspiration - Yoga - identité visuelle
 ---
-
 
 # Inspiration - Yoga
 

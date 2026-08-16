@@ -3,12 +3,13 @@ translationKey: sous-le-ciel
 order: 64
 lang: fr
 name: SOUS LE CIEL
+metadata:
+  image:
+    src: /_images/portfolio/sous-le-ciel/3.webp
 tags:
   - mise-en-page
-vars: {}
 images: []
 ---
-
 
 # SOUS LE CIEL
 

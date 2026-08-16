@@ -3,13 +3,14 @@ translationKey: parsi-parla
 order: 55
 lang: fr
 name: Parsi Parla - Mise en page poèmes
+metadata:
+  image:
+    src: /_images/portfolio/parsi-parla/4.webp
 tags:
   - mise-en-page
   - print
-vars: {}
 images: []
 ---
-
 
 # Parsi Parla - Mise en page poèmes
 

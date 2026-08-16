@@ -3,13 +3,14 @@ translationKey: rapport-2021-comme-chez-toi
 order: 95
 lang: fr
 name: Rapport annuel 2021 - Comme Chez Toi ASBL
+metadata:
+  image:
+    src: /_images/portfolio/rapport-2021-comme-chez-toi/1.webp
 tags:
   - mise-en-page
   - print
-vars: {}
 images: []
 ---
-
 
 # Rapport annuel 2021 - Comme Chez Toi ASBL
 

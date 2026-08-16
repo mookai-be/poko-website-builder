@@ -85,7 +85,7 @@ Pas sûr de ce dont tu as besoin? Voilà comment ça démarre souvent:
 
 Tu préfères l'email direct? Pas de souci: {{ env.email | emailLink }}
 
-Tu es plutôt réseaux sociaux? On est là aussi: [Instagram](https://instagram.com/mookai) / [LinkedIn](https://linkedin.com/company/mookai) — (à vérifier/ajuster selon les vrais liens)
+Tu es plutôt réseaux sociaux? On est là aussi: [Instagram](https://instagram.com/mookai) / [LinkedIn](https://linkedin.com/company/mookai)
 
 Et si tu cherches à rejoindre l'équipe ou proposer un partenariat, mentionne-le dans le formulaire ou l'email. On lit tout, vraiment.
 {% endtwoColumnsItem %}

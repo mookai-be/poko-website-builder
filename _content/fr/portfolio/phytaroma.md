@@ -5,7 +5,7 @@ lang: fr
 name: PHYTAROMA
 metadata:
   image:
-    src: /_images/portfolio/mookai-asbl/1.webp
+    src: /_images/portfolio/phytaroma/49.webp
 tags:
   - branding
   - logo
@@ -15,7 +15,6 @@ tags:
   - web
   - site-toile
   - featured
-vars: {}
 images: []
 ---
 

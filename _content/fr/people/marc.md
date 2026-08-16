@@ -12,23 +12,21 @@ metadata:
   links:
     - name: site
       url: https://www.m4rr.co/
-    - name: behance
-      url: https://www.m4rr.co/
     - name: spotify
-      url: https://www.m4rr.co/
+      url: https://open.spotify.com/user/118092566
     - name: pinterest
-      url: https://www.m4rr.co/
+      url: https://www.pinterest.com/cot0497/
     - name: facebook
-      url: https://www.m4rr.co/
+      url: https://www.facebook.com/profile.php?id=1188225911
     - name: instagram
-      url: https://www.m4rr.co/
+      url: https://www.instagram.com/marccoet/
     - name: linkedin
-      url: https://www.m4rr.co/
+      url: https://www.linkedin.com/in/marc-coet/
     - name: youtube
-      url: https://www.m4rr.co/
+      url: https://www.youtube.com/@m4rrc0_
     - name: github
-      url: https://www.m4rr.co/
+      url: https://github.com/m4rrc0
 generatePage: previewOnly
 ---
 
-Marc code, conçoit et questionne. Il a une conviction: le web peut être performant, éthique et sobre en même temps. Alors plutôt que d'utiliser des outils qui ne lui conviennent pas, il en construit. _poko_, son website builder indépendant, en est la preuve directe.
+Marc code, conçoit et questionne. Il a une conviction: le web peut être performant, éthique et sobre en même temps. Alors plutôt que d'utiliser des outils qui ne lui conviennent pas, il en construit. {% link url="https://", type="external" %}https://www.poko.eco/{% endlink %}, son website builder indépendant, en est la preuve directe.

@@ -3,13 +3,14 @@ translationKey: femmes-et-sante
 order: 51
 lang: fr
 name: Femmes & Santé asbl
+metadata:
+  image:
+    src: /_images/portfolio/femmes-et-sante/12.webp
 tags:
   - branding
   - logo
-vars: {}
 images: []
 ---
-
 
 # Femmes & Santé asbl
 

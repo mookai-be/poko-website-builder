@@ -3,12 +3,13 @@ translationKey: aquarelles
 order: 16
 lang: fr
 name: aquarelles…
+metadata:
+  image:
+    src: /_images/portfolio/aquarelles/1.webp
 tags:
   - art
-vars: {}
 images: []
 ---
-
 
 # aquarelles…
 

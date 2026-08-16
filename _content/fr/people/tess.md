@@ -14,21 +14,19 @@ metadata:
     - name: site
       url: https://www.tess-h.be/
     - name: behance
-      url: https://www.tess-h.be/
+      url: https://www.behance.net/TessGRAPHICDESIGNER
     - name: spotify
-      url: https://www.tess-h.be/
+      url: https://open.spotify.com/playlist/6SnoAwjJC5DbIuZ8FydrWj
     - name: pinterest
-      url: https://www.tess-h.be/
+      url: https://www.pinterest.com/lamauvaisefee/
     - name: facebook
-      url: https://www.tess-h.be/
+      url: https://www.facebook.com/Tessh.VIVIDimprint/
     - name: instagram
-      url: https://www.tess-h.be/
+      url: https://www.instagram.com/Tessvividimprint/
     - name: linkedin
-      url: https://www.tess-h.be/
+      url: https://www.linkedin.com/in/tess-h/
     - name: youtube
-      url: https://www.tess-h.be/
-    - name: github
-      url: https://www.tess-h.be/
+      url: https://www.youtube.com/@Tess-h
 generatePage: previewOnly
 ---
 

@@ -3,13 +3,14 @@ translationKey: charlie-cookie
 order: 62
 lang: fr
 name: Charlie COOKIE
+metadata:
+  image:
+    src: /_images/portfolio/charlie-cookie/4.webp
 tags:
   - branding
   - logo
-vars: {}
 images: []
 ---
-
 
 # Charlie COOKIE
 

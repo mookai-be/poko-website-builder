@@ -3,12 +3,13 @@ translationKey: cercle-de-femmes
 order: 24
 lang: fr
 name: Cercle de femmes - pleines lunes et nouvelles lunes
+metadata:
+  image:
+    src: /_images/portfolio/cercle-de-femmes/10.webp
 tags:
   - illustration
-vars: {}
 images: []
 ---
-
 
 # Cercle de femmes - pleines lunes et nouvelles lunes
 

@@ -3,16 +3,17 @@ translationKey: my-go
 order: 73
 lang: fr
 name: My GO
+metadata:
+  image:
+    src: /_images/portfolio/my-go/1.webp
 tags:
   - branding
   - logo
   - print
-vars: {}
 images:
-  - alt: My GO - identité visuelle
-    url: https://images.ctfassets.net/1tq41wraq9ir/4Q69lGpkhOMomQakoSIuOO/ac764c4826cf459b24da5b39cfa4e0d3/my-go-imgcover.png
+  - url: https://images.ctfassets.net/1tq41wraq9ir/4Q69lGpkhOMomQakoSIuOO/ac764c4826cf459b24da5b39cfa4e0d3/my-go-imgcover.png
+    alt: My GO - identité visuelle
 ---
-
 
 # My GO
 

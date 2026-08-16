@@ -3,13 +3,14 @@ translationKey: mises-en-page-cv
 order: 14
 lang: fr
 name: Mises en page de CV
+metadata:
+  image:
+    src: /_images/portfolio/mises-en-page-cv/1.webp
 tags:
   - mise-en-page
   - print
-vars: {}
 images: []
 ---
-
 
 # Mises en page de CV
 

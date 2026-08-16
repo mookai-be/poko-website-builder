@@ -3,14 +3,15 @@ translationKey: le-jeu-parfait
 order: 35
 lang: fr
 name: le Jeu Parfait
+metadata:
+  image:
+    src: /_images/portfolio/le-jeu-parfait/1.webp
 tags:
   - mise-en-page
   - print
   - illustration
-vars: {}
 images: []
 ---
-
 
 # le Jeu Parfait
 

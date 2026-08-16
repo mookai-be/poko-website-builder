@@ -3,13 +3,14 @@ translationKey: symbolique-des-couleurs
 order: 33
 lang: fr
 name: Symbolique des couleurs
+metadata:
+  image:
+    src: /_images/portfolio/symbolique-des-couleurs/14.webp
 tags:
   - mise-en-page
   - print
-vars: {}
 images: []
 ---
-
 
 # Symbolique des couleurs
 

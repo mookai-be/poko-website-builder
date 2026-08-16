@@ -3,13 +3,14 @@ translationKey: invitee-dans-sa-caverne
 order: 52
 lang: fr
 name: Invitée dans sa caverne…
+metadata:
+  image:
+    src: /_images/portfolio/invitee-dans-sa-caverne/3.webp
 tags:
   - art
   - illustration
-vars: {}
 images: []
 ---
-
 
 # Invitée dans sa caverne…
 

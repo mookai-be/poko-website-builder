@@ -3,13 +3,14 @@ translationKey: roadbook-2015
 order: 13
 lang: fr
 name: ROADBOOK 2015
+metadata:
+  image:
+    src: /_images/portfolio/roadbook-2015/2.webp
 tags:
   - mise-en-page
   - print
-vars: {}
 images: []
 ---
-
 
 # ROADBOOK 2015
 

@@ -3,13 +3,14 @@ translationKey: javva
 order: 85
 lang: fr
 name: JAVVA asbl - Rapport d'activité
+metadata:
+  image:
+    src: /_images/portfolio/javva/13.webp
 tags:
   - mise-en-page
   - print
-vars: {}
 images: []
 ---
-
 
 # JAVVA asbl - Rapport d'activité
 

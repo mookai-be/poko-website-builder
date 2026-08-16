@@ -3,13 +3,14 @@ translationKey: dossier-home
 order: 17
 lang: fr
 name: Dossier de diffusion HOME
+metadata:
+  image:
+    src: /_images/portfolio/dossier-home/1.webp
 tags:
   - mise-en-page
   - print
-vars: {}
 images: []
 ---
-
 
 # Dossier de diffusion HOME
 

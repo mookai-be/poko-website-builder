@@ -3,18 +3,19 @@ translationKey: microtubules
 order: 88
 lang: fr
 name: Microtubules
+metadata:
+  image:
+    src: /_images/portfolio/microtubules/15.webp
 tags:
   - branding
   - logo
   - print
   - web
   - site-toile
-vars: {}
 images:
-  - alt: Microtubules - identité visuelle
-    url: https://images.ctfassets.net/1tq41wraq9ir/3zqZppZfDqoSKsUQm8mGc0/7bc69cca1b767711a8034f417aa276a0/microtubules_logo_RVB-35.jpg
+  - url: https://images.ctfassets.net/1tq41wraq9ir/3zqZppZfDqoSKsUQm8mGc0/7bc69cca1b767711a8034f417aa276a0/microtubules_logo_RVB-35.jpg
+    alt: Microtubules - identité visuelle
 ---
-
 
 # Microtubules
 

@@ -3,14 +3,15 @@ translationKey: startbook
 order: 30
 lang: fr
 name: startBook
+metadata:
+  image:
+    src: /_images/portfolio/startbook/5.webp
 tags:
   - mise-en-page
   - print
   - illustration
-vars: {}
 images: []
 ---
-
 
 # startBook
 

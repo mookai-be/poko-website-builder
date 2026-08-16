@@ -3,13 +3,14 @@ translationKey: eamonn-tobin
 order: 15
 lang: fr
 name: Eamonn Tobin
+metadata:
+  image:
+    src: /_images/portfolio/eamonn-tobin/7.webp
 tags:
   - branding
   - logo
-vars: {}
 images: []
 ---
-
 
 # Eamonn Tobin
 

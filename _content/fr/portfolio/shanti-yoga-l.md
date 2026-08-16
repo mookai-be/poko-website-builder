@@ -3,13 +3,14 @@ translationKey: shanti-yoga-l
 order: 54
 lang: fr
 name: Shanti Yoga L.
+metadata:
+  image:
+    src: /_images/portfolio/shanti-yoga-l/15.webp
 tags:
   - branding
   - logo
-vars: {}
 images: []
 ---
-
 
 # Shanti Yoga L.
 

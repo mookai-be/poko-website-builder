@@ -3,13 +3,14 @@ translationKey: clarmony
 order: 74
 lang: fr
 name: clarmony
+metadata:
+  image:
+    src: /_images/portfolio/clarmony/2.webp
 tags:
   - branding
   - logo
-vars: {}
 images: []
 ---
-
 
 # clarmony
 

@@ -8,6 +8,7 @@ name: mookaï
 eleventyNavigation:
   add: Nav
   title: À propos
+vars: {}
 ---
 
 # À propos
@@ -110,7 +111,7 @@ En bonus, chaque site sur-mesure qu'on construit renforce la plateforme pour que
 {% twoColumnsItem  %}
 ## Notre nom, notre logo
 
-**mookaï** s’inspire du jaspe mookaïte, une pierre précieuse aux couleurs vives et variées, associée à la créativité, à l’originalité et à l’affirmation de soi. Sa symbolique résonne profondément avec notre manière de travailler et avec les projets que nous accompagnons: des projets uniques, portés par des personnes qui veulent créer autrement, avec sens et authenticité. La mookaïte évoque aussi l’idée de transformer une intuition ou une vision en quelque chose de tangible. Pour nous, la créativité n’a de valeur que lorsqu’elle prend vie dans des réalisations concrètes, utiles et durables.
+**mookaï** s’inspire du jaspe mookaïte, une pierre précieuse aux couleurs vives et variées, associée à la créativité, à l’originalité et à l’affirmation de soi. Sa symbolique résonne profondément avec notre manière de travailler et avec les projets que nous accompagnons: des projets uniques, portés par des personnes qui veulent créer autrement, avec sens et authenticité. La mookaïte évoque aussi l’idée de transformer une intuition ou une vision en quelque chose de tangible. Pour nous, ça traduit exactement notre cœur de métier, lorsque la créativité prend vie dans des réalisations concrètes, utiles et durables.
 
 Notre logo est un **sigil**, un symbole créé à partir des premières lettres d’un mot ou d’une phrase afin d’en condenser l’intention dans une forme simple et mémorable. Plus qu’un simple signe graphique, il agit comme une empreinte visuelle pensée pour rester en mémoire et porter une énergie claire: amplifier la visibilité et la portée des projets qui œuvrent pour le bien commun. Une promesse ancrée dans notre identité, entre intuition créative et action tangible.
 {% endtwoColumnsItem %}

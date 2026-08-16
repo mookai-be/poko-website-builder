@@ -3,13 +3,14 @@ translationKey: empsa
 order: 47
 lang: fr
 name: EMPSA asbl
+metadata:
+  image:
+    src: /_images/portfolio/empsa/20.webp
 tags:
   - branding
   - logo
-vars: {}
 images: []
 ---
-
 
 # EMPSA asbl
 

@@ -3,13 +3,14 @@ translationKey: affiche-portes-ouvertes-autre-ecole
 order: 45
 lang: fr
 name: Affiche portes ouvertes - L'Autre École
+metadata:
+  image:
+    src: /_images/portfolio/affiche-portes-ouvertes-autre-ecole/2.webp
 tags:
   - mise-en-page
   - print
-vars: {}
 images: []
 ---
-
 
 # Affiche portes ouvertes - L'Autre École
 

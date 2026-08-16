@@ -3,13 +3,14 @@ translationKey: affiche-court-metrage
 order: 48
 lang: fr
 name: Affiche - court métrage
+metadata:
+  image:
+    src: /_images/portfolio/affiche-court-metrage/2.webp
 tags:
   - mise-en-page
   - print
-vars: {}
 images: []
 ---
-
 
 # Affiche - court métrage
 

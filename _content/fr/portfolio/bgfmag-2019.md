@@ -3,12 +3,13 @@ translationKey: bgfmag-2019
 order: 22
 lang: fr
 name: BGFmag 2019
+metadata:
+  image:
+    src: /_images/portfolio/bgfmag-2019/9.webp
 tags:
   - illustration
-vars: {}
 images: []
 ---
-
 
 # BGFmag 2019
 

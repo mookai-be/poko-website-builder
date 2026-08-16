@@ -3,13 +3,14 @@ translationKey: rien-sur-le-blanc
 order: 25
 lang: fr
 name: RIEN SUR LE BLANC
+metadata:
+  image:
+    src: /_images/portfolio/rien-sur-le-blanc/3.webp
 tags:
   - photo
   - mise-en-page
-vars: {}
 images: []
 ---
-
 
 # RIEN SUR LE BLANC
 

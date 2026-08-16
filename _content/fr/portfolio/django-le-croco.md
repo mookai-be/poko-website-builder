@@ -3,12 +3,13 @@ translationKey: django-le-croco
 order: 27
 lang: fr
 name: Django le croco - TOME 1
+metadata:
+  image:
+    src: /_images/portfolio/django-le-croco/7.webp
 tags:
   - mise-en-page
-vars: {}
 images: []
 ---
-
 
 # Django le croco - TOME 1
 

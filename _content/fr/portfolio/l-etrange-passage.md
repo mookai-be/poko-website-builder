@@ -3,6 +3,9 @@ translationKey: l-etrange-passage
 order: 80
 lang: fr
 name: L'étrange passage
+metadata:
+  image:
+    src: /_images/portfolio/l-etrange-passage/42.webp
 tags:
   - mise-en-page
   - print
@@ -10,10 +13,8 @@ tags:
   - logo
   - web
   - site-toile
-vars: {}
 images: []
 ---
-
 
 # L'étrange passage
 

@@ -3,12 +3,13 @@ translationKey: so-what
 order: 72
 lang: fr
 name: SO WHAT
+metadata:
+  image:
+    src: /_images/portfolio/so-what/2.webp
 tags:
   - mise-en-page
-vars: {}
 images: []
 ---
-
 
 # SO WHAT
 

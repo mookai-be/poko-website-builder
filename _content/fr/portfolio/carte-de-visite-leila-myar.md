@@ -3,13 +3,14 @@ translationKey: carte-de-visite-leila-myar
 order: 49
 lang: fr
 name: Carte de visite - Leila Myar
+metadata:
+  image:
+    src: /_images/portfolio/carte-de-visite-leila-myar/2.webp
 tags:
   - mise-en-page
   - print
-vars: {}
 images: []
 ---
-
 
 # Carte de visite - Leila Myar
 

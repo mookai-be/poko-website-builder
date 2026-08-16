@@ -3,6 +3,9 @@ translationKey: feed-by-design
 order: 42
 lang: fr
 name: Feed by Design
+metadata:
+  image:
+    src: /_images/portfolio/feed-by-design/16.webp
 tags:
   - branding
   - logo
@@ -11,12 +14,10 @@ tags:
   - mise-en-page
   - web
   - site-toile
-vars: {}
 images:
-  - alt: Feed by Design - identité visuelle
-    url: https://mir-s3-cdn-cf.behance.net/project_modules/1400/0c980c52697581.5919cb973d80f.jpg
+  - url: https://mir-s3-cdn-cf.behance.net/project_modules/1400/0c980c52697581.5919cb973d80f.jpg
+    alt: Feed by Design - identité visuelle
 ---
-
 
 # Feed by Design
 

@@ -3,15 +3,16 @@ translationKey: le-ludenne
 order: 7
 lang: fr
 name: le Ludenne
+metadata:
+  image:
+    src: /_images/portfolio/le-ludenne/7.webp
 tags:
   - branding
   - logo
-vars: {}
 images:
-  - alt: le Ludenne - identité visuelle
-    url: https://mir-s3-cdn-cf.behance.net/project_modules/1400/c7fc51244226747.69931534bfa06.jpg
+  - url: https://mir-s3-cdn-cf.behance.net/project_modules/1400/c7fc51244226747.69931534bfa06.jpg
+    alt: le Ludenne - identité visuelle
 ---
-
 
 # le Ludenne
 

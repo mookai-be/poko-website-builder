@@ -3,15 +3,16 @@ translationKey: en-jeux
 order: 89
 lang: fr
 name: En•JEUX!
+metadata:
+  image:
+    src: /_images/portfolio/en-jeux/1.webp
 tags:
   - mise-en-page
   - print
   - branding
   - logo
-vars: {}
 images: []
 ---
-
 
 # En•JEUX!
 

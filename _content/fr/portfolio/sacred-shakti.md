@@ -3,16 +3,17 @@ translationKey: sacred-shakti
 order: 20
 lang: fr
 name: Sacred Shakti
+metadata:
+  image:
+    src: /_images/portfolio/sacred-shakti/11.webp
 tags:
   - branding
   - logo
   - print
-vars: {}
 images:
-  - alt: Sacred Shakti - identité visuelle
-    url: https://images.ctfassets.net/1tq41wraq9ir/34M4mzsEvYqWCkce2mIWqc/055609d89ec1dc34a82df047cf51ca55/sacred-sakti-imgcover.png
+  - url: https://images.ctfassets.net/1tq41wraq9ir/34M4mzsEvYqWCkce2mIWqc/055609d89ec1dc34a82df047cf51ca55/sacred-sakti-imgcover.png
+    alt: Sacred Shakti - identité visuelle
 ---
-
 
 # Sacred Shakti
 

@@ -96,6 +96,7 @@ On ne cherche pas un profil “parfait”, mais quelqu’un de solide sur au moi
 - curiosité, envie d’apprendre
 - intérêt pour un web plus éthique et durable
 - communication fluide en français
+- ponctualité
 
 :::
 
@@ -139,7 +140,7 @@ On ne cherche pas un profil “parfait”, mais quelqu’un de solide sur au moi
 
 (Ixelles — près de l’ULB) <br> + télétravail possible certains jours 
 
-Un ordinateur personnel est nécessaire
+**Un ordinateur personnel est nécessaire.**
 
 ## Envoie-nous
 
@@ -196,4 +197,4 @@ blockquote:has(.quote) .quote {
 .two-columns .item-two-columns:nth-child(2) {
     --bleed-left: 0;
 }
-{% endcss %}
+{% endcss %}{% link url="https://www.behance.net/TessGRAPHICDESIGNER", type="external" %}{% endlink %}
