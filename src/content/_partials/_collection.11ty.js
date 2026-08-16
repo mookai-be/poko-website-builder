@@ -97,6 +97,13 @@ export default async function ({
   const layoutClass = items.length > 3 ? "grid-fluid" : "switcher";
   // const layoutClass = "grid-fluid";
   const isFlow = type === "flow";
+  // `columns` is a shorthand for `<column-width> || <column-count>`, so the two
+  // distinct CMS knobs compose into a single value. Width must come first.
+  // width only -> fluid count; count only -> exactly N; both -> >=width, max N.
+  const columnsFauxMasonry =
+    type === "faux-masonry"
+      ? [widthColumnMin, columns].filter(Boolean).join(" ") || undefined
+      : undefined;
   const styles = {
     "--columns": columns,
     [isFlow ? "--flow-space" : "--gap"]: gap,
@@ -105,13 +112,14 @@ export default async function ({
     "--width-wrap": widthWrap,
     "--item-width": itemWidth,
     "--height": height,
+    "--columns-faux-masonry": columnsFauxMasonry,
   };
   let styleStr = Object.entries(styles)
     .filter(([key, value]) => value)
     .map(([key, value]) => `${key}: ${value};`)
     .join(" ");
   // styleStr = styleStr ? `style="${styleStr}"` : "";
-  const wrapperClasses = `layout area main list-collection ${type || layoutClass} ${noBar ? "no-bar" : ""} ${className || ""}`;
+  const wrapperClasses = `layout area main list-collection ${collection || "all"} ${type || layoutClass} ${noBar ? "no-bar" : ""} ${className || ""}`;
 
   // const wrapperStr = await partialWrapperSc.call(
   //   this,
