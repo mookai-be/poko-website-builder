@@ -17,7 +17,7 @@ Tu veux contribuer à un web plus léger, plus responsable et accessible? Partic
 :::
 
 ::: div {.full-bleed .banner}
-{% image src="/_images/stagiaire-1.webp" %}
+{% image src="/_images/stagiaire-1.webp", class="object-[center_top]" %}
 :::
 
 ::: section
@@ -161,7 +161,7 @@ Les candidatures génériques ne seront pas prises en compte ;-) {.small .italic
 
 {% sectionCollection  %}
 
-{% collection collection="reviews", filters=[{"by":"name","value":["mandy","mathias","meriton"]}], sortCriterias=[], type="grid-fluid", columns=2, itemPartial="review-card" %}{% endcollection %}
+{% collection collection="reviews", filters=[{"by":"name","value":["mandy","mathias","meriton"]}], sortCriterias=[], type="faux-masonry", widthColumnMin="25rem", columns=2, gap="var(--step-1)", itemPartial="review-card" %}{% endcollection %}
 
 {% endsectionCollection %}
 
@@ -180,7 +180,7 @@ blockquote:has(.quote) {
   text-align: center;
 }
 blockquote:has(.quote) .quote {
-  font-family: "Chantal", cursive, sans-serif;
+  font-family: "Emoji", "Chantal", cursive, sans-serif;
 }
 .searched-profiles .two-columns .item-two-columns,
 .searched-profiles .two-columns .item-two-columns h3{
