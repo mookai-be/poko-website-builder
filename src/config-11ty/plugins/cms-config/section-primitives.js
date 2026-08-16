@@ -142,6 +142,40 @@ export const layoutTypeCluster = {
   fields: [{ name: "gap", label: "Gap", widget: "string", required: false }],
 };
 
+// CSS multi-column layout. Both knobs compose into the `columns` shorthand property
+// (`<column-width> || <column-count>`) via `--columns-faux-masonry`, so all
+// four combinations are meaningful — see the render partials `_grid.11ty.js`
+// and `_collection.11ty.js`.
+export const layoutTypeFauxMasonry = {
+  name: "faux-masonry",
+  label: "Faux Masonry (CSS columns)",
+  collapsed: true,
+  hint: "Items flow top-to-bottom within each column (Pinterest-style). Reading order runs down each column, not across rows — use where visual balance matters more than sequence.",
+  fields: [
+    {
+      name: "widthColumnMin",
+      label: "Min Column Width",
+      widget: "string",
+      required: false,
+      hint: "CSS length (e.g. 24.9rem). Columns are at least this wide and stretch to fill. Leave empty to use the default (24.9rem) or to set an exact column count below.",
+    },
+    {
+      name: "columns",
+      label: "Column Count",
+      widget: "number",
+      required: false,
+      hint: "Alone: exactly this many columns. Combined with Min Column Width: an upper cap on how many columns can fit.",
+    },
+    {
+      name: "gap",
+      label: "Gap",
+      widget: "string",
+      required: false,
+      hint: "The gap between columns (e.g. 1em [default], var(--step-2) [fluid type scale], 0 [no gap])",
+    },
+  ],
+};
+
 export const layoutTypeFixedFluid = {
   name: "fixedFluid",
   label: "Fixed-Fluid (Asymmetrical Columns)",
@@ -578,6 +612,7 @@ export const gridAreaFields = [
       layoutTypeSwitcher,
       layoutTypeGridFluid,
       layoutTypeCluster,
+      layoutTypeFauxMasonry,
       layoutTypeNone,
     ],
   },
@@ -671,6 +706,7 @@ export const collectionAreaFields = (extraOptions = []) => [
       layoutTypeSwitcher,
       layoutTypeGridFluid,
       layoutTypeCluster,
+      layoutTypeFauxMasonry,
       layoutTypeNone,
     ],
   },

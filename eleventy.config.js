@@ -118,6 +118,7 @@ import {
 } from "./src/config-11ty/filters/index.js";
 import {
   newLine,
+  htmlLineBreak,
   fetchFile as fetchFileShortcode,
   linkPaired as linkPairedShortcode,
   buttonPaired as buttonPairedShortcode,
@@ -733,6 +734,7 @@ export default async function (eleventyConfig) {
   // });
   // await eleventyConfig.addAsyncShortcode("links", links);
   eleventyConfig.addShortcode("n", newLine);
+  eleventyConfig.addShortcode("br", htmlLineBreak);
   await eleventyConfig.addNunjucksAsyncShortcode(
     "fetchFile",
     fetchFileShortcode,

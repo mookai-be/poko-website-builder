@@ -1283,6 +1283,35 @@ const layoutTypeCluster = {
     },
   ],
 };
+const layoutTypeFauxMasonry = {
+  name: "faux-masonry",
+  label: "Faux Masonry (CSS columns)",
+  collapsed: true,
+  hint: "Items flow top-to-bottom within each column (Pinterest-style). Reading order runs down each column, not across rows — use where visual balance matters more than sequence.",
+  fields: [
+    {
+      name: "widthColumnMin",
+      label: "Min Column Width",
+      widget: "string",
+      required: false,
+      hint: "CSS length (e.g. 24.9rem). Columns are at least this wide and stretch to fill. Leave empty to use the default (24.9rem) or to set an exact column count below.",
+    },
+    {
+      name: "columns",
+      label: "Column Count",
+      widget: "number",
+      required: false,
+      hint: "Alone: exactly this many columns. Combined with Min Column Width: an upper cap on how many columns can fit.",
+    },
+    {
+      name: "gap",
+      label: "Gap",
+      widget: "string",
+      required: false,
+      hint: "The gap between columns (e.g. 1em [default], var(--step-2) [fluid type scale], 0 [no gap])",
+    },
+  ],
+};
 const layoutTypeFlow = {
   name: "flow",
   label: "Flow",
@@ -2933,6 +2962,7 @@ export const sectionGrid = {
         layoutTypeSwitcher,
         layoutTypeGridFluid,
         layoutTypeCluster,
+        layoutTypeFauxMasonry,
         layoutTypeNone,
       ],
     },
@@ -3499,6 +3529,7 @@ export const sectionCollection = {
         layoutTypeSwitcher,
         layoutTypeGridFluid,
         layoutTypeCluster,
+        layoutTypeFauxMasonry,
         layoutTypeFlow,
         layoutTypeReel,
         layoutTypeNone,
@@ -3772,6 +3803,7 @@ export const sectionBuilder = {
                 layoutTypeSwitcher,
                 layoutTypeGridFluid,
                 layoutTypeCluster,
+                layoutTypeFauxMasonry,
                 layoutTypeNone,
               ],
             },
@@ -3964,6 +3996,7 @@ export const sectionBuilder = {
                 layoutTypeSwitcher,
                 layoutTypeGridFluid,
                 layoutTypeCluster,
+                layoutTypeFauxMasonry,
                 layoutTypeNone,
               ],
             },

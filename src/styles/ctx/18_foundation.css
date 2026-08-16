@@ -220,7 +220,7 @@
   overflow-x: clip;
 
   font-size: var(--step-0);
-  font-family: var(--font-stack-body, system-ui, sans-serif);
+  font-family: "Emoji", var(--font-stack-body, system-ui, sans-serif);
   /* color: #100c08; */
   /* background-color: #fdfdfe; */
 }
@@ -228,19 +228,19 @@
 /* Necessary for context classes change so the var is re-applied. */
 /* Otherwise the var on the body is used and redefinition has no effect. */
 :where([class*="fonts-"]) {
-  font-family: var(--font-stack-body, system-ui, sans-serif);
+  font-family: "Emoji", var(--font-stack-body, system-ui, sans-serif);
 }
 
 /* 1.2 Headings */
 /* prettier-ignore */
 :where(.h8, .h7, h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1, .h0, .h-1, .h-2, .h-3, .h-4) {
-    font-family: var(--font-stack-heading, system-ui, sans-serif);
+    font-family: "Emoji", var(--font-stack-heading, system-ui, sans-serif);
 }
 
 /* Code Font */
 /* prettier-ignore */
 :where(tt, code, kbd, pre, samp, tt *, code *, kbd *, pre *, samp *) {
-  font-family: var(
+  font-family: "Emoji", var(
     --font-stack-code,
     ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace
   );
@@ -279,6 +279,10 @@ html:focus-within {
 
 :where(body) {
   text-underline-offset: var(--text-underline-offset, 0.15em);
+}
+
+a.reset {
+  text-decoration: none;
 }
 
 :where(tt, code, kbd, pre, samp) {

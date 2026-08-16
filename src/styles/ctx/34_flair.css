@@ -9,7 +9,7 @@
 :where(section, .section) {
   --radius: var(--radius-section);
   --thickness: var(--thick-section);
-  overflow: hidden;
+  /* overflow: hidden; */
   border-radius: var(--radius-section);
   border-width: var(--thick-section);
   border-style: var(--border-style-section);
@@ -17,7 +17,7 @@
 :where(.prose) {
   --radius: var(--radius-prose);
   --thickness: var(--thick-prose);
-  overflow: hidden;
+  /* overflow: hidden; */
   border-radius: var(--radius-prose);
   border-width: var(--thick-prose);
   border-style: var(--border-style-prose);
@@ -25,7 +25,7 @@
 :where(.featured) {
   --radius: var(--radius-featured);
   --thickness: var(--thick-featured);
-  overflow: hidden;
+  /* overflow: hidden; */
   border-radius: var(--radius-featured);
   border-width: var(--thick-featured);
   border-style: var(--border-style-featured);
@@ -33,7 +33,7 @@
 :where(.card, :where(section, .section, .layout) article.box) {
   --radius: var(--radius-card);
   --thickness: var(--thick-card);
-  overflow: hidden;
+  /* overflow: hidden; */
   border-radius: var(--radius-card);
   border-width: var(--thick-card);
   border-style: var(--border-style-card);
