@@ -3,17 +3,21 @@ translationKey: mookai
 order: 4
 lang: fr
 createdAt: 2026-04-27T19:48:00.000Z
-ldType: Organization
 name: mookaï
 eleventyNavigation:
-  add: Nav
   title: À propos
 vars: {}
 ---
 
-# À propos
+<div class="title-container">
+  <h1 class="bg-title">
+    À propos
+  </h1>
+</div>
 
 ::: section
+
+:::div {.bg-title-section}
 
 ## On bosse avec des gens bien. <br> Pour faire des trucs qui ont du sens.
 
@@ -46,7 +50,7 @@ Tu as déjà choisi d'agir et on t'en remercie. Nous, on veut que ton message r�
 
 Voilà comment ça se traduit concrètement:
 
-<div class="values-grid layout grid-fluid v--columns:3" role="list">
+<div class="values-grid grid-fluid v--columns:3" role="list">
   <div class="values-card flow palette-mocha" role="listitem" tabindex="0" aria-expanded="false">
     <span class="values-card__title h1">No bullshit</span>
     <p class="values-card__desc">on te dit ce qu'on pense, ce qu'on peut faire, et ce qu'on ne fait pas. Pas de langue de bois, pas de devis qui gonfle en cours de route.</p>
@@ -81,6 +85,8 @@ Voilà comment ça se traduit concrètement:
 Parce qu'on ne court pas après les profits, mais après l'impact. Le statut d'ASBL, c'est notre façon de mettre les actes en accord avec les mots.
 
 Ça veut dire qu'on peut choisir nos clients, refuser des projets qui ne nous correspondent pas, et travailler à notre rythme sans répondre à des actionnaires. Si tu cherches un rapport artificiel pour remplir tes KPIs, on n'est probablement pas faits l'un pour l'autre — et c'est ok.
+
+-**Bouton vers la page asbl**-
 :::
 
 ::: section
@@ -103,10 +109,10 @@ En bonus, chaque site sur-mesure qu'on construit renforce la plateforme pour que
 {% sectionTwoColumns class="palette-white bleed-bg" %}
 
 {% twoColumns  %}
-{% twoColumnsItem class="pile text-right items-end" %}
-{% image src="/_images/Capture_d_ecran_2023-12-15.webp" %}
+{% twoColumnsItem class="credit-img" %}
+{% link url="https://www.nasoha.be/pierres/p/pierre-jaspe-mookaite", type="external", target="_blank" %}{% image src="/_images/Capture_d_ecran_2023-12-15.webp" %}{% endlink %}
 
-{% link url=" https://www.nasoha.be/", type="external", target="_blank", class="reset" %}© NASOHA{% endlink %}
+{% link url=" https://www.nasoha.be/", type="external", target="_blank", class="credit-text" %}© NASOHA{% endlink %}
 {% endtwoColumnsItem %}
 {% twoColumnsItem  %}
 ## Notre nom, notre logo
@@ -136,11 +142,11 @@ Tu veux rejoindre l'aventure en tant que stagiaire (dev, graphisme, communicatio
 {% image src="/_images/dscf0019.webp" %}
 :::
 
-{% sectionCollection class="palette--pop" %}
+{% sectionCollection  %}
 {% sectionHeader  %}
-## Ils parlent de nous
+## Ils en parlent {.palette--pop}
 {% endsectionHeader %}
-{% collection collection="reviews", type="faux-masonry", gap="var(--step-1)", columns=2, itemPartial="review-card", widthColumnMin="25rem" %}{% endcollection %}
+{% collection collection="reviews", filters=[{"by":"name","value":["stage"]}], sortCriterias=[], itemPartial="review-card" %}{% endcollection %}
 
 {% endsectionCollection %}
 
@@ -159,7 +165,7 @@ Un projet en tête, une question, ou juste l'envie de voir si le courant passe.
   margin-top: 0;
 }
 .profile h3, .quote {
-  font-family: "Emoji", "Chantal", cursive, sans-serif;
+  font-family: "Chantal", cursive, sans-serif;
 }
 
 .profile h3 {
@@ -218,7 +224,7 @@ blockquote:has(.quote) {
 }
 
 .values-card__title {
-  font-family: "Emoji", "Chantal", cursive, sans-serif;
+  font-family: "Chantal", cursive, sans-serif;
   margin-inline: auto;
   text-align: center;
 }
@@ -232,6 +238,20 @@ blockquote:has(.quote) {
 }
 .values-card.is-active .values-card__desc {
   display: block;
+}
+
+.credit-text {
+  position: absolute;
+  bottom: var(--step-0);
+  right: var(--step-0);
+}
+.credit-img {
+  position: relative;
+}
+
+.section-collection:has(.review-card) .list-collection {
+  display: block;
+  columns: 2;
 }
 
 {% endcss %}
