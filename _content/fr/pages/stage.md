@@ -7,7 +7,11 @@ ldType: WebPage
 name: Stage
 ---
 
-# Stage
+<div class="title-container">
+  <h1 class="bg-title">
+    Stage
+  </h1>
+</div>
 
 ::: section
 
@@ -19,7 +23,7 @@ Tu veux contribuer à un web plus léger, plus responsable et accessible? Partic
 :::
 
 ::: div {.full-bleed .banner}
-{% image src="/_images/stagiaire-1.webp", class="object-[center_top]" %}
+{% image src="/_images/stagiaire-1.webp" %}
 :::
 
 ::: section
@@ -147,7 +151,7 @@ On ne cherche pas un profil “parfait”, mais quelqu’un de solide sur au moi
 - ton portfolio, tes projets ou exemples concrets indispensables (textes rédiger,…).
 - tes dates de stage
 - ton emoji préféré (et pourquoi)
-- le projet du portfolio de Tess qui t’a marqué (et pourquoi)
+- le projet du {% link url="https://www.behance.net/TessGRAPHICDESIGNER", type="external" %}portfolio de Tess{% endlink %}qui t’a marqué (et pourquoi) 
 
 Les candidatures génériques ne seront pas prises en compte ;-) {.small .italic}
 
@@ -163,7 +167,7 @@ Les candidatures génériques ne seront pas prises en compte ;-) {.small .italic
 
 {% sectionCollection  %}
 
-{% collection collection="reviews", filters=[{"by":"name","value":["mandy","mathias","meriton"]}], sortCriterias=[], type="faux-masonry", widthColumnMin="25rem", columns=2, gap="var(--step-1)", itemPartial="review-card" %}{% endcollection %}
+{% collection collection="reviews", filters=[{"by":"name","value":["mandy","mathias","meriton"]}], sortCriterias=[], type="grid-fluid", columns=2, itemPartial="review-card" %}{% endcollection %}
 
 {% endsectionCollection %}
 
@@ -182,7 +186,7 @@ blockquote:has(.quote) {
   text-align: center;
 }
 blockquote:has(.quote) .quote {
-  font-family: "Emoji", "Chantal", cursive, sans-serif;
+  font-family: "Chantal", cursive, sans-serif;
 }
 .searched-profiles .two-columns .item-two-columns,
 .searched-profiles .two-columns .item-two-columns h3{
