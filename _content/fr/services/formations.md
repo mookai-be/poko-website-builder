@@ -6,14 +6,11 @@ createdAt: 2026-04-28T11:50:00.000Z
 name: Formations
 tags:
   - support
-pageClass: palette-gold
+vars: {}
+bodyClass: palette-gold
 ---
 
-<div class="title-container">
-  <h1 class="bg-title">
-    Formations
-  </h1>
-</div>
+# Formations
 
 ::: section
 

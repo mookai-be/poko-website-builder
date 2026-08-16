@@ -11,14 +11,10 @@ localizationKey: 91d5df47af1b
 uuid: 53248b09c763
 pageFooter: ''
 pageNav: ''
-pageClass: palette-bordeau
+bodyClass: palette-bordeau
 ---
 
-<div class="title-container">
-  <h1 class="bg-title">
-    Illustration
-  </h1>
-</div>
+# Illustration
 
 ::: section
 

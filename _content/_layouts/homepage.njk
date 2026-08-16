@@ -1,15 +1,14 @@
 <!doctype html>
-<html lang="{{lang or 'en'}}" class="no-js {{pageClass or 'palette-main'}}">
+<html lang="{{lang or 'en'}}" class="no-js {{htmlClass or 'palette-main'}}">
   <head>
     {% partial "_html-head-default.md" %} {% getBundle "html", "head" %}
   </head>
-  <body>
+  <body class="{{bodyClass}}">
     
     <!-- Content -->
     {% partial "_main-content.md" %}
     <!-- Footer -->
     {% partial "headless/page-footer.11ty.js" %}
-    {% partial "_page-footer.njk" %}
 
   </body>
 </html>

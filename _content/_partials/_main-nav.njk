@@ -3,14 +3,14 @@ lang }, { by: 'parent', value: '' }]) | eleventyNavigation %}
 
 {% if navPages | length %}
 
-<header class="main-header palette bleed-bg full-bleed {{ class }}">
+<header class="main-header palette bleed-bg {{ class }}">
     <nav id="main-nav" class="cluster">
     <!-- Main pages navigation -->
     <ul role="list" class="cluster">
         <li id="logo-item">
           <a
             href="/"
-            id="logo-mookai"
+            id="nav-logo-link"
             aria-label="Accueil"
             {% if '/' == page.url %}aria-current="page"{% endif %}
             >{% partial "mookai-logo-cc.njk" %}
@@ -68,43 +68,36 @@ main > .homepage-hero-wrapper > header {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    max-inline-size: var(--width-max);
-    margin-inline: auto;
-    padding-inline: var(--gap-cover, 1em);
 }
 
 #logo-item {
-    margin-inline-end: auto;
+  flex-grow: 1;
 }
 
-#logo-mookai {
+#nav-logo-link {
     display: block;
     inline-size: var(--step-9);
     max-inline-size: 100%;
 }
 
-#logo-mookai svg {
+#nav-logo-link svg {
     width: 100%;
     height: auto;
 }
 
 #main-nav ul{
-    margin-block-start: 0;
-    width: 100%;
+    inline-size: 100%;
     justify-content: flex-end;
     row-gap: .25em;
-
 }
 
 #main-nav a{
     text-transform: uppercase;
     text-decoration: none;
-    font-family: Calibri, sans-serif;
-    color: var(--color-text);
     font-size: var(--step--1);
 }
 
-#main-nav a[aria-current="page"] {
+#main-nav a[aria-current="page"]:not(#nav-logo-link) {
     color: var(--color-pop);
     font-weight: 700;
 }

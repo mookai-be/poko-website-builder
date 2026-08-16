@@ -9,11 +9,7 @@ tags:
   - art
 ---
 
-<div class="title-container">
-  <h1 class="bg-title">
-    Photographie
-  </h1>
-</div>
+# Photographie
 
 ::: section
 

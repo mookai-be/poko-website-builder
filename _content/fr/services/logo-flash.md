@@ -10,14 +10,10 @@ localizationKey: 43fa496c69b8
 uuid: 11d2be9ea653
 pageFooter: ''
 pageNav: ''
-pageClass: palette-bordeau
+bodyClass: palette-bordeau
 ---
 
-<div class="title-container">
-  <h1 class="bg-title">
-    Logo flash
-  </h1>
-</div>
+# Logo flash
 
 ::: section
 

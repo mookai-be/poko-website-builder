@@ -9,19 +9,13 @@ eleventyNavigation:
   order: 2
 ---
 
-<div class="title-container">
-  <h1 class="bg-title">
-    Services
-  </h1>
-</div>
+# Services
 
 ::: section
 
 :::div {.bg-title-section}
 
-## Ce qu'on fait.
-
-## Et pourquoi on le fait comme ça.
+## Ce qu'on fait.{% br %}Et pourquoi on le fait comme ça.
 
 On ne vend pas des livrables. On construit des outils qui durent, des identités qui tiennent la route et des relations qui valent le coup. Voilà ce qu'on propose — et pour qui c'est fait.
 
@@ -33,7 +27,7 @@ On ne vend pas des livrables. On construit des outils qui durent, des identités
 
 {% sectionCollection class="switcher palette-mocha bleed-bg mt-0" %}
 {% sectionHeader  %}
-## Ton site web
+## Web
 
 Nos sites sont construits avec [poko](https://www.poko.eco/), notre website builder indépendant. Ça veut dire: légers, rapides, éco-conçus par défaut, et entièrement à toi. Pas de dépendance à un SaaS américain, pas de frais cachés, pas de mises à jour de sécurité à gérer. Juste un site qui fonctione.
 {% endsectionHeader %}
@@ -43,7 +37,7 @@ Nos sites sont construits avec [poko](https://www.poko.eco/), notre website buil
 
 {% sectionCollection class="switcher palette-bordeau bleed-bg" %}
 {% sectionHeader class="palette--fg-neutral palette--bg-tone bleed-bg" %}
-## Ton identité visuelle
+## Graphisme
 
 Un logo, c'est le visage de ton projet. Une illustration, c'est sa personnalité. Une mise en page soignée, c'est ce qui donne envie de lire. Tess combine approche intuitive et exigence graphique pour que chaque visuel te ressemble vraiment — et serve tes objectifs sur le long terme.
 {% endsectionHeader %}
@@ -75,9 +69,9 @@ Tess est aussi artiste. Et si tes murs de bureau, ton cabinet ou ton espace de c
 {% image src="/_images/dscf9954.webp" %}
 :::
 
-::: section
+::: section { .text-center }
 
-Tu ne sais pas par où commencer? {.h3}
+## Tu ne sais pas par où commencer?
 
 On en parle, et on trouve ensemble ce qui a du sens pour toi.
 

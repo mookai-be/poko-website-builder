@@ -3,17 +3,13 @@ translationKey: immersion
 order: 9
 lang: fr
 createdAt: 2026-04-28T11:34:00.000Z
-name: Immersion
+name: Consultance
 tags:
   - support
-pageClass: palette-gold
+bodyClass: palette-gold
 ---
 
-<div class="title-container">
-  <h1 class="bg-title">
-    Immersion
-  </h1>
-</div>
+# Consultance en immersion
 
 ::: section
 

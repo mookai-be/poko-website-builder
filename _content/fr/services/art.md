@@ -9,16 +9,12 @@ tags:
 vars: {}
 localizationKey: d5cfe5d7225c
 uuid: ca8d2ad6018d
-pageFooter: ''
-pageNav: ''
-pageClass: palette-purple
+pageFooter: ""
+pageNav: ""
+bodyClass: palette-purple
 ---
 
-<div class="title-container">
-  <h1 class="bg-title">
-    Art
-  </h1>
-</div>
+# Art
 
 ::: section
 

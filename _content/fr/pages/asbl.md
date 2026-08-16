@@ -5,14 +5,10 @@ lang: fr
 createdAt: 2026-05-21T09:59:00.000Z
 ldType: WebPage
 name: asbl
-pageClass: palette-mocha palette--contrast palette--bg-tone
+bodyClass: palette-mocha palette--contrast palette--bg-tone
 ---
 
-<div class="title-container">
-  <h1 class="bg-title">
-    L'asbl
-  </h1>
-</div>
+# L'asbl
 
 ::: section
 
@@ -45,28 +41,22 @@ Parce qu'au fond, nous croyons qu'un projet porteur de valeurs mérite autant de
 ## mookaï asbl
 
 <address>
-  <p>
-    BE 1003.532.405 <br> 
-    Avenue Armand Huysmans 47/2, <br>
-    1050 Bruxelles, Belgique
-  </p>
+  <p>{{ env.email | emailLink }}</p>
+  <p>BE 1003.532.405</p>
+  <p>Avenue Armand Huysmans 47/2, <br>
+  1050 Bruxelles, Belgique</p>
 </address>
 
-[Les statuts](/organizations/mookai/){.cta}
+{% link url="https://www.companyweb.be/fr/1003532405/mookai", type="external", class="cta" %}Les statuts{% endlink %}
 
 ## Co-fondateurs et administrateurs
 
-<address>
-  <p>
-    hello@mookai.be <br>
-    Marc COËT - marc@mookai.be <br>
-    Tess HADRI - tess@mookai.be
-  </p>
-</address>
+- Marc COËT - marc@mookai.be
+- Tess HADRI - tess@mookai.be
+{ role=list .width-prose }
 
-https://www.companyweb.be/fr/1003532405/mookai
+{% link url="mookai", type="internal", collection="organizations", class="cta" %}Pourquoi on a fondé mookaï{% endlink %}
 
-[En savoir plus sur nous](/organizations/mookai/){.cta}
 :::
 
 ::: div {.full-bleed .banner}
@@ -85,17 +75,14 @@ Pour certaines collaborations professionnelles, notamment avec des structures as
 
 ## Wanna Play asbl
 
-<address>
-  <p>
-    0695.574.033 <br> 
+
+  <p class="address">
+    BCE 0695.574.033 <br> 
     Avenue Armand Huysmans 47/2, <br>
     1050 Bruxelles, Belgique
   </p>
-</address>
 
-https://www.companyweb.be/fr/0695574033/wanna-play 
-
-[Les statuts](/organizations/mookai/){.cta}
+{% link url="https://www.companyweb.be/fr/0695574033/wanna-play", type="external", class="cta" %}Les statuts de Wanna Play{% endlink %}
 
 :::
 

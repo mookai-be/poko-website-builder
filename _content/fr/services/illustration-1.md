@@ -9,11 +9,7 @@ tags:
   - art
 ---
 
-<div class="title-container">
-  <h1 class="bg-title">
-    Illustration
-  </h1>
-</div>
+# Illustration
 
 ::: section
 

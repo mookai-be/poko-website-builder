@@ -9,16 +9,12 @@ tags:
 vars: {}
 localizationKey: 5413282c45a2
 uuid: 452511b3d7f5
-pageFooter: ''
-pageNav: ''
-pageClass: palette-mocha palette--contrast palette--bg-tone
+pageFooter: ""
+pageNav: ""
+bodyClass: palette-mocha palette--contrast palette--bg-tone
 ---
 
-<div class="title-container">
-  <h1 class="bg-title">
-    Site minimaliste
-  </h1>
-</div>
+# Site minimaliste
 
 ::: section
 
@@ -52,4 +48,4 @@ Notre but, c'est ton indépendance. Mais si tu préfères garder un copilote, on
 
 Prêt(e) à lancer ton site?
 
-[Postule pour une journée site minimaliste](/fr/contact){.cta}
+[Postule pour une journée site minimaliste](/contact){.cta}

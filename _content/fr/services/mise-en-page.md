@@ -10,14 +10,10 @@ localizationKey: 1bac5ad486a8
 uuid: '192753223677'
 pageFooter: ''
 pageNav: ''
-pageClass: palette-bordeau
+bodyClass: palette-bordeau
 ---
 
-<div class="title-container">
-  <h1 class="bg-title">
-    Mise en page
-  </h1>
-</div>
+# Mise en page
 
 ::: section
 
