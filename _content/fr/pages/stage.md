@@ -151,7 +151,7 @@ On ne cherche pas un profil “parfait”, mais quelqu’un de solide sur au moi
 - ton portfolio, tes projets ou exemples concrets indispensables (textes rédiger,…).
 - tes dates de stage
 - ton emoji préféré (et pourquoi)
-- le projet du {% link url="https://www.behance.net/TessGRAPHICDESIGNER", type="external" %}portfolio de Tess{% endlink %}qui t’a marqué (et pourquoi) 
+- le projet du {% link url="https://www.behance.net/TessGRAPHICDESIGNER", type="external" %}portfolio de Tess{% endlink %} qui t’a marqué (et pourquoi) 
 
 Les candidatures génériques ne seront pas prises en compte ;-) {.small .italic}
 
@@ -201,4 +201,4 @@ blockquote:has(.quote) .quote {
 .two-columns .item-two-columns:nth-child(2) {
     --bleed-left: 0;
 }
-{% endcss %}{% link url="https://www.behance.net/TessGRAPHICDESIGNER", type="external" %}{% endlink %}
+{% endcss %}
