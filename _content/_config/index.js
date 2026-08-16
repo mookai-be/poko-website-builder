@@ -21,9 +21,9 @@ const {
 // Insert after the "body" (content) field
 const pos = reviews.fields.findIndex((f) => f.name === "body") + 1;
 
-const personNameField = {
-  name: "personName",
-  label: "Nom de la personne",
+const reviewSignatureField = {
+  name: "reviewSignature",
+  label: "Signature",
   widget: "markdown",
   required: false,
   i18n: true,
@@ -31,7 +31,7 @@ const personNameField = {
 
 const reviewFieldsWithPerson = [
   ...reviews.fields.slice(0, pos),
-  personNameField,
+  reviewSignatureField,
   ...reviews.fields.slice(pos),
 ];
 

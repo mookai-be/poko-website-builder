@@ -9,16 +9,12 @@ tags:
 vars: {}
 localizationKey: 49cadc5a6887
 uuid: 680b12bf36ea
-pageFooter: ''
-pageNav: ''
-pageClass: palette-mocha palette--contrast palette--bg-tone
+pageFooter: ""
+pageNav: ""
+bodyClass: palette-mocha palette--contrast palette--bg-tone
 ---
 
-<div class="title-container">
-  <h1 class="bg-title">
-    Site custom
-  </h1>
-</div>
+# Site custom
 
 ::: section
 
@@ -71,5 +67,5 @@ Besoin de plus? Voilà quelques exemples de services sur mesure qui peuvent vrai
 - Un design vraiment hors du commun
 - Et bien plus encore...
 
-[Parlons de ton projet sur mesure](/fr/contact){.cta}
+[Parlons de ton projet sur mesure](/contact){.cta}
 :::

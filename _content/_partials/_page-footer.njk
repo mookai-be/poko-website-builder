@@ -1,58 +1,107 @@
-<footer id="page-footer" class="cluster small palette--contrast bleed-bg">
-    <div id="footer-nav">
-        <ul role="list" class="reset">
-            <li class="flow horizontal">
-                {% icon "tablerFilled:brand-linkedin" %}
-                {% icon "tablerFilled:brand-facebook" %}
-                {% icon "tablerFilled:brand-instagram" %}
-            </li>
-            <li>FAQ</li>
-        </ul>
-        <ul role="list">
-            <li>{% link url="https://www.poko.eco/"%}poko.eco{% endlink %}</li>
-            <li>{% link url="https://www.tess-h.be/"%}Tess-h.be{% endlink %}</li>
-            <li>{% link url="https://www.m4rr.co/fr/"%}m4rr.co{% endlink %}</li>
-        </ul>
-    </div>
-    <div id="footer-contact">
-        <p><strong>© mookaï asbl</strong></p>
-        {% link url="hello@mookai.be" %}hello@mookai.be{% endlink %}
-        <p>BE 1003.532.405</p>
-        <address>Avenue Armand Huysmans 47/2,<br>1050 Bruxelles, Belgique</address>
-    </div>
-    <div id="footer-logo">
-        {% partial "mookai-logo-carre.njk" %}
+<footer id="page-footer" class="palette-bordeau palette--contrast">
+    <div class="layout cluster small">
+        <div id="footer-nav" class="pbs-prose">
+            <ul role="list" class="flow horizontal">
+                <li>{% link url="https://www.linkedin.com/company/109812644/", target="_blank", rel="self" %}{% icon "tablerFilled:brand-linkedin" %}{% endlink %}</li>
+                <li>{% link url="https://www.facebook.com/profile.php?id=61560323541142", target="_blank", rel="self" %}{% icon "tablerFilled:brand-facebook" %}{% endlink %}</li>
+                <li>{% link url="https://www.instagram.com/mookai.be/", target="_blank", rel="self" %}{% icon "tablerFilled:brand-instagram" %}{% endlink %}</li>
+            </ul>
+            <ul role="list">
+                <li>{% link url="https://www.poko.eco/"%}poko.eco{% endlink %}</li>
+                <li>{% link url="https://www.tess-h.be/"%}Tess-h.be{% endlink %}</li>
+                <li>{% link url="https://www.m4rr.co/fr/"%}m4rr.co{% endlink %}</li>
+            </ul>
+        </div>
+        <div id="footer-contact">
+            <address>
+            <p><strong>© mookaï asbl</strong></p>
+            {{ env.email | emailLink }}
+            <p>BE 1003.532.405</p>
+            <p>
+                Avenue Armand Huysmans 47/2,<br>1050 Bruxelles, Belgique
+            </p>
+            </address>
+        </div>
+        <div id="footer-logo">
+            {% partial "mookai-logo-carre.njk" %}
+        </div>
     </div>
 </footer>
 
-{% css %}
-footer svg {
+<style>
+#page-footer svg {
     stroke: none;
 }
-#page-footer {
+#page-footer > .layout {
+    --logo-height: var(--step-11, 15rem);
     justify-content: flex-end;
     text-align: right;
     align-items: end;
     gap: var(--step-4);
-    background-color: var(--peach);
-    color: var(--bordeau);
+    {# background-color: var(--peach); #}
+    {# color: var(--bordeau); #}
 
-    --color-text__a: var(--bordeau);
-    --color-bg: var(--peach);
+    {# --color-text__a: var(--bordeau); #}
+    {# --color-bg: var(--peach); #}
 }
-#page-footer div {
-    height: 100%;
+#page-footer {
+    {# --tear-y OPTION 1: dynamic tear position based on viewport width #}
+    /* tear-y interpolation bounds */
+    {# --tear-start-vw: 700px; #}
+    {# --tear-end-vw: 1000px; #}
+    {# --tear-y-max: calc(var(--logo-height) / 3); #}
+    /* 0 below --tear-start-vw, 1 above --tear-end-vw, linear between */
+    {# --tear-p: clamp(0, tan(atan2(100vw - var(--tear-start-vw), var(--tear-end-vw) - var(--tear-start))), 1); #}
+    {# --tear-y: calc(var(--tear-y-max) * var(--tear-p)); #}
+
+    {# --tear-y OPTION 2: simpler #}
+    /* how far down from the footer's top edge the tear sits */
+    --tear-y: clamp(0px, 30.22vw - 211.6px, 5.667rem);
+    
+    
+    /* height of the tear band (its amplitude) */
+    --tear-h: 48px;
+    /* total transparent-to-opaque transition zone */
+    --tear-zone: calc(var(--tear-y) + var(--tear-h));
+ 
+    isolation: isolate;
+    background-color: transparent;
+}
+ 
+#page-footer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-color: var(--color-bg);
+ 
+    {# --tear: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 48' preserveAspectRatio='none'%3E%3Cpath fill='%23000' d='M0,18 L60,10 L130,22 L210,8 L300,20 L380,12 L470,26 L560,14 L650,6 L740,20 L830,11 L920,24 L1010,13 L1100,21 L1200,18 L1200,48 L0,48 Z'/%3E%3C/svg%3E"); #}
+    --tear: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201200%2048%22%20preserveAspectRatio%3D'none'%3E%3Cpath%20d%3D%22M0%2C18l8.679%2C1.04l15.711-6.923l30.525%2C0.332l43.13-4.946l57.1%2C6.897h95.199l65.3%2C9.38l124.1%2C2.106l104.792-1.713%20l67.307-0.393l41.301-6.382l44.701%2C1.692h33.695l34.104%2C4.69l26.001-4.69l33.795%2C1.969l45.927%2C4.828l170.09%2C0.056l49.707-2.163%20l46.514-1.708l43.687-1.217L1200%2C18v30H0V18z%22%2F%3E%3C%2Fsvg%3E");
+ 
+    mask-image: var(--tear), linear-gradient(#000 0 0);
+    mask-repeat: repeat-x, no-repeat;
+    mask-position:
+        left var(--tear-y),
+        bottom left;
+    mask-size:
+        1200px var(--tear-h),
+        100% calc(100% - var(--tear-zone) + 1px);
+    mask-composite: add;
+    -webkit-mask-composite: source-over;
+}
+#page-footer > .layout div {
+    {# height: 100%; #}
 }
 
 #footer-logo {
-    height: var(--step-9, 8rem);
+    {# height: var(--step-12, 8rem); #}
     flex-shrink: 0;
 }
 
 #footer-logo svg {
-    width: 100%;
-    height: auto;
-    height: 17rem;
+    width: auto;
+    height: var(--logo-height);
     stroke: none
 }
-{% endcss %}
+
+</style>

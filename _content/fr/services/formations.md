@@ -7,14 +7,10 @@ name: Formations
 tags:
   - support
 vars: {}
-pageClass: palette-gold
+bodyClass: palette-gold
 ---
 
-<div class="title-container">
-  <h1 class="bg-title">
-    Formations
-  </h1>
-</div>
+# Formations
 
 ::: section
 

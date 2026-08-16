@@ -88,7 +88,7 @@
   /*--border-style-card: solid;*/
   --border-style-token: solid;
 
-  --px-page: var(--step--2);
+  --px-page: var(--step--1);
   --px-body: var(--px-page);
   --px-section: var(--step--1);
   --px-prose: var(--step--1);
@@ -160,6 +160,20 @@ a:hover {
   background-color: transparent;
 }
 
+/* Target Chrome: Transitioning text-decoration-thickness does not work on Chromium */
+/* TODO: Will need to be updated */
+@supports (text-size-adjust: none) {
+  :root {
+    --deco-thickness-hover: var(--deco-thickness);
+    --deco-offset-hover: -0.5em;
+  }
+}
+
+a:hover svg {
+  fill: var(--color-pop);
+  transition: fill var(--deco-transition-duration, 0.2s) ease-in-out;
+}
+
 /*
 .main-header a {
   text-decoration-color: transparent;
@@ -204,42 +218,36 @@ a:not(.cta, .nav-links, #logo-mookai, :has(svg)):hover {
   color: var(--color-pop);
   background-color: transparent;
 }
-.title-container {
-  position: relative;
-  max-inline-size: var(--width-body);
-  margin-inline: auto;
-}
-.bg-title-section {
-  position: relative;
-}
-.bg-title {
-  font-family: "Chantal", cursive, sans-serif;
+main > h1,
+.cover-title {
+  max-inline-size: var(--width-inset);
+  font-family: "Emoji", "Chantal", cursive, sans-serif;
   color: var(--color--bg-title, var(--bordeau));
-  position: absolute;
-  inset-block-start: 0;
-  inset-inline-start: 0;
-  inline-size: 100%;
-  max-inline-size: var(--width-body);
-  font-size: var(--step-7);
+  font-size: var(--step-5-8);
   line-height: 1;
-  pointer-events: none;
   opacity: 20%;
-  z-index: 0;
-  overflow: hidden;
-  margin: 0;
-  width: 100%;
-  height: auto;
   overflow: visible;
   mix-blend-mode: multiply;
-  top: 3rem;
+  text-wrap: initial;
+  hyphens: initial;
+}
+.cover-title {
+  max-inline-size: var(--width-outset);
+}
+main > h1 + *,
+.cover-title + * {
+  padding-block-start: 0;
+  margin-block-start: 0;
+  margin-block-start: calc(var(--step-5-8) * -0.4);
 }
 .section-collection {
   overflow: visible;
 }
 .list-collection {
-  gap: 0;
+  --gap: 0px;
 }
 
+/* TODO: fix featured-work later. Way too verbose */
 .featured-work {
   position: relative;
   overflow: hidden;
@@ -313,39 +321,12 @@ a:not(.cta, .nav-links, #logo-mookai, :has(svg)):hover {
   text-transform: capitalize;
 }
 
-.review-card {
-  margin-inline: auto;
-  max-inline-size: 25em;
-  position: relative;
-  overflow: visible;
-  background-color: transparent;
-}
-.review-card blockquote {
-  border: none;
-  padding: 0;
-}
-
-.review-card::before {
-  content: "";
-  position: absolute;
-  top: -0.5em;
-  left: -3em;
-  display: block;
-  width: 5em;
-  height: 5em;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 275.39 260.9' fill='%23731E15' fill-opacity='0.2'%3E%3Cpath d='M128.9,75.77c-95.23,70.26-9.88,141.5-33.27,173.81-8.61,11.89-37.25,15.28-51.65,5.94C-32.15,206.14-4.96,61.32,91.02,4.68c19.94-11.77,48.09.27,56.76,18.26,8.7,18.05-.99,39.64-18.88,52.84Z'/%3E%3Cpath d='M257.73,87.85c-78.05,69.74-8.55,120.75-32.33,151.2-11.3,14.48-37.01,16.93-53.43,6.25-63.33-41.19-34.6-164.36,35.82-221.32,16.61-13.43,46.66-9.89,58.66,4.71,14.46,17.58,11.26,41.31-8.72,59.16Z'/%3E%3C/svg%3E");
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
 .banner {
   block-size: 40vh;
   overflow: hidden;
 }
 .banner img {
   block-size: 100%;
-  object-fit: cover;
-  object-position: center;
   padding: 0;
 }
 
@@ -375,4 +356,13 @@ a:not(.cta, .nav-links, #logo-mookai, :has(svg)):hover {
 
 section:has(.item-two-columns-img-bleed) {
   overflow: visible;
+}
+
+.aside-mb-pull {
+  margin-block-start: -9rem;
+}
+@container (width > 80vw) {
+  .aside-mb-pull {
+    margin-block-start: 0;
+  }
 }

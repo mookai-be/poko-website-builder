@@ -5,15 +5,11 @@ name: Accueil
 pageLayout: homepage
 ---
 
-{% htmlPartial "homepage-hero.njk" %}
-
 {% component "headless/page-nav.11ty.js", { class: "py-body" } %}
 
-<div class="title-container">
-<h1 class="bg-title">
-Studio créatif engagé
-</h1>
-</div>
+{% htmlPartial "homepage-hero.njk" %}
+
+# Studio créatif engagé
 
 ::: section
 
@@ -32,13 +28,13 @@ Pas de jargon, pas de sur-promesse. On travaille avec toi, pas pour toi. Notre m
 {% sectionHeader  %}
 ## Des projets, pas des promesses
 {% endsectionHeader %}
-{% collection collection="portfolio", filters=[{"by":"tag","value":["featured"]}], sortCriterias=[], class="full-bleed", itemPartial="featured-work.njk" %}{% endcollection %}
+{% collection collection="portfolio", filters=[{"by":"tag","value":["featured"]},{"value":4,"by":"first"}], sortCriterias=[], type="grid-fluid", columns=4, itemPartial="featured-work" %}{% endcollection %}
 
 {% endsectionCollection %}
 
 {% sectionCollection class="breathe" %}
 
-{% collection collection="reviews", filters=[{"by":"name","value":["guido"]}], sortCriterias=[], type="flow", itemPartial="review-card" %}{% endcollection %}
+{% collection collection="reviews", filters=[{"by":"name","value":["guido"]}], sortCriterias=[], type="flow", itemPartial="review-card", class="items-center" %}{% endcollection %}
 
 {% endsectionCollection %}
 
@@ -54,8 +50,8 @@ Depuis 2015, on aide les projets à impact à grandir et à se faire entendre.
 
 [En savoir plus sur mookaï](/organizations/mookai/){.cta}
 {% endtwoColumnsItem %}
-{% twoColumnsItem class="item-two-columns-img-bleed" %}
-{% image src="/_images/dscf0062.webp" %}
+{% twoColumnsItem class="container card" %}
+{% image src="/_images/dscf0062.webp", class="aside-mb-pull" %}
 {% endtwoColumnsItem %}
 {% endtwoColumns %}
 
@@ -77,7 +73,7 @@ C'est notre conviction mise en pratique.
 {% image src="/_images/dscf0345.webp" %}
 :::
 
-:::section {.flow .text-center}
+::: section {.text-center}
 
 ## Un projet? Une question?
 

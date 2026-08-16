@@ -1,14 +1,9 @@
 <main id="main-content">
-<div>
+<div class="width-body">
 {% link url="portfolio" %}< Retour au Portfolio{% endlink %}
 </div>
-<div class="title-container">
-  <h1 class="bg-title">
-    Portfolio
-  </h1>
-</div>
 
-:::div {.bg-title-section}
+Portfolio { .cover-title }
 
 {% sectionTwoColumns %}
 {% twoColumns type="fixedFluid", widthFixed="24rem", widthFluidMin="50%", gap="0", fixedSide="fixedRight" %}
@@ -41,7 +36,6 @@
 {% endtwoColumns %}
 
 {% endsectionTwoColumns %}
-:::
 
 {% sectionGrid %}
 {% grid columns="6", gap="0", widthColumnMin="200px" %}

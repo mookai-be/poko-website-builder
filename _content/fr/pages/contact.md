@@ -3,18 +3,15 @@ translationKey: contact
 order: 8
 lang: fr
 createdAt: 2026-04-27T19:44:00.000Z
+ldType: WebPage
 name: Contact
-vars: {}
 eleventyNavigation:
+  add: Nav
   order: 4
-pageClass: palette-mocha palette--contrast palette--bg-tone
+bodyClass: palette-mocha palette--contrast palette--bg-tone
 ---
 
-<div class="title-container">
-  <h1 class="bg-title">
-    Contact
-  </h1>
-</div>
+# Contact
 
 ::: section
 
@@ -38,9 +35,11 @@ Pas sûr de ce dont tu as besoin? Voilà comment ça démarre souvent:
 {% image src="/_images/dscf0325.webp" %}
 :::
 
-:::section
-{% collection collection="reviews", filters=[{"by":"name","value":["Marie-Laure"]}], sortCriterias=[], itemPartial="review-card" %}{% endcollection %}
-:::
+{% sectionCollection  %}
+
+{% collection collection="reviews", filters=[{"by":"name","value":["Marie-Laure"]},{"value":1,"by":"first"}], sortCriterias=[], type="flow", class="items-center", itemPartial="review-card" %}{% endcollection %}
+
+{% endsectionCollection %}
 
 ::: section {.palette-purple .bleed-bg .pb-[var(--step-9)]}
 
@@ -98,10 +97,7 @@ Et si tu cherches à rejoindre l'équipe ou proposer un partenariat, mentionne-l
 {% endsectionTwoColumns %}
 
 {% css %}
-main:has(#contact) .review-card {
-  color: var(--color-bg);
-  --color-text__a: var(--color-bg);
-}
+
 .contact-form__right {
   align-items: flex-end;
 }
