@@ -20,6 +20,7 @@
 .review-card {
   position: relative;
   overflow: visible;
+  isolation: isolate;
 }
 .review-card blockquote {
   border: none;
@@ -28,6 +29,7 @@
 .review-card::before {
   content: "";
   position: absolute;
+  z-index: -1;
   top: -0.5em;
   left: -1.5em;
   display: block;

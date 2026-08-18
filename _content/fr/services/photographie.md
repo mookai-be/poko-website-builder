@@ -13,8 +13,6 @@ tags:
 
 ::: section
 
-:::div {.bg-title-section}
-
 ## Des images authentiques pour raconter ce que tu fais
 
 Les photos sont souvent le premier contact avec ton activité. Elles inspirent confiance, transmettent une ambiance et montrent ce qui te rend unique. Des images sincères et de qualité permettent de valoriser ton travail, ton équipe et ton univers.

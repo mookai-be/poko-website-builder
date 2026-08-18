@@ -14,8 +14,6 @@ bodyClass: palette-gold
 
 ::: section
 
-:::div {.bg-title-section}
-
 ## Deviens autonome sur tes outils de com'
 
 Être entrepreneur, c'est souvent devoir porter plusieurs casquettes. Mais tu n'as pas besoin de devenir un expert en tout pour être efficace. On a créé des formations et des ateliers pour te donner les clés et les raccourcis qui te feront gagner un temps précieux.

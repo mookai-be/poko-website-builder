@@ -17,8 +17,6 @@ bodyClass: palette-bordeau
 
 ::: section
 
-:::div {.bg-title-section}
-
 ## Des documents qui donnent envie d'être lus
 
 Un bon contenu, c'est essentiel. Mais si la présentation ne suit pas, ton message risque de se perdre. Pour nous, la mise en page, c'est l'art de rendre tes documents non seulement beaux, mais aussi clairs, agréables à lire et 100% alignés avec ton identité.

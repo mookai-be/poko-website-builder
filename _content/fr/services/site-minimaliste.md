@@ -18,8 +18,6 @@ bodyClass: palette-mocha palette--contrast palette--bg-tone
 
 ::: section
 
-:::div {.bg-title-section}
-
 ## Ton site web pro en une journée chrono?
 
 Tu as un projet génial, mais un budget serré? Tu veux être autonome et ne pas dépendre d'une agence pour chaque virgule à changer? Alors notre formule "site minimaliste" est faite pour toi.

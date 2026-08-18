@@ -18,8 +18,6 @@ bodyClass: palette-mocha palette--contrast palette--bg-tone
 
 ::: section
 
-:::div {.bg-title-section}
-
 ## Des sites pour tout ton réseau, la simplicité en plus
 
 Tu gères une fédération, une franchise, un réseau d'indépendants ou de points de vente? Tu veux offrir à tes membres un site web professionnel et cohérent avec ton image de marque, sans que ça devienne un casse-tête à gérer?

@@ -18,8 +18,6 @@ bodyClass: palette-purple
 
 ::: section
 
-:::div {.bg-title-section}
-
 ## De l'art pour sublimer tes espaces pro
 
 Tes bureaux, ton cabinet ou ton restaurant sont aussi une vitrine de ton identité. Une œuvre d'art choisie avec soin peut transformer un lieu, inspirer tes équipes et marquer l'esprit de tes clients.

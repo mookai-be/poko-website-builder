@@ -17,8 +17,6 @@ bodyClass: palette-bordeau
 
 ::: section
 
-:::div {.bg-title-section}
-
 ## Ton logo: bien plus qu'une image
 
 Un logo, ce n'est pas juste un joli dessin. C'est le visage de ton projet. C'est la première chose que tes clients voient, et la dernière dont ils se souviennent. Chez mookaï, on prend ça très au sérieux, mais toujours avec le sourire.

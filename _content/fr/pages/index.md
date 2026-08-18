@@ -13,8 +13,6 @@ pageLayout: homepage
 
 ::: section
 
-:::div {.bg-title-section}
-
 ## Ce qu'on fait
 
 Du logo au site web, en passant par l'illustration et la mise en page — on construit les outils visuels et digitaux qui donnent à ton projet la visibilité qu'il mérite.

@@ -14,11 +14,9 @@ pageNav: ""
 bodyClass: palette-mocha palette--contrast palette--bg-tone
 ---
 
-# Site custom
+# Site sur mesure
 
 ::: section
-
-:::div {.bg-title-section}
 
 ## Un site web sur mesure, qui te ressemble vraiment
 

@@ -10,15 +10,9 @@ eleventyNavigation:
   title: À propos
 ---
 
-<div class="title-container">
-  <h1 class="bg-title">
-    À propos
-  </h1>
-</div>
+# À propos
 
 ::: section
-
-:::div {.bg-title-section}
 
 ## On bosse avec des gens bien. <br> Pour faire des trucs qui ont du sens.
 
@@ -143,9 +137,9 @@ Tu veux rejoindre l'aventure en tant que stagiaire (dev, graphisme, communicatio
 {% image src="/_images/dscf9850.webp" %}
 :::
 
-{% sectionCollection  %}
+{% sectionCollection class="palette--pop" %}
 {% sectionHeader  %}
-## Ils en parlent {.palette--pop}
+## Ils en parlent
 {% endsectionHeader %}
 {% collection collection="reviews", filters=[{"by":"name","value":["stage"]}], sortCriterias=[], itemPartial="review-card" %}{% endcollection %}
 

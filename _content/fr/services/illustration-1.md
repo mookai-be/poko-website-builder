@@ -13,8 +13,6 @@ tags:
 
 ::: section
 
-:::div {.bg-title-section}
-
 ## Des illustrations originales pour habiller tes espaces
 
 Une illustration n'est pas seulement un outil de communication. C'est aussi une œuvre capable de transformer un lieu, de raconter une histoire ou de susciter une émotion au quotidien.

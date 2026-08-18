@@ -7,15 +7,9 @@ ldType: WebPage
 name: Stage
 ---
 
-<div class="title-container">
-  <h1 class="bg-title">
-    Stage
-  </h1>
-</div>
+# Stage
 
 ::: section
-
-:::div {.bg-title-section}
 
 ## Chez mookaï, tu participes au développement de nos projets
 

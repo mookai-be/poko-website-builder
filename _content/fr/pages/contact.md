@@ -15,8 +15,6 @@ bodyClass: palette-mocha palette--contrast palette--bg-tone
 
 ::: section
 
-:::div {.bg-title-section}
-
 ## On discute?
 
 Tu as un projet en tête, une question, ou juste envie de voir si le courant passe? On répond rapidement — sans bullshit, sans relance commerciale, et souvent avec un vrai conseil même si on n'est pas la bonne solution pour toi.

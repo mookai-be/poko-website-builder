@@ -13,8 +13,6 @@ eleventyNavigation:
 
 ::: section
 
-:::div {.bg-title-section}
-
 ## Ce qu'on fait.{% br %}Et pourquoi on le fait comme ça.
 
 On ne vend pas des livrables. On construit des outils qui durent, des identités qui tiennent la route et des relations qui valent le coup. Voilà ce qu'on propose — et pour qui c'est fait.
