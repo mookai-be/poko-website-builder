@@ -3,10 +3,11 @@ translationKey: mookai
 order: 4
 lang: fr
 createdAt: 2026-04-27T19:48:00.000Z
+ldType: Organization
 name: mookaï
 eleventyNavigation:
+  add: Nav
   title: À propos
-vars: {}
 ---
 
 <div class="title-container">
@@ -139,7 +140,7 @@ Tu veux rejoindre l'aventure en tant que stagiaire (dev, graphisme, communicatio
 :::
 
 ::: div {.full-bleed .banner}
-{% image src="/_images/dscf0019.webp" %}
+{% image src="/_images/dscf9850.webp" %}
 :::
 
 {% sectionCollection  %}
