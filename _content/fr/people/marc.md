@@ -7,7 +7,7 @@ ldType: Person
 name: Marc
 metadata:
   image:
-    src: /_images/dscf9650.webp
+    src: /_images/dscf9650-3.webp
   jobTitle: stratège et développeur web
   links:
     - name: site
