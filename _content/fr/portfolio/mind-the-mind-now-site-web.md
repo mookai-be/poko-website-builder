@@ -5,6 +5,9 @@ lang: fr
 createdAt: 2026-08-18T07:25:00.000Z
 ldType: WebPage
 name: Rise for the Mind - Site web
+metadata:
+  image:
+    src: /_images/portfolio/mind-the-mind-now-site-web/capture-d-ecran-2026-08-18-a-10-41-58.webp
 tags:
   - web
   - site-custom
