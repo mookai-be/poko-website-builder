@@ -2,16 +2,16 @@
 translationKey: mind-the-mind-now-site-web
 order: 9
 lang: fr
-name: Mind the mind now! - Site web
+createdAt: 2026-08-18T07:25:00.000Z
+ldType: WebPage
+name: Rise for the Mind - Site web
 tags:
   - web
   - site-custom
-vars: {}
 images: []
 ---
 
-
-# Le site web de Mind the mind now!
+# Le site web de Rise for the Mind!
 
 Un site associatif sur mesure, réalisé avec [poko](https://www.poko.eco/), pour une organisation engagée sur des sujets de santé mentale.
 
@@ -22,4 +22,4 @@ Un site associatif sur mesure, réalisé avec [poko](https://www.poko.eco/), pou
 - [Graphe SVG éditable](https://www.mindthemind-now.org/objectif/) directement depuis le CMS
 - [Excellent score au Website Carbon Calculator](https://www.websitecarbon.com/website/mindthemind-now-org/)
 
-[Voir le site en ligne](https://www.mindthemind-now.org/)
+[Voir le site en ligne](https://www.riseforthemind.org/)
