@@ -2,15 +2,16 @@
 translationKey: una-scelta-site-web
 order: 4
 lang: fr
+createdAt: 2026-08-18T07:26:00.000Z
+ldType: WebPage
 name: Una Scelta - Site web
 metadata:
   image:
-    src: /_images/portfolio/mookai-asbl/1.webp
+    src: /_images/portfolio/una-scelta-site-web/una-scelta.webp
 tags:
   - web
   - site-custom
   - featured
-vars: {}
 images: []
 ---
 
