@@ -28,12 +28,12 @@ Tu trouveras sur cette page toutes les étapes concernant {% link url="https://w
 ### Je reçois mon logo dans combien de temps?
 
 Tu reçois les premières propositions de logo dans les 10 jours\* et le dossier de livraison final avec tous les fichiers dans le mois\*.
+Mais en général, c’est le temps de réflexion des clients qui influence le plus la date de livraison finale.
+Je te conseille de visionner ma vidéo sur {% link url="https://www.tess-h.be/workflow/", type="external" %}mon workflow{% endlink %}
 
-Je tiens à préciser que je suis maman depuis août 2019 et qu’il y a certaines périodes un peu plus compliquées à gérer que d’autres ^^.
-En général, c’est le temps de réflexion des clients qui influence le plus la date de livraison finale.
-Je te conseille de visionner ma vidéo sur {% link anchor=undefined, type="internal" %}mon workflow{% endlink %} pour te rendre compte du travail global que représente une création de logo et de ce que tu auras dans le dossier de livraison.
+ pour te rendre compte du travail global que représente une création de logo et de ce que tu auras dans le dossier de livraison.
 
-- jours ouvrables, en moyenne
+_\*jours ouvrables, en moyenne_
 
 ### Et si je n’aime aucune propositions de logo?
 
