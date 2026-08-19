@@ -17,7 +17,7 @@ vars: {}
 
 ### Quel est le processus de travail pour la création d'un logo?
 
-Tu trouveras sur cette page toutes les étapes concernant {% link url="https://www.tess-h.be/workflow/", type="external", newTab=true %}{% endlink %}
+Tu trouveras sur le site de Tess toutes les étapes concernant {% link url="https://www.tess-h.be/workflow/", type="external", newTab=true %}son workflow{% endlink %}
 
  Si il te reste des questions après ça, n’hésite pas à nous contacter.
 
