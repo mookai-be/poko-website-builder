@@ -23,7 +23,7 @@ Tu trouveras sur cette page toutes les étapes concernant {% link url="https://w
 
 ### Peut-on travailler ensemble si on n’habite pas au même endroit?
 
-Évidemment! On peut tout à fait travailler à distance. Tous les échanges peuvent se faire en ligne (mail, visioconférence, téléphone,…)
+Évidemment! On peut tout à fait travailler à distance. Tous les échanges peuvent se faire en ligne (mail, visioconférence, téléphone,…).
 
 ### Je reçois mon logo dans combien de temps?
 
