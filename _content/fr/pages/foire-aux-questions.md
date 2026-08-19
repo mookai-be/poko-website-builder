@@ -11,17 +11,19 @@ vars: {}
 ### Quels sont les tarifs des prestations?
 
 - Pour un travail ponctuel, mon tarif horaire est de 75€ htva de l’heure.
-- Tu peux retrouver mes packs pour la création de logo.
+- Tu peux retrouver les prix fixes pour la création de logo, site web dans la page de chaque service
 - Si c’est d’un autre travail graphique dont tu as besoin, je dois avoir les détails de ton projet afin de répondre sur-mesure à ta demande et t’envoyer un devis adapté à ta demande. Tu trouveras quelques idées de prix à partir de cette page
 - **N’hésites pas à nous contacter pour nous parler de ton projet, on pourra te dire ce qui est possible dans ton budget ;-)**
 
-### Quel est ton processus de travail?
+### Quel est le processus de travail pour la création d'un logo?
 
-Tu trouveras sur cette page toutes les étapes concernant {% link anchor=undefined, type="internal" %}mon workflow{% endlink %}. Si il te reste des questions après ça, n’hésite pas à {% link anchor=undefined, type="internal" %}me contacter{% endlink %}
+Tu trouveras sur cette page toutes les étapes concernant {% link url="https://www.tess-h.be/workflow/", type="external", newTab=true %}{% endlink %}
+
+ Si il te reste des questions après ça, n’hésite pas à nous contacter.
 
 ### Peut-on travailler ensemble si on n’habite pas au même endroit?
 
-Évidemment! Je peux tout à fait travailler à distance. Tous les échanges peuvent se faire en ligne (mail, visioconférence, téléphone,…)
+Évidemment! On peut tout à fait travailler à distance. Tous les échanges peuvent se faire en ligne (mail, visioconférence, téléphone,…)
 
 ### Je reçois mon logo dans combien de temps?
 
