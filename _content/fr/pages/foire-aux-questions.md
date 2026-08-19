@@ -53,30 +53,34 @@ Et puis il faut surtout t’écouter et ne pas te décider avant d’avoir vu {%
 
 ### J’ai une idée très précise de ce que je veux
 
-Je ne suis pas une exécutante, j’apporte mon expertise et mon expérience au sercive de ton projet.
-Dans les projets que je réalise, je fais au mieux pour t’écouter et faire ce que tu souhaites mais j’ajoute toujours ma patte! Si les modifications que tu demandes ne me semble pas pertinentes ou ne fonctionneront pas dans son utilisation future, je propose toujours ma version avec les explications qui vont avec ;-) C’est aussi ça être professionnelle. C’est important de conseiller et démontrer quelle sera la meilleure option pour toi et pourquoi.
+Tess n'est pas une exécutante, elle apporte son expertise et son expérience au service de ton projet.
+Dans les projets que je réalise, elle fais au mieux pour t’écouter et faire ce que tu souhaites mais ajoute toujours sa patte! Si les modifications que tu demandes ne me semble pas pertinentes ou ne fonctionneront pas dans son utilisation future, elle propose toujours sa version avec les explications qui vont avec ;-) C’est aussi ça être professionnelle. C’est important de conseiller et démontrer quelle sera la meilleure option pour toi et pourquoi.
 
 ### T’occupes-tu de l’impression?
 
-La plupart du temps, je ne m’occupe pas de l’impression. Je peux te donner des conseils pour le choix du papier, de l’imprimeur,…
-Je suis **toujours à la recherche** du partenaire idéal pour prévoir ça dans mes services.
+La plupart du temps, on ne s’occupe pas de l’impression. On peut te donner des conseils pour le choix du papier, de l’imprimeur,…
+Nous sommes **toujours à la recherche** du partenaire idéal pour prévoir ça dans mes services. Si tu à des pistes ou si tu es imprimeur et que tu passes par ici, {% link url="contact", type="internal", collection="pages" %}contacte nous{% endlink %}.
 
 ### Comment dois-je utiliser le dossier de livraison?
 
-Sur cette page, je parle du {% link anchor=undefined, type="internal" %}dossier de livraison{% endlink %}.
+Sur cette page, Tess parle du .
 Je réaliserai très bientôt une vidéo pour expliquer ça en images ;-)
 
 ### C’est un gros budget pour moi, j’ai du mal à sauter le pas…
 
-Si tu veux savoir tout ce que représente un travail de recherche de logo, je t’invite à regarder ma video sur {% link anchor=undefined, type="internal" %}mon workflow{% endlink %}.
+Si tu veux savoir tout ce que représente un travail de recherche de logo, on t’invite à regarder la video sur {% link url="https://www.tess-h.be/workflow/", type="external" %}le workflow de Tess.{% endlink %}.
 
-Tu peux toujours aller faire un tour pour voir si tu trouves ton bonheur dans {% link anchor=undefined, type="internal" %}mes logo flash{% endlink %} qui ont pour but d’être moins chers.
+Tu peux toujours aller faire un tour pour voir si tu trouves ton bonheur dans {% link url="https://www.tess-h.be/logo-flash/", type="external" %}les logos flash de Tess{% endlink %}
 
-Si tu as un budget fixe pour ta communication n’hésite pas à {% link anchor=undefined, type="internal" %}me contacter{% endlink %} pour qu’on en discute, je peux peut être adapter mon temps de travail à ton budget.
+ qui ont pour but d’être moins chers.
 
-Viens voir ce que disent ceux et celles qui ont sauté le pas avec leur {% link anchor=undefined, type="internal" %}témoignages{% endlink %} ;-)
+Si tu as un budget fixe pour ta communication n’hésite pas à {% link url="contact", type="internal", collection="pages" %}nous contacter{% endlink %}
 
-J’ai écris un article sur mon blog pour t’expliquer ”{% link anchor=undefined, type="internal" %}pourqoi c’est cher un graphiste{% endlink %}“.
+ pour qu’on en discute, je peux peut être adapter mon temps de travail à ton budget.
+
+Viens voir ce que disent ceux et celles qui ont sauté le pas avec **leur témoignages** ;-)
+
+Tess a écrit un article sur son blog pour t’expliquer {% link url="https://www.tess-h.be/blog/", type="external" %}"pourquoi c'est cher un graphiste?"{% endlink %}.
 
 ### Est-ce que mon logo m’appartient?
 
