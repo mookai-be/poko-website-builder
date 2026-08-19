@@ -28,9 +28,7 @@ Tu trouveras sur le site de Tess toutes les étapes concernant {% link url="http
 
 Tu reçois les premières propositions de logo dans les 10 jours\* et le dossier de livraison final avec tous les fichiers dans le mois\*.
 Mais en général, c’est le temps de réflexion des clients qui influence le plus la date de livraison finale.
-Je te conseille de visionner la vidéo {% link url="https://www.tess-h.be/workflow/", type="external" %}du workflow de Tess{% endlink %}
-
- pour te rendre compte du travail global que représente une création de logo et de ce que tu auras dans le dossier de livraison.
+Je te conseille de visionner la vidéo {% link url="https://www.tess-h.be/workflow/", type="external" %}du workflow de Tess{% endlink %} pour te rendre compte du travail global que représente une création de logo et de ce que tu auras dans le dossier de livraison.
 
 _\*jours ouvrables, en moyenne_
 
