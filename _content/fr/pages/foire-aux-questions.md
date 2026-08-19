@@ -86,8 +86,8 @@ Tess a écrit un article sur son blog pour t’expliquer {% link url="https://ww
 
 le logo, sous réserve qu’il soit original, fait partie des œuvres graphiques qui sont soumises au droit d’auteur, et ce de manière automatique dès sa création: _«L’auteur d’une œuvre de l’esprit jouit sur cette œuvre, du seul fait de sa création, d’un droit de propriété incorporelle exclusif et opposable à tous»_ (article L. 111-1 du CPI).
 
-Je reste donc titulaire des droits d’auteur des logos (et illustrations) que je crée. Mon travail est un service et donc il serait étrange que mes clients ne puissent pas jouir de leur logo une fois finalisé.
+Tess reste donc titulaire des droits d’auteur des logos (et illustrations) qu'elle créée. Son travail est un service et donc il serait étrange que ses clients ne puissent pas jouir de leur logo une fois finalisé.
 
-Pour éviter des coûts supplémentaires, je cède donc les droits d’utilisation de mes créations à la livraison de celles-ci automatiquement, pour peu que le client s’engage à **respecter la charte graphique et à me mentionner, car il est conscient qu’il expose mon travail.**
+Pour éviter des coûts supplémentaires, elle cède donc les droits d’utilisation de ses créations à la livraison de celles-ci automatiquement, pour peu que le client s’engage à **respecter la charte graphique et à la mentionner, car il est conscient qu’il expose son travail.**
 
 {% link url="https://www.cap-com.org/actualit%C3%A9s/logo-avoir-tous-les-droits-la-check-list", type="external" %}_source: www.cap-com.org_{% endlink %}
