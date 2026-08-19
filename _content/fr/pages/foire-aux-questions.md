@@ -39,11 +39,13 @@ _\*jours ouvrables, en moyenne_
 
 C’est très peu probable ^^!
 Tess montre 2 ou 3 possibilités, après avoir discuté ensemble de tes envies et de ton activité. Et il y a 3 étapes en tout pour tester des choses et peaufiner le logo avant la livraison.
-Je t’invite à regarder ma vidéo sur {% link anchor=undefined, type="internal" %}mon workflow{% endlink %} pour te faire une idée.
+On t’invite à regarder sa vidéo sur {% link url="https://www.tess-h.be/workflow/", type="external", newTab=true %}son workflow{% endlink %}
 
-Il est bon de savoir que je ne suis pas une graphiste excécutante et donc il y a une part de ta confiance à m’accorder afin de ne pas brimer ma créativité ^^!
+ pour te faire une idée.
 
-_Pour être tout à fait franche, je n’ai eu le cas qu’**une seule fois** depuis que je suis graphiste (2007). Le client en question voulait que je refasse exactement une illustration pour son logo. Ce qui n’était pas correct vis-à-vis de l’illustratrice qui l’avait créée (droits d’auteur). De plus ce n’était pas un logo techniquement correct pour son utilisation finale. J’ai donc uniquement fait payer mes heures de travail et nous avons mis fin à la collaboration._
+Il est bon de savoir que Tess n'est pas une graphiste excécutante et donc il y a une part de ta confiance à lui accorder afin de ne pas brimer sa créativité.
+
+_Pour être tout à fait francs, nous n’avons eu le cas qu’**une seule fois** depuis que je suis graphiste (2007). Le client en question voulait qu'elle refasse exactement une illustration pour son logo. Ce qui n’était pas correct vis-à-vis de l’illustratrice qui l’avait créée (droits d’auteur). De plus ce n’était pas un logo techniquement correct pour son utilisation finale. Elle donc uniquement fait payer ses heures de travail et a mis fin à la collaboration._
 
 Et puis il faut surtout t’écouter et ne pas te décider avant d’avoir vu {% link anchor=undefined, type="internal" %}mon portfolio{% endlink %} pour être sûr que mes réalisations passées te plaisent avant de travailler ensemble.
 
