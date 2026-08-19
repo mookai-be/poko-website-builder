@@ -15,8 +15,8 @@ metadata:
       url: https://www.tess-h.be/
     - name: behance
       url: https://www.behance.net/TessGRAPHICDESIGNER
-    - name: pinterest
-      url: https://www.pinterest.com/lamauvaisefee/
+    - name: Pexels
+      url: https://www.pexels.com/fr-fr/@tess-h-312625/
     - name: linkedin
       url: https://www.linkedin.com/in/tess-h/
     - name: youtube
@@ -25,10 +25,10 @@ metadata:
       url: https://www.instagram.com/Tessvividimprint/
     - name: facebook
       url: https://www.facebook.com/Tessh.VIVIDimprint/
+    - name: pinterest
+      url: https://www.pinterest.com/lamauvaisefee/
     - name: spotify
       url: https://open.spotify.com/playlist/6SnoAwjJC5DbIuZ8FydrWj
-    - name: Pexels
-      url: https://www.pexels.com/fr-fr/@tess-h-312625/
 generatePage: previewOnly
 ---
 
