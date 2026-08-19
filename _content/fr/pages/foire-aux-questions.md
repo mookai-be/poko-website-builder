@@ -5,7 +5,6 @@ lang: fr
 createdAt: 2026-08-19T06:48:00.000Z
 ldType: WebPage
 name: Foire aux questions
-vars: {}
 ---
 
 ### Quels sont les tarifs des prestations?
