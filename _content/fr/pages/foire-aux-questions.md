@@ -38,9 +38,7 @@ _\*jours ouvrables, en moyenne_
 
 C’est très peu probable ^^!
 Tess montre 2 ou 3 possibilités, après avoir discuté ensemble de tes envies et de ton activité. Et il y a 3 étapes en tout pour tester des choses et peaufiner le logo avant la livraison.
-On t’invite à regarder sa vidéo sur {% link url="https://www.tess-h.be/workflow/", type="external", newTab=true %}son workflow{% endlink %}
-
- pour te faire une idée.
+On t’invite à regarder sa vidéo sur {% link url="https://www.tess-h.be/workflow/", type="external", newTab=true %}son workflow{% endlink %} pour te faire une idée.
 
 Il est bon de savoir que Tess n'est pas une graphiste excécutante et donc il y a une part de ta confiance à lui accorder afin de ne pas brimer sa créativité.
 
