@@ -7,15 +7,9 @@ ldType: WebPage
 name: Stage
 ---
 
-<div class="title-container">
-  <h1 class="bg-title">
-    Stage
-  </h1>
-</div>
+# Stage
 
 ::: section
-
-:::div {.bg-title-section}
 
 ## Chez mookaï, tu participes au développement de nos projets
 
@@ -23,7 +17,7 @@ Tu veux contribuer à un web plus léger, plus responsable et accessible? Partic
 :::
 
 ::: div {.full-bleed .banner}
-{% image src="/_images/stagiaire-1.webp" %}
+{% image src="/_images/stagiaire-1.webp", class="object-[center_top]" %}
 :::
 
 ::: section
@@ -56,20 +50,20 @@ Selon tes compétences et ton évolution pendant le stage:
 
 :::
 
-{% sectionBuilder class="searched-profiles pb-0" %}
+{% sectionBuilder class="" %}
 {% sectionHeader  %}
 ## Profils recherché
 
 On ne cherche pas un profil “parfait”, mais quelqu’un de solide sur au moins un axe:
 {% endsectionHeader %}
 {% twoColumns class="v--gap-switcher:0" %}
-{% twoColumnsItem class="palette-red" %}
+{% twoColumnsItem class="prose box radius-0 border-0 palette-red" %}
 ### Web/dev 
 
 - bases en HTML, CSS, JavaScript ou Node.js
 - compréhension des bonnes pratiques web (structure, accessibilité, performance)
 {% endtwoColumnsItem %}
-{% twoColumnsItem class="palette-purple" %}
+{% twoColumnsItem class="prose box radius-0 border-0 palette-purple" %}
 ### Design
 
 - sens graphique (UI, typo, mise en page)
@@ -77,13 +71,13 @@ On ne cherche pas un profil “parfait”, mais quelqu’un de solide sur au moi
 {% endtwoColumnsItem %}
 {% endtwoColumns %}
 {% twoColumns class="v--gap-switcher:0 mt-0" %}
-{% twoColumnsItem class="palette-gold" %}
+{% twoColumnsItem class="prose box radius-0 border-0 palette-gold" %}
 ### Communication vente
 
 - bonnes capacités rédactionnelles
 - compréhension des réseaux sociaux et des logiques de contenu
 {% endtwoColumnsItem %}
-{% twoColumnsItem class="palette-gold palette--bg-tone" %}
+{% twoColumnsItem class="prose box radius-0 border-0 palette-gold palette--bg-tone" %}
 ### Administration organisation
 
 - rigueur, sens de l’organisation
@@ -136,8 +130,9 @@ On ne cherche pas un profil “parfait”, mais quelqu’un de solide sur au moi
 {% sectionTwoColumns  %}
 
 {% twoColumns type="switcher" %}
-{% twoColumnsItem class="item-two-columns-img-bleed" %}
-{% image src="/_images/dscf0495.webp" %}
+{% twoColumnsItem class="container" %}
+{% image src="/_images/dscf0495.webp", class="aside-mb-pull radius-card" %}
+
 {% endtwoColumnsItem %}
 {% twoColumnsItem  %}
 ## À Bruxelles
@@ -167,7 +162,7 @@ Les candidatures génériques ne seront pas prises en compte ;-) {.small .italic
 
 {% sectionCollection  %}
 
-{% collection collection="reviews", filters=[{"by":"name","value":["mandy","mathias","meriton"]}], sortCriterias=[], type="grid-fluid", columns=2, itemPartial="review-card" %}{% endcollection %}
+{% collection collection="reviews", filters=[{"by":"name","value":["mandy","mathias","meriton"]}], sortCriterias=[], type="faux-masonry", widthColumnMin="25rem", columns=2, gap="var(--step-1)", itemPartial="review-card" %}{% endcollection %}
 
 {% endsectionCollection %}
 
@@ -178,27 +173,3 @@ Les candidatures génériques ne seront pas prises en compte ;-) {.small .italic
 On répond sans bullshit
 
 [Oui je veux tester ça](/contact/){.cta}
-
-{% css %}
-blockquote:has(.quote) {
-  padding-inline-start: 0;
-  border: none;
-  text-align: center;
-}
-blockquote:has(.quote) .quote {
-  font-family: "Chantal", cursive, sans-serif;
-}
-.searched-profiles .two-columns .item-two-columns,
-.searched-profiles .two-columns .item-two-columns h3{
-  color: var(--white);
-}
-.two-columns .item-two-columns {
-    padding: var(--step-5) var(--step-3);
-}
-.two-columns .item-two-columns:nth-child(1) {
-    --bleed-right: 0;
-}
-.two-columns .item-two-columns:nth-child(2) {
-    --bleed-left: 0;
-}
-{% endcss %}

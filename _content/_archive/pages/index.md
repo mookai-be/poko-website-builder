@@ -65,7 +65,7 @@ Il y a plusieurs options pour avancer dans ce domaine:
 mise en place d'outils
 formations
 coaching
-immersion
+consultance / immersion
 …
 - **Formations**
     - On est passionnés.

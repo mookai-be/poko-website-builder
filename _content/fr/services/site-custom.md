@@ -11,14 +11,12 @@ localizationKey: 49cadc5a6887
 uuid: 680b12bf36ea
 pageFooter: ""
 pageNav: ""
-bodyClass: palette-mocha palette--contrast palette--bg-tone
+bodyClass: palette-mocha palette--tone-contrast
 ---
 
-# Site custom
+# Site sur mesure
 
 ::: section
-
-:::div {.bg-title-section}
 
 ## Un site web sur mesure, qui te ressemble vraiment
 

@@ -5,14 +5,12 @@ lang: fr
 createdAt: 2026-05-21T09:59:00.000Z
 ldType: WebPage
 name: asbl
-bodyClass: palette-mocha palette--contrast palette--bg-tone
+bodyClass: palette-mocha palette--tone-contrast
 ---
 
 # L'asbl
 
 ::: section
-
-:::div {.bg-title-section}
 
 ## Un peu d'histoire…
 

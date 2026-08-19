@@ -13,8 +13,6 @@ pageLayout: homepage
 
 ::: section
 
-:::div {.bg-title-section}
-
 ## Ce qu'on fait
 
 Du logo au site web, en passant par l'illustration et la mise en page — on construit les outils visuels et digitaux qui donnent à ton projet la visibilité qu'il mérite.
@@ -28,7 +26,7 @@ Pas de jargon, pas de sur-promesse. On travaille avec toi, pas pour toi. Notre m
 {% sectionHeader  %}
 ## Des projets, pas des promesses
 {% endsectionHeader %}
-{% collection collection="portfolio", filters=[{"by":"tag","value":["featured"]},{"value":4,"by":"first"}], sortCriterias=[], type="grid-fluid", columns=4, itemPartial="featured-work" %}{% endcollection %}
+{% collection collection="portfolio", filters=[{"by":"tag","value":["featured"]},{"value":3,"by":"first"}], sortCriterias=[], type="grid-fluid", columns=3, itemPartial="featured-work" %}{% endcollection %}
 
 {% endsectionCollection %}
 
@@ -50,14 +48,14 @@ Depuis 2015, on aide les projets à impact à grandir et à se faire entendre.
 
 [En savoir plus sur mookaï](/organizations/mookai/){.cta}
 {% endtwoColumnsItem %}
-{% twoColumnsItem class="container card" %}
-{% image src="/_images/dscf0062.webp", class="aside-mb-pull" %}
+{% twoColumnsItem class="container" %}
+{% image src="/_images/dscf0062.webp", class="aside-mb-pull radius-card" %}
 {% endtwoColumnsItem %}
 {% endtwoColumns %}
 
 {% endsectionTwoColumns %}
 
-::: section {.palette-purple .bleed-bg}
+:::: section {.palette-purple .bleed-bg .pbe-0}
 
 ## poko — notre arme secrète (qu'on partage volontiers)
 
@@ -65,13 +63,14 @@ Nos sites sont construits avec [poko](https://www.poko.eco/), un website builder
 
 C'est notre conviction mise en pratique.
 
-{% htmlPartial "poko-logo-cc.njk" %}
+{% htmlPartial "poko-logo-cc.njk", style="isolation:isolate;" %}
 
-:::
-
-::: div {.full-bleed .banner}
+::: div {.full-bleed .banner .mbs-[-2rem]}
 {% image src="/_images/dscf0345.webp" %}
 :::
+
+::::
+
 
 ::: section {.text-center}
 

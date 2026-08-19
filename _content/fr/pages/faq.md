@@ -1,10 +1,10 @@
 ---
 translationKey: faq
-order: 11
+order: 12
 lang: fr
 createdAt: 2026-08-19T06:48:00.000Z
 ldType: WebPage
-name: Foire aux questions
+name: FAQ
 ---
 
 ### Quels sont les tarifs des prestations?

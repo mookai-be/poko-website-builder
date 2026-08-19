@@ -11,14 +11,12 @@ localizationKey: 5413282c45a2
 uuid: 452511b3d7f5
 pageFooter: ""
 pageNav: ""
-bodyClass: palette-mocha palette--contrast palette--bg-tone
+bodyClass: palette-mocha palette--tone-contrast
 ---
 
 # Site minimaliste
 
 ::: section
-
-:::div {.bg-title-section}
 
 ## Ton site web pro en une journée chrono?
 

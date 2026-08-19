@@ -1,6 +1,12 @@
 <footer id="page-footer" class="palette-bordeau palette--contrast">
     <div class="layout cluster small">
-        <div id="footer-nav" class="pbs-prose">
+        <div id="footer-internal-nav" class="pbs-prose flow space:0">
+            <ul role="list">
+                <li>{% link url="pas-de-cookies", type="internal", collection="pages" %}{% endlink %}</li>
+                <li>{% link url="faq", type="internal", collection="pages" %}{% endlink %}</li>
+            </ul>
+        </div>
+        <div id="footer-nav" class="pbs-prose flow space:0">
             <ul role="list" class="flow horizontal">
                 <li>{% link url="https://www.linkedin.com/company/109812644/", target="_blank", rel="self" %}{% icon "tablerFilled:brand-linkedin" %}{% endlink %}</li>
                 <li>{% link url="https://www.facebook.com/profile.php?id=61560323541142", target="_blank", rel="self" %}{% icon "tablerFilled:brand-facebook" %}{% endlink %}</li>
@@ -14,12 +20,12 @@
         </div>
         <div id="footer-contact">
             <address>
-            <p><strong>© mookaï asbl</strong></p>
-            {{ env.email | emailLink }}
-            <p>BE 1003.532.405</p>
-            <p>
-                Avenue Armand Huysmans 47/2,<br>1050 Bruxelles, Belgique
-            </p>
+                <p><strong>© mookaï asbl</strong></p>
+                <p>{{ env.email | emailLink }}</p>
+                <p>BE 1003.532.405</p>
+                <p>
+                    Av. Armand Huysmans 47/2,<br>1050 Ixelles, Belgique
+                </p>
             </address>
         </div>
         <div id="footer-logo">

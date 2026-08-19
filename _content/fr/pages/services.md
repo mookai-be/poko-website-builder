@@ -13,8 +13,6 @@ eleventyNavigation:
 
 ::: section
 
-:::div {.bg-title-section}
-
 ## Ce qu'on fait.{% br %}Et pourquoi on le fait comme ça.
 
 On ne vend pas des livrables. On construit des outils qui durent, des identités qui tiennent la route et des relations qui valent le coup. Voilà ce qu'on propose — et pour qui c'est fait.
@@ -36,7 +34,7 @@ Nos sites sont construits avec [poko](https://www.poko.eco/), notre website buil
 {% endsectionCollection %}
 
 {% sectionCollection class="switcher palette-bordeau bleed-bg" %}
-{% sectionHeader class="palette--fg-neutral palette--bg-tone bleed-bg" %}
+{% sectionHeader class="palette--bg-tone bleed-bg" %}
 ## Graphisme
 
 Un logo, c'est le visage de ton projet. Une illustration, c'est sa personnalité. Une mise en page soignée, c'est ce qui donne envie de lire. Tess combine approche intuitive et exigence graphique pour que chaque visuel te ressemble vraiment — et serve tes objectifs sur le long terme.

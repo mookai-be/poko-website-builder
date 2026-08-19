@@ -8,14 +8,12 @@ name: Contact
 eleventyNavigation:
   add: Nav
   order: 4
-bodyClass: palette-mocha palette--contrast palette--bg-tone
+bodyClass: palette-mocha palette--tone-contrast
 ---
 
 # Contact
 
 ::: section
-
-:::div {.bg-title-section}
 
 ## On discute?
 
@@ -89,8 +87,8 @@ Tu es plutôt réseaux sociaux? On est là aussi: [Instagram](https://instagram.
 
 Et si tu cherches à rejoindre l'équipe ou proposer un partenariat, mentionne-le dans le formulaire ou l'email. On lit tout, vraiment.
 {% endtwoColumnsItem %}
-{% twoColumnsItem class="item-two-columns-img-bleed" %}
-{% image src="/_images/dscf0434-2.webp" %}
+{% twoColumnsItem class="container" %}
+{% image src="/_images/dscf0434-2.webp", class="aside-mb-pull radius-card" %}
 {% endtwoColumnsItem %}
 {% endtwoColumns %}
 

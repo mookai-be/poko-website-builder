@@ -8,7 +8,7 @@ Ce document liste tous les projets identifiés (poko.eco/showcase, Feed by Desig
 - `[ ]` = projet à ignorer
 - `✅` = fichier déjà créé dans `_content/fr/projects/`
 - `🆕` = pas encore de fichier
-- **Catégorie** entre parenthèses — tu peux la modifier. Les catégories reflètent les services mookaï: `web`, `site-custom`, `site-mutualise`, `site-minimaliste`, `logo`, `logo-flash`, `mise-en-page`, `illustration`, `art`, `immersion`, `formations` + tags larges `branding`, `print`.
+- **Catégorie** entre parenthèses — tu peux la modifier. Les catégories reflètent les services mookaï: `web`, `site-custom`, `site-mutualise`, `site-minimaliste`, `logo`, `logo-flash`, `mise-en-page`, `illustration`, `art`, `consultance`, `formations` + tags larges `branding`, `print`.
 
 Les doublons entre Feed by Design et Behance sont regroupés — le fichier existant pourra être enrichi avec le lien Behance.
 

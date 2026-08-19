@@ -7,13 +7,12 @@ ldType: Service
 name: Photographie
 tags:
   - art
+bodyClass: palette-purple
 ---
 
 # Photographie
 
 ::: section
-
-:::div {.bg-title-section}
 
 ## Des images authentiques pour raconter ce que tu fais
 

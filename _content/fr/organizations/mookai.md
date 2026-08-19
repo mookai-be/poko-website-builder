@@ -10,15 +10,9 @@ eleventyNavigation:
   title: À propos
 ---
 
-<div class="title-container">
-  <h1 class="bg-title">
-    À propos
-  </h1>
-</div>
+# À propos
 
 ::: section
-
-:::div {.bg-title-section}
 
 ## On bosse avec des gens bien. <br> Pour faire des trucs qui ont du sens.
 
@@ -32,7 +26,7 @@ On est une ASBL. Pas par hasard.
 {% image src="/_images/dscf9674-2.webp" %}
 :::
 
-{% sectionCollection class="profile palette-mocha bleed-bg v--width-sidebar:18rem v--bleed-bottom:6rem" %}
+{% sectionCollection class="palette-mocha bleed-bg v--width-fixed:18rem v--bleed-bottom:9rem" %}
 {% sectionHeader  %}
 ## Deux têtes, un studio
 {% endsectionHeader %}
@@ -40,7 +34,8 @@ On est une ASBL. Pas par hasard.
 
 {% endsectionCollection %}
 
-> If not you, then who? <br> If not now, then when? {.quote .h0}
+> If not you, then who? <br> If not now, then when?
+{.chantal .mbs-0 .pbs-0 .h0}
 
 ::: section
 
@@ -51,7 +46,7 @@ Tu as déjà choisi d'agir et on t'en remercie. Nous, on veut que ton message r�
 
 Voilà comment ça se traduit concrètement:
 
-<div class="values-grid grid-fluid v--columns:3" role="list">
+<div class="values-grid layout grid-fluid v--columns:3" role="list">
   <div class="values-card flow palette-mocha" role="listitem" tabindex="0" aria-expanded="false">
     <span class="values-card__title h1">No bullshit</span>
     <p class="values-card__desc">on te dit ce qu'on pense, ce qu'on peut faire, et ce qu'on ne fait pas. Pas de langue de bois, pas de devis qui gonfle en cours de route.</p>
@@ -79,7 +74,7 @@ Voilà comment ça se traduit concrètement:
 </div>
 :::
 
-::: section
+::: section { .palette-mocha .palette--tone-contrast }
 
 ## Pourquoi une ASBL?
 
@@ -87,10 +82,10 @@ Parce qu'on ne court pas après les profits, mais après l'impact. Le statut d'A
 
 Ça veut dire qu'on peut choisir nos clients, refuser des projets qui ne nous correspondent pas, et travailler à notre rythme sans répondre à des actionnaires. Si tu cherches un rapport artificiel pour remplir tes KPIs, on n'est probablement pas faits l'un pour l'autre — et c'est ok.
 
--**Bouton vers la page asbl**-
+{% link url="asbl", type="internal", collection="pages", class="cta" %}L'ASBL{% endlink %}
 :::
 
-::: section
+::: section { .palette-purple }
 
 ## poko — notre website builder, notre conviction
 
@@ -110,10 +105,10 @@ En bonus, chaque site sur-mesure qu'on construit renforce la plateforme pour que
 {% sectionTwoColumns class="palette-white bleed-bg" %}
 
 {% twoColumns  %}
-{% twoColumnsItem class="credit-img" %}
-{% link url="https://www.nasoha.be/pierres/p/pierre-jaspe-mookaite", type="external", target="_blank" %}{% image src="/_images/Capture_d_ecran_2023-12-15.webp" %}{% endlink %}
+{% twoColumnsItem class="pile text-right items-end" %}
+{% image src="/_images/Capture_d_ecran_2023-12-15.webp" %}
 
-{% link url=" https://www.nasoha.be/", type="external", target="_blank", class="credit-text" %}© NASOHA{% endlink %}
+{% link url=" https://www.nasoha.be/", type="external", target="_blank", class="reset" %}© NASOHA.be{% endlink %}
 {% endtwoColumnsItem %}
 {% twoColumnsItem  %}
 ## Notre nom, notre logo
@@ -136,18 +131,18 @@ On est aussi ouverts aux **partenariats** avec d'autres agences, freelances cré
 
 Tu veux rejoindre l'aventure en tant que stagiaire (dev, graphisme, communication)?
 
-[Dis-le-nous](/contact/){.cta} + -**Bouton vers la page Stage**-
+[Dis-le-nous](/contact/){.cta} [Infos stages](/stages/){.cta}
 :::
 
 ::: div {.full-bleed .banner}
 {% image src="/_images/dscf9850.webp" %}
 :::
 
-{% sectionCollection  %}
+{% sectionCollection class="palette--pop" %}
 {% sectionHeader  %}
-## Ils en parlent {.palette--pop}
+## Ils parlent de nous
 {% endsectionHeader %}
-{% collection collection="reviews", filters=[{"by":"name","value":["stage"]}], sortCriterias=[], itemPartial="review-card" %}{% endcollection %}
+{% collection collection="reviews", type="faux-masonry", gap="var(--step-1)", columns=2, itemPartial="review-card", widthColumnMin="25rem" %}{% endcollection %}
 
 {% endsectionCollection %}
 
@@ -162,11 +157,12 @@ Un projet en tête, une question, ou juste l'envie de voir si le courant passe.
 :::
 
 {% css %}
+/*
 .profile {
   margin-top: 0;
 }
 .profile h3, .quote {
-  font-family: "Chantal", cursive, sans-serif;
+  font-family: "Emoji", "Chantal", cursive, sans-serif;
 }
 
 .profile h3 {
@@ -194,7 +190,6 @@ Un projet en tête, une question, ou juste l'envie de voir si le courant passe.
 .profile .list-collection .with-sidebar:nth-child(even) .sidebar-content {
   align-items: end;
 }
-
 .sidebar-content {
   --flow-space: 1em;
 }
@@ -204,6 +199,8 @@ blockquote:has(.quote) {
   border: none;
   text-align: center;
 }
+*/
+
 
 .values-grid {
   margin-top: var(--step-5);
@@ -225,7 +222,7 @@ blockquote:has(.quote) {
 }
 
 .values-card__title {
-  font-family: "Chantal", cursive, sans-serif;
+  font-family: "Emoji", "Chantal", cursive, sans-serif;
   margin-inline: auto;
   text-align: center;
 }
@@ -239,20 +236,6 @@ blockquote:has(.quote) {
 }
 .values-card.is-active .values-card__desc {
   display: block;
-}
-
-.credit-text {
-  position: absolute;
-  bottom: var(--step-0);
-  right: var(--step-0);
-}
-.credit-img {
-  position: relative;
-}
-
-.section-collection:has(.review-card) .list-collection {
-  display: block;
-  columns: 2;
 }
 
 {% endcss %}

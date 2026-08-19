@@ -1,19 +1,18 @@
 ---
-translationKey: illustration-1
+translationKey: illustration-art
 order: 11
 lang: fr
 createdAt: 2026-06-18T10:58:00.000Z
 ldType: Service
-name: Illustration
+name: Illustrations originales
 tags:
   - art
+bodyClass: palette-purple
 ---
 
-# Illustration
+# Illustrations
 
 ::: section
-
-:::div {.bg-title-section}
 
 ## Des illustrations originales pour habiller tes espaces
 
