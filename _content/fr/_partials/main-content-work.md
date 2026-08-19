@@ -6,7 +6,7 @@
 Portfolio { .cover-title }
 
 {% sectionTwoColumns %}
-{% twoColumns type="fixedFluid", widthFixed="24rem", widthFluidMin="50%", gap="0", fixedSide="fixedRight" %}
+{% twoColumns type="fixedFluid", widthFixed="24rem", widthFluidMin="50%", fixedSide="fixedRight" %}
 {% twoColumnsItem class="flow" %}
 
 {{ content | safe }}
@@ -28,7 +28,7 @@ Portfolio { .cover-title }
 {% if firstPic %}
 
 <div class="work-page-image">
-{% image src=firstPic, alt=name, width=400 %}
+{% image src=firstPic, alt=name, width=510 %}
 </div>
 {% endif %}
 
@@ -37,16 +37,20 @@ Portfolio { .cover-title }
 
 {% endsectionTwoColumns %}
 
-{% sectionGrid %}
-{% grid columns="6", gap="0", widthColumnMin="200px" %}
+{% sectionGrid  %}
+
+{% grid type="faux-masonry", widthColumnMin="16rem", gap="0px" %}
+
 {% for pic in pics %}
 {% if pic %}
-{% gridItem %}
-{% image src=pic, aspectRatio="1", width=400 %}
+{% gridItem class="bg-white" %}
+{% image src=pic, width=510 %}
 {% endgridItem %}
 {% endif %}
 {% endfor %}
+
 {% endgrid %}
+
 {% endsectionGrid %}
 
 </main>

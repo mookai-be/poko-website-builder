@@ -11,7 +11,7 @@ localizationKey: 38a2c3ac40d8
 uuid: 2a8f78018e5e
 pageFooter: ""
 pageNav: ""
-bodyClass: palette-mocha palette--contrast palette--bg-tone
+bodyClass: palette-mocha palette--tone-contrast
 ---
 
 # Web mutualisé

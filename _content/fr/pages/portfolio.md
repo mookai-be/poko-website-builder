@@ -22,7 +22,7 @@ Du logo au site sur mesure, en passant par l'illustration et la mise en page —
 {% sectionHeader  %}
 ## Une sélection
 {% endsectionHeader %}
-{% collection collection="portfolio", filters=[{"by":"tag","value":["featured"]},{"value":4,"by":"first"}], sortCriterias=[], type="grid-fluid", columns=4, itemPartial="featured-work" %}{% endcollection %}
+{% collection collection="portfolio", filters=[{"by":"tag","value":["featured"]},{"value":6,"by":"first"}], sortCriterias=[], type="grid-fluid", columns=3, itemPartial="featured-work" %}{% endcollection %}
 {% sectionFooter  %}
 Un projet dans ces eaux-là? [On adore ça](/contact/){.cta}
 {% endsectionFooter %}
@@ -32,7 +32,7 @@ Un projet dans ces eaux-là? [On adore ça](/contact/){.cta}
 {% sectionHeader  %}
 ## Les autres projets
 {% endsectionHeader %}
-{% collection collection="portfolio", filters=[{"by":"tag","value":["featured"]}], exclusions=true, sortCriterias=[{"by":"random"}], type="grid-fluid", columns=8, itemPartial="portfolio-work" %}{% endcollection %}
+{% collection collection="portfolio", filters=[{"by":"tag","value":["featured"]},{"value":6,"by":"first"}], exclusions=true, sortCriterias=[], type="grid-fluid", columns=8, itemPartial="portfolio-work" %}{% endcollection %}
 
 {% endsectionCollection %}
 

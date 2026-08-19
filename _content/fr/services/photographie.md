@@ -7,6 +7,7 @@ ldType: Service
 name: Photographie
 tags:
   - art
+bodyClass: palette-purple
 ---
 
 # Photographie

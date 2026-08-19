@@ -1,18 +1,22 @@
-<div class="with-sidebar">
-<div class="sidebar-image flow">
+{% set websiteLink = metadata.links | filterCollection({ by: "name", value: "site" }) | first %}
+
+<div class="profile-card fixed-fluid">
+<div class="profile-card__image">
 {% image src=metadata.image.src, alt=metadata.image.alt, class="radius-card" %}
 
-<h3 class="h-4">{{name}}</h3>
+<h3 class="h-4 chantal">{{name}}</h3>
 </div>
-<div class="sidebar-content flow">
+<div class="profile-card__content flow">
 
 <p class="h3">{{metadata.jobTitle}}</p>
 
-{% for linkItem in metadata.links %}{% if linkItem.name == "site" %}<a href="{{ linkItem.url }}">{{ linkItem.url | replace("https://www.", "") | replace("https://", "") }}</a>{% endif %}{% endfor %}
+{% if websiteLink %}
+<p>{% link url=websiteLink.url, type="external" %}{{ websiteLink.url | replace("https://www.", "") | replace("https://", "") | replace("/", "") }}{% endlink %}</p>
+{% endif %}
 
 {{ rawInput | renderContent("njk,md") | safe }}
 
-<ul class="reset cluster" role="list">
+<ul role="list" class="cluster v--gap-cluster:0.4em">
   {% for linkItem in metadata.links %}
   {% if linkItem.name != "site" %}
   {% set iconName = "tablerOutline:brand-" ~ linkItem.name %}
@@ -23,3 +27,36 @@
 
 </div>
 </div>
+
+<style>
+.profile-card h3 {
+  margin-block-start: -0.5em;
+  transform: translateX(0.5em);
+  display: inline-block;
+}
+.profile-card img {
+  aspect-ratio: 1;
+  object-position: center 0%;
+}
+.profile-card:nth-child(even) {
+  text-align: right;
+  & .profile-card__content {
+    align-items: flex-end;
+  }
+  & h3 {
+    transform: translateX(-0.5em);
+  }
+}
+
+@media (min-width: 668px) {
+.profile-card img {
+  aspect-ratio: unset;
+}
+
+.profile-card:nth-child(even) {
+  & .profile-card__image {
+    order: 2;
+  }
+}
+}
+</style>

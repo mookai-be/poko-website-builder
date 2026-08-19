@@ -26,7 +26,7 @@ On est une ASBL. Pas par hasard.
 {% image src="/_images/dscf9674-2.webp" %}
 :::
 
-{% sectionCollection class="profile palette-mocha bleed-bg v--width-sidebar:18rem v--bleed-bottom:6rem" %}
+{% sectionCollection class="palette-mocha bleed-bg v--width-fixed:18rem v--bleed-bottom:9rem" %}
 {% sectionHeader  %}
 ## Deux têtes, un studio
 {% endsectionHeader %}
@@ -34,7 +34,8 @@ On est une ASBL. Pas par hasard.
 
 {% endsectionCollection %}
 
-> If not you, then who? <br> If not now, then when? {.quote .h0}
+> If not you, then who? <br> If not now, then when?
+{.chantal .mbs-0 .pbs-0 .h0}
 
 ::: section
 
@@ -73,7 +74,7 @@ Voilà comment ça se traduit concrètement:
 </div>
 :::
 
-::: section
+::: section { .palette-mocha .palette--tone-contrast }
 
 ## Pourquoi une ASBL?
 
@@ -81,10 +82,10 @@ Parce qu'on ne court pas après les profits, mais après l'impact. Le statut d'A
 
 Ça veut dire qu'on peut choisir nos clients, refuser des projets qui ne nous correspondent pas, et travailler à notre rythme sans répondre à des actionnaires. Si tu cherches un rapport artificiel pour remplir tes KPIs, on n'est probablement pas faits l'un pour l'autre — et c'est ok.
 
--**Bouton vers la page asbl**-
+{% link url="asbl", type="internal", collection="pages", class="cta" %}L'ASBL{% endlink %}
 :::
 
-::: section
+::: section { .palette-purple }
 
 ## poko — notre website builder, notre conviction
 
@@ -107,7 +108,7 @@ En bonus, chaque site sur-mesure qu'on construit renforce la plateforme pour que
 {% twoColumnsItem class="pile text-right items-end" %}
 {% image src="/_images/Capture_d_ecran_2023-12-15.webp" %}
 
-{% link url=" https://www.nasoha.be/", type="external", target="_blank", class="reset" %}© NASOHA{% endlink %}
+{% link url=" https://www.nasoha.be/", type="external", target="_blank", class="reset" %}© NASOHA.be{% endlink %}
 {% endtwoColumnsItem %}
 {% twoColumnsItem  %}
 ## Notre nom, notre logo
@@ -156,6 +157,7 @@ Un projet en tête, une question, ou juste l'envie de voir si le courant passe.
 :::
 
 {% css %}
+/*
 .profile {
   margin-top: 0;
 }
@@ -188,7 +190,6 @@ Un projet en tête, une question, ou juste l'envie de voir si le courant passe.
 .profile .list-collection .with-sidebar:nth-child(even) .sidebar-content {
   align-items: end;
 }
-
 .sidebar-content {
   --flow-space: 1em;
 }
@@ -198,6 +199,8 @@ blockquote:has(.quote) {
   border: none;
   text-align: center;
 }
+*/
+
 
 .values-grid {
   margin-top: var(--step-5);

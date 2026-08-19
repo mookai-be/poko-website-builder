@@ -1,15 +1,15 @@
 ---
-translationKey: immersion
+translationKey: consultance
 order: 9
 lang: fr
 createdAt: 2026-04-28T11:34:00.000Z
 name: Consultance
 tags:
   - support
-bodyClass: palette-gold
+bodyClass: palette-gold palette--bg-pop
 ---
 
-# Consultance en immersion
+# Consultance
 
 ::: section
 
@@ -19,7 +19,7 @@ Parfois, quand on a la tête dans le guidon, on manque de recul pour voir les op
 
 **Le principe:** on intègre ton équipe (ou on travaille en étroite collaboration) pendant une période définie pour t'apporter un regard extérieur, de nouvelles idées et des compétences pointues.
 
-**Prix:** sur mesure, à partir de 9876,54€/mois pour un équivalent temps plein.
+**Prix:** sur mesure, à partir de 10 000€/mois.
 
 :::
 
