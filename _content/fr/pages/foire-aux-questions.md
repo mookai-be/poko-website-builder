@@ -67,19 +67,11 @@ Je réaliserai très bientôt une vidéo pour expliquer ça en images ;-)
 
 ### C’est un gros budget pour moi, j’ai du mal à sauter le pas…
 
-Si tu veux savoir tout ce que représente un travail de recherche de logo, on t’invite à regarder la video sur {% link url="https://www.tess-h.be/workflow/", type="external" %}le workflow de Tess.{% endlink %}.
-
-Tu peux toujours aller faire un tour pour voir si tu trouves ton bonheur dans {% link url="https://www.tess-h.be/logo-flash/", type="external" %}les logos flash de Tess{% endlink %}
-
- qui ont pour but d’être moins chers.
-
-Si tu as un budget fixe pour ta communication n’hésite pas à {% link url="contact", type="internal", collection="pages" %}nous contacter{% endlink %}
-
- pour qu’on en discute, je peux peut être adapter mon temps de travail à ton budget.
-
-Viens voir ce que disent ceux et celles qui ont sauté le pas avec **leur témoignages** ;-)
-
-Tess a écrit un article sur son blog pour t’expliquer {% link url="https://www.tess-h.be/blog/", type="external" %}"pourquoi c'est cher un graphiste?"{% endlink %}.
+- Si tu veux savoir tout ce que représente un travail de recherche de logo, on t’invite à regarder la video sur {% link url="https://www.tess-h.be/workflow/", type="external" %}le workflow de Tess.{% endlink %}.
+- Tu peux toujours aller faire un tour pour voir si tu trouves ton bonheur dans {% link url="https://www.tess-h.be/logo-flash/", type="external" %}les logos flash de Tess{% endlink %} qui ont pour but d’être moins chers.
+- Si tu as un budget fixe pour ta communication n’hésite pas à {% link url="contact", type="internal", collection="pages" %}nous contacter{% endlink %} pour qu’on en discute, je peux peut être adapter mon temps de travail à ton budget.
+- Viens voir ce que disent ceux et celles qui ont sauté le pas avec **leur témoignages** ;-)
+- Tess a écrit un article sur son blog pour t’expliquer {% link url="https://www.tess-h.be/blog/", type="external" %}"pourquoi c'est cher un graphiste?"{% endlink %}.
 
 ### Est-ce que mon logo m’appartient?
 
