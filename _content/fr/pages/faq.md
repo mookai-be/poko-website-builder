@@ -1,5 +1,5 @@
 ---
-translationKey: foire-aux-questions
+translationKey: faq
 order: 11
 lang: fr
 createdAt: 2026-08-19T06:48:00.000Z
