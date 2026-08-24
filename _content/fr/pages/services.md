@@ -3,9 +3,10 @@ translationKey: services
 order: 3
 lang: fr
 createdAt: 2026-04-27T19:42:00.000Z
+ldType: WebPage
 name: Services
-vars: {}
 eleventyNavigation:
+  add: Nav
   order: 2
 ---
 
@@ -15,7 +16,7 @@ eleventyNavigation:
 
 ## Ce qu'on fait.{% br %}Et pourquoi on le fait comme ça.
 
-On ne vend pas des livrables. On construit des outils qui durent, des identités qui tiennent la route et des relations qui valent le coup. Voilà ce qu'on propose — et pour qui c'est fait.
+On construit des outils qui durent, des identités qui tiennent la route et des relations qui valent le coup. Voilà ce qu'on propose — et pour qui c'est fait.
 
 :::
 
@@ -29,7 +30,7 @@ On ne vend pas des livrables. On construit des outils qui durent, des identités
 
 Nos sites sont construits avec [poko](https://www.poko.eco/), notre website builder indépendant. Ça veut dire: légers, rapides, éco-conçus par défaut, et entièrement à toi. Pas de dépendance à un SaaS américain, pas de frais cachés, pas de mises à jour de sécurité à gérer. Juste un site qui fonctionne.
 {% endsectionHeader %}
-{% collection collection="services", filters=[{"value":"web","by":"tag"}], sortCriterias=[], type="flow", class="palette--contrast-tone bleed-bg" %}{% endcollection %}
+{% collection collection="services", filters=[{"by":"tag","value":["web"]}], sortCriterias=[], type="flow", class="palette--contrast-tone bleed-bg" %}{% endcollection %}
 
 {% endsectionCollection %}
 
@@ -39,7 +40,7 @@ Nos sites sont construits avec [poko](https://www.poko.eco/), notre website buil
 
 Un logo, c'est le visage de ton projet. Une illustration, c'est sa personnalité. Une mise en page soignée, c'est ce qui donne envie de lire. Tess combine approche intuitive et exigence graphique pour que chaque visuel te ressemble vraiment — et serve tes objectifs sur le long terme.
 {% endsectionHeader %}
-{% collection collection="services", filters=[{"value":"print","by":"tag"}], sortCriterias=[], type="flow" %}{% endcollection %}
+{% collection collection="services", filters=[{"by":"tag","value":["print"]}], sortCriterias=[], type="flow" %}{% endcollection %}
 
 {% endsectionCollection %}
 
@@ -59,7 +60,7 @@ Parfois, ce qu'il faut n'est pas un livrable mais un regard extérieur, un coup 
 
 Tess est aussi artiste. Et si tes murs de bureau, ton cabinet ou ton espace de coworking méritent une âme, on peut s'en occuper.
 {% endsectionHeader %}
-{% collection collection="services", filters=[{"value":"art","by":"tag"}], sortCriterias=[], type="flow", class="palette--contrast palette--bg-pop bleed-bg" %}{% endcollection %}
+{% collection collection="services", filters=[{"by":"tag","value":["art"]}], sortCriterias=[], type="flow", class="palette--contrast palette--bg-pop bleed-bg" %}{% endcollection %}
 
 {% endsectionCollection %}
 
