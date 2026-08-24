@@ -37,7 +37,7 @@ On est une ASBL. Pas par hasard.
 {% endsectionCollection %}
 
 > If not you, then who? <br> If not now, then when?
-> {.chantal .mbs-0 .pbs-0 .h0}
+{.chantal .mbs-0 .pbs-0 .h0}
 
 ::: section
 
@@ -160,50 +160,6 @@ Un projet en tête, une question, ou juste l'envie de voir si le courant passe.
 :::
 
 {% css %}
-/\*
-.profile {
-  margin-top: 0;
-}
-.profile h3, .quote {
-  font-family: "Emoji", "Chantal", cursive, sans-serif;
-}
-
-.profile h3 {
-  margin-block-start: -0.5em;
-  height: auto;
-  text-align: center;
-}
-
-.profile img {
-  height: 100%;
-}
-
-.profile a{
-  width: fit-content;
-}
-
-.profile .list-collection {
-  --flow-space: var(--step-4);
-}
-
-.profile .list-collection .with-sidebar:nth-child(even) {
-  flex-direction: row-reverse;
-  text-align: right;
-}
-.profile .list-collection .with-sidebar:nth-child(even) .sidebar-content {
-  align-items: end;
-}
-.sidebar-content {
-  --flow-space: 1em;
-}
-
-blockquote:has(.quote) {
-  padding-inline-start: 0;
-  border: none;
-  text-align: center;
-}
-\*/
-
 .values-grid {
   margin-top: var(--step-5);
   --gap: 0;
