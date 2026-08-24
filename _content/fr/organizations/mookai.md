@@ -8,6 +8,8 @@ name: mookaï
 eleventyNavigation:
   add: Nav
   title: À propos
+metadata:
+  legalName: mookaï asbl
 ---
 
 # À propos
@@ -35,7 +37,7 @@ On est une ASBL. Pas par hasard.
 {% endsectionCollection %}
 
 > If not you, then who? <br> If not now, then when?
-{.chantal .mbs-0 .pbs-0 .h0}
+> {.chantal .mbs-0 .pbs-0 .h0}
 
 ::: section
 
@@ -83,6 +85,7 @@ Parce qu'on ne court pas après les profits, mais après l'impact. Le statut d'A
 Ça veut dire qu'on peut choisir nos clients, refuser des projets qui ne nous correspondent pas, et travailler à notre rythme sans répondre à des actionnaires. Si tu cherches un rapport artificiel pour remplir tes KPIs, on n'est probablement pas faits l'un pour l'autre — et c'est ok.
 
 {% link url="asbl", type="internal", collection="pages", class="cta" %}L'ASBL{% endlink %}
+
 :::
 
 ::: section { .palette-purple }
@@ -157,7 +160,7 @@ Un projet en tête, une question, ou juste l'envie de voir si le courant passe.
 :::
 
 {% css %}
-/*
+/\*
 .profile {
   margin-top: 0;
 }
@@ -199,8 +202,7 @@ blockquote:has(.quote) {
   border: none;
   text-align: center;
 }
-*/
-
+\*/
 
 .values-grid {
   margin-top: var(--step-5);
