@@ -16,7 +16,7 @@ eleventyNavigation:
 
 ## Ce qu'on fait.{% br %}Et pourquoi on le fait comme ça.
 
-On construit des outils qui durent, des identités qui tiennent la route et des relations qui valent le coup. Voilà ce qu'on propose — et pour qui c'est fait.
+On construit des outils qui durent, des identités qui tiennent la route et des relations qui valent le coup. Si ça te parle, c'est qu'on est fait pour travailler ensemble.
 
 :::
 
@@ -28,7 +28,7 @@ On construit des outils qui durent, des identités qui tiennent la route et des 
 {% sectionHeader  %}
 ## Web
 
-Nos sites sont construits avec [poko](https://www.poko.eco/), notre website builder indépendant. Ça veut dire: légers, rapides, éco-conçus par défaut, et entièrement à toi. Pas de dépendance à un SaaS américain, pas de frais cachés, pas de mises à jour de sécurité à gérer. Juste un site qui fonctionne.
+Nos sites sont construits avec [poko](https://www.poko.eco/), notre créateur de sites web indépendant. Concrètement, nos sites sont légers, rapides, éco-conçus par défaut, et entièrement à toi. Pas de dépendance à une plateforme américaine, pas de frais cachés, pas de mises à jour de sécurité à gérer. L'autonomie et la sobriété, approuvé par Dame Nature.
 {% endsectionHeader %}
 {% collection collection="services", filters=[{"by":"tag","value":["web"]}], sortCriterias=[], type="flow", class="palette--contrast-tone bleed-bg" %}{% endcollection %}
 
