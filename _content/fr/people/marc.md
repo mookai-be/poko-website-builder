@@ -29,4 +29,4 @@ metadata:
 generatePage: previewOnly
 ---
 
-Marc code, conçoit et questionne. Il a une conviction: le web peut être performant, éthique et sobre en même temps. Alors plutôt que d'utiliser des outils qui ne lui conviennent pas, il en construit. {% link url="https://www.poko.eco/", type="external" %}poko{% endlink %}, son website builder indépendant, en est la preuve directe.
+Marc code, conçoit et questionne. Il a une conviction: le web peut être performant, éthique et sobre en même temps. Alors plutôt que d'utiliser des outils qui ne lui conviennent pas, il en construit. {% link url="https://www.poko.eco/", type="external" %}poko{% endlink %}, son website builder indépendant en est la preuve directe.
