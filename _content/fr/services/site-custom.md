@@ -7,11 +7,12 @@ ldType: Service
 name: Site custom
 tags:
   - web
+vars: {}
 localizationKey: 49cadc5a6887
 uuid: 680b12bf36ea
 bodyClass: palette-mocha palette--tone-contrast
-pageNav: ''
 pageFooter: ''
+pageNav: ''
 ---
 
 # Site sur mesure
@@ -48,7 +49,6 @@ Pour plus de détails sur la solution que nous utilisons, va voir [poko](https:/
 Tu es détenteur de la vision du projet et tu connais ton audience ainsi que le milieu dans lequel tu évolues. Nous, on s'occupe de traduire ta vision en un support digital performant, élégant, accessible et respectueux de tes visiteurs.
 
 Si l'un de nos templates te convient, tant mieux, on gagne du temps et de l'argent. On part de là pour l'adapter à ton branding et ton identité. Dans tous les cas, tu ressors avec un design unique mais basé sur un template réutilisable.
-
 
 Si tu veux du custom, on commence par une maquette graphique et on l'affine ensemble (jusqu'à 3 sessions de feedback) pour que le résultat final dépasse tes attentes.
 
