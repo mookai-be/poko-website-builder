@@ -6,6 +6,7 @@ createdAt: 2026-08-24T12:40:00.000Z
 ldType: WebPage
 name: Accueil
 pageLayout: homepage
+vars: {}
 ---
 
 {% component "headless/page-nav.11ty.js", { class: "py-body" } %}
