@@ -7,10 +7,8 @@ ldType: Service
 name: Photographie
 tags:
   - art
-vars: {}
 bodyClass: palette-purple
 ---
-
 
 # Photographie
 
@@ -18,7 +16,7 @@ bodyClass: palette-purple
 
 ## Des images authentiques pour raconter ce que tu fais
 
-Les photos sont souvent le premier contact avec ton activité. Elles inspirent confiance, transmettent une ambiance et montrent ce qui te rend unique. Des images sincères et de qualité permettent de valoriser ton travail, ton équipe et ton univers.
+Les photos sont souvent un des premiers contacts avec ton activité. Elles inspirent confiance, transmettent une ambiance et montrent ce qui te rend unique. Des images sincères et de qualité permettent de valoriser ton travail, ton équipe et ton univers.
 
 Nous réalisons des reportages et des portraits naturels qui mettent en lumière les personnes, les lieux et les projets qui font vivre ton activité.
 
