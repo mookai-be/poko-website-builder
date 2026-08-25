@@ -45,7 +45,7 @@ On t’invite à regarder sa vidéo sur {% link url="https://www.tess-h.be/workf
 
 Il est bon de savoir que Tess n'est pas une graphiste exécutante et donc il y a une part de ta confiance à lui accorder afin de ne pas brimer sa créativité.
 
-_Pour être tout à fait francs, nous n’avons eu le cas qu’**une seule fois** depuis que je suis graphiste (2007). Le client en question voulait qu'elle refasse exactement une illustration pour son logo. Ce qui n’était pas correct vis-à-vis de l’illustratrice qui l’avait créée (droits d’auteur). De plus ce n’était pas un logo techniquement correct pour son utilisation finale. Elle donc uniquement fait payer ses heures de travail et a mis fin à la collaboration._
+_"Pour être tout à fait francs, nous n’avons eu le cas qu’**une seule fois** depuis que je suis graphiste (2007). Le client en question voulait que Tess refasse exactement une illustration pour son logo. Ce qui n’était pas correct vis-à-vis de l’illustratrice qui l’avait créée (droits d’auteur). De plus ce n’était pas un logo techniquement correct pour son utilisation finale. Elle a donc uniquement fait payer ses heures de travail et a mis fin à la collaboration."_
 
 Et puis il faut surtout t’écouter et ne pas te décider avant d’avoir vu {% link url="https://www.tess-h.be/portfolio/", type="external" %}son portfolio{% endlink %}
 
@@ -54,17 +54,19 @@ Et puis il faut surtout t’écouter et ne pas te décider avant d’avoir vu {%
 ### J’ai une idée très précise de ce que je veux
 
 Tess n'est pas une exécutante, elle apporte son expertise et son expérience au service de ton projet.
-Dans les projets que je réalise, elle fais au mieux pour t’écouter et faire ce que tu souhaites mais ajoute toujours sa patte! Si les modifications que tu demandes ne me semble pas pertinentes ou ne fonctionneront pas dans son utilisation future, elle propose toujours sa version avec les explications qui vont avec ;-) C’est aussi ça être professionnelle. C’est important de conseiller et démontrer quelle sera la meilleure option pour toi et pourquoi.
+Dans les projets qu'elle réalise, elle fait au mieux pour t’écouter et faire ce que tu souhaites mais ajoute toujours sa patte! Si les modifications que tu demandes ne lui semblent pas pertinentes ou ne fonctionneront pas dans son utilisation future, elle propose toujours sa version avec les explications qui vont avec ;-) C’est aussi ça être professionnelle, pouvoir conseiller et démontrer quelle sera la meilleure option pour toi et pourquoi.
 
-### T’occupes-tu de l’impression?
+### Vous occupez-vous de l’impression?
 
 La plupart du temps, on ne s’occupe pas de l’impression. On peut te donner des conseils pour le choix du papier, de l’imprimeur,…
-Nous sommes **toujours à la recherche** du partenaire idéal pour prévoir ça dans mes services. Si tu à des pistes ou si tu es imprimeur et que tu passes par ici, {% link url="contact", type="internal", collection="pages" %}contacte nous{% endlink %}.
+Nous sommes **toujours à la recherche** du partenaire idéal pour prévoir ça dans nos services. Si tu à des pistes ou si tu es imprimeur et que tu passes par ici, {% link url="contact", type="internal", collection="pages" %}contacte nous{% endlink %}.
 
 ### Comment dois-je utiliser le dossier de livraison?
 
-Sur cette page, Tess parle du .
-Je réaliserai très bientôt une vidéo pour expliquer ça en images ;-)
+Sur {% link url="https://www.tess-h.be/livraison/", type="external" %}{% endlink %}
+
+, Tess parle du dossier de livraison.
+Je réaliserai très bientôt une vidéo pour expliquer ça en images. ;-)
 
 ### C’est un gros budget pour moi, j’ai du mal à sauter le pas…
 
@@ -76,10 +78,10 @@ Je réaliserai très bientôt une vidéo pour expliquer ça en images ;-)
 
 ### Est-ce que mon logo m’appartient?
 
-le logo, sous réserve qu’il soit original, fait partie des œuvres graphiques qui sont soumises au droit d’auteur, et ce de manière automatique dès sa création: _«L’auteur d’une œuvre de l’esprit jouit sur cette œuvre, du seul fait de sa création, d’un droit de propriété incorporelle exclusif et opposable à tous»_ (article L. 111-1 du CPI).
+Le logo, sous réserve qu’il soit original, fait partie des œuvres graphiques qui sont soumises au droit d’auteur, et ce de manière automatique dès sa création: _«L’auteur d’une œuvre de l’esprit jouit sur cette œuvre, du seul fait de sa création, d’un droit de propriété incorporelle exclusif et opposable à tous»_ (article L. 111-1 du CPI).
 
-Tess reste donc titulaire des droits d’auteur des logos (et illustrations) qu'elle créée. Son travail est un service et donc il serait étrange que ses clients ne puissent pas jouir de leur logo une fois finalisé.
+Tess reste donc titulaire des droits d’auteur des logos (et illustrations) qu'elle créée. Son travail est un service et donc il serait étrange que ses clients ne puissent pas utiliser leur logo une fois finalisé.
 
-Pour éviter des coûts supplémentaires, elle cède donc les droits d’utilisation de ses créations à la livraison de celles-ci automatiquement, pour peu que le client s’engage à **respecter la charte graphique et à la mentionner, car il est conscient qu’il expose son travail.**
+Elle cède donc les droits d’utilisation de ses créations à la livraison de celles-ci automatiquement, pour peu que le client s’engage à **respecter la charte graphique et à la mentionner, car il est conscient qu’il expose son travail.** 
 
 {% link url="https://www.cap-com.org/actualit%C3%A9s/logo-avoir-tous-les-droits-la-check-list", type="external" %}_source: www.cap-com.org_{% endlink %}
