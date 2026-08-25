@@ -7,6 +7,7 @@ ldType: Service
 name: Consultance
 tags:
   - support
+vars: {}
 bodyClass: palette-gold palette--bg-pop
 ---
 
