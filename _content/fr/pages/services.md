@@ -16,7 +16,7 @@ eleventyNavigation:
 
 ## Ce qu'on fait.{% br %}Et pourquoi on le fait comme ça.
 
-On construit des outils qui durent, des identités qui tiennent la route et des relations qui valent le coup. Si ça te parle, c'est qu'on est fait pour travailler ensemble.
+On construit des outils qui durent, des identités qui tiennent la route et des relations qui valent le coup. Si ça te parle, on est fait pour travailler ensemble.
 
 :::
 
@@ -38,7 +38,7 @@ Nos sites sont construits avec [poko](https://www.poko.eco/), notre créateur de
 {% sectionHeader class="palette--bg-tone bleed-bg" %}
 ## Graphisme
 
-Un logo, c'est le visage de ton projet. Une illustration, c'est sa personnalité. Une mise en page soignée, c'est ce qui donne envie de lire. Tess combine approche intuitive et exigence graphique pour que chaque visuel te ressemble vraiment — et serve tes objectifs sur le long terme.
+Un logo ou une illustration, c'est l'identité de ton projet. Une mise en page soignée, c'est ce qui donne envie de lire. Tess combine approche intuitive et exigence graphique pour que chaque visuel te ressemble vraiment et serve tes objectifs sur le long terme.
 {% endsectionHeader %}
 {% collection collection="services", filters=[{"by":"tag","value":["print"]}], sortCriterias=[], type="flow" %}{% endcollection %}
 
@@ -48,7 +48,7 @@ Un logo, c'est le visage de ton projet. Une illustration, c'est sa personnalité
 {% sectionHeader  %}
 ## Pour aller plus loin
 
-Parfois, ce qu'il faut n'est pas un livrable mais un regard extérieur, un coup de main pour prendre du recul ou apprendre à tenir les rênes. C'est là qu'on intervient différemment — en tant que partenaire, pas prestataire.
+Parfois, ce qu'il faut n'est pas un livrable mais un regard extérieur, un coup de main pour prendre du recul ou apprendre à gérer soi-même sa communication digitale. C'est là qu'on intervient en tant que conseillers et formateurs.
 {% endsectionHeader %}
 {% collection collection="services", filters=[{"by":"tag","value":["support"]}], sortCriterias=[], type="flow", class=" palette--bg-pop bleed-bg" %}{% endcollection %}
 
@@ -58,7 +58,7 @@ Parfois, ce qu'il faut n'est pas un livrable mais un regard extérieur, un coup 
 {% sectionHeader  %}
 ## Art
 
-Tess est aussi artiste. Et si tes murs de bureau, ton cabinet ou ton espace de coworking méritent une âme, on peut s'en occuper.
+Tess est aussi artiste. Si les murs de ton bureau, ton cabinet ou ton espace de coworking méritent une âme, si tu as besoin de photos pour mettre en valeur ton équipe ou ton activité, elle peut s'en occuper.
 {% endsectionHeader %}
 {% collection collection="services", filters=[{"by":"tag","value":["art"]}], sortCriterias=[], type="flow", class="palette--contrast palette--bg-pop bleed-bg" %}{% endcollection %}
 
@@ -72,9 +72,9 @@ Tess est aussi artiste. Et si tes murs de bureau, ton cabinet ou ton espace de c
 
 ## Tu ne sais pas par où commencer?
 
-On en parle, et on trouve ensemble ce qui a du sens pour toi.
+On en parle, on identifie ensemble ce qui a du sens pour toi et comment on peut t'aider à concrétiser ton projet.
 
-[On est là](/contact/){.cta}
+[Parlons-en](/contact/){.cta}
 
 :::
 
