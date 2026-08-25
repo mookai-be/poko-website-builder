@@ -7,6 +7,7 @@ ldType: Service
 name: Digitalisation
 tags:
   - support
+vars: {}
 ---
 
 Tu souhaites automatiser certains processus?
