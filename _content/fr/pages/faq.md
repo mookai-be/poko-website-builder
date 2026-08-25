@@ -5,8 +5,13 @@ lang: fr
 createdAt: 2026-08-19T06:48:00.000Z
 ldType: WebPage
 name: FAQ
-vars: {}
 ---
+
+{% sectionCollection  %}
+
+{% collection collection="faqs" %}{% endcollection %}
+
+{% endsectionCollection %}
 
 ## Général
 
