@@ -1,18 +1,18 @@
 ---
 translationKey: art
-order: 10
+order: 11
 lang: fr
 createdAt: 2026-04-28T11:22:00.000Z
 name: Art
 tags:
   - art
-vars: {}
 localizationKey: d5cfe5d7225c
 uuid: ca8d2ad6018d
-pageFooter: ""
-pageNav: ""
 bodyClass: palette-purple
+pageNav: ''
+pageFooter: ''
 ---
+
 
 # Art
 

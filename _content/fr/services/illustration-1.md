@@ -1,14 +1,16 @@
 ---
 translationKey: illustration-art
-order: 11
+order: 12
 lang: fr
 createdAt: 2026-06-18T10:58:00.000Z
 ldType: Service
 name: Illustrations originales
 tags:
   - art
+vars: {}
 bodyClass: palette-purple
 ---
+
 
 # Illustrations
 

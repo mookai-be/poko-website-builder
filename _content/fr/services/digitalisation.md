@@ -1,6 +1,6 @@
 ---
 translationKey: digitalisation
-order: 13
+order: 10
 lang: fr
 createdAt: 2026-08-25T12:02:00.000Z
 ldType: Service

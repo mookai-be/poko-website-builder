@@ -1,14 +1,16 @@
 ---
 translationKey: photographie
-order: 12
+order: 13
 lang: fr
 createdAt: 2026-06-18T10:59:00.000Z
 ldType: Service
 name: Photographie
 tags:
   - art
+vars: {}
 bodyClass: palette-purple
 ---
+
 
 # Photographie
 
