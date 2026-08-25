@@ -7,11 +7,12 @@ ldType: Service
 name: Site mutualisé
 tags:
   - web
+vars: {}
 localizationKey: 38a2c3ac40d8
 uuid: 2a8f78018e5e
 bodyClass: palette-mocha palette--tone-contrast
-pageNav: ''
 pageFooter: ''
+pageNav: ''
 ---
 
 # Web mutualisé
