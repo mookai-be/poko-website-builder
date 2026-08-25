@@ -7,6 +7,7 @@ ldType: Service
 name: Formations
 tags:
   - support
+vars: {}
 bodyClass: palette-gold
 ---
 
