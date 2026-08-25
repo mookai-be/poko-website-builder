@@ -5,7 +5,6 @@ lang: fr
 createdAt: 2026-08-19T11:17:00.000Z
 ldType: WebPage
 name: Pas de cookies?
-vars: {}
 ---
 
 ## Les cookies, on les mange!
