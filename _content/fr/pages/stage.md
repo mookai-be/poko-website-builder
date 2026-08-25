@@ -13,7 +13,7 @@ name: Stage
 
 ## Chez mookaï, tu participes au développement de nos projets
 
-Tu veux contribuer à un web plus léger, plus responsable et accessible? Participes au développement de poko, notre website builder open source, et à des projets web/print concrets pour des associations et initiatives à impact.
+Tu veux contribuer à un web plus léger, plus responsable et accessible? Participe au développement de poko, notre website builder open source et à des projets web/print concrets pour des associations et initiatives à impact positif.
 :::
 
 ::: div {.full-bleed .banner}
@@ -24,33 +24,34 @@ Tu veux contribuer à un web plus léger, plus responsable et accessible? Partic
 
 ## Selon ton profil et tes affinités, tu peux intervenir sur différents aspects
 
-- développement frontend ou backend
-- design web et identité visuelle
-- communication digitale et contenus
-- organisation interne et support administratif
+- Développement frontend ou backend
+- Design web et identité visuelle
+- Communication digitale et création de contenus
+- Organisation interne et support administratif
 
-Ton travail est utile, visible, et utilisé au quotidien.
+Chez mookaï, ton travail est visible et utile.
 
 ## Ce que tu feras
 
 Selon tes compétences et ton évolution pendant le stage:
 
-- créer ou améliorer des sites web (design, intégration, développement)
-- contribuer à poko (code, templates, documentation, optimisation)
-- participer à la communication (contenus, réseaux sociaux, SEO, newsletters)
-- aider à structurer et améliorer les outils internes (organisation, automatisation, administratif léger)
-- notre manière de travailler
+- Créer ou améliorer des sites web (design, intégration, développement)
+- Contribuer à poko (code, templates, documentation, optimisation)
+- Participer à la communication (contenus, réseaux sociaux, SEO, newsletters)
+- Aider à structurer et améliorer les outils internes (organisation, automatisation, administratif léger)
 
-> on fonctionne dans une relation de confiance {.quote .h0 .palette--pop}
+## Ce qu'on recherche
 
-- autonomie et proactivité
-- communication régulière
-- capacité à avancer et faire le point, même à distance
-- envie d’apprendre et de proposer
+> On fonctionne sur base d'une relation de confiance {.quote .h0 .palette--pop}
+
+- Autonomie et proactivité
+- Communication régulière
+- Capacité à avancer et faire le point, même à distance
+- Envie d’apprendre et de proposer des choses
 
 :::
 
-{% sectionBuilder class="" %}
+{% sectionBuilder  %}
 {% sectionHeader  %}
 ## Profils recherché
 
@@ -60,28 +61,28 @@ On ne cherche pas un profil “parfait”, mais quelqu’un de solide sur au moi
 {% twoColumnsItem class="prose box radius-0 border-0 palette-red" %}
 ### Web/dev 
 
-- bases en HTML, CSS, JavaScript ou Node.js
-- compréhension des bonnes pratiques web (structure, accessibilité, performance)
+- Bases en HTML, CSS, JavaScript ou Node.js
+- Compréhension des bonnes pratiques web (structure, accessibilité, performance)
 {% endtwoColumnsItem %}
 {% twoColumnsItem class="prose box radius-0 border-0 palette-purple" %}
 ### Design
 
-- sens graphique (UI, typo, mise en page)
-- capacité à créer des maquettes claires et efficaces
+- Sens graphique (UI, typo, mise en page)
+- Capacité à créer des maquettes claires et efficaces
 {% endtwoColumnsItem %}
 {% endtwoColumns %}
 {% twoColumns class="v--gap-switcher:0 mt-0" %}
 {% twoColumnsItem class="prose box radius-0 border-0 palette-gold" %}
-### Communication vente
+### Communication/marketing
 
-- bonnes capacités rédactionnelles
-- compréhension des réseaux sociaux et des logiques de contenu
+- Bonnes capacités rédactionnelles
+- Compréhension des réseaux sociaux et des logiques de contenu
 {% endtwoColumnsItem %}
 {% twoColumnsItem class="prose box radius-0 border-0 palette-gold palette--bg-tone" %}
 ### Administration organisation
 
-- rigueur, sens de l’organisation
-- aisance avec les outils numériques
+- Rigueur, sens de l’organisation
+- Aisance avec les outils numériques
 {% endtwoColumnsItem %}
 {% endtwoColumns %}
 
@@ -91,10 +92,10 @@ On ne cherche pas un profil “parfait”, mais quelqu’un de solide sur au moi
 
 ## Dans tous les cas
 
-- curiosité, envie d’apprendre
-- intérêt pour un web plus éthique et durable
-- communication fluide en français
-- ponctualité
+- Curiosité, envie d’apprendre
+- Intérêt pour un web plus éthique et durable
+- Communication fluide en français
+- Ponctualité
 
 :::
 
@@ -105,23 +106,22 @@ On ne cherche pas un profil “parfait”, mais quelqu’un de solide sur au moi
 ## Bonus appréciés
 
 - Git, CMS, Jamstack, Eleventy, Astro…
-- notions UX/UI ou SEO
-- anglais technique
-- intérêt pour l’éco-conception, l’accessibilité ou les enjeux du web
-- motion design
-- photo
-- video
+- Notions UX/UI ou SEO
+- Anglais technique
+- Intérêt pour l’éco-conception, l’accessibilité ou les enjeux du web
+- Motion design
+- Photo
+- Video
 {% endtwoColumnsItem %}
 {% twoColumnsItem  %}
 ### Pourquoi postuler?
 
-- impact réel sur des projets open source et à impact
-- responsabilités concrètes dès le début
-- montée en compétence rapide avec feedback régulier
-- projets visibles (pas des exercices)
-- petite équipe bienveillante et engagée
-- organisation flexible et autonome
-- processus de sélection
+- Impact réel sur des projets open source et à impact
+- Responsabilités concrètes dès le début
+- Montée en compétence rapide avec feedback régulier
+- Projets concrets visibles (pas juste des exercices)
+- Petite équipe bienveillante et engagée
+- Organisation flexible et autonome
 {% endtwoColumnsItem %}
 {% endtwoColumns %}
 
@@ -132,7 +132,6 @@ On ne cherche pas un profil “parfait”, mais quelqu’un de solide sur au moi
 {% twoColumns type="switcher" %}
 {% twoColumnsItem class="container" %}
 {% image src="/_images/dscf0495.webp", class="aside-mb-pull radius-card" %}
-
 {% endtwoColumnsItem %}
 {% twoColumnsItem  %}
 ## À Bruxelles
@@ -143,18 +142,18 @@ On ne cherche pas un profil “parfait”, mais quelqu’un de solide sur au moi
 
 ## Envoie-nous
 
-- ton portfolio, tes projets ou exemples concrets indispensables (textes rédiger,…).
-- tes dates de stage
-- ton emoji préféré (et pourquoi)
-- le projet du {% link url="https://www.behance.net/TessGRAPHICDESIGNER", type="external" %}portfolio de Tess{% endlink %} qui t’a marqué (et pourquoi) 
+- Ton portfolio, tes projets ou autres exemples concrets (textes rédiger,…).
+- Tes dates de stage
+- Ton emoji préféré (et pourquoi)
+- Le projet du {% link url="https://www.behance.net/TessGRAPHICDESIGNER", type="external" %}portfolio de Tess{% endlink %} qui t’a marqué (et pourquoi) 
 
 Les candidatures génériques ne seront pas prises en compte ;-) {.small .italic}
 
-- sélection sur base de ton portfolio / projets
-- entretien (visio ou à Ixelles)
-- échange sur tes compétences et ta vision
-- discussion autour de ton travail (pas de test théorique inutile)
-- accord mutuel → démarrage
+- Sélection sur base de ton portfolio / projets
+- Entretien (visio ou à Ixelles)
+- Échange sur tes compétences et ta vision
+- Discussion autour de ton travail (pas de test théorique inutile)
+- Accord mutuel → démarrage
 {% endtwoColumnsItem %}
 {% endtwoColumns %}
 
@@ -162,7 +161,7 @@ Les candidatures génériques ne seront pas prises en compte ;-) {.small .italic
 
 {% sectionCollection  %}
 
-{% collection collection="reviews", filters=[{"by":"name","value":["mandy","mathias","meriton"]}], sortCriterias=[], type="faux-masonry", widthColumnMin="25rem", columns=2, gap="var(--step-1)", itemPartial="review-card" %}{% endcollection %}
+{% collection collection="reviews", filters=[{"by":"name","value":["mandy","mathias","meriton"]}], sortCriterias=[], type="faux-masonry", gap="var(--step-1)", columns=2, itemPartial="review-card", widthColumnMin="25rem" %}{% endcollection %}
 
 {% endsectionCollection %}
 
@@ -170,6 +169,6 @@ Les candidatures génériques ne seront pas prises en compte ;-) {.small .italic
 
 ## Envie d’apprendre avec des entrepreneurs?
 
-On répond sans bullshit
+On te répond rapidement sans bullshit.
 
 [Oui je veux tester ça](/contact/){.cta}
