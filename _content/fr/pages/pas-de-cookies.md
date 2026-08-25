@@ -7,6 +7,8 @@ ldType: WebPage
 name: Pas de cookies?
 ---
 
-Un site poko n'utilise pas les cookies et ne receuille aucune information personnelle.
+## Les cookies, on les mange!
 
-Pas de banière pénible à cliquer!
+Pas de bannière pénible à cliquer! Un site poko n'utilise pas les cookies et ne recueille aucune information personnelle. Et oui, c'est possible. ;)
+
+(insérer illu faite par Tess de Tess et Marc qui manger des cookies)
