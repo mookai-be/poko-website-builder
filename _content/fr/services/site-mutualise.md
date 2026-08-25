@@ -3,22 +3,22 @@ translationKey: site-mutualise
 order: 7
 lang: fr
 createdAt: 2026-04-28T10:54:00.000Z
+ldType: Service
 name: Site mutualisé
 tags:
   - web
-vars: {}
 localizationKey: 38a2c3ac40d8
 uuid: 2a8f78018e5e
-pageFooter: ""
-pageNav: ""
 bodyClass: palette-mocha palette--tone-contrast
+pageNav: ''
+pageFooter: ''
 ---
 
 # Web mutualisé
 
 ::: section
 
-## Des sites pour tout ton réseau, la simplicité en plus
+## Des sites pour tout ton réseau, en toute simplicité
 
 Tu gères une fédération, une franchise, un réseau d'indépendants ou de points de vente? Tu veux offrir à tes membres un site web professionnel et cohérent avec ton image de marque, sans que ça devienne un casse-tête à gérer?
 
@@ -30,7 +30,7 @@ On a la solution: l'infrastructure mutualisée.
 
 ### Le principe? C'est simple
 
-On crée une base de site web unique, un "modèle master", qui respecte parfaitement ta charte graphique et tes besoins. Ensuite, chaque membre de ton réseau peut générer son propre site, personnalisé avec ses informations (nom, contact, photos, textes...) et si tu le souhaite, son propre branding.
+On crée une base de site web unique, un "modèle master", qui respecte parfaitement ta charte graphique et tes besoins. Ensuite, chaque membre de ton réseau peut générer son propre site et  personnaliser ses informations (nom, contact, photos, textes...). 
 
 ### Les avantages pour toi
 
