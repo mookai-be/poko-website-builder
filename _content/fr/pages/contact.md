@@ -15,18 +15,18 @@ bodyClass: palette-mocha palette--tone-contrast
 
 ::: section
 
-## On discute?
+## Discutons de ton projet
 
-Tu as un projet en tête, une question, ou juste envie de voir si le courant passe? On répond rapidement — sans bullshit, sans relance commerciale, et souvent avec un vrai conseil même si on n'est pas la bonne solution pour toi.
+Tu as un projet en tête, une question, ou juste envie de voir si le courant passe? On répond rapidement, sans bullshit et souvent avec un vrai conseil. Si on n'est pas la bonne solution pour toi, on te le dit directement.
 
 ## Ce qu'on peut faire ensemble
 
-Pas sûr de ce dont tu as besoin? Voilà comment ça démarre souvent:
+Pas sûr de ce dont tu as besoin? Voici comment ça démarre souvent:
 
-- **Tu as un projet web à lancer** — un site vitrine, un outil sur mesure, une refonte complète. On en parle et on trouve la bonne taille pour ton budget et tes besoins.
-- **Tu veux (re)faire ton identité visuelle** — logo, charte graphique, ou juste un coup de main pour que tes documents ressemblent à quelque chose.
-- **Tu cherches un partenaire créatif** — agence, freelance, ou projet éthique qui cherche un duo design + tech pour collaborer.
-- **Tu ne sais pas encore exactement ce dont tu as besoin** — c'est ok, c'est aussi un chouette point de départ. On démêle ça ensemble.
+- **Tu as un projet web à lancer** : un site vitrine, un outil sur mesure, une refonte complète. On en parle et on trouve la formule qui convient à ton budget et à tes besoins.
+- **Tu veux (re)faire ton identité visuelle** : logo, charte graphique, ou juste un coup de main pour que tes documents aient une belle mise en page qui mette en valeur ton travail.
+- **Tu cherches un partenaire créatif** : tu es une agence, un freelance, ou porteur d'un projet éthique et tu cherches un duo design + tech pour collaborer sur des projets.
+- **Tu ne sais pas encore exactement ce dont tu as besoin** : c'est ok, c'est aussi un chouette point de départ. On démêle ça ensemble.
 :::
 
 ::: div {.full-bleed .banner}
@@ -79,13 +79,13 @@ Pas sûr de ce dont tu as besoin? Voilà comment ça démarre souvent:
 
 {% twoColumns type="switcher" %}
 {% twoColumnsItem  %}
-## Autrement
+## Si tu n'aimes pas les formulaires
 
-Tu préfères l'email direct? Pas de souci: {{ env.email | emailLink }}
+Tu préfères l'e-mail direct? Pas de souci: {{ env.email | emailLink }}
 
-Tu es plutôt réseaux sociaux? On est là aussi: [Instagram](https://instagram.com/mookai) / [LinkedIn](https://linkedin.com/company/mookai)
+Tu es plutôt réseaux sociaux? On est là aussi: [Instagram](https://www.instagram.com/mookai.be/) / [LinkedIn](https://linkedin.com/company/mookai) [Facebook] (https://www.facebook.com/profile.php?id=61560323541142)
 
-Et si tu cherches à rejoindre l'équipe ou proposer un partenariat, mentionne-le dans le formulaire ou l'email. On lit tout, vraiment.
+Et si tu cherches à rejoindre l'équipe ou proposer un partenariat, mentionne-le dans le formulaire ou l'e-mail. On lit tout, vraiment.
 {% endtwoColumnsItem %}
 {% twoColumnsItem class="container" %}
 {% image src="/_images/dscf0434-2.webp", class="aside-mb-pull radius-card" %}
