@@ -24,13 +24,13 @@ Tess est graphiste, illustratrice, photographe et artiste. Elle apporte la sensi
 
 Marc est développeur web, formateur et passionné de technologies. Il apporte la structure, la réflexion stratégique, les solutions techniques et la capacité à transformer les idées en outils concrets et durables.
 
-Cette complémentarité nous permet d'accompagner un projet dans son ensemble ou d'intervenir à n'importe quelle étape de son développement. On construit avec toi ton identité visuelle, ton site web éco-conçu, tes supports à imprimer ou tes visuels numériques. Si tu souhaites aller plus loin, on te propose des formations ou
+Cette complémentarité nous permet d'accompagner un projet dans son ensemble ou d'intervenir à n'importe quelle étape de son développement. Que ce soit la création de ton identité visuelle, ton site web écoresponsable, tes supports à imprimer ou tes visuels numériques ou la totale, on est là pour t'aider à chaque étape du processus.
 
-En décembre 2023, nous avons créé mookaï asbl pour donner un cadre à cette vision commune: mettre nos compétences au service de projets qui contribuent, à leur échelle, au bien commun.
+C'est pour ça qu'en décembre 2023, nous avons créé mookaï asbl pour donner un cadre à cette mission commune: mettre nos compétences au service de projets qui contribuent au bien commun.
 
-Aujourd'hui, nous accompagnons principalement des associations, des acteurs culturels, des structures éducatives, des organisations engagées et des entrepreneurs qui souhaitent communiquer avec plus de sens, d'authenticité et de cohérence.
+Aujourd'hui, on accompagne principalement des associations, des acteurs culturels, des structures éducatives, des organisations engagées et des entrepreneurs qui souhaitent communiquer avec plus de sens, d'authenticité et de cohérence.
 
-Le soin que tu apportes à ton projet pour réaliser ta mission, on le met dans ta communication pour que ton travail ait encore plus d'impact.
+Le soin que tu apportes à ton projet pour accomplir ta mission, on le met dans ta communication pour que ton travail ait encore plus d'impact.
 
 :::
 
@@ -65,7 +65,7 @@ Le soin que tu apportes à ton projet pour réaliser ta mission, on le met dans 
 
 ## Co-fondateurs d’une asbl liée au jeu de société en Belgique
 
-En 2017, nous avons co-fondé {% link url="https://www.wanna-play.be/fr/", type="external" %}Wanna Play{% endlink %} avec une idée simple: le jeu est un formidable outil de connexion. Il rassemble, crée du lien, stimule la créativité et permet de vivre des expériences collectives uniques. Pourtant, l’univers ludique belge était souvent dispersé et difficile à explorer dans son ensemble. Wanna Play est né pour centraliser cette richesse, mettre en lumière les acteurs du secteur et aider chacun — joueurs, associations, professionnels ou curieux — à trouver sa place dans cette communauté. 
+En 2017, nous avons co-fondé {% link url="https://www.wanna-play.be/fr/", type="external" %}Wanna Play{% endlink %} avec une idée simple: le jeu est un formidable outil de connexion. Il rassemble, crée du lien, stimule la créativité et permet de vivre des expériences collectives uniques. Pourtant, l’univers ludique belge était souvent dispersé et difficile à explorer dans son ensemble. Wanna Play est né pour centraliser cette richesse, mettre en lumière les acteurs du secteur et aider chacun (joueurs, associations, professionnels ou curieux) à trouver sa place dans cette communauté. 
 
 Aujourd’hui, Wanna Play agit comme un média, un guide et un point de rencontre pour la culture ludique en Belgique: référencement de lieux et d’événements, valorisation des créateurs, animations, formations et accompagnement autour du jeu sous toutes ses formes. 
 
