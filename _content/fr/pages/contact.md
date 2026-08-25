@@ -8,6 +8,7 @@ name: Contact
 eleventyNavigation:
   add: Nav
   order: 4
+vars: {}
 bodyClass: palette-mocha palette--tone-contrast
 ---
 
