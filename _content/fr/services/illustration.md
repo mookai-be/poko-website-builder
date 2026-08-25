@@ -7,11 +7,12 @@ ldType: Service
 name: Illustration
 tags:
   - print
+vars: {}
 localizationKey: 91d5df47af1b
 uuid: 53248b09c763
 bodyClass: palette-bordeau
-pageNav: ''
 pageFooter: ''
+pageNav: ''
 ---
 
 # Illustration
