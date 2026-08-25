@@ -3,15 +3,15 @@ translationKey: illustration
 order: 4
 lang: fr
 createdAt: 2026-04-28T11:20:00.000Z
+ldType: Service
 name: Illustration
 tags:
   - print
-vars: {}
 localizationKey: 91d5df47af1b
 uuid: 53248b09c763
-pageFooter: ''
-pageNav: ''
 bodyClass: palette-bordeau
+pageNav: ''
+pageFooter: ''
 ---
 
 # Illustration
@@ -20,7 +20,7 @@ bodyClass: palette-bordeau
 
 ## L'illustration qui raconte ton histoire
 
-Parfois, une image vaut mille mots. L'illustration, c'est un moyen puissant de donner une personnalité unique à ta communication, de simplifier des idées complexes ou simplement d'ajouter une touche de poésie à tes supports.
+Une image vaut mille mots. L'illustration, c'est un moyen puissant de donner une personnalité unique à ta communication, de simplifier des idées complexes ou simplement d'ajouter une touche de poésie à tes supports.
 
 Que tu cherches une mascotte pour ta marque, une série d'icônes pour ton site web ou une illustration unique pour un article de blog, Tess met sa palette au service de ton projet.
 
