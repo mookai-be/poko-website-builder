@@ -8,6 +8,7 @@ name: Services
 eleventyNavigation:
   add: Nav
   order: 2
+vars: {}
 ---
 
 # Services
@@ -16,7 +17,7 @@ eleventyNavigation:
 
 ## Ce qu'on fait.{% br %}Et pourquoi on le fait comme ça.
 
-On construit des outils qui durent, des identités qui tiennent la route et des relations qui valent le coup. Si ça te parle, on est fait pour travailler ensemble.
+On construit des outils qui durent, des identités qui tiennent la route et des relations qui valent le coup. Si ça te parle, voici plus d'informations sur les différents services qu'on propose.
 
 :::
 
@@ -38,7 +39,7 @@ Nos sites sont construits avec [poko](https://www.poko.eco/), notre créateur de
 {% sectionHeader class="palette--bg-tone bleed-bg" %}
 ## Graphisme
 
-Un logo ou une illustration, c'est l'identité de ton projet. Une mise en page soignée, c'est ce qui donne envie de lire. Tess combine approche intuitive et exigence graphique pour que chaque visuel te ressemble vraiment et serve tes objectifs sur le long terme.
+Un logo, une identité visuelle, c'est la première impression que les gens se font de ton projet. Une mise en page soignée, c'est ce qui donne envie de te lire. Tess combine approche intuitive et exigence graphique pour que chaque visuel te ressemble vraiment et serve tes objectifs sur le long terme.
 {% endsectionHeader %}
 {% collection collection="services", filters=[{"by":"tag","value":["print"]}], sortCriterias=[], type="flow" %}{% endcollection %}
 
@@ -48,7 +49,7 @@ Un logo ou une illustration, c'est l'identité de ton projet. Une mise en page s
 {% sectionHeader  %}
 ## Pour aller plus loin
 
-Parfois, ce qu'il faut n'est pas un livrable mais un regard extérieur, un coup de main pour prendre du recul ou apprendre à gérer soi-même sa communication digitale. C'est là qu'on intervient en tant que conseillers et formateurs.
+Parfois, ce qu'il faut n'est pas un livrable mais un regard extérieur, un coup de main pour prendre du recul ou apprendre à gérer soi-même sa communication digitale. On te propose aussi notre expertise en tant que conseillers et formateurs.
 {% endsectionHeader %}
 {% collection collection="services", filters=[{"by":"tag","value":["support"]}], sortCriterias=[], type="flow", class=" palette--bg-pop bleed-bg" %}{% endcollection %}
 
