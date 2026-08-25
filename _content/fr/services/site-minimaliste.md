@@ -7,11 +7,12 @@ ldType: Service
 name: Site minimaliste
 tags:
   - web
+vars: {}
 localizationKey: 5413282c45a2
 uuid: 452511b3d7f5
 bodyClass: palette-mocha palette--tone-contrast
-pageNav: ''
 pageFooter: ''
+pageNav: ''
 ---
 
 # Site minimaliste
