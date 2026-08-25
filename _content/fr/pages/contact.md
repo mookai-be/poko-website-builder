@@ -83,7 +83,7 @@ Pas sûr de ce dont tu as besoin? Voici comment ça démarre souvent:
 
 Tu préfères l'e-mail direct? Pas de souci: {{ env.email | emailLink }}
 
-Tu es plutôt réseaux sociaux? On est là aussi: [Instagram](https://www.instagram.com/mookai.be/) / [LinkedIn](https://linkedin.com/company/mookai) [Facebook] (https://www.facebook.com/profile.php?id=61560323541142)
+Tu es plutôt réseaux sociaux? On est là aussi: [Instagram](https://www.instagram.com/mookai.be/) / [LinkedIn](https://www.linkedin.com/company/109812644/)
 
 Et si tu cherches à rejoindre l'équipe ou proposer un partenariat, mentionne-le dans le formulaire ou l'e-mail. On lit tout, vraiment.
 {% endtwoColumnsItem %}
