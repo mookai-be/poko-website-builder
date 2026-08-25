@@ -5,7 +5,6 @@ lang: fr
 createdAt: 2026-08-19T06:48:00.000Z
 ldType: WebPage
 name: FAQ
-vars: {}
 ---
 
 ## Général
@@ -13,6 +12,8 @@ vars: {}
 ### Peut-on travailler ensemble si on n’habite pas au même endroit?
 
 Évidemment! On peut tout à fait travailler à distance. Tous les échanges peuvent se faire en ligne (mail, visioconférence, téléphone,…).
+
+### mookaï est un petit studio. Est-ce que vous gérez aussi des gros projets?
 
 ## Graphisme
 
