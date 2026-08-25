@@ -3,10 +3,10 @@ translationKey: formations
 order: 8
 lang: fr
 createdAt: 2026-04-28T11:50:00.000Z
+ldType: Service
 name: Formations
 tags:
   - support
-vars: {}
 bodyClass: palette-gold
 ---
 
@@ -14,7 +14,7 @@ bodyClass: palette-gold
 
 ::: section
 
-## Deviens autonome sur tes outils de com'
+## Deviens autonome avec tes outils de com'
 
 Être entrepreneur, c'est souvent devoir porter plusieurs casquettes. Mais tu n'as pas besoin de devenir un expert en tout pour être efficace. On a créé des formations et des ateliers pour te donner les clés et les raccourcis qui te feront gagner un temps précieux.
 
@@ -54,8 +54,10 @@ Découvre une méthode simple pour créer ton propre site web, sans connaissance
 
 ### Hygiène numérique pour entrepreneurs
 
-Organise tes outils, sécurise tes données et gagne en sérénité au quotidien.
-Reprends le contrôle de ton quotidien numérique. Découvre des conseils concrets pour réduire la surcharge digitale, mieux organiser tes outils et retrouver du temps et de la sérénité.
+Reprends le contrôle de ton quotidien numérique. Organise tes outils, sécurise tes données et gagne en sérénité.
+
+
+Découvre des conseils concrets pour réduire la surcharge digitale, mieux organiser tes outils et retrouver du temps.
 :::
 {% endgridItem %}
 {% gridItem class="card palette--bg-pop" %}
