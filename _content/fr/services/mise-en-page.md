@@ -7,11 +7,12 @@ ldType: Service
 name: Mise en page
 tags:
   - print
+vars: {}
 localizationKey: 1bac5ad486a8
 uuid: '192753223677'
 bodyClass: palette-bordeau
-pageNav: ''
 pageFooter: ''
+pageNav: ''
 ---
 
 # Mise en page
