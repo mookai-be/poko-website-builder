@@ -5,24 +5,29 @@ lang: fr
 createdAt: 2026-08-19T06:48:00.000Z
 ldType: WebPage
 name: FAQ
+vars: {}
 ---
 
-### Quels sont les tarifs des prestations?
-
-- Pour un travail ponctuel, mon tarif horaire est de 75€ htva de l’heure.
-- Tu peux retrouver les prix fixes pour la création de logo, site web dans la page de chaque service
-- Si c’est d’un autre travail graphique dont tu as besoin, je dois avoir les détails de ton projet afin de répondre sur-mesure à ta demande et t’envoyer un devis adapté à ta demande. Tu trouveras quelques idées de prix à partir de cette page
-- **N’hésites pas à nous contacter pour nous parler de ton projet, on pourra te dire ce qui est possible dans ton budget ;-)**
-
-### Quel est le processus de travail pour la création d'un logo?
-
-Tu trouveras sur le site de Tess toutes les étapes concernant {% link url="https://www.tess-h.be/workflow/", type="external", newTab=true %}son workflow{% endlink %}
-
- Si il te reste des questions après ça, n’hésite pas à nous contacter.
+## Général
 
 ### Peut-on travailler ensemble si on n’habite pas au même endroit?
 
 Évidemment! On peut tout à fait travailler à distance. Tous les échanges peuvent se faire en ligne (mail, visioconférence, téléphone,…).
+
+## Graphisme
+
+### Quels sont les tarifs des prestations?
+
+- Pour un travail ponctuel, le tarif horaire de Tess est de 75€ htva/heure.
+- Tu peux retrouver les prix fixes pour la création de logo, site web dans la page de chaque service
+- Si c’est d’un autre travail graphique dont tu as besoin, Tess a besoin des détails de ton projet afin de répondre sur-mesure à ta demande et t’envoyer un devis adapté.
+- **N’hésites pas à nous contacter pour nous parler de ton projet, on pourra te dire ce qui est possible dans ton budget ;-)**
+
+### Quel est le processus de travail pour la création d'un logo?
+
+Tu trouveras sur le site de Tess toutes les étapes concernant la création de logo{% link url="https://www.tess-h.be/workflow/", type="external", newTab=true %}son workflow{% endlink %}
+
+ Si il te reste des questions après ça, n’hésite pas à nous contacter.
 
 ### Je reçois mon logo dans combien de temps?
 
@@ -38,7 +43,7 @@ C’est très peu probable ^^!
 Tess montre 2 ou 3 possibilités, après avoir discuté ensemble de tes envies et de ton activité. Et il y a 3 étapes en tout pour tester des choses et peaufiner le logo avant la livraison.
 On t’invite à regarder sa vidéo sur {% link url="https://www.tess-h.be/workflow/", type="external", newTab=true %}son workflow{% endlink %} pour te faire une idée.
 
-Il est bon de savoir que Tess n'est pas une graphiste excécutante et donc il y a une part de ta confiance à lui accorder afin de ne pas brimer sa créativité.
+Il est bon de savoir que Tess n'est pas une graphiste exécutante et donc il y a une part de ta confiance à lui accorder afin de ne pas brimer sa créativité.
 
 _Pour être tout à fait francs, nous n’avons eu le cas qu’**une seule fois** depuis que je suis graphiste (2007). Le client en question voulait qu'elle refasse exactement une illustration pour son logo. Ce qui n’était pas correct vis-à-vis de l’illustratrice qui l’avait créée (droits d’auteur). De plus ce n’était pas un logo techniquement correct pour son utilisation finale. Elle donc uniquement fait payer ses heures de travail et a mis fin à la collaboration._
 
