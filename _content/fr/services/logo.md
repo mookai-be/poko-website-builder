@@ -7,11 +7,12 @@ ldType: Service
 name: Logo
 tags:
   - print
+vars: {}
 localizationKey: 0eadee7319ce
 uuid: 2b48e4567d44
 bodyClass: palette-bordeau
-pageNav: ''
 pageFooter: ''
+pageNav: ''
 ---
 
 # Logo
