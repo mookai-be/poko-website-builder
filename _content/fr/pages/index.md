@@ -78,7 +78,7 @@ C'est l'incarnation de nos valeurs sous la forme d'un website builder.
 
 ## Un projet? Une question?
 
-On répond vite et sans bullshit
+On répond vite et sans bullshit.
 
 [Parle-nous de ton projet](/contact/){.cta}
 :::
