@@ -85,3 +85,5 @@ Tess reste donc titulaire des droits d’auteur des logos (et illustrations) qu'
 Elle cède donc les droits d’utilisation de ses créations à la livraison de celles-ci automatiquement, pour peu que le client s’engage à **respecter la charte graphique et à la mentionner, car il est conscient qu’il expose son travail.** 
 
 {% link url="https://www.cap-com.org/actualit%C3%A9s/logo-avoir-tous-les-droits-la-check-list", type="external" %}_source: www.cap-com.org_{% endlink %}
+
+## Web
