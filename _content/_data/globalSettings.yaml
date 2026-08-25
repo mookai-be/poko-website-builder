@@ -6,11 +6,11 @@ languages:
   - code: fr
     status: published
     keepUrlPrefix: false
-    isWebsiteDefault: false
-    isCmsDefault: false
+    name: Français
     customUrlPrefix:
       prefix: ''
-    name: Français
+    isCmsDefault: false
+    isWebsiteDefault: false
 collections:
   - services
   - projects
@@ -18,5 +18,6 @@ collections:
   - organizations
   - creativeWorks
   - articles
+  - faqs
 newTabLinkTypes:
   - external
