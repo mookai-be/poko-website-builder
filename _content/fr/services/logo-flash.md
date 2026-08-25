@@ -3,21 +3,22 @@ translationKey: logo-flash
 order: 3
 lang: fr
 createdAt: 2026-04-28T11:18:00.000Z
+ldType: Service
 name: Logo flash
 tags:
   - print
 localizationKey: 43fa496c69b8
 uuid: 11d2be9ea653
-pageFooter: ''
-pageNav: ''
 bodyClass: palette-bordeau
+pageNav: ''
+pageFooter: ''
 ---
 
 # Logo flash
 
 ::: section
 
-## Un logo pro, et vite!
+## Un logo pro et vite!
 
 Besoin d'un logo rapidement sans sacrifier la qualité? La formule "logo flash" est faite pour toi.
 
