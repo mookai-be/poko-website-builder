@@ -24,7 +24,7 @@ Tu as un projet en tête, une question, ou juste envie de voir si le courant pas
 Pas sûr de ce dont tu as besoin? Voici comment ça démarre souvent:
 
 - **Tu as un projet web à lancer** : un site vitrine, un outil sur mesure, une refonte complète. On en parle et on trouve la formule qui convient à ton budget et à tes besoins.
-- **Tu veux (re)faire ton identité visuelle** : logo, charte graphique, ou juste un coup de main pour que tes documents aient une belle mise en page qui mette en valeur ton travail.
+- **Tu veux (re)faire ton identité visuelle** : logo, charte graphique, ou juste un coup de main pour que tes documents aient une belle mise en page pour encore mieux mettre en valeur ton travail.
 - **Tu cherches un partenaire créatif** : tu es une agence, un freelance, ou porteur d'un projet éthique et tu cherches un duo design + tech pour collaborer sur des projets.
 - **Tu ne sais pas encore exactement ce dont tu as besoin** : c'est ok, c'est aussi un chouette point de départ. On démêle ça ensemble.
 :::
