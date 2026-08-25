@@ -5,6 +5,7 @@ lang: fr
 createdAt: 2026-05-21T09:59:00.000Z
 ldType: WebPage
 name: asbl
+vars: {}
 bodyClass: palette-mocha palette--tone-contrast
 ---
 
