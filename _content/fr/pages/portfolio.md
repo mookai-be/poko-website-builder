@@ -7,6 +7,7 @@ ldType: WebPage
 name: Portfolio
 eleventyNavigation:
   add: Nav
+vars: {}
 bodyClass: palette-mocha
 ---
 
@@ -21,7 +22,7 @@ Du logo au site sur mesure, en passant par l'illustration et la mise en page, on
 
 {% sectionCollection  %}
 {% sectionHeader  %}
-## Une sélection
+## Quelques projets
 {% endsectionHeader %}
 {% collection collection="portfolio", filters=[{"by":"tag","value":["featured"]},{"value":6,"by":"first"}], sortCriterias=[], type="grid-fluid", columns=3, itemPartial="featured-work" %}{% endcollection %}
 {% sectionFooter  %}
