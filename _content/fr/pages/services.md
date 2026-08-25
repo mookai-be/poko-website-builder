@@ -8,7 +8,6 @@ name: Services
 eleventyNavigation:
   add: Nav
   order: 2
-vars: {}
 ---
 
 # Services
