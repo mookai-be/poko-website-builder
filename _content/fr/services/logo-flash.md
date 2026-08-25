@@ -7,11 +7,12 @@ ldType: Service
 name: Logo flash
 tags:
   - print
+vars: {}
 localizationKey: 43fa496c69b8
 uuid: 11d2be9ea653
 bodyClass: palette-bordeau
-pageNav: ''
 pageFooter: ''
+pageNav: ''
 ---
 
 # Logo flash
