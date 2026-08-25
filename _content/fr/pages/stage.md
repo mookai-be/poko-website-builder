@@ -5,6 +5,7 @@ lang: fr
 createdAt: 2026-05-21T10:15:00.000Z
 ldType: WebPage
 name: Stage
+vars: {}
 ---
 
 # Stage
