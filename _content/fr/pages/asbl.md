@@ -5,7 +5,6 @@ lang: fr
 createdAt: 2026-05-21T09:59:00.000Z
 ldType: WebPage
 name: asbl
-vars: {}
 bodyClass: palette-mocha palette--tone-contrast
 ---
 
@@ -15,19 +14,19 @@ bodyClass: palette-mocha palette--tone-contrast
 
 ## Un peu d'histoire…
 
-mookaï débute bien avant la création de l'ASBL.
+mookaï débute bien avant la création de l'asbl.
 
 Depuis 2015, on travaille ensemble sur des projets de graphisme, de développement web, et de communication. Pendant plusieurs années, on a développé notre activité au sein de Feed by Design, en accompagnant des associations, des institutions, des PME et des entrepreneurs dans leurs projets numériques engagés, avec créativité et authenticité.
 
-Au fil du temps, une évidence s'est imposée: nos compétences, nos personnalités et nos façons d'aborder les projets se complètent naturellement.
+Au fil du temps, une évidence s'est imposée: nos compétences, nos personnalités et nos façons d'aborder les projets se complètent naturellement. On forme une super équipe, quoi.
 
 Tess est graphiste, illustratrice, photographe et artiste. Elle apporte la sensibilité visuelle, la créativité, le sens du détail et la capacité à raconter des histoires qui touchent les gens.
 
 Marc est développeur web, formateur et passionné de technologies. Il apporte la structure, la réflexion stratégique, les solutions techniques et la capacité à transformer les idées en outils concrets et durables.
 
-Cette complémentarité nous permet d'accompagner un projet dans son ensemble ou d'intervenir à n'importe quelle étape de son développement. On construit avec toi ton identité visuelle, ton site web, tes supports à imprimer ou tes visuels numériques. et on t'accompagne et on te forme.
+Cette complémentarité nous permet d'accompagner un projet dans son ensemble ou d'intervenir à n'importe quelle étape de son développement. On construit avec toi ton identité visuelle, ton site web éco-conçu, tes supports à imprimer ou tes visuels numériques. Si tu souhaites aller plus loin, on te propose des formations ou
 
-En décembre 2023, nous avons créé mookaï ASBL pour donner un cadre à cette vision commune: mettre nos compétences au service de projets qui contribuent, à leur échelle, au bien commun.
+En décembre 2023, nous avons créé mookaï asbl pour donner un cadre à cette vision commune: mettre nos compétences au service de projets qui contribuent, à leur échelle, au bien commun.
 
 Aujourd'hui, nous accompagnons principalement des associations, des acteurs culturels, des structures éducatives, des organisations engagées et des entrepreneurs qui souhaitent communiquer avec plus de sens, d'authenticité et de cohérence.
 
