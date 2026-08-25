@@ -3,14 +3,15 @@ translationKey: mise-en-page
 order: 2
 lang: fr
 createdAt: 2026-04-28T11:14:00.000Z
+ldType: Service
 name: Mise en page
 tags:
   - print
 localizationKey: 1bac5ad486a8
 uuid: '192753223677'
-pageFooter: ''
-pageNav: ''
 bodyClass: palette-bordeau
+pageNav: ''
+pageFooter: ''
 ---
 
 # Mise en page
@@ -21,7 +22,7 @@ bodyClass: palette-bordeau
 
 Un bon contenu, c'est essentiel. Mais si la présentation ne suit pas, ton message risque de se perdre. Pour nous, la mise en page, c'est l'art de rendre tes documents non seulement beaux, mais aussi clairs, agréables à lire et 100% alignés avec ton identité.
 
-Confie-nous tes textes, et on les transforme en supports de communication professionnels qui marquent les esprits.
+Confie-nous tes textes et on les transforme en supports de communication professionnels qui marquent les esprits.
 
 :::
 
