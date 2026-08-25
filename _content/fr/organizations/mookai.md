@@ -10,6 +10,7 @@ eleventyNavigation:
   title: À propos
 metadata:
   legalName: mookaï asbl
+vars: {}
 ---
 
 # À propos
@@ -18,9 +19,9 @@ metadata:
 
 ## On bosse avec des gens bien. <br> Pour faire des trucs qui ont du sens.
 
-mookaï, c'est un studio créatif belge actif depuis 2015. On combine design graphique et développement web pour aider les projets à impact à exister — vraiment — sur le web et dans la tête des gens.
+mookaï, c'est un studio créatif belge actif depuis 2015. On combine design graphique et développement web pour aider les projets à impact à exister vraiment sur le web et dans la tête des gens.
 
-On est une ASBL. Pas par hasard.
+On est une asbl et ce n'est pas par hasard.
 
 :::
 
@@ -30,59 +31,59 @@ On est une ASBL. Pas par hasard.
 
 {% sectionCollection class="palette-mocha bleed-bg v--width-fixed:18rem v--bleed-bottom:9rem" %}
 {% sectionHeader  %}
-## Deux têtes, un studio
+## Deux personnes, un studio
 {% endsectionHeader %}
 {% collection collection="people", type="flow", itemPartial="about-people.njk" %}{% endcollection %}
 
 {% endsectionCollection %}
 
 > If not you, then who? <br> If not now, then when?
-{.chantal .mbs-0 .pbs-0 .h0}
+> {.chantal .mbs-0 .pbs-0 .h0}
 
 ::: section
 
 ## Ce qui nous anime
 
-On sait que c'est difficile de faire bouger les lignes. Alors on se donne à fond pour toi — le rêveur, le convaincu, le fou qui entreprend pour un monde meilleur.
-Tu as déjà choisi d'agir et on t'en remercie. Nous, on veut que ton message résonne comme il le mérite.
+On sait que c'est difficile de faire bouger les lignes. Alors on se donne à fond pour toi le rêveur, le convaincu, le fou qui entreprend pour un monde meilleur.
+Tu as déjà choisi d'agir et on t'en remercie. Nous, on veut t'aider pour que ton message résonne comme il le mérite.
 
-Voilà comment ça se traduit concrètement:
+Voici comment ça se traduit concrètement:
 
 <div class="values-grid layout grid-fluid v--columns:3" role="list">
   <div class="values-card flow palette-mocha" role="listitem" tabindex="0" aria-expanded="false">
     <span class="values-card__title h1">No bullshit</span>
-    <p class="values-card__desc">on te dit ce qu'on pense, ce qu'on peut faire, et ce qu'on ne fait pas. Pas de langue de bois, pas de devis qui gonfle en cours de route.</p>
+    <p class="values-card__desc">On te dit ce qu'on pense, ce qu'on peut faire, et ce qu'on ne fait pas. Pas de langue de bois, pas de devis qui gonfle en cours de route.</p>
   </div>
   <div class="values-card flow palette-purple" role="listitem" tabindex="0" aria-expanded="false">
     <span class="values-card__title h1">Éco conception</span>
-    <p class="values-card__desc">on conçoit léger par défaut — pour le web comme pour l'impression. Parce qu'un site rapide et sobre, c'est mieux pour tout le monde.</p>
+    <p class="values-card__desc">On conçoit léger par défaut, pour le web comme pour l'impression. Parce qu'un site rapide et sobre, c'est mieux pour tout le monde.</p>
   </div>
   <div class="values-card flow palette-bordeau" role="listitem" tabindex="0" aria-expanded="false">
     <span class="values-card__title h1">Qualité</span>
-    <p class="values-card__desc">on choisi pour faire mieux. On préfère quelques projets bien menés à un pipeline de chantiers bâclés.</p>
+    <p class="values-card__desc">On choisit pour faire mieux. On préfère quelques projets bien menés à un pipeline de chantiers bâclés.</p>
   </div>
   <div class="values-card flow palette-gold" role="listitem" tabindex="0" aria-expanded="false">
     <span class="values-card__title h1">Good Vibes</span>
-    <p class="values-card__desc">si sur toute la chaîne il n'y a pas un max de gens avec le sourire, ça ne nous intéresse pas. Point.</p>
+    <p class="values-card__desc">On travaille un max avec des gens qui ont le sourire, dans une bonne ambiance. </p>
   </div>
   <div class="values-card flow palette-red" role="listitem" tabindex="0" aria-expanded="false">
     <span class="values-card__title h1">Partage</span>
-    <p class="values-card__desc">on documente, on explique, on transmet. Ton autonomie à la fin du projet, c'est aussi notre objectif.</p>
+    <p class="values-card__desc">On documente, on explique, on transmet. Ton autonomie à la fin du projet, c'est aussi notre objectif.</p>
   </div>
   <div class="values-card flow palette--contrast " role="listitem" tabindex="0" aria-expanded="false">
     <span class="values-card__title h1">Impact positif</span>
-    <p class="values-card__desc">on travaille avec des gens qui font des choses qui comptent. C'est un choix, pas un argument marketing.</p>
+    <p class="values-card__desc">On travaille avec des gens qui font des choses qui comptent. C'est un choix aligné avec nos valeurs et pas un argument marketing.</p>
   </div>
 </div>
 :::
 
 ::: section { .palette-mocha .palette--tone-contrast }
 
-## Pourquoi une ASBL?
+## Pourquoi une asbl?
 
-Parce qu'on ne court pas après les profits, mais après l'impact. Le statut d'ASBL, c'est notre façon de mettre les actes en accord avec les mots.
+Parce qu'on ne court pas après les profits, mais après l'impact. Le statut d'asbl, c'est notre façon de mettre les actes en accord avec les mots, d'incarner nos valeurs.
 
-Ça veut dire qu'on peut choisir nos clients, refuser des projets qui ne nous correspondent pas, et travailler à notre rythme sans répondre à des actionnaires. Si tu cherches un rapport artificiel pour remplir tes KPIs, on n'est probablement pas faits l'un pour l'autre — et c'est ok.
+Ça veut dire qu'on peut choisir nos clients, refuser des projets qui ne nous correspondent pas, et travailler à notre rythme sans répondre à des actionnaires. Si tu cherches un rapport artificiel pour remplir tes KPIs, on n'est probablement pas faits l'un pour l'autre et c'est ok.
 
 {% link url="asbl", type="internal", collection="pages", class="cta" %}L'ASBL{% endlink %}
 
@@ -90,7 +91,7 @@ Parce qu'on ne court pas après les profits, mais après l'impact. Le statut d'A
 
 ::: section { .palette-purple }
 
-## poko — notre website builder, notre conviction
+## poko, notre website builder, notre conviction
 
 [poko.eco](https://www.poko.eco/) est le website builder indépendant développé par Marc. L'idée de départ: se battre pour un web plus éthique, plus ouvert, plus libre, sans dépendre des plateformes fermées qui enferment les clients et leurs contenus, et sans les maux de tête que peuvent provoquer l'hébergement d'un WordPress ou autres CMS open source.
 
