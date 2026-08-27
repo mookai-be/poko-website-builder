@@ -18,6 +18,6 @@ images:
 
 # AVD Belgium
 
-Création d'une identité visuelle pour AVD Belgium.
+Création de l'identité visuelle d'AVD Belgium.
 
 [Voir sur Behance](https://www.behance.net/gallery/126900409/AVD-Belgium)
