@@ -10,7 +10,6 @@ eleventyNavigation:
   title: À propos
 metadata:
   legalName: mookaï asbl
-vars: {}
 ---
 
 # À propos
@@ -93,15 +92,15 @@ Parce qu'on ne court pas après les profits, mais après l'impact. Le statut d'a
 
 ## poko, notre website builder, notre conviction
 
-[poko.eco](https://www.poko.eco/) est le website builder indépendant développé par Marc. L'idée de départ: se battre pour un web plus éthique, plus ouvert, plus libre, sans dépendre des plateformes fermées qui enferment les clients et leurs contenus, et sans les maux de tête que peuvent provoquer l'hébergement d'un WordPress ou autres CMS open source.
+[poko.eco](https://www.poko.eco/) est le website builder indépendant développé par Marc. L'idée de départ: se battre pour un web plus éthique, plus ouvert, plus libre. Sans dépendre des plateformes fermées et sans les maux de tête que peuvent provoquer l'hébergement d'un WordPress ou autres CMS open source.
 
-On utilise poko pour construire nos propres projets — dont ce site. Ce que ça change pour toi:
+On utilise poko pour construire nos propres projets, dont ce site-ci. Ce que ça change pour toi:
 
 - **Plus d'autonomie:** tu peux gérer ton contenu sans nous appeler à chaque fois
-- **Moins de dépendance:** ton site t'appartient vraiment, pas à un SaaS américain
+- **Moins de dépendance:** ton site t'appartient vraiment, pas à une plateforme américaine
 - **Plus sobre:** des sites légers, rapides, éco-conçus par défaut
-- **Un engagement sur la qualité**: on ne livre pas un produit, on construit une expérience qui dure
-- **Une liberté de design inégalée:** pas de templates limitants, juste des possibilités infinies
+- **Un engagement sur la qualité**: on ne livre pas uniquement un produit, on construit une expérience qui dure
+- **Une liberté de design inégalée:** des possibilités infinies
 
 En bonus, chaque site sur-mesure qu'on construit renforce la plateforme pour que tout le monde en profite.
 :::
@@ -117,9 +116,11 @@ En bonus, chaque site sur-mesure qu'on construit renforce la plateforme pour que
 {% twoColumnsItem  %}
 ## Notre nom, notre logo
 
-**mookaï** s’inspire du jaspe mookaïte, une pierre précieuse aux couleurs vives et variées, associée à la créativité, à l’originalité et à l’affirmation de soi. Sa symbolique résonne profondément avec notre manière de travailler et avec les projets que nous accompagnons: des projets uniques, portés par des personnes qui veulent créer autrement, avec sens et authenticité. La mookaïte évoque aussi l’idée de transformer une intuition ou une vision en quelque chose de tangible. Pour nous, ça traduit exactement notre cœur de métier, lorsque la créativité prend vie dans des réalisations concrètes, utiles et durables.
+**mookaï** s’inspire du jaspe mookaïte, une pierre précieuse aux couleurs vives et variées, associée à la créativité, à l’originalité et à l’affirmation de soi. On s'est inspiré de cette pierre car sa symbolique résonne avec notre manière de travailler et avec les projets que nous accompagnons: des projets uniques aux valeurs fortes. 
 
-Notre logo est un **sigil**, un symbole créé à partir des premières lettres d’un mot ou d’une phrase afin d’en condenser l’intention dans une forme simple et mémorable. Plus qu’un simple signe graphique, il agit comme une empreinte visuelle pensée pour rester en mémoire et porter une énergie claire: amplifier la visibilité et la portée des projets qui œuvrent pour le bien commun. Une promesse ancrée dans notre identité, entre intuition créative et action tangible.
+La mookaïte évoque aussi l’idée de transformer une intuition ou une vision en quelque chose de tangible. Pour nous, ça traduit exactement notre cœur de métier, lorsque la créativité prend vie dans des réalisations concrètes. C'est, par exemple, matérialiser tes idées en site web ou en logo qui évoquera la vision derrière ton projet.
+
+Notre logo est un **sigil**, un symbole créé à partir des lettres d’un mot ou d’une phrase afin d’en condenser l’intention dans une forme simple et mémorable. Plus qu’un simple signe graphique, il agit comme une empreinte visuelle pensée pour rester en mémoire et transmettre l'énergie de notre mission : améliorer la visibilité des projets qui œuvrent pour le bien commun. 
 {% endtwoColumnsItem %}
 {% endtwoColumns %}
 
@@ -129,13 +130,13 @@ Notre logo est un **sigil**, un symbole créé à partir des premières lettres 
 
 ## On cherche des complices
 
-On travaille avec des indépendants, des ASBL, des coopératives, des petites structures qui ont quelque chose à dire et besoin d'aide pour le dire bien.
+On travaille avec des indépendants, des asbl, des coopératives, des petites structures qui ont quelque chose à dire et besoin d'aide pour le dire bien.
 
-On est aussi ouverts aux **partenariats** avec d'autres agences, freelances créatifs ou développeurs qui partagent nos valeurs — pour collaborer, compléter nos compétences ou se passer des projets.
+On est aussi ouverts aux **partenariats** avec d'autres agences, freelances créatifs ou développeurs qui partagent nos valeurs, que ce soit pour collaborer, compléter nos compétences ou se passer des projets.
 
 Tu veux rejoindre l'aventure en tant que stagiaire (dev, graphisme, communication)?
 
-[Dis-le-nous](/contact/){.cta} [Infos stages](/stages/){.cta}
+[Dis-le nous](/contact/){.cta} [Infos stages](/stages/){.cta}
 :::
 
 ::: div {.full-bleed .banner}
@@ -154,9 +155,9 @@ Tu veux rejoindre l'aventure en tant que stagiaire (dev, graphisme, communicatio
 
 ## On fait connaissance?
 
-Un projet en tête, une question, ou juste l'envie de voir si le courant passe.
+Un projet en tête, une question, ou juste l'envie de voir si le courant passe?
 
-[On est là](/contact/){.cta}
+[On en discute](/contact/){.cta}
 
 :::
 
