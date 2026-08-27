@@ -7,12 +7,11 @@ ldType: Service
 name: Illustration
 tags:
   - print
-vars: {}
 localizationKey: 91d5df47af1b
 uuid: 53248b09c763
 bodyClass: palette-bordeau
-pageFooter: ''
 pageNav: ''
+pageFooter: ''
 ---
 
 # Illustration
@@ -37,7 +36,7 @@ Que tu cherches une mascotte pour ta marque, une série d'icônes pour ton site 
 
 On adore mixer les styles pour créer des visuels qui te ressemblent et qui parlent à ton audience.
 
-N'hésite pas à consulter la [galerie d'art](/services/art/) également pour plus d'inspirations.
+N'hésite pas à consulter la [galerie d'art](/services/art/) pour plus d'inspirations.
 
 [Discutons de ton projet d'illustration](/contact){.cta}
 
