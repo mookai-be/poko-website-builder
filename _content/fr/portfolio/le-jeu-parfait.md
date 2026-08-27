@@ -2,7 +2,9 @@
 translationKey: le-jeu-parfait
 order: 35
 lang: fr
-name: le Jeu Parfait
+createdAt: 2026-08-27T10:13:00.000Z
+ldType: WebPage
+name: Le Jeu Parfait
 metadata:
   image:
     src: /_images/portfolio/le-jeu-parfait/1.webp
@@ -10,10 +12,11 @@ tags:
   - mise-en-page
   - print
   - illustration
+vars: {}
 images: []
 ---
 
-# le Jeu Parfait
+# Le Jeu Parfait
 
 Mise en page et illustrations pour le Jeu Parfait.
 
