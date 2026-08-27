@@ -7,7 +7,6 @@ ldType: Service
 name: Formations
 tags:
   - support
-vars: {}
 bodyClass: palette-gold
 ---
 
@@ -35,7 +34,7 @@ Notre approche? Pas trop de blabla théorique. Du concret, des astuces de pro, e
 
 ### Éveille ton œil graphique
 
-Découvre les principes qui font la différence entre un visuel amateur et un visuel professionnel. Une conférence accessible à tous pour apprendre à repérer les bonnes pratiques et améliorer l'impact de tes créations.
+Découvre les principes qui font la différence entre un visuel amateur et un visuel professionnel. Une conférence accessible à tous pour apprendre à appliquer les bonnes pratiques et améliorer l'impact de tes créations.
 :::
 {% endgridItem %}
 {% gridItem class="card palette--bg-pop" %}
@@ -56,7 +55,6 @@ Découvre une méthode simple pour créer ton propre site web, sans connaissance
 ### Hygiène numérique pour entrepreneurs
 
 Reprends le contrôle de ton quotidien numérique. Organise tes outils, sécurise tes données et gagne en sérénité.
-
 
 Découvre des conseils concrets pour réduire la surcharge digitale, mieux organiser tes outils et retrouver du temps.
 :::
