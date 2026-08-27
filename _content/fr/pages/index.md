@@ -6,7 +6,6 @@ createdAt: 2026-08-24T12:40:00.000Z
 ldType: WebPage
 name: Accueil
 pageLayout: homepage
-vars: {}
 ---
 
 {% component "headless/page-nav.11ty.js", { class: "py-body" } %}
@@ -21,9 +20,9 @@ vars: {}
 
 Du logo au site web, en passant par l'illustration et la mise en page, on construit les outils visuels et digitaux qui donnent à ton projet la visibilité qu'il mérite.
 
-Notre vision de la collaboration : on avance ensemble et on t'explique ce qu'on fait avec transparence. Notre mission est accomplie si ton projet gagne en impact.
+Notre vision de la collaboration: on avance ensemble et on t'explique ce qu'on fait avec transparence. Notre mission est accomplie si ton projet gagne en impact.
 
-[Voir nos services](/services/){.cta}
+[Nos services](/services/){.cta}
 :::
 
 {% sectionCollection  %}
@@ -46,7 +45,7 @@ Notre vision de la collaboration : on avance ensemble et on t'explique ce qu'on 
 {% twoColumnsItem  %}
 ## Deux personnes. Un studio.
 
-Tess crée une identité visuelle qui te ressemble. Marc te construit un site web performant, sobre et éthique avec ses propres outils. A deux, on couvre tout le processus de création de l'identité digitale de ton projet. De ton idée à sa mise en ligne, tu peux compter sur nous pour t'accompagner.
+Tess crée une identité visuelle qui te ressemble et Marc te construit un site web performant, sobre et éthique avec ses propres outils. A deux, on couvre tout le processus de création de l'identité digitale de ton projet. De ton idée à sa mise en ligne, tu peux compter sur nous pour t'accompagner.
 
 Depuis 2015, on aide les projets à impact à grandir et à se faire entendre.
 
@@ -63,7 +62,7 @@ Depuis 2015, on aide les projets à impact à grandir et à se faire entendre.
 
 ## poko, notre ingrédient secret (qu'on partage volontiers)
 
-Nos sites sont construits avec [poko](https://www.poko.eco/), un constructeur de site web indépendant développé par Marc. Léger et pensé pour l'éco-conception, poko est fait pour que tu sois autonome et que tu ne dépendes pas de nous ou d'une plateforme américaine.
+Nos sites sont construits avec [poko](https://www.poko.eco/), un website builder indépendant développé par Marc. Léger et pensé pour l'éco-conception, poko est fait pour que tu sois autonome et que tu ne dépendes pas de nous ou d'une plateforme américaine.
 
 C'est l'incarnation de nos valeurs sous la forme d'un website builder.
 
@@ -81,5 +80,5 @@ C'est l'incarnation de nos valeurs sous la forme d'un website builder.
 
 On répond vite et sans bullshit.
 
-[Parle-nous de ton projet](/contact/){.cta}
+[Parlons de ton projet](/contact/){.cta}
 :::
