@@ -2,6 +2,8 @@
 translationKey: julien-blanc
 order: 46
 lang: fr
+createdAt: 2026-08-27T10:16:00.000Z
+ldType: WebPage
 name: Julien Blanc
 metadata:
   image:
@@ -10,6 +12,7 @@ tags:
   - branding
   - logo
   - print
+vars: {}
 images:
   - url: https://images.ctfassets.net/1tq41wraq9ir/VucePGFsseGCGw6qgEkg8/60ff19865a7ab61ae65f253496cbb268/julienblanc-imgcover.png
     alt: Julien Blanc - identité visuelle
@@ -17,6 +20,6 @@ images:
 
 # Julien Blanc
 
-Création de l'identité visuelle pour Julien Blanc, réalisée du temps de notre collaboration avec [Feed by Design](https://www.feedbydesign.com).
+Création de l'identité visuelle de Julien Blanc.
 
-[Voir le projet sur Feed by Design](https://www.feedbydesign.com/fr/portfolio/julien-blanc/) · [Voir sur Behance](https://www.behance.net/gallery/51293695/Logo-typographique-Julien-Blanc)
+[Voir sur Behance](https://www.behance.net/gallery/51293695/Logo-typographique-Julien-Blanc)
