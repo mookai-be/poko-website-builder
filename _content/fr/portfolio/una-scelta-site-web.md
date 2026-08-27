@@ -23,8 +23,8 @@ Un site web sur mesure, multilingue et riche en fonctionnalités personnalisées
 
 - Site multilingue
 - Design sur mesure
-- [Calendrier "carousel" custom pour la prise de rendez-vous](https://www.unascelta.it/en/booking/)
-- Édition de données personnalisée depuis le CMS
+- [Calendrier "carrousel" custom pour la prise de rendez-vous](https://www.unascelta.it/en/booking/)
+- Édition de données personnalisées depuis le CMS
 - [Excellent score au Website Carbon Calculator](https://www.websitecarbon.com/website/unascelta-it-it/)
 
 [Voir le site en ligne](https://www.unascelta.it/en/)
