@@ -16,6 +16,6 @@ images: []
 
 # Le GABI
 
-Création d'une identité visuelle pour Le GABI.
+Création de l'identité visuelle pour Le GABI.
 
 [Voir sur Behance](https://www.behance.net/gallery/199368287/Le-GABI)
