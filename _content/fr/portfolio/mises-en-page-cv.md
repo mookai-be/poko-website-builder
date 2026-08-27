@@ -2,6 +2,8 @@
 translationKey: mises-en-page-cv
 order: 14
 lang: fr
+createdAt: 2026-08-27T09:30:00.000Z
+ldType: WebPage
 name: Mises en page de CV
 metadata:
   image:
@@ -9,11 +11,12 @@ metadata:
 tags:
   - mise-en-page
   - print
+vars: {}
 images: []
 ---
 
-# Mises en page de CV
+# Mise en page de CV
 
-Mises en page personnalisées de CV.
+Mise en page de nombreux CV personnalisés.
 
 [Voir sur Behance](https://www.behance.net/gallery/151956685/Mises-en-page-de-CV)
