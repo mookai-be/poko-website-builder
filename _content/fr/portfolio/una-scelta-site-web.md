@@ -17,7 +17,7 @@ images: []
 
 # Le site web de Una Scelta
 
-Un site web sur mesure, multilingue et riche en fonctionnalités personnalisées, réalisé avec [poko](https://www.poko.eco/).
+Création d'un site web sur mesure, multilingue et riche en fonctionnalités personnalisées, réalisé avec [poko](https://www.poko.eco/).
 
 ## Quelques points forts
 
