@@ -5,7 +5,6 @@ lang: fr
 createdAt: 2026-05-21T10:15:00.000Z
 ldType: WebPage
 name: Stage
-vars: {}
 ---
 
 # Stage
@@ -38,10 +37,10 @@ Selon tes compétences et ton évolution pendant le stage:
 
 - Créer ou améliorer des sites web (design, intégration, développement)
 - Contribuer à poko (code, templates, documentation, optimisation)
-- Participer à la communication (contenus, réseaux sociaux, SEO, newsletters)
+- Participer à la communication digitale (contenus, réseaux sociaux, SEO, newsletters)
 - Aider à structurer et améliorer les outils internes (organisation, automatisation, administratif léger)
 
-## Ce qu'on recherche
+## Ce qu'on demande
 
 > On fonctionne sur base d'une relation de confiance {.quote .h0 .palette--pop}
 
@@ -49,6 +48,8 @@ Selon tes compétences et ton évolution pendant le stage:
 - Communication régulière
 - Capacité à avancer et faire le point, même à distance
 - Envie d’apprendre et de proposer des choses
+- Communication fluide en français
+- Ponctualité
 
 :::
 
@@ -89,24 +90,13 @@ On ne cherche pas un profil “parfait”, mais quelqu’un de solide sur au moi
 
 {% endsectionBuilder %}
 
-::: section
-
-## Dans tous les cas
-
-- Curiosité, envie d’apprendre
-- Intérêt pour un web plus éthique et durable
-- Communication fluide en français
-- Ponctualité
-
-:::
-
 {% sectionTwoColumns class="palette-mocha bleed-bg" %}
 
 {% twoColumns  %}
 {% twoColumnsItem  %}
 ## Bonus appréciés
 
-- Git, CMS, Jamstack, Eleventy, Astro…
+- Git, CMS, Jamstack, Eleventy, Astro, …
 - Notions UX/UI ou SEO
 - Anglais technique
 - Intérêt pour l’éco-conception, l’accessibilité ou les enjeux du web
@@ -137,16 +127,16 @@ On ne cherche pas un profil “parfait”, mais quelqu’un de solide sur au moi
 {% twoColumnsItem  %}
 ## À Bruxelles
 
-(Ixelles — près de l’ULB) <br> + télétravail possible certains jours 
+(Ixelles, près de l’ULB) <br> + télétravail possible certains jours 
 
 **Un ordinateur personnel est nécessaire.**
 
 ## Envoie-nous
 
-- Ton portfolio, tes projets ou autres exemples concrets (textes rédiger,…).
+- Ton portfolio, tes projets ou autres exemples concrets (textes rédigés, …).
 - Tes dates de stage
 - Ton emoji préféré (et pourquoi)
-- Le projet du {% link url="https://www.behance.net/TessGRAPHICDESIGNER", type="external" %}portfolio de Tess{% endlink %} qui t’a marqué (et pourquoi) 
+- Le projet du {% link url="https://www.behance.net/TessGRAPHICDESIGNER", type="external" %}portfolio de Tess{% endlink %} qui t’a le plus marqué (et pourquoi) 
 
 Les candidatures génériques ne seront pas prises en compte ;-) {.small .italic}
 
@@ -170,6 +160,6 @@ Les candidatures génériques ne seront pas prises en compte ;-) {.small .italic
 
 ## Envie d’apprendre avec des entrepreneurs?
 
-On te répond rapidement sans bullshit.
+On te répond rapidement et sans bullshit.
 
 [Oui je veux tester ça](/contact/){.cta}
