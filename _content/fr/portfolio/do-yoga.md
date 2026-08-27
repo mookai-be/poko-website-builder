@@ -22,4 +22,4 @@ images:
 
 Création de l'identité visuelle de Do YOGA.
 
-[Voir sur Behance](https://www.behance.net/gallery/56830869/Do-YOGA) · [Voir le site](https://www.doyogabrussels.be/)
+[Voir sur Behance](https://www.behance.net/gallery/56830869/Do-YOGA)
