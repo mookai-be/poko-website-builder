@@ -2,6 +2,8 @@
 translationKey: delicathesse
 order: 75
 lang: fr
+createdAt: 2026-08-27T10:24:00.000Z
+ldType: WebPage
 name: déliCATHesse
 metadata:
   image:
@@ -11,6 +13,7 @@ tags:
   - illustration
   - branding
   - logo
+vars: {}
 images:
   - url: /_images/delicathesse/1.webp
     alt: déliCATHesse - identité visuelle
@@ -32,6 +35,6 @@ images:
 
 # déliCATHesse
 
-Projet complet pour déliCATHesse : identité visuelle, illustrations et mise en page.
+Création de l'identité visuelle de déliCATHesse, illustrations et mise en page.
 
 [Voir sur Behance](https://www.behance.net/gallery/9351617/dliCATHesse)
