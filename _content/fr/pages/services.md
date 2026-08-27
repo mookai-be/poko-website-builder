@@ -8,6 +8,7 @@ name: Services
 eleventyNavigation:
   add: Nav
   order: 2
+vars: {}
 ---
 
 # Services
@@ -28,7 +29,7 @@ On construit des outils qui durent, des identités qui tiennent la route et des 
 {% sectionHeader  %}
 ## Web
 
-Nos sites sont construits avec [poko](https://www.poko.eco/), notre créateur de sites web indépendant. Concrètement, nos sites sont légers, rapides, éco-conçus par défaut, et entièrement à toi. Pas de dépendance à une plateforme américaine, pas de frais cachés, pas de mises à jour de sécurité à gérer. L'autonomie et la sobriété, approuvé par Dame Nature.
+Nos sites sont construits avec [poko](https://www.poko.eco/), notre website builder indépendant. Concrètement, nos sites sont légers, rapides, éco-conçus par défaut, et entièrement à toi. Pas de dépendance à une plateforme américaine, pas de frais cachés, pas de mises à jour de sécurité à gérer. L'autonomie et la sobriété, approuvé par Dame Nature.
 {% endsectionHeader %}
 {% collection collection="services", filters=[{"by":"tag","value":["web"]}], sortCriterias=[], type="flow", class="palette--contrast-tone bleed-bg" %}{% endcollection %}
 
