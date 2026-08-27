@@ -22,6 +22,6 @@ images:
 
 # Wanna Play
 
-Création de l'identité visuelle pour Wanna Play.
+Création de l'identité visuelle de Wanna Play.
 
-[Voir le projet sur Feed by Design](https://www.feedbydesign.com/fr/portfolio/wanna-play/) · [Voir sur Behance](https://www.behance.net/gallery/52352111/Wanna-Play-) · [Voir le site](https://www.wanna-play.be/)
+[Voir sur Behance](https://www.behance.net/gallery/52352111/Wanna-Play-) · [Voir le site](https://www.wanna-play.be/)
