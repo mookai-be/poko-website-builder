@@ -2,6 +2,8 @@
 translationKey: guido-busseniers
 order: 8
 lang: fr
+createdAt: 2026-08-27T09:24:00.000Z
+ldType: WebPage
 name: Guido Busseniers
 metadata:
   image:
@@ -17,6 +19,6 @@ images:
 
 # Guido Busseniers
 
-Création de l'identité visuelle pour Guido Busseniers, réalisée du temps de notre collaboration avec [Feed by Design](https://www.feedbydesign.com).
+Création d'une identité visuelle pour Guido Busseniers, réalisée du temps où nous étions [Feed by Design](https://www.feedbydesign.com).
 
 [Voir le projet sur Feed by Design](https://www.feedbydesign.com/fr/portfolio/guido-busseniers/) · [Voir sur Behance](https://www.behance.net/gallery/60263461/Guido-Busseniers)
