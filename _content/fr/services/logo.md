@@ -75,6 +75,8 @@ L'offre la plus complète pour une communication en béton. En plus d'un logo su
 
 C'est le mode d'emploi de ton logo et de la palette de couleurs de ton projet. Elle garantit que ton identité sera toujours cohérente sur les différents documents et supports de communication.
 
+{% sections %}{% endsections %}
+
 - **La mini charte:**  l'essentiel. Les couleurs, les typographies, les tailles minimales et les zones de protection de ton logo.
 - **La charte complète:** le guide ultime. Elle ajoute les interdits, des exemples d'utilisation, des mises en page types, etc.
 
