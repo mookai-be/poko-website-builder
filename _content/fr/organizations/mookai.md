@@ -10,6 +10,7 @@ eleventyNavigation:
   title: À propos
 metadata:
   legalName: mookaï asbl
+vars: {}
 ---
 
 # À propos
@@ -84,7 +85,7 @@ Parce qu'on ne court pas après les profits, mais après l'impact. Le statut d'a
 
 Ça veut dire qu'on peut choisir nos clients, refuser des projets qui ne nous correspondent pas, et travailler à notre rythme sans répondre à des actionnaires. Si tu cherches un rapport artificiel pour remplir tes KPIs, on n'est probablement pas faits l'un pour l'autre et c'est ok.
 
-{% link url="asbl", type="internal", collection="pages", class="cta" %}L'ASBL{% endlink %}
+{% link url="asbl", type="internal", collection="pages", class="cta" %}L'asbl{% endlink %}
 
 :::
 
