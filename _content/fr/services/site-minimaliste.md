@@ -7,12 +7,11 @@ ldType: Service
 name: Site minimaliste
 tags:
   - web
-vars: {}
 localizationKey: 5413282c45a2
 uuid: 452511b3d7f5
 bodyClass: palette-mocha palette--tone-contrast
-pageFooter: ''
 pageNav: ''
+pageFooter: ''
 ---
 
 # Site minimaliste
@@ -21,7 +20,7 @@ pageNav: ''
 
 ## Ton site web pro en une journée chrono?
 
-Tu as un projet génial, mais un budget serré? Tu veux être autonome et ne pas dépendre d'une agence pour chaque virgule à changer? Alors notre formule "site minimaliste" est faite pour toi.
+Tu as un projet génial mais un budget serré? Tu veux être autonome et ne pas dépendre d'une agence pour chaque virgule à changer? Alors notre formule "site minimaliste" est faite pour toi.
 
 **Le concept:** on passe une journée ensemble et à la fin, ton site est en ligne. Simple, efficace, et 100% à toi.
 
@@ -45,6 +44,6 @@ Attention, les places sont limitées. On sélectionne les projets pour qui cette
 
 Notre but, c'est que tu sois autonome. Mais si tu préfères garder un copilote, ça nous va aussi : on propose un **abonnement de soutien optionnel** (350€/an). Ça inclut le support technique, l'aide à l'intégration de contenus et une mise à jour annuelle du système.
 
-Prêt(e) à lancer ton site?
+Prêt à lancer ton site?
 
 [Postule pour une journée site minimaliste](/contact){.cta}
