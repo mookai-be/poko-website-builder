@@ -120,7 +120,7 @@ En bonus, chaque site sur-mesure qu'on construit renforce la plateforme pour que
 
 La mookaïte évoque aussi l’idée de transformer une intuition ou une vision en quelque chose de tangible. Pour nous, ça traduit exactement notre cœur de métier, lorsque la créativité prend vie dans des réalisations concrètes. C'est, par exemple, matérialiser tes idées en site web ou en logo qui évoquera la vision derrière ton projet.
 
-Notre logo est un **sigil**, un symbole créé à partir des lettres d’un mot ou d’une phrase afin d’en condenser l’intention dans une forme simple et mémorable. Plus qu’un simple signe graphique, il agit comme une empreinte visuelle pensée pour rester en mémoire et transmettre l'énergie de notre mission : améliorer la visibilité des projets qui œuvrent pour le bien commun. 
+Notre logo est un **sigil**, un symbole créé à partir des lettres d’un mot ou d’une phrase afin d’en condenser l’intention dans une forme simple et mémorable. Plus qu’un simple signe graphique, il agit comme une empreinte visuelle pensée pour rester en mémoire et transmettre l'énergie de notre mission : améliorer la visibilité des projets qui œuvrent pour le bien commun.
 {% endtwoColumnsItem %}
 {% endtwoColumns %}
 
