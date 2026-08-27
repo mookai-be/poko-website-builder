@@ -2,6 +2,8 @@
 translationKey: autre-ecole-site-web
 order: 11
 lang: fr
+createdAt: 2026-08-27T09:26:00.000Z
+ldType: WebPage
 name: L'Autre École - Site web
 metadata:
   image:
@@ -10,7 +12,6 @@ tags:
   - web
   - site-custom
   - featured
-vars: {}
 images: []
 ---
 
@@ -23,6 +24,6 @@ Un site sur mesure réalisé avec [poko](https://www.poko.eco/), notre website b
 - Design sur mesure, parfaitement aligné avec l'identité de l'école
 - Collection "People" personnalisée et triée dynamiquement
 - [Excellent score au Website Carbon Calculator](https://www.websitecarbon.com/website/autre-ecole-org/)
-- Performance, accessibilité et éco-conception au rendez-vous
+- Performance et accessibilité 
 
 [Voir le site en ligne](https://www.autre-ecole.org/)
