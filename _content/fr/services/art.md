@@ -10,8 +10,8 @@ tags:
 localizationKey: d5cfe5d7225c
 uuid: ca8d2ad6018d
 bodyClass: palette-purple
-pageFooter: ''
 pageNav: ''
+pageFooter: ''
 ---
 
 # Art
@@ -22,7 +22,7 @@ pageNav: ''
 
 Tes bureaux, ton cabinet ou ton restaurant sont aussi une vitrine de ton identité et de ton univers. Une œuvre d'art choisie avec soin peut transformer un lieu, inspirer tes équipes et marquer l'esprit de tes clients.
 
-On te propose une sélection d'œuvres originales (peinture, aquarelle, photo, art digital...) pour habiller tes murs et créer une atmosphère unique.
+On te propose une sélection d'œuvres originales (peinture, aquarelle, photo, art digital, ...) pour habiller tes murs et créer une atmosphère unique.
 
 :::
 
