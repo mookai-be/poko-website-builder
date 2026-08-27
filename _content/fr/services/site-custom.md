@@ -7,12 +7,11 @@ ldType: Service
 name: Site custom
 tags:
   - web
-vars: {}
 localizationKey: 49cadc5a6887
 uuid: 680b12bf36ea
 bodyClass: palette-mocha palette--tone-contrast
-pageFooter: ''
 pageNav: ''
+pageFooter: ''
 ---
 
 # Site sur mesure
@@ -33,13 +32,13 @@ Pour respecter ton budget, on part d'une base technique solide et flexible, qu'o
 
 ### Les avantages d'un site custom mookaï
 
-- **Performance maximale:** nos sites sont légers, rapides et optimisés pour le référencement naturel (SEO). Ça veut dire une meilleure expérience pour tes visiteurs et une meilleure place dans les résultats sur Google.
-- **Éco-conçu par nature:** qui dit performance dit moins de ressources consommées. Ton site aura une empreinte carbone minimale.
-- **Sécurité blindée:** l'architecture statique de nos sites les rend quasiment invulnérables aux attaques. Pas de stress, pas de mises à jour de sécurité pour une sérénité incomparable.
+- **Performance maximale:** nos sites sont légers, rapides et optimisés pour le référencement naturel (SEO). Concrètement, ça veut dire une meilleure expérience pour tes visiteurs et une meilleure place dans les résultats sur Google.
+- **Éco-conçu par défaut:** qui dit performance dit moins de ressources consommées. Ton site aura une empreinte carbone minimale.
+- **Sécurité blindée:** l'architecture statique de nos sites les rend quasiment invulnérables aux attaques. Pas de stress lors des mises à jour de sécurité, à toi la sérénité.
 - **Autonomie totale:** on te livre un site avec une interface de gestion (CMS) simple pour que tu puisses modifier tes contenus quand tu veux.
 - **Liberté et transparence**: le site t'appartient complètement! Tes contenus vivent dans des fichiers facilement lisibles plutôt que dans une base de données opaque.
 
-Pour plus de détails sur la solution que nous utilisons, va voir [poko](https://www.poko.eco/).
+Pour plus de détails sur la solution qu'on utilise, va voir [poko](https://www.poko.eco/).
 :::
 
 ::: section {.palette .bleed-bg}
@@ -48,9 +47,9 @@ Pour plus de détails sur la solution que nous utilisons, va voir [poko](https:/
 
 Tu es détenteur de la vision du projet et tu connais ton audience ainsi que le milieu dans lequel tu évolues. Nous, on s'occupe de traduire ta vision en un support digital performant, élégant, accessible et respectueux de tes visiteurs.
 
-Si l'un de nos templates te convient, tant mieux, on gagne du temps et de l'argent. On part de là pour l'adapter à ton branding et ton identité. Dans tous les cas, tu ressors avec un design unique mais basé sur un template réutilisable.
+Si l'un de nos templates te convient, tant mieux, on gagne du temps. On part de là pour l'adapter à ton branding et ton identité. Dans tous les cas, tu ressors avec un design unique, basé sur un template réutilisable.
 
-Si tu veux du custom, on commence par une maquette graphique et on l'affine ensemble (jusqu'à 3 sessions de feedback) pour que le résultat final dépasse tes attentes.
+Si tu veux du custom, on commence par une maquette graphique et on l'affine ensemble (jusqu'à 3 sessions de feedback) pour que le résultat final te corresponde parfaitement.
 
 Ensuite, on implémente la vision en respectant les meilleures pratiques pour un web plus ouvert, connecté et inclusif.
 :::
