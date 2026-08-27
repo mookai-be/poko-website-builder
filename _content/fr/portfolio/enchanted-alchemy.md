@@ -2,6 +2,8 @@
 translationKey: enchanted-alchemy
 order: 40
 lang: fr
+createdAt: 2026-08-27T10:14:00.000Z
+ldType: WebPage
 name: Enchanted Alchemy
 metadata:
   image:
@@ -12,6 +14,7 @@ tags:
   - print
   - web
   - site-toile
+vars: {}
 images:
   - url: https://images.ctfassets.net/1tq41wraq9ir/57lMyNiRUs4Wqm40uKaE4q/357abe3594a9351794832df906391e40/enchanted-alchemy-imgcover.png
     alt: Enchanted Alchemy - identité visuelle
@@ -19,6 +22,6 @@ images:
 
 # Enchanted Alchemy
 
-Création de l'identité visuelle pour Enchanted Alchemy, réalisée du temps de notre collaboration avec [Feed by Design](https://www.feedbydesign.com).
+Création de l'identité visuelle d'Enchanted Alchemy.
 
-[Voir le projet sur Feed by Design](https://www.feedbydesign.com/fr/portfolio/enchanted-alchemy/) · [Voir sur Behance](https://www.behance.net/gallery/54731911/Enchanted-Alchemy) · [Voir le site](https://www.enchanted-alchemy.com/en/)
+[Voir sur Behance](https://www.behance.net/gallery/54731911/Enchanted-Alchemy) · [Voir le site](https://www.enchanted-alchemy.com/en/)
