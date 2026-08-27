@@ -2,6 +2,8 @@
 translationKey: luzienne
 order: 6
 lang: fr
+createdAt: 2026-08-27T09:23:00.000Z
+ldType: WebPage
 name: LuZienne
 metadata:
   image:
@@ -13,6 +15,7 @@ tags:
   - logo
   - web
   - site-toile
+vars: {}
 images: []
 ---
 
