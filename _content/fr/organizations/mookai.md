@@ -10,7 +10,6 @@ eleventyNavigation:
   title: À propos
 metadata:
   legalName: mookaï asbl
-vars: {}
 ---
 
 # À propos
@@ -19,7 +18,7 @@ vars: {}
 
 ## On bosse avec des gens bien. <br> Pour faire des trucs qui ont du sens.
 
-mookaï, c'est un studio créatif belge actif depuis 2015. On combine design graphique et développement web pour aider les projets à impact à exister vraiment sur le web et dans la tête des gens.
+mookaï, c'est un studio créatif belge actif depuis 2015 (à l'époque, sous la dénomination Feed By Design). On combine design graphique et développement web pour aider les projets à impact à exister vraiment sur le web et dans la tête des gens.
 
 On est une asbl et ce n'est pas par hasard.
 
@@ -60,11 +59,11 @@ Voici comment ça se traduit concrètement:
   </div>
   <div class="values-card flow palette-bordeau" role="listitem" tabindex="0" aria-expanded="false">
     <span class="values-card__title h1">Qualité</span>
-    <p class="values-card__desc">On choisit pour faire mieux. On préfère quelques projets bien menés à un pipeline de chantiers bâclés.</p>
+    <p class="values-card__desc">On choisit pour faire mieux. On préfère quelques projets bien menés à des tonnes de chantiers bâclés.</p>
   </div>
   <div class="values-card flow palette-gold" role="listitem" tabindex="0" aria-expanded="false">
     <span class="values-card__title h1">Good Vibes</span>
-    <p class="values-card__desc">On travaille un max avec des gens qui ont le sourire, dans une bonne ambiance. </p>
+    <p class="values-card__desc">On travaille dans la bonne humeur, avec des gens qui ont le sourire. </p>
   </div>
   <div class="values-card flow palette-red" role="listitem" tabindex="0" aria-expanded="false">
     <span class="values-card__title h1">Partage</span>
@@ -81,9 +80,9 @@ Voici comment ça se traduit concrètement:
 
 ## Pourquoi une asbl?
 
-Parce qu'on ne court pas après les profits, mais après l'impact. Le statut d'asbl, c'est notre façon de mettre les actes en accord avec les mots, d'incarner nos valeurs.
+Parce qu'on ne court pas après les profits mais après l'impact. Le statut d'asbl, c'est notre façon de mettre les actes en accord avec les mots, d'incarner nos valeurs.
 
-Ça veut dire qu'on peut choisir nos clients, refuser des projets qui ne nous correspondent pas, et travailler à notre rythme sans répondre à des actionnaires. Si tu cherches un rapport artificiel pour remplir tes KPIs, on n'est probablement pas faits l'un pour l'autre et c'est ok.
+Ça veut dire qu'on peut choisir nos clients, refuser des projets qui ne nous correspondent pas, et travailler à notre rythme sans répondre à des actionnaires. Si tu cherches un rapport artificiel pour remplir tes KPIs, on n'est probablement pas faits l'un pour l'autre, et c'est ok.
 
 {% link url="asbl", type="internal", collection="pages", class="cta" %}L'asbl{% endlink %}
 
@@ -98,7 +97,7 @@ Parce qu'on ne court pas après les profits, mais après l'impact. Le statut d'a
 On utilise poko pour construire nos propres projets, dont ce site-ci. Ce que ça change pour toi:
 
 - **Plus d'autonomie:** tu peux gérer ton contenu sans nous appeler à chaque fois
-- **Moins de dépendance:** ton site t'appartient vraiment, pas à une plateforme américaine
+- **Moins de dépendance:** ton site t'appartient vraiment à toi, et pas à une plateforme américaine
 - **Plus sobre:** des sites légers, rapides, éco-conçus par défaut
 - **Un engagement sur la qualité**: on ne livre pas uniquement un produit, on construit une expérience qui dure
 - **Une liberté de design inégalée:** des possibilités infinies
@@ -121,7 +120,7 @@ En bonus, chaque site sur-mesure qu'on construit renforce la plateforme pour que
 
 La mookaïte évoque aussi l’idée de transformer une intuition ou une vision en quelque chose de tangible. Pour nous, ça traduit exactement notre cœur de métier, lorsque la créativité prend vie dans des réalisations concrètes. C'est, par exemple, matérialiser tes idées en site web ou en logo qui évoquera la vision derrière ton projet.
 
-Notre logo est un **sigil**, un symbole créé à partir des lettres d’un mot ou d’une phrase afin d’en condenser l’intention dans une forme simple et mémorable. Plus qu’un simple signe graphique, il agit comme une empreinte visuelle pensée pour rester en mémoire et transmettre l'énergie de notre mission : améliorer la visibilité des projets qui œuvrent pour le bien commun.
+Notre logo est un **sigil**, un symbole créé à partir des lettres d’un mot ou d’une phrase afin d’en condenser l’intention dans une forme simple et mémorable. Plus qu’un simple signe graphique, il agit comme une empreinte visuelle pensée pour transmettre l'énergie de notre mission : améliorer la visibilité des projets qui œuvrent pour le bien commun.
 {% endtwoColumnsItem %}
 {% endtwoColumns %}
 
