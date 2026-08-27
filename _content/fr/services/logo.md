@@ -7,12 +7,11 @@ ldType: Service
 name: Logo
 tags:
   - print
-vars: {}
 localizationKey: 0eadee7319ce
 uuid: 2b48e4567d44
 bodyClass: palette-bordeau
-pageFooter: ''
 pageNav: ''
+pageFooter: ''
 ---
 
 # Logo
@@ -21,11 +20,11 @@ pageNav: ''
 
 ## Ton logo: bien plus qu'une image
 
-Un logo, ce n'est pas juste un joli dessin. C'est comme le visage de ton projet : la première chose que tes clients voient et la dernière dont ils se souviennent. Chez mookaï, on prend ça très au sérieux et toujours avec le sourire.
+Un logo, ce n'est pas juste un joli dessin. C'est comme le visage de ton projet: la première chose que tes clients voient et la dernière dont ils se souviennent. Chez mookaï, on prend ça très au sérieux et toujours avec le sourire.
 
 Notre spécificité? On combine deux approches:
 
-- **L'expertise et l'intuition créative de Tess:** pour un logo qui a une âme, qui raconte ton histoire et qui te ressemble, tout en respectant le côté technique et en faisant en sorte qu'il soit déclinable.
+- **L'expertise et l'intuition créative de Tess:** pour un logo qui a une âme, qui raconte ton histoire et qui te ressemble, tout en respectant le côté technique et en faisant en sorte qu'il soit déclinable sur différents supports.
 - **La vision stratégique de Marc:** pour s'assurer que ton logo soit pertinent et qu'il serve tes objectifs sur le long terme.
 
 :::
@@ -45,30 +44,25 @@ Idéal pour démarrer avec une identité forte et épurée. On se concentre sur 
 - **Ce que tu reçois:** 2 à 3 propositions de logos, les fichiers de ton logo final (pour le web et l'impression), un favicon, une signature mail, le design de ta carte de visite et une mini charte graphique.
 {% endgridItem %}
 {% gridItem  %}
-### Pack 2: Lifting de logo - 1000€
+### Pack 2: lifting de logo - 1000€
 
 Ton logo actuel a pris un petit coup de vieux? On lui offre une seconde jeunesse! On modernise ton logo existant pour qu'il soit à nouveau au top.
 
-+ **Ce que tu reçois:** 2 à 3 propositions de lifting, les fichiers de ton logo final (pour le web et l'impression), un favicon, une signature mail, le design de ta carte de visite et une mini charte graphique
-+ une cover pour tes réseaux sociaux
++ **Ce que tu reçois:** 2 à 3 propositions de lifting, les fichiers de ton logo final (pour le web et l'impression), un favicon, une signature mail, le design de ta carte de visite, une mini charte graphique, et une cover pour tes réseaux sociaux.
 {% endgridItem %}
 {% gridItem  %}
 ### Pack 3: logo symbol - 1800€
 
 Le best-seller. On part d'une page blanche pour créer un logo complet, avec un symbole et/ou une typographie unique qui incarne ton projet.
 
-+ **Ce que tu reçois:** 3 propositions de logos, les fichiers de ton logo final (pour le web et l'impression), un favicon, une signature mail, le design de ta carte de visite et une mini charte graphique
-+ une cover pour tes réseaux sociaux
++ **Ce que tu reçois:** 3 propositions de logos, les fichiers de ton logo final (pour le web et l'impression), un favicon, une signature mail, le design de ta carte de visite, une mini charte graphique et une cover pour tes réseaux sociaux.
 {% endgridItem %}
 {% gridItem  %}
 ### Pack 4: logo - 3100€
 
 L'offre la plus complète pour une communication en béton. En plus d'un logo sur mesure, on te livre une charte graphique très complète qui accompagne les fichiers déclinables sur tous tes supports.
 
-+ **Ce que tu reçois:** 3 propositions de logos, les fichiers de ton logo final (pour le web et l'impression), un favicon, une signature mail, le design de ta carte de visite et une charte graphique complète
-+ une cover pour tes réseaux sociaux
-+ un support de communication au choix (flyer, dépliant, template de présentation...)
-+ les fichiers sources vectoriels
++ **Ce que tu reçois:** 3 propositions de logos, les fichiers de ton logo final (pour le web et l'impression), un favicon, une signature mail, le design de ta carte de visite, une charte graphique complète, une cover pour tes réseaux sociaux, un support de communication au choix (flyer, dépliant, template de présentation, ...) et les fichiers sources vectoriels.
 {% endgridItem %}
 {% endgrid %}
 
@@ -78,24 +72,10 @@ L'offre la plus complète pour une communication en béton. En plus d'un logo su
 
 ### C'est quoi, une charte graphique?
 
-C'est le mode d'emploi de ton logo et la palette de couleurs de ton projet. Elle garantit que ton identité sera toujours cohérente sur les différents documents et supports de communication.
-::: div {.switcher}
-<div>
+C'est le mode d'emploi de ton logo et de la palette de couleurs de ton projet. Elle garantit que ton identité sera toujours cohérente sur les différents documents et supports de communication.
 
-- **La mini charte:** 
-
-l'essentiel. Les couleurs, les typographies, les tailles minimales et les zones de protection de ton logo.
-
-</div>
-<div>
-
-- **La charte complète:** 
-
-le guide ultime. Elle ajoute les interdits, des exemples d'utilisation, des mises en page types, etc.
-
-</div>
-
-:::
+- **La mini charte:**  l'essentiel. Les couleurs, les typographies, les tailles minimales et les zones de protection de ton logo.
+- **La charte complète:** le guide ultime. Elle ajoute les interdits, des exemples d'utilisation, des mises en page types, etc.
 
 ::: section
 
@@ -103,7 +83,7 @@ le guide ultime. Elle ajoute les interdits, des exemples d'utilisation, des mise
 
 Jette un œil à notre offre de [logo "flash"](/services/logo-flash/). C'est rapide, efficace et économique.
 
-[Prêt(e) à créer ton identité? Contacte-nous!](/contact/){.cta}
+[Prêt à créer ton identité? Contacte-nous!](/contact/){.cta}
 
 _Un acompte de 30% est demandé pour démarrer la collaboration. Les fichiers sources vectoriels (.eps, .ai, .pdf) sont compris dans le pack 4 ou disponibles en option pour 500€._
 :::
