@@ -78,6 +78,8 @@ C'est le mode d'emploi de ton logo et de la palette de couleurs de ton projet. E
 - **La mini charte:**  l'essentiel. Les couleurs, les typographies, les tailles minimales et les zones de protection de ton logo.
 - **La charte complète:** le guide ultime. Elle ajoute les interdits, des exemples d'utilisation, des mises en page types, etc.
 
+:::
+
 ::: section
 
 ### Besoin d'un logo pour hier et avec un petit budget?
