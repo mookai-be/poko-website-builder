@@ -2,6 +2,8 @@
 translationKey: breathe-love-eat
 order: 60
 lang: fr
+createdAt: 2026-08-27T10:20:00.000Z
+ldType: WebPage
 name: Breathe love eat
 metadata:
   image:
@@ -10,6 +12,7 @@ tags:
   - branding
   - logo
   - print
+vars: {}
 images:
   - url: https://images.ctfassets.net/1tq41wraq9ir/lSlQPmEOuOyi4MSmemgam/f939f57a65b6c9160812cc214cf825b9/breathe-love-eat-imgcover.png
     alt: Breathe love eat - identité visuelle
@@ -17,6 +20,6 @@ images:
 
 # Breathe love eat
 
-Création de l'identité visuelle pour Breathe love eat, réalisée du temps de notre collaboration avec [Feed by Design](https://www.feedbydesign.com).
+Création de l'identité visuelle de Breathe love eat.
 
-[Voir le projet sur Feed by Design](https://www.feedbydesign.com/fr/portfolio/breathe-love-eat/) · [Voir sur Behance](https://www.behance.net/gallery/56831255/Breathe-Love-Eat)
+[Voir sur Behance](https://www.behance.net/gallery/56831255/Breathe-Love-Eat)
