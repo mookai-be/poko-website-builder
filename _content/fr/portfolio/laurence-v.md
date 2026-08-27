@@ -4,7 +4,7 @@ order: 26
 lang: fr
 createdAt: 2026-08-27T10:05:00.000Z
 ldType: WebPage
-name: Laurence v. - Wellbeing & Wellbirthing
+name: Laurence V. - Wellbeing & Wellbirthing
 metadata:
   image:
     src: /_images/portfolio/laurence-v/41.webp
