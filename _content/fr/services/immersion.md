@@ -7,7 +7,6 @@ ldType: Service
 name: Consultance
 tags:
   - support
-vars: {}
 bodyClass: palette-gold palette--bg-pop
 ---
 
@@ -32,9 +31,8 @@ On met notre double expertise (stratégie/technique et création/humain) au serv
 - **Stratégie globale:** affiner ton positionnement, ta stratégie marketing et commerciale
 - **Optimisation digitale:** auditer tes outils, automatiser tes processus, améliorer ton SEO
 - **Communication & Branding:** assurer la cohérence de ton image de marque sur tous les supports
-- **Culture d'entreprise:** le bien-être au travail, la communication interne, l'organisation du travail, le management,...
 - **Innovation:** explorer de nouvelles pistes de monétisation ou de nouveaux services
 
-C'est un véritable coup d'accélérateur pour ton projet, avec un impact direct sur ton chiffre d'affaires, ton image et la motivation de tes équipes.
+C'est un véritable coup d'accélérateur pour ton projet, avec un impact direct sur ton chiffre d'affaires et ton image.
 
-[Prêt(e) à prendre de la hauteur?](/contact/){.cta}
+[Prêt à prendre de la hauteur?](/contact/){.cta}
