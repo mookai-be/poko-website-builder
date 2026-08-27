@@ -2,6 +2,8 @@
 translationKey: le-ludenne
 order: 7
 lang: fr
+createdAt: 2026-08-27T09:24:00.000Z
+ldType: WebPage
 name: le Ludenne
 metadata:
   image:
@@ -16,6 +18,6 @@ images:
 
 # le Ludenne
 
-Création de l'identité visuelle pour le Ludenne.
+Création d'une identité visuelle pour le Ludenne.
 
 [Voir sur Behance](https://www.behance.net/gallery/153510907/le-Ludenne)
