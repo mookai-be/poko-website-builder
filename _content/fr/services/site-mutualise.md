@@ -7,12 +7,11 @@ ldType: Service
 name: Site mutualisé
 tags:
   - web
-vars: {}
 localizationKey: 38a2c3ac40d8
 uuid: 2a8f78018e5e
 bodyClass: palette-mocha palette--tone-contrast
-pageFooter: ''
 pageNav: ''
+pageFooter: ''
 ---
 
 # Web mutualisé
@@ -31,7 +30,7 @@ On a la solution: l'infrastructure mutualisée.
 
 ### Le principe? C'est simple
 
-On crée une base de site web unique, un "modèle master", qui respecte parfaitement ta charte graphique et tes besoins. Ensuite, chaque membre de ton réseau peut générer son propre site et  personnaliser ses informations (nom, contact, photos, textes...). 
+On crée une base de site web unique, un "model master", qui respecte parfaitement ta charte graphique et tes besoins. Ensuite, chaque membre de ton réseau peut générer son propre site et  personnaliser ses informations (nom, contact, photos, textes, etc.). 
 
 ### Les avantages pour toi
 
@@ -45,7 +44,7 @@ On crée une base de site web unique, un "modèle master", qui respecte parfaite
 - **Autonomie:** chaque membre peut gérer ses propres contenus via une interface simple
 - **Pas de soucis techniques:** ils se concentrent sur leur métier, on s'occupe de la technique
 
-On peut connecter cette infrastructure à tes outils existants (CRM, base de données...) pour automatiser encore plus le processus.
+On peut connecter cette infrastructure à tes outils existants (CRM, base de données, ...) pour automatiser encore plus le processus.
 
 Bien entendu, chaque site créé bénéficie de toutes les qualités qui font l'ADN de mookaï: éco-conception, performance, sécurité, accessibilité et optimisation pour le référencement.
 
