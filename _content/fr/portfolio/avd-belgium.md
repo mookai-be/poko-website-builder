@@ -2,6 +2,8 @@
 translationKey: avd-belgium
 order: 12
 lang: fr
+createdAt: 2026-08-27T09:29:00.000Z
+ldType: WebPage
 name: AVD Belgium
 metadata:
   image:
@@ -16,6 +18,6 @@ images:
 
 # AVD Belgium
 
-Création de l'identité visuelle pour AVD Belgium.
+Création d'une identité visuelle pour AVD Belgium.
 
 [Voir sur Behance](https://www.behance.net/gallery/126900409/AVD-Belgium)
