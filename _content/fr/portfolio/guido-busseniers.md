@@ -19,6 +19,6 @@ images:
 
 # Guido Busseniers
 
-Création d'une identité visuelle pour Guido Busseniers.
+Création de l'identité visuelle de Guido Busseniers.
 
 [Voir sur Behance](https://www.behance.net/gallery/60263461/Guido-Busseniers)
