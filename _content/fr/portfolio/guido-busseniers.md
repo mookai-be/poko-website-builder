@@ -19,6 +19,6 @@ images:
 
 # Guido Busseniers
 
-Création d'une identité visuelle pour Guido Busseniers, réalisée du temps où nous étions [Feed by Design](https://www.feedbydesign.com).
+Création d'une identité visuelle pour Guido Busseniers.
 
-[Voir le projet sur Feed by Design](https://www.feedbydesign.com/fr/portfolio/guido-busseniers/) · [Voir sur Behance](https://www.behance.net/gallery/60263461/Guido-Busseniers)
+[Voir sur Behance](https://www.behance.net/gallery/60263461/Guido-Busseniers)
