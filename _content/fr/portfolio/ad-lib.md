@@ -2,6 +2,8 @@
 translationKey: ad-lib
 order: 32
 lang: fr
+createdAt: 2026-08-27T10:11:00.000Z
+ldType: WebPage
 name: ad lib.
 metadata:
   image:
@@ -17,6 +19,6 @@ images:
 
 # ad lib.
 
-Création de l'identité visuelle pour ad lib., réalisée du temps de notre collaboration avec [Feed by Design](https://www.feedbydesign.com).
+Création de l'identité visuelle d'ad lib..
 
-[Voir le projet sur Feed by Design](https://www.feedbydesign.com/fr/portfolio/ad-lib/) · [Voir sur Behance](https://www.behance.net/gallery/58199161/ad-lib)
+[Voir sur Behance](https://www.behance.net/gallery/58199161/ad-lib)
