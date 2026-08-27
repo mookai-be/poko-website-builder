@@ -4,7 +4,7 @@ order: 14
 lang: fr
 createdAt: 2026-08-27T09:30:00.000Z
 ldType: WebPage
-name: Mises en page de CV
+name: Mise en page de CV
 metadata:
   image:
     src: /_images/portfolio/mises-en-page-cv/1.webp
