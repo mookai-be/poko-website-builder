@@ -17,6 +17,6 @@ images: []
 
 # Syneco
 
-Création de l'identité visuelle et des supports print, réalisée lorsque nous étions [Feed by Design](https://www.feedbydesign.com).
+Création de l'identité visuelle de Syneco et de supports print.
 
-[Voir le projet sur Feed by Design](https://www.feedbydesign.com/fr/portfolio/syneco/) · [Voir sur Behance](https://www.behance.net/gallery/67372471/syneco-asbl)
+[Voir sur Behance](https://www.behance.net/gallery/67372471/syneco-asbl)
