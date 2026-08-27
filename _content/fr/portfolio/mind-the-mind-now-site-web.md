@@ -11,6 +11,7 @@ metadata:
 tags:
   - web
   - site-custom
+vars: {}
 images: []
 ---
 
