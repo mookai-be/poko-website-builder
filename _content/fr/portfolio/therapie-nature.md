@@ -2,6 +2,8 @@
 translationKey: therapie-nature
 order: 66
 lang: fr
+createdAt: 2026-08-27T10:21:00.000Z
+ldType: WebPage
 name: Thérapie nature
 metadata:
   image:
@@ -11,11 +13,12 @@ tags:
   - logo
   - web
   - site-toile
+vars: {}
 images: []
 ---
 
 # Thérapie nature
 
-Création de l'identité visuelle et du site web pour Thérapie nature.
+Création de l'identité visuelle et du site web de Thérapie nature.
 
 [Voir sur Behance](https://www.behance.net/gallery/161891337/Thrapie-nature)
