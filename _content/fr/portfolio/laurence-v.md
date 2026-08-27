@@ -2,6 +2,8 @@
 translationKey: laurence-v
 order: 26
 lang: fr
+createdAt: 2026-08-27T10:05:00.000Z
+ldType: WebPage
 name: Laurence v. - Wellbeing & Wellbirthing
 metadata:
   image:
@@ -9,11 +11,12 @@ metadata:
 tags:
   - branding
   - logo
+vars: {}
 images: []
 ---
 
 # Laurence v. - Wellbeing & Wellbirthing
 
-Création de l'identité visuelle pour Laurence v., Wellbeing & Wellbirthing.
+Création de l'identité visuelle de Laurence V., Wellbeing & Wellbirthing.
 
 [Voir sur Behance](https://www.behance.net/gallery/123934557/Laurence-v-Wellbeign-Wellbirthing)
