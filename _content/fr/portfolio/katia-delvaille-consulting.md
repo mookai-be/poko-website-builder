@@ -12,6 +12,7 @@ tags:
   - branding
   - logo
   - print
+vars: {}
 images:
   - url: https://images.ctfassets.net/1tq41wraq9ir/5xZhVm1pZKA6YmcS88qgu2/087344f3911f506a64f1f07e646f8b77/katia-delvaille-consulting-imgcover.png
     alt: Katia Delvaille - consulting - identité visuelle
@@ -19,6 +20,6 @@ images:
 
 # Katia Delvaille - consulting
 
-Création de l'identité visuelle pour Katia Delvaille - consulting, réalisée du temps de notre collaboration avec [Feed by Design](https://www.feedbydesign.com).
+Création de l'identité visuelle de Katia Delvaille - consulting.
 
 [Voir le projet sur Feed by Design](https://www.feedbydesign.com/fr/portfolio/katia-delvaille-consulting/)
