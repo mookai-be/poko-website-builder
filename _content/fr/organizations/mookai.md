@@ -136,7 +136,7 @@ On est aussi ouverts aux **partenariats** avec d'autres agences, freelances cré
 
 Tu veux rejoindre l'aventure en tant que stagiaire (dev, graphisme, communication)?
 
-[Dis-le nous](/contact/){.cta} [Infos stages](/stages/){.cta}
+[Dis-le nous](/contact/){.cta} [Infos stages](/stage/){.cta}
 :::
 
 ::: div {.full-bleed .banner}

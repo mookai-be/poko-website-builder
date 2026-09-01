@@ -148,6 +148,8 @@
 }
 
 a {
+  text-decoration: underline;
+  text-decoration-color: var(--color-text-decoration, currentColor);
   text-decoration-skip-ink: none;
   text-decoration-thickness: var(--deco-thickness, 0.2em);
   text-underline-offset: var(--deco-offset, 0.15em);
@@ -158,7 +160,7 @@ a {
     text-underline-offset var(--deco-transition-duration, 0.2s) ease-in-out;
 }
 
-a:hover {
+a:hover, summary:hover {
   text-decoration-thickness: var(--deco-thickness-hover, 1.2em);
   text-underline-offset: var(--deco-offset-hover, -0.9em);
   background-color: transparent;

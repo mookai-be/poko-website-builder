@@ -8,24 +8,16 @@ name: Marc
 metadata:
   image:
     src: /_images/dscf9650-3.webp
-  jobTitle: stratège et développeur web
+  jobTitle: développeur web et communicant
   links:
     - name: site
       url: https://www.m4rr.co/
-    - name: spotify
-      url: https://open.spotify.com/user/118092566
-    - name: pinterest
-      url: https://www.pinterest.com/cot0497/
-    - name: facebook
-      url: https://www.facebook.com/profile.php?id=1188225911
-    - name: instagram
-      url: https://www.instagram.com/marccoet/
+    - name: github
+      url: https://github.com/m4rrc0
     - name: linkedin
       url: https://www.linkedin.com/in/marc-coet/
     - name: youtube
       url: https://www.youtube.com/@m4rrc0_
-    - name: github
-      url: https://github.com/m4rrc0
 generatePage: previewOnly
 ---
 

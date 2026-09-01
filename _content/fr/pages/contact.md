@@ -83,7 +83,7 @@ Voici comment ça démarre souvent:
 
 Tu préfères l'e-mail direct? Pas de souci: {{ env.email | emailLink }}
 
-Tu es plutôt réseaux sociaux? On est là aussi: [Instagram](https://www.instagram.com/mookai.be/) / [LinkedIn](https://www.linkedin.com/company/109812644/)
+Tu es plutôt réseaux sociaux? On est là aussi: {% link url="https://www.linkedin.com/company/109812644/", rel="self" %}LinkedIn{% endlink %} / {% link url="https://www.instagram.com/mookai.be/", rel="self" %}Instagram{% endlink %} / {% link url="https://www.facebook.com/profile.php?id=61560323541142", rel="self" %}Facebook{% endlink %}
 
 Et si tu cherches à rejoindre l'équipe ou proposer un partenariat, mentionne-le dans le formulaire ou l'e-mail. On lit tout, vraiment.
 {% endtwoColumnsItem %}

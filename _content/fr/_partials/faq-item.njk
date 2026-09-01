@@ -1,0 +1,15 @@
+<details>
+  <summary><h3>{{ name }}</h3></summary>
+  {{ rawInput | md }}
+</details>
+
+<style>
+details {
+  inline-size: min(100%, calc(var(--width-prose) - var(--px-body) * 2));
+  margin-inline: auto;
+}
+details h3 {
+}
+summary::marker {
+}
+</style>
