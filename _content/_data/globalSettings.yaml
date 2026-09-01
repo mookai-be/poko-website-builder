@@ -2,13 +2,20 @@ siteName: mookaï asbl
 productionUrl: https://www.mookai.be
 logo: /_images/mookai-logo-RVB-SANS-BORDS-38.webp
 htmlHead: <script src="https://analytics.ahrefs.com/analytics.js" data-key="W+Oyec4qhrCQ0saO/GPS8A" async></script>
+cssHead: |-
+  @font-face {
+    font-family: "Chantal";
+    src: url("/assets/files/chantal-medium-regular.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+  }
 languages:
   - code: fr
     status: published
     keepUrlPrefix: false
     name: Français
     customUrlPrefix:
-      prefix: ''
+      prefix: ""
     isCmsDefault: false
     isWebsiteDefault: false
 collections:

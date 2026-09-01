@@ -24,6 +24,6 @@ Un site sur mesure réalisé avec [poko](https://www.poko.eco/), notre website b
 - Design sur mesure, parfaitement aligné avec l'identité de l'école
 - Collection "People" personnalisée et triée dynamiquement
 - [Excellent score au Website Carbon Calculator](https://www.websitecarbon.com/website/autre-ecole-org/)
-- Performance et accessibilité 
+- Performance et accessibilité
 
 [Voir le site en ligne](https://www.autre-ecole.org/)

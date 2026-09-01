@@ -90,6 +90,17 @@ On ne cherche pas un profil “parfait”, mais quelqu’un de solide sur au moi
 
 {% endsectionBuilder %}
 
+::: section
+
+## Dans tous les cas
+
+- Curiosité, envie d’apprendre
+- Intérêt pour un web plus éthique et durable
+- Communication fluide en français
+- Ponctualité
+
+:::
+
 {% sectionTwoColumns class="palette-mocha bleed-bg" %}
 
 {% twoColumns  %}
