@@ -1,6 +1,6 @@
 ---
 translationKey: le-gabi
-order: 5
+order: 7
 lang: fr
 createdAt: 2026-08-27T09:23:00.000Z
 ldType: WebPage
@@ -11,8 +11,10 @@ metadata:
 tags:
   - branding
   - logo
+vars: {}
 images: []
 ---
+
 
 # Le GABI
 

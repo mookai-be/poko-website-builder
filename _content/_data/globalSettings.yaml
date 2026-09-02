@@ -1,7 +1,16 @@
 siteName: mookaï asbl
 productionUrl: https://www.mookai.be
 logo: /_images/mookai-logo-RVB-SANS-BORDS-38.webp
-htmlHead: <script src="https://analytics.ahrefs.com/analytics.js" data-key="W+Oyec4qhrCQ0saO/GPS8A" async></script>
+htmlHead: |-
+  <!-- Icons -->
+  <link rel="icon" type="image/png" href="/assets/files/icons/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/assets/files/icons/favicon.svg" />
+  <link rel="shortcut icon" href="/assets/files/icons/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/files/icons/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="mookaï" />
+  <link rel="manifest" href="/assets/files/icons/site.webmanifest" />
+  <!-- Analytics -->
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="W+Oyec4qhrCQ0saO/GPS8A" async></script>
 cssHead: |-
   @font-face {
     font-family: "Chantal";
@@ -15,7 +24,7 @@ languages:
     keepUrlPrefix: false
     name: Français
     customUrlPrefix:
-      prefix: ""
+      prefix: ''
     isCmsDefault: false
     isWebsiteDefault: false
 collections:

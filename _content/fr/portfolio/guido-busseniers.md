@@ -1,6 +1,6 @@
 ---
 translationKey: guido-busseniers
-order: 8
+order: 10
 lang: fr
 createdAt: 2026-08-27T09:24:00.000Z
 ldType: WebPage
@@ -12,10 +12,12 @@ tags:
   - branding
   - logo
   - print
+vars: {}
 images:
-  - url: https://images.ctfassets.net/1tq41wraq9ir/3gM14f4kjKasky0e4QEo0o/e8977f62a14c8ebc6c8ed041da62b1ce/FACEBOOK_COVER-6.jpg
-    alt: Guido Busseniers - identité visuelle
+  - alt: Guido Busseniers - identité visuelle
+    url: https://images.ctfassets.net/1tq41wraq9ir/3gM14f4kjKasky0e4QEo0o/e8977f62a14c8ebc6c8ed041da62b1ce/FACEBOOK_COVER-6.jpg
 ---
+
 
 # Guido Busseniers
 

@@ -2,6 +2,8 @@
 translationKey: dossier-home
 order: 17
 lang: fr
+createdAt: 2026-09-02T09:49:00.000Z
+ldType: WebPage
 name: Dossier de diffusion HOME
 metadata:
   image:
@@ -9,6 +11,7 @@ metadata:
 tags:
   - mise-en-page
   - print
+status: inactive
 images: []
 ---
 

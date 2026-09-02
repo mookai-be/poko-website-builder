@@ -1,4 +1,5 @@
 {% set websiteLink = metadata.links | filterCollection({ by: "name", value: "site" }) | first %}
+{% set personalEmail = env["email" ~ name] %}
 
 <div class="profile-card fixed-fluid">
 <div class="profile-card__image">
@@ -10,11 +11,19 @@
 
 <p class="h3">{{metadata.jobTitle}}</p>
 
-{% if websiteLink %}
-<p>{% link url=websiteLink.url, type="external" %}{{ websiteLink.url | replace("https://www.", "") | replace("https://", "") | replace("/", "") }}{% endlink %}</p>
-{% endif %}
-
 {{ rawInput | renderContent("njk,md") | safe }}
+
+{% if websiteLink or personalEmail %}
+<p>
+  {% if personalEmail %}
+    {{ personalEmail | emailLink }}
+  {% endif %}
+  {% if websiteLink %}
+    {% if personalEmail %}<br>{% endif %}
+    {% link url=websiteLink.url, type="external" %}{{ websiteLink.url | replace("https://www.", "") | replace("https://", "") | replace("/", "") }}{% endlink %}
+  {% endif %}
+</p>
+{% endif %}
 
 <ul role="list" class="cluster v--gap-cluster:0.4em">
   {% for linkItem in metadata.links %}

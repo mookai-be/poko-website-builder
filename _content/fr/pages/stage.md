@@ -17,7 +17,7 @@ Tu veux contribuer à un web plus léger, plus responsable et accessible? Partic
 :::
 
 ::: div {.full-bleed .banner}
-{% image src="/_images/stagiaire-1.webp", class="object-[center_top]" %}
+{% image src="/_images/stagiaire-1.webp", class="object-[center_top]", loading="eager" %}
 :::
 
 ::: section

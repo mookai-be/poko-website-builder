@@ -11,7 +11,7 @@ metadata:
 tags:
   - mise-en-page
   - print
-vars: {}
+status: inactive
 images: []
 ---
 

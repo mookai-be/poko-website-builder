@@ -160,7 +160,8 @@ a {
     text-underline-offset var(--deco-transition-duration, 0.2s) ease-in-out;
 }
 
-a:hover, summary:hover {
+a:hover,
+summary:hover {
   text-decoration-thickness: var(--deco-thickness-hover, 1.2em);
   text-underline-offset: var(--deco-offset-hover, -0.9em);
   background-color: transparent;

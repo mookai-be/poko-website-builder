@@ -16,11 +16,11 @@ metadata:
 
 ::: section
 
-## On bosse avec des gens bien. <br> Pour faire des trucs qui ont du sens.
+## On bosse avec des gens bien.{% br %} Pour faire des trucs qui ont du sens.
 
 mookaï, c'est un studio créatif belge actif depuis 2015 (à l'époque, sous la dénomination Feed By Design). On combine design graphique et développement web pour aider les projets à impact à exister vraiment sur le web et dans la tête des gens.
 
-On est une asbl et ce n'est pas par hasard.
+On est {% link url="asbl", type="internal", collection="pages" %}une asbl{% endlink %} et ce n'est pas par hasard.
 
 :::
 
@@ -69,7 +69,7 @@ Voici comment ça se traduit concrètement:
     <span class="values-card__title h1">Partage</span>
     <p class="values-card__desc">On documente, on explique, on transmet. Ton autonomie à la fin du projet, c'est aussi notre objectif.</p>
   </div>
-  <div class="values-card flow palette--contrast " role="listitem" tabindex="0" aria-expanded="false">
+  <div class="values-card flow palette-white palette--tone-contrast" role="listitem" tabindex="0" aria-expanded="false">
     <span class="values-card__title h1">Impact positif</span>
     <p class="values-card__desc">On travaille avec des gens qui font des choses qui comptent. C'est un choix aligné avec nos valeurs et pas un argument marketing.</p>
   </div>
@@ -92,7 +92,7 @@ Parce qu'on ne court pas après les profits mais après l'impact. Le statut d'as
 
 ## poko, notre website builder, notre conviction
 
-[poko.eco](https://www.poko.eco/) est le website builder indépendant développé par Marc. L'idée de départ: se battre pour un web plus éthique, plus ouvert, plus libre. Sans dépendre des plateformes fermées et sans les maux de tête que peuvent provoquer l'hébergement d'un WordPress ou autres CMS open source.
+{% link url="https://www.poko.eco/", type="external", target="_blank" %}poko.eco{% endlink %} est le website builder indépendant développé par Marc. L'idée de départ: se battre pour un web plus éthique, plus ouvert, plus libre. Sans dépendre des plateformes fermées et sans les maux de tête que peuvent provoquer l'hébergement d'un WordPress ou autres CMS open source.
 
 On utilise poko pour construire nos propres projets, dont ce site-ci. Ce que ça change pour toi:
 

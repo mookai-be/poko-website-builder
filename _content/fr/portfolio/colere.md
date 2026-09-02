@@ -2,6 +2,8 @@
 translationKey: colere
 order: 78
 lang: fr
+createdAt: 2026-09-02T10:02:00.000Z
+ldType: WebPage
 name: COLERE
 metadata:
   image:
@@ -9,6 +11,7 @@ metadata:
 tags:
   - art
   - photo
+status: inactive
 images: []
 ---
 

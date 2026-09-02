@@ -10,10 +10,10 @@ metadata:
     src: /_images/portfolio/studio-six/portfolio_ecran_studiosix.webp
 tags:
   - web
-vars: {}
+status: inactive
 images:
-  - url: https://images.ctfassets.net/1tq41wraq9ir/IyVdswEawo28A2Og2msC0/61632353f5ba0e5b297b472fc8b4833a/studio-six-imgcover.png
-    alt: Studio Six - identité visuelle
+  - alt: Studio Six - identité visuelle
+    url: https://images.ctfassets.net/1tq41wraq9ir/IyVdswEawo28A2Og2msC0/61632353f5ba0e5b297b472fc8b4833a/studio-six-imgcover.png
 ---
 
 # Studio Six

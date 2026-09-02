@@ -1,6 +1,6 @@
 ---
 translationKey: marc
-order: 1
+order: 2
 lang: fr
 createdAt: 2026-05-21T13:07:00.000Z
 ldType: Person
@@ -19,6 +19,8 @@ metadata:
     - name: youtube
       url: https://www.youtube.com/@m4rrc0_
 generatePage: previewOnly
+vars: {}
 ---
+
 
 Marc code, conçoit et questionne. Il a une conviction: le web peut être performant, éthique et sobre en même temps. Alors plutôt que d'utiliser des outils qui ne lui conviennent pas, il en construit. {% link url="https://www.poko.eco/", type="external" %}poko{% endlink %}, son website builder indépendant en est la preuve directe.

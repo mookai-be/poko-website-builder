@@ -5,7 +5,10 @@ lang: fr
 createdAt: 2026-05-21T09:59:00.000Z
 ldType: WebPage
 name: asbl
-vars: {}
+pageStyles: |-
+  .bottom-banner {
+    margin-block-end: calc(-8rem - var(--py-body) * 2);
+  }
 bodyClass: palette-mocha palette--tone-contrast
 ---
 
@@ -50,8 +53,8 @@ Le soin que tu apportes à ton projet pour accomplir ta mission, on le met dans 
 
 ## Co-fondateurs et administrateurs
 
-- Marc COËT - marc@mookai.be
-- Tess HADRI - tess@mookai.be
+- Marc COËT - {{ env.emailMarc | emailLink }}
+- Tess HADRI - {{ env.emailTess | emailLink }}
 { role=list .width-prose }
 
 {% link url="mookai", type="internal", collection="organizations", class="cta" %}Pourquoi on a fondé mookaï{% endlink %}
@@ -84,6 +87,6 @@ Pour certaines collaborations professionnelles, notamment avec des structures as
 
 :::
 
-::: div {.full-bleed .banner}
+::: div {.full-bleed .banner .bottom-banner }
 {% image src="/_images/dscf3885.webp" %}
 :::

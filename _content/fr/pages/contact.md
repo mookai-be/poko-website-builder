@@ -43,36 +43,8 @@ Voici comment ça démarre souvent:
 
 ## Écris-nous
 
-<form action="/api/contact" method="POST" class="contact-form switcher">
-  <div class="contact-form__left flow">
-    <div class="contact-form__field flow">
-      <label for="name">Ton nom</label>
-      <input type="text" id="name" name="name" required placeholder="Prénom Nom">
-    </div>
-    <div class="contact-form__field flow">
-      <label for="email">Ton email</label>
-      <input type="email" id="email" name="email" required placeholder="email@exemple.be">
-    </div>
-    <div class="contact-form__field flow">
-      <label for="subject">C'est à quel sujet?</label>
-      <select id="subject" name="subject">
-        <option value="">Choisir...</option>
-        <option value="projet-web">Un projet web</option>
-        <option value="identite-visuelle">Identité visuelle / logo</option>
-        <option value="partenariat">Partenariat / collaboration</option>
-        <option value="stage">Stage / rejoindre l'équipe</option>
-        <option value="autre">Autre chose</option>
-      </select>
-    </div>
-  </div>
-  <div class="contact-form__right flow">
-    <div class="contact-form__field flow">
-      <label for="message">Ton message</label>
-      <textarea id="message" name="message" required placeholder="Je rédige mon message..."></textarea>
-    </div>
-    <button type="submit" class="cta">Envoyer</button>
-  </div>
-</form>
+{% htmlPartial "contact-form.njk" %}
+
 :::
 
 {% sectionTwoColumns  %}
@@ -83,9 +55,10 @@ Voici comment ça démarre souvent:
 
 Tu préfères l'e-mail direct? Pas de souci: {{ env.email | emailLink }}
 
-Tu es plutôt réseaux sociaux? On est là aussi: {% link url="https://www.linkedin.com/company/109812644/", rel="self" %}LinkedIn{% endlink %} / {% link url="https://www.instagram.com/mookai.be/", rel="self" %}Instagram{% endlink %} / {% link url="https://www.facebook.com/profile.php?id=61560323541142", rel="self" %}Facebook{% endlink %}
+Tu es plutôt réseaux sociaux? On est là aussi:
+{% link url="https://www.linkedin.com/company/109812644/", type="external", rel="self" %}LinkedIn{% endlink %} / {% link url="https://www.instagram.com/mookai.be/", type="external", rel="self" %}Instagram{% endlink %} / {% link url="https://www.facebook.com/profile.php?id=61560323541142", type="external", rel="self" %}Facebook{% endlink %}
 
-Et si tu cherches à rejoindre l'équipe ou proposer un partenariat, mentionne-le dans le formulaire ou l'e-mail. On lit tout, vraiment.
+Et si tu cherches à rejoindre l'équipe ou proposer un partenariat, mentionne-le dans le formulaire ou l'e-mail. On lit tout!
 {% endtwoColumnsItem %}
 {% twoColumnsItem class="container" %}
 {% image src="/_images/dscf0434-2.webp", class="aside-mb-pull radius-card" %}
@@ -93,68 +66,3 @@ Et si tu cherches à rejoindre l'équipe ou proposer un partenariat, mentionne-l
 {% endtwoColumns %}
 
 {% endsectionTwoColumns %}
-
-{% css %}
-
-.contact-form__right {
-  align-items: flex-end;
-}
-
-.contact-form__field {
-  width: 100%;
-}
-
-.contact-form label {
-  font-size: var(--step--1);
-  opacity: 0.6;
-}
-
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid currentColor;
-  padding-inline: 0;
-  color: inherit;
-  width: 100%;
-  outline: none;
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-  color: currentColor;
-  opacity: 0.4;
-}
-
-.contact-form input:focus,
-.contact-form select:focus,
-.contact-form textarea:focus {
-  border-bottom-color: var(--color-pop);
-}
-
-.contact-form select {
-  appearance: none;
-  cursor: pointer;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='currentColor' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 0 center;
-  padding-right: var(--step-1);
-}
-
-.contact-form__right .contact-form__field {
-  flex: 1;
-}
-
-.contact-form textarea {
-  resize: none;
-  flex: 1;
-  min-block-size: 10rem;
-}
-
-@media (max-width: 40em) {
-  .contact-form {
-    grid-template-columns: 1fr;
-  }
-}
-{% endcss %}

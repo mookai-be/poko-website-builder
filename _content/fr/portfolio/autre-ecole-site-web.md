@@ -1,13 +1,13 @@
 ---
 translationKey: autre-ecole-site-web
-order: 11
+order: 6
 lang: fr
 createdAt: 2026-08-27T09:26:00.000Z
 ldType: WebPage
 name: L'Autre École - Site web
 metadata:
   image:
-    src: /_images/portfolio/mookai-asbl/1.webp
+    src: /_images/portfolio/autre-ecole-site-web/autre-ecole-homepage-1.webp
 tags:
   - web
   - site-custom

@@ -2,6 +2,8 @@
 translationKey: luc-besson-book
 order: 29
 lang: fr
+createdAt: 2026-09-02T09:52:00.000Z
+ldType: WebPage
 name: Luc Besson BOOK
 metadata:
   image:
@@ -9,6 +11,7 @@ metadata:
 tags:
   - mise-en-page
   - print
+status: inactive
 images: []
 ---
 

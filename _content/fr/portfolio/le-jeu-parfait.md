@@ -12,7 +12,7 @@ tags:
   - mise-en-page
   - print
   - illustration
-vars: {}
+status: inactive
 images: []
 ---
 

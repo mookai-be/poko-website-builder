@@ -22,7 +22,8 @@ Du logo au site web, en passant par l'illustration et la mise en page, on constr
 
 Notre vision de la collaboration: on avance ensemble et on t'explique ce qu'on fait avec transparence. Notre mission est accomplie si ton projet gagne en impact.
 
-[Nos services](/services/){.cta}
+{% link url="services", type="internal", collection="pages", class="cta" %}Nos services{% endlink %}
+
 :::
 
 {% sectionCollection  %}
@@ -62,14 +63,14 @@ Depuis 2015, on aide les projets à impact à grandir et à se faire entendre.
 
 ## poko, notre ingrédient secret (qu'on partage volontiers)
 
-Nos sites sont construits avec [poko](https://www.poko.eco/), un website builder indépendant développé par Marc. Léger et pensé pour l'éco-conception, poko est fait pour que tu sois autonome et que tu ne dépendes pas de nous ou d'une plateforme américaine.
+Nos sites sont construits avec {% link url="https://www.poko.eco/", type="external", newTab=true %}poko{% endlink %}, notre website builder indépendant qu'on développe avec passion depuis 2018. Léger et pensé pour l'éco-conception, poko est fait pour que tu sois autonome et que tu ne dépendes pas de nous ou d'une plateforme américaine.
 
-C'est l'incarnation de nos valeurs sous la forme d'un website builder.
+C'est l'incarnation de nos valeurs sous la forme d'un outil de création de sites web.
 
-{% htmlPartial "poko-logo-cc.njk" %}
+{% component "poko-logo-cc.njk", { style: 'isolation: isolate;' } %}
 
 ::: div {.full-bleed .banner .mbs-[-2rem]}
-{% image src="/_images/dscf0345.webp" %}
+{% image src="/_images/dscf0345.webp", alt="Marc développe le site de poko (inception style)" %}
 :::
 
 ::::

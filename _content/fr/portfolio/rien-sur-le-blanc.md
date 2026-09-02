@@ -2,6 +2,8 @@
 translationKey: rien-sur-le-blanc
 order: 25
 lang: fr
+createdAt: 2026-09-02T09:50:00.000Z
+ldType: WebPage
 name: RIEN SUR LE BLANC
 metadata:
   image:
@@ -9,6 +11,7 @@ metadata:
 tags:
   - photo
   - mise-en-page
+status: inactive
 images: []
 ---
 

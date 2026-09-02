@@ -4,17 +4,17 @@ order: 5
 lang: fr
 createdAt: 2026-04-28T10:06:00.000Z
 ldType: Service
-name: Site custom
+name: Site sur mesure
 tags:
   - web
+bodyClass: palette-mocha palette--tone-contrast
 localizationKey: 49cadc5a6887
 uuid: 680b12bf36ea
-bodyClass: palette-mocha palette--tone-contrast
 pageNav: ''
 pageFooter: ''
 ---
 
-# Site sur mesure
+# Site web sur mesure
 
 ::: section
 

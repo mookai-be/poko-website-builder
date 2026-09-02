@@ -2,6 +2,8 @@
 translationKey: furiosa-style
 order: 58
 lang: fr
+createdAt: 2026-09-02T09:57:00.000Z
+ldType: WebPage
 name: Furiosa'style
 metadata:
   image:
@@ -9,6 +11,7 @@ metadata:
 tags:
   - art
   - photo
+status: inactive
 images: []
 ---
 

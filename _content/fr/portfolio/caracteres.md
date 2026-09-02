@@ -2,6 +2,8 @@
 translationKey: caracteres
 order: 39
 lang: fr
+createdAt: 2026-09-02T09:55:00.000Z
+ldType: WebPage
 name: CARACTERE(S)
 metadata:
   image:
@@ -9,6 +11,7 @@ metadata:
 tags:
   - mise-en-page
   - photo
+status: inactive
 images: []
 ---
 
