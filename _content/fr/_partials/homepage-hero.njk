@@ -1,5 +1,5 @@
 {% sectionTwoColumns class="homepage-hero palette-mocha bleed-bg pb-0 mb-0" %}
-{% twoColumns type="fixedFluid", widthFixed="32rem", widthFluidMin="40%", gap="0", class="px-0" %}
+{% twoColumns type="fixedFluid", gap="0", class="px-0" %}
 {% twoColumnsItem class="flow px-page py-section" %}
 {% partial "mookai-logo-carre.njk", { style: 'width:9rem;height:auto;' } %}
 
@@ -28,15 +28,23 @@ main {
 .homepage-hero {
     min-block-size: min(100vh, 30rem);
     order: -1;
+
+  overflow-x: clip;
+  --width-fixed: calc(32rem);
+  --width-fluid-min: 50%;
 }
 .home-hero-image-container > img {
     block-size: 100%;
-    max-block-size: 50rem;
-    object-position: 0% 60%;
+    max-block-size: 45rem;
+    object-position: 0% 56%;
+
+    inline-size: calc(50vw + var(--width-body) / 2 - var(--width-fixed) / 2);
+    max-inline-size: none;
 }
 @container home-hero-image-container (width > 80vw) {
   .home-hero-image-container > img {
-    aspect-ratio: 1.5;
+    aspect-ratio: 2.2;
+    inline-size: 100%;
   }
 }
 

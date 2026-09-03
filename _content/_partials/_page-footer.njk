@@ -18,11 +18,12 @@
                 <li>{% link url="https://www.m4rr.co/fr/"%}m4rr.co{% endlink %}</li>
             </ul>
         </div>
-        <div id="footer-contact">
+        <div id="footer-contact" class="">
             <address>
                 <p><strong>© {% link url="asbl", type="internal", collection="pages" %}mookaï asbl{% endlink %}</strong></p>
                 <p>{{ env.email | emailLink }}</p>
                 <p>BE 1003.532.405</p>
+                <p><small>RPM Bruxelles</small></p>
                 <p>
                     Av. Armand Huysmans 47/2,<br>1050 Ixelles, Belgique
                 </p>
@@ -62,7 +63,9 @@
 
     {# --tear-y OPTION 2: simpler #}
     /* how far down from the footer's top edge the tear sits */
-    --tear-y: clamp(0px, 30.22vw - 211.6px, 5.667rem);
+    /* Was fine for 5 lines of text */
+    /* --tear-y: clamp(0px, 30.22vw - 211.6px, 5.667rem); */
+    --tear-y: clamp(0px, 28.22vw - 211.6px, 5rem);
     
     
     /* height of the tear band (its amplitude) */
