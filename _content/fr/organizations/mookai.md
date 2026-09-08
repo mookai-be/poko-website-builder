@@ -25,7 +25,7 @@ On est {% link url="asbl", type="internal", collection="pages" %}une asbl{% endl
 :::
 
 ::: div {.full-bleed .banner}
-{% image src="/_images/dscf9674-2.webp" %}
+{% image src="/_images/dscf9674-2.webp", loading="eager" %}
 :::
 
 {% sectionCollection class="palette-mocha bleed-bg v--width-fixed:18rem v--bleed-bottom:9rem" %}

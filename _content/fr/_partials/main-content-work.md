@@ -28,7 +28,7 @@ Portfolio { .cover-title }
 {% if firstPic %}
 
 <div class="work-page-image">
-{% image src=firstPic, alt=name, width=510 %}
+{% image src=firstPic, alt=name, width=510, loading="eager" %}
 </div>
 {% endif %}
 
