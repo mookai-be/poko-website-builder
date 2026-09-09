@@ -3,7 +3,7 @@
 {% link url="portfolio" %}< Retour au Portfolio{% endlink %}
 </div>
 
-Portfolio { .cover-title }
+<p class="cover-title">Portfolio</p>
 
 {% sectionTwoColumns %}
 {% twoColumns type="fixedFluid", widthFixed="24rem", widthFluidMin="50%", fixedSide="fixedRight" %}
@@ -28,7 +28,7 @@ Portfolio { .cover-title }
 {% if firstPic %}
 
 <div class="work-page-image">
-{% image src=firstPic, alt=name, width=510, loading="eager" %}
+{% image src=firstPic, alt=name, width=400, loading="eager" %}
 </div>
 {% endif %}
 
@@ -44,7 +44,7 @@ Portfolio { .cover-title }
 {% for pic in pics %}
 {% if pic %}
 {% gridItem class="bg-white" %}
-{% image src=pic, width=510 %}
+{% image src=pic, width=400 %}
 {% endgridItem %}
 {% endif %}
 {% endfor %}
