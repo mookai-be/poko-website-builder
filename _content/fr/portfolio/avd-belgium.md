@@ -11,13 +11,14 @@ metadata:
 tags:
   - branding
   - logo
+vars: {}
 images:
-  - url: https://mir-s3-cdn-cf.behance.net/project_modules/1400/d64b75233870687.68b81126d7626.jpg
-    alt: AVD Belgium - identité visuelle
+  - alt: AVD Belgium - identité visuelle
+    url: https://mir-s3-cdn-cf.behance.net/project_modules/1400/d64b75233870687.68b81126d7626.jpg
 ---
 
 # AVD Belgium
 
-Création de l'identité visuelle d'AVD Belgium.
+Lifting du logo pour {% link url="https://avd.be/fr/", type="external" %}AVD Belgium{% endlink %}.
 
 [Voir sur Behance](https://www.behance.net/gallery/126900409/AVD-Belgium)
