@@ -22,6 +22,6 @@ images: []
 
 # PHYTAROMA
 
-Création de l'identité visuelle, de supports print, d'illustrations, d'un site web, et prise de photographies pour PHYTAROMA.
+Lifting du logo et création de toute l'identité visuelle: étiquettes produits, supports print, digitaux, réseaux sociaux, illustrations, site web photos, pack shot,…
 
 [Voir sur Behance](https://www.behance.net/gallery/83013655/PHYTAROMA)
