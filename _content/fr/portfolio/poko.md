@@ -13,11 +13,14 @@ tags:
   - branding
   - logo
   - featured
+vars: {}
 images: []
 ---
 
 # poko
 
 Création de l'identité visuelle de [poko](https://www.poko.eco/), notre website builder éco-conçu.
+
+Réflexion typographique à partir des <chevrons> typique du code.
 
 [Voir sur Behance](https://www.behance.net/gallery/191485047/poko)
