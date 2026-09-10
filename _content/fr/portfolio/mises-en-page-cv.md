@@ -12,11 +12,12 @@ tags:
   - mise-en-page
   - print
 status: inactive
+vars: {}
 images: []
 ---
 
 # Mise en page de CV
 
-Mise en page de nombreux CV personnalisés.
+Mise en page de CV personnalisés.
 
 [Voir sur Behance](https://www.behance.net/gallery/151956685/Mises-en-page-de-CV)
