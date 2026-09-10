@@ -15,13 +15,14 @@ tags:
   - web
   - site-custom
   - featured
+vars: {}
 images:
-  - alt: Wanna Play - identité visuelle
-    url: https://images.ctfassets.net/1tq41wraq9ir/25FiCTMFaA64yqGMguyecM/074bced78d44451e6fe754eb9e0f83a3/wanna-play-imgcover.png
+  - url: https://images.ctfassets.net/1tq41wraq9ir/25FiCTMFaA64yqGMguyecM/074bced78d44451e6fe754eb9e0f83a3/wanna-play-imgcover.png
+    alt: Wanna Play - identité visuelle
 ---
 
 # Wanna Play
 
-Création de l'identité visuelle de Wanna Play.
+Création de toute l'identité visuelle.
 
 [Voir sur Behance](https://www.behance.net/gallery/52352111/Wanna-Play-) · [Voir le site](https://www.wanna-play.be/)
