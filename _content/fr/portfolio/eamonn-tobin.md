@@ -11,7 +11,6 @@ metadata:
 tags:
   - branding
   - logo
-vars: {}
 images: []
 ---
 
@@ -19,4 +18,4 @@ images: []
 
 Création du logo d'Eamonn Tobin.
 
-[Voir sur Behance](https://www.behance.net/gallery/104024469/Eamonn-Tobin-logo)
+[Voir sur Behance](https://www.behance.net/gallery/104024469/Eamonn-Tobin-logo) - {% link url="https://eamonntobin.com/", type="external" %}voir son site{% endlink %}
