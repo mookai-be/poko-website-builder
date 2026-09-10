@@ -12,11 +12,12 @@ tags:
   - mise-en-page
   - print
   - featured
+vars: {}
 images: []
 ---
 
 # Rapport annuel 2022 - Comme Chez Toi asbl
 
-Mise en page du rapport annuel 2022 pour Comme Chez Toi asbl.
+Mise en page du rapport annuel 2022 pour {% link url="https://commecheztoi.org/", type="external" %}l'ASBL Comme Chez Toi{% endlink %}.
 
 [Voir sur Behance](https://www.behance.net/gallery/171277163/Rapport-annuel-2022-Comme-Chez-Toi-ASBL)
