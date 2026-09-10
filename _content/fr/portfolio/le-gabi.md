@@ -11,13 +11,12 @@ metadata:
 tags:
   - branding
   - logo
-vars: {}
 images: []
 ---
 
-
 # Le GABI
 
-Création de l'identité visuelle pour Le GABI.
+Création du logo pour Le GABI (Groupement d'Auteurs Bruxellois Inspirés).
+Collectif bruxellois d'auteurs/autrices de jeux de société. Le but est de s'entraider, trouver des synergies, pouvoir poser des questions et trouver des réponses. Ouvert à toustes, amateurs comme professionnels.
 
 [Voir sur Behance](https://www.behance.net/gallery/199368287/Le-GABI)
