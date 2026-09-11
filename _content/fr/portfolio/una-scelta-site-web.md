@@ -19,7 +19,7 @@ images: []
 
 Conception et réalisation du site web éco-conçu d’Una Scelta avec poko.
 
-### Le projet
+## Le projet
 
 Le projet Una Scelta avait besoin d’un site web pour présenter son activité et son univers. Nous avons conçu un site clair et léger en utilisant poko, notre approche de création web éco-conçue.
 
