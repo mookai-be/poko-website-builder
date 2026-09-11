@@ -23,7 +23,7 @@ Création du logo du Ludenne, futur gîte ludique dans la région de Durbuy.
 
 ## Le projet
 
-Le nom Le Ludenne joue sur la rencontre entre « lutin », « ludique » et « Ardenne ». Le projet imaginait un lieu de séjour autour du jeu, dans un environnement naturel.
+Le nom Le Ludenne joue sur la rencontre entre «lutin», «ludique» et «Ardenne». Le projet imagine un lieu de séjour autour du jeu, dans un environnement naturel.
 
 ### Notre intervention
 
