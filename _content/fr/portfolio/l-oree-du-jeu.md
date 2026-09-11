@@ -18,7 +18,7 @@ images: []
 
 Création du logo et de l’identité graphique de l’Orée du jeu, un projet de lieu dédié au jeu et aux échanges.
 
-### Le projet
+## Le projet
 
 Imaginé comme un lieu aux multiples facettes qui valorise le jeu sous différentes formes: jeux de société, scène, arts, habitat groupé, nature, permaculture, cuisine collective… Le projet cherchait une identité capable de réunir cette diversité.
 
