@@ -12,15 +12,22 @@ tags:
   - web
   - site-custom
   - featured
-vars: {}
 images: []
 ---
 
 # Le site web de Una Scelta
 
-Création d'un site web sur mesure, multilingue, fonctionnalités personnalisées, réalisé avec [poko](https://www.poko.eco/).
+Conception et réalisation du site web éco-conçu d’Una Scelta avec poko.
 
-## Quelques points forts
+### Le projet
+
+Le projet Una Scelta avait besoin d’un site web pour présenter son activité et son univers. Nous avons conçu un site clair et léger en utilisant poko, notre approche de création web éco-conçue.
+
+### Notre intervention
+
+Architecture du site · design web · UX/UI · développement · éco-conception
+
+### Le petit+
 
 - Site multilingue
 - Design sur mesure
