@@ -16,7 +16,7 @@ images: []
 
 # Dés-Mentiel
 
-Création de la nouvelle identité visuelle de DÉS-MENTIEL pour Jenny.
+Création de la nouvelle identité visuelle de Dés-Mentiel pour Jenny, entrepreneuse.
 
 ## Le projet
 
