@@ -24,9 +24,7 @@ Création de l’identité visuelle de poko, un outil de création de sites web 
 
 poko est un outil pensé pour créer des sites web légers, rapides et durables, avec une approche qui limite au maximum les ressources inutiles. L’enjeu était de créer une identité qui puisse évoquer le monde du web et du code, tout en restant simple, accessible.
 
-Pour le logo, nous avons exploré des pistes autour des chevrons, ces petits signes <…> très présents dans le langage du code. Ils permettent de faire référence à l’univers technique de manière graphique, sans tomber dans une esthétique trop «geek».
-
-Il fallait trouver le bon équilibre entre une police qui évoque le code et une lecture immédiate du nom poko. L’objectif était que le caractère technique soit présent dans l’identité, mais jamais au détriment de la lisibilité.
+Pour le logo, la piste des chevrons à été retenue, ces petits signes <…> très présents dans le langage du code. Ils permettent de faire référence à l’univers technique de manière graphique, il fallait trouver le bon équilibre entre un élément qui évoque le code et une lecture immédiate du nom poko. L’objectif était que le caractère technique soit présent dans l’identité, mais jamais au détriment de la lisibilité.
 
 ### Notre intervention
 
