@@ -11,12 +11,23 @@ metadata:
 tags:
   - branding
   - logo
-vars: {}
 images: []
 ---
 
 # l'Orée du jeu
 
-Création de l'identité visuelle de l'Orée du jeu.
+Création du logo et de l’identité graphique de l’Orée du jeu, un projet de lieu dédié au jeu et aux échanges.
+
+### Le projet
+
+L’Orée du jeu est imaginé comme un lieu aux multiples facettes qui valorise le jeu sous différentes formes : jeux de société, scène, arts, habitat groupé, nature, permaculture, cuisine collective… Le projet cherchait une identité capable de réunir cette diversité.
+
+### Notre intervention
+
+Recherche graphique · logo · logotype · identité visuelle · charte graphique
+
+### Le petit+
+
+Le logo a été développé à partir d’un travail de linogravure, puis adapté en version numérique.
 
 [Voir sur Behance](https://www.behance.net/gallery/217057713/lOre-du-jeu)
