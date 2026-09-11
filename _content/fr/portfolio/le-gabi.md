@@ -29,7 +29,7 @@ Recherche graphique · logo · identité visuelle
 
 ### Le petit+
 
-Une identité pensée pour représenter l’idée de collectif et de mise en commun autour de la création ludique.
+Une identité pensée pour représenter l’idée de collectif et de mise en commun autour de la communication.
 
 Création du logo pour Le GABI (Groupement d'Auteurs Bruxellois Inspirés).
 Collectif bruxellois d'auteurs/autrices de jeux de société. Le but est de s'entraider, trouver des synergies, pouvoir poser des questions et trouver des réponses. Ouvert à toustes, amateurs comme professionnels.
