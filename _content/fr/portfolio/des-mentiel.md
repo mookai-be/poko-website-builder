@@ -26,6 +26,6 @@ Refonte de l’identité visuelle · logo · charte graphique
 
 ### Le petit+
 
-L’identité devait pouvoir reprendre avoir un esprit ludique sans tomber dans un univers trop enfantin, pour fonctionner aussi bien auprès des particuliers que dans un contexte professionnel, notamment pour les team buildings.
+L’identité devait pouvoir reprendre avoir un esprit ludique sans tomber dans un univers trop enfantin, pour fonctionner aussi bien auprès des particuliers que dans un contexte professionnel.
 
 [Voir sur Behance](https://www.behance.net/gallery/188483563/DES-MENTIEL)
