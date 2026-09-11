@@ -31,7 +31,7 @@ Le nom mookaï s’inspire du jaspe mookaïte, une pierre aux couleurs vives et 
 
 Ses couleurs naturelles ont également inspiré notre palette. Une palette volontairement vivante et chaleureuse, à l’image de la diversité des projets et des personnes avec lesquelles nous travaillons.
 
-La mookaïte évoque aussi l’idée de transformer une intuition ou une vision en quelque chose de tangible. C’est finalement une assez bonne métaphore de notre métier : prendre une idée, parfois encore un peu floue, et lui donner une forme concrète à travers une identité, un site ou un univers graphique.
+La mookaïte évoque aussi l’idée de transformer une intuition ou une vision en quelque chose de tangible. C’est finalement une assez bonne métaphore de notre métier: prendre une idée, parfois encore un peu floue, et lui donner une forme concrète à travers une identité, un site ou un univers graphique.
 
 ### Notre intervention
 
