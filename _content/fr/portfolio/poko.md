@@ -20,7 +20,7 @@ images: []
 
 Création de l’identité visuelle de poko, un outil de création de sites web performants, accessibles et éco-responsables.
 
-### Le projet
+## Le projet
 
 poko est un outil pensé pour créer des sites web légers, rapides et durables, avec une approche qui limite au maximum les ressources inutiles. L’enjeu était de créer une identité qui puisse évoquer le monde du web et du code, tout en restant simple, accessible.
 
