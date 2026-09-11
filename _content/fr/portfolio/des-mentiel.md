@@ -4,7 +4,7 @@ order: 91
 lang: fr
 createdAt: 2026-08-27T10:30:00.000Z
 ldType: WebPage
-name: DÉS-MENTIEL
+name: Dés-mentiel
 metadata:
   image:
     src: /_images/portfolio/des-mentiel/9.webp
@@ -14,13 +14,13 @@ tags:
 images: []
 ---
 
-# Dés-Mentiel
+# Dés-mentiel
 
 Création de la nouvelle identité visuelle de Dés-Mentiel pour Jenny, entrepreneuse.
 
 ## Le projet
 
-Dés-Mentiel est un projet lié à l’univers du jeu de société. L’objectif était de renouveler son identité visuelle et de construire un univers graphique plus affirmé autour de la marque.
+Dés-mentiel, un univers ludique imaginé par Jenny autour des jeux, de l’animation et de l’événementiel.
 
 ### Notre intervention
 
