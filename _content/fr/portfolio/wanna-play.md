@@ -15,10 +15,9 @@ tags:
   - web
   - site-custom
   - featured
-vars: {}
 images:
-  - url: https://images.ctfassets.net/1tq41wraq9ir/25FiCTMFaA64yqGMguyecM/074bced78d44451e6fe754eb9e0f83a3/wanna-play-imgcover.png
-    alt: Wanna Play - identité visuelle
+  - alt: Wanna Play - identité visuelle
+    url: https://images.ctfassets.net/1tq41wraq9ir/25FiCTMFaA64yqGMguyecM/074bced78d44451e6fe754eb9e0f83a3/wanna-play-imgcover.png
 ---
 
 # Wanna Play
