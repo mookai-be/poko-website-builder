@@ -17,17 +17,17 @@ images: []
 
 # Le GABI
 
-Création du logo du GABI (Groupement d'Auteurs Bruxellois Inspirés) ou un collectif bruxellois d’auteurs et autrices de jeux de société.
+Création du logo du GABI (Groupement d'Auteurs Bruxellois Inspirés) ou autrement dit, un collectif bruxellois d’auteurs et autrices de jeux de société.
 
-Le projet
+### Le projet
 
 Le GABI rassemble des personnes qui créent des jeux de société et souhaitent pouvoir s’entraider, partager leurs expériences, trouver des synergies et poser leurs questions. Le collectif est ouvert aussi bien aux amateurs qu’aux professionnels.
 
-Notre intervention
+### Notre intervention
 
 Recherche graphique · logo · identité visuelle
 
-Le petit+
+### Le petit+
 
 Une identité pensée pour représenter l’idée de collectif et de mise en commun autour de la création ludique.
 
