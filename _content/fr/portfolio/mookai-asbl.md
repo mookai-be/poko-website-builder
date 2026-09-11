@@ -27,8 +27,6 @@ Création de l’identité visuelle de mookaï, notre studio créatif dédié au
 
 mookaï est né en 2023 de l’évolution de notre activité de graphisme et de web. Nous voulions créer une identité capable de réunir nos deux univers, tout en affirmant notre envie d’accompagner des projets utiles, éthiques et porteurs de sens.
 
-**Une identité inspirée de la mookaïte**
-
 Le nom mookaï s’inspire du jaspe mookaïte, une pierre aux couleurs vives et variées. Sa symbolique autour de la créativité, de l’originalité et de l’affirmation de soi résonne avec notre manière de travailler et avec les projets que nous accompagnons.
 
 Ses couleurs naturelles, allant des rouges et ocres aux jaunes, bruns et verts, ont également inspiré notre palette. Une palette volontairement vivante et chaleureuse, à l’image de la diversité des projets et des personnes avec lesquelles nous travaillons.
