@@ -30,7 +30,7 @@ L’identité devait donc trouver le bon équilibre entre un univers ludique et 
 
 Création du logo · identité visuelle · déclinaisons graphiques · flyer
 
-### Le petit plus
+### Le petit+
 
 Le nom En·JEUX! joue sur le double sens entre les jeux proposés par la boutique et les «enjeux» qui nous concernent collectivement. Une identité qui permet de parler de jeu avec légèreté, tout en laissant la porte ouverte à des sujets plus engagés.
 
