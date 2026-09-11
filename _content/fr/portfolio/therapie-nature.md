@@ -18,7 +18,7 @@ images: []
 
 # Thérapie nature
 
-Création du logo et du site web de Thérapie nature.
+Création du logo et du site web de Thérapie nature..
 
 ## Le projet
 
