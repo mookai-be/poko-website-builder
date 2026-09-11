@@ -23,6 +23,8 @@ images:
 
 Création de l’identité visuelle de mookaï, notre studio créatif dédié aux projets porteurs de sens.
 
+## Le projet
+
 mookaï est né en 2023 de l’évolution de notre activité de graphisme et de web. Nous voulions créer une identité capable de réunir nos deux univers, tout en affirmant notre envie d’accompagner des projets utiles, éthiques et porteurs de sens.
 
 **Une identité inspirée de la mookaïte**
