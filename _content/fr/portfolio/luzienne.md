@@ -15,14 +15,23 @@ tags:
   - logo
   - web
   - site-toile
-vars: {}
 images: []
 ---
 
 # LuZienne
 
-Création de l'identité visuelle, mise en page et création d'un site web pour LuZienne.
+Création du logo typographique et du site web de LuZienne.
 
-Création d'un logo typographique pour Marie-Laure qui accompagne les enfants et les jeunes (son public de cœur) à se reconnecter à leurs émotions et à leur imaginaire. Elle utilise l’art et les histoires pour les révéler. Son 'leitmotiv', les guider vers leur autonomie à la rencontre d’eux-même pour un mieux-être et agir dans le monde.
+Le projet
+
+Marie-Laure accompagne les enfants et les jeunes pour les aider à se reconnecter à leurs émotions et à leur imaginaire. Elle utilise notamment l’art et les histoires pour les accompagner vers davantage d’autonomie et de mieux-être.
+
+Notre intervention
+
+Logo · identité visuelle · typographie · site web · design web
+
+Le petit+
+
+L’identité devait trouver un équilibre entre l’univers sensible et imaginaire de LuZienne et la nécessité d’être immédiatement compréhensible pour les parents et les jeunes.Création d'un logo typographique pour Marie-Laure qui accompagne les enfants et les jeunes (son public de cœur) à se reconnecter à leurs émotions et à leur imaginaire. Elle utilise l’art et les histoires pour les révéler. Son 'leitmotiv', les guider vers leur autonomie à la rencontre d’eux-même pour un mieux-être et agir dans le monde.
 
 [Voir sur Behance](https://www.behance.net/gallery/178218129/LuZienne) - [Voir le site](https://luzienne.be/)
