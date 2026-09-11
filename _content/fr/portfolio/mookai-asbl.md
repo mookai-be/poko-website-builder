@@ -13,13 +13,26 @@ tags:
   - logo
   - web
   - site-custom
+vars: {}
 images:
-  - alt: mookaï asbl - identité visuelle
-    url: https://mir-s3-cdn-cf.behance.net/project_modules/1400/ac2bfa199368595.674da3ad5b177.jpg
+  - url: https://mir-s3-cdn-cf.behance.net/project_modules/1400/ac2bfa199368595.674da3ad5b177.jpg
+    alt: mookaï asbl - identité visuelle
 ---
 
 # mookaï asbl
 
-Création de l'identité visuelle de l'asbl mookaï.
+Création de l’identité visuelle de mookaï, notre studio créatif dédié aux projets porteurs de sens.
+
+### Le projet
+
+mookaï est né en 2023 de l’évolution de notre activité de graphisme et de web. Pour cette nouvelle identité, nous voulions créer une marque qui puisse réunir nos deux univers : le graphisme et le numérique, avec une attention particulière portée aux projets utiles, éthiques et durables.
+
+### Notre intervention
+
+Identité visuelle · logo · sigil · logotype · direction artistique · photographie
+
+### Le petit plus
+
+Le sigil est construit à partir des lettres du nom mookaï et devient un élément graphique à part entière de l’identité.
 
 [Voir sur Behance](https://www.behance.net/gallery/199368595/mookai-asbl)
