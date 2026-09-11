@@ -23,16 +23,22 @@ images:
 
 Création de l’identité visuelle de mookaï, notre studio créatif dédié aux projets porteurs de sens.
 
-### Le projet
+mookaï est né en 2023 de l’évolution de notre activité de graphisme et de web. Nous voulions créer une identité capable de réunir nos deux univers, tout en affirmant notre envie d’accompagner des projets utiles, éthiques et porteurs de sens.
 
-mookaï est né en 2023 de l’évolution de notre activité de graphisme et de web. Pour cette nouvelle identité, nous voulions créer une marque qui puisse réunir nos deux univers : le graphisme et le numérique, avec une attention particulière portée aux projets utiles, éthiques et durables.
+**Une identité inspirée de la mookaïte**
+
+Le nom mookaï s’inspire du jaspe mookaïte, une pierre aux couleurs vives et variées. Sa symbolique autour de la créativité, de l’originalité et de l’affirmation de soi résonne avec notre manière de travailler et avec les projets que nous accompagnons.
+
+Ses couleurs naturelles, allant des rouges et ocres aux jaunes, bruns et verts, ont également inspiré notre palette. Une palette volontairement vivante et chaleureuse, à l’image de la diversité des projets et des personnes avec lesquelles nous travaillons.
+
+La mookaïte évoque aussi l’idée de transformer une intuition ou une vision en quelque chose de tangible. C’est finalement une assez bonne métaphore de notre métier : prendre une idée, parfois encore un peu floue, et lui donner une forme concrète à travers une identité, un site ou un univers graphique.
 
 ### Notre intervention
 
-Identité visuelle · logo · sigil · logotype · direction artistique · photographie
+Identité visuelle · logo · sigil · logotype · palette de couleurs · direction artistique · photographie
 
 ### Le petit plus
 
-Le sigil est construit à partir des lettres du nom mookaï et devient un élément graphique à part entière de l’identité.
+Le logo prend la forme d’un sigil construit à partir des lettres du nom mookaï. Pensé comme une empreinte visuelle, il condense notre intention : donner de la visibilité aux projets qui œuvrent pour le bien commun.
 
 [Voir sur Behance](https://www.behance.net/gallery/199368595/mookai-asbl)
