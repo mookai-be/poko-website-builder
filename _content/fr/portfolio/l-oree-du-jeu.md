@@ -24,7 +24,7 @@ Imaginé comme un lieu aux multiples facettes qui valorise le jeu sous différen
 
 ### Notre intervention
 
-Recherche graphique · logo · logotype · identité visuelle · charte graphique
+Recherche graphique · logo · identité visuelle · charte graphique
 
 ### Le petit+
 
