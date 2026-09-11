@@ -18,18 +18,20 @@ images: []
 
 # En•JEUX!
 
-Création du logo typographique et du flyer de l’e-shop En•JEUX!
+Création de l’identité visuelle d’En·JEUX!, une boutique en ligne dédiée aux jeux de société modernes, pour jouer, découvrir et partager.
 
 ## Le projet
 
-En•JEUX! est un e-shop consacré à l’univers du jeu. Le projet avait besoin d’une identité typographique simple, reconnaissable et suffisamment flexible pour fonctionner sur les différents supports de communication.
+En·JEUX! propose une sélection de jeux de société pour tous les publics, des jeux pour enfants et toute la famille aux jeux destinés aux joueureuses plus expérimenté·es. La boutique accorde une place importante au plaisir de jouer, mais aussi aux valeurs et aux enjeux de société que le jeu peut contribuer à faire vivre.
+
+L’identité devait donc trouver le bon équilibre entre un univers ludique et une image suffisamment claire et structurée pour accompagner une boutique en ligne et une offre très variée.
 
 ### Notre intervention
 
-Logo · logotype · direction artistique · flyer
+Création du logo · identité visuelle · déclinaisons graphiques · flyer
 
-### Le petit+
+### Le petit plus
 
-Un travail essentiellement typographique pour créer une identité simple et immédiatement identifiable
+Le nom En·JEUX! joue sur le double sens entre les jeux proposés par la boutique et les «enjeux» qui nous concernent collectivement. Une identité qui permet de parler de jeu avec légèreté, tout en laissant la porte ouverte à des sujets plus engagés.
 
 [Voir sur Behance](https://www.behance.net/gallery/151953879/EnJEUX)
