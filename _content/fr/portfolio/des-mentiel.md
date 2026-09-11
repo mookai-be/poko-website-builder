@@ -20,7 +20,7 @@ Création de la nouvelle identité visuelle de Dés-Mentiel pour Jenny, entrepre
 
 ## Le projet
 
-Dés-mentiel propose de faire entrer le jeu dans toutes sortes d’occasions: anniversaires, soirées jeux de société, team building, événements à domicile, escape game apéro ou encore murder parties. L’objectif était de re-créer une identité à l’image de cet univers: ludique, dynamique et accessible, tout en pouvant s’adapter à une activité qui ne se limite pas à un seul type de jeu ou d’événement.Notre intervention
+Dés-mentiel propose de faire entrer le jeu dans toutes sortes d’occasions: anniversaires, soirées jeux de société, team building, événements à domicile, escape game apéro ou encore murder parties. L’objectif était de re-créer une identité à l’image de cet univers: ludique, dynamique, accessible et professionnelle, tout en pouvant s’adapter à une activité qui ne se limite pas à un seul type de jeu ou d’événement.Notre intervention
 
 Refonte de l’identité visuelle · logo · charte graphique
 
