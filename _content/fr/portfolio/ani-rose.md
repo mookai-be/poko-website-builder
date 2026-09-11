@@ -17,7 +17,7 @@ images: []
 
 # Ani Rose - songs from the Soul
 
-Création d’une illustration pour Ani Rose — songs from the Soul.
+Création d’une illustration pour Ani Rose, songs from the Soul.
 
 ## Le projet
 
