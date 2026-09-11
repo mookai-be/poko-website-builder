@@ -13,12 +13,23 @@ tags:
   - logo
   - web
   - site-toile
-vars: {}
 images: []
 ---
 
 # Thérapie nature
 
-Création de l'identité visuelle et du site web de Thérapie nature.
+Création du logo et du site web de Thérapie nature.
+
+## Le projet
+
+Le logo a été créé à partir du dessin et de l’aquarelle de Sarah Deraed. Nous avons ensuite décliné cette nouvelle identité graphique dans la conception du site web.
+
+### Notre intervention
+
+Logo · identité visuelle · adaptation de charte graphique · design web · développement du site
+
+### Le petit+
+
+Le travail part d’une matière graphique existante pour conserver le caractère sensible et naturel du projet tout en lui donnant une identité utilisable sur le web.
 
 [Voir sur Behance](https://www.behance.net/gallery/161891337/Thrapie-nature)
