@@ -22,7 +22,7 @@ Création de l’identité visuelle d’En·JEUX!, une boutique en ligne dédié
 
 ## Le projet
 
-En·JEUX! propose une sélection de jeux de société pour tous les publics, des jeux pour enfants et toute la famille aux jeux destinés aux joueureuses plus expérimenté·es. La boutique accorde une place importante au plaisir de jouer, mais aussi aux valeurs et aux enjeux de société que le jeu peut contribuer à faire vivre.
+La boutique en ligne propose une sélection de jeux de société pour tous les publics. La boutique accorde une place importante au plaisir de jouer, mais aussi aux valeurs et aux enjeux de société que le jeu peut contribuer à faire vivre.
 
 L’identité devait donc trouver le bon équilibre entre un univers ludique et une image suffisamment claire et structurée pour accompagner une boutique en ligne et une offre très variée.
 
