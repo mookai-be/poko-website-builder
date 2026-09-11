@@ -26,7 +26,7 @@ poko est un outil pensé pour créer des sites web légers, rapides et durables,
 
 Pour le logo, nous avons exploré des pistes autour des chevrons, ces petits signes <…> très présents dans le langage du code. Ils permettent de faire référence à l’univers technique de manière graphique, sans tomber dans une esthétique trop «geek».
 
-La typographie a également fait l’objet de nombreuses recherches : il fallait trouver le bon équilibre entre une police qui évoque le code et une lecture immédiate du nom poko. L’objectif était que le caractère technique soit présent dans l’identité, mais jamais au détriment de la lisibilité.
+Il fallait trouver le bon équilibre entre une police qui évoque le code et une lecture immédiate du nom poko. L’objectif était que le caractère technique soit présent dans l’identité, mais jamais au détriment de la lisibilité.
 
 ### Notre intervention
 
