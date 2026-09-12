@@ -4,7 +4,7 @@ order: 61
 lang: fr
 createdAt: 2026-09-12T13:56:00.000Z
 ldType: WebPage
-name: Livret A5 - Jeunes aidants proches
+name: Jeunes aidants proches
 metadata:
   image:
     src: /_images/portfolio/livret-jeunes-aidants/2.webp
