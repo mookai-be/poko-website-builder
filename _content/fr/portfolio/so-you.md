@@ -16,7 +16,7 @@ images: []
 
 # so You - Holistic Coaching
 
-Création de l’identité visuelle de So You, une activité de coaching holistique portée par Sophie, autour de l’équilibre entre vie professionnelle, vie personnelle et reconnexion à soi.
+Création de l’identité visuelle d'une activité de coaching holistique portée par Sophie, autour de l’équilibre entre vie professionnelle, vie personnelle et reconnexion à soi.
 
 ## Le projet
 
