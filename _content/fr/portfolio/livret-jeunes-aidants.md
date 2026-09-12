@@ -2,6 +2,8 @@
 translationKey: livret-jeunes-aidants
 order: 61
 lang: fr
+createdAt: 2026-09-12T13:56:00.000Z
+ldType: WebPage
 name: Livret A5 - Jeunes aidants proches
 metadata:
   image:
@@ -10,11 +12,24 @@ tags:
   - mise-en-page
   - print
   - illustration
+vars: {}
 images: []
 ---
 
-# Livret A5 - Jeunes aidants proches
+# Jeunes aidants proches
 
-Mise en page et illustrations d'un livret A5 sur les jeunes aidants proches.
+Conception graphique et mise en page d’un livret A5 destiné aux jeunes aidants proches.
+
+## Le projet
+
+Un support éditorial destiné à transmettre des informations à un public jeune. La mise en page devait rendre le contenu accessible, lisible et suffisamment vivant pour accompagner la lecture.
+
+### Notre intervention
+
+Direction artistique · mise en page · typographie · illustration · préparation print
+
+### Le petit+
+
+Un projet où le graphisme sert avant tout à rendre un contenu utile plus facile à comprendre et à parcourir.
 
 [Voir sur Behance](https://www.behance.net/gallery/123934897/Livret-A5-Jeunes-aidants-proches)
