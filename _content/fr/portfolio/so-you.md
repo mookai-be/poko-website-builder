@@ -24,9 +24,7 @@ Sophie s’est tournée vers le coaching avec une approche plus intuitive, nourr
 
 L’univers devait évoquer la douceur et l’apaisement de son accompagnement, mais aussi cette idée de solidité et de confiance sur laquelle ses clientes peuvent s’appuyer.
 
-Trois pistes ont été explorées: une libellule stylisée, un symbole végétal autour de la feuille ou de la graine, et une piste purement typographique.
-
-La piste finalement retenue privilégie une identité douce, organique et épurée, pensée pour fonctionner aussi bien seule que sur les photographies de nature et les contenus de communication de Sophie. Les formes arrondies et la typographie moderne renforcent cette sensation de simplicité et d’équilibre.
+L'identité finale privilégie la douceur, le côté organique et épurée, pensée pour fonctionner aussi bien seule que sur les photographies de nature. Les formes arrondies et la typographie moderne renforcent cette sensation de simplicité et d’équilibre.
 
 ### Notre intervention
 
