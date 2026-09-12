@@ -19,7 +19,7 @@ Direction artistique et mise en page du 1er tome de Django le croco, un livre po
 
 ## Le projet
 
-Le livre a été écrit par Véronique Vaucher et illustré par Pascal Coffez. Notre travail a consisté à construire la direction artistique et la mise en page afin de donner une cohérence à l’ensemble du livre et de mettre les illustrations au service de l’histoire.
+Le livre a été écrit par _Véronique Vaucher_ et illustré par _Pascal Coffez_. Notre travail a consisté à construire la direction artistique et la mise en page afin de donner une cohérence à l’ensemble du livre et de mettre les illustrations au service de l’histoire.
 
 ### Notre intervention
 
