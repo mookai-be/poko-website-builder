@@ -24,9 +24,7 @@ Après une première carrière dans un environnement professionnel très cartés
 
 L’univers devait évoquer la douceur et l’apaisement de son accompagnement, mais aussi cette idée de solidité et de confiance sur laquelle ses clientes peuvent s’appuyer.
 
-La recherche graphique
-
-Trois pistes ont été explorées : une libellule stylisée, un symbole végétal autour de la feuille ou de la graine, et une piste purement typographique.
+Trois pistes ont été explorées: une libellule stylisée, un symbole végétal autour de la feuille ou de la graine, et une piste purement typographique.
 
 La piste finalement retenue privilégie une identité douce, organique et épurée, pensée pour fonctionner aussi bien seule que sur les photographies de nature et les contenus de communication de Sophie. Les formes arrondies et la typographie moderne renforcent cette sensation de simplicité et d’équilibre.
 
@@ -36,6 +34,6 @@ Recherche graphique · logo · identité visuelle · typographies · palette de 
 
 ### Le petit+
 
-Un projet construit autour d’un équilibre subtil : faire ressentir le côté naturel et holistique du coaching sans enfermer la marque dans un univers trop « spirituel » ou trop végétal. L’identité devait avant tout laisser la place à Sophie et aux personnes qu’elle accompagne.
+Un projet construit autour d’un équilibre subtil: faire ressentir le côté naturel et holistique du coaching sans enfermer la marque dans un univers trop «spirituel» ou trop végétal. L’identité devait avant tout laisser la place à Sophie et aux personnes qu’elle accompagne.
 
 [Voir sur Behance](https://www.behance.net/gallery/116095147/so-You-Holistic-Coaching)
