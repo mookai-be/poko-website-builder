@@ -11,12 +11,23 @@ metadata:
 tags:
   - mise-en-page
   - print
-vars: {}
 images: []
 ---
 
 # JAVVA asbl - Rapport d'activité
 
-Mise en page du rapport d'activité de JAVVA asbl.
+Mise en page des rapports d’activité 2021 et 2022 de l’{% link url="https://javva.org/", type="external" %}ASBL JAVVA{% endlink %}
 
-[Voir sur Behance](https://www.behance.net/gallery/151953349/JAVVA-asbl-Rapport-dactitiv)
+.
+
+## Le projet
+
+Deux rapports d’activité réalisés à partir de la charte graphique existante de JAVVA. L’objectif était de structurer les contenus et de donner au document une lecture claire et cohérente avec l’identité de l’association.
+
+### Notre intervention
+
+Mise en page · hiérarchie de l’information · typographie · traitement des images · préparation print
+
+### Le petit+
+
+Un travail de mise en page qui s’appuie sur une identité existante plutôt que de la réinventer.[Voir sur Behance](https://www.behance.net/gallery/151953349/JAVVA-asbl-Rapport-dactitiv)
