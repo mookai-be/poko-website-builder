@@ -28,4 +28,6 @@ Mise en page · hiérarchie de l’information · typographie · traitement des 
 
 ### Le petit+
 
-Un travail de mise en page qui s’appuie sur une identité existante plutôt que de la réinventer.[Voir sur Behance](https://www.behance.net/gallery/151953349/JAVVA-asbl-Rapport-dactitiv)
+Un travail de mise en page qui s’appuie sur une identité existante plutôt que de la réinventer.
+
+[Voir sur Behance](https://www.behance.net/gallery/151953349/JAVVA-asbl-Rapport-dactitiv)
