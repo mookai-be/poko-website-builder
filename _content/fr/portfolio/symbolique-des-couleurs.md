@@ -21,7 +21,7 @@ Création d’un livret consacré à la symbolique des couleurs.
 
 ## Le projet
 
-Ce projet explore la valeur symbolique associée aux différentes couleurs et leur influence dans notre perception. Il a été décliné sous la forme d’un livret imprimé.
+Ce projet explore la valeur symbolique associée aux différentes couleurs et leur influence dans notre perception. Il a été décliné sous la forme d’un livret imprimé et est disponible en version pdf.
 
 ### Notre intervention
 
@@ -31,4 +31,4 @@ Direction artistique · recherche graphique · mise en page · illustration · l
 
 Un projet à la croisée du graphisme, de la transmission et de la recherche autour de la couleur.
 
-[Voir sur Behance](https://www.behance.net/gallery/129248415/Symbolique-des-couleurs-%28livretconfrence%29)
+[Voir sur Behance](https://www.behance.net/gallery/129248415/Symbolique-des-couleurs-%28livretconfrence%29) - {% link url="https://youtu.be/gBeuJysDUnc?si=ciD3kAua7KQHCkj3", type="external" %}Voir la vidéo de présentation{% endlink %}
