@@ -17,7 +17,7 @@ images: []
 
 # Rapport annuel 2021 - Comme Chez Toi ASBL
 
-Mise en page du rapport annuel 2022 de l’ASBL Comme Chez Toi.
+Mise en page du rapport annuel 2022 de l’{% link url="https://commecheztoi.org/", type="external" %}ASBL Comme Chez Toi{% endlink %}
 
 ## Le projet
 
