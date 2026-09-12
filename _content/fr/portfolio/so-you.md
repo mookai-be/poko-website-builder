@@ -32,6 +32,6 @@ Recherche graphique · logo · identité visuelle · typographies · palette de 
 
 ### Le petit+
 
-Un projet construit autour d’un équilibre subtil: faire ressentir le côté naturel et holistique du coaching sans enfermer la marque dans un univers trop «spirituel» ou trop végétal. L’identité devait avant tout laisser la place à Sophie et aux personnes qu’elle accompagne.
+Un projet construit autour d’un équilibre subtil: faire ressentir le côté naturel et holistique du coaching sans enfermer la marque dans un univers trop «spirituel» ou trop végétal.
 
 [Voir sur Behance](https://www.behance.net/gallery/116095147/so-You-Holistic-Coaching)
