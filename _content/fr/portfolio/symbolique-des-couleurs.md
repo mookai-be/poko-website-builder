@@ -21,7 +21,7 @@ Création d’un livret consacré à la symbolique des couleurs.
 
 ## Le projet
 
-Ce projet explore la valeur symbolique associée aux différentes couleurs et leur influence dans notre perception. Il a été décliné sous la forme d’un livret imprimé et d’un contenu destiné à accompagner une conférence.
+Ce projet explore la valeur symbolique associée aux différentes couleurs et leur influence dans notre perception. Il a été décliné sous la forme d’un livret imprimé.
 
 ### Notre intervention
 
