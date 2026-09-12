@@ -29,4 +29,7 @@ Direction artistique · mise en page · typographie · préparation du livre
 
 Un projet éditorial où la mise en page doit accompagner l’histoire sans prendre le dessus sur les illustrations.
 
+Écrit par Véronique Vaucher
+Illustré par {% link url="https://coffez.ch/#/", type="external" %}Pascal Coffez{% endlink %}
+
 [Voir sur Behance](https://www.behance.net/gallery/133197427/Django-le-croco-TOME-1)
