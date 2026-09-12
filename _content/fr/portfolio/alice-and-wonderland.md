@@ -23,7 +23,7 @@ Création de l’univers visuel pour {% link url="https://open.spotify.com/intl-
 
 Pour cet album, le {% link url="https://www.facebook.com/AvatarMusicProd/", type="external" %}LR Studio{% endlink %} a enregistré des sons de la nature pour composer les différents morceaux. Une démarche musicale qui place le vivant, les ambiances naturelles retravaillées au cœur du projet.
 
-L’enjeu était de traduire cette approche dans l’image. À partir d’une photographie de la chanteuse, nous avons créé une composition mêlant végétation et insectes pour prolonger visuellement cet univers organique et donner à l’image une dimension presque onirique.
+L’enjeu était de traduire cette approche dans l’image. À partir d’une photographie de la chanteuse, nous avons créé une composition mêlant végétation et insectes pour prolonger visuellement cet univers organique.
 
 ### Notre intervention
 
