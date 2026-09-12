@@ -18,7 +18,7 @@ images: []
 
 # Jeunes aidants proches
 
-Conception graphique et mise en page d’un livret A5 destiné aux jeunes aidants proches.
+Conception graphique et mise en page d’un livret A5 destiné aux {% link url="https://www.jeunesaidantsproches.be/", type="external" %}jeunes aidants proches{% endlink %}.
 
 ## Le projet
 
@@ -30,6 +30,6 @@ Direction artistique · mise en page · typographie · illustration · préparat
 
 ### Le petit+
 
-Un projet où le graphisme sert avant tout à rendre un contenu utile plus facile à comprendre et à parcourir.
+Un projet où lees illustrations digitales et le graphisme servent avant tout à rendre un contenu utile plus facile à comprendre et à parcourir.
 
 [Voir sur Behance](https://www.behance.net/gallery/123934897/Livret-A5-Jeunes-aidants-proches)
