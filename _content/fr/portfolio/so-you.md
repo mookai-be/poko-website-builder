@@ -20,7 +20,7 @@ Création de l’identité visuelle d'une activité de coaching holistique port�
 
 ## Le projet
 
-Après une première carrière dans un environnement professionnel très cartésien, Sophie s’est tournée vers le coaching et une approche plus intuitive, nourrie par la nature, l’énergie et le rapport au corps. Elle souhaitait une identité qui traduise cette évolution tout en restant ancrée, élégante et suffisamment contemporaine pour s’adresser à des femmes actives.
+Sophie s’est tournée vers le coaching avec une approche plus intuitive, nourrie par la nature, l’énergie et le rapport au corps. Elle souhaitait une identité qui traduise cette évolution tout en restant ancrée, élégante et suffisamment contemporaine pour s’adresser à des femmes actives.
 
 L’univers devait évoquer la douceur et l’apaisement de son accompagnement, mais aussi cette idée de solidité et de confiance sur laquelle ses clientes peuvent s’appuyer.
 
