@@ -24,8 +24,6 @@ Laurence souhaitait proposer des cours de Vinyasa Yoga accessibles aux débutant
 
 Le nom Shanti, qui évoque la paix en sanskrit, s’est naturellement associé à cette volonté de créer un espace bienveillant, où l’on prend le temps de revenir à soi.
 
-La recherche graphique
-
 Le logo s’est finalement construit autour du symbole du chakra du cœur, retravaillé dans une forme épurée et associé à un turquoise lumineux, choisi comme couleur centrale de l’identité.
 
 Ce choix fait écho à la notion de connexion et de bienveillance envers soi-même, deux idées essentielles dans la pratique proposée par Laurence.
