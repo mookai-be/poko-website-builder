@@ -11,7 +11,6 @@ metadata:
 tags:
   - branding
   - logo
-vars: {}
 images: []
 ---
 
