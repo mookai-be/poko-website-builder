@@ -16,9 +16,7 @@ images: []
 
 # JAVVA asbl - Rapport d'activité
 
-Mise en page des rapports d’activité 2021 et 2022 de l’{% link url="https://javva.org/", type="external" %}ASBL JAVVA{% endlink %}
-
-.
+Mise en page des rapports d’activité 2021 et 2022 de l’{% link url="https://javva.org/", type="external" %}ASBL JAVVA{% endlink %}.
 
 ## Le projet
 
