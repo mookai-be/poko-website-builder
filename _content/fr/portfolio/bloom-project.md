@@ -22,7 +22,7 @@ Création de supports de communication pour {% link url="https://www.bloomprojec
 
 ## Le projet
 
-Le projet consistait notamment à créer des dépliants en accordéon, à adapter la charte graphique existante avec une nouvelle palette de couleurs et une nouvelle sélection typographique, ainsi qu’à mettre en page les newsletters et créer de nouvelles cartes de visite.
+Le projet consistait à créer un dépliants en accordéon, en adaptant la charte graphique existante de l'époque avec une nouvelle palette de couleurs et une nouvelle sélection typographique, ainsi qu’à mettre en page les newsletters et créer de nouvelles cartes de visite.
 
 ### Notre intervention
 
@@ -30,4 +30,6 @@ Direction artistique · évolution de charte graphique · mise en page · dépli
 
 ### Le petit+
 
-Faire évoluer une identité existante sans repartir de zéro, pour lui donner davantage de cohérence sur les différents supports.[Voir sur Behance](https://www.behance.net/gallery/151952647/Bloom-project)
+Faire évoluer une identité existante sans repartir de zéro, pour lui donner davantage de cohérence sur les différents supports.
+
+[Voir sur Behance](https://www.behance.net/gallery/151952647/Bloom-project)
