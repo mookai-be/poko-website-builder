@@ -20,7 +20,7 @@ Création de l’univers graphique d’un cercle de femmes autour des cycles lun
 
 ## Le projet
 
-Un projet de communication autour de rencontres liées aux pleines lunes et nouvelles lunes. L’univers graphique s’appuie sur les notions de cycle, de nature et de féminin.
+Un projet autour de rencontres liées aux pleines lunes et nouvelles lunes. L’univers graphique s’appuie sur les notions de cycle, de nature et de féminin.
 
 ### Notre intervention
 
