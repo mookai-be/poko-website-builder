@@ -18,7 +18,7 @@ images:
 
 # Bloom project
 
-Création de supports de communication pour Bloom project et évolution de sa charte graphique.
+Création de supports de communication pour {% link url="https://www.bloomproject.be/", type="external" %}Bloom project{% endlink %} et évolution de sa charte graphique.
 
 ## Le projet
 
