@@ -34,6 +34,6 @@ Recherche de nom · identité visuelle · logo · palette de couleurs · support
 
 ### Le petit+
 
-Un projet où la recherche graphique s’est faite de manière assez intuitive. Comme le dit Laurence dans ses notes, le symbole est arrivé «d’un coup»: une évidence qui correspondait à l’esprit qu’elle voulait donner à son activité.
+Un projet où la recherche graphique s’est faite de manière assez intuitive. Le symbole est arrivé «d’un coup»: une évidence qui correspondait à l’esprit qu’elle voulait donner à son activité.
 
 [Voir sur Behance](https://www.behance.net/gallery/137237775/Shanti-Yoga-L)
