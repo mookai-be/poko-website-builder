@@ -11,11 +11,24 @@ metadata:
 tags:
   - illustration
 status: inactive
+vars: {}
 images: []
 ---
 
 # Alice and wonderland
 
-Illustrations inspirées d'Alice au pays des merveilles.
+Création de l’univers visuel pour {% link url="https://open.spotify.com/intl-fr/artist/5HTsIC7gLTNXIIJkQHnLLl?si=20rg_CxdRoSWDOwM8tM1sA", type="external" %}"Alice and the wonderland"{% endlink %}, un album musical construit entièrement à partir de sons enregistrés dans la nature.
 
-[Voir sur Behance](https://www.behance.net/gallery/199367917/Alice-and-wonderland)
+## Le projet
+
+Pour cet album, le {% link url="https://www.facebook.com/AvatarMusicProd/", type="external" %}LR Studio{% endlink %} a enregistré des sons de la nature pour composer les différents morceaux. Une démarche musicale qui place le vivant, les ambiances naturelles retravaillées au cœur du projet.
+
+L’enjeu était de traduire cette approche dans l’image. À partir d’une photographie de la chanteuse, nous avons créé une composition mêlant végétation et insectes pour prolonger visuellement cet univers organique et donner à l’image une dimension presque onirique.
+
+### Notre intervention
+
+Direction artistique · illustration · composition visuelle · retouche d’image
+
+### Le petit+
+
+Le choix des éléments naturels n’est pas simplement décoratif: il fait directement écho à la matière sonore de l’album et à la façon dont les morceaux ont été créés.
