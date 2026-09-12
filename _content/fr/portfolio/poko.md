@@ -16,7 +16,7 @@ tags:
 images: []
 ---
 
-# poko
+# pok
 
 Création de l’identité visuelle de poko, un outil de création de sites web performants, accessibles et éco-responsables.
 
