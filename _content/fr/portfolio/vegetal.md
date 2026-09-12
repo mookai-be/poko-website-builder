@@ -21,11 +21,11 @@ Une série de créations graphiques autour du végétal.
 
 ## Le projet
 
-Une recherche personnelle autour des formes végétales, de la matière et du dessin.
+Une recherche personnelle autour des formes végétales, de la matière et du dessin à partir de vrais plantes.
 
 ### Notre intervention
 
-Illustration · recherche graphique · dessin · Aquarelle · feutres · …
+Illustration · recherche graphique · dessin · Aquarelle · feutres · plantes…
 
 ### Le petit+
 
