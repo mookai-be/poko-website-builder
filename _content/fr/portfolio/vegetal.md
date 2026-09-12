@@ -25,7 +25,7 @@ Une recherche personnelle autour des formes végétales, de la matière et du de
 
 ### Notre intervention
 
-Illustration · recherche graphique · dessin · [techniques]
+Illustration · recherche graphique · dessin · Aquarelle · 
 
 ### Le petit+
 
