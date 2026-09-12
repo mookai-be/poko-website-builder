@@ -16,7 +16,7 @@ images: []
 
 # Shanti Yoga L.
 
-Création de l’identité visuelle de Shanti Yoga L., une pratique de yoga pensée pour reconnecter à son corps, à sa respiration et à soi-même.
+Création de l’identité visuelle d'une pratique de yoga pensée pour reconnecter à son corps, à sa respiration et à soi-même.
 
 ## Le projet
 
