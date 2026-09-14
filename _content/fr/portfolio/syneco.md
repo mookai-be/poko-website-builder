@@ -29,7 +29,7 @@ Chaque logo peut fonctionner seul, mais les 3 signes peuvent également se combi
 
 ### Notre intervention
 
-Lifting du logo · création de deux logos · identité visuelle · charte graphique · papeterie · déclinaisons graphiques
+Lifting du logo · création de 2 logos · identité visuelle · charte graphique · papeterie · déclinaisons graphiques
 
 ### Le petit+
 
