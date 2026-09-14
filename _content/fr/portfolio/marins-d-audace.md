@@ -19,7 +19,7 @@ images: []
 
 ## Le projet
 
-Mise en page d’un dossier de partenariat pour Marin d’audace, à partir d’une identité visuelle et d’une charte graphique existantes.
+Mise en page d’un dossier de partenariat pour Marie-Amélie Lenaerts "Marin d’audace", à partir d’une identité visuelle et d’une charte graphique existantes.
 
 L’objectif était de structurer les contenus et de créer un document clair, professionnel et cohérent avec l’univers graphique déjà établi.
 
