@@ -23,7 +23,7 @@ Mise en page d’une plaquette pour le projet Belgian Research Sailboat – Conn
 
 Le document avait pour objectif de présenter le projet et de convaincre de futurs partenaires, investisseurs et sponsors de rejoindre cette aventure scientifique.
 
-La plaquette devait rendre un projet scientifique complexe accessible et donner envie de s’y associer. La mise en page organise donc les informations pour faire ressortir à la fois la dimension scientifique du projet et son caractère collectif: «Scientific exploration is a team project… join us!»
+La plaquette devait rendre un projet scientifique complexe accessible et donner envie de s’y associer. La mise en page organise donc les informations pour faire ressortir à la fois la dimension scientifique du projet et son caractère collectif.
 
 ### Notre intervention
 
