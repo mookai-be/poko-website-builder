@@ -34,6 +34,6 @@ Création du logo · identité visuelle · charte graphique · recherche typogra
 
 ### Le petit+
 
-Un projet où le concept graphique traduit directement le mode d’intervention : l’équipe ne demande pas aux familles de venir à elle, elle vient à leur rencontre, directement chez elles.
+Un projet où le concept graphique traduit directement le mode d’intervention: l’équipe ne demande pas aux familles de venir à elle, elle vient à leur rencontre, directement chez elles. Et qui doit fonctionner dans une famille de logos existants.
 
 [Voir sur Behance](https://www.behance.net/gallery/115763375/EMPSA-asbl)
