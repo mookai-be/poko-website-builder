@@ -27,7 +27,7 @@ L’objectif était de créer un univers féminin et affirmé, en lien avec le n
 
 «Shakti» désigne, dans les traditions hindoues, l’énergie ou la puissance féminine. Cette idée est intégrée directement au logo typographique: le point du «i» est déplacé pour devenir un élément graphique à part entière, mis en valeur par une dorure à l'impression.
 
-Le «S» avait également une importance particulière: il se retrouve dans le prénom de Stéphanie, dans celui de sa fille et dans les deux mots du nom Sacred Shakti.
+Le «S» avait également une importance particulière: il se retrouve dans le prénom de Stéphanie, dans celui de sa fille et dans les 2 mots du nom Sacred Shakti.
 
 La palette aux couleurs intenses et chaleureuses, très inspirée de l’univers bollywoodien, fait écho au nom tout en renforçant la dimension féminine et énergique du projet.
 
