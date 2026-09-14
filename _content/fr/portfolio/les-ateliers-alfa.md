@@ -14,9 +14,20 @@ tags:
 images: []
 ---
 
-
 # Les Ateliers ALFA
 
-Création de l'identité visuelle de Les Ateliers ALFA.
+Lifting du logo des Ateliers ALFA.
+
+## Le projet
+
+Les Ateliers ALFA disposaient déjà d’une identité et souhaitaient faire évoluer leur logo sans repartir sur une création complètement différente. Le travail consistait à moderniser l’existant et à améliorer son efficacité graphique tout en conservant sa reconnaissance.
+
+### Notre intervention
+
+Lifting de logo · ajustements graphiques · modernisation du signe
+
+### Le petit+
+
+Une intervention légère mais ciblée: faire évoluer un logo existant sans perdre les repères qui permettent déjà de l’identifier.
 
 [Voir sur Behance](https://www.behance.net/gallery/77160825/Les-Ateliers-ALFA)
