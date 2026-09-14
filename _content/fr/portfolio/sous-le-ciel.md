@@ -17,19 +17,15 @@ images: []
 
 # Sous le ciel
 
-Création de l’identité visuelle et de la communication pour Sous le ciel, une pièce de théâtre écrite par René Bizac et mise en scène par Flore Vanhulst.
+Création de l’identité visuelle et de la communication pour Sous le ciel, une pièce de théâtre de René Bizac mise en scène par Flore Vanhulst.
 
-Pour ce projet, mon affiche a été retenue parmi 15 propositions. À partir de cette création, j’ai ensuite décliné l’identité visuelle pour l’ensemble de la communication du spectacle, joué notamment au Centre culturel Jacques Franck à Saint-Gilles.
+La pièce raconte l’histoire de Môme, réfugiée dans une zone hostile où elle rencontre l’Indien, lui-même à la recherche de sa sœur. Un univers de fuite, de survie et de rencontres, entre espace urbain et besoin d’évasion.
 
-Le travail s’est construit autour d’une affiche forte, pensée pour traduire visuellement l’univers de la pièce tout en restant lisible et identifiable sur les différents supports de communication.
-
-Des photographies réalisées pendant les répétitions ont également été intégrées à la communication, avec un travail de retouche et de composition pour conserver un lien direct avec le spectacle.
+Mon affiche a été retenue parmi 15 propositions. À partir de celle-ci, j’ai décliné l’identité visuelle pour l’ensemble de la communication du spectacle, joué notamment au Centre culturel Jacques Franck à Saint-Gilles.
 
 ## Le projet
 
-Le travail accompagnait la communication du spectacle, avec notamment la création et la retouche des images utilisées pour présenter la pièce.
-
-Une proposition graphique sélectionnée parmi 15 et devenue le fil conducteur de toute la communication du spectacle, de l’affiche aux différents supports de promotion.
+Le travail de retouche photo joue sur le contraste entre le ciel et le béton, entre une ouverture presque poétique et un environnement urbain plus dur. Les photographies réalisées pendant les répétitions ont été retravaillées et composées pour créer cette tension visuelle, en écho à l’atmosphère de la pièce.
 
 ### Notre intervention
 
@@ -37,6 +33,6 @@ Affiche · flyers · identité visuelle · direction artistique · retouche d’
 
 ### Le petit+
 
-Photographier le spectacle avant même sa création finale permettait de construire une communication à partir de son univers réel, plutôt que de chercher à l’illustrer artificiellement.
+Une proposition graphique sélectionnée parmi 15 et devenue le fil conducteur de toute la communication du spectacle, avec un travail de retouche qui traduit visuellement la tension entre ciel, béton et enfermement.
 
 [Voir sur Behance](https://www.behance.net/gallery/9347839/SOUS-LE-CIEL) · {% link url="http://www.theatreintranquille.be/spectacles_ciel.html", type="external" %}Infos sur la pièce{% endlink %}
