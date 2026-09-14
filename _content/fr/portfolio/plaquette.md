@@ -19,7 +19,7 @@ images: []
 
 ## Le projet
 
-Mise en page d’une plaquette pour le projet Belgian Research Sailboat – Connecting Science and Society de Marie-Amélie.
+Mise en page d’une plaquette pour le projet Belgian Research Sailboat – Connecting Science and Society de Marie-Amélie Lenaerts.
 
 Le document avait pour objectif de présenter le projet et de convaincre de futurs partenaires, investisseurs et sponsors de rejoindre cette aventure scientifique.
 
