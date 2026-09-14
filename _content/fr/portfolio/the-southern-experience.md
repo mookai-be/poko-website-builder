@@ -32,6 +32,6 @@ Recherche d’identité · logo · palette de couleurs · supports de communicat
 
 ### Le petit+
 
-Une identité pensée pour une activité à la carte: plutôt que de représenter une seule activité, l’univers graphique devait pouvoir englober tout ce qui fait la richesse de The Southern Experience.
+Une identité pensée pour une activité à la carte: plutôt que de représenter une seule activité, l’univers graphique devait pouvoir englober tout ce qui fait la richesse de The Southern Experience et pouvoir se décliner pour les différentes activités.
 
 [Voir sur Behance](https://www.behance.net/gallery/161891171/The-Southern-Experience) · {% link url="https://thesouthernexperiencebe.odoo.com/", type="external" %}Voir le site{% endlink %}
