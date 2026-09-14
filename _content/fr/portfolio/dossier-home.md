@@ -30,7 +30,7 @@ La mise en page accompagne ainsi un univers à la fois très quotidien, poétiqu
 
 ### Notre intervention
 
-Direction artistique · mise en page · composition graphique · traitement des visuels · création du dossier de diffusion
+Mise en page · composition graphique · traitement des visuels · création du dossier de diffusion
 
 ### Le petit+
 
