@@ -27,7 +27,7 @@ Lifting du logo et évolution de l’identité visuelle d’euroHouse, une agenc
 
 L’objectif était de donner à l’agence une image plus sérieuse et légèrement plus premium, tout en conservant la reconnaissance de son identité existante.
 
-Le travail s’est notamment concentré sur la couleur, avec la sélection d’un vert unique pour l’ensemble de l’identité. Ce choix permet d’harmoniser les différents supports et de renforcer une image plus sobre et professionnelle.
+En plus du lifting du logo, le travail s’est notamment concentré sur la couleur, avec la sélection d’un vert unique pour l’ensemble de l’identité. Ce choix permet d’harmoniser les différents supports et de renforcer une image plus sobre et professionnelle.
 
 ### Notre intervention
 
@@ -35,6 +35,6 @@ Lifting de logo · identité visuelle · palette de couleurs · supports promoti
 
 ### Le petit+
 
-Un exemple de travail où une identité gagne en professionnalisme non pas en ajoutant des éléments, mais en simplifiant et en harmonisant ce qui existe déjà.
+Un exemple de travail où une identité gagne en professionnalisme non pas en ajoutant des éléments, mais en simplifiant et en harmonisant ce qui existe déjà. Simplifier, harmoniser et renforcer la perception professionnelle de l’agence.
 
 [Voir sur Behance](https://www.behance.net/gallery/64022951/euroHouse)
