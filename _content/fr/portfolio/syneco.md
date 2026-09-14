@@ -33,6 +33,6 @@ Lifting du logo · création de 2 logos · identité visuelle · charte graphiqu
 
 ### Le petit+
 
-Penser l’identité comme un système : trois structures différentes, trois logos autonomes, mais un langage graphique commun qui permet de les relier.
+Penser l’identité comme un système: 3 structures différentes, 3 logos autonomes, mais 1 langage graphique commun qui permet de les relier.
 
 [Voir sur Behance](https://www.behance.net/gallery/67372471/syneco-asbl) · {% link url="https://www.syneco.be/", type="external" %}Voir le site{% endlink %}
