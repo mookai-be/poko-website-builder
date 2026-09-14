@@ -17,7 +17,7 @@ images: []
 
 # Rise for the Mind!
 
-Création du site web de Rise for the Mind avec le site builder {% link url="https://www.poko.eco/", type="external" %}poko.eco{% endlink %}.
+Un site associatif sur mesure, réalisé avec [poko](https://www.poko.eco/), pour une organisation engagée sur des sujets de santé mentale.
 
 ## Le projet
 
@@ -32,8 +32,6 @@ Direction artistique · palette de couleurs · recherche typographique · concep
 ### Le petit+
 
 Créer une identité visuelle à partir d’un élément déjà existant, puis la faire vivre directement dans un site web sans partir d’une charte graphique préétablie.
-
-Un site associatif sur mesure, réalisé avec [poko](https://www.poko.eco/), pour une organisation engagée sur des sujets de santé mentale.
 
 ### Quelques points forts
 
