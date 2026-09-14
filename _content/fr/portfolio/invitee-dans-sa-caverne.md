@@ -21,11 +21,11 @@ images: []
 
 Création d’une illustration sur commande intitulé: "Invité dans sa caverne".
 
-Le brief demandait une illustration très précise, avec des éléments et une composition répondant à un cahier des charges défini.
+Le brief demandait une illustration très précise, avec des éléments et une composition bien définie.
 
 ### Notre intervention
 
-Recherche graphique · illustration · composition · réalisation sur mesure
+Recherche graphique · illustration · réalisation sur mesure
 
 ### Le petit+
 
