@@ -26,7 +26,7 @@ Le nom Clarmony combine les notions de clarity et harmony.
 
 Ana se définissait comme quelqu’un de très «carré». La recherche a donc travaillé sur le passage du carré vers le cercle, de l’angle vers la rondeur, pour représenter une évolution vers davantage de fluidité et d’équilibre.
 
-La spirale dynamique, qui accompagne son approche du développement personnel, a également nourri la réflexion autour du processus d’évolution. La palette s’inspire de ses différents niveaux de progression, avec notamment le turquoise et l’opale comme couleurs centrales.
+{% link url="https://paradigm21.ch/wp-content/uploads/2020/04/paradigm21-blog-spirale-dynamique-niveaux-d-existence.png", type="external" %}La spirale dynamique{% endlink %}, qui accompagne son approche du développement personnel, a également nourri la réflexion autour du processus d’évolution. La palette s’inspire de ses différents niveaux de progression, avec notamment le turquoise et l’opale comme couleurs centrales.
 
 ### Notre intervention
 
@@ -34,6 +34,6 @@ Création du logo · identité visuelle · palette de couleurs · charte graphiq
 
 ### Le petit plus
 
-Le logo ne cherche pas à représenter une activité précise : il raconte plutôt un processus de transformation, avec des formes qui évoluent et des couleurs qui accompagnent les différentes étapes du cheminement.
+Le logo ne cherche pas à représenter une activité précise: il raconte plutôt un processus de transformation, avec des formes qui évoluent et des couleurs qui accompagnent les différentes étapes du cheminement.
 
 [Voir sur Behance](https://www.behance.net/gallery/115764617/clarmony)
