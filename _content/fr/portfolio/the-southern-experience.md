@@ -28,10 +28,10 @@ L’identité devait évoquer la nature sans tomber dans une esthétique trop «
 
 ### Notre intervention
 
-Naming · recherche d’identité · logo · palette de couleurs · supports de communication
+Recherche d’identité · logo · palette de couleurs · supports de communication
 
 ### Le petit+
 
 Une identité pensée pour une activité à la carte : plutôt que de représenter une seule activité, l’univers graphique devait pouvoir englober tout ce qui fait la richesse de The Southern Experience.
 
-[Voir sur Behance](https://www.behance.net/gallery/161891171/The-Southern-Experience)
+[Voir sur Behance](https://www.behance.net/gallery/161891171/The-Southern-Experience) · {% link url="https://thesouthernexperiencebe.odoo.com/", type="external" %}Voir le site{% endlink %}
