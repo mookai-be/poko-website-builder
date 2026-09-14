@@ -37,4 +37,4 @@ Recherche conceptuelle · création du logo · identité visuelle · recherche g
 
 Un logo qui cherche à rendre visible une idée essentielle du corps: tout est lié, et chaque mouvement a des conséquences sur l’ensemble.
 
-[Voir sur Behance](https://www.behance.net/gallery/60263391/Microtubules-asbl)
+[Voir sur Behance](https://www.behance.net/gallery/60263391/Microtubules-asbl) · {% link url="https://www.microtubules-asbl.be/", type="external" %}Voir le site{% endlink %}
