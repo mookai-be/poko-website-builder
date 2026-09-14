@@ -30,7 +30,7 @@ L’objectif était de créer un univers graphique identifiable à partir d’un
 
 Le travail s’est principalement concentré sur la typographie, en jouant avec les lettres pour créer un ensemble graphique cohérent plutôt qu’un simple mot composé.
 
-Le bleu et l’orange ont été retenus comme couleurs principales : une combinaison qui permet de créer un contraste franc et dynamique, tout en donnant à l’identité un côté accessible et technologique.
+Le bleu et l’orange ont été retenus comme couleurs principales: une combinaison qui permet de créer un contraste franc et dynamique, tout en donnant à l’identité un côté accessible et technologique.
 
 ### Notre intervention
 
