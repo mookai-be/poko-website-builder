@@ -17,7 +17,7 @@ images: []
 
 # Caractère(s)
 
-Le projet
+## Le projet
 
 Projet graphique personnel autour des mots, de la photographie et de la typographie.
 
@@ -27,11 +27,11 @@ Le travail consiste à chercher les correspondances entre l’image, le mot et l
 
 L’objectif n’est pas simplement d’écrire le mot, mais de lui donner une forme visuelle qui participe elle-même à son expression.
 
-Notre intervention
+### Notre intervention
 
 Photographie · recherche typographique · composition graphique · recherche visuelle
 
-Le petit+
+### Le petit+
 
 Un exercice autour du langage visuel, où chaque choix graphique cherche à faire ressentir le mot plutôt qu’à simplement le représenter.
 
