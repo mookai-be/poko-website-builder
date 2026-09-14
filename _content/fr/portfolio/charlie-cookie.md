@@ -20,9 +20,7 @@ images: []
 
 Création de l’identité visuelle de Charlie Cookie, accompagnée d’une direction artistique pour l’image de marque et les photographies des produits.
 
-Le logo intègre un signe de la main souvent utilisé par le client, transformé en élément graphique reconnaissable. Sa silhouette évoque également, lorsqu’on la regarde autrement, la crête d’une coquille d’œuf, un clin d’œil aux œufs présents dans les recettes des cookies.
-
-L’identité a ensuite servi de base pour guider l’univers photographique des produits.
+Le logo intègre un signe de la main souvent utilisé par le client, transformé en élément graphique reconnaissable. Sa silhouette évoque également, lorsqu’on la regarde autrement, la crête d'un coque, un clin d’œil éloigné aux œufs présents dans les recettes des cookies.
 
 ### Notre intervention
 
