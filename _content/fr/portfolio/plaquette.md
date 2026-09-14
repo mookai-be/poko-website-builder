@@ -1,6 +1,6 @@
 ---
 translationKey: plaquette
-order: 59
+order: 58
 lang: fr
 name: Plaquette
 metadata:
@@ -9,8 +9,10 @@ metadata:
 tags:
   - mise-en-page
   - print
+vars: {}
 images: []
 ---
+
 
 # Plaquette
 

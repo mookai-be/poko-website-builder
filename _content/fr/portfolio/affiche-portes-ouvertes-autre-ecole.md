@@ -1,6 +1,6 @@
 ---
 translationKey: affiche-portes-ouvertes-autre-ecole
-order: 45
+order: 44
 lang: fr
 name: Affiche portes ouvertes - L'Autre École
 metadata:
@@ -9,8 +9,10 @@ metadata:
 tags:
   - mise-en-page
   - print
+vars: {}
 images: []
 ---
+
 
 # Affiche portes ouvertes - L'Autre École
 

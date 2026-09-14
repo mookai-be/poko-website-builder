@@ -1,6 +1,6 @@
 ---
 translationKey: caracteres
-order: 39
+order: 38
 lang: fr
 createdAt: 2026-09-02T09:55:00.000Z
 ldType: WebPage
@@ -12,8 +12,10 @@ tags:
   - mise-en-page
   - photo
 status: inactive
+vars: {}
 images: []
 ---
+
 
 # CARACTERE(S)
 

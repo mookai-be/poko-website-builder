@@ -1,6 +1,6 @@
 ---
 translationKey: invitation-carte-postale
-order: 36
+order: 35
 lang: fr
 name: Invitation - carte postale
 metadata:
@@ -10,8 +10,10 @@ tags:
   - mise-en-page
   - print
   - illustration
+vars: {}
 images: []
 ---
+
 
 # Invitation - carte postale
 

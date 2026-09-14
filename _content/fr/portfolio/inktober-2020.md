@@ -1,6 +1,6 @@
 ---
 translationKey: inktober-2020
-order: 57
+order: 56
 lang: fr
 name: Inktober 2020
 metadata:
@@ -9,8 +9,10 @@ metadata:
 tags:
   - illustration
   - art
+vars: {}
 images: []
 ---
+
 
 # Inktober 2020
 

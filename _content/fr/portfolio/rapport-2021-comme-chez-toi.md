@@ -1,6 +1,6 @@
 ---
 translationKey: rapport-2021-comme-chez-toi
-order: 95
+order: 94
 lang: fr
 createdAt: 2026-09-12T13:38:00.000Z
 ldType: WebPage
@@ -11,9 +11,9 @@ metadata:
 tags:
   - mise-en-page
   - print
-vars: {}
 images: []
 ---
+
 
 # Rapport annuel 2021 - Comme Chez Toi ASBL
 

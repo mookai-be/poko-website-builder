@@ -1,6 +1,6 @@
 ---
 translationKey: bubbles
-order: 90
+order: 89
 lang: fr
 createdAt: 2026-08-27T10:30:00.000Z
 ldType: WebPage
@@ -12,11 +12,11 @@ tags:
   - branding
   - logo
   - print
-vars: {}
 images:
-  - url: https://images.ctfassets.net/1tq41wraq9ir/4oVg3xThgsGio4kC6ACSYI/e2a339317ebbd24f4e530eaf9b61536b/bubbles-imgcover.png
-    alt: Bubble's - identité visuelle
+  - alt: Bubble's - identité visuelle
+    url: https://images.ctfassets.net/1tq41wraq9ir/4oVg3xThgsGio4kC6ACSYI/e2a339317ebbd24f4e530eaf9b61536b/bubbles-imgcover.png
 ---
+
 
 # Bubble's
 

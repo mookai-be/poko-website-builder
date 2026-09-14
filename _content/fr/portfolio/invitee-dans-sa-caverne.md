@@ -1,6 +1,6 @@
 ---
 translationKey: invitee-dans-sa-caverne
-order: 52
+order: 51
 lang: fr
 name: Invitée dans sa caverne…
 metadata:
@@ -9,8 +9,10 @@ metadata:
 tags:
   - art
   - illustration
+vars: {}
 images: []
 ---
+
 
 # Invitée dans sa caverne…
 

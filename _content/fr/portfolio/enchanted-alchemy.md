@@ -1,6 +1,6 @@
 ---
 translationKey: enchanted-alchemy
-order: 40
+order: 39
 lang: fr
 createdAt: 2026-08-27T10:14:00.000Z
 ldType: WebPage

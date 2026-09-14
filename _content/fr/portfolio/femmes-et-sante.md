@@ -1,6 +1,6 @@
 ---
 translationKey: femmes-et-sante
-order: 51
+order: 50
 lang: fr
 createdAt: 2026-08-27T10:18:00.000Z
 ldType: WebPage
@@ -11,9 +11,9 @@ metadata:
 tags:
   - branding
   - logo
-vars: {}
 images: []
 ---
+
 
 # Femmes & Santé asbl
 

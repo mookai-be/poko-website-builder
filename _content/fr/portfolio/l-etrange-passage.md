@@ -1,6 +1,6 @@
 ---
 translationKey: l-etrange-passage
-order: 80
+order: 79
 lang: fr
 createdAt: 2026-08-27T10:27:00.000Z
 ldType: WebPage
@@ -15,9 +15,9 @@ tags:
   - logo
   - web
   - site-toile
-vars: {}
 images: []
 ---
+
 
 # L'étrange passage
 

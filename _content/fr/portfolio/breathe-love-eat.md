@@ -1,6 +1,6 @@
 ---
 translationKey: breathe-love-eat
-order: 60
+order: 59
 lang: fr
 createdAt: 2026-08-27T10:20:00.000Z
 ldType: WebPage
@@ -12,11 +12,11 @@ tags:
   - branding
   - logo
   - print
-vars: {}
 images:
-  - url: https://images.ctfassets.net/1tq41wraq9ir/lSlQPmEOuOyi4MSmemgam/f939f57a65b6c9160812cc214cf825b9/breathe-love-eat-imgcover.png
-    alt: Breathe love eat - identité visuelle
+  - alt: Breathe love eat - identité visuelle
+    url: https://images.ctfassets.net/1tq41wraq9ir/lSlQPmEOuOyi4MSmemgam/f939f57a65b6c9160812cc214cf825b9/breathe-love-eat-imgcover.png
 ---
+
 
 # Breathe love eat
 

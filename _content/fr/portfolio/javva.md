@@ -1,6 +1,6 @@
 ---
 translationKey: javva
-order: 85
+order: 84
 lang: fr
 createdAt: 2026-08-27T10:28:00.000Z
 ldType: WebPage
@@ -11,8 +11,10 @@ metadata:
 tags:
   - mise-en-page
   - print
+vars: {}
 images: []
 ---
+
 
 # JAVVA asbl - Rapport d'activité
 

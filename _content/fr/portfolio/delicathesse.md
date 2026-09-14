@@ -1,6 +1,6 @@
 ---
 translationKey: delicathesse
-order: 75
+order: 74
 lang: fr
 createdAt: 2026-08-27T10:24:00.000Z
 ldType: WebPage
@@ -13,25 +13,25 @@ tags:
   - illustration
   - branding
   - logo
-vars: {}
 images:
-  - url: /_images/delicathesse/1.webp
-    alt: déliCATHesse - identité visuelle
-  - url: /_images/delicathesse/2.webp
-    alt: déliCATHesse - identité visuelle
-  - url: /_images/delicathesse/3.webp
-    alt: déliCATHesse - identité visuelle
-  - url: /_images/delicathesse/4.webp
-    alt: déliCATHesse - identité visuelle
-  - url: /_images/delicathesse/5.webp
-    alt: déliCATHesse - identité visuelle
-  - url: /_images/delicathesse/6.webp
-    alt: déliCATHesse - identité visuelle
-  - url: /_images/delicathesse/7.webp
-    alt: déliCATHesse - identité visuelle
-  - url: /_images/delicathesse/8.webp
-    alt: déliCATHesse - identité visuelle
+  - alt: déliCATHesse - identité visuelle
+    url: /_images/delicathesse/1.webp
+  - alt: déliCATHesse - identité visuelle
+    url: /_images/delicathesse/2.webp
+  - alt: déliCATHesse - identité visuelle
+    url: /_images/delicathesse/3.webp
+  - alt: déliCATHesse - identité visuelle
+    url: /_images/delicathesse/4.webp
+  - alt: déliCATHesse - identité visuelle
+    url: /_images/delicathesse/5.webp
+  - alt: déliCATHesse - identité visuelle
+    url: /_images/delicathesse/6.webp
+  - alt: déliCATHesse - identité visuelle
+    url: /_images/delicathesse/7.webp
+  - alt: déliCATHesse - identité visuelle
+    url: /_images/delicathesse/8.webp
 ---
+
 
 # déliCATHesse
 

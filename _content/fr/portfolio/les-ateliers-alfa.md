@@ -1,6 +1,6 @@
 ---
 translationKey: les-ateliers-alfa
-order: 82
+order: 81
 lang: fr
 createdAt: 2026-08-27T10:27:00.000Z
 ldType: WebPage
@@ -11,9 +11,9 @@ metadata:
 tags:
   - branding
   - logo
-vars: {}
 images: []
 ---
+
 
 # Les Ateliers ALFA
 

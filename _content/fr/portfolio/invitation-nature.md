@@ -1,6 +1,6 @@
 ---
 translationKey: invitation-nature
-order: 41
+order: 40
 lang: fr
 name: Invitation 'nature'
 metadata:
@@ -10,8 +10,10 @@ tags:
   - mise-en-page
   - print
   - photo
+vars: {}
 images: []
 ---
+
 
 # Invitation 'nature'
 

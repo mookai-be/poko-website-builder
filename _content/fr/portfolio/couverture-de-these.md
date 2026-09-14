@@ -1,6 +1,6 @@
 ---
 translationKey: couverture-de-these
-order: 84
+order: 83
 lang: fr
 name: Couverture de thèse
 metadata:
@@ -8,8 +8,10 @@ metadata:
     src: /_images/portfolio/couverture-de-these/2.webp
 tags:
   - illustration
+vars: {}
 images: []
 ---
+
 
 # Couverture de thèse
 

@@ -1,6 +1,6 @@
 ---
 translationKey: illustration-d-apres-photo
-order: 68
+order: 67
 lang: fr
 createdAt: 2026-08-27T10:22:00.000Z
 ldType: WebPage
@@ -10,8 +10,10 @@ metadata:
     src: /_images/portfolio/illustration-d-apres-photo/8.webp
 tags:
   - illustration
+vars: {}
 images: []
 ---
+
 
 # Illustration d'après photo
 

@@ -1,6 +1,6 @@
 ---
 translationKey: projet-kimia
-order: 81
+order: 80
 lang: fr
 name: Projet Kimia
 metadata:
@@ -9,8 +9,10 @@ metadata:
 tags:
   - mise-en-page
   - print
+vars: {}
 images: []
 ---
+
 
 # Projet Kimia
 

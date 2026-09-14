@@ -1,6 +1,6 @@
 ---
 translationKey: therapie-nature
-order: 66
+order: 65
 lang: fr
 createdAt: 2026-08-27T10:21:00.000Z
 ldType: WebPage
@@ -13,8 +13,10 @@ tags:
   - logo
   - web
   - site-toile
+vars: {}
 images: []
 ---
+
 
 # Thérapie nature
 
