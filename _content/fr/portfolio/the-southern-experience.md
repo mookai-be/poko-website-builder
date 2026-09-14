@@ -24,7 +24,7 @@ Gilles souhaitait créer une activité permettant de faire découvrir la nature 
 
 Le projet s’adresse aussi bien aux touristes qu’aux familles, groupes et entreprises, avec une approche très personnalisée et des activités adaptées aux envies des participants.
 
-L’identité devait évoquer la nature sans tomber dans une esthétique trop « randonnée ». Les recherches se sont orientées vers des couleurs automnales, des verts, bruns et orangés, ainsi qu’un univers graphique chaleureux pouvant accompagner aussi bien des expériences de plein air que des activités plus pédagogiques.
+L’identité devait évoquer la nature sans tomber dans une esthétique trop «randonnée». Les recherches se sont orientées vers des couleurs automnales, des verts, bruns et orangés, ainsi qu’un univers graphique chaleureux pouvant accompagner aussi bien des expériences de plein air que des activités plus pédagogiques.
 
 ### Notre intervention
 
