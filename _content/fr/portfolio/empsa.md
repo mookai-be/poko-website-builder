@@ -18,13 +18,13 @@ images: []
 
 ## Le projet
 
-Création de l’identité visuelle de l’EMPSA — Équipe Mobile Prévention Soutien Aidance — un projet pilote lié à l’ASBL Jeunes Aidants Proches.
+Création de l’identité visuelle de l’EMPSA (Équipe Mobile Prévention Soutien Aidance) un projet pilote lié à l’ASBL Jeunes Aidants Proches.
 
 L’EMPSA accompagne les jeunes aidants et les aidants proches lorsqu’une situation de dépendance bouleverse l’organisation familiale. L’équipe pluridisciplinaire intervient principalement à domicile pour informer, soutenir, coordonner les aides et prévenir l’épuisement, en construisant l’accompagnement avec la famille.
 
-Le nom EMPSA résume les principes du projet : Équipe, Mobile, Prévention, Soutien, Aidance. La notion de mobilité était particulièrement importante : contrairement à une permanence où la famille doit se déplacer, l’EMPSA vient directement chez elle.
+Le nom EMPSA résume les principes du projet: Équipe, Mobile, Prévention, Soutien, Aidance. La notion de mobilité était particulièrement importante: contrairement à une permanence où la famille doit se déplacer, l’EMPSA vient directement chez elle.
 
-Le logo s’appuie ainsi sur l’idée d’un toit protecteur, qui évoque le domicile, l’accompagnement et le fait d’être là « sous leur toit ». Une identité chaleureuse et rassurante a été privilégiée pour traduire l’empathie, la bienveillance et cette volonté d’apporter une véritable bouffée d’air dans le quotidien des familles.
+Le logo s’appuie ainsi sur l’idée d’un toit protecteur, qui évoque le domicile, l’accompagnement et le fait d’être là «sous leur toit». Une identité chaleureuse et rassurante a été privilégiée pour traduire l’empathie, la bienveillance et cette volonté d’apporter une véritable bouffée d’air dans le quotidien des familles.
 
 L’identité devait également pouvoir s’intégrer à l’univers graphique existant d’Aidants Proches et de Jeunes Aidants Proches, tout en donnant à l’EMPSA une identité propre.
 
