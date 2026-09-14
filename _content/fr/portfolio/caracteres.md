@@ -23,7 +23,7 @@ Projet graphique personnel autour des mots, de la photographie et de la typograp
 
 Pour chaque composition, un mot est choisi comme point de départ, accompagné d’une photographie personnelle et d’un travail typographique destiné à créer une image cohérente avec son sens et son atmosphère.
 
-Le travail consiste à chercher les correspondances entre l’image, le mot et la typographie : taille, position, rythme, caractère et interaction avec la photographie.
+Le travail consiste à chercher les correspondances entre l’image, le mot et la typographie: taille, position, rythme, caractère et interaction avec la photographie.
 
 L’objectif n’est pas simplement d’écrire le mot, mais de lui donner une forme visuelle qui participe elle-même à son expression.
 
