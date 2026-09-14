@@ -37,6 +37,6 @@ Recherche graphique · création du logo · identité visuelle · typographie ·
 
 ### Le petit+
 
-Un logo typographique où chaque détail a une histoire: le "S" comme fil rouge familial et le point du i transformé en symbole de l’énergie féminine.
+Un logo typographique où chaque détail a une histoire: le "S" comme fil rouge familial et le point du "i" transformé en symbole de l’énergie féminine.
 
 [Voir sur Behance](https://www.behance.net/gallery/54731757/Sacred-Shakti)
