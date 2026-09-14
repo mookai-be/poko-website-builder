@@ -25,10 +25,10 @@ Le brief demandait une illustration très précise, avec des éléments et une c
 
 ### Notre intervention
 
-Recherche graphique · illustration · réalisation sur mesure
+Croquis préparatoire · moodboard · illustration · réalisation sur mesure
 
 ### Le petit+
 
-Une illustration réalisée entièrement sur mesure pour répondre précisément à l’univers et aux contraintes du projet.
+Une illustration réalisée entièrement sur mesure pour répondre précisément aux contraintes du projet.
 
 [Voir sur Behance](https://www.behance.net/gallery/68940651/Invite-dans-sa-caverne)
