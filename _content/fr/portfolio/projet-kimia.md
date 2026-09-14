@@ -17,7 +17,7 @@ images: []
 
 # Projet Kimia
 
-Mise en page et direction artistique d’un dossier de présentation pour un projet porté par La Touline ASBL.
+Mise en page et direction artistique d’un dossier de présentation pour un projet porté par {% link url="http://www.latouline.be/", type="external" %}La Touline ASBL{% endlink %}.
 
 ## Le projet
 
