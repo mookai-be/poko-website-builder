@@ -25,7 +25,7 @@ Création de l’identité visuelle de Bubble’s, un concept d’événements i
 
 Le concept propose aux visiteurs de choisir plusieurs ateliers et de s’immerger dans une «bulle» de découverte, de rencontre et de bien-être.
 
-Les trois « B » du nom font référence aux trois dimensions du bien-être : l’individu, son cadre de vie et la société. Aurélie souhaitait pouvoir jouer avec les formes et les couleurs dans sa communication.
+Les trois «B» du nom font référence aux trois dimensions du bien-être: l’individu, son cadre de vie et la société. Aurélie souhaitait pouvoir jouer avec les formes et les couleurs dans sa communication.
 
 La typographie a donc été choisie pour permettre de zoomer sur certains détails et d’utiliser ses pleins et déliés comme de véritables formes graphiques.
 
