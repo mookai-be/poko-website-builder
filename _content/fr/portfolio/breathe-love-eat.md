@@ -21,7 +21,7 @@ images:
 
 ## Le projet
 
-Évolution de l’identité visuelle de Breathe Love Eat, le projet de Valérie Maraud autour des repas en pleine conscience et du Transformational Breath.
+Évolution de l’identité visuelle de Breathe Love Eat, projet de Valérie Maraud autour des repas en pleine conscience et du Transformational Breath.
 
 L’objectif était de faire évoluer le logo existant tout en conservant la personnalité du projet.
 
