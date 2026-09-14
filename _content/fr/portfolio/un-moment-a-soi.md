@@ -39,4 +39,4 @@ Identité visuelle · logo · palette de couleurs · shooting photo · site web 
 
 Créer une identité qui ne reste pas seulement jolie sur écran: elle s’inscrit dans un lieu réel et crée une continuité entre l’espace, les supports imprimés, le web et l’expérience proposée.
 
-[Voir sur Behance](https://www.behance.net/gallery/51291333/UN-MOMENT-A-SOI-espace-beaut-et-bien-etre) ·
+[Voir sur Behance](https://www.behance.net/gallery/51291333/UN-MOMENT-A-SOI-espace-beaut-et-bien-etre) · {% link url="https://www.unmomentasoi.eu/", type="external" %}Voir le site{% endlink %}
