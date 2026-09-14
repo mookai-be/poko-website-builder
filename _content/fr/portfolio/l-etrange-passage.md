@@ -20,9 +20,11 @@ images: []
 
 # L'étrange passage
 
-Refonte complète de l’identité visuelle de L’étrange Passage,…
+Refonte complète de l’identité visuelle de L’étrange passage, un univers d’accompagnement autour du bien-être émotionnel, du corps et des huiles essentielles.
 
-## Le projet
+L’objectif était de faire évoluer l’image de la marque tout en conservant certains éléments de son identité existante et de son histoire.
+
+Le jaune safran du logo existant a été conservé pour sa symbolique et est devenu un élément central de la nouvelle identité. Le travail a ensuite permis de construire un univers plus cohérent et reconnaissable autour de cette couleur.Le projet
 
 L’objectif était de faire évoluer l’identité visuelle existante et de lui donner un univers graphique plus cohérent, identifiable et contemporain, tout en conservant certains éléments importants de son histoire.
 
