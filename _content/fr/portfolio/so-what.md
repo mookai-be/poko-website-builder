@@ -22,7 +22,7 @@ Création de la pochette d’album pour So What, un groupe de jazz.
 
 Le challenge était de composer une image cohérente à partir de photographies fournies des différents membres du groupe, photographiés séparément.
 
-Les portraits ont été assemblés en bandes verticales pour créer une composition commune en évoquant un rythme. Le choix typographique et la palette de couleurs viennent ensuite renforcer cette construction et donner une véritable unité à l’ensemble.
+Les portraits ont été assemblés en bandes verticales pour créer une composition commune en évoquant un rythme. Le choix typographique et la couleur viennent ensuite renforcer cette construction et donner une véritable unité à l’ensemble.
 
 ### Notre intervention
 
