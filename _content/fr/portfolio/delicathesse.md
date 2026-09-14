@@ -48,6 +48,6 @@ Création du logo · identité visuelle · recherche typographique · palette de
 
 ### Le petit+
 
-Le travail sur le nom et le logo permet de faire ressortir CATH dans déliCATHesse : une petite astuce graphique qui donne une dimension personnelle à la marque tout en conservant son nom d’activité
+Le travail sur le nom et le logo permet de faire ressortir le "CATH" de Catherine dans déliCATHesse: une petite astuce graphique qui donne une dimension personnelle à la marque tout en conservant son nom d’activité
 
 [Voir sur Behance](https://www.behance.net/gallery/9351617/dliCATHesse)
