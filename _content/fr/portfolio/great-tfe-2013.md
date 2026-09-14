@@ -32,6 +32,6 @@ Namming · Communication visuelle · recherche graphique · supports de communic
 
 ### Le petit+
 
-Le projet brouillait volontairement les frontières entre restaurant, lieu culturel et espace de rencontre. L’identité devait donc pouvoir faire cohabiter food, art, culture et convivialité.
+Le projet brouillait volontairement les frontières entre restaurant, lieu culturel et espace de rencontre. L’identité devait donc pouvoir s'adapter à événement et faire cohabiter food, art, culture et convivialité.
 
 [Voir sur Behance](https://www.behance.net/gallery/9347927/GREAT-TFE-2013)
