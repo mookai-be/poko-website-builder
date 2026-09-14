@@ -23,7 +23,7 @@ images:
 
 ## Le projet
 
-Création de l’identité visuelle et de l’univers de communication d’Un moment à Soi, l’activité de Florence, esthéticienne.
+Création de l’identité visuelle d'une esthéticienne et de l’univers de communication pour Florence.
 
 Florence est arrivée avec un premier dépliant imprimé sur papier verdâtre et une petite plume dessinée au trait. Comme elle s’installait dans un nouveau cabinet, l’idée était de construire une identité qui soit directement liée à ce nouvel espace.
 
