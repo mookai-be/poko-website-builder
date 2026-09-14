@@ -24,7 +24,7 @@ images:
 
 ## Le projet
 
-Création de l’identité visuelle de toile.io, un projet de logo typographique autour du nom de domaine toile.io
+Création de l’identité visuelle de toile.io.
 
 L’objectif était de créer un univers graphique identifiable à partir d’un nom court, tout en construisant une identité suffisamment simple et flexible pour accompagner le projet web dans toute sa communication.
 
