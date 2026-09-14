@@ -23,7 +23,7 @@ images:
 
 Création de l’identité visuelle d’Anandaca, l’activité de Catherine Sterck autour de la psychologie clinique et des approches psycho-corporelles.
 
-L’identité devait pouvoir accompagner plusieurs facettes de sa pratique : psychologie clinique, approche psycho-corporelle, relaxothérapie, massages et soins énergétiques.
+L’identité devait pouvoir accompagner toutes les facettes de sa pratique: psychologie clinique, approche psycho-corporelle, relaxothérapie, massages et soins énergétiques.
 
 Le logo a été conçu comme un assemblage de galets interchangeables. Chaque forme peut ainsi s’adapter et se combiner différemment, à l’image des différentes dimensions de l’activité.
 
