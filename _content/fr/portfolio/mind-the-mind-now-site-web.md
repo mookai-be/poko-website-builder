@@ -27,7 +27,7 @@ Pour poser les bases de l’univers visuel, nous sommes partis de la couverture 
 
 ### Notre intervention
 
-Direction artistique · palette de couleurs · recherche typographique · conception du site web · intégration avec poko.eco
+Direction artistique · palette de couleurs · recherche typographique · conception du site web
 
 ### Le petit+
 
