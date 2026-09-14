@@ -34,4 +34,4 @@ Direction artistique · recherche graphique · création de l’affiche · déco
 
 Une affiche fabriquée avec les mains pour une école qui place elle aussi l’expérimentation et la créativité au cœur de l’apprentissage.
 
-[Voir sur Behance](https://www.behance.net/gallery/213829175/Affiche-portes-ouvertes-lAutre-cole)
+[Voir sur Behance](https://www.behance.net/gallery/213829175/Affiche-portes-ouvertes-lAutre-cole) · {% link url="https://www.autre-ecole.org/", type="external" %}Voir le site{% endlink %}
