@@ -20,7 +20,7 @@ images: []
 
 ## Le projet
 
-Création du dossier de diffusion de HOME, une pièce de théâtre de Magrit Coulon, avec une direction artistique portée par Meryl Moens et Magrit Coulon.
+Création du dossier de diffusion de "HOME", une pièce de théâtre de Magrit Coulon, avec une direction artistique portée par Meryl Moens et Magrit Coulon.
 
 La pièce plonge dans le quotidien de trois résident·es d’une maison de retraite, entre attente, solitude, souvenirs, gestes répétitifs et moments de vie. Un huis clos où le temps semble parfois ne plus avoir prise que sur les corps.
 
