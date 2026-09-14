@@ -31,7 +31,7 @@ La typographie a donc été choisie pour permettre de zoomer sur certains détai
 
 ### otre intervention
 
-Création du logo · identité visuelle · charte graphique · éléments de communication · carte de visite · photographie du premier événement · photographies
+Création du logo · identité visuelle · charte graphique · éléments de communication · carte de visite · photographie du premier événement
 
 ### Le petit+
 
