@@ -17,7 +17,7 @@ images: []
 
 # Belgian Research Sailboat
 
-Le projet
+## Le projet
 
 Mise en page d’une plaquette pour le projet Belgian Research Sailboat – Connecting Science and Society de Marie-Amélie.
 
@@ -25,11 +25,11 @@ Le document avait pour objectif de présenter le projet et de convaincre de futu
 
 La plaquette devait rendre un projet scientifique complexe accessible et donner envie de s’y associer. La mise en page organise donc les informations pour faire ressortir à la fois la dimension scientifique du projet et son caractère collectif: «Scientific exploration is a team project… join us!»
 
-Notre intervention
+### Notre intervention
 
 Direction graphique · mise en page · hiérarchisation des contenus · composition éditoriale
 
-Le petit+
+### Le petit+
 
 Transformer un document de présentation en véritable outil de recherche de partenaires, capable de raconter le projet tout en donnant envie d’en faire partie.
 
