@@ -19,15 +19,15 @@ images: []
 
 Création d’illustrations vectorielles pour les cinq chapitres du BGF Mag 2019, le magazine du {% link url="https://brusselsgamesfestival.be/fr/accueil/", type="external" %}Brussels Games Festival{% endlink %}, autour du thème des commandements du joueur éco-responsable.
 
-Chaque chapitre aborde une facette différente d’une pratique plus durable du jeu de société : acheter de manière réfléchie, privilégier une production responsable, adopter les bons réflexes, faire vivre la communauté et découvrir les alternatives proposées par le festival.
+Chaque chapitre aborde une facette différente d’une pratique plus durable du jeu de société: acheter de manière réfléchie, privilégier une production responsable, adopter les bons réflexes, faire vivre la communauté et découvrir les alternatives proposées par le festival.
 
-L’objectif était de traduire ces différents commandements en illustrations simples, colorées et immédiatement compréhensibles, tout en conservant un univers ludique cohérent avec celui du Brussels Games Festival.
+L’objectif était de traduire ces différents commandements en illustrations simples, colorées et immédiatement compréhensibles, tout en conservant la palette de couleurs déjà choisie pour le magazine.
 
-Les illustrations accompagnent ainsi les cinq chapitres du magazine et permettent de rendre un sujet parfois sérieux plus accessible aux joueurs.
+Les illustrations accompagnent ainsi les 5 chapitres du magazine et permettent de rendre un sujet parfois sérieux plus accessible aux joueurs.
 
 ### Notre intervention
 
-Direction artistique · recherche graphique · illustrations vectorielles · déclinaison pour les 5 chapitres
+Recherche graphique · illustrations vectorielles · déclinaison pour les 5 chapitres
 
 ### Le petit+
 
