@@ -1,6 +1,6 @@
 ---
 translationKey: projet-kimia
-order: 77
+order: 76
 lang: fr
 name: Projet Kimia
 metadata:

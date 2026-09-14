@@ -1,6 +1,6 @@
 ---
 translationKey: plaquette
-order: 55
+order: 54
 lang: fr
 name: Plaquette
 metadata:

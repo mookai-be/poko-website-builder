@@ -1,6 +1,6 @@
 ---
 translationKey: logo-comptable-fd
-order: 79
+order: 78
 lang: fr
 createdAt: 2026-08-27T10:28:00.000Z
 ldType: WebPage
