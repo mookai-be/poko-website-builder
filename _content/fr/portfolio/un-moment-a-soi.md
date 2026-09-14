@@ -29,7 +29,7 @@ Elle est arrivée avec un premier dépliant imprimé sur papier verdâtre et une
 
 Plutôt que de choisir les couleurs à distance, je suis venue découvrir le cabinet et photographier les différents éléments déjà choisis: essuies, peinture murale, mobilier et matériel. Ces références ont permis de construire une palette cohérente avec le lieu et son ambiance.
 
-La plume souhaitée par Florence a également été retravaillée pour devenir plus affirmée, organique et généreuse, à l’image de sa personnalité, plutôt que de partir sur une représentation très fine et délicate.
+La plume souhaitée par Florence a également été retravaillée pour devenir plus affirmée et généreuse, à l’image de sa personnalité, plutôt que de partir sur une représentation très fine et délicate.
 
 ### Notre intervention
 
