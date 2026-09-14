@@ -27,6 +27,8 @@ L’objectif était de structurer les contenus et de créer un document clair, p
 
 Mise en page · hiérarchisation des contenus · déclinaison de la charte graphique · création du dossier de partenariat
 
+Logo typographique et charte graphique par Hugo Fustier.
+
 ### Le petit+
 
 Un travail principalement éditorial et graphique, où l’enjeu est de faire vivre une identité existante sur un document dense sans la surcharger.
