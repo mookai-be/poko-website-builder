@@ -31,11 +31,11 @@ Plutôt que de choisir les couleurs à distance, je suis venue découvrir le cab
 
 La plume souhaitée par Florence a également été retravaillée pour devenir plus affirmée, organique et généreuse, à l’image de sa personnalité, plutôt que de partir sur une représentation très fine et délicate.
 
-Notre intervention
+### Notre intervention
 
 Identité visuelle · logo · palette de couleurs · shooting photo · site web · dépliant · cachet plume · visuels pour les réseaux sociaux
 
-Le petit+
+### Le petit+
 
 Créer une identité qui ne reste pas seulement jolie sur écran : elle s’inscrit dans un lieu réel et crée une continuité entre l’espace, les supports imprimés, le web et l’expérience proposée.
 
