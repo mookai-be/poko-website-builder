@@ -33,7 +33,7 @@ La plume souhaitée par Florence a également été retravaillée pour devenir p
 
 ### Notre intervention
 
-Identité visuelle · logo · palette de couleurs · shooting photo · site web · dépliant · cachet plume · visuels pour les réseaux sociaux
+Identité visuelle · logo · palette de couleurs · shooting photo · site web · dépliant · cachet · visuels pour les réseaux sociaux
 
 ### Le petit+
 
