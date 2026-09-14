@@ -29,7 +29,7 @@ Création de l’identité visuelle complète de Feed by Design, le studio cré�
 
 L’identité devait traduire la complémentarité de leurs deux personnalités et leur manière différente d’aborder les projets créatifs et numériques.
 
-Le renard a été choisi pour représenter Marc, avec son côté trickster : une figure malicieuse, rusée et débrouillarde, capable de détourner les chemins habituels pour trouver des solutions.
+Le renard a été choisi pour représenter Marc, avec son côté trickster: une figure malicieuse, rusée et débrouillarde, capable de détourner les chemins habituels pour trouver des solutions.
 
 La libellule représente Tess et son approche plus intuitive du graphisme. Le petit point placé comme un troisième œil vient évoquer cette intuition, l’observation et la capacité à percevoir les choses autrement.
 
