@@ -33,7 +33,7 @@ La palette aux couleurs intenses et chaleureuses, très inspirée de l’univers
 
 ### Notre intervention
 
-Recherche graphique · création du logo · identité visuelle · typographie · palette de couleurs · dorure
+Recherche graphique · création du logo · identité visuelle · typographie · palette de couleurs
 
 ### Le petit+
 
