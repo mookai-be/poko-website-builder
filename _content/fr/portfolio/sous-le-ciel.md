@@ -19,11 +19,11 @@ images: []
 
 Création de l’identité visuelle et de la communication pour Sous le ciel, une pièce de théâtre de René Bizac mise en scène par Flore Vanhulst.
 
+## Le projet
+
 La pièce raconte l’histoire de Môme, réfugiée dans une zone hostile où elle rencontre l’Indien, lui-même à la recherche de sa sœur. Un univers de fuite, de survie et de rencontres, entre espace urbain et besoin d’évasion.
 
 Mon affiche a été retenue parmi 15 propositions. À partir de celle-ci, j’ai décliné l’identité visuelle pour l’ensemble de la communication du spectacle, joué notamment au Centre culturel Jacques Franck à Saint-Gilles.
-
-## Le projet
 
 Le travail de retouche photo joue sur le contraste entre le ciel et le béton, entre une ouverture presque poétique et un environnement urbain plus dur. Les photographies réalisées pendant les répétitions ont été retravaillées et composées pour créer cette tension visuelle, en écho à l’atmosphère de la pièce.
 
