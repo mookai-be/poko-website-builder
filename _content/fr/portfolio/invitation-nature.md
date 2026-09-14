@@ -19,7 +19,7 @@ images: []
 
 ## Le projet
 
-Création d’une série d’invitations à partir de photographies de végétaux réalisées sur papier.
+Création d’invitation à partir de photographies de végétaux placés sur papier.
 
 L’objectif était de créer une matière visuelle organique pouvant ensuite accueillir les informations de l’invitation.
 
