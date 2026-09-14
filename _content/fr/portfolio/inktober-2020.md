@@ -1,6 +1,6 @@
 ---
 translationKey: inktober-2020
-order: 56
+order: 55
 lang: fr
 name: Inktober 2020
 metadata:

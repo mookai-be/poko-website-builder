@@ -1,6 +1,6 @@
 ---
 translationKey: my-go
-order: 72
+order: 71
 lang: fr
 createdAt: 2026-08-27T10:23:00.000Z
 ldType: WebPage

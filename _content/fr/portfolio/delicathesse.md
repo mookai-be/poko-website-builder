@@ -1,6 +1,6 @@
 ---
 translationKey: delicathesse
-order: 74
+order: 73
 lang: fr
 createdAt: 2026-08-27T10:24:00.000Z
 ldType: WebPage

@@ -1,6 +1,6 @@
 ---
 translationKey: so-what
-order: 71
+order: 70
 lang: fr
 name: SO WHAT
 metadata:

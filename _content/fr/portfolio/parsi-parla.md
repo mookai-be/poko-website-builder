@@ -1,6 +1,6 @@
 ---
 translationKey: parsi-parla
-order: 54
+order: 53
 lang: fr
 createdAt: 2026-08-27T10:18:00.000Z
 ldType: WebPage

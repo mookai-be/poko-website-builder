@@ -1,6 +1,6 @@
 ---
 translationKey: clarmony
-order: 73
+order: 72
 lang: fr
 createdAt: 2026-08-27T10:23:00.000Z
 ldType: WebPage
