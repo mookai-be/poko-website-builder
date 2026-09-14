@@ -18,9 +18,22 @@ tags:
 images: []
 ---
 
-
 # L'étrange passage
 
-Création de l'identité visuelle, mise en page et création d'un site web pour L'étrange passage.
+Refonte complète de l’identité visuelle de L’étrange Passage,…
 
-[Voir sur Behance](https://www.behance.net/gallery/115765033/Ltrange-passage)
+## Le projet
+
+L’objectif était de faire évoluer l’identité visuelle existante et de lui donner un univers graphique plus cohérent, identifiable et contemporain, tout en conservant certains éléments importants de son histoire.
+
+Le safran, déjà présent dans l’identité, a notamment été conservé pour sa symbolique et est devenu un élément fort de la nouvelle direction graphique.
+
+### Notre intervention
+
+Refonte de l’identité visuelle · logo · palette de couleurs · direction artistique · supports de communication · photographie · site web
+
+### Le petit+
+
+Une refonte complète ne signifie pas forcément repartir de zéro: ici, le travail consistait aussi à identifier ce qui avait déjà du sens dans l’identité existante pour le faire évoluer plutôt que l’effacer.
+
+[Voir sur Behance](https://www.behance.net/gallery/115765033/Ltrange-passage) · {% link url="https://www.letrangepassage.be/", type="external" %}Voir le site{% endlink %}
