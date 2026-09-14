@@ -21,7 +21,7 @@ images: []
 
 Création d’une invitation sous forme de carte postale pour l’anniversaire d'une petite fille de 2 ans.
 
-Des illustrations réalisées à l’aquarelle et au feutre ont été privilégiées pour créer un univers doux, coloré et spontané, adapté à l’âge des enfants.
+Illustrations réalisée à l’aquarelle et au feutre ont été privilégiées pour créer un univers doux, coloré et spontané, adapté à l’âge des enfants.
 
 ### Notre intervention
 
