@@ -1,6 +1,6 @@
 ---
 translationKey: katia-delvaille-consulting
-order: 74
+order: 72
 lang: fr
 createdAt: 2026-08-18T08:46:00.000Z
 ldType: WebPage

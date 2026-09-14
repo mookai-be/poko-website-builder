@@ -1,6 +1,6 @@
 ---
 translationKey: les-ateliers-alfa
-order: 80
+order: 78
 lang: fr
 createdAt: 2026-08-27T10:27:00.000Z
 ldType: WebPage

@@ -1,6 +1,6 @@
 ---
 translationKey: therapie-nature
-order: 64
+order: 62
 lang: fr
 createdAt: 2026-08-27T10:21:00.000Z
 ldType: WebPage

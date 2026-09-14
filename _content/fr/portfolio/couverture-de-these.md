@@ -1,6 +1,6 @@
 ---
 translationKey: couverture-de-these
-order: 82
+order: 80
 lang: fr
 name: Couverture de thèse
 metadata:

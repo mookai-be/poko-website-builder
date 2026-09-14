@@ -1,6 +1,6 @@
 ---
 translationKey: des-mentiel
-order: 89
+order: 87
 lang: fr
 createdAt: 2026-08-27T10:30:00.000Z
 ldType: WebPage

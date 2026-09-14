@@ -1,6 +1,6 @@
 ---
 translationKey: eurohouse
-order: 63
+order: 61
 lang: fr
 createdAt: 2026-08-27T10:21:00.000Z
 ldType: WebPage

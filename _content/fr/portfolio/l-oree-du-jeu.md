@@ -1,6 +1,6 @@
 ---
 translationKey: l-oree-du-jeu
-order: 90
+order: 88
 lang: fr
 createdAt: 2026-08-27T10:34:00.000Z
 ldType: WebPage

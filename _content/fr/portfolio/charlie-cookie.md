@@ -1,6 +1,6 @@
 ---
 translationKey: charlie-cookie
-order: 60
+order: 58
 lang: fr
 createdAt: 2026-08-27T10:20:00.000Z
 ldType: WebPage

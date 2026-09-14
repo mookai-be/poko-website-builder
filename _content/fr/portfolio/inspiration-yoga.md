@@ -1,6 +1,6 @@
 ---
 translationKey: inspiration-yoga
-order: 69
+order: 67
 lang: fr
 createdAt: 2026-08-27T10:23:00.000Z
 ldType: WebPage
