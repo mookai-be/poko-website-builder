@@ -22,13 +22,13 @@ Création de l’univers graphique de GREAT!, un projet de «restauration cultur
 
 ## Le projet
 
-GREAT! imaginait un lieu hybride autour de l’alimentation, avec une cuisine saine, équilibrée et variée, mais aussi une programmation culturelle: projections de films, petits concerts, expositions et événements proposés par des artistes souhaitant faire connaître leur travail.
+GREAT! imaginait un lieu hybride autour de l’alimentation, avec une cuisine saine, de saison, équilibrée et variée, mais aussi une programmation culturelle: projections de films, petits concerts, expositions et événements proposés par des artistes souhaitant faire connaître leur travail.
 
-L’idée était de créer un endroit vivant et accessible, presque comme une extension de son propre salon : un lieu où l’on vient manger, boire un verre, découvrir une œuvre, assister à un événement ou simplement passer un moment.
+L’idée était de créer un endroit vivant et accessible, presque comme une extension de son propre salon: un lieu où l’on vient manger, boire un verre, découvrir une œuvre, assister à un événement ou simplement passer un moment.
 
 ### Notre intervention
 
-Communication visuelle · recherche graphique · supports de communication · univers de marque
+Namming · Communication visuelle · recherche graphique · supports de communication · univers de marque
 
 ### Le petit+
 
