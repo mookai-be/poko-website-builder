@@ -18,18 +18,22 @@ images: []
 
 ## Le projet
 
-Création du logo et de l’identité visuelle de l’EMPSA, l’Équipe Mobile Prévention Soutien Aidance, qui accompagne les aidants proches et les jeunes aidants à Bruxelles. L’équipe intervient notamment auprès des familles confrontées à une situation de dépendance.
+Création de l’identité visuelle de l’EMPSA — Équipe Mobile Prévention Soutien Aidance — un projet pilote lié à l’ASBL Jeunes Aidants Proches.
 
-Le logo s’appuie sur l’idée d’un toit qui protège : une forme simple qui évoque à la fois l’abri, le soutien et l’accompagnement.
+L’EMPSA accompagne les jeunes aidants et les aidants proches lorsqu’une situation de dépendance bouleverse l’organisation familiale. L’équipe pluridisciplinaire intervient principalement à domicile pour informer, soutenir, coordonner les aides et prévenir l’épuisement, en construisant l’accompagnement avec la famille.
 
-L’identité devait également s’intégrer naturellement dans l’écosystème graphique existant d’Aidants Proches Bruxelles et de Jeunes Aidants Proches, dont l’EMPSA constitue une sous-activité.
+Le nom EMPSA résume les principes du projet : Équipe, Mobile, Prévention, Soutien, Aidance. La notion de mobilité était particulièrement importante : contrairement à une permanence où la famille doit se déplacer, l’EMPSA vient directement chez elle.
+
+Le logo s’appuie ainsi sur l’idée d’un toit protecteur, qui évoque le domicile, l’accompagnement et le fait d’être là « sous leur toit ». Une identité chaleureuse et rassurante a été privilégiée pour traduire l’empathie, la bienveillance et cette volonté d’apporter une véritable bouffée d’air dans le quotidien des familles.
+
+L’identité devait également pouvoir s’intégrer à l’univers graphique existant d’Aidants Proches et de Jeunes Aidants Proches, tout en donnant à l’EMPSA une identité propre.
 
 ### Notre intervention
 
-Création du logo · identité visuelle · recherche graphique · déclinaison de la charte graphique
+Création du logo · identité visuelle · charte graphique · recherche typographique · palette de couleurs · dépliant · affiche A3 · supports de communication
 
 ### Le petit+
 
-Créer une nouvelle identité sans la déconnecter des structures auxquelles elle est rattachée, pour construire une vraie cohérence d’ensemble.
+Un projet où le concept graphique traduit directement le mode d’intervention : l’équipe ne demande pas aux familles de venir à elle, elle vient à leur rencontre, directement chez elles.
 
 [Voir sur Behance](https://www.behance.net/gallery/115763375/EMPSA-asbl)
