@@ -22,9 +22,9 @@ Création de l’affiche pour les portes ouvertes de L’Autre École, une écol
 
 L’affiche devait donner envie de découvrir l’école tout en faisant écho à son univers coloré et créatif.
 
-L’inspiration est venue des noms colorés des classes : classe jaune, verte, orange, fleurie, arc-en-ciel…
+L’inspiration est venue des noms colorés des classes: classe jaune, verte, orange, fleurie, arc-en-ciel…
 
-Plutôt que de simplement représenter cette palette, le choix a été de travailler directement la matière : le papier a été découpé physiquement pour créer la composition. Une manière de faire entrer dans l’affiche la dimension expérimentale et manuelle de la pédagogie de l’école.
+Plutôt que de simplement représenter cette palette, le choix a été de travailler directement la matière: le papier a été découpé physiquement pour créer la composition et évoquer les portes des classes qui s'ouvrent. Une manière de faire entrer dans l’affiche la dimension expérimentale et manuelle de la pédagogie de l’école.
 
 ### Notre intervention
 
