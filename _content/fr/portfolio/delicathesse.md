@@ -34,7 +34,7 @@ images:
 
 # déliCATHesse
 
-Création de l’identité visuelle de déliCATHesse, esthéticienne à domicile imaginée par Catherine.
+Création de l’identité visuelle de déliCATHesse, esthéticienne à domicile, Catherine.
 
 ## Le projet
 
