@@ -21,7 +21,7 @@ images:
 
 ## Le projet
 
-Création de l’identité visuelle de Bubble’, un concept d’événements imaginé par Aurélie Piel autour d’ateliers pédagogiques et ludiques animés par des professionnel·les du bien-être.
+Création de l’identité visuelle de Bubble’s, un concept d’événements imaginé par Aurélie Piel autour d’ateliers pédagogiques et ludiques animés par des professionnel·les du bien-être.
 
 Le concept propose aux visiteurs de choisir plusieurs ateliers et de s’immerger dans une «bulle» de découverte, de rencontre et de bien-être.
 
