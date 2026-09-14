@@ -27,7 +27,7 @@ Création du logo de Microtubules ASBL, une association qui œuvre notamment pou
 
 Le brief s’appuyait sur le concept de tenségrité, un principe selon lequel des éléments en tension et en compression s’équilibrent pour former une structure stable.
 
-Pas évident de traduire un concept aussi complexe dans un logo simple. La recherche s’est orientée vers une évocation de la colonne vertébrale et du mouvement : lorsqu’un élément bouge, cela entraîne des changements ailleurs dans l’ensemble du système.
+Pas évident de traduire un concept aussi complexe dans un logo simple. La recherche s’est orientée vers une évocation de la colonne vertébrale et du mouvement: lorsqu’un élément bouge, cela entraîne des changements ailleurs dans l’ensemble du système.
 
 ### Notre intervention
 
@@ -35,6 +35,6 @@ Recherche conceptuelle · création du logo · identité visuelle · recherche g
 
 ### Le petit+
 
-Un logo qui cherche à rendre visible une idée essentielle du corps : tout est lié, et chaque mouvement a des conséquences sur l’ensemble.
+Un logo qui cherche à rendre visible une idée essentielle du corps: tout est lié, et chaque mouvement a des conséquences sur l’ensemble.
 
 [Voir sur Behance](https://www.behance.net/gallery/60263391/Microtubules-asbl)
