@@ -25,7 +25,7 @@ Création de l’identité visuelle de Sacred Shakti, l’activité de Stéphani
 
 L’objectif était de créer un univers féminin et affirmé, en lien avec le nom et les différentes dimensions de son activité.
 
-«Shakti» désigne, dans les traditions hindoues, l’énergie ou la puissance féminine. Cette idée est intégrée directement au logo typographique: le point du «i» est déplacé pour devenir un élément graphique à part entière, mis en valeur par une dorure.
+«Shakti» désigne, dans les traditions hindoues, l’énergie ou la puissance féminine. Cette idée est intégrée directement au logo typographique: le point du «i» est déplacé pour devenir un élément graphique à part entière, mis en valeur par une dorure à l'impression.
 
 Le «S» avait également une importance particulière: il se retrouve dans le prénom de Stéphanie, dans celui de sa fille et dans les deux mots du nom Sacred Shakti.
 
