@@ -12,6 +12,7 @@ tags:
   - branding
   - logo
   - print
+vars: {}
 images: []
 ---
 
