@@ -28,7 +28,7 @@ Plutôt que de simplement représenter cette palette, le choix a été de travai
 
 ### Notre intervention
 
-Direction artistique · recherche graphique · création de l’affiche · découpage papier · composition
+Direction artistique · recherche graphique · création de l’affiche · découpage papier · composition · photo
 
 ### Le petit+
 
