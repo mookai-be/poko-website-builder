@@ -26,7 +26,7 @@ Le nom EMPSA résume les principes du projet: Équipe, Mobile, Prévention, Sout
 
 Le logo s’appuie évoque le domicile, l’accompagnement et le fait d’être là «sous leur toit». Une identité chaleureuse et rassurante a été privilégiée pour traduire l’empathie, la bienveillance et cette volonté d’apporter une véritable bouffée d’air dans le quotidien des familles.
 
-L’identité devait également pouvoir s’intégrer à l’univers graphique existant d’Aidants Proches et de Jeunes Aidants Proches, tout en donnant à l’EMPSA une identité propre.
+L’identité devait également pouvoir s’intégrer à l’univers graphique existant d’{% link url="https://www.aidants-proches.be/", type="external" %}Aidants Proches{% endlink %} et de Jeunes Aidants Proches, tout en donnant à l’EMPSA une identité propre.
 
 ### Notre intervention
 
