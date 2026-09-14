@@ -19,7 +19,7 @@ images: []
 
 ## Le projet
 
-Création d’une illustration sur commande pour le projet Invité dans sa caverne.
+Création d’une illustration sur commande intitulé: "Invité dans sa caverne".
 
 Le brief demandait une illustration très précise, avec des éléments et une composition répondant à un cahier des charges défini.
 
