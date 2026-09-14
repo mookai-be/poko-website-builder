@@ -26,7 +26,7 @@ Les portraits ont été assemblés en bandes verticales pour créer une composit
 
 ### Notre intervention
 
-Direction artistique · composition de la pochette · retouche photographique · recherche typographique · palette de couleurs
+Direction artistique · composition de la pochette · recherche typographique · choix de couleur
 
 ### Le petit plus
 
