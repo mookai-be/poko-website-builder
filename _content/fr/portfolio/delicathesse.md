@@ -44,7 +44,7 @@ La palette de couleurs devait également pouvoir fonctionner en harmonie avec le
 
 ### Notre intervention
 
-Création du logo · identité visuelle · recherche typographique · palette de couleurs
+Création du logo · identité visuelle · recherche typographique · palette de couleurs · illustrations
 
 ### Le petit+
 
