@@ -23,11 +23,11 @@ Lifting du logo et évolution de l’identité visuelle d’euroHouse, agence im
 
 ## Le projet
 
-euroHouse accompagne ses clients dans leurs projets d’achat, de vente et de location immobilière. Le besoin était de faire évoluer une identité existante pour lui donner une image plus sérieuse et légèrement plus premium, tout en restant accessible. Aujourd’hui encore, l’agence propose notamment des biens à vendre et à louer ainsi qu’un service d’estimation.
+Lifting du logo et évolution de l’identité visuelle d’euroHouse, une agence immobilière basée à Auderghem qui accompagne ses clients dans l’achat, la vente et la location de biens immobiliers.
 
-Le travail s’est notamment concentré sur la couleur: plutôt que de multiplier les teintes, un vert unique a été choisi pour créer une identité plus cohérente, plus maîtrisée et plus facilement reconnaissable.
+L’objectif était de donner à l’agence une image plus sérieuse et légèrement plus premium, tout en conservant la reconnaissance de son identité existante.
 
-L’identité a ensuite été déclinée sur différents supports commerciaux, notamment les documents de présentation des biens et l’enseigne extérieure.
+Le travail s’est notamment concentré sur la couleur, avec la sélection d’un vert unique pour l’ensemble de l’identité. Ce choix permet d’harmoniser les différents supports et de renforcer une image plus sobre et professionnelle.
 
 ### Notre intervention
 
