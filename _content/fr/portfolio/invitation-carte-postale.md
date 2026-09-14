@@ -19,7 +19,7 @@ images: []
 
 ## Le projet
 
-Création d’une invitation sous forme de carte postale pour l’anniversaire de petites filles de 2 ans.
+Création d’une invitation sous forme de carte postale pour l’anniversaire d'une petite fille de 2 ans.
 
 Des illustrations réalisées à l’aquarelle et au feutre ont été privilégiées pour créer un univers doux, coloré et spontané, adapté à l’âge des enfants.
 
