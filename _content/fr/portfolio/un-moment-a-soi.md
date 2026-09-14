@@ -25,7 +25,7 @@ images:
 
 Création de l’identité visuelle d'une esthéticienne et de l’univers de communication pour Florence.
 
-Florence est arrivée avec un premier dépliant imprimé sur papier verdâtre et une petite plume dessinée au trait. Comme elle s’installait dans un nouveau cabinet, l’idée était de construire une identité qui soit directement liée à ce nouvel espace.
+Elle est arrivée avec un premier dépliant imprimé sur papier verdâtre et une petite plume dessinée au trait. Comme elle s’installait dans un nouveau cabinet, l’idée était de construire une identité qui soit directement liée à ce nouvel espace.
 
 Plutôt que de choisir les couleurs à distance, je suis venue découvrir le cabinet et photographier les différents éléments déjà choisis: essuies, peinture murale, mobilier et matériel. Ces références ont permis de construire une palette cohérente avec le lieu et son ambiance.
 
