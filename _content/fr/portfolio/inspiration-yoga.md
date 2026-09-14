@@ -35,4 +35,4 @@ Identité visuelle · logo · palette de couleurs · supports de communication �
 
 La palette de couleurs devient un véritable outil d’organisation: elle permet aux élèves d’identifier facilement les différents cours tout en donnant de la cohérence à l’ensemble de la communication.
 
-[Voir sur Behance](https://www.behance.net/gallery/36842101/YOGA-inspiration)
+[Voir sur Behance](https://www.behance.net/gallery/36842101/YOGA-inspiration) · {% link url="https://yoga-chimay.netlify.app/", type="external" %}Voir le site{% endlink %}
