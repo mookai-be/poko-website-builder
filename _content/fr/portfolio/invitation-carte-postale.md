@@ -2,6 +2,8 @@
 translationKey: invitation-carte-postale
 order: 35
 lang: fr
+createdAt: 2026-09-14T20:12:00.000Z
+ldType: WebPage
 name: Invitation - carte postale
 metadata:
   image:
@@ -10,13 +12,23 @@ tags:
   - mise-en-page
   - print
   - illustration
-vars: {}
 images: []
 ---
 
-
 # Invitation - carte postale
 
-Création d'une invitation au format carte postale.
+## Le projet
+
+Création d’une invitation sous forme de carte postale pour l’anniversaire de petites filles de 2 ans.
+
+Des illustrations réalisées à l’aquarelle et au feutre ont été privilégiées pour créer un univers doux, coloré et spontané, adapté à l’âge des enfants.
+
+### Notre intervention
+
+Illustration · aquarelle · dessin au feutre · composition · mise en page
+
+### Le petit+
+
+Une invitation pensée comme un petit objet illustré à garder, plutôt qu’un simple support d’information.
 
 [Voir sur Behance](https://www.behance.net/gallery/123936053/Invitation-carte-postale)
