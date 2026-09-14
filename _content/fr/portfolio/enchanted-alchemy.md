@@ -21,7 +21,7 @@ images:
 
 # Enchanted Alchemy
 
-Création de l’identité visuelle d’Enchanted Alchemy, un univers de bien-être et de spiritualité autour du Reiki, des cristaux et de la magie du quotidien.
+Création de l’identité visuelle d’Enchanted Alchemy, un univers de bien-être autour du Reiki, des cristaux et de la spiritualité.
 
 ## Le projet
 
