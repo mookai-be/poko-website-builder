@@ -36,7 +36,7 @@ Le bleu et l’orange ont été retenus comme couleurs principales: une combinai
 
 Recherche graphique · création de l’identité visuelle · travail typographique · palette de couleurs · déclinaisons graphiques
 
-### Le petit plus
+### Le petit+
 
 Une identité construite presque entièrement à partir du nom lui-même, en transformant la typographie en véritable élément graphique.
 
