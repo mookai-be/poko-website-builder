@@ -23,7 +23,7 @@ Mise en page et direction artistique d’un dossier de présentation pour un pro
 
 Le projet Kimia s’inspirait notamment de la Ferme de Moyembrie et cherchait à présenter un modèle social et professionnel différent. La Touline souhaitait transformer un dossier existant en un document plus clair, plus aéré et surtout plus agréable à parcourir, afin de pouvoir le présenter dans un contexte institutionnel.
 
-L’enjeu était donc de donner une vraie place au contenu : structurer l’information, faciliter la lecture et créer un document suffisamment professionnel pour être présenté dans le cadre de rencontres ministérielles.
+L’enjeu était donc de donner une vraie place au contenu: structurer l’information, faciliter la lecture et créer un document suffisamment professionnel pour être présenté dans le cadre de rencontres ministérielles.
 
 ### Notre intervention
 
