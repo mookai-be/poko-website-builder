@@ -4,7 +4,7 @@ order: 58
 lang: fr
 createdAt: 2026-09-02T09:59:00.000Z
 ldType: WebPage
-name: MON CORPS MA MAISON
+name: Mon corps, ma maison
 metadata:
   image:
     src: /_images/portfolio/mon-corps-ma-maison/1.webp
@@ -15,7 +15,7 @@ vars: {}
 images: []
 ---
 
-# MON CORPS MA MAISON
+# Mon corps, ma maison
 
 Création de l’identité visuelle de "Mon corps ma maison", une activité de massage et de réflexologie plantaire portée par Nathalie.
 
