@@ -39,6 +39,6 @@ Création du logo · identité visuelle · recherche graphique · charte graphiq
 
 ### Le petit+
 
-Deux symboles pour deux personnalités complémentaires : le renard qui trouve des chemins inattendus et la libellule qui observe, ressent et transforme les idées en images.
+Deux symboles pour deux personnalités complémentaires: le renard qui trouve des chemins inattendus et la libellule qui observe, ressent et transforme les idées en images.
 
 [Voir sur Behance](https://www.behance.net/gallery/52697581/Feed-by-Design)
