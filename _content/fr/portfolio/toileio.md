@@ -4,7 +4,7 @@ order: 36
 lang: fr
 createdAt: 2026-08-27T10:13:00.000Z
 ldType: WebPage
-name: Toile.io
+name: toile.io
 metadata:
   image:
     src: /_images/portfolio/toileio/36.webp
@@ -20,11 +20,11 @@ images:
     alt: Toile.io - identité visuelle
 ---
 
-# Toile.io
+# toile.io
 
 ## Le projet
 
-Création de l’identité visuelle de Toile.io, un projet web développé autour du nom de domaine toile.io.
+Création de l’identité visuelle de toile.io, un projet web développé autour du nom de domaine toile.io.
 
 L’objectif était de créer un univers graphique identifiable à partir d’un nom court, tout en construisant une identité suffisamment simple et flexible pour accompagner le projet web.
 
