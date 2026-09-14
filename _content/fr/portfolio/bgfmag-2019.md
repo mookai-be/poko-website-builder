@@ -10,12 +10,27 @@ metadata:
     src: /_images/portfolio/bgfmag-2019/9.webp
 tags:
   - illustration
-vars: {}
 images: []
 ---
 
 # BGF mag 2019
 
-Illustrations pour le magazine BGF mag 2019.
+## Le projet
+
+Création d’illustrations vectorielles pour les cinq chapitres du BGF Mag 2019, le magazine du Brussels Games Festival, autour du thème des commandements du joueur éco-responsable.
+
+Chaque chapitre aborde une facette différente d’une pratique plus durable du jeu de société : acheter de manière réfléchie, privilégier une production responsable, adopter les bons réflexes, faire vivre la communauté et découvrir les alternatives proposées par le festival.
+
+L’objectif était de traduire ces différents commandements en illustrations simples, colorées et immédiatement compréhensibles, tout en conservant un univers ludique cohérent avec celui du Brussels Games Festival.
+
+Les illustrations accompagnent ainsi les cinq chapitres du magazine et permettent de rendre un sujet parfois sérieux plus accessible aux joueurs.
+
+### Notre intervention
+
+Direction artistique · recherche graphique · illustrations vectorielles · déclinaison pour les 5 chapitres
+
+### Le petit+
+
+Parler d’éco-responsabilité sans donner de leçon: utiliser les codes visuels du jeu pour rendre les bons réflexes plus amusants et faciles à retenir.
 
 [Voir sur Behance](https://www.behance.net/gallery/83798907/BGFmag-2019)
