@@ -26,7 +26,7 @@ L’illustration devait traduire visuellement ces notions de confiance, d’éch
 
 ### Notre intervention
 
-Recherche graphique · illustration · composition · création de la couverture
+Recherche graphique · illustration · composition
 
 ### Le petit+
 
