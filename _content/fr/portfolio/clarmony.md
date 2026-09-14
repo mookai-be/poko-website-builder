@@ -22,9 +22,9 @@ Création de l’identité visuelle de Clarmony, l’activité de coaching, faci
 
 Ana accompagne principalement des femmes dans des périodes de transition ou de questionnement professionnel, à travers le coaching, le mentoring, la facilitation et la formation. Son approche cherche à apporter davantage de clarté et d’harmonie, notamment grâce à des exercices, des échanges et des outils issus de l’intelligence collective.
 
-Le nom Clarmony combine d’ailleurs les notions de clarity et harmony.
+Le nom Clarmony combine les notions de clarity et harmony.
 
-Ana se définissait comme quelqu’un de très « carré ». La recherche a donc travaillé sur le passage du carré vers le cercle, de l’angle vers la rondeur, pour représenter une évolution vers davantage de fluidité et d’équilibre.
+Ana se définissait comme quelqu’un de très «carré». La recherche a donc travaillé sur le passage du carré vers le cercle, de l’angle vers la rondeur, pour représenter une évolution vers davantage de fluidité et d’équilibre.
 
 La spirale dynamique, qui accompagne son approche du développement personnel, a également nourri la réflexion autour du processus d’évolution. La palette s’inspire de ses différents niveaux de progression, avec notamment le turquoise et l’opale comme couleurs centrales.
 
