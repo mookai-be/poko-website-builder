@@ -27,7 +27,7 @@ Le concept propose aux visiteurs de choisir plusieurs ateliers et de s’immerge
 
 Les trois «B» du nom font référence aux trois dimensions du bien-être: l’individu, son cadre de vie et la société. Aurélie souhaitait pouvoir jouer avec les formes et les couleurs dans sa communication.
 
-La typographie a donc été choisie pour permettre de zoomer sur certains détails et d’utiliser ses pleins et déliés comme de véritables formes graphiques
+La typographie a donc été choisie pour permettre de zoomer sur certains détails et d’utiliser ses pleins et déliés comme de véritables formes graphiques.
 
 ### otre intervention
 
