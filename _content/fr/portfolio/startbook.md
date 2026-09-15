@@ -22,7 +22,7 @@ images: []
 
 Mise en page et illustration du StartBook, un support créé pour le module DreamStart de {% link url="https://microstart.be/", type="external" %}MicroStart{% endlink %}, dans le cadre de l’accompagnement proposé aux personnes qui souhaitent lancer leur activité.
 
-Le travail devait s’intégrer à l’identité visuelle existante de MicroStart. Les typographies, couleurs et autres éléments de la charte ont donc servi de base pour construire une mise en page claire et dynamique, enrichie par des illustrations destinées à accompagner les différents contenus du module.
+Le travail devait s’intégrer à l’identité visuelle existante à l'époque de MicroStart. Les typographies, couleurs et autres éléments de la charte ont donc servi de base pour construire une mise en page claire et dynamique, enrichie par des illustrations destinées à accompagner les différents contenus du module.
 
 ### Notre intervention
 
