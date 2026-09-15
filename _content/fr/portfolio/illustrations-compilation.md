@@ -20,7 +20,7 @@ images: []
 
 Une sélection d’illustrations numériques réalisées pour différents clients ou dans le cadre de projets personnels. Des univers et techniques variés, principalement réalisés sur Illustrator ou Procreate.
 
-Cette sélection montre différentes manières d’aborder l’illustration numérique : composition, dessin, couleur, typographie ou création de personnages et d’univers visuels. Chaque projet part d’une intention différente, avec une recherche graphique adaptée au sujet.
+Cette sélection montre différentes manières d’aborder l’illustration numérique: composition, dessin, couleur, typographie ou création de personnages et d’univers visuels. Chaque projet part d’une intention différente, avec une recherche graphique adaptée au sujet.
 
 ### Notre intervention
 
