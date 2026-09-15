@@ -24,7 +24,7 @@ Refonte de l’identité visuelle de Laurence V., qui développe deux activités
 
 L’enjeu était de trouver un langage visuel commun aux deux activités, tout en permettant à chacune de conserver son propre univers.
 
-Le logo retenu est une stylisation d’une posture de yoga: le bras et la main évoquent à la fois le mouvement et le toucher, en référence au yoga et aux massages. La posture rappelle également une femme enceinte posant naturellement la main sur son ventre.
+Le logo retenu est une stylisation d’une posture de yoga: le bras et la main évoquent à la fois le mouvement et le toucher, en référence au yoga et aux massages. La pose de la main rappelle également une femme enceinte posant naturellement la main sur son ventre.
 
 L’ensemble est intégré dans un cercle qui évoque le ventre arrondi, avec un petit trait suggérant le nombril. Une palette douce et organique permet ensuite de différencier les différentes activités tout en conservant une identité commune.
 
