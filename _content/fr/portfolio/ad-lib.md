@@ -24,7 +24,7 @@ images:
 
 Création de l’identité visuelle d’ad lib., l’activité de Pierre-Alain Scharff autour du coaching, de la transformation des entreprises, de l’accompagnement des personnes et de l’executive counselling.
 
-Le nom ad lib. fait référence à "ad libitum", une expression latine signifiant «à volonté» ou «librement». En musique, ad libitum indique notamment que l’interprète dispose d’une liberté dans son interprétation.
+Le nom ad lib. fait référence à "ad libitum", une expression latine signifiant «librement». En musique, ad libitum indique notamment que l’interprète dispose d’une liberté dans son interprétation.
 
 Cette notion de liberté et d’adaptation se retrouve dans le logo et dans la baseline, conçus à la demande du client pour faire référence à cet univers musical.
 
