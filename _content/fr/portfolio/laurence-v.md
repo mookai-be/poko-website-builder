@@ -20,7 +20,7 @@ images: []
 
 ## Le projet
 
-Refonte de l’identité visuelle de Laurence V., qui développe deux activités complémentaires : l’accompagnement en périnatalité avec Wellbirthing et le bien-être en entreprise avec Wellbeing @Work.
+Refonte de l’identité visuelle de Laurence V., qui développe deux activités complémentaires: l’accompagnement en périnatalité avec Wellbirthing et le bien-être en entreprise avec Wellbeing @Work.
 
 L’enjeu était de trouver un langage visuel commun aux deux activités, tout en permettant à chacune de conserver son propre univers.
 
