@@ -24,7 +24,7 @@ Le contenu du parcours m’a été fourni sous une forme très brute et techniqu
 
 L’enjeu principal était de rendre les informations du parcours rapides à comprendre et faciles à consulter, malgré leur caractère très technique. La mise en page devait donc organiser les indications, les informations pratiques et les différentes étapes du trajet sans perdre leur précision.
 
-Le roadbook a ensuite été intégré dans un ensemble éditorial plus large, avec des contenus consacrés au reste de l’événement.
+Le roadbook contenait des contenus consacrés au reste de l’événement.
 
 ### Notre intervention
 
