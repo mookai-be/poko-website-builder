@@ -18,7 +18,7 @@ images: []
 
 ## Le projet
 
-Mise en page du roadbook du Youngtimers Rally, un événement automobile basé sur un parcours à suivre au volant de voitures anciennes et youngtimers.
+Mise en page du roadbook du Youngtimers Rally, un événement automobile du {% link url="https://www.moniteurautomobile.be/accueil.html", type="external" %}Moniteur automobile{% endlink %} basé sur un parcours à suivre au volant de voitures anciennes et youngtimers.
 
 Le contenu du parcours m’a été fourni sous une forme très brute et technique par la personne qui préparait le trajet. Le travail consistait à transformer ces informations en un document clair et utilisable pendant le rallye, tout en concevant le reste du petit magazine consacré à l’événement.
 
@@ -32,6 +32,6 @@ Direction artistique · mise en page du roadbook · hiérarchisation des informa
 
 ### Le petit+
 
-Un exercice où le graphisme sert avant tout la fonction : prendre un contenu pensé pour quelqu’un qui connaît parfaitement le parcours et le rendre compréhensible pour tous les participants.
+Un exercice où le graphisme sert avant tout la fonction: prendre un contenu pensé pour quelqu’un qui connaît parfaitement le parcours et le rendre compréhensible pour tous les participants.
 
 [Voir sur Behance](https://www.behance.net/gallery/16430109/ROADBOOK-2014-mise-en-page)
