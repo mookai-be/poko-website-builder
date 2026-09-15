@@ -35,6 +35,6 @@ Logo flash · adaptation du logo · recherche typographique · palette de couleu
 
 ### Le petit+
 
-Une solution pensée pour les petits budgets : partir d’une base graphique existante, la personnaliser et obtenir une identité cohérente sans passer par un projet d’identité complet.
+Une solution pensée pour les petits budgets: partir d’une base graphique existante, la personnaliser et obtenir une identité cohérente sans passer par un projet d’identité complet.
 
 [Voir sur Behance](https://www.behance.net/gallery/162888199/Yoga-du-Soi) · {% link url="https://yogadusoi.com/", type="external" %}Voir le site{% endlink %}
