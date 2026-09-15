@@ -30,6 +30,6 @@ Direction artistique · recherche graphique · mise en page · composition · ch
 
 ### Le petit+
 
-Une contrainte graphique simple — noir + une couleur — utilisée comme véritable fil conducteur de la mise en page.
+Une contrainte graphique simple, noir + une couleur, utilisée comme véritable fil conducteur de la mise en page.
 
 [Voir sur Behance](https://www.behance.net/gallery/9345109/Luc-Besson-BOOK)
