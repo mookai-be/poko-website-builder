@@ -30,7 +30,7 @@ Cette notion de liberté et d’adaptation se retrouve dans la manière dont Pie
 
 ### Notre intervention
 
-Création du logo · identité visuelle · recherche typographique · palette de couleurs · baseline
+Création du logo · identité visuelle · recherche typographique · palette de couleurs
 
 ### Le petit+
 
