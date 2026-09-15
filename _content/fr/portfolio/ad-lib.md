@@ -12,13 +12,28 @@ tags:
   - branding
   - logo
   - print
+vars: {}
 images:
-  - url: https://images.ctfassets.net/1tq41wraq9ir/XT9VI7LXIQsa0Ycga6SyC/21fcd4b607dc549b5a7d076c13d1c6e7/ad-lib_logo_RVB-06.jpg
-    alt: ad lib. - identité visuelle
+  - alt: ad lib. - identité visuelle
+    url: https://images.ctfassets.net/1tq41wraq9ir/XT9VI7LXIQsa0Ycga6SyC/21fcd4b607dc549b5a7d076c13d1c6e7/ad-lib_logo_RVB-06.jpg
 ---
 
 # ad lib.
 
-Création de l'identité visuelle d'ad lib..
+## Le projet
+
+Création de l’identité visuelle d’ad lib., l’activité de Pierre-Alain Scharff autour du coaching, de la transformation des entreprises, de l’accompagnement des personnes et de l’executive counselling.
+
+Le nom ad lib. fait référence à ad libitum, une expression latine signifiant « à volonté » ou « librement ». En musique, ad libitum indique notamment que l’interprète dispose d’une liberté dans son interprétation.
+
+Cette notion de liberté et d’adaptation se retrouve dans le logo et dans la baseline, conçus à la demande du client pour faire référence à cet univers musical.
+
+### Notre intervention
+
+Recherche de nom · création du logo · identité visuelle · recherche typographique · palette de couleurs · baseline
+
+### Le petit+
+
+Un nom court qui permet de créer un lien inattendu entre le monde du coaching et celui de la musique, autour de l’idée de liberté.
 
 [Voir sur Behance](https://www.behance.net/gallery/58199161/ad-lib)
