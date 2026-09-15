@@ -30,7 +30,7 @@ L’ensemble est intégré dans un cercle qui évoque le ventre arrondi, avec un
 
 ### Notre intervention
 
-Refonte du logo · identité visuelle · recherche graphique · typographie · palette de couleurs · charte graphique · signature mail · covers réseaux sociaux
+Logo · identité visuelle · recherche graphique · typographie · palette de couleurs · charte graphique · signature mail · covers réseaux sociaux
 
 ### Le petit+
 
