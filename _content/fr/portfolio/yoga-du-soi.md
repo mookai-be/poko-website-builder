@@ -25,7 +25,7 @@ Création de l’identité visuelle et du site web de Yoga du Soi, l’activité
 
 Avec un budget limité, Rachel a choisi de partir d’un des {% link url="https://www.tess-h.be/logo-flash/", type="external" %}logos flash{% endlink %} proposés sur le site de Tess, puis de le personnaliser pour son activité.
 
-Le logo existant a été adapté avec une nouvelle typographie et une palette de couleurs choisie spécifiquement pour Yoga du Soi. L’objectif était de conserver l’efficacité d’une création rapide tout en donnant à l’ensemble une personnalité propre.
+Le logo existant a été adapté avec une typographie et une palette de couleurs choisie spécifiquement pour Yoga du Soi. L’objectif était de conserver l’efficacité d’une création rapide tout en donnant à l’ensemble une personnalité propre.
 
 L’identité a ensuite été directement déclinée dans la conception du site web.
 
