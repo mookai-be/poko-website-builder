@@ -28,6 +28,6 @@ Illustration numérique · dessin vectoriel · illustration sur Procreate · rec
 
 ### Le petit+
 
-Un aperçu de projets très différents qui permet de découvrir la diversité de mon approche de l’illustration numérique.
+Un aperçu de projets très différents qui permet de découvrir mon approche de l’illustration numérique.
 
 [Voir sur Behance](https://www.behance.net/gallery/37590061/Illustrations)
