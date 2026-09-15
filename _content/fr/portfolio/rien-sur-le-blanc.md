@@ -20,7 +20,7 @@ images: []
 
 ## Le projet
 
-Projet photographique personnel autour de plusieurs expressions idiomatiques liées au noir: «être dans le noir», «broyer du noir», «avoir une âme noire», «dire les choses noir sur blanc» et «avoir un regard noir».
+Projet photographique personnel autour de plusieurs expressions liées au noir: «être dans le noir», «broyer du noir», «avoir une âme noire», «dire les choses noir sur blanc» et «avoir un regard noir».
 
 Chaque expression devient le point de départ d’une mise en scène photographique. Les prises de vues sont ensuite retravaillées dans Photoshop pour donner une interprétation visuelle, parfois littérale, parfois plus métaphorique, de ces expressions.
 
