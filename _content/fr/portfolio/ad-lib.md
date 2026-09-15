@@ -26,7 +26,7 @@ Création de l’identité visuelle d’ad lib., l’activité de Pierre-Alain S
 
 Le nom ad lib. fait référence à "ad libitum", une expression latine signifiant «librement». En musique, ad libitum indique notamment que l’interprète dispose d’une liberté dans son interprétation.
 
-Cette notion de liberté et d’adaptation se retrouve dans la manière dont Pierre-Alain gère ses coaching et la symbolique musicale se retrouve dans le logo et la baseline, conçus à la demande du client pour faire référence à cet univers musical.
+Cette notion de liberté et d’adaptation se retrouve dans la manière dont Pierre-Alain gère ses coaching et la symbolique musicale se retrouve dans le logo et la baseline. La demande du client était de faire référence à l'univers musical de manière visuelle.
 
 ### Notre intervention
 
