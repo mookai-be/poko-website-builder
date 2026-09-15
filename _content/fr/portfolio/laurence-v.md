@@ -34,6 +34,6 @@ Logo · identité visuelle · recherche graphique · typographie · palette de c
 
 ### Le petit+
 
-Un même symbole pour créer un lien entre deux univers qui peuvent sembler très différents: le bien-être personnel et le bien-être au travail.
+Un même symbole pour créer un lien entre deux univers qui peuvent sembler très différents: le bien-être personnel, femme enceinte et le bien-être au travail.
 
 [Voir sur Behance](https://www.behance.net/gallery/123934557/Laurence-v-Wellbeign-Wellbirthing)
