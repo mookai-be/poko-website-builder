@@ -24,7 +24,7 @@ Tu as un projet génial mais un budget serré? Tu veux être autonome et ne pas 
 
 **Le concept:** on passe une journée ensemble et à la fin, ton site est en ligne. Simple, efficace, et 100% à toi.
 
-**Prix:** à partir de 600€ par jour
+**Prix:** à partir de 600€ par jour (oui, si besoin, on peut bosser sur ton site ensemble plusieurs jours)
 
 :::
 
