@@ -10,8 +10,8 @@ tags:
 bodyClass: palette-mocha palette--tone-contrast
 localizationKey: 5413282c45a2
 uuid: 452511b3d7f5
-pageNav: ''
 pageFooter: ''
+pageNav: ''
 ---
 
 # Site web minimaliste
@@ -24,7 +24,7 @@ Tu as un projet génial mais un budget serré? Tu veux être autonome et ne pas 
 
 **Le concept:** on passe une journée ensemble et à la fin, ton site est en ligne. Simple, efficace, et 100% à toi.
 
-**Prix:** à partir de 500€ par jour
+**Prix:** à partir de 600€ par jour
 
 :::
 
