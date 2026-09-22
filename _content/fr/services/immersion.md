@@ -16,7 +16,7 @@ bodyClass: palette-gold palette--bg-pop
 
 ## Un regard neuf pour booster ton projet
 
-Parfois, quand on a la tête dans le guidon, on manque de recul pour voir les opportunités. L'offre "Consultance", c'est notre service de conseil le plus complet. On devient ton partenaire stratégique le temps d'une mission pour travailler avec toi **sur** ton projet, plutôt que **dans** ton projet.
+Parfois, quand on a la tête dans le guidon, on manque de recul pour voir les opportunités. L'offre "Consultance", c'est notre service de conseil le plus complet. On devient ton partenaire stratégique le temps d'une mission pour travailler avec toi sur ton projet et augmenter ton impact en mettant en place des améliorations à long terme.
 
 **Le principe:** on intègre ton équipe (ou on travaille en étroite collaboration) pendant une période définie pour t'apporter un regard extérieur, de nouvelles idées et des compétences pointues.
 
