@@ -10,8 +10,8 @@ tags:
 bodyClass: palette-mocha palette--tone-contrast
 localizationKey: 49cadc5a6887
 uuid: 680b12bf36ea
-pageNav: ''
 pageFooter: ''
+pageNav: ''
 ---
 
 # Site web sur mesure
@@ -24,7 +24,7 @@ Que ta vision soit déjà limpide ou que tu sois encore en pleine réflexion, le
 
 Pour respecter ton budget, on part d'une base technique solide et flexible, qu'on personnalise ensuite largement pour coller à ton identité. Pour les projets plus ambitieux, on peut bien sûr partir d'une page blanche pour un design 100% original.
 
-**Prix:** à partir de 3000€
+**Prix:** à partir de 3600€
 
 :::
 
