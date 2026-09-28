@@ -16,7 +16,7 @@ tags:
 
 # Quels sont les subsides en Belgique pour (re)créer le site web de ton asbl?
 
-{% image src="/_images/pexels-padrinan-1591060.webp" %}
+{% image src="/_images/photo_5895355879991742618_w.webp", aspectRatio=3, class="breathe" %}
 
 _Photo de Pexels ©Miguel Á. Padriñán_ { .small }
 
