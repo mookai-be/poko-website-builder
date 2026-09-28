@@ -23,17 +23,15 @@ languages:
   - code: fr
     status: published
     keepUrlPrefix: false
-    name: Français
+    isWebsiteDefault: false
+    isCmsDefault: false
     customUrlPrefix:
       prefix: ''
-    isCmsDefault: false
-    isWebsiteDefault: false
+    name: Français
 collections:
   - services
-  - projects
   - people
   - organizations
-  - creativeWorks
   - articles
   - faqs
 newTabLinkTypes:
