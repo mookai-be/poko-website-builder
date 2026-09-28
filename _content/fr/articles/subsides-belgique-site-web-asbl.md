@@ -7,7 +7,9 @@ ldType: Article
 name: Subsides Belgique site web asbl
 metadata:
   title: Quels sont les subsides en Belgique pour (re)créer le site web de ton asbl
-  description: Voilà quelques infos pour tenter de naviguer dans le système belge et décrocher un subside pour (re)faire ton site web.
+  description: Quelques infos pour tenter de naviguer dans le système belge et décrocher un subside pour (re)faire ton site web.
+preview:
+  title: Quels sont les subsides en Belgique pour (re)créer le site web de ton asbl
 tags:
   - web
 ---
@@ -66,4 +68,4 @@ Même si tu remplis tous les critères, le pouvoir subsidiant dispose d’une en
 
 Heureusement, ton asbl n’aura peut-être pas besoin de subside pour (re)faire son site car mookaï propose plusieurs formules dont certaines sont adaptées aux budgets serrés. 
 
-{% link url="services", anchor="web", type="internal", collection="pages" %}Trouve la formule web adaptée à ton budget{% endlink %}
+{% link url="services", anchor="web", type="internal", collection="pages", class="cta" %}Trouve la formule web adaptée à ton budget{% endlink %}

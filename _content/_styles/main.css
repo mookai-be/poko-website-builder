@@ -229,29 +229,7 @@ a:not(.cta, .nav-links, #logo-mookai, :has(svg)):hover {
   color: var(--color-pop);
   background-color: transparent;
 }
-main > h1,
-.cover-title {
-  max-inline-size: var(--width-inset);
-  font-family: "Emoji", "Chantal", cursive, sans-serif;
-  color: var(--color--bg-title, var(--color-pop));
-  font-size: var(--step-5-8);
-  line-height: 1;
-  opacity: var(--opacity-cover-title, 20%);
-  overflow: visible;
-  mix-blend-mode: var(--blend-mode-cover-title, multiply);
-  text-wrap: initial;
-  hyphens: initial;
-}
-.cover-title {
-  max-inline-size: var(--width-outset);
-}
-main > h1 + *,
-.cover-title + * {
-  padding-block-start: 0;
-  margin-block-start: 0;
-  margin-block-start: calc(var(--step-5-8) * -0.4);
-  isolation: isolate;
-}
+
 .palette-bordeau {
   --opacity-cover-title: 80%;
 }
@@ -266,18 +244,6 @@ main > h1 + *,
 .palette-gold.palette--bg-pop {
   --opacity-cover-title: 30%;
   /* --blend-mode-cover-title: none; */
-}
-
-:where(main > blockquote),
-:where(main > section > blockquote) {
-  padding-inline-start: 0;
-  border: none;
-  text-align: center;
-  padding-block: var(--py-section);
-
-  & .quote {
-    font-family: "Emoji", "Chantal", cursive, sans-serif;
-  }
 }
 
 .section-collection {

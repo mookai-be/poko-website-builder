@@ -41,7 +41,7 @@
 
 {% grid type="faux-masonry", widthColumnMin="16rem", gap="0px" %}
 
-{% for pic in pics %}
+{% for pic in gallery or pics %}
 {% if pic %}
 {% gridItem class="bg-white" %}
 {% image src=pic, width=400 %}

@@ -13,7 +13,6 @@ tags:
   - branding
   - logo
   - featured
-vars: {}
 images: []
 ---
 

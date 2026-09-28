@@ -19,7 +19,27 @@ const {
 // const pos = 4; // Just after page name field
 
 // Insert after the "body" (content) field
-const pos = reviews.fields.findIndex((f) => f.name === "body") + 1;
+const posReviewFields = reviews.fields.findIndex((f) => f.name === "body") + 1;
+const posPortfolioFields =
+  creativeWorks.fields.findIndex((f) => f.name === "body") + 1;
+
+const additionalPortfolioFields = [
+  {
+    name: "gallery",
+    label: "Galerie",
+    widget: "image",
+    required: false,
+    multiple: true,
+    i18n: "duplicate",
+  },
+];
+
+const portfolioFields = [
+  ...creativeWorks.fields.slice(0, posPortfolioFields),
+  ...additionalPortfolioFields,
+  // ...creativeWorks.fields.slice(posPortfolioFields), // if we keep all fields
+  ...creativeWorks.fields.slice(posPortfolioFields + 2), // to remove `content` and `sections`
+];
 
 const reviewSignatureField = {
   name: "reviewSignature",
@@ -30,9 +50,9 @@ const reviewSignatureField = {
 };
 
 const reviewFieldsWithPerson = [
-  ...reviews.fields.slice(0, pos),
+  ...reviews.fields.slice(0, posReviewFields),
   reviewSignatureField,
-  ...reviews.fields.slice(pos),
+  ...reviews.fields.slice(posReviewFields),
 ];
 
 export const collections = [
@@ -47,7 +67,8 @@ export const collections = [
     // media_folder: `/${CONTENT_DIR}/_images`,
     media_folder: `/${CONTENT_DIR}/_images/portfolio/{{slug}}`,
     public_folder: "/_images/portfolio/{{slug}}",
-    // fields: playFields,
+    view_groups: undefined,
+    fields: portfolioFields,
   },
   {
     ...reviews,

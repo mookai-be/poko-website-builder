@@ -1,5 +1,4 @@
 export default {
-  test: "test",
   eleventyComputed: {
     async pics(data) {
       const pictures = await this.glob(

@@ -1,0 +1,25 @@
+<style>
+main > h1,
+.cover-title {
+  max-inline-size: var(--width-inset);
+  font-family: "Emoji", "Chantal", cursive, sans-serif;
+  color: var(--color--bg-title, var(--color-pop));
+  font-size: var(--step-5-8);
+  line-height: 1;
+  opacity: var(--opacity-cover-title, 20%);
+  overflow: visible;
+  mix-blend-mode: var(--blend-mode-cover-title, multiply);
+  text-wrap: initial;
+  hyphens: initial;
+}
+.cover-title {
+  max-inline-size: var(--width-outset);
+}
+main > h1 + *,
+.cover-title + * {
+  padding-block-start: 0;
+  margin-block-start: 0;
+  margin-block-start: calc(var(--step-5-8) * -0.4);
+  isolation: isolate;
+}
+</style>
