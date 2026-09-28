@@ -12,7 +12,6 @@ preview:
   title: Quels sont les subsides en Belgique pour (re)créer le site web de ton asbl
 tags:
   - web
-vars: {}
 ---
 
 # Quels sont les subsides en Belgique pour (re)créer le site web de ton asbl?
