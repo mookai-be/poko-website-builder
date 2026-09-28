@@ -12,11 +12,14 @@ preview:
   title: Quels sont les subsides en Belgique pour (re)créer le site web de ton asbl
 tags:
   - web
+vars: {}
 ---
 
 # Quels sont les subsides en Belgique pour (re)créer le site web de ton asbl?
 
-![](https://images.unsplash.com/photo-1633158829875-e5316a358c6f?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb)
+{% image src="/_images/pexels-padrinan-1591060.webp" %}
+
+_Photo de Pexels ©Miguel Á. Padriñán_ { .small }
 
 Tu travailles dans une asbl et tu te demandes s’il existe des aides financières pour (re)faire le site web de ton association? Bonne nouvelle: la réponse est oui! Par contre, il n’existe pas de solution universelle, c’est du cas par cas. Et c’est là que ça devient complexe. On te donne quelques pistes pour te retrouver dans la jungle administrative belge et te mettre sur la voie des subsides qui pourraient correspondre à ton asbl pour te permettre de (re)faire ton site web.
 
