@@ -12,7 +12,6 @@ preview:
   title: Quels sont les subsides en Belgique pour (re)créer le site web de ton asbl
 tags:
   - web
-vars: {}
 ---
 
 # Quels sont les subsides en Belgique pour (re)créer le site web de ton asbl?
@@ -37,11 +36,7 @@ En Belgique, des subsides peuvent être octroyés par les différents niveaux de
 
 Chaque niveau de pouvoir est responsable de certaines matières et peut attribuer des subsides aux associations dans les matières pour lesquels il est compétent. 
 
-Pour plus d'informations, consulte ce
-
-{% sections %}{% endsections %}
-
-{% link anchor=undefined, type="internal" %}lien{% endlink %}.
+Pour plus d'informations, consulte ce {% link url="https://https://www.belgium.be/fr/la_belgique/pouvoirs_publics", type="external", newTab=true %}lien{% endlink %}.
 
 ## Comment trouver un subside pour créer le site web de mon asbl?
 
@@ -52,9 +47,9 @@ Il faut donc naviguer à travers les autres subsides disponibles et identifier c
 Pour en savoir plus, tu peux notamment consulter les sites suivants:
 
 - Le site de la commune où est situé le siège social de ton asbl
-- Le site des subsides de la Fédération Wallonie-Bruxelles: https://www.subside.cfwb.be/sub/tiers/aides/details/?sigle=tSFD-2A
-- Le site de Bru-Localis qui recense de nombreux appels à projets et subsides disponibles à Bruxelles: https://brulocalis.brussels/fr/subsides
-- Le site de la Région wallonne: https://interieur.wallonie.be/home/subsides-et-dotations.html
+- Le {% link url="https://www.subside.cfwb.be/sub/tiers/aides/details/?sigle=tSFD-2A", type="external", newTab=true %}site des subsides de la Fédération Wallonie-Bruxelles{% endlink %}
+- Le {% link url="https://brulocalis.brussels/fr/subsides", type="external", newTab=true %}site de Bru-Localis{% endlink %} qui recense de nombreux appels à projets et subsides à Bruxelles
+- Le {% link url="https://interieur.wallonie.be/home/subsides-et-dotations.html", type="external", newTab=true %}site de la Région wallonne{% endlink %}
 
 ## Qui contacter pour avoir un conseil personnalisé?
 
