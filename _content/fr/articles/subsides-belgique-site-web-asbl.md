@@ -12,6 +12,7 @@ preview:
   title: Quels sont les subsides en Belgique pour (re)créer le site web de ton asbl
 tags:
   - web
+vars: {}
 ---
 
 # Quels sont les subsides en Belgique pour (re)créer le site web de ton asbl?
@@ -36,7 +37,11 @@ En Belgique, des subsides peuvent être octroyés par les différents niveaux de
 
 Chaque niveau de pouvoir est responsable de certaines matières et peut attribuer des subsides aux associations dans les matières pour lesquels il est compétent. 
 
-(source : https://www.belgium.be/fr/la_belgique/pouvoirs_publics )
+Pour plus d'informations, consulte ce
+
+{% sections %}{% endsections %}
+
+{% link anchor=undefined, type="internal" %}lien{% endlink %}.
 
 ## Comment trouver un subside pour créer le site web de mon asbl?
 
