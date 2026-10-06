@@ -5,6 +5,9 @@ lang: fr
 createdAt: 2026-08-27T09:15:00.000Z
 ldType: WebPage
 name: poko
+gallery:
+  - /_images/portfolio/poko/2.webp
+  - /_images/portfolio/poko/5.webp
 metadata:
   image:
     src: /_images/portfolio/poko/5.webp
@@ -13,6 +16,7 @@ tags:
   - branding
   - logo
   - featured
+vars: {}
 images: []
 ---
 
