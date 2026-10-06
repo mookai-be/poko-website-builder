@@ -24,4 +24,4 @@ Recherche graphique · création du logo · identité visuelle · charte graphiq
 
 ### Le petit+
 
-Faire cohabiter deux univers qui peuvent sembler opposés : la rigueur de la cybersécurité et la sympathie d’un chien, sans sacrifier la crédibilité nécessaire à une cible B2B. Le système graphique a également été pensé dès le départ pour devenir un véritable univers pédagogique, et pas simplement un logo.
+Faire cohabiter deux univers qui peuvent sembler opposés: la rigueur de la cybersécurité et la sympathie d’un chien, sans sacrifier la crédibilité nécessaire à une cible B2B. Le système graphique a également été pensé dès le départ pour devenir un véritable univers pédagogique, et pas simplement un logo.
