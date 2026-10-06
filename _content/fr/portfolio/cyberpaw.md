@@ -5,7 +5,21 @@ lang: fr
 createdAt: 2026-10-06T12:17:00.000Z
 ldType: CreativeWork
 name: CyberPaw
-vars: {}
+gallery:
+  - /_images/portfolio/cyberpaw/cyberpaw-logo-basic-rvb-01.webp
+  - /_images/portfolio/cyberpaw/cyberpaw-logo-basic-rvb-11.webp
+  - /_images/portfolio/cyberpaw/cyberpaw-logo-basic-rvb-29.webp
+  - /_images/portfolio/cyberpaw/cyberpaw-logo-basic-rvb-34.webp
+  - /_images/portfolio/cyberpaw/cyberpaw-logo-basic-rvb-41.webp
+  - /_images/portfolio/cyberpaw/cyberpaw-logo-basic-rvb-43.webp
+  - /_images/portfolio/cyberpaw/cyberpaw-logo-basic-rvb-46.webp
+  - /_images/portfolio/cyberpaw/cyberpaw-logo-basic-rvb-49.webp
+  - /_images/portfolio/cyberpaw/cyberpaw-logo-basic-rvb-39.webp
+  - /_images/portfolio/cyberpaw/capture-d-ecran-2026-10-06-a-14-09-27.webp
+  - /_images/portfolio/cyberpaw/capture-d-ecran-2026-10-06-a-14-10-03.webp
+  - /_images/portfolio/cyberpaw/romina-avatar-rvb-01.webp
+  - /_images/portfolio/cyberpaw/romina-avatar-rvb-02.webp
+  - /_images/portfolio/cyberpaw/romina-avatar-rvb-03.webp
 ---
 
 ## Le projet
