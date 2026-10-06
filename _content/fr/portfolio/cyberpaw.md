@@ -14,9 +14,9 @@ Création de l’identité visuelle de CyberPaw Consulting, une entreprise de cy
 
 L’enjeu était de traduire une approche pédagogique, créative et accessible dans un secteur souvent perçu comme très technique et anxiogène, tout en conservant une image suffisamment sérieuse pour s’adresser à de grandes entreprises.
 
-La principale contrainte était d’intégrer le chien, directement lié au nom CyberPaw et au Basenji de la fondatrice, sans que l’identité perde en crédibilité. Le chien devient ainsi un symbole de vigilance, de protection et d’accompagnement, tout en apportant la touche humaine et ludique recherchée.
+La principale contrainte était d’intégrer le chien, directement lié au nom CyberPaw et au Basenji (Tatsu) de la fondatrice, sans que l’identité perde en crédibilité. Le chien devient ainsi un symbole de vigilance, de protection et d’accompagnement, tout en apportant la touche humaine et ludique recherchée.
 
-La palette imposée, volontairement éloignée du traditionnel vert « hacker » et du noir anxiogène, permet également de sortir des codes visuels habituels de la cybersécurité. L’ensemble joue ainsi sur un équilibre entre sérieux, accessibilité et créativité, avec un univers illustré pensé pour pouvoir évoluer vers des personnages, des contenus pédagogiques et de l’e-learning.
+La palette avec du violet, des tons clairs et aspect général lumineux était l'une des demandes de Romina notre cliente, volontairement éloignée du traditionnel vert «hacker» et du noir anxiogène, permet également de sortir des codes visuels habituels de la cybersécurité. L’ensemble joue ainsi sur un équilibre entre sérieux, accessibilité et créativité, avec un univers illustré pensé pour pouvoir évoluer vers des personnages, des contenus pédagogiques et de l’e-learning.
 
 ### Notre intervention
 
