@@ -20,7 +20,7 @@ La palette avec du violet, des tons clairs et aspect général lumineux était l
 
 ### Notre intervention
 
-Recherche graphique · création du logo · aide à la recherche de baseline · identité visuelle · charte graphique · recherche typographique · palette de couleurs · kit d’icônes · avatar · illustrations pour le site web · supports de communication
+Recherche graphique · création du logo · aide à la recherche de baseline · identité visuelle · charte graphique · recherche typographique · palette de couleurs · kit d’icônes · avatar · illustrations pour le site web en vue d'être animées en motion design · supports de communication · …
 
 ### Le petit+
 
