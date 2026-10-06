@@ -20,6 +20,56 @@ gallery:
   - /_images/portfolio/cyberpaw/romina-avatar-rvb-01.webp
   - /_images/portfolio/cyberpaw/romina-avatar-rvb-02.webp
   - /_images/portfolio/cyberpaw/romina-avatar-rvb-03.webp
+  - /_images/portfolio/cyberpaw/cyberpaw-cover-linkedin-1584-396px5.webp
+  - /_images/portfolio/cyberpaw/cyberpaw-cover-linkedin-1584-396px6.webp
+  - /_images/portfolio/cyberpaw/cyberpaw-cover-linkedin-1584-396px8.webp
+  - /_images/portfolio/cyberpaw/cyberpaw-cover-linkedin-1584-396px10.webp
+  - /_images/portfolio/cyberpaw/cyberpaw-cover-linkedin-1584-396px15.webp
+  - /_images/portfolio/cyberpaw/cyberpaw-cover-linkedin-1584-396px17.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-01.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-02.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-03.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-04.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-05.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-06.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-07.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-08.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-09.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-10.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-11.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-12.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-13.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-14.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-15.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-16.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-17.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-18.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-19.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-20.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-21.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-22.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-23.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-24.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-25.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-26.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-27.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-28.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-29.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-30.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-31.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-32.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-33.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-34.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-35.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-36.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-37.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-38.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-39.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-40.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-41.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-42.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-43.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-44.webp
 ---
 
 ## Le projet
