@@ -70,6 +70,9 @@ gallery:
   - /_images/portfolio/cyberpaw/tatsu-pose-rvb-42.webp
   - /_images/portfolio/cyberpaw/tatsu-pose-rvb-43.webp
   - /_images/portfolio/cyberpaw/tatsu-pose-rvb-44.webp
+preview:
+  image:
+    src: /_images/portfolio/cyberpaw/cyberpaw-logo-carre-rvb-34.webp
 tags:
   - branding
   - print
