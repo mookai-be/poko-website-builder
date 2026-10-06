@@ -10,7 +10,7 @@ vars: {}
 
 ## Le projet
 
-Création de l’identité visuelle de CyberPaw Consulting, une entreprise de cybersécurité orientée humain, qui accompagne les entreprises dans la sensibilisation et le changement de comportement face aux risques numériques.
+Création de l’identité visuelle de CyberPaw, une entreprise de cybersécurité orientée humain, qui accompagne les entreprises dans la sensibilisation et le changement de comportement face aux risques numériques.
 
 L’enjeu était de traduire une approche pédagogique, créative et accessible dans un secteur souvent perçu comme très technique et anxiogène, tout en conservant une image suffisamment sérieuse pour s’adresser à de grandes entreprises.
 
