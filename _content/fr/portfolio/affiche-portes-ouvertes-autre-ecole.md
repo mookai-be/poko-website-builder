@@ -1,6 +1,6 @@
 ---
 translationKey: affiche-portes-ouvertes-autre-ecole
-order: 11
+order: 13
 lang: fr
 createdAt: 2026-09-14T20:14:00.000Z
 ldType: WebPage

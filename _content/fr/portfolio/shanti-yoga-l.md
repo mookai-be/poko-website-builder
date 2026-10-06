@@ -1,6 +1,6 @@
 ---
 translationKey: shanti-yoga-l
-order: 51
+order: 61
 lang: fr
 createdAt: 2026-08-27T10:18:00.000Z
 ldType: WebPage

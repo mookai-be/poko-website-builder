@@ -1,6 +1,6 @@
 ---
 translationKey: furiosa-style
-order: 59
+order: 82
 lang: fr
 createdAt: 2026-09-02T09:57:00.000Z
 ldType: WebPage

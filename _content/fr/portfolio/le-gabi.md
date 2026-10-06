@@ -1,6 +1,6 @@
 ---
 translationKey: le-gabi
-order: 13
+order: 15
 lang: fr
 createdAt: 2026-08-27T09:23:00.000Z
 ldType: WebPage

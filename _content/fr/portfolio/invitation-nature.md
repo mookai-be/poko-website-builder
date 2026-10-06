@@ -1,6 +1,6 @@
 ---
 translationKey: invitation-nature
-order: 57
+order: 45
 lang: fr
 createdAt: 2026-09-14T20:09:00.000Z
 ldType: WebPage

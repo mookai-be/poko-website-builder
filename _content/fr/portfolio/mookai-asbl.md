@@ -1,6 +1,6 @@
 ---
 translationKey: mookai-asbl
-order: 14
+order: 16
 lang: fr
 createdAt: 2026-08-18T08:55:00.000Z
 ldType: WebPage

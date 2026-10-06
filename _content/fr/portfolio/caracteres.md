@@ -1,6 +1,6 @@
 ---
 translationKey: caracteres
-order: 66
+order: 84
 lang: fr
 createdAt: 2026-09-02T09:55:00.000Z
 ldType: WebPage

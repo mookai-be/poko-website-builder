@@ -1,6 +1,6 @@
 ---
 translationKey: yoga-du-soi
-order: 17
+order: 19
 lang: fr
 createdAt: 2026-08-27T10:13:00.000Z
 ldType: WebPage

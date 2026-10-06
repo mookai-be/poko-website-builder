@@ -1,6 +1,6 @@
 ---
 translationKey: avd-belgium
-order: 18
+order: 20
 lang: fr
 createdAt: 2026-08-27T09:29:00.000Z
 ldType: WebPage

@@ -1,6 +1,6 @@
 ---
 translationKey: symbolique-des-couleurs
-order: 49
+order: 67
 lang: fr
 createdAt: 2026-09-12T14:18:00.000Z
 ldType: WebPage

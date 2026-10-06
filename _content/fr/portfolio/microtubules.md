@@ -1,6 +1,6 @@
 ---
 translationKey: microtubules
-order: 87
+order: 44
 lang: fr
 createdAt: 2026-08-27T10:29:00.000Z
 ldType: WebPage

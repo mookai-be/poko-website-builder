@@ -1,6 +1,6 @@
 ---
 translationKey: syneco
-order: 25
+order: 36
 lang: fr
 createdAt: 2026-08-27T09:34:00.000Z
 ldType: WebPage

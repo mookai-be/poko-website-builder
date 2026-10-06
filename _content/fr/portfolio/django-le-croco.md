@@ -1,6 +1,6 @@
 ---
 translationKey: django-le-croco
-order: 41
+order: 58
 lang: fr
 createdAt: 2026-08-27T10:08:00.000Z
 ldType: WebPage

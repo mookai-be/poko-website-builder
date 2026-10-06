@@ -1,6 +1,6 @@
 ---
 translationKey: mariage-sojo
-order: 55
+order: 74
 lang: fr
 createdAt: 2026-09-15T09:27:00.000Z
 ldType: WebPage

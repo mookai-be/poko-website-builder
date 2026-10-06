@@ -1,6 +1,6 @@
 ---
 translationKey: anandaca
-order: 91
+order: 48
 lang: fr
 createdAt: 2026-08-27T10:34:00.000Z
 ldType: WebPage

@@ -1,6 +1,6 @@
 ---
 translationKey: bgfmag-2019
-order: 28
+order: 40
 lang: fr
 createdAt: 2026-08-27T10:04:00.000Z
 ldType: WebPage

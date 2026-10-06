@@ -1,6 +1,6 @@
 ---
 translationKey: le-ludenne
-order: 20
+order: 25
 lang: fr
 createdAt: 2026-08-27T09:24:00.000Z
 ldType: WebPage

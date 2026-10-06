@@ -1,6 +1,6 @@
 ---
 translationKey: vegetal
-order: 48
+order: 71
 lang: fr
 createdAt: 2026-09-12T18:23:00.000Z
 ldType: WebPage

@@ -1,6 +1,6 @@
 ---
 translationKey: the-southern-experience
-order: 78
+order: 27
 lang: fr
 createdAt: 2026-08-27T10:25:00.000Z
 ldType: WebPage

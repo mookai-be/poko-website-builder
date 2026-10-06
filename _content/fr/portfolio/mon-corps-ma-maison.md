@@ -1,6 +1,6 @@
 ---
 translationKey: mon-corps-ma-maison
-order: 56
+order: 78
 lang: fr
 createdAt: 2026-09-02T09:59:00.000Z
 ldType: WebPage

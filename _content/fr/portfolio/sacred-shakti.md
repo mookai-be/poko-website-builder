@@ -1,6 +1,6 @@
 ---
 translationKey: sacred-shakti
-order: 31
+order: 50
 lang: fr
 createdAt: 2026-08-27T10:02:00.000Z
 ldType: WebPage

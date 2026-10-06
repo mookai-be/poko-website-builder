@@ -1,6 +1,6 @@
 ---
 translationKey: dames-vegetales
-order: 85
+order: 9
 lang: fr
 name: Dames Végétales
 metadata:

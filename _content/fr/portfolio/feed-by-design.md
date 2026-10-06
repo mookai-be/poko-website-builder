@@ -1,6 +1,6 @@
 ---
 translationKey: feed-by-design
-order: 52
+order: 72
 lang: fr
 createdAt: 2026-09-14T20:17:00.000Z
 ldType: WebPage

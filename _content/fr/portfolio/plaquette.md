@@ -1,6 +1,6 @@
 ---
 translationKey: plaquette
-order: 60
+order: 62
 lang: fr
 createdAt: 2026-09-14T12:09:00.000Z
 ldType: WebPage

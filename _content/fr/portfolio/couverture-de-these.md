@@ -1,6 +1,6 @@
 ---
 translationKey: couverture-de-these
-order: 83
+order: 12
 lang: fr
 createdAt: 2026-09-14T11:54:00.000Z
 ldType: WebPage

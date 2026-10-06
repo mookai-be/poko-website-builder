@@ -1,6 +1,6 @@
 ---
 translationKey: colere
-order: 79
+order: 88
 lang: fr
 createdAt: 2026-09-02T10:02:00.000Z
 ldType: WebPage
