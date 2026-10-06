@@ -1,6 +1,6 @@
 ---
 translationKey: luc-besson-book
-order: 29
+order: 67
 lang: fr
 createdAt: 2026-09-02T09:52:00.000Z
 ldType: WebPage
@@ -12,9 +12,9 @@ tags:
   - mise-en-page
   - print
 status: inactive
-vars: {}
 images: []
 ---
+
 
 # Luc Besson book
 

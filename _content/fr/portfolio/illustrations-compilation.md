@@ -1,6 +1,6 @@
 ---
 translationKey: illustrations-compilation
-order: 23
+order: 46
 lang: fr
 createdAt: 2026-09-15T09:14:00.000Z
 ldType: WebPage
@@ -10,9 +10,9 @@ metadata:
     src: /_images/portfolio/illustrations-compilation/1.webp
 tags:
   - illustration
-vars: {}
 images: []
 ---
+
 
 # Illustrations numériques
 

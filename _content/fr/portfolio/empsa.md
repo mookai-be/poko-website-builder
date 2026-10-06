@@ -1,6 +1,6 @@
 ---
 translationKey: empsa
-order: 46
+order: 47
 lang: fr
 createdAt: 2026-08-27T10:17:00.000Z
 ldType: WebPage
@@ -11,8 +11,10 @@ metadata:
 tags:
   - branding
   - logo
+vars: {}
 images: []
 ---
+
 
 # EMPSA asbl
 

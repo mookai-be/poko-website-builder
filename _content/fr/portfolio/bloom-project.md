@@ -1,6 +1,6 @@
 ---
 translationKey: bloom-project
-order: 62
+order: 70
 lang: fr
 createdAt: 2026-09-12T13:47:00.000Z
 ldType: WebPage
@@ -10,10 +10,12 @@ metadata:
     src: /_images/portfolio/bloom-project/4.webp
 tags:
   - mise-en-page
+vars: {}
 images:
-  - url: https://mir-s3-cdn-cf.behance.net/projects/max_808/ed493d161889991.Y3JvcCwyNDgxLDE5NDAsMCw3ODY.jpg
-    alt: Bloom project - identité visuelle
+  - alt: Bloom project - identité visuelle
+    url: https://mir-s3-cdn-cf.behance.net/projects/max_808/ed493d161889991.Y3JvcCwyNDgxLDE5NDAsMCw3ODY.jpg
 ---
+
 
 
 # Bloom project

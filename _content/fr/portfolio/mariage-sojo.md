@@ -1,6 +1,6 @@
 ---
 translationKey: mariage-sojo
-order: 31
+order: 55
 lang: fr
 createdAt: 2026-09-15T09:27:00.000Z
 ldType: WebPage
@@ -10,9 +10,9 @@ metadata:
     src: /_images/portfolio/mariage-sojo/3.webp
 tags:
   - mise-en-page
-vars: {}
 images: []
 ---
+
 
 # Mariage SoJo
 

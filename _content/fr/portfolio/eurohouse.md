@@ -1,6 +1,6 @@
 ---
 translationKey: eurohouse
-order: 60
+order: 44
 lang: fr
 createdAt: 2026-08-27T10:21:00.000Z
 ldType: WebPage
@@ -12,10 +12,12 @@ tags:
   - branding
   - logo
   - print
+vars: {}
 images:
-  - alt: euroHouse - identité visuelle
-    url: https://images.ctfassets.net/1tq41wraq9ir/3m4lo5n688e44iyimku8M2/87a0167c6389b2d7bd583b009378ff84/euroHouse_logo_RVB-carre-06.jpg
+  - url: https://images.ctfassets.net/1tq41wraq9ir/3m4lo5n688e44iyimku8M2/87a0167c6389b2d7bd583b009378ff84/euroHouse_logo_RVB-carre-06.jpg
+    alt: euroHouse - identité visuelle
 ---
+
 
 # euroHouse
 

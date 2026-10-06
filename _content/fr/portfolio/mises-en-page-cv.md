@@ -1,6 +1,6 @@
 ---
 translationKey: mises-en-page-cv
-order: 14
+order: 40
 lang: fr
 createdAt: 2026-08-27T09:30:00.000Z
 ldType: WebPage
@@ -12,9 +12,9 @@ tags:
   - mise-en-page
   - print
 status: inactive
-vars: {}
 images: []
 ---
+
 
 # Mise en page de CV
 

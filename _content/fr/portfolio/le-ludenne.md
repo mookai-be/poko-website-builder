@@ -1,6 +1,6 @@
 ---
 translationKey: le-ludenne
-order: 9
+order: 20
 lang: fr
 createdAt: 2026-08-27T09:24:00.000Z
 ldType: WebPage
@@ -11,11 +11,11 @@ metadata:
 tags:
   - branding
   - logo
-vars: {}
 images:
-  - alt: le Ludenne - identité visuelle
-    url: https://mir-s3-cdn-cf.behance.net/project_modules/1400/c7fc51244226747.69931534bfa06.jpg
+  - url: https://mir-s3-cdn-cf.behance.net/project_modules/1400/c7fc51244226747.69931534bfa06.jpg
+    alt: le Ludenne - identité visuelle
 ---
+
 
 # le Ludenne
 

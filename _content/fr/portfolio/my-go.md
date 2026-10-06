@@ -1,6 +1,6 @@
 ---
 translationKey: my-go
-order: 68
+order: 75
 lang: fr
 createdAt: 2026-08-27T10:23:00.000Z
 ldType: WebPage
@@ -12,10 +12,12 @@ tags:
   - branding
   - logo
   - print
+vars: {}
 images:
-  - alt: My GO - identité visuelle
-    url: https://images.ctfassets.net/1tq41wraq9ir/4Q69lGpkhOMomQakoSIuOO/ac764c4826cf459b24da5b39cfa4e0d3/my-go-imgcover.png
+  - url: https://images.ctfassets.net/1tq41wraq9ir/4Q69lGpkhOMomQakoSIuOO/ac764c4826cf459b24da5b39cfa4e0d3/my-go-imgcover.png
+    alt: My GO - identité visuelle
 ---
+
 
 # My GO
 

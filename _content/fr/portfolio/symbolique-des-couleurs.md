@@ -1,6 +1,6 @@
 ---
 translationKey: symbolique-des-couleurs
-order: 33
+order: 49
 lang: fr
 createdAt: 2026-09-12T14:18:00.000Z
 ldType: WebPage
@@ -11,9 +11,9 @@ metadata:
 tags:
   - mise-en-page
   - print
-vars: {}
 images: []
 ---
+
 
 # Symbolique des couleurs
 

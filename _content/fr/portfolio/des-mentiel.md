@@ -1,6 +1,6 @@
 ---
 translationKey: des-mentiel
-order: 86
+order: 10
 lang: fr
 createdAt: 2026-08-27T10:30:00.000Z
 ldType: WebPage
@@ -11,9 +11,9 @@ metadata:
 tags:
   - branding
   - logo
-vars: {}
 images: []
 ---
+
 
 
 # Dés-mentiel

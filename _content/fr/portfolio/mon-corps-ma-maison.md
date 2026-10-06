@@ -1,6 +1,6 @@
 ---
 translationKey: mon-corps-ma-maison
-order: 58
+order: 56
 lang: fr
 createdAt: 2026-09-02T09:59:00.000Z
 ldType: WebPage
@@ -11,9 +11,9 @@ metadata:
 tags:
   - mise-en-page
 status: inactive
-vars: {}
 images: []
 ---
+
 
 # Mon corps, ma maison
 

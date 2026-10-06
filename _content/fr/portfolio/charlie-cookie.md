@@ -1,6 +1,6 @@
 ---
 translationKey: charlie-cookie
-order: 57
+order: 64
 lang: fr
 createdAt: 2026-08-27T10:20:00.000Z
 ldType: WebPage
@@ -11,8 +11,10 @@ metadata:
 tags:
   - branding
   - logo
+vars: {}
 images: []
 ---
+
 
 # Charlie Cookie
 

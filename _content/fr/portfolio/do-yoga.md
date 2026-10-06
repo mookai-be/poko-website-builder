@@ -1,6 +1,6 @@
 ---
 translationKey: do-yoga
-order: 42
+order: 45
 lang: fr
 createdAt: 2026-08-27T10:15:00.000Z
 ldType: WebPage
@@ -12,10 +12,12 @@ tags:
   - branding
   - logo
   - print
+vars: {}
 images:
-  - alt: Do YOGA - identité visuelle
-    url: https://images.ctfassets.net/1tq41wraq9ir/46owxkhs36cQ44e6mYwIIu/a9fbd992eab2414cc7ecb81cdef90485/do-yoga-imgcover.png
+  - url: https://images.ctfassets.net/1tq41wraq9ir/46owxkhs36cQ44e6mYwIIu/a9fbd992eab2414cc7ecb81cdef90485/do-yoga-imgcover.png
+    alt: Do YOGA - identité visuelle
 ---
+
 
 
 # Do YOGA

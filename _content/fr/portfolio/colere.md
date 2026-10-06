@@ -1,6 +1,6 @@
 ---
 translationKey: colere
-order: 73
+order: 79
 lang: fr
 createdAt: 2026-09-02T10:02:00.000Z
 ldType: WebPage
@@ -12,9 +12,9 @@ tags:
   - art
   - photo
 status: inactive
-vars: {}
 images: []
 ---
+
 
 # COLERE
 

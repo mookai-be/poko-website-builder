@@ -1,6 +1,6 @@
 ---
 translationKey: enchanted-alchemy
-order: 39
+order: 33
 lang: fr
 createdAt: 2026-08-27T10:14:00.000Z
 ldType: WebPage
@@ -14,10 +14,12 @@ tags:
   - print
   - web
   - site-toile
+vars: {}
 images:
-  - alt: Enchanted Alchemy - identité visuelle
-    url: https://images.ctfassets.net/1tq41wraq9ir/57lMyNiRUs4Wqm40uKaE4q/357abe3594a9351794832df906391e40/enchanted-alchemy-imgcover.png
+  - url: https://images.ctfassets.net/1tq41wraq9ir/57lMyNiRUs4Wqm40uKaE4q/357abe3594a9351794832df906391e40/enchanted-alchemy-imgcover.png
+    alt: Enchanted Alchemy - identité visuelle
 ---
+
 
 # Enchanted Alchemy
 

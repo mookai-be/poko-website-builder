@@ -1,6 +1,6 @@
 ---
 translationKey: anandaca
-order: 89
+order: 91
 lang: fr
 createdAt: 2026-08-27T10:34:00.000Z
 ldType: WebPage
@@ -12,10 +12,12 @@ tags:
   - branding
   - logo
   - print
+vars: {}
 images:
-  - alt: Anandaca - identité visuelle
-    url: https://images.ctfassets.net/1tq41wraq9ir/1WwvcGpQDKgK08y8UcIyAo/9eccfebdff345175474822d1d0f522ec/anandaca-imgcover.png
+  - url: https://images.ctfassets.net/1tq41wraq9ir/1WwvcGpQDKgK08y8UcIyAo/9eccfebdff345175474822d1d0f522ec/anandaca-imgcover.png
+    alt: Anandaca - identité visuelle
 ---
+
 
 # Anandaca
 

@@ -1,6 +1,6 @@
 ---
 translationKey: invitee-dans-sa-caverne
-order: 49
+order: 53
 lang: fr
 createdAt: 2026-09-14T12:07:00.000Z
 ldType: WebPage
@@ -11,9 +11,9 @@ metadata:
 tags:
   - art
   - illustration
-vars: {}
 images: []
 ---
+
 
 # Invitée dans sa caverne…
 

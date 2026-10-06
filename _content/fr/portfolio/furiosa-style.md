@@ -1,6 +1,6 @@
 ---
 translationKey: furiosa-style
-order: 53
+order: 59
 lang: fr
 createdAt: 2026-09-02T09:57:00.000Z
 ldType: WebPage
@@ -12,9 +12,9 @@ tags:
   - art
   - photo
 status: inactive
-vars: {}
 images: []
 ---
+
 
 
 # Furiosa'style
