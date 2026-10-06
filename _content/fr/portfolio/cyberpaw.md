@@ -70,6 +70,11 @@ gallery:
   - /_images/portfolio/cyberpaw/tatsu-pose-rvb-42.webp
   - /_images/portfolio/cyberpaw/tatsu-pose-rvb-43.webp
   - /_images/portfolio/cyberpaw/tatsu-pose-rvb-44.webp
+tags:
+  - branding
+  - print
+  - illustration
+  - logo
 ---
 
 ## Le projet
