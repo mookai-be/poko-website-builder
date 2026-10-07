@@ -7,6 +7,7 @@ ldType: WebPage
 name: Portfolio
 eleventyNavigation:
   add: Nav
+vars: {}
 bodyClass: palette-mocha
 ---
 
