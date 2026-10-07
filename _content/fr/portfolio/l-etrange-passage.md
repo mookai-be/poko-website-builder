@@ -7,7 +7,7 @@ ldType: WebPage
 name: L'étrange passage
 metadata:
   image:
-    src: /_images/portfolio/l-etrange-passage/42.webp
+    src: /_images/portfolio/l-etrange-passage/36.webp
 tags:
   - mise-en-page
   - print
@@ -17,8 +17,6 @@ tags:
   - site-toile
 images: []
 ---
-
-
 
 # L'étrange passage
 
