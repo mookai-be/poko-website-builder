@@ -1,6 +1,6 @@
 ---
 translationKey: invitation-carte-postale
-order: 60
+order: 61
 lang: fr
 createdAt: 2026-09-14T20:12:00.000Z
 ldType: WebPage
@@ -12,9 +12,9 @@ tags:
   - mise-en-page
   - print
   - illustration
-vars: {}
 images: []
 ---
+
 
 
 # Invitation - carte postale

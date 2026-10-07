@@ -1,6 +1,6 @@
 ---
 translationKey: plaquette
-order: 62
+order: 63
 lang: fr
 createdAt: 2026-09-14T12:09:00.000Z
 ldType: WebPage
@@ -11,8 +11,10 @@ metadata:
 tags:
   - mise-en-page
   - print
+vars: {}
 images: []
 ---
+
 
 
 # Belgian Research Sailboat

@@ -1,6 +1,6 @@
 ---
 translationKey: toileio
-order: 52
+order: 53
 lang: fr
 createdAt: 2026-08-27T10:13:00.000Z
 ldType: WebPage
@@ -14,10 +14,12 @@ tags:
   - print
   - web
   - site-toile
+vars: {}
 images:
-  - alt: Toile.io - identité visuelle
-    url: https://images.ctfassets.net/1tq41wraq9ir/5OE6M95C2QyOioqOUyeEsY/c866d4b91b02a8bc7b8fbf6f1a06ba81/toile-io_logo_RVB-13.jpg
+  - url: https://images.ctfassets.net/1tq41wraq9ir/5OE6M95C2QyOioqOUyeEsY/c866d4b91b02a8bc7b8fbf6f1a06ba81/toile-io_logo_RVB-13.jpg
+    alt: Toile.io - identité visuelle
 ---
+
 
 
 # toile.io

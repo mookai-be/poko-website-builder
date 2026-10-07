@@ -1,6 +1,6 @@
 ---
 translationKey: affiche-court-metrage
-order: 38
+order: 39
 lang: fr
 createdAt: 2026-09-12T13:59:00.000Z
 ldType: WebPage
@@ -11,8 +11,10 @@ metadata:
 tags:
   - mise-en-page
   - print
+vars: {}
 images: []
 ---
+
 
 
 

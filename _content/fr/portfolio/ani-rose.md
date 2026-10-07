@@ -1,6 +1,6 @@
 ---
 translationKey: ani-rose
-order: 25
+order: 26
 lang: fr
 createdAt: 2026-09-11T20:27:00.000Z
 ldType: WebPage
@@ -11,8 +11,10 @@ metadata:
 tags:
   - illustration
   - art
+vars: {}
 images: []
 ---
+
 
 
 

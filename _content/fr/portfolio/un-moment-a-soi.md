@@ -1,6 +1,6 @@
 ---
 translationKey: un-moment-a-soi
-order: 53
+order: 69
 lang: fr
 createdAt: 2026-08-27T10:03:00.000Z
 ldType: WebPage
@@ -14,11 +14,11 @@ tags:
   - print
   - photo
   - web
-vars: {}
 images:
-  - url: https://images.ctfassets.net/1tq41wraq9ir/4spX5L4S4oQK8uoQyUYgk6/df0a9ac58e0ad4d0401f6c9c32e84507/unmomentasoi-imgcover.png
-    alt: Un moment à soi - identité visuelle
+  - alt: Un moment à soi - identité visuelle
+    url: https://images.ctfassets.net/1tq41wraq9ir/4spX5L4S4oQK8uoQyUYgk6/df0a9ac58e0ad4d0401f6c9c32e84507/unmomentasoi-imgcover.png
 ---
+
 
 
 # Un moment à soi

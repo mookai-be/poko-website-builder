@@ -1,6 +1,6 @@
 ---
 translationKey: invitation-nature
-order: 32
+order: 33
 lang: fr
 createdAt: 2026-09-14T20:09:00.000Z
 ldType: WebPage
@@ -12,8 +12,10 @@ tags:
   - mise-en-page
   - print
   - photo
+vars: {}
 images: []
 ---
+
 
 
 
