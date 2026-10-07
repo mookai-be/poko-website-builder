@@ -20,6 +20,14 @@ gallery:
   - /_images/portfolio/cyberpaw/romina-avatar-rvb-01.webp
   - /_images/portfolio/cyberpaw/romina-avatar-rvb-02.webp
   - /_images/portfolio/cyberpaw/romina-avatar-rvb-03.webp
+  - /_images/portfolio/cyberpaw/cyberpaw-cover-linkedin-1584-396px2.webp
+  - /_images/portfolio/cyberpaw/cyberpaw-cover-linkedin-1584-396px3.webp
+  - /_images/portfolio/cyberpaw/cyberpaw-cover-linkedin-1584-396px5.webp
+  - /_images/portfolio/cyberpaw/cyberpaw-cover-linkedin-1584-396px8.webp
+  - /_images/portfolio/cyberpaw/cyberpaw-cover-linkedin-1584-396px10.webp
+  - /_images/portfolio/cyberpaw/cyberpaw-cover-linkedin-1584-396px12.webp
+  - /_images/portfolio/cyberpaw/cyberpaw-cover-linkedin-1584-396px15.webp
+  - /_images/portfolio/cyberpaw/cyberpaw-cover-linkedin-1584-396px17.webp
 preview:
   image:
     src: /_images/portfolio/cyberpaw/cyberpaw-logo-carre-rvb-34.webp
