@@ -1,6 +1,6 @@
 ---
 translationKey: ad-lib
-order: 41
+order: 42
 lang: fr
 createdAt: 2026-08-27T10:11:00.000Z
 ldType: WebPage
@@ -12,10 +12,12 @@ tags:
   - branding
   - logo
   - print
+vars: {}
 images:
-  - url: https://images.ctfassets.net/1tq41wraq9ir/XT9VI7LXIQsa0Ycga6SyC/21fcd4b607dc549b5a7d076c13d1c6e7/ad-lib_logo_RVB-06.jpg
-    alt: ad lib. - identité visuelle
+  - alt: ad lib. - identité visuelle
+    url: https://images.ctfassets.net/1tq41wraq9ir/XT9VI7LXIQsa0Ycga6SyC/21fcd4b607dc549b5a7d076c13d1c6e7/ad-lib_logo_RVB-06.jpg
 ---
+
 
 
 # ad lib.

@@ -1,6 +1,6 @@
 ---
 translationKey: so-you
-order: 31
+order: 33
 lang: fr
 createdAt: 2026-08-27T10:09:00.000Z
 ldType: WebPage
@@ -11,9 +11,9 @@ metadata:
 tags:
   - branding
   - logo
-vars: {}
 images: []
 ---
+
 
 
 # so You - Holistic Coaching

@@ -1,6 +1,6 @@
 ---
 translationKey: vegetal
-order: 71
+order: 64
 lang: fr
 createdAt: 2026-09-12T18:23:00.000Z
 ldType: WebPage
@@ -11,9 +11,9 @@ metadata:
 tags:
   - illustration
   - art
-vars: {}
 images: []
 ---
+
 
 
 

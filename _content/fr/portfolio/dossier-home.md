@@ -1,6 +1,6 @@
 ---
 translationKey: dossier-home
-order: 38
+order: 39
 lang: fr
 createdAt: 2026-09-02T09:49:00.000Z
 ldType: WebPage
@@ -12,8 +12,10 @@ tags:
   - mise-en-page
   - print
 status: inactive
+vars: {}
 images: []
 ---
+
 
 
 # Dossier de diffusion HOME

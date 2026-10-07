@@ -1,6 +1,6 @@
 ---
 translationKey: the-southern-experience
-order: 27
+order: 29
 lang: fr
 createdAt: 2026-08-27T10:25:00.000Z
 ldType: WebPage
@@ -11,9 +11,9 @@ metadata:
 tags:
   - branding
   - logo
-vars: {}
 images: []
 ---
+
 
 
 # The Southern Experience

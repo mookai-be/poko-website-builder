@@ -1,6 +1,6 @@
 ---
 translationKey: startbook
-order: 77
+order: 79
 lang: fr
 createdAt: 2026-09-15T09:23:00.000Z
 ldType: WebPage
@@ -12,8 +12,10 @@ tags:
   - mise-en-page
   - print
   - illustration
+vars: {}
 images: []
 ---
+
 
 
 # startBook

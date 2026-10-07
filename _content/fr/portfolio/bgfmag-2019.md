@@ -1,6 +1,6 @@
 ---
 translationKey: bgfmag-2019
-order: 40
+order: 41
 lang: fr
 createdAt: 2026-08-27T10:04:00.000Z
 ldType: WebPage
@@ -10,9 +10,9 @@ metadata:
     src: /_images/portfolio/bgfmag-2019/9.webp
 tags:
   - illustration
-vars: {}
 images: []
 ---
+
 
 
 # BGF mag 2019
