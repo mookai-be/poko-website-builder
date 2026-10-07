@@ -5,18 +5,34 @@ lang: fr
 createdAt: 2026-08-27T10:28:00.000Z
 ldType: WebPage
 name: JAVVA asbl - Rapport d'activité
+gallery:
+  - /_images/portfolio/javva/6.webp
+  - /_images/portfolio/javva/7.webp
+  - /_images/portfolio/javva/8.webp
+  - /_images/portfolio/javva/9.webp
+  - /_images/portfolio/javva/10.webp
+  - /_images/portfolio/javva/11.webp
+  - /_images/portfolio/javva/12.webp
+  - /_images/portfolio/javva/14.webp
+  - /_images/portfolio/javva/15.webp
+  - /_images/portfolio/javva/17.webp
+  - /_images/portfolio/javva/18.webp
+  - /_images/portfolio/javva/19.webp
+  - /_images/portfolio/javva/13.webp
+  - /_images/portfolio/javva/20.webp
+  - /_images/portfolio/javva/1.webp
+  - /_images/portfolio/javva/2.webp
+  - /_images/portfolio/javva/3.webp
+  - /_images/portfolio/javva/4.webp
+  - /_images/portfolio/javva/5.webp
 metadata:
   image:
-    src: /_images/portfolio/javva/13.webp
+    src: /_images/portfolio/javva/6.webp
 tags:
   - mise-en-page
   - print
-vars: {}
 images: []
 ---
-
-
-
 
 # JAVVA asbl - Rapport d'activité
 
