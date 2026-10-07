@@ -7,14 +7,13 @@ ldType: WebPage
 name: The Southern Experience
 metadata:
   image:
-    src: /_images/portfolio/the-southern-experience/23.webp
+    src: /_images/portfolio/the-southern-experience/10.webp
 tags:
   - branding
   - logo
+vars: {}
 images: []
 ---
-
-
 
 # The Southern Experience
 
