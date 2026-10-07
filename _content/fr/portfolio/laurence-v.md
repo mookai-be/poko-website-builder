@@ -7,16 +7,13 @@ ldType: WebPage
 name: Wellbeing & Wellbirthing
 metadata:
   image:
-    src: /_images/portfolio/laurence-v/41.webp
+    src: /_images/portfolio/laurence-v/9.webp
 tags:
   - branding
   - logo
 status: inactive
-vars: {}
 images: []
 ---
-
-
 
 # Wellbeing & Wellbirthing
 
