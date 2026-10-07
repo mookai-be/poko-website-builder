@@ -1,14 +1,25 @@
 <!doctype html>
-<html lang="{{lang or 'en'}}" class="no-js {{htmlClass or 'palette-main'}}">
+<html lang="{{lang or 'en'}}" class="no-js {{htmlClass or 'palette-mocha'}}">
   <head>
     {% partial "_html-head-default.md" %} {% getBundle "html", "head" %}
   </head>
   <body class="{{bodyClass}}">
-    
+
     <!-- Content -->
-    {% partial "_main-content.md" %}
+    {% partial "main-content.md" %}
+
     <!-- Footer -->
     {% partial "headless/page-footer.11ty.js" %}
-
   </body>
+
+  <!-- Styles Partials -->
+  {% partial "styles-huge-title.njk" %}
+  {% partial "styles-blockquote-centered.njk" %}
+
+  <!-- Injected page styles -->
+  {% if pageStyles %}
+  <style>
+    {{pageStyles | safe}}
+  </style>
+  {% endif %}
 </html>
