@@ -78,7 +78,6 @@ tags:
   - print
   - illustration
   - logo
-vars: {}
 ---
 
 ## Le projet
