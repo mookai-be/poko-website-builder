@@ -28,6 +28,16 @@ gallery:
   - /_images/portfolio/cyberpaw/cyberpaw-cover-linkedin-1584-396px12.webp
   - /_images/portfolio/cyberpaw/cyberpaw-cover-linkedin-1584-396px15.webp
   - /_images/portfolio/cyberpaw/cyberpaw-cover-linkedin-1584-396px17.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-01.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-02.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-03.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-04.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-05.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-06.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-07.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-08.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-09.webp
+  - /_images/portfolio/cyberpaw/tatsu-pose-rvb-10.webp
 preview:
   image:
     src: /_images/portfolio/cyberpaw/cyberpaw-logo-carre-rvb-34.webp
