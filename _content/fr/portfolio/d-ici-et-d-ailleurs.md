@@ -19,6 +19,11 @@ gallery:
   - /_images/portfolio/d-ici-et-d-ailleurs/dscf9408-2.webp
   - /_images/portfolio/d-ici-et-d-ailleurs/dscf9415-2.webp
   - /_images/portfolio/d-ici-et-d-ailleurs/dscf9416-2.webp
+  - /_images/portfolio/d-ici-et-d-ailleurs/dscf9417-2.webp
+  - /_images/portfolio/d-ici-et-d-ailleurs/dscf9418-2.webp
+  - /_images/portfolio/d-ici-et-d-ailleurs/dscf9432-2.webp
+  - /_images/portfolio/d-ici-et-d-ailleurs/dscf9434-2.webp
+  - /_images/portfolio/d-ici-et-d-ailleurs/dscf9435-2.webp
 ---
 
 ## Le projet
