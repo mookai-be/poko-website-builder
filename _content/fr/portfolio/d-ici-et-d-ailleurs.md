@@ -16,20 +16,19 @@ gallery:
   - /_images/portfolio/d-ici-et-d-ailleurs/free_book_mockup_6-balad-aquarelle-2.webp
   - /_images/portfolio/d-ici-et-d-ailleurs/dscf9396-2.webp
   - /_images/portfolio/d-ici-et-d-ailleurs/dscf9397-2.webp
-  - /_images/portfolio/d-ici-et-d-ailleurs/dscf9408-2.webp
-  - /_images/portfolio/d-ici-et-d-ailleurs/dscf9415-2.webp
   - /_images/portfolio/d-ici-et-d-ailleurs/dscf9416-2.webp
+  - /_images/portfolio/d-ici-et-d-ailleurs/dscf9415-2.webp
+  - /_images/portfolio/d-ici-et-d-ailleurs/dscf9436-2.webp
   - /_images/portfolio/d-ici-et-d-ailleurs/dscf9417-2.webp
-  - /_images/portfolio/d-ici-et-d-ailleurs/dscf9418-2.webp
   - /_images/portfolio/d-ici-et-d-ailleurs/dscf9432-2.webp
   - /_images/portfolio/d-ici-et-d-ailleurs/dscf9434-2.webp
   - /_images/portfolio/d-ici-et-d-ailleurs/dscf9435-2.webp
-  - /_images/portfolio/d-ici-et-d-ailleurs/dscf9436-2.webp
-  - /_images/portfolio/d-ici-et-d-ailleurs/dscf9438-2.webp
-  - /_images/portfolio/d-ici-et-d-ailleurs/dscf9439-2.webp
+  - /_images/portfolio/d-ici-et-d-ailleurs/dscf9408-2.webp
+  - /_images/portfolio/d-ici-et-d-ailleurs/dscf9418-2.webp
   - /_images/portfolio/d-ici-et-d-ailleurs/dscf9442-2.webp
+  - /_images/portfolio/d-ici-et-d-ailleurs/dscf9439-2.webp
+  - /_images/portfolio/d-ici-et-d-ailleurs/dscf9438-2.webp
   - /_images/portfolio/d-ici-et-d-ailleurs/dscf9444-2.webp
-vars: {}
 ---
 
 ## Le projet
