@@ -14,6 +14,11 @@ gallery:
   - /_images/portfolio/d-ici-et-d-ailleurs/free_book_mockup_2-balad-aquarelle-2.webp
   - /_images/portfolio/d-ici-et-d-ailleurs/free_book_mockup_6-balad-aquarelle-1.webp
   - /_images/portfolio/d-ici-et-d-ailleurs/free_book_mockup_6-balad-aquarelle-2.webp
+  - /_images/portfolio/d-ici-et-d-ailleurs/dscf9396-2.webp
+  - /_images/portfolio/d-ici-et-d-ailleurs/dscf9397-2.webp
+  - /_images/portfolio/d-ici-et-d-ailleurs/dscf9408-2.webp
+  - /_images/portfolio/d-ici-et-d-ailleurs/dscf9415-2.webp
+  - /_images/portfolio/d-ici-et-d-ailleurs/dscf9416-2.webp
 ---
 
 ## Le projet
