@@ -7,12 +7,12 @@ ldType: CreativeWork
 name: D'ici et d'ailleurs
 gallery:
   - /_images/portfolio/d-ici-et-d-ailleurs/free_book_mockup_5-balad-aquarelle-1.webp
+  - /_images/portfolio/d-ici-et-d-ailleurs/free_book_mockup_8-balad-aquarelle-1.webp
   - /_images/portfolio/d-ici-et-d-ailleurs/free_book_mockup_2-balad-aquarelle-1.webp
   - /_images/portfolio/d-ici-et-d-ailleurs/free_book_mockup_5-balad-aquarelle-2.webp
+  - /_images/portfolio/d-ici-et-d-ailleurs/free_book_mockup_8-balad-aquarelle-2.webp
   - /_images/portfolio/d-ici-et-d-ailleurs/free_book_mockup_2-balad-aquarelle-2.webp
   - /_images/portfolio/d-ici-et-d-ailleurs/free_book_mockup_6-balad-aquarelle-1.webp
-  - /_images/portfolio/d-ici-et-d-ailleurs/free_book_mockup_8-balad-aquarelle-1.webp
-  - /_images/portfolio/d-ici-et-d-ailleurs/free_book_mockup_8-balad-aquarelle-2.webp
   - /_images/portfolio/d-ici-et-d-ailleurs/free_book_mockup_6-balad-aquarelle-2.webp
 ---
 
