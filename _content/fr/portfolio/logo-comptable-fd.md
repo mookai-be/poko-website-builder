@@ -1,6 +1,6 @@
 ---
 translationKey: logo-comptable-fd
-order: 80
+order: 81
 lang: fr
 createdAt: 2026-08-27T10:28:00.000Z
 ldType: WebPage
@@ -11,9 +11,9 @@ metadata:
 tags:
   - branding
   - logo
-vars: {}
 images: []
 ---
+
 
 
 

@@ -1,6 +1,6 @@
 ---
 translationKey: mookai-asbl
-order: 15
+order: 16
 lang: fr
 createdAt: 2026-08-18T08:55:00.000Z
 ldType: WebPage
@@ -13,10 +13,12 @@ tags:
   - logo
   - web
   - site-custom
+vars: {}
 images:
-  - alt: mookaï asbl - identité visuelle
-    url: https://mir-s3-cdn-cf.behance.net/project_modules/1400/ac2bfa199368595.674da3ad5b177.jpg
+  - url: https://mir-s3-cdn-cf.behance.net/project_modules/1400/ac2bfa199368595.674da3ad5b177.jpg
+    alt: mookaï asbl - identité visuelle
 ---
+
 
 
 

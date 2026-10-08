@@ -1,6 +1,6 @@
 ---
 translationKey: feed-by-design
-order: 72
+order: 73
 lang: fr
 createdAt: 2026-09-14T20:17:00.000Z
 ldType: WebPage
@@ -16,11 +16,11 @@ tags:
   - mise-en-page
   - web
   - site-toile
-vars: {}
 images:
-  - alt: Feed by Design - identité visuelle
-    url: https://mir-s3-cdn-cf.behance.net/project_modules/1400/0c980c52697581.5919cb973d80f.jpg
+  - url: https://mir-s3-cdn-cf.behance.net/project_modules/1400/0c980c52697581.5919cb973d80f.jpg
+    alt: Feed by Design - identité visuelle
 ---
+
 
 
 # Feed by Design

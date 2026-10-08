@@ -1,6 +1,6 @@
 ---
 translationKey: empsa
-order: 27
+order: 28
 lang: fr
 createdAt: 2026-08-27T10:17:00.000Z
 ldType: WebPage
@@ -11,9 +11,9 @@ metadata:
 tags:
   - branding
   - logo
-vars: {}
 images: []
 ---
+
 
 
 

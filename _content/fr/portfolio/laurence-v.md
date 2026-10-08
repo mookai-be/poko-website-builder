@@ -1,6 +1,6 @@
 ---
 translationKey: laurence-v
-order: 35
+order: 36
 lang: fr
 createdAt: 2026-08-27T10:05:00.000Z
 ldType: WebPage
@@ -12,8 +12,10 @@ tags:
   - branding
   - logo
 status: inactive
+vars: {}
 images: []
 ---
+
 
 # Wellbeing & Wellbirthing
 

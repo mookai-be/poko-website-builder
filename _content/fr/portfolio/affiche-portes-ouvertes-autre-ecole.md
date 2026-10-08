@@ -1,6 +1,6 @@
 ---
 translationKey: affiche-portes-ouvertes-autre-ecole
-order: 13
+order: 14
 lang: fr
 createdAt: 2026-09-14T20:14:00.000Z
 ldType: WebPage
@@ -11,9 +11,9 @@ metadata:
 tags:
   - mise-en-page
   - print
-vars: {}
 images: []
 ---
+
 
 
 # Affiche portes ouvertes - L'Autre École

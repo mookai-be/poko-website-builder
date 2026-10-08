@@ -1,6 +1,6 @@
 ---
 translationKey: yoga-du-soi
-order: 22
+order: 23
 lang: fr
 createdAt: 2026-08-27T10:13:00.000Z
 ldType: WebPage
@@ -14,9 +14,9 @@ tags:
   - logo-flash
   - web
   - site-toile
-vars: {}
 images: []
 ---
+
 
 
 

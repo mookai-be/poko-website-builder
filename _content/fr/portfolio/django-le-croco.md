@@ -1,6 +1,6 @@
 ---
 translationKey: django-le-croco
-order: 58
+order: 59
 lang: fr
 createdAt: 2026-08-27T10:08:00.000Z
 ldType: WebPage
@@ -10,9 +10,9 @@ metadata:
     src: /_images/portfolio/django-le-croco/7.webp
 tags:
   - mise-en-page
-vars: {}
 images: []
 ---
+
 
 
 # Django le croco - TOME 1

@@ -1,6 +1,6 @@
 ---
 translationKey: couverture-de-these
-order: 12
+order: 13
 lang: fr
 createdAt: 2026-09-14T11:54:00.000Z
 ldType: WebPage
@@ -10,8 +10,10 @@ metadata:
     src: /_images/portfolio/couverture-de-these/2.webp
 tags:
   - illustration
+vars: {}
 images: []
 ---
+
 
 
 # Couverture de thèse

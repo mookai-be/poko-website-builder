@@ -1,6 +1,6 @@
 ---
 translationKey: dossier-home
-order: 40
+order: 41
 lang: fr
 createdAt: 2026-09-02T09:49:00.000Z
 ldType: WebPage
@@ -12,8 +12,10 @@ tags:
   - mise-en-page
   - print
 status: inactive
+vars: {}
 images: []
 ---
+
 
 
 

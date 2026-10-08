@@ -1,6 +1,6 @@
 ---
 translationKey: julien-blanc
-order: 68
+order: 69
 lang: fr
 createdAt: 2026-08-27T10:16:00.000Z
 ldType: WebPage
@@ -12,10 +12,12 @@ tags:
   - branding
   - logo
   - print
+vars: {}
 images:
-  - alt: Julien Blanc - identité visuelle
-    url: https://images.ctfassets.net/1tq41wraq9ir/VucePGFsseGCGw6qgEkg8/60ff19865a7ab61ae65f253496cbb268/julienblanc-imgcover.png
+  - url: https://images.ctfassets.net/1tq41wraq9ir/VucePGFsseGCGw6qgEkg8/60ff19865a7ab61ae65f253496cbb268/julienblanc-imgcover.png
+    alt: Julien Blanc - identité visuelle
 ---
+
 
 
 

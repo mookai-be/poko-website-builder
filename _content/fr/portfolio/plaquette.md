@@ -1,6 +1,6 @@
 ---
 translationKey: plaquette
-order: 63
+order: 64
 lang: fr
 createdAt: 2026-09-14T12:09:00.000Z
 ldType: WebPage
@@ -11,9 +11,9 @@ metadata:
 tags:
   - mise-en-page
   - print
-vars: {}
 images: []
 ---
+
 
 
 

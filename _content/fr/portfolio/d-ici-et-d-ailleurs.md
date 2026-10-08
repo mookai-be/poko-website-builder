@@ -1,6 +1,6 @@
 ---
 translationKey: d-ici-et-d-ailleurs
-order: 92
+order: 8
 lang: fr
 createdAt: 2026-10-08T09:49:00.000Z
 ldType: CreativeWork

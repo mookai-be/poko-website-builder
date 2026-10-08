@@ -1,6 +1,6 @@
 ---
 translationKey: clarmony
-order: 47
+order: 48
 lang: fr
 createdAt: 2026-08-27T10:23:00.000Z
 ldType: WebPage
@@ -11,8 +11,10 @@ metadata:
 tags:
   - branding
   - logo
+vars: {}
 images: []
 ---
+
 
 
 

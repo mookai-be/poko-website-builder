@@ -1,6 +1,6 @@
 ---
 translationKey: rien-sur-le-blanc
-order: 90
+order: 91
 lang: fr
 createdAt: 2026-09-02T09:50:00.000Z
 ldType: WebPage
@@ -12,8 +12,10 @@ tags:
   - photo
   - mise-en-page
 status: inactive
+vars: {}
 images: []
 ---
+
 
 
 

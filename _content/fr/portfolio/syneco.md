@@ -1,6 +1,6 @@
 ---
 translationKey: syneco
-order: 38
+order: 39
 lang: fr
 createdAt: 2026-08-27T09:34:00.000Z
 ldType: WebPage
@@ -12,9 +12,9 @@ tags:
   - branding
   - logo
   - print
-vars: {}
 images: []
 ---
+
 
 
 

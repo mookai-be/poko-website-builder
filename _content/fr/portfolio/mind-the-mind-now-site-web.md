@@ -1,6 +1,6 @@
 ---
 translationKey: mind-the-mind-now-site-web
-order: 8
+order: 9
 lang: fr
 createdAt: 2026-08-18T07:25:00.000Z
 ldType: WebPage
@@ -11,8 +11,10 @@ metadata:
 tags:
   - web
   - site-custom
+vars: {}
 images: []
 ---
+
 
 
 # Rise for the Mind!

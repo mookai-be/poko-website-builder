@@ -1,6 +1,6 @@
 ---
 translationKey: parsi-parla
-order: 56
+order: 57
 lang: fr
 createdAt: 2026-08-27T10:18:00.000Z
 ldType: WebPage
@@ -11,9 +11,9 @@ metadata:
 tags:
   - mise-en-page
   - print
-vars: {}
 images: []
 ---
+
 
 
 
