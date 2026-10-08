@@ -29,6 +29,9 @@ gallery:
   - /_images/portfolio/d-ici-et-d-ailleurs/dscf9439-2.webp
   - /_images/portfolio/d-ici-et-d-ailleurs/dscf9438-2.webp
   - /_images/portfolio/d-ici-et-d-ailleurs/dscf9444-2.webp
+metadata:
+  image:
+    src: /_images/portfolio/d-ici-et-d-ailleurs/dscf9396-2.webp
 ---
 
 ## Le projet
