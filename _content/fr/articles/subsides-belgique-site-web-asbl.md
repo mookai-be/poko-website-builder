@@ -37,7 +37,7 @@ En Belgique, des subsides peuvent être octroyés par les différents niveaux de
 
 Chaque niveau de pouvoir est responsable de certaines matières et peut attribuer des subsides aux associations dans les matières pour lesquels il est compétent. 
 
-Pour plus d'informations, consulte ce {% link url="https://https://www.belgium.be/fr/la_belgique/pouvoirs_publics", type="external", newTab=true %}lien{% endlink %}.
+Pour plus d'informations, consulte ce {% link url="https://www.belgium.be/fr/la_belgique/pouvoirs_publics", type="external", newTab=true %}lien{% endlink %}.
 
 ## Comment trouver un subside pour créer le site web de mon asbl?
 
