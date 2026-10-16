@@ -8,8 +8,6 @@ name: Vocabulaire webdesign et graphisme
 preview:
   title: 'Vocabulaire webdesign et graphisme: 8 mots qui font peur'
   description: Le vocabulaire du webdesign et du graphisme peut effrayer les ~~moldus~~ néophytes. À l’approche d’Halloween, on lève le voile sur huit mots fréquemment rencontrés en webdesign et graphisme.
-  image:
-    src: /_images/pexels-ds-stories-9966485.webp
 tags:
   - web
   - print
