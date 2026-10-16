@@ -6,7 +6,7 @@ createdAt: 2026-09-28T08:56:00.000Z
 ldType: Article
 name: Subsides Belgique site web asbl
 preview:
-  title: Subsides pour le site web d'une asbl en Belgique | mookaï
+  title: Quels subsides en Belgique pour le site web de ton asbl?
 tags:
   - web
 ---
