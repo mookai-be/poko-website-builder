@@ -7,6 +7,7 @@ ldType: Article
 name: Subsides Belgique site web asbl
 preview:
   title: Quels subsides en Belgique pour le site web de ton asbl?
+  description: 'Tu travailles dans une asbl et tu te demandes s’il existe des aides financières pour (re)faire le site web de ton association? Bonne nouvelle: la réponse est oui! Par contre, il n’existe pas de solution universelle, c’est du cas par cas. Et c’est là que ça devient complexe. On te donne quelques pistes pour te retrouver dans la jungle administrative belge.'
 tags:
   - web
 ---
