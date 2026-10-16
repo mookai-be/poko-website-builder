@@ -13,9 +13,7 @@ tags:
   - print
 ---
 
-# Vocabulaire webdesign 
-
-# et graphisme: 8 mots qui font peur
+# Vocabulaire webdesign et graphisme: 8 mots qui font peur
 
 {% image src="/_images/pexels-ds-stories-9966485.webp", alt="Tuiles de scrabble qui forment le mot boo pour représenter le vocabulaire webdesign et graphisme à Halloween" %}
 
