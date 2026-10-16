@@ -8,7 +8,6 @@ name: Vocabulaire webdesign et graphisme
 tags:
   - web
   - print
-status: draft
 ---
 
 # Vocabulaire webdesign et graphisme: 8 mots qui font peur
