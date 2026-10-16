@@ -17,7 +17,7 @@ tags:
 
 {% image src="/_images/pexels-ds-stories-9966485.webp", alt="Tuiles de scrabble qui forment le mot boo pour représenter le vocabulaire webdesign et graphisme à Halloween" %}
 
-_Photo de Pexels ©D_ { .small }
+_Photo de Pexels ©DS Stories_ { .small }
 
 Le vocabulaire du webdesign et du graphisme peut effrayer les ~~moldus~~ néophytes. À l’approche d’Halloween, on lève le voile sur huit mots fréquemment rencontrés en webdesign et graphisme.
 
@@ -65,7 +65,7 @@ C’est un peu le plan de l’appartement: il montre comment les pièces sont or
 
 ## CMJN, les quatre encres de l'imprimerie
 
-En imprimerie, CMJN désigne les quatre couleurs utilisées pour obtenir la plupart des autres nuances. C pour \~\~citrouille\~\~ Cyan, M pour Magenta, J pour Jaune, N pour Noir.
+En imprimerie, CMJN désigne les quatre couleurs utilisées pour obtenir la plupart des autres nuances. C pour ~~citrouille~~ Cyan, M pour Magenta, J pour Jaune, N pour Noir.
 
 Concrètement, l’imprimante combine ces quatre encres pour obtenir les nuances désirées sur papier. Un peu comme quand, en maternelle, tu mélangeais de la peinture jaune et de la peinture rouge pour peindre une belle citrouille orange. Les écrans, eux, fonctionnent avec un autre système, le RVB (pour rouge, vert, bleu).
 
