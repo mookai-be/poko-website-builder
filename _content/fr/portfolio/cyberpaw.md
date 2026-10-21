@@ -73,6 +73,7 @@ gallery:
   - /_images/portfolio/cyberpaw/tatsu-pose-rvb-43.webp
   - /_images/portfolio/cyberpaw/tatsu-pose-rvb-44.webp
   - /_images/portfolio/cyberpaw/dscf2649-2.webp
+  - /_images/portfolio/cyberpaw/dscf2651-2.webp
   - /_images/portfolio/cyberpaw/dscf2646-2.webp
 preview:
   image:
